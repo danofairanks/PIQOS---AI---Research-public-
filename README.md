@@ -21,7 +21,13 @@ See [`papers/`](papers/) for the full index. Papers are split into
 |---|---|
 | [`protocols/noether_coherence_test_protocol_v1.md`](protocols/noether_coherence_test_protocol_v1.md) | Operational NLP protocol testing the Noether-Temporal Coherence prediction: coherence-time comparison between immune-structure and surface-claim vocabulary across captured vs. self-correcting epistemic fields. |
 
-*This index will grow as additional papers and protocols are added.*
+### Case Studies
+
+See [`case_studies/`](case_studies/) for the full index — real-time
+applications of the papers' frameworks to dated, publicly-reported
+events as they happen.
+
+*This index will grow as additional papers, protocols, and case studies are added.*
 
 ## License
 
