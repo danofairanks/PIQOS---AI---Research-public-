@@ -25,7 +25,7 @@ filename.
 
 | Paper | Summary |
 |---|---|
-| _none yet_ | |
+| [`basin_attractors_v1.md`](published/basin_attractors_v1.md) | *Basin Attractors, Semantic Laundering, and the Noether-Coherence Coupling.* Formalizes eight self-reinforcing narrative structures ("basin attractors") that protect load-bearing AI-research conjectures from falsification, identifies semantic laundering as the mechanism of vocabulary-level epistemic capture, proposes the six-phase Basin-Immune Falsification Protocol (BIFP), and derives the Noether-Temporal Coherence Coupling — a falsifiable, corpus-measurable prediction about immune-vocabulary vs. claim-vocabulary autocorrelation. See [`../protocols/noether_coherence_test_protocol_v1.md`](../protocols/noether_coherence_test_protocol_v1.md) for the operational test protocol derived from §4–5 of this paper. |
 
 ### Drafts
 
