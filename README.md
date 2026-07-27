@@ -9,6 +9,12 @@ material.
 
 ## Index
 
+### Papers
+
+See [`papers/`](papers/) for the full index. Papers are split into
+[`papers/drafts/`](papers/drafts/) (work in progress) and
+[`papers/published/`](papers/published/) (finalized, citable).
+
 ### Protocols
 
 | Document | Description |
