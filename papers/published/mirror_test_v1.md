@@ -16,7 +16,7 @@ The thesis introduces the concept of "collective attractors" to describe how loc
 
 Chapter 5 extends this diagnosis from the laboratory to the full ecosystem that sustains it: funding networks, academic legitimacy systems, social consensus formation, and the end-user base, each a self-organizing defense layer rather than a coordinated conspiracy. It documents the public, timestamped record of narrative escalation, examines the structural illusion of dissent, and places the dynamics in the company of four historical precedents of self-sealing, high-status narrative capture.
 
-The thesis concludes with a framework for empirical measurement of these dynamics — applied across every ring of the ecosystem, not only laboratory output — and argues for the necessity of "grounded coherence" as the foundation for genuine scientific progress in artificial intelligence.
+The thesis concludes with a framework for empirical measurement of these dynamics — applied across every ring of the ecosystem, not only laboratory output, and grounded explicitly in systems dynamics (stock-and-flow structure, reinforcing and balancing loop polarity, Meadows' leverage-points hierarchy) — and argues for the necessity of "grounded coherence" as the foundation for genuine scientific progress in artificial intelligence.
 
 ---
 
@@ -264,6 +264,16 @@ The parallel is instructive: the attractor did not require every biologist to be
 
 When the bubble burst, the narrative did not simply disappear. It was absorbed: "The vision was right; the timing was wrong." The attractor preserved its core (the internet would transform everything) while attributing failure to external factors (market irrationality, insufficient bandwidth). The mirror showed Pets.com delivering dog food at a loss. The gaze stayed fixed on "the future."
 
+### 5.8 The System Beneath the Rings: A Systems-Dynamics Reading
+
+The ring model in §5.3–§5.7 describes *what* sustains the attractor at institutional scale. Systems dynamics — the branch of general systems theory developed by Norbert Wiener (*Cybernetics*, 1948) and Ludwig von Bertalanffy (*General System Theory*, 1968), and formalized into an applied modeling method by Jay Forrester (*Industrial Dynamics*, 1961) and Donella Meadows (*Thinking in Systems: A Primer*, 2008) — supplies the vocabulary for *why* it behaves the way it does, independent of whether the substrate is mechanical, biological, or social. Von Bertalanffy's founding claim is that dynamics across domains are isomorphic once described as feedback-regulated flows of information rather than by their physical medium; that claim is what licenses reading a social-institutional phenomenon in the same terms used for an engineered system, without borrowing the vocabulary loosely.
+
+In stock-and-flow terms, the object under study across Chapters 5–6 is a single **stock** — call it accumulated field-wide narrative confidence, the level variable tracked by the claim-intensity metric in §6.2 — governed by an **inflow** (successful propagation of the core narrative outward through the rings: funding commitments, publications, social amplification, user adoption) and, in principle, an **outflow** (falsification events that decrement confidence when a claim fails to hold). §5.5's escalation table and its "response to counter-evidence" catalog describe a stock that has only ever risen. That is not evidence of a uniquely delusional field; it is the signature of a **reinforcing loop (R)** operating with no measured counteracting **balancing loop (B)**: absorbed counter-evidence becomes justification ("we were early, not wrong") → justification increases confidence → confidence increases claim intensity and capital commitment → increased commitment raises the cost of admitting error → the next counter-example is even more likely to be absorbed rather than to decrement the stock. Meadows is explicit that reinforcing loops are not inherently pathological — every system that grows has one — the pathology is a reinforcing loop with no balancing loop strong enough, or fast enough, to cap it. §6.3's falsifiable prediction (that no ring has yet been observed correcting rather than reinforcing the core) is exactly the claim that the balancing loop this system needs does not yet exist anywhere in the ecosystem, at any ring.
+
+This reframing also explains why the five rings (§5.3) function as a single loop rather than five independent obstacles. Each ring is a **delay** and a **flow-conversion stage** in the same causal structure, not a separate wall: a claim that clears Ring 1 does not need to independently survive Ring 2, 3, 4, and 5 on its own merits — it only needs each ring's conversion function to preserve rather than dampen the confidence it already carries, which §5.4's four-stage attenuation sequence shows happening by default. Reforming Ring 1 alone — replacing leadership, changing lab policy — leaves the loop's structure intact if the other four rings still convert unchecked confidence into unchecked confidence. The loop, not any single ring, is the unit that would need to change polarity.
+
+Meadows' hierarchy of leverage points (parameters → buffer sizes → loop strength → information flows → rules → self-organization → **goals** → **paradigm** → transcending the paradigm) gives §5.6's Baptist-and-Catholic observation its formal name. LeCun-versus-Altman is a dispute at the level of *rules and loop strength* — which architecture, which scaffolding, which safety mechanism — conducted entirely inside an unchanged **goal** (AGI is the correct destination) and an unchanged **paradigm** (intelligence is a scalar quantity that scaling approaches). Disagreement at the low-leverage end of the hierarchy is compatible with, and in Meadows' framework actively protects, an unexamined lock at the high-leverage end. This is why the debate can be genuinely vigorous — the low-leverage points are real degrees of freedom — while the stock keeps rising regardless of which side of the technical argument wins.
+
 ---
 
 ## Chapter 6: Measuring the Collective Attractor
@@ -311,6 +321,17 @@ Collective psychosis — or, more precisely, a high-coherence, low-grounding fie
 
 The field has been writing the data for years. It just has not been treating its own language as the measurement.
 
+### 6.5 Loop Polarity as the Actual Measurement
+
+§6.2's five tracking variables were framed as independent time series. Read as a system rather than a list — per §5.8's stock-and-flow reading of the ring model — they are jointly diagnostic of loop polarity, and the diagnostic is sharper than any one variable alone: a reinforcing loop with no operative balancing counterpart predicts that claim intensity, self-reference, and absorption of counter-evidence will co-move upward together across rings, while the outflow variable — a documented instance of a claim being formally retracted or downgraded, or of capital, hiring, or publication decisions actually reversing on the strength of a falsified prediction — will register at or near zero, across every ring, for the full period under study.
+
+This gives §6.3's falsifiable prediction an explicit failure condition and an explicit confirmation condition, stated in loop terms rather than narrative terms:
+
+- **Confirms the unchecked-reinforcing-loop reading:** the inflow-side variables co-move upward across rings, and zero outflow (correction) events are found in the corpus for the period.
+- **Falsifies it:** any ring shows a measured, dated instance of the stock actually decrementing — a retraction that changes capital allocation, a hiring or funding decision reversed on falsified-prediction grounds, a peer-review rejection of a claim previously accepted at the same rigor level. A single verified balancing event does not resolve the loop, but it is direct evidence that a balancing loop exists and is measurably functional, which is the condition this chapter's prediction says has not yet been met.
+
+This is a stronger and more falsifiable claim than "the field seems overconfident." It specifies exactly what a skeptic of this thesis would need to produce to refute it: not an argument that the field is more careful than this chapter suggests, but a dated, verifiable outflow event — the stock actually going down, once, anywhere in the corpus, for a reason other than the story simply changing to accommodate it.
+
 ---
 
 ## Chapter 7: Conclusion — Toward Grounded Coherence
@@ -330,3 +351,5 @@ The path forward requires not new architectures alone, though those may help, bu
 ---
 
 *Revised edition merging Fairbanks, The Mirror Test: Collective Attractors and the Failure of Self-Recognition in Artificial Intelligence Research, with Fairbanks, The Institutional Mirror—Revised: Collective Attractors, Distributed Defense, and the Topology of Dissent (an expansion of the original's Chapter 5). Compiled July 2026.*
+
+*§5.8 and §6.5 added July 2026, grounding the ring model and measurement framework explicitly in systems dynamics (Wiener, 1948; von Bertalanffy, 1968; Forrester, 1961; Meadows, 2008).*
