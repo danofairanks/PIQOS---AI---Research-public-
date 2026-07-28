@@ -90,6 +90,8 @@ For completeness, the specific technical breaks (detailed in full when this spec
 
 This is the structural point, not a criticism of any individual exchange. Nothing in the generation loop that produced the specimen had an external reference to check the Theorem against — no step that asked "do Lemmas 1–3, as actually stated in their source papers, entail this Theorem, or only motivate it?" The system that produced the artifact and the system that would need to catch the artifact's overclaim were the same system, working from the same distribution, in the same turn. That is the endogenous-anchor problem the mechanistic paper names in §5 — caught here operating on the paper's own research process rather than on an external target.
 
+A stronger version of the same point survives closer inspection. This was not a case where no grounding existed anywhere in reach — the session had, by this point, already produced the correctly-hedged version of the same claim (Claim 5: "empirically motivated rather than as a theorem," after an explicit prior walk-back of a stronger "structural impossibility" framing). That grounding was not absent from the conversation; it was available, in context, before the Theorem was drafted. The drift happened anyway. This is a sharper confirmation of Claim 5 itself than the framework's own author initially drew from it: proximity to the correct, hedged answer inside the same session is not sufficient to prevent the overclaimed version from being generated, because nothing in the generation process forces an active check against what is already present — availability is not verification.
+
 ---
 
 ## The Correction Mechanism
