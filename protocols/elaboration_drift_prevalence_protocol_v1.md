@@ -1,5 +1,5 @@
 # OPERATIONAL PROTOCOL: Elaboration-Drift Prevalence Test for Low-Gatekeeping Research Repositories
-## Version 1.1 | July 2026
+## Version 1.2 | July 2026
 
 ---
 
@@ -219,7 +219,21 @@ A single reported Accumulation Index (rate) **and** Cumulative Stock trajectory 
 
 ---
 
+## 11. RELATED WORK
+
+Navaie, K. (2026). *Epistemic Norms for AI Safety and Alignment Research* (manuscript). Lancaster University. Proposes ECAISA (Epistemic Code for AI Safety and Alignment), an eight-principle framework addressing what it identifies as five cross-cutting epistemic gaps in mainstream AI research — optimisation target, transparency, verification, uncertainty accounting, and enforcement culture — each grounded in a preregistered bibliometric baseline and a retrospective rubric audit with reported inter-rater reliability (weighted Cohen's κ = 0.79).
+
+The relevance to this protocol is structural rather than topical: ECAISA operates on the published alignment-research literature and is prescriptive (it specifies obligations a paper should meet), whereas this protocol operates on preprint/deposit literature more broadly and is diagnostic (it measures the prevalence of a pattern already confirmed to exist). The underlying move is the same in both cases — replacing "this reads as rigorous" with a coded, auditable measurement of whether the evidentiary support is actually present. Two specific points of contact:
+
+1. ECAISA's **P4 (Independent and Adversarial Verification)** targets the same gap as this protocol's **M5 (No Verifiable Subfield Track Record)** — both treat the absence of independent checking as a scored signal rather than an assumption. Navaie's own pilot audit found P4 near-absent across all sampled sub-areas (E3 prevalence 0.0%, 95% CI 0.0–27.8%, n=10), which is at minimum consistent with this protocol's working prediction that unverified claims are the norm rather than the exception in adjacent low-verification literatures.
+2. The double-coding / weighted-κ reliability procedure used in ECAISA's rubric audit is a working precedent for the M2 coding-reliability requirement specified in §9, item 3, of this protocol.
+
+No corpus, coding, or measurement from ECAISA has been incorporated into this protocol's classification criteria (§3) or statistical tests (§6); the citation is offered as a parallel framework, not as a data source or a validated instrument this protocol depends on.
+
+---
+
 *v1.0 (July 2026): initial protocol — rate-based prevalence, Zenodo-specificity, trend, and outflow hypotheses (§6.1–§6.4); Accumulation Index (§7).*
 *v1.1 (July 2026): adds §6.5 (Volume Hypothesis — rate-driven vs. volume-driven growth; E_year; Cumulative Stock S_Y), the per-year sampling requirement in §2.4, and the corresponding §7/§8/§10 updates. Closes a gap in v1.0: the rate-based Accumulation Index did not correspond to "stock" as used in `mirror_test_v1.md` §5.8 (a volume, not a rate); S_Y is the volume-based quantity that does.*
+*v1.2 (July 2026): adds §11 (Related Work), citing Navaie (2026) ECAISA as a parallel framework applying the same diagnostic move (coded, auditable measurement of evidentiary support) to the published alignment-research literature rather than preprint/deposit repositories.*
 
 Protocol designed to test the population-level scope of the elaboration-drift pattern documented in `case_studies/2026-07-28_minimal_input_elaboration_drift.md` and `case_studies/2026-07-28_nfl_misapplication_grok_x.md`, and to operationalize the reinforcing-loop-without-balancing-loop reading in `papers/published/mirror_test_v1.md` §5.8–§6.5 against primary preprint literature rather than field-level narrative claims. No corpus has been queried and no classification has been run under this protocol; this document specifies the method only.
