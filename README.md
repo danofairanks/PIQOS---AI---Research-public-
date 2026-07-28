@@ -20,6 +20,7 @@ See [`papers/`](papers/) for the full index. Papers are split into
 | Document | Description |
 |---|---|
 | [`protocols/noether_coherence_test_protocol_v1.md`](protocols/noether_coherence_test_protocol_v1.md) | Operational NLP protocol testing the Noether-Temporal Coherence prediction: coherence-time comparison between immune-structure and surface-claim vocabulary across captured vs. self-correcting epistemic fields. |
+| [`protocols/elaboration_drift_prevalence_protocol_v1.md`](protocols/elaboration_drift_prevalence_protocol_v1.md) | Operational protocol measuring the population-level prevalence, trend, and correction rate of the minimal-input elaboration-drift pattern (Claim 3a) across low-gatekeeping research repositories (primary: Zenodo), against moderated and sibling low-gatekeeping controls. Tests the reinforcing-loop-without-balancing-loop reading (`mirror_test_v1.md` §5.8–§6.5) against primary literature rather than field-level narrative claims. No corpus has yet been queried under this protocol. |
 
 ### Case Studies
 
