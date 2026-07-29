@@ -98,6 +98,8 @@ The AI-scientist pipeline has been formally modeled as a compounding distortion 
 
 **Defensive response:** "We were early, not wrong." Missed dates are absorbed into still-shorter future claims without increased predictive accountability.
 
+**Same claim, zero engagement.** The specific content of these timelines is not confined to labs with billions in stake and (presumably) privileged internal information. A self-published, zero-citation, zero-engagement document — "The Road to Artificial Superintelligence: A Probabilistic Analysis" (13742x, March 2025; hosted at zero stars/forks) — reaches the identical conclusion (ASI "as early as 2026" absent regulation) via an entirely different route: it asserts a real 2025 agent product ("Manus") as "the first AGI" without argument, invokes Murphy's Law as its governing heuristic, and wraps the result in formulas (e.g., `T_ASI = T_AGI / (1 + α + β)`) whose parameters are unsourced, uncalibrated Normal distributions (`β ∼ N(0.3, 0.1²)`) chosen with no visible derivation beyond producing the target year. If the identical narrative content and timeline recurs at zero engagement, zero platform, and zero access to frontier information — dressed in invented statistical notation rather than lab authority — that is evidence the content is a free-floating narrative attractor rather than a calibrated technical read in either case. The CEO version is not more grounded; it is only louder. This is also a specimen of Attractor 5 and Attractor 8's mechanism in miniature: equations and Greek-letter parameters borrow the register of rigor for a conclusion that was not derived from data.
+
 ### 2.7 Attractor 7: The Singularity Has Already Begun
 
 **Load-bearing claim:** Humanity has crossed a threshold beyond which old rules of evaluation no longer apply.
@@ -443,6 +445,8 @@ The mirror is available. The question is whether the field can recognize that it
 
 ## References
 
+13742x (2025). The Road to Artificial Superintelligence: A Probabilistic Analysis. Self-published; AI Snak (aisnak.com), March 2025. https://github.com/13742X/publications/blob/19a6c6629166856d0d65daa95ece97f11911309a/2025/2025-asi.pdf
+
 Chytas, S.P. & Singh, V. (2026). Concept Attractors in LLMs and their Applications. arXiv:2601.11575.
 
 Crochemore, M. & Lecroq, T. Pattern Matching and Text Compression Algorithms. Brown University CSCI 1810 course materials. https://cs.brown.edu/courses/csci1810/fall-2023/resources/ch2_readings/pattern_matching_book.pdf
@@ -514,3 +518,5 @@ xrchz (2026). CollatzLean [Lean 4 repository; claimed refutation of the Collatz 
 *Revision, July 2026 (cont'd): expanded the AIBO mention into a five-point case study — inherited judge biases (Zheng et al. 2023), a rater-selection criterion that optimizes cost over reliability, absence of a validated psychometric instrument for a psychology/social-science audience (Meyer, Garcia & Wulff 2026), no human baseline for calibration, and response-length/rating metrics that verbosity bias may render non-independent.*
 
 *Revision, July 2026 (cont'd): added a sixth AIBO point — iterative best-of-n prompt selection against a fixed proxy rater compounds Goodhart drift under repeated use (Gao, Schulman & Hilton 2022, newly cited), with the mechanism's unintentionality noted as structural: favorable early proxy scores are what drive continued reliance on the tool.*
+
+*Revision, July 2026 (cont'd): added "Same claim, zero engagement" to §2.6 (Timeline Compression) — a zero-citation, zero-engagement self-published document reaches the identical "ASI by 2026" conclusion as the cited lab-CEO timelines, via an asserted AGI milestone and unsourced Normal-distribution parameters dressed as a probabilistic model. Evidence that the narrative content recurs independent of platform, stakes, or access to frontier information.*
