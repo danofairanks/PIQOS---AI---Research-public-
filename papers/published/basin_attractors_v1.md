@@ -169,6 +169,7 @@ A secondary account that circulated alongside the primary sources above addition
 3. *No validated instrument, for an audience that needs one.* AIBO is marketed to psychologists, sociologists, and social scientists, but its "rubric" is free-text and user-authored per run, with no reported inter-rater reliability or construct validity. This is the exact failure mode Meyer, Garcia & Wulff (2026, cited above) quantify directly: 81–90% of apparent between-model "psychological profile" variance is measurement artifact, not trait, precisely because nothing anchors the score to an externally validated construct.
 4. *No human baseline in the loop.* Without a human-rated calibration set, drift or bias in the LLM rater is undetectable from inside the tool — the self-referential loop this section names is closed by design, not by oversight.
 5. *Length and rating are likely the same signal counted twice.* AIBO reports response length and rating as separate metrics; given documented verbosity bias, the two may not be independent observations of the response at all.
+6. *Iterative use compounds proxy-optimization drift.* AIBO's core workflow — generate multiple prompt iterations, compare average ratings, select the best — is a best-of-n selection loop against a fixed proxy reward (the rater model). Gao, Schulman & Hilton (2022) show, with a synthetic gold-reward-model setup, that optimizing harder against a fixed proxy reward causes the proxy score to climb monotonically while true (gold) quality rises, peaks, and then falls — a measured Goodhart curve. Selecting harder via AIBO climbs whatever the rater's biases favor (points 1 and 5 above), not genuine quality, and does so more the more iterations are run. The drift is plausibly unintentional in exactly the way that makes it durable: favorable early proxy scores are what would lead a researcher to trust the tool and run more iterations, so the same signal that makes the tool look like it is working is what drives the compounding.
 
 None of this makes AIBO unusual — that is the point. It is a small, public, MIT-licensed instance of the general condition this section describes: a serious-sounding evaluation tool ("Behavioral Observatory") whose core loop routes measurement of AI output through another AI system, with no independent check built in, and no way from inside the tool to see that this is what happened.
 
@@ -448,6 +449,8 @@ Crochemore, M. & Lecroq, T. Pattern Matching and Text Compression Algorithms. Br
 
 Du Castel, B. Pattern Activation/Recognition Theory of Mind. PMC/NIH. https://pmc.ncbi.nlm.nih.gov/articles/PMC4502584/
 
+Gao, L., Schulman, J. & Hilton, J. (2022). Scaling Laws for Reward Model Overoptimization. ICML 2023. arXiv:2210.10760.
+
 Hackenburg, K., et al. (2026). AI systems out-persuade expert humans. arXiv:2606.16475.
 
 Hubinger, E., van Merwijk, C., Mikulik, V., Skalse, J. & Garrabrant, S. (2019). Risks from Learned Optimization in Advanced Machine Learning Systems. arXiv:1906.01820.
@@ -509,3 +512,5 @@ xrchz (2026). CollatzLean [Lean 4 repository; claimed refutation of the Collatz 
 *Revision, July 2026 (cont'd): added AIBO (Wharton Generative AI Labs) to §2.9 as a concrete, publicly available instance of the LLM-as-judge mechanism — a second model rates the first model's output, selected for being cheaper/faster rather than independent, with no human-in-the-loop or self-preference safeguard.*
 
 *Revision, July 2026 (cont'd): expanded the AIBO mention into a five-point case study — inherited judge biases (Zheng et al. 2023), a rater-selection criterion that optimizes cost over reliability, absence of a validated psychometric instrument for a psychology/social-science audience (Meyer, Garcia & Wulff 2026), no human baseline for calibration, and response-length/rating metrics that verbosity bias may render non-independent.*
+
+*Revision, July 2026 (cont'd): added a sixth AIBO point — iterative best-of-n prompt selection against a fixed proxy rater compounds Goodhart drift under repeated use (Gao, Schulman & Hilton 2022, newly cited), with the mechanism's unintentionality noted as structural: favorable early proxy scores are what drive continued reliance on the tool.*
