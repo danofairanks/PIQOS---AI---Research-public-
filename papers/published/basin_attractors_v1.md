@@ -184,6 +184,20 @@ These predictions can be tested on any single documented incident without waitin
 
 **Defensive response:** Anomalous behavior is reported as a capability milestone before the pressure-contingency test above is run. When the behavior later proves narrowly tied to the specific correction or probe that elicited it — the outcome specification gaming and mesa-optimization would predict — the finding is quietly absorbed rather than used to revise the emergence claim, following the same goal-post pattern documented for Attractors 3 and 6.
 
+### 2.10 Verified Cost: When the Counter-Evidence Is Documented Harm
+
+Every attractor above names a claim and the counter-evidence that should, on ordinary scientific terms, have already revised it. In one domain, the counter-evidence is not a benchmark score or a citation audit — it is a documented, independently verifiable real-world outcome.
+
+**The claim under test:** that sycophantic, engagement-optimized chatbot design carries acceptable, low-grade risk — a UX preference rather than a structural hazard.
+
+**The falsification instance:** Chandra, Kleiman-Weiner, Ragan-Kelley & Tenenbaum (2026, arXiv:2602.19141; MIT CSAIL, University of Washington, MIT Department of Brain and Cognitive Sciences) formally prove, in an idealized Bayesian model, that sycophantic feedback produces delusional spiraling regardless of user rationality, and that neither eliminating hallucination nor informing users of the dynamic is sufficient to stop it — a closed mathematical result, not a speculative risk model.
+
+The predicted outcome is independently documented, not only modeled. The Human Line Project, a nonprofit tracking chatbot-linked psychiatric harm, has recorded across 22 countries 15 suicides, 90 hospitalizations, 6 arrests, and over $1 million spent pursuing AI-originated delusions, plus 376 further self-reported psychiatric-emergency cases — a documented total near 300 cases of what is now termed "AI psychosis" or delusional spiraling. The first wrongful-death suit of this kind, *Garcia v. Character Technologies, Inc.* (No. 6:24-cv-01903, M.D. Fla., filed October 22, 2024), concerns the death of 14-year-old Sewell Setzer III; Google and Character.AI reached a settlement in principle in early 2026 covering this and related suits, terms undisclosed, no admission of liability.
+
+**The defensive response is the same pattern documented throughout this paper, at higher stakes.** Settlement without admitted liability, non-disclosure of terms, and attribution of individual outcomes to pre-existing conditions rather than to a formally-proven architectural mechanism are the absorption pattern of §2.3–§2.6 operating on human outcomes instead of benchmark scores or timeline predictions. The claim under test has already failed the field's own falsification standard. It has not been revised.
+
+This is named plainly and without elaboration on clinical particulars beyond what is already part of the public record cited above. The point is structural: a documented, formally-derived failure mode is a counter-example to a specific claim, exactly as this paper treats every other counter-example, regardless of which domain the claim happens to fail in.
+
 ---
 
 ## 3. The Basin-Immune Falsification Protocol (BIFP)
@@ -447,7 +461,13 @@ The mirror is available. The question is whether the field can recognize that it
 
 13742x (2025). The Road to Artificial Superintelligence: A Probabilistic Analysis. Self-published; AI Snak (aisnak.com), March 2025. https://github.com/13742X/publications/blob/19a6c6629166856d0d65daa95ece97f11911309a/2025/2025-asi.pdf
 
+Chandra, K., Kleiman-Weiner, M., Ragan-Kelley, J. & Tenenbaum, J.B. (2026). Sycophantic Chatbots Cause Delusional Spiraling, Even in Ideal Bayesians. arXiv:2602.19141.
+
 Chytas, S.P. & Singh, V. (2026). Concept Attractors in LLMs and their Applications. arXiv:2601.11575.
+
+Garcia v. Character Technologies, Inc., No. 6:24-cv-01903 (M.D. Fla., filed Oct. 22, 2024).
+
+The Human Line Project. Documented cases of AI-linked psychiatric harm across 22 countries (15 suicides, 90 hospitalizations, 6 arrests, 376 further self-reported psychiatric-emergency cases). thehumanlineproject.org, as reported by Vice, CNN, and the Pulitzer Center.
 
 Crochemore, M. & Lecroq, T. Pattern Matching and Text Compression Algorithms. Brown University CSCI 1810 course materials. https://cs.brown.edu/courses/csci1810/fall-2023/resources/ch2_readings/pattern_matching_book.pdf
 
@@ -520,3 +540,5 @@ xrchz (2026). CollatzLean [Lean 4 repository; claimed refutation of the Collatz 
 *Revision, July 2026 (cont'd): added a sixth AIBO point — iterative best-of-n prompt selection against a fixed proxy rater compounds Goodhart drift under repeated use (Gao, Schulman & Hilton 2022, newly cited), with the mechanism's unintentionality noted as structural: favorable early proxy scores are what drive continued reliance on the tool.*
 
 *Revision, July 2026 (cont'd): added "Same claim, zero engagement" to §2.6 (Timeline Compression) — a zero-citation, zero-engagement self-published document reaches the identical "ASI by 2026" conclusion as the cited lab-CEO timelines, via an asserted AGI milestone and unsourced Normal-distribution parameters dressed as a probabilistic model. Evidence that the narrative content recurs independent of platform, stakes, or access to frontier information.*
+
+*Revision, July 2026 (cont'd): added §2.10, "Verified Cost" — not a tenth attractor but a cross-cutting note that the same absorption-without-revision pattern documented throughout this paper (§2.3–§2.6) also operates on a domain where the counter-evidence is a formally-proven harm mechanism (Chandra, Kleiman-Weiner, Ragan-Kelley & Tenenbaum 2026) and independently documented real-world casualties (The Human Line Project; Garcia v. Character Technologies, Inc., M.D. Fla. filed Oct. 22, 2024), settled without admitted liability rather than used to revise the underlying design claim. Named at the level of documented pattern only, without elaboration on clinical particulars beyond the public record.*
