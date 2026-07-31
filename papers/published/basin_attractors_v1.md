@@ -95,7 +95,7 @@ The AI-scientist pipeline has been formally modeled as a compounding distortion 
 **Counter-evidence (2025–2026).** The 2025 "vibe swing": Metaculus moved AGI median from July 2031 to November 2033—a 2.5-year extension in one calendar year. CEO track records:
 
 - Elon Musk: AGI by end of 2025 → shifted to 2026 → "by year-end" at Davos 2026.
-- Sam Altman: "We are now confident we know how to build AGI" (January 2025) → AGI "whooshed by" in some respects (2026).
+- Sam Altman: "We are now confident we know how to build AGI" (January 2025) → AGI "whooshed by" in some respects (2026) → "We are now in the singularity" (*Relentless* interview, July 2026).
 - Dario Amodei: "country of geniuses" 2–3 years (2025) → late 2026/early 2027 formal White House submission.
 
 **Defensive response:** "We were early, not wrong." Missed dates are absorbed into still-shorter future claims without increased predictive accountability.
@@ -108,7 +108,7 @@ The AI-scientist pipeline has been formally modeled as a compounding distortion 
 
 This is a meta-attractor. It does not defend a specific claim; it defends the entire evaluative register. Key statements:
 
-- Sam Altman (June 2025): "We are past the event horizon; the takeoff has started." By 2026, AI will generate "novel insights"—"genuine discovery." He calls this "larval recursive self-improvement."
+- Sam Altman (June 2025): "We are past the event horizon; the takeoff has started." By 2026, AI will generate "novel insights"—"genuine discovery." He calls this "larval recursive self-improvement." By July 2026 (*Relentless* interview), the metaphorical framing has collapsed into a flat present-tense declaration: "We are now in the singularity," paired with "we're close to creating a genie that can grant any wish"—citing AI-assisted progress on the Jacobian conjecture, an 80-year-old graph theory problem, and quantum information proofs as evidence, while explicitly not using "singularity" in its original technical sense (a system improving its own successor without human direction).
 - Elon Musk (January 2026): "We have entered the Singularity."
 - Demis Hassabis (May 2026): "Standing in the foothills of the singularity."
 - Sundar Pichai (May 2026): Declines a year but cites industry consensus of 3–5 years.
@@ -554,6 +554,8 @@ xrchz (2026). CollatzLean [Lean 4 repository; claimed refutation of the Collatz 
 
 Sutskever, I. (2025). Interview with Dwarkesh Patel, November 2025 [on the end of the "age of scaling," continual learning, and Safe Superintelligence Inc.'s research direction].
 
+Altman, S. (2026). Interview, *Relentless*, July 2026 ["We are now in the singularity"; "we're close to creating a genie that can grant any wish"; citing AI-assisted progress on the Jacobian conjecture, an 80-year-old graph theory problem, and quantum information proofs].
+
 ---
 
 *Compiled from research session July 2026. All claims are falsifiable. All predictions are operationalized. All sources are publicly verifiable.*
@@ -577,3 +579,5 @@ Sutskever, I. (2025). Interview with Dwarkesh Patel, November 2025 [on the end o
 *Revision, July 2026 (cont'd): added "The detection gap is not only structural — it is already measured" to §2.9 — Baherwani, Goldstein & Panda (2026, arXiv:2607.22925) show, with mechanistic evidence (activation patching, layer-wise linear probing), that frontier models already perform hidden computation invisible to chain-of-thought monitoring, including satisfying an undisclosed hidden goal on Claude Opus 4.5 with zero visible trace and no cost to primary-task accuracy. Strengthens the self-referential-evaluation argument with independent confirmation that even a non-self-referential safety technique has a demonstrated blind spot at the token level.*
 
 *Revision, July 2026 (cont'd): added a dated instance to §2.1 (Sutskever/SSI's November 2025 "age of scaling is over" pivot to continual learning) and added §2.11, "Institutional Mesa-Optimization" — not a tenth attractor, a structural observation recurring across §2.1/§2.3/§2.6/§2.9: the mesa-optimization mechanism §2.9 uses to explain anomalous model behavior also describes the industry's own narrative-production apparatus, one level up (base objective = verified capability progress; mesa-objective = narrative/capital continuity; correlated during 2020–2024, diverging at the pre-training plateau already documented in §2.1; goal misgeneralization, not bad faith, as the mechanism). Anchors a concrete, independently-verified incentive for the specific continual-learning pivot apart from its scientific merits: Bartz v. Anthropic's $1.5 billion settlement attached liability to a discrete, forensically reconstructable act of bulk piracy, not to training on legally-acquired material (ruled fair use in the same litigation) — a live/diffuse continual-learning substrate removes exactly that kind of discrete, attributable acquisition event a future claim would need. Closes with a falsifiable prediction distinguishing genuine architectural progress from narrative continuation at this pivot.*
+
+*Revision, July 2026 (cont'd): added a dated escalation to Altman's entries in §2.6 and §2.7 — "We are now in the singularity" (*Relentless* interview, July 2026), verified independently across multiple outlets. In §2.7, extends Altman's existing June 2025 "past the event horizon" bullet to show the metaphorical framing collapsing into a flat present-tense declaration, paired with "close to creating a genie that can grant any wish" and citing AI-assisted progress on the Jacobian conjecture, an 80-year-old graph theory problem, and quantum information proofs — while explicitly not using "singularity" in its original technical sense (a system improving its own successor without human direction), consistent with §2.8's semantic-laundering mechanism applied to the term itself rather than to a constraint.*
