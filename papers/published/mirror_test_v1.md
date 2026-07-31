@@ -190,6 +190,7 @@ The attractor does not merely defend existing claims; it escalates them. The pub
 | 2023 | "Sparks of AGI" (Bubeck et al.) | Peer-reviewed totalization |
 | 2024–2025 | "AGI by 2025; superintelligence in thousands of days" | Civilizational eschatology |
 | 2026 | "Mars colonies because of AI; AI will solve physics" | Transcendent expansion |
+| 2026 | "We are now in the singularity" (Altman, *Relentless* interview, July 2026) | Terminal declaration |
 
 *Public trajectory of claim escalation. Each missed milestone is absorbed into the narrative as evidence that the previous estimate was too conservative.*
 
