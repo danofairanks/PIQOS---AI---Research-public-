@@ -1,6 +1,6 @@
 # PIQOS AI Research (Public)
 
-Public research output related to the PIQOS coherence framework —
+Public research output related to the PIQOS Oracle framework —
 protocols, papers, and reproducible test methodology. This repository
 is for research artifacts only: operational protocols, empirical
 write-ups, and supporting documentation. It does not contain
