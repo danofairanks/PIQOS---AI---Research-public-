@@ -1,0 +1,31 @@
+# CODEOWNERS — required reviewers for protected paths.
+#
+# This file only enforces anything once branch protection has
+# "Require review from Code Owners" turned on for the target branch
+# (Settings -> Branches -> branch protection rule). Until that box is
+# checked, this file is documentation, not a gate.
+#
+# When more collaborators are added, extend the owner list on the
+# lines below (space-separated @handles) rather than removing the
+# existing owner — the point is a required reviewer other than the
+# PR's author, not a single point of failure.
+
+# Default owner for anything not matched by a more specific rule below.
+*                            @danofairanks
+
+# Published research output — the material this repo exists to
+# publish. Nothing here merges without review, regardless of author.
+/papers/published/          @danofairanks
+
+# Case studies name real organizations, products, and incidents —
+# the highest accuracy/defamation-risk content in the repo.
+/case_studies/               @danofairanks
+
+# Protocols define the methodology everything else is measured
+# against; a silent change here invalidates prior results.
+/protocols/                  @danofairanks
+
+# Repo-level governance and configuration.
+/README.md                   @danofairanks
+/LICENSE                     @danofairanks
+/.github/                    @danofairanks
