@@ -107,6 +107,23 @@ this project's own output fails that test, it has drifted into the sense this
 document exists to flag — including, and especially, if that entry is this
 one.
 
+**A concrete, dated illustration.** On July 31, 2026, OpenAI CEO Sam Altman
+pitched connecting family calendars to ChatGPT to generate a personalized
+morning-drive podcast for one's kids — informationally complete, internally
+consistent, technically workable. Gravity Falls creator Alex Hirsch replied in
+five words: "What if you just talked to your children." Within a day Hirsch's
+reply had outpaced Altman's original by roughly an order of magnitude on every
+engagement metric. Applying this entry's own test — *coherent with what,
+specifically, and how would we know if it weren't?* — the pitch is coherent
+with "the kids will be informed," and silent on whether that was ever the
+actual goal of a school-drive conversation. `mirror_test_v1.md` §4.2 observes
+that detached coherence is usually harder to break from the outside than
+grounded coherence, because it absorbs friction rather than paying reality's
+cost. This specimen is the documented exception, not a refutation: the
+correction here cost the responder nothing to produce and the audience nothing
+to verify, which is plausibly why it broke almost immediately instead of being
+absorbed. Full analysis: [`../../case_studies/2026-07-31_altman_family_podcast_ratio.md`](../../case_studies/2026-07-31_altman_family_podcast_ratio.md).
+
 ---
 
 ## Metrics vs. Soundness
