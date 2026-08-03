@@ -283,6 +283,72 @@ predicted in advance by whoever is describing it as emergent.
 
 ---
 
+## Singularity
+
+**The precise sense.** In mathematics and physics, a singularity is a point at
+which a model's own equations cease to yield a valid description — a function
+is undefined (division by zero), non-differentiable, or a solution's terms
+formally diverge (e.g., curvature/density in a general-relativistic solution
+at a black hole's center). The standard reading, in every field that uses the
+term technically, is that the singularity signals the *model's* incompleteness
+at that point, not a literal physical event of infinite magnitude occurring in
+the world. A singularity is where the map runs out, not a claim about the
+territory.
+
+**The sense it gets confused with.** Vernor Vinge's 1993 essay, "The Coming
+Technological Singularity," borrowed the term explicitly and carefully: he
+states that "singularities are always mathematical idealizations of natural
+phenomena... not present in reality but foreshadow an important transition or
+change of regime," and uses it to mean a point beyond which human models of
+the future fail — an epistemic claim about prediction breaking down, not an
+ontological claim about a literal mathematical blow-up in intelligence or
+technology. Kurzweil's later, far more widely circulated version keeps the
+exponential-acceleration framing and is on record explicitly denying literal
+infinitude — the growth stays finite, just steep enough to look like a
+rupture. What has drifted, across popular AI discourse, is the hedge both
+originators kept: from "our predictive models fail beyond this point" to a
+bare declarative treating an actual, in-progress, quasi-mathematically-
+guaranteed intelligence explosion as already underway or imminent.
+
+**The laundering mechanism.** The same shape this glossary already names for
+Coherence and Emergence: a term with a genuine, rigorous meaning in one field
+(a point where a model demonstrably breaks down) lends its aura of precision
+and inevitability to a much looser claim in another (a coming AI intelligence
+explosion), and the original hedge drops out through retelling until the
+borrowed term is doing rhetorical work — implying mathematical inevitability
+— that neither Vinge's nor Kurzweil's own stated definitions license.
+`basin_attractors_v1.md` §2.7 documents this drift directly and by name: Sam
+Altman's arc runs from the metaphorical "we are past the event horizon" (June
+2025) to the flat present-tense declaration "We are now in the singularity"
+(*Relentless* interview, July 2026), which that section notes is "the
+opposite of Vinge's original definition (unpredictable discontinuity beyond
+which human affairs become unmodelable)" — gradualism dressed in apocalyptic
+vocabulary, not a returned hedge. §2.8 Case 6 documents the mechanism at its
+most literal: an AI-generated image captioned "math Singularity," collaging
+real formulas including the Riemann zeta function's genuine pole at s=1,
+using the *actual* mathematical meaning of the word as unstated visual
+"proof" for the unrelated, Vinge-derived hype meaning — pun standing in for
+argument. `case_studies/2026-07-28_grok_x_instant_sycophancy.md` records a
+rare instance of the distinction being drawn correctly in the wild, in a
+public reply on X, before the same reply builds its own unfalsifiable
+framework anyway — worth citing because it shows the conflation named here is
+not a subtle scholarly point; it has already been made, in public, in plain
+language, and made no difference to the discourse around it.
+
+**The test.** Ask what specifically is being claimed: that a model's ability
+to predict what comes next is expected to fail (Vinge's original, epistemic
+sense — a modest and largely defensible claim about limits of foresight), or
+that an actual, mathematically-inevitable event of unbounded consequence is
+under way or fixed in the near future (the popular, ontological sense the
+term has drifted into). A claim resting on the second sense should be
+checkable independent of the word "singularity" — if removing the word and
+restating the claim in plain terms ("intelligence will improve without limit
+starting at a specific, nameable point") makes the claim sound like it needs
+its own evidence rather than borrowed mathematical certainty, the word was
+doing work the underlying argument was not.
+
+---
+
 ## Closing note
 
 This glossary will grow as new laundered terms are found and verified — the
