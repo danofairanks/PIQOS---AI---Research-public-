@@ -10,6 +10,8 @@
 
 It also exists to separate two questions this paper's narrative sections have not yet distinguished cleanly: **what kind of mathematical task was actually solved** (a search problem — find the counterexample — versus a proof that a regularity holds in general, per the distinction applied in the August 2026 revision of §2.13), and **what mode of production generated the result** (a single targeted result aimed at one named problem, versus a mass-scale batch sweep across hundreds of candidate problems). Neither axis is visible in a headline that says "AI solves N open problems."
 
+**External validation of the underlying problem, verified 2026-08-04 and worth naming directly.** This tracker's whole premise — that confident AI-mathematics claims need a structured verification-tier distinction rather than being taken at announcement value — is independently corroborated by a well-resourced, non-narrative-driven actor working the same problem from a different angle. DARPA's **Exponentiating Mathematics (expMath)** program (darpa.mil, launched March 2025; Program Manager Patrick Shafto, Rutgers) is explicitly structured into two technical areas, one of which is **"developing robust evaluation metrics for assessing AI performance at the frontier of mathematical research."** This is not a specimen of the narrative pattern this project otherwise tracks — it is a funded federal research program built specifically to solve the same evaluation gap this table's six axes exist to make visible row by row. Cited here as evidence the underlying problem is real and recognized outside this project, not as a source for any claim in the table itself; expMath's own output, if and when specific results are announced, would be checked against this table's standard the same as any other specimen, not exempted for institutional pedigree.
+
 ## How to read this table
 
 Six axes, applied to every row:
@@ -48,6 +50,7 @@ Living document. New rows are added as new AI-assisted conjecture/proof claims c
 
 - [`basin_attractors_v1.md`](basin_attractors_v1.md) §2.13, The Math-Breakthrough Ratio — the narrative argument this table operationalizes.
 - [`basin_attractors_v1.md`](basin_attractors_v1.md) §2.15, The Dramatic-Solution Signature — the announcement-register axis (column 4) is drawn directly from this diagnostic.
+- DARPA's Exponentiating Mathematics (expMath) program — external validation that the verification-tier problem this table addresses is recognized and being independently resourced outside this project; see Purpose section above and References below. Not a source for any table entry; noted for the problem's legitimacy, not as evidentiary backing for any specimen.
 
 ## References
 
@@ -77,6 +80,12 @@ Sun, J. (@justinsunyt) (2026). Thread describing the Grok 4.5 Medium agent "Capy
 
 BigGo Finance (2026). Musk Praises Grok 4.5 for Debunking 30-Year Graph Theory Conjecture in 8 Minutes; GPT-5 Solved It Too. finance.biggo.com, 2026.
 
+DARPA (2025). expMath — Exponentiating Mathematics. darpa.mil/research/programs/expmath-exponential-mathematics, program launched March 2025.
+
+DARPA (2025). Math + AI = Tomorrow's breakthroughs. darpa.mil/news/2025/math-ai-tomorrows-breakthroughs, 2025.
+
+Shafto, P. (@patrickshafto) (2025). Posts on X announcing and describing the DARPA expMath program launch. 2025.
+
 ---
 
 ## Revision log
@@ -84,6 +93,8 @@ BigGo Finance (2026). Musk Praises Grok 4.5 for Debunking 30-Year Graph Theory C
 *Created August 2026, cross-linked from `basin_attractors_v1.md` §2.13. Seeded with five specimens already verified in that paper's research window: First Proof Project, AlphaProof Nexus, Erdős #1196, the Maxwell conjecture disproof, and OpenAI's Astra "Ten advances" (with the search/regularity split from the same paper's August 2026 §2.13 revision). No new research performed for this initial version — this is a restructuring of already-verified specimens into comparable form, not a new claim.*
 
 *Added 2026-08-04: Graffiti Conjecture 284 (xAI, Grok 4.5), surfaced while checking a separate operator-supplied claim (see companion case study [`2026-08-04_musk_source_code_binary_escalation.md`](../../case_studies/2026-08-04_musk_source_code_binary_escalation.md), third specimen). Introduces a verification-tier value not yet present in this table — self-checked by the same lab's other AI systems, with no independent human, Lean, or peer-reviewed confirmation found at the time of the promotional announcement — noted explicitly in "What this tracker does NOT yet establish" above rather than folded into the existing "human-verified" tier.*
+
+*Cross-referenced 2026-08-04: DARPA's Exponentiating Mathematics (expMath) program, added to Purpose, Cross-references, and References as external validation that the evaluation-tier problem this table addresses is independently recognized and funded outside this project — verified directly against darpa.mil rather than taken from the LinkedIn post that surfaced it. Not used as a source for any table entry; if and when expMath produces specific, checkable results, they would be evaluated against this table's standard like any other specimen.*
 
 ---
 
