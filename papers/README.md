@@ -34,6 +34,6 @@ filename.
 
 | Paper | Summary |
 |---|---|
-| _none yet_ | |
+| [`soft_capture_v1.md`](drafts/soft_capture_v1.md) | *Soft Capture: Institutional Drift Without a Capture Event, and a Falsifiable Test Applied to Nature.* Names a mechanism distinct from `mirror_test_v1.md` §5.1's "Lab as Basin": gradual normalization of narrative-forward, low-evidentiary-bar content inside a historically rigorous institution, via a lower-rigor section (Nature's Comment) reading as indistinguishable from the institution's highest-rigor output (peer-reviewed Articles) to most readers. Triggering specimen verified directly: Chen, Belkin, Bergen & Danks, "Does AI already have human-level intelligence? The evidence is clear" (Nature Comment, Feb. 2026) — real authors, real argument, not peer-reviewed per Nature's own stated editorial policy for Comment content, with real functioning internal correction (Feser, Vannacci, both verified). Corrects its own supporting historical analogy (Popular Mechanics did not start with speculative content — it drifted toward it across decades from an explicitly rigor-first founding mission), finding the corrected version a closer structural match than the one originally offered. Explicit about what is and is not established, and commits in advance to three falsifiable tracking variables (Comment-to-Article claim ratio, framing-intensity, correction latency/reach) with a stated falsification condition rather than an open-ended "not yet." |
 
 Update this index in the same commit that adds or moves a paper.
