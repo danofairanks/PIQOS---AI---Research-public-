@@ -4,7 +4,7 @@
 the SDK's own in-memory transport (no subprocess, no stdio pipe --
 but no mock either; this is the identical client/server code path a
 real MCP host uses), lists the registered tools, and calls one from
-each of the three wrapped packages.
+each of the four wrapped packages.
 
     python3 examples/mcp_demo.py
 
@@ -60,6 +60,17 @@ async def main() -> None:
                 })
                 data = json.loads(r.content[0].text)
                 print(f"  flagged laundering cases: {data['flagged_laundering_cases']}")
+
+                print("\n=== Step 5: paper_rigor_scan (a deliberately bad paragraph) ===\n")
+                bad = (
+                    "It is trivial to show this conclusively demonstrates the result, "
+                    "beyond any doubt. TODO: fill in proof. Research shows the "
+                    "approach is universally superior."
+                ) + (" filler word" * 400)
+                r = await session.call_tool("paper_rigor_scan", {"text": bad})
+                data = json.loads(r.content[0].text)
+                print(f"  ok: {data['ok']}, structural_gap_count: {data['structural_gap_count']}")
+                print(f"  worklist items: {[item['kind'] for item in data['external_verification_worklist']]}")
         finally:
             server_task.cancel()
 

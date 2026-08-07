@@ -1,10 +1,11 @@
 # research-mcp
 
 A live MCP (Model Context Protocol) server exposing
-[`basin_depth`](../basin_depth/), [`bifp`](../bifp/), and
-[`attractor_scan`](../attractor_scan/) as agent tool calls. This is
-pure wiring — every tool here is an unmodified function imported from
-its source package's own `agent_tools.py`, registered against a real
+[`basin_depth`](../basin_depth/), [`bifp`](../bifp/),
+[`attractor_scan`](../attractor_scan/), and
+[`paper_rigor`](../paper_rigor/) as agent tool calls. This is pure
+wiring — every tool here is an unmodified function imported from its
+source package's own `agent_tools.py`, registered against a real
 `MCPServer` instance and round-trip tested over the actual MCP wire
 protocol (in-memory transport, not a mock).
 
@@ -23,8 +24,11 @@ cd tools/research_mcp
 python3 -m venv .venv
 source .venv/bin/activate
 
-# the three wrapped packages aren't on PyPI -- install them from source first
-pip install -e ../basin_depth -e ../bifp -e ../attractor_scan
+# the wrapped packages aren't on PyPI -- install them from source first.
+# verification_lint isn't wrapped as its own MCP tool (see below) but
+# paper_rigor imports its disclaimer check directly, so it's a real
+# install-time dependency here too.
+pip install -e ../basin_depth -e ../bifp -e ../attractor_scan -e ../verification_lint -e ../paper_rigor
 
 pip install -e .
 pip install -e ".[dev]"   # adds pytest
@@ -32,11 +36,11 @@ pip install -e ".[dev]"   # adds pytest
 
 Requires Python >= 3.10 and `mcp>=1.2.0`. This package's own runtime
 dependency footprint is just `mcp` — no new dependency is introduced
-by the three wrapped tools beyond what they already require.
+by the wrapped tools beyond what they already require.
 
 ## What's registered
 
-All 12 functions across the three packages' `agent_tools.py` modules,
+All 13 functions across the four packages' `agent_tools.py` modules,
 unchanged:
 
 | Tool | From | Purpose |
@@ -53,17 +57,30 @@ unchanged:
 | `bifp_generate_report` | bifp | Render the full markdown report |
 | `attractor_scan_text` | attractor_scan | Classify a single text for maneuvers + laundering cases |
 | `attractor_scan_corpus` | attractor_scan | Aggregate category frequency across a corpus |
+| `paper_rigor_scan` | paper_rigor | Scan any paper for placeholders, falsifiability, self-citation, credentialing, consensus claims, citation-type mix, and a missing limitations section — returns an `external_verification_worklist` naming the specific items that need a real web search/fetch to resolve |
 
 Each tool's docstring (visible to an MCP client as its description)
 and type hints (used to generate its JSON input schema) come straight
 from the source package — see each package's own `agent_tools.py` and
 README for exactly what each function does and does not detect.
-`case_scaffold` and `verification_lint` are not wrapped here: both are
-repository-maintenance tools (generate/lint/index this repo's own
-`case_studies/` files, scan documents for citation gaps) rather than
-research-measurement tools an external agent would call against
-arbitrary input — a narrower fit for MCP exposure. Wiring them in
-later is the same mechanical pattern as the three here.
+`case_scaffold` is not wrapped here: it's a repository-maintenance tool
+(generate/lint/index this repo's own `case_studies/` files) rather
+than a research-measurement tool an external agent would call against
+arbitrary input — a narrower fit for MCP exposure. Wiring it in later
+is the same mechanical pattern as the four here. `verification_lint`
+is installed (paper_rigor depends on its disclaimer check) but its own
+`scan_document`/`scan_file` aren't separately exposed as MCP tools —
+same repository-maintenance reasoning as `case_scaffold`.
+
+`paper_rigor_scan` is the one tool here that's meant to feed back into
+agent behavior rather than just report a result: its
+`external_verification_worklist` output is a to-do list (uncited
+empirical claims, credential assertions, informal-source citations)
+for whatever agent is calling it — an MCP host with real web
+search/fetch access is expected to resolve each item and, optionally,
+use `bifp_start_audit`/`bifp_record_criterion` to track the resolution
+persistently, the same two-step flow the original scoping conversation
+for this tool described.
 
 ## 30-second demo
 
@@ -72,10 +89,11 @@ python3 examples/mcp_demo.py
 ```
 
 Connects a real `mcp.client.session.ClientSession` to this server over
-the SDK's own in-memory transport, lists all 12 tools, and calls one
-from each wrapped package — `basin_depth_demo`, `bifp_scan_text`, and
+the SDK's own in-memory transport, lists all 13 tools, and calls one
+from each wrapped package — `basin_depth_demo`, `bifp_scan_text`,
 `attractor_scan_text` against the same real Musk quote
-`attractor_scan`'s own test suite validates against.
+`attractor_scan`'s own test suite validates against, and
+`paper_rigor_scan` against a deliberately bad constructed paragraph.
 
 ## Wiring this into an MCP host
 
@@ -166,7 +184,7 @@ source .venv/bin/activate
 python3 -m pytest tests/ -v
 ```
 
-11 tests, all going over the real in-memory MCP wire protocol rather
+13 tests, all going over the real in-memory MCP wire protocol rather
 than calling Python functions directly (that coverage already exists
 in each source package's own test suite).
 

@@ -1,5 +1,6 @@
-"""MCP server exposing basin_depth, bifp, and attractor_scan's
-already-JSON-safe `agent_tools.py` function surfaces as real MCP tools.
+"""MCP server exposing basin_depth, bifp, attractor_scan, and
+paper_rigor's already-JSON-safe `agent_tools.py` function surfaces as
+real MCP tools.
 
 Every registered function is unmodified from its source package --
 this module is pure wiring, not a reimplementation. Each function's
@@ -35,6 +36,7 @@ from bifp.agent_tools import (
     bifp_attach_scan_to_audit, bifp_generate_report, bifp_get_status, bifp_list_phases,
     bifp_record_criterion, bifp_scan_text, bifp_start_audit,
 )
+from paper_rigor.agent_tools import paper_rigor_scan
 
 app = MCPServer(
     "piqos-research-tools",
@@ -44,9 +46,18 @@ app = MCPServer(
         "(Noether-Temporal Coherence Test Protocol), bifp_* runs a structured "
         "Basin-Immune Falsification Protocol audit, and attractor_scan_* "
         "classifies text for the seven defensive maneuvers and semantic-"
-        "laundering cases named in basin_attractors_v1.md. Every tool here "
-        "is a heuristic lead generator, not a verdict -- see each source "
-        "package's own README for exactly what it does and does not detect."
+        "laundering cases named in basin_attractors_v1.md, and paper_rigor_scan "
+        "checks any paper (no PIQOS-specific vocabulary required) for placeholder/"
+        "hand-wave phrases, an unstated falsifiability condition, self-citation "
+        "ratio, formal-vs-informal sourcing mix, uncited empirical-certainty "
+        "claims, credential-substituted-for-evidence claims, unsupported "
+        "consensus claims, and a missing limitations section -- its "
+        "external_verification_worklist output names the specific items that "
+        "need a real web search/fetch to resolve (does citation X really say "
+        "what's claimed, is this source credible), which this tool's own text "
+        "heuristics cannot determine. Every tool here is a heuristic lead "
+        "generator, not a verdict -- see each source package's own README for "
+        "exactly what it does and does not detect."
     ),
 )
 
@@ -63,6 +74,7 @@ _TOOLS = [
     bifp_generate_report,
     attractor_scan_text,
     attractor_scan_corpus,
+    paper_rigor_scan,
 ]
 
 for _fn in _TOOLS:

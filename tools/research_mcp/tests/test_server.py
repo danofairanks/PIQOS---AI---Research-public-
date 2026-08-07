@@ -35,13 +35,14 @@ def test_protocol_level_error_is_distinct_from_payload_level_error():
     assert result.is_error is True
 
 
-def test_all_twelve_tools_are_registered(list_tool_names):
+def test_all_thirteen_tools_are_registered(list_tool_names):
     names = set(list_tool_names())
     assert names == {
         "basin_depth_demo", "basin_depth_run", "basin_depth_derive_vocab",
         "bifp_list_phases", "bifp_start_audit", "bifp_record_criterion",
         "bifp_scan_text", "bifp_attach_scan_to_audit", "bifp_get_status", "bifp_generate_report",
         "attractor_scan_text", "attractor_scan_corpus",
+        "paper_rigor_scan",
     }
 
 
@@ -124,3 +125,19 @@ def test_attractor_scan_corpus_over_the_wire(call_tool):
         ],
     })
     assert result["n_documents"] == 2
+
+
+def test_paper_rigor_scan_flags_a_bad_paper_over_the_wire(call_tool):
+    bad = (
+        "It is trivial to show this conclusively demonstrates the result, beyond any doubt. "
+        "TODO: fill in proof."
+    ) + (" filler word" * 400)
+    result = call_tool("paper_rigor_scan", {"text": bad})
+    assert result["ok"] is False
+    assert result["structural_gap_count"] >= 1
+
+
+def test_paper_rigor_scan_clean_text_over_the_wire(call_tool):
+    result = call_tool("paper_rigor_scan", {"text": "A short, clean note with nothing to flag."})
+    assert result["ok"] is True
+    assert result["structural_gap_count"] == 0

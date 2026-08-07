@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "paper-rigor"
+version = "0.1.0"
+description = "Domain-agnostic paper-rigor scanner: placeholders, falsifiability, self-citation, credentialing, consensus claims, citation-type mismatch"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "PIQOS AI Research (Public)" }]
+# verification_lint is a real, deliberate dependency (its disclaimer.py
+# check IS this package's "missing limitations section" check, reused
+# rather than duplicated -- unlike the sibling leaf tools, which
+# duplicate small phrase lists from each other to stay standalone).
+# Not on PyPI -- install it first; see README "Install".
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+paper-rigor = "paper_rigor.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["paper_rigor*"]
