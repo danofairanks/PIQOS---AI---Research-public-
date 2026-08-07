@@ -110,6 +110,26 @@ def test_citability_claim_without_references_on_a_real_unseen_specimen():
     assert result.structural_gap_count == 2  # missing limitations + citability claim
 
 
+def test_plain_numbered_heading_paper_scans_clean_end_to_end():
+    """End-to-end version of the headings-harness regression: a paper
+    structured like a real PDF-extracted specimen (plain numbered
+    headings, no markdown, no references section, no citability claim)
+    with a genuine, substantive limitations section should scan clean
+    -- confirming the harness fix, not just the isolated disclaimer.py
+    unit, produces the correct overall result."""
+    text = (
+        "1. Introduction\n\n"
+        + " ".join(["word"] * 450)
+        + "\n\n7. Honest Limitations and Genuine Improvements\n\n"
+          "One faculty that previously underperformed has been improved through a genuine upgrade.\n\n"
+          "10. Conclusion\n\nWe have presented an integrated architecture.\n"
+    )
+    result = scan_paper(text)
+    assert result.ok is True
+    assert result.structural_gap_count == 0
+    assert result.limitations.has_heading_section is True
+
+
 def test_to_dict_json_safe():
     import json
     result = scan_paper("Some clean prose with no issues at all here.")

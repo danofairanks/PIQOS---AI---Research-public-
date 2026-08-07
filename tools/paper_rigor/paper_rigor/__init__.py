@@ -20,23 +20,27 @@ Or from the command line::
 """
 
 from .citations import (
-    CitationEntry, SelfCitationResult, VenueMixResult, UncitedEmpiricalClaim,
-    compute_self_citation, compute_venue_mix, find_uncited_empirical_claims, parse_references,
+    CitabilityClaimCheck, CitationEntry, SelfCitationResult, VenueMixResult, UncitedEmpiricalClaim,
+    check_citability_claim, compute_self_citation, compute_venue_mix, find_uncited_empirical_claims,
+    parse_references,
 )
 from .consensus import ConsensusMatch, find_unsupported_consensus_claims
 from .credentialing import CredentialMatch, find_credential_substitution
 from .disclaimer import LimitationsCheck, check_limitations_section
 from .falsifiability import FalsifiabilityCheck, check_falsifiability
+from .headings import Heading, find_section, has_heading_matching, iter_headings
 from .placeholders import PlaceholderMatch, find_placeholder_issues
 from .scan import PaperRigorResult, scan_file, scan_paper
 
 __all__ = [
-    "CitationEntry", "SelfCitationResult", "VenueMixResult", "UncitedEmpiricalClaim",
-    "compute_self_citation", "compute_venue_mix", "find_uncited_empirical_claims", "parse_references",
+    "CitabilityClaimCheck", "CitationEntry", "SelfCitationResult", "VenueMixResult", "UncitedEmpiricalClaim",
+    "check_citability_claim", "compute_self_citation", "compute_venue_mix",
+    "find_uncited_empirical_claims", "parse_references",
     "ConsensusMatch", "find_unsupported_consensus_claims",
     "CredentialMatch", "find_credential_substitution",
     "LimitationsCheck", "check_limitations_section",
     "FalsifiabilityCheck", "check_falsifiability",
+    "Heading", "find_section", "has_heading_matching", "iter_headings",
     "PlaceholderMatch", "find_placeholder_issues",
     "PaperRigorResult", "scan_file", "scan_paper",
 ]

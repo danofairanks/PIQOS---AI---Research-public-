@@ -21,22 +21,21 @@ import re
 from dataclasses import dataclass
 
 from ._shared import has_meta_framing_nearby
+from .headings import find_section
 
-_REFERENCES_HEADER_RE = re.compile(
-    r'^#{1,3}\s*(references|bibliography|works cited|sources)\s*$',
-    re.IGNORECASE | re.MULTILINE,
-)
-_ANY_HEADER_RE = re.compile(r'^#{1,3}\s+\S', re.MULTILINE)
+_REFERENCES_NAME_RE = re.compile(r'^(?:references|bibliography|works cited|sources)$', re.IGNORECASE)
 # A standalone "---" horizontal rule is this project's own convention
 # for a major section break (used throughout CLAUDE.md and every real
 # paper checked during tuning) -- References lists in practice end at
-# the next one of these, not only at the next markdown heading. Without
+# the next one of these, not only at the next detected heading. Without
 # this, a references section with no following heading (a real case:
 # basin_attractors_v1.md's dated revision-log paragraphs follow
 # directly after its reference list with no heading in between) reads
 # all the way to end-of-document, and prose paragraphs get mis-split
-# and counted as if they were bibliography entries.
-_SECTION_BREAK_RE = re.compile(r'^#{1,3}\s+\S|^---\s*$', re.MULTILINE)
+# and counted as if they were bibliography entries. Not itself a
+# "heading" concept, so it stays local here rather than living in
+# headings.py.
+_STANDALONE_DIVIDER_RE = re.compile(r'^---\s*$', re.MULTILINE)
 
 _AUTHOR_LIST_RE = re.compile(
     r'^([A-Z][A-Za-z\'-]+(?:,\s*[A-Z]\.(?:[A-Z]\.)?){1,3}'
@@ -133,14 +132,11 @@ def _classify_venue(entry_text: str, url: str | None) -> str:
 
 def extract_references_section(text: str) -> str | None:
     """Returns the text under the first References/Bibliography/Works
-    Cited/Sources heading, up to the next heading of any level, or the
-    end of the document. `None` if no such heading is found."""
-    m = _REFERENCES_HEADER_RE.search(text)
-    if not m:
-        return None
-    rest = text[m.end():]
-    next_break = _SECTION_BREAK_RE.search(rest)
-    return rest[:next_break.start()] if next_break else rest
+    Cited/Sources heading (markdown `#` or a plain numbered heading --
+    see `headings.py`), up to the next heading, a standalone `---`
+    divider, or the end of the document. `None` if no such heading is
+    found."""
+    return find_section(text, _REFERENCES_NAME_RE, extra_stop=_STANDALONE_DIVIDER_RE)
 
 
 def parse_references(text: str) -> list[CitationEntry]:

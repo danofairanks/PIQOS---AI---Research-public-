@@ -203,6 +203,57 @@ THE ACCRETION IN THIS DOC") — is outside anything this package checks
 for at all. Pinned as a skip-if-unavailable test in
 `tests/test_scan.py`.
 
+## A second blind test, and a harness instead of another patch
+
+Run against a second, real, previously-unseen specimen — a 12-page PDF
+technical report (`neurocogniswarm_ultra_elite_agi_monolith_salih.pdf`,
+extracted via `pdfplumber`) describing a from-scratch, LLM-free
+cognitive architecture with self-administered benchmark results
+(25/25, 60/60, ceiling on 4 of 7 faculties). Unlike the first blind
+specimen, this one is careful and self-aware — it states, unprompted,
+*"Self-report is not evidence. A faculty that grades its own output
+can report any number it likes,"* and reports a candidate improvement
+it tested and discarded for failing to generalize.
+
+The scan still came back with a false structural gap: missing
+limitations section. The document actually has one — a genuine,
+substantive **"7. Honest Limitations and Genuine Improvements"**
+section. `paper_rigor` missed it because PDF text extraction drops
+markdown entirely, and every heading-detection regex in this package
+(`disclaimer.py`'s limitations check, `citations.py`'s references-
+section boundary) required a leading `#`. Confirmed directly: the
+extracted document contained zero `#` characters anywhere.
+
+Rather than add a second, differently-shaped regex at each of the two
+call sites — which only solves it locally and leaves a third future
+section-aware check to rediscover the same gap — heading detection was
+pulled into its own shared module, **`headings.py`**: `iter_headings()`
+recognizes both markdown (`# Heading`) and plain numbered headings
+(`7. Honest Limitations and Genuine Improvements`, `5.2 Elite
+Cognitive Stress Test: Fifteen Faculties (60/60)`) via a single regex
+that requires the heading's own line to be short and period-free —
+what excludes ordinary sentences (which almost always contain a
+period) while still matching real headings. Validated directly against
+the real specimen: all 20 of its actual section headings detected, in
+document order, with zero false positives from its in-body sentence
+"...1. a first point and 2. a second point..." (which sits mid-
+sentence, not on its own line). `citations.py` and `disclaimer.py`
+were both rewired onto `find_section()`/`has_heading_matching()`.
+
+Fixing detection alone was not enough. The specimen's heading is
+"Honest Limitations **and Genuine Improvements**" — words before and
+after "Limitations" that no fixed-phrase match (`limitations`,
+`limitations and scope caveats`, `threats to validity`) would ever
+equal. The name-match itself had to change from "does the heading
+equal one of these phrases" to "does the heading contain the word
+`limitations` anywhere" — a substring search, deliberately loosened
+because the word itself is specific enough on its own that the
+false-positive risk is low. Both fixes together flip the real
+specimen's result from `ok: False` (1 false structural gap) to the
+correct `ok: True`, with zero change across every previously-pinned
+real document (`basin_attractors_v1.md` still 81 references, 0
+structural gaps; all six real repo documents' numbers unchanged).
+
 ## What this tool does NOT do
 
 - **It does not fact-check anything**, the same limit every other tool
@@ -232,6 +283,15 @@ for at all. Pinned as a skip-if-unavailable test in
   false-positive shapes found during tuning (framing verbs, the "→"
   dismissal-list arrow), not a general solution to telling assertion
   apart from description or quotation.
+- **`headings.py` recognizes two format families, not every one.**
+  Markdown `#` and plain numbered/title headings ("7. Section Name")
+  are detected; a heading styled only by font weight in the original
+  document (invisible once converted to plain text), an underlined
+  heading, or an ALL-CAPS heading with no numbering is not. The plain-
+  heading pattern can also false-positive on a genuine short,
+  numbered, period-free enumerated list in body prose ("1. Fast\n2.
+  Cheap\n3. Reliable") — a narrow, documented risk, not something this
+  tool tries to disambiguate further.
 
 ## Usage
 
@@ -257,12 +317,13 @@ not a CI-failing condition.
 python3 -m pytest tests/ -v
 ```
 
-60 tests. Every check is validated both against constructed examples
-and against this repo's own real papers/protocols
-(`tests/test_citations.py`, `tests/test_scan.py`), pinning exact
-reference counts and gap counts so a future heuristic change has to
-consciously re-justify any shift in those numbers — plus two tests
-that run against private-repo specimens (the known-bad
+72 tests (including `tests/test_headings.py`, validated against the
+real specimen's exact heading text). Every check is validated both
+against constructed examples and against this repo's own real
+papers/protocols (`tests/test_citations.py`, `tests/test_scan.py`),
+pinning exact reference counts and gap counts so a future heuristic
+change has to consciously re-justify any shift in those numbers —
+plus two tests that run against private-repo specimens (the known-bad
 `rem_capture.md`, and the citability-claim specimen above) when
 they're available locally, skipped otherwise.
 
