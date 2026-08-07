@@ -15,8 +15,8 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 from .citations import (
-    CitationEntry, SelfCitationResult, VenueMixResult, compute_self_citation,
-    compute_venue_mix, find_uncited_empirical_claims, parse_references,
+    CitabilityClaimCheck, CitationEntry, SelfCitationResult, VenueMixResult, check_citability_claim,
+    compute_self_citation, compute_venue_mix, find_uncited_empirical_claims, parse_references,
 )
 from .consensus import find_unsupported_consensus_claims
 from .credentialing import find_credential_substitution
@@ -44,6 +44,7 @@ class PaperRigorResult:
     credential_issues: list = field(default_factory=list)
     consensus_issues: list = field(default_factory=list)
     limitations: LimitationsCheck | None = None
+    citability_claim: CitabilityClaimCheck | None = None
 
     @property
     def structural_gap_count(self) -> int:
@@ -51,6 +52,8 @@ class PaperRigorResult:
         if self.falsifiability and self.falsifiability.gap:
             count += 1
         if self.limitations and self.limitations.gap:
+            count += 1
+        if self.citability_claim and self.citability_claim.gap:
             count += 1
         return count
 
@@ -107,6 +110,7 @@ class PaperRigorResult:
             "venue_mix": self.venue_mix.to_dict() if self.venue_mix else None,
             "external_verification_worklist": self.external_verification_worklist,
             "limitations": self.limitations.to_dict() if self.limitations else None,
+            "citability_claim": self.citability_claim.to_dict() if self.citability_claim else None,
         }
 
 
@@ -126,6 +130,7 @@ def scan_paper(text: str, *, path: str = "<text>", byline_authors: list[str] | N
         credential_issues=find_credential_substitution(text),
         consensus_issues=find_unsupported_consensus_claims(text),
         limitations=check_limitations_section(text, min_word_count=min_word_count),
+        citability_claim=check_citability_claim(text, references, min_word_count=min_word_count),
     )
 
 

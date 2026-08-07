@@ -79,6 +79,25 @@ EMPIRICAL_CLAIM_MARKERS = [
 ]
 _EMPIRICAL_CLAIM_RE = re.compile("|".join(re.escape(p) for p in EMPIRICAL_CLAIM_MARKERS), re.IGNORECASE)
 
+# Self-referential citability claims: the paper asserting ITS OWN work
+# rests on citable/documented research -- distinct from the paper
+# describing a THIRD PARTY's work as peer-reviewed (a real false-
+# positive caught during tuning: mirror_test_v1.md's table entry
+# '"Sparks of AGI" (Bubeck et al.) | Peer-reviewed totalization' labels
+# an external claim, not this document's own grounding). Deliberately
+# narrower than a bare "peer-reviewed"/"published research" match for
+# exactly that reason -- these phrases are shaped around a paper
+# talking about its own sourcing ("grounded in ... research",
+# "citable research", "extensively cited"), found verbatim in the real
+# specimen that motivated this check (see README).
+_CITABILITY_CLAIM_RE = re.compile(
+    r'\bcitable research\b|\bdocumented,\s*citable\b|'
+    r'\bground(?:ed|ing) in (?:documented|extensive|established)\s+research\b|'
+    r'\bextensively cited\b|\bwell-documented framework\b|\bwell documented framework\b|'
+    r'\bbase papers\b',
+    re.IGNORECASE,
+)
+
 CONTEXT_CHARS = 150
 
 
@@ -231,3 +250,50 @@ def find_uncited_empirical_claims(text: str, *, window: int = CONTEXT_CHARS) -> 
         if not any(sig.search(context) for sig in _INLINE_CITATION_SIGNALS):
             out.append(UncitedEmpiricalClaim(phrase=m.group(0), start=m.start(), end=m.end(), context=context))
     return out
+
+
+@dataclass
+class CitabilityClaimCheck:
+    claims_citability: bool
+    matched_phrases: list[str]
+    n_references: int
+    word_count: int
+    applicable: bool
+
+    @property
+    def gap(self) -> bool:
+        """A long paper that asserts its own grounding in citable/
+        documented research while its own References section (or lack
+        of one) parses to zero entries -- the paper's own citability
+        claim and its own bibliography contradict each other, fully
+        resolvable from the text alone, no external lookup needed to
+        know it's contradictory (whether the claim is otherwise TRUE
+        is a separate question this cannot answer)."""
+        return self.applicable and self.claims_citability and self.n_references == 0
+
+    def to_dict(self) -> dict:
+        return {"claims_citability": self.claims_citability, "matched_phrases": self.matched_phrases,
+                "n_references": self.n_references, "word_count": self.word_count,
+                "applicable": self.applicable, "gap": self.gap}
+
+
+def check_citability_claim(text: str, references: list[CitationEntry], *, min_word_count: int = 400) -> CitabilityClaimCheck:
+    """Found via a real specimen (86KB, ~12,000 words, zero actual
+    references, structured as a raw page-scan dump with no References
+    heading at all) that asserted "the reference to base papers on
+    Zenodo under Stephen Hope's authorship indicate the framework's
+    grounding in documented, citable research" -- a citability claim
+    about the document's OWN sourcing, contradicted by its own empty
+    bibliography. `min_word_count` reuses the same "long enough that a
+    real bibliography would be expected" judgment call as
+    `disclaimer.py`'s limitations-section threshold, not a value taken
+    from any style guide."""
+    word_count = len(text.split())
+    matches = [m.group(0) for m in _CITABILITY_CLAIM_RE.finditer(text)]
+    return CitabilityClaimCheck(
+        claims_citability=bool(matches),
+        matched_phrases=sorted(set(matches)),
+        n_references=len(references),
+        word_count=word_count,
+        applicable=word_count >= min_word_count,
+    )

@@ -57,7 +57,7 @@ unchanged:
 | `bifp_generate_report` | bifp | Render the full markdown report |
 | `attractor_scan_text` | attractor_scan | Classify a single text for maneuvers + laundering cases |
 | `attractor_scan_corpus` | attractor_scan | Aggregate category frequency across a corpus |
-| `paper_rigor_scan` | paper_rigor | Scan any paper for placeholders, falsifiability, self-citation, credentialing, consensus claims, citation-type mix, and a missing limitations section — returns an `external_verification_worklist` naming the specific items that need a real web search/fetch to resolve |
+| `paper_rigor_scan` | paper_rigor | Scan any paper for placeholders, falsifiability, self-citation, credentialing, consensus claims, citation-type mix, a claimed-citability-with-zero-references contradiction, and a missing limitations section — returns an `external_verification_worklist` naming the specific items that need a real web search/fetch to resolve |
 
 Each tool's docstring (visible to an MCP client as its description)
 and type hints (used to generate its JSON input schema) come straight

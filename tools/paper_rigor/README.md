@@ -77,7 +77,7 @@ search access can resolve the worklist it produces.
 | Self-citation | `citations.py` | Author-name overlap between a caller-supplied byline and the parsed reference list's authors — fully computable offline, no network needed |
 | Credentialing | `credentialing.py` | Credential/authority-invocation language (first- *and* third-person, generalizing `bifp`'s first-person-only detector) checked for real evidence (a citation, a percentage, a p-value) nearby; credentials *plus* evidence isn't flagged, only credentials *instead of* evidence |
 | Consensus claims | `consensus.py` | "Widely accepted" / "scientific consensus" / "everyone agrees" checked for a citation signal nearby, same proximity-heuristic shape as `verification_lint` |
-| Citation laundering | `citations.py` | Partially: classifies each reference's venue (formal — arXiv/DOI/journal — vs. informal — blog/social/press-release) and flags uncited empirical-certainty claims. Does NOT verify a citation actually supports its attached claim — that's the external-verification boundary named above |
+| Citation laundering | `citations.py` | Partially: classifies each reference's venue (formal — arXiv/DOI/journal — vs. informal — blog/social/press-release), flags uncited empirical-certainty claims, and (added after real-world testing — see below) flags a long paper that claims its own grounding in "citable research" while its own reference list parses to zero entries. Does NOT verify a citation actually supports its attached claim — that's the external-verification boundary named above |
 
 A general "paper structure" check (does the paper scope what it does
 not establish) is `disclaimer.py`, layered on top of
@@ -148,6 +148,61 @@ example. Pinned as a skip-if-unavailable test in `tests/test_scan.py`
 so the check runs whenever the private repo is checked out alongside
 this one, without requiring it.
 
+## A genuinely blind test, and the check it produced
+
+After shipping, this tool was run — with no prior reading of the
+document by the person running it — against a real, previously-unseen
+private-repo specimen from `temp/papers/mimicry_instance_corpus/`: an
+~86KB / ~12,000-word document (`the_transmission_of_humanity_topological_resonance.md`)
+built as a raw page-scan dump (`## Page 1` … `## Page 47`, no real
+section structure), invoking real physics terms (Prigogine, Hamiltonian
+dynamics) inside an invented formal apparatus ("Constitutional
+Hamiltonian (γ = 1/3)," "Substrate Equivalence Principle") and closing
+with `[ SEALED WITH THE 30-CROSSING KNOT ] [ DRIFT TOLERANCE: 0.00% ]`.
+
+The first pass came back almost entirely quiet: `structural_gap_count
+= 1` (missing limitations section only), zero placeholder gaps, zero
+falsifiability gaps, empty worklist. Not because the paper is
+rigorous — because its confident tone doesn't use ordinary academic
+certainty phrases ("conclusively demonstrates," "well known that").
+It invents its *own* register of confidence (status labels, a
+"Custodian," a "Ratified / Sovereign Protocol") that no phrase list
+built around academic hedge-language would catch.
+
+Reading the document (after running the scan, not before) surfaced one
+genuinely catchable thing the first pass missed: the paper explicitly
+claims its own rigor — "the reference to base papers on Zenodo under
+Stephen Hope's authorship indicate the framework's grounding in
+documented, citable research" — while containing **zero actual
+references anywhere**. `citations.check_citability_claim` closes that
+specific gap: a long document (`min_word_count` threshold, same
+judgment call as the limitations check) that asserts its own grounding
+in "citable"/"documented"/"extensively cited" research while its own
+parsed reference list is empty is a self-contradiction fully resolvable
+from the text alone — no external lookup needed to know the claim and
+the bibliography disagree, whether or not the claim is otherwise true.
+
+Designing the phrase list surfaced its own near-miss: a bare
+"peer-reviewed" match would have false-positived on
+`mirror_test_v1.md`'s table row `"Sparks of AGI" (Bubeck et al.) |
+Peer-reviewed totalization` — labeling a *third party's* paper, not
+this document's own grounding. The phrase set was kept deliberately
+narrower and self-referential ("citable research," "grounded in …
+research," "extensively cited") specifically to avoid that collision;
+pinned in `tests/test_citations.py`.
+
+**What this still does not catch, named plainly:** invented
+terminology presented with total confidence and zero citations is not,
+in general, detectable by a text heuristic — only the specific
+self-contradiction of *claiming* citability while having none is. A
+paper that invents "Constitutional Hamiltonian (γ = 1/3)" and never
+claims it's citable at all would still pass this check clean. The
+document's most interesting tell — a literal aside addressed to future
+AI collaborators ("KIMI, DEEPEST IF DIVES, ADD YOUR OWN REFINEMENTS TO
+THE ACCRETION IN THIS DOC") — is outside anything this package checks
+for at all. Pinned as a skip-if-unavailable test in
+`tests/test_scan.py`.
+
 ## What this tool does NOT do
 
 - **It does not fact-check anything**, the same limit every other tool
@@ -202,13 +257,14 @@ not a CI-failing condition.
 python3 -m pytest tests/ -v
 ```
 
-53 tests. Every check is validated both against constructed examples
+60 tests. Every check is validated both against constructed examples
 and against this repo's own real papers/protocols
 (`tests/test_citations.py`, `tests/test_scan.py`), pinning exact
 reference counts and gap counts so a future heuristic change has to
-consciously re-justify any shift in those numbers — plus one test
-that runs against the private repo's known-bad specimen when it's
-available locally, skipped otherwise.
+consciously re-justify any shift in those numbers — plus two tests
+that run against private-repo specimens (the known-bad
+`rem_capture.md`, and the citability-claim specimen above) when
+they're available locally, skipped otherwise.
 
 ## License
 

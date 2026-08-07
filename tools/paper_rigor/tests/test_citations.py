@@ -10,7 +10,7 @@ from pathlib import Path
 import pytest
 
 from paper_rigor.citations import (
-    CitationEntry, compute_self_citation, compute_venue_mix,
+    CitationEntry, check_citability_claim, compute_self_citation, compute_venue_mix,
     find_uncited_empirical_claims, parse_references,
 )
 
@@ -106,3 +106,61 @@ def test_to_dict_json_safe():
     import json
     entries = parse_references("## References\n\nSmith, J. (2020). A Paper. https://arxiv.org/abs/1234\n")
     json.dumps([e.to_dict() for e in entries])  # must not raise
+
+
+LONG_BODY = " ".join(["word"] * 450)
+
+
+def test_citability_claim_with_zero_references_is_a_gap():
+    """Regression test for a real, previously-unseen specimen (an
+    ~86KB / ~12,000-word paper structured as a raw page-scan dump, no
+    References heading anywhere) that asserted "the reference to base
+    papers on Zenodo under Stephen Hope's authorship indicate the
+    framework's grounding in documented, citable research" while
+    containing zero actual references."""
+    text = LONG_BODY + " The framework's grounding in documented, citable research is extensive."
+    check = check_citability_claim(text, references=[])
+    assert check.claims_citability is True
+    assert check.gap is True
+
+
+def test_citability_claim_with_real_references_not_a_gap():
+    text = LONG_BODY + " This work is grounded in documented research."
+    entries = parse_references("## References\n\nSmith, J. (2020). A Paper. https://arxiv.org/abs/1234\n")
+    check = check_citability_claim(text, references=entries)
+    assert check.claims_citability is True
+    assert check.n_references == 1
+    assert check.gap is False
+
+
+def test_no_citability_claim_and_zero_references_not_a_gap():
+    """Plenty of real, honest documents have no references section and
+    never claim to -- that's not contradictory, so it's not flagged."""
+    check = check_citability_claim(LONG_BODY, references=[])
+    assert check.claims_citability is False
+    assert check.gap is False
+
+
+def test_short_document_not_applicable_even_with_claim_and_zero_refs():
+    check = check_citability_claim("Documented, citable research supports this.", references=[])
+    assert check.applicable is False
+    assert check.gap is False
+
+
+def test_third_party_peer_reviewed_label_not_flagged():
+    """Regression test for a real false-positive risk found while
+    designing this check: mirror_test_v1.md has a table row labeling a
+    THIRD PARTY's paper '"Sparks of AGI" (Bubeck et al.) | Peer-reviewed
+    totalization' -- describing someone else's work, not this
+    document's own grounding. The narrower, self-referential phrase set
+    ("citable research", "grounded in ... research") deliberately
+    excludes a bare "peer-reviewed" match for this reason."""
+    text = LONG_BODY + ' | "Sparks of AGI" (Bubeck et al.) | Peer-reviewed totalization |'
+    check = check_citability_claim(text, references=[])
+    assert check.claims_citability is False
+
+
+def test_citability_claim_to_dict_json_safe():
+    import json
+    check = check_citability_claim(LONG_BODY + " citable research", references=[])
+    json.dumps(check.to_dict())  # must not raise

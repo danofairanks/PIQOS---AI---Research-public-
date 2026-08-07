@@ -82,6 +82,34 @@ def test_known_bad_private_specimen_structural_gap():
     assert any("would include" in g.phrase for g in result.placeholder_gaps)
 
 
+def test_citability_claim_without_references_on_a_real_unseen_specimen():
+    """Validated locally (not committed) against a genuinely
+    previously-unseen private-repo specimen from
+    temp/papers/mimicry_instance_corpus/ -- an ~86KB / ~12,000-word
+    paper (raw page-scan structure, no References heading anywhere)
+    that asserts "the framework's grounding in documented, citable
+    research" while containing zero actual references. This is the
+    specimen that motivated citability_claim: the tool's first pass
+    (before this check existed) came back almost entirely quiet on it
+    -- structural_gap_count=1 (missing limitations only) -- because the
+    paper's confident tone doesn't use ordinary academic certainty
+    phrases; it invents its own register ("Sovereign Protocol,"
+    "SEALED WITH THE 30-CROSSING KNOT") instead. This check closes that
+    specific, real gap without pretending to catch invented terminology
+    generally. Skipped outside an environment with the private repo
+    checked out alongside this one."""
+    private_repo_specimen = (
+        REPO_ROOT.parent / "PIQOS-IsoAxiomV8-" / "temp" / "papers" / "mimicry_instance_corpus"
+        / "the_transmission_of_humanity_topological_resonance.md"
+    )
+    if not private_repo_specimen.is_file():
+        pytest.skip("private repo specimen not available in this checkout")
+    result = scan_file(private_repo_specimen)
+    assert result.citability_claim.gap is True
+    assert result.citability_claim.n_references == 0
+    assert result.structural_gap_count == 2  # missing limitations + citability claim
+
+
 def test_to_dict_json_safe():
     import json
     result = scan_paper("Some clean prose with no issues at all here.")
