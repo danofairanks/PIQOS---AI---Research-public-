@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bifp"
+version = "0.1.0"
+description = "Structured audit tool for the Basin-Immune Falsification Protocol (BIFP)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "PIQOS AI Research (Public)" }]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+bifp = "bifp.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["bifp*"]
