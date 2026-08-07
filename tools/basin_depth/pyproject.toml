@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "basin-depth"
+version = "0.1.0"
+description = "Reference implementation of the Noether-Temporal Coherence Test Protocol for basin-attractor depth measurement"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "PIQOS AI Research (Public)" }]
+dependencies = [
+    "numpy>=1.26",
+    "scipy>=1.11",
+]
+
+[project.optional-dependencies]
+embeddings = ["sentence-transformers>=2.7"]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+basin-depth = "basin_depth.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["basin_depth*"]
