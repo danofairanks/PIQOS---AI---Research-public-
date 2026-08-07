@@ -99,16 +99,17 @@ adapter layer.
 | `bifp_get_status(audit_path)` | Current phase-by-phase status + overall resolution |
 | `bifp_generate_report(audit_path)` | Full markdown report |
 
-**On MCP specifically:** this release does not ship a live MCP server.
-`pip install mcp` conflicted with this build environment's system
-`PyJWT` package during development, and shipping an MCP transport
-implementation that was never actually round-tripped against a real
-client felt worse than not shipping one — the same standard the rest
-of this project holds every other claim to. Wiring `agent_tools.py`
-into an MCP server is mechanical (register each function above as a
-tool, with its docstring as the description and its keyword arguments
-as the JSON schema) but is left to whoever's MCP runtime this lands
-in, rather than shipped untested here.
+**On MCP specifically:** a live MCP server now exists —
+[`tools/research_mcp/`](../research_mcp/). It registers all seven
+`agent_tools.py` functions above (plus `basin_depth`'s and
+`attractor_scan`'s own agent_tools surfaces) against a real
+`MCPServer` instance, and is tested over the actual MCP wire protocol
+via an in-memory client-server round trip, including a stateful
+multi-turn bifp audit flow — see that package's README for what
+closed the earlier blocker (`pip install mcp` conflicting with this
+build environment's system `PyJWT` package: install into an isolated
+virtualenv instead of the system interpreter) and for a real bug the
+round-trip test suite's own first draft caught.
 
 ## What's implemented, mapped to the protocol text
 

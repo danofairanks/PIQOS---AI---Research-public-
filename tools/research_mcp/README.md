@@ -1,0 +1,175 @@
+# research-mcp
+
+A live MCP (Model Context Protocol) server exposing
+[`basin_depth`](../basin_depth/), [`bifp`](../bifp/), and
+[`attractor_scan`](../attractor_scan/) as agent tool calls. This is
+pure wiring — every tool here is an unmodified function imported from
+its source package's own `agent_tools.py`, registered against a real
+`MCPServer` instance and round-trip tested over the actual MCP wire
+protocol (in-memory transport, not a mock).
+
+`bifp/README.md` originally noted that its `agent_tools.py` surface
+was designed for MCP but never shipped as a live server, because
+`pip install mcp` conflicted with this build environment's system
+`PyJWT` package. That blocker is resolved here the straightforward
+way: install into an isolated virtualenv rather than the system
+interpreter — see "Install" below. `mcp` (2.0.0 at the time of
+writing) installs cleanly in a fresh venv with no conflict.
+
+## Install
+
+```bash
+cd tools/research_mcp
+python3 -m venv .venv
+source .venv/bin/activate
+
+# the three wrapped packages aren't on PyPI -- install them from source first
+pip install -e ../basin_depth -e ../bifp -e ../attractor_scan
+
+pip install -e .
+pip install -e ".[dev]"   # adds pytest
+```
+
+Requires Python >= 3.10 and `mcp>=1.2.0`. This package's own runtime
+dependency footprint is just `mcp` — no new dependency is introduced
+by the three wrapped tools beyond what they already require.
+
+## What's registered
+
+All 12 functions across the three packages' `agent_tools.py` modules,
+unchanged:
+
+| Tool | From | Purpose |
+|---|---|---|
+| `basin_depth_demo` | basin_depth | Run the Noether-Temporal Coherence pipeline against the bundled synthetic corpus |
+| `basin_depth_run` | basin_depth | Run the full pipeline against a caller-supplied corpus |
+| `basin_depth_derive_vocab` | basin_depth | Empirically derive claim/immune/neutral vocabulary pools from a corpus |
+| `bifp_list_phases` | bifp | Full BIFP Phase 0-6 schema |
+| `bifp_start_audit` | bifp | Create a new persisted audit session |
+| `bifp_record_criterion` | bifp | Record one criterion's pass/fail |
+| `bifp_scan_text` | bifp | Standalone heuristic scan (no audit required) |
+| `bifp_attach_scan_to_audit` | bifp | Same, attached to an existing audit's record |
+| `bifp_get_status` | bifp | Phase-by-phase status + overall resolution |
+| `bifp_generate_report` | bifp | Render the full markdown report |
+| `attractor_scan_text` | attractor_scan | Classify a single text for maneuvers + laundering cases |
+| `attractor_scan_corpus` | attractor_scan | Aggregate category frequency across a corpus |
+
+Each tool's docstring (visible to an MCP client as its description)
+and type hints (used to generate its JSON input schema) come straight
+from the source package — see each package's own `agent_tools.py` and
+README for exactly what each function does and does not detect.
+`case_scaffold` and `verification_lint` are not wrapped here: both are
+repository-maintenance tools (generate/lint/index this repo's own
+`case_studies/` files, scan documents for citation gaps) rather than
+research-measurement tools an external agent would call against
+arbitrary input — a narrower fit for MCP exposure. Wiring them in
+later is the same mechanical pattern as the three here.
+
+## 30-second demo
+
+```bash
+python3 examples/mcp_demo.py
+```
+
+Connects a real `mcp.client.session.ClientSession` to this server over
+the SDK's own in-memory transport, lists all 12 tools, and calls one
+from each wrapped package — `basin_depth_demo`, `bifp_scan_text`, and
+`attractor_scan_text` against the same real Musk quote
+`attractor_scan`'s own test suite validates against.
+
+## Wiring this into an MCP host
+
+Run the server directly (stdio transport, what most MCP hosts expect):
+
+```bash
+research-mcp
+```
+
+For a host that reads a JSON config (e.g. Claude Desktop's
+`claude_desktop_config.json`):
+
+```json
+{
+  "mcpServers": {
+    "piqos-research-tools": {
+      "command": "/absolute/path/to/tools/research_mcp/.venv/bin/research-mcp"
+    }
+  }
+}
+```
+
+## The real round trip
+
+The bifp README flagged the untested gap explicitly: `agent_tools.py`
+was shaped for MCP but never actually driven by a real client. This
+package closes that gap with `tests/conftest.py`'s `_live_session`
+fixture, built on `mcp.shared.memory.create_client_server_memory_streams`
+— the same in-memory transport the `mcp` SDK's own test suite uses —
+paired with a real `mcp.client.session.ClientSession` talking to this
+project's actual `MCPServer` instance over its actual low-level
+protocol handler. Nothing in the request/response cycle is stubbed:
+JSON schema generation from type hints, request dispatch, tool
+invocation, and JSON-RPC content framing are all the real library
+code, exercised by 11 tests including a stateful bifp audit flow
+(start → record → get_status) that persists across three separate
+tool calls the way an agent's turns actually would.
+
+## A real bug this test suite's own first draft surfaced
+
+`mcp.types.CallToolResult`'s constructor takes an `isError` keyword
+(camelCase, a JSON-alias convention), but the actual pydantic field —
+and the only spelling that works for attribute access after
+construction — is snake_case `is_error`. The first draft of
+`conftest.py`'s error-checking helper wrote `if result.isError:`,
+which doesn't raise at call time; pydantic's `__getattr__` just
+returns nothing usable, and the check silently never fired. Caught by
+`test_protocol_level_error_is_distinct_from_payload_level_error` in
+`tests/test_server.py`, which deliberately trips the failure by
+calling a tool with missing required arguments and asserting on
+`result.is_error` directly — the fix and the regression test that
+would have caught the original bug are the same assertion.
+
+That test also pins a distinction worth knowing before writing more
+tools against this server: a **protocol-level** error (bad arguments,
+unknown tool name — MCP's own schema validation failing) sets
+`is_error=True` on the `CallToolResult`. A **payload-level** error (an
+`agent_tools.py` function's own deliberate `{"error": "..."}` return,
+e.g. a missing audit file) is a completely normal, successfully
+returned JSON result — `is_error` stays `False`. Callers need to check
+both: `result.is_error` for "the tool call itself failed," and
+`"error" in json.loads(result.content[0].text)` for "the tool ran and
+reported a recoverable problem."
+
+## What this tool does NOT do
+
+- **It adds no new research logic.** Every tool call here delegates
+  directly to the source package's own `agent_tools.py` function —
+  read that package's own README for what the tool actually measures
+  or detects, and its own limitations.
+- **It does not ship auth, rate limiting, or a hosted deployment.**
+  This is a local stdio-transport server for a single agent/host
+  process, matching the MCP SDK's own default `MCPServer.run()`
+  behavior. SSE and streamable-HTTP transports are available from the
+  underlying `MCPServer` (see `app.run(transport=...)` in
+  `research_mcp/server.py`) but are untested here.
+- **The `mcp` package version is not pinned tightly.** `pyproject.toml`
+  requires `mcp>=1.2.0`; this was built and tested against 2.0.0. The
+  `MCPServer` class name (`mcp.server.mcpserver.MCPServer` in 2.0.0)
+  moved from an earlier `mcp.server.fastmcp.FastMCP` name in older
+  1.x releases — `server.py` has an import-compatibility fallback for
+  that, but it has only actually been exercised against 2.0.0.
+
+## Development
+
+```bash
+source .venv/bin/activate
+python3 -m pytest tests/ -v
+```
+
+11 tests, all going over the real in-memory MCP wire protocol rather
+than calling Python functions directly (that coverage already exists
+in each source package's own test suite).
+
+## License
+
+MIT.
