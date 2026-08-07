@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "verification-lint"
+version = "0.1.0"
+description = "Content-level evidentiary-gap scanner: unattributed quotes, uncited statistics, missing disclaimer sections"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "PIQOS AI Research (Public)" }]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+verification-lint = "verification_lint.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["verification_lint*"]
