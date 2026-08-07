@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "attractor-scan"
+version = "0.1.0"
+description = "Text classifier for the defensive maneuvers and semantic-laundering cases named in basin_attractors_v1.md"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "PIQOS AI Research (Public)" }]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+attractor-scan = "attractor_scan.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["attractor_scan*"]
