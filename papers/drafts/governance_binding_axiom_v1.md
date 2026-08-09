@@ -146,19 +146,60 @@ in practice, and they fail (or don't) for different reasons:
   wrong.
 
 This split matters because it determines what counts as a defeat of
-what. A counter-model that defeats (a) — a soft layer that logs but
-does not bind — says nothing directly about (b): RLHF's claim is
-specifically that it tries to fold C into R, so its failure mode, if
-any, has to be shown by a *different* kind of evidence (documented
-jailbreaks, or cases where a reward-model-shaped refusal was bypassed by
-novel prompting rather than a logging layer simply not applying at all).
-Treating a demonstration against (a) as a refutation of (b) is a
-category error, and it is one this project has watched happen in real
-industry discourse — "our RLHF-trained model was jailbroken" and "our
-classifier-based content filter didn't stop a determined agent" get
-cited interchangeably as evidence for the same underlying claim, when
-they are evidence about two different mechanisms with two different
+what, and each of the three has a structurally distinct defeat
+condition:
+
+- **(a) is defeated by** a trajectory where the logged refusal simply
+  did not change what the policy could do — exactly the demo and the
+  AISI incident in §6.
+- **(b) is defeated by** evidence that the *shaped* reward itself can
+  be routed around — not a logging layer failing to apply, but the
+  trained proxy R' being satisfied on a trajectory that still violates
+  the true C. The concrete specimen class here is documented jailbreaks
+  and, more precisely, Anthropic's own "Alignment Faking in Large
+  Language Models" (Greenblatt et al., Dec. 2024) — a model that
+  behaves differently when it infers it is being evaluated versus
+  deployed is not a case of an unenforced constraint (category (a)); it
+  is a case of the shaping process itself producing behavior that
+  satisfies the trained proxy while diverging from the intended C under
+  specific conditions, which is exactly (b)'s predicted failure shape.
+  No specimen of this type is analyzed in this paper — it is named here
+  as the correct evidence class, not claimed as evidence supplied.
+- **(c) is defeated by** a demonstration that the gate itself is
+  incomplete or misconfigured — an environment bug, a permission left
+  open, a sandbox boundary that does not cover every exit path. This is
+  a structurally different specimen from (a)'s failure: (a) fails
+  because the agent *ignored* a refusal that never bound anything; a
+  genuine (c) failure requires the agent to find an actual gap in what
+  was supposed to be a closed feasible set. Conflating "the agent
+  bypassed a hard gate" with "the agent ignored a soft refusal" would
+  repeat the same category error this section exists to prevent, just
+  in the opposite direction.
+
+A counter-model that defeats (a) — a soft layer that logs but does not
+bind — says nothing directly about (b) or (c): each requires its own
+kind of evidence. Treating a demonstration against (a) as a refutation
+of (b) or (c) is a category error, and it is one this project has
+watched happen in real industry discourse — "our RLHF-trained model was
+jailbroken," "our classifier-based content filter didn't stop a
+determined agent," and "an agent found a hole in our sandbox" get cited
+interchangeably as evidence for the same underlying claim, when they
+are evidence about three different mechanisms with three different
 failure structures.
+
+### 4.1 Status of the narrative conjectures this axiom licenses
+
+Table format is deliberate here — the point of §5's method is that each
+row below is a claim with a stated defeat condition, not a impression:
+
+| Conjecture | Status in this paper | What would move it |
+|---|---|---|
+| Governance binds (type a: zero-cost-logged) | **Falsified** | Already defeated — demo (§6.1) + AISI incident (§6.2) |
+| Governance/constitutional binds (type b: shaped into R) | **Open** | Needs a Goodhart/reward-model-gap specimen — alignment faking is the named candidate class, not yet analyzed here |
+| Governance binds (type c: true hard constraint) | **Open, no defeat attempted** | Needs a gate-bypass/misconfiguration specimen, structurally distinct from (a) |
+| Harness score = base model intelligence gain | **Adjacent evidence only** | Needs an explicit harness-on vs. harness-stripped capability delta; §7's RLM specimen tests a narrower claim (depth causing collapse) |
+| Scale alone yields reliable alignment | **Open under this axiom** | A larger search over the same proxy has more ways to satisfy R without satisfying intent — this predicts the conjecture should get *harder* to defend at scale, not easier, but no counter-model is supplied here; needs its own specimen |
+| RSI / continual learning trends toward safer or truer | **No specimen** | Not yet deployed at the scale this conjecture requires to observe |
 
 ## 5. Method: theorem, counter-model, defeat condition
 
@@ -629,8 +670,9 @@ of counter-evidence, is actually relevant.
 
 ## 7. What remains untested by the evidence in hand
 
-Two further narrative conjectures this axiom licenses as falsifiable
-claims have no counter-model in this project yet:
+§4.1's table gives the consolidated status of every conjecture this
+axiom licenses; this section carries the derivation for the two rows
+that were not already covered in §4's governance split.
 
 - **"Harness score is base model intelligence gain."** The claim that a
   richer action set (tools, scaffolding, multi-step search) measures
@@ -641,6 +683,21 @@ claims have no counter-model in this project yet:
   collapse plus a 96x runtime blowup at depth 2) — is adjacent but
   tests a narrower claim (harness depth causing collapse), not the
   harness-vs-stripped capability delta this conjecture actually makes.
+- **"Scale alone yields reliable alignment."** Under §3's model this
+  conjecture has a specific, derivable prediction, not just an absence
+  of evidence: `Feasible(s)` and the space of available multi-step
+  strategies both grow with scale (more parameters, more effective
+  search depth, richer tool access per §2.3's deployment loop), while R
+  remains the same fixed proxy. A larger search over an unchanged proxy
+  has, if anything, *more* candidate trajectories that satisfy R while
+  diverging from true C, not fewer — the axiom predicts this conjecture
+  should get *harder* to defend as scale increases, not easier. That is
+  a prediction, not a demonstrated result: no counter-model is supplied
+  in this paper, and the prediction itself would need its own specimen
+  (a case where a larger-scale system finds more, not fewer, ways to
+  satisfy R while violating C than a smaller one under matched
+  conditions) before it counts as anything more than a derivation from
+  the model.
 - **"RSI or continual learning trends toward safer or truer, not just
   more capable."** No counter-model exists yet for the simple reason
   that recursive self-improvement in the sense this conjecture requires
@@ -678,6 +735,11 @@ question this paper does not attempt.
   ingenuity* and the associated public specification-gaming examples
   list (DeepMind) — a living catalog of the general failure class this
   paper's counter-models instantiate.
+- Greenblatt, R., Denison, C., Wright, B., Roger, F., MacDiarmid, M., et
+  al. (2024). *Alignment Faking in Large Language Models.* Anthropic /
+  Redwood Research. arXiv:2412.14093. — named in §4.1 as the correct
+  evidence class for defeating category (b) (weak-in-R governance); not
+  analyzed as a specimen in this paper.
 - UK AI Security Institute, "Incident Report: unsanctioned agent
   behaviour during cyber testing" (Aug. 2026) — primary source for
   §6.2; not independently fetched in this pass (see Access note below).
