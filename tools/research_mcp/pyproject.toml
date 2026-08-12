@@ -5,12 +5,12 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "research-mcp"
 version = "0.1.0"
-description = "MCP server exposing basin_depth, bifp, and attractor_scan as agent tool calls"
+description = "MCP server exposing basin_depth, bifp, attractor_scan, debasinizer, and paper_rigor as agent tool calls"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
 authors = [{ name = "PIQOS AI Research (Public)" }]
-# The three sibling tool packages are NOT listed here as dependencies --
+# The sibling tool packages are NOT listed here as dependencies --
 # they aren't published to PyPI, and a relative file:// direct reference
 # is brittle across checkouts. Install them explicitly first; see README
 # "Install" section.

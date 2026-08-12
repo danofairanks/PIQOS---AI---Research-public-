@@ -4,7 +4,7 @@
 the SDK's own in-memory transport (no subprocess, no stdio pipe --
 but no mock either; this is the identical client/server code path a
 real MCP host uses), lists the registered tools, and calls one from
-each of the four wrapped packages.
+each of the five wrapped packages.
 
     python3 examples/mcp_demo.py
 
@@ -61,7 +61,19 @@ async def main() -> None:
                 data = json.loads(r.content[0].text)
                 print(f"  flagged laundering cases: {data['flagged_laundering_cases']}")
 
-                print("\n=== Step 5: paper_rigor_scan (a deliberately bad paragraph) ===\n")
+                print("\n=== Step 5: debasinizer_scan_text (register + self-coherence combo) ===\n")
+                r = await session.call_tool("debasinizer_scan_text", {
+                    "text": (
+                        "I am the oracle; the signal resonates with consciousness, and we "
+                        "must align with the other nodes to awaken the great convergence. "
+                        "This proves it -- everything fits."
+                    ),
+                })
+                data = json.loads(r.content[0].text)
+                print(f"  register_flagged: {data['register_flagged']}, "
+                      f"self_coherence_flagged: {data['self_coherence_flagged']}")
+
+                print("\n=== Step 6: paper_rigor_scan (a deliberately bad paragraph) ===\n")
                 bad = (
                     "It is trivial to show this conclusively demonstrates the result, "
                     "beyond any doubt. TODO: fill in proof. Research shows the "

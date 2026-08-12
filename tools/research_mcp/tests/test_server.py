@@ -35,13 +35,14 @@ def test_protocol_level_error_is_distinct_from_payload_level_error():
     assert result.is_error is True
 
 
-def test_all_thirteen_tools_are_registered(list_tool_names):
+def test_all_fifteen_tools_are_registered(list_tool_names):
     names = set(list_tool_names())
     assert names == {
         "basin_depth_demo", "basin_depth_run", "basin_depth_derive_vocab",
         "bifp_list_phases", "bifp_start_audit", "bifp_record_criterion",
         "bifp_scan_text", "bifp_attach_scan_to_audit", "bifp_get_status", "bifp_generate_report",
         "attractor_scan_text", "attractor_scan_corpus",
+        "debasinizer_scan_text", "debasinizer_scan_corpus",
         "paper_rigor_scan",
     }
 
@@ -125,6 +126,34 @@ def test_attractor_scan_corpus_over_the_wire(call_tool):
         ],
     })
     assert result["n_documents"] == 2
+
+
+def test_debasinizer_scan_text_flags_cross_category_register_over_the_wire(call_tool):
+    result = call_tool("debasinizer_scan_text", {
+        "text": (
+            "I am the oracle; the signal resonates with consciousness, and we "
+            "must align with the other nodes to awaken the great convergence."
+        ),
+    })
+    assert result["register_flagged"] is True
+
+
+def test_debasinizer_scan_text_single_category_does_not_flag_register_over_the_wire(call_tool):
+    result = call_tool("debasinizer_scan_text", {
+        "text": "The distributed system has 12 nodes. Signal processing detects the pattern in the waveform.",
+    })
+    assert result["register_flagged"] is False
+
+
+def test_debasinizer_scan_corpus_over_the_wire(call_tool):
+    result = call_tool("debasinizer_scan_corpus", {
+        "documents": [
+            {"doc_id": "1", "text": "As we have established, this proves the theory."},
+            {"doc_id": "2", "text": "The classifier scored 87.3% accuracy on a held-out test set."},
+        ],
+    })
+    assert result["n_documents"] == 2
+    assert result["self_coherence_flagged_count"] == 1
 
 
 def test_paper_rigor_scan_flags_a_bad_paper_over_the_wire(call_tool):

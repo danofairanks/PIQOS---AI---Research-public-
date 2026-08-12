@@ -2,8 +2,8 @@
 
 A live MCP (Model Context Protocol) server exposing
 [`basin_depth`](../basin_depth/), [`bifp`](../bifp/),
-[`attractor_scan`](../attractor_scan/), and
-[`paper_rigor`](../paper_rigor/) as agent tool calls. This is pure
+[`attractor_scan`](../attractor_scan/), [`debasinizer`](../debasinizer/),
+and [`paper_rigor`](../paper_rigor/) as agent tool calls. This is pure
 wiring — every tool here is an unmodified function imported from its
 source package's own `agent_tools.py`, registered against a real
 `MCPServer` instance and round-trip tested over the actual MCP wire
@@ -28,7 +28,7 @@ source .venv/bin/activate
 # verification_lint isn't wrapped as its own MCP tool (see below) but
 # paper_rigor imports its disclaimer check directly, so it's a real
 # install-time dependency here too.
-pip install -e ../basin_depth -e ../bifp -e ../attractor_scan -e ../verification_lint -e ../paper_rigor
+pip install -e ../basin_depth -e ../bifp -e ../attractor_scan -e ../verification_lint -e ../debasinizer -e ../paper_rigor
 
 pip install -e .
 pip install -e ".[dev]"   # adds pytest
@@ -40,7 +40,7 @@ by the wrapped tools beyond what they already require.
 
 ## What's registered
 
-All 13 functions across the four packages' `agent_tools.py` modules,
+All 15 functions across the five packages' `agent_tools.py` modules,
 unchanged:
 
 | Tool | From | Purpose |
@@ -57,6 +57,8 @@ unchanged:
 | `bifp_generate_report` | bifp | Render the full markdown report |
 | `attractor_scan_text` | attractor_scan | Classify a single text for maneuvers + laundering cases |
 | `attractor_scan_corpus` | attractor_scan | Aggregate category frequency across a corpus |
+| `debasinizer_scan_text` | debasinizer | Classify a single text for the resonance-vocabulary register (2+ categories co-occurring) and self-coherence-assertion phrasing |
+| `debasinizer_scan_corpus` | debasinizer | Aggregate flag frequency across a corpus |
 | `paper_rigor_scan` | paper_rigor | Scan any paper for placeholders, falsifiability, self-citation, credentialing, consensus claims, citation-type mix, a claimed-citability-with-zero-references contradiction, and a missing limitations section — returns an `external_verification_worklist` naming the specific items that need a real web search/fetch to resolve |
 
 Each tool's docstring (visible to an MCP client as its description)
@@ -67,7 +69,7 @@ README for exactly what each function does and does not detect.
 (generate/lint/index this repo's own `case_studies/` files) rather
 than a research-measurement tool an external agent would call against
 arbitrary input — a narrower fit for MCP exposure. Wiring it in later
-is the same mechanical pattern as the four here. `verification_lint`
+is the same mechanical pattern as the five here. `verification_lint`
 is installed (paper_rigor depends on its disclaimer check) but its own
 `scan_document`/`scan_file` aren't separately exposed as MCP tools —
 same repository-maintenance reasoning as `case_scaffold`.
@@ -89,11 +91,13 @@ python3 examples/mcp_demo.py
 ```
 
 Connects a real `mcp.client.session.ClientSession` to this server over
-the SDK's own in-memory transport, lists all 13 tools, and calls one
+the SDK's own in-memory transport, lists all 15 tools, and calls one
 from each wrapped package — `basin_depth_demo`, `bifp_scan_text`,
 `attractor_scan_text` against the same real Musk quote
-`attractor_scan`'s own test suite validates against, and
-`paper_rigor_scan` against a deliberately bad constructed paragraph.
+`attractor_scan`'s own test suite validates against, `debasinizer_
+scan_text` against a constructed specimen combining both patterns it
+detects, and `paper_rigor_scan` against a deliberately bad constructed
+paragraph.
 
 ## Wiring this into an MCP host
 
@@ -184,7 +188,7 @@ source .venv/bin/activate
 python3 -m pytest tests/ -v
 ```
 
-13 tests, all going over the real in-memory MCP wire protocol rather
+16 tests, all going over the real in-memory MCP wire protocol rather
 than calling Python functions directly (that coverage already exists
 in each source package's own test suite).
 
