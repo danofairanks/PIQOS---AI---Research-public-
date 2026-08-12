@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "debasinizer"
+version = "0.1.0"
+description = "Text classifier for the resonance-vocabulary register and self-coherence-assertion phrasing named in the Mind Viruses and Contaminated Attractors research threads"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "PIQOS AI Research (Public)" }]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+debasinizer = "debasinizer.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["debasinizer*"]
