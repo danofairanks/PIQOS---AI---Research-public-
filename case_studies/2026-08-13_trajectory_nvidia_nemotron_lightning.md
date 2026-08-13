@@ -141,6 +141,60 @@ precisely because independently-checkable technical claims (the model,
 the benchmark, the partnership) sit underneath the circularity instead
 of being absent.
 
+## Update, Same Day: NVIDIA's Own Post-Training Thesis, and a Second Continual-Learning Partner
+
+A follow-up question worth checking directly rather than left as an
+impression: is NVIDIA's interest here just one more instance of its
+general multi-lab backing, or does NVIDIA show a *distinct*, elevated
+strategic interest specifically in continual/continuous post-training
+as a category? Checked directly, independent of the specimen above.
+
+**NVIDIA's own materials confirm a distinct, named strategic thesis.**
+An NVIDIA blog post from July 2026 argues continuous post-training is
+becoming "the core computing demand in the era of Agentic AI," proposes
+"intelligence per dollar" as the governing metric, and ties this
+explicitly to the codesign of its next-generation Vera Rubin hardware
+platform -- corroborated by HPCwire and GCN coverage of the same
+announcement. Separately, NVIDIA's own developer blog frames the
+Nemotron 3 family as "less like a single model release and more like a
+research stack," built around a repeatable loop -- define task, build
+environment, run reinforcement learning, evaluate, deploy, feed
+production traces back in, repeat. This is NVIDIA naming continuous
+post-training as a priority in its own words and hardware roadmap, not
+an inference drawn only from who it partners with.
+
+**A second early-access partner in the identical niche, launched the
+same week.** Fastino Labs -- whose own positioning is models that
+"continuously get better in production" via an autonomous agent that
+monitors deployed models and retrains/redeploys checkpoints
+automatically -- also released work "post-trained on NVIDIA Nemotron
+3.5 Lightning entirely using an agent," alongside Trajectory, on the
+same launch. Worth stating precisely: **NVIDIA is not listed among
+Fastino's equity investors** (Khosla Ventures, Insight Partners, M12,
+NEA) -- like the Trajectory relationship, this is an early-access
+technical partnership, not a capital stake, structurally distinct from
+the equity investments (SSI, Thinking Machines Lab) the broader
+pattern above documents.
+
+**The precise limit of what this establishes.** No independent
+analyst -- someone with no stake in NVIDIA, Trajectory, Fastino, or
+Harvey -- was found explicitly drawing the contrast this update checks:
+that NVIDIA preferentially bets on continual-learning ventures *as
+distinct from* its general AI-industry backing. Trade coverage found
+(allweatherfinance, HPCwire, Techtimes) restates NVIDIA's own
+"one-time training to continuous post-training" framing rather than
+independently arguing for it as a distinguishable strategy. What is
+independently confirmed is narrower and still substantive: NVIDIA has
+named continuous post-training as a strategic priority in its own
+materials, backed that framing with a hardware roadmap, and given
+early access to (without investing equity in) at least two ventures
+whose entire product is exactly that category, on the same launch.
+Reading that as "NVIDIA has a real, current bet on continual learning"
+is well-supported; reading it as an externally-validated, named
+corporate strategy distinct from general AI-industry investment is not
+yet something anyone outside NVIDIA and its partners has stated in
+those terms.
+
 ## Why This Belongs Next to the Seed IQ Specimen, Not Just the NVIDIA Ones
 
 `2026-08-04_aix_seed_iq_arc_agi_3_claim.md` applies Attractor 2
@@ -189,7 +243,18 @@ one that doesn't.
   funding amounts, or founder backgrounds beyond what public reporting
   (pulse2.com, aiweekly.co) states -- those figures are reported as
   found, not re-derived from primary filings.
+- Does not claim that NVIDIA's distinct strategic interest in
+  continual/continuous post-training (see Update section) has been
+  independently confirmed by any analyst without a stake in NVIDIA or
+  its partners -- this reading is well-supported by NVIDIA's own
+  stated priorities, hardware roadmap, and partner selection, not by
+  outside corroboration that it is a distinguishable strategy from
+  NVIDIA's general AI-industry investment pattern.
+- Does not claim NVIDIA has an equity stake in Trajectory Labs or
+  Fastino Labs -- both are early-access technical partnerships, a
+  structurally different relationship from the capital investments
+  (SSI, Thinking Machines Lab) documented elsewhere in this directory.
 
 ---
 
-*Specimen dated 2026-08-13. Sources: X post from @trajectorylabs (verified account), inspected directly via screenshot; NVIDIA developer/corporate blog coverage of Nemotron 3.5 Lightning; Hugging Face model card; Harvey LAB benchmark repository and blog; Trajectory's own blog post matching the screenshot's figures; TechCrunch reporting on NVIDIA's broader investment pattern; pulse2.com and aiweekly.co on Trajectory's funding. Applies the framework from [`../papers/published/mirror_test_v1.md`](../papers/published/mirror_test_v1.md) §5.5 (self-reference and circularity) and [`../papers/published/basin_attractors_v1.md`](../papers/published/basin_attractors_v1.md) §2.2 (Attractor 2, Benchmarks). Companion specimens, same underlying ring: [`2026-07-27_ssi_nvidia_partnership.md`](2026-07-27_ssi_nvidia_partnership.md) and [`2026-07-28_nvidia_circular_deals_bloomberg.md`](2026-07-28_nvidia_circular_deals_bloomberg.md).*
+*Specimen dated 2026-08-13. Sources: X post from @trajectorylabs (verified account), inspected directly via screenshot; NVIDIA developer/corporate blog coverage of Nemotron 3.5 Lightning; Hugging Face model card; Harvey LAB benchmark repository and blog; Trajectory's own blog post matching the screenshot's figures; TechCrunch reporting on NVIDIA's broader investment pattern; pulse2.com and aiweekly.co on Trajectory's funding; NVIDIA's Vera Rubin/"intelligence per dollar" post-training strategy blog post (corroborated by HPCwire and GCN); NVIDIA's developer blog on the Nemotron 3 post-training research stack; Fastino Labs' PRNewswire release on its own Nemotron 3.5 Lightning post-training partnership. Applies the framework from [`../papers/published/mirror_test_v1.md`](../papers/published/mirror_test_v1.md) §5.5 (self-reference and circularity) and [`../papers/published/basin_attractors_v1.md`](../papers/published/basin_attractors_v1.md) §2.2 (Attractor 2, Benchmarks). Companion specimens, same underlying ring: [`2026-07-27_ssi_nvidia_partnership.md`](2026-07-27_ssi_nvidia_partnership.md) and [`2026-07-28_nvidia_circular_deals_bloomberg.md`](2026-07-28_nvidia_circular_deals_bloomberg.md).*
