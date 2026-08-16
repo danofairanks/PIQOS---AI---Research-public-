@@ -49,6 +49,21 @@ This repository is released under the [MIT License](LICENSE). You are
 free to use, modify, and redistribute this work, including for
 commercial purposes, provided the license notice is retained.
 
+## Authorship
+
+All research direction, verification, and editorial judgment in this
+repository — what gets investigated, what counts as sourced rather than
+asserted, what gets published versus held back as unverified — is by
+Daniel Fairbanks, the named copyright holder in the `LICENSE` file. AI
+tools (Claude, and others used for specimen search per this project's
+own `living_research` methodology) are used throughout as drafting and
+research aids, not as independent authors: every factual claim carries a
+stated evidentiary tier, every specimen is checked against primary
+sources before being treated as settled, and the human author is the one
+deciding what meets that bar. This is a factual description of how the
+work was produced, stated once here rather than repeated per document,
+and dated by this repository's own git history.
+
 ## Attribution
 
 If you use, adapt, or build on this work, please provide attribution
