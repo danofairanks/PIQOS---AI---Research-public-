@@ -124,6 +124,87 @@ correction here cost the responder nothing to produce and the audience nothing
 to verify, which is plausibly why it broke almost immediately instead of being
 absorbed. Full analysis: [`../../case_studies/2026-07-31_altman_family_podcast_ratio.md`](../../case_studies/2026-07-31_altman_family_podcast_ratio.md).
 
+**Addendum (2026-08-16): the distinction is not this project's invention.**
+A fair question about §4.1–4.2's grounded/detached split is whether it is a
+private vocabulary dressed up to sound rigorous, or whether it names
+something that recurs independently once other fields go looking for the
+same gap. It is the latter — the same split, or a structurally identical
+one, appears across at least three independent literatures that predate and
+do not cite each other:
+
+- **Epistemology.** Coherentist theories of truth (a belief is "true" if it
+  is internally consistent with the rest of a belief system) versus
+  correspondence theories of truth (a belief is true if it matches external
+  reality) is a long-standing dispute, not a recent one — the coherentist
+  side runs through the British Idealists (F.H. Bradley, and later Brand
+  Blanshard), with correspondence theorists objecting on essentially this
+  entry's grounds: internal consistency alone cannot certify truth, because
+  an entirely self-consistent belief system can still fail to touch reality
+  anywhere.
+- **Natural language generation research.** The NLG literature separates
+  **fluency** (is the text well-formed, grammatical, natural-sounding) from
+  **faithfulness** or **factual consistency** (does the text's content
+  actually hold given its source or the world) as close-to-orthogonal
+  properties, precisely because early automatic metrics optimized for the
+  first and were repeatedly found blind to the second. Ji, Lee, Frieske et
+  al., "Survey of Hallucination in Natural Language Generation" (*ACM
+  Computing Surveys* 55(12), Art. 248, March 2023) is the standard reference
+  for the resulting taxonomy of hallucination as fluent-but-ungrounded
+  output — a distinct failure mode from a model simply producing broken
+  text.
+- **Philosophy applied directly to LLMs.** Hicks, Humphries & Slater,
+  "ChatGPT is Bullshit" (*Ethics and Information Technology* 26, Art. 38,
+  2024) argue directly that LLM hallucination is better modeled as Frankfurt
+  bullshit (*On Bullshit*, 1986) — output produced with indifference to
+  truth value — than as lying (which requires tracking truth in order to
+  invert it) or as noise. Their point is adjacent to this entry's: fluent,
+  well-formed, indifferent-to-truth output is a distinct category from
+  garbled output, and needs its own name.
+
+One further, narrower, adjacent-but-not-identical term is worth naming
+precisely so it is not conflated with the above: Barzilay & Lapata,
+"Modeling Local Coherence: An Entity-Based Approach" (*Computational
+Linguistics* 34(1), 2008) also uses the phrase "local coherence," but for a
+different, narrower thing — how well entity references transition from
+sentence to sentence within a discourse, measured via an entity-grid
+representation, independent of whether the discourse is grounded in
+anything external. It is a real, established, and useful term in
+computational discourse linguistics; it is not the same claim as this
+entry's grounded/detached distinction, and citing it as if it were would be
+exactly the kind of borrowed-precision move §2.8 of `basin_attractors_v1.md`
+already names as semantic laundering. The two senses share two words, not a
+referent.
+
+**A correction to a common assumption, with a citation.** It is often
+assumed that a badly failing or degenerate model would show up as obviously
+broken output — garbled, ungrammatical, incoherent in the plain sense. The
+best-documented empirical case of a real generative-model degradation
+mechanism says otherwise: Shumailov, Shumaylov, Zhao, Gal, Papernot & Anderson,
+"AI models collapse when trained on recursively generated data" (*Nature*
+631, 2024, 755–759; preprint: "The Curse of Recursion," arXiv:2305.17493,
+2023) found that recursive training on model-generated data does not
+degrade output into gibberish — it narrows the output distribution, losing
+the tails and converging toward a homogenized, low-diversity result, while
+remaining fluent and grammatical throughout every generation of the
+experiment. The failure signature is narrowing, not babbling. One honest
+caveat belongs alongside that citation: "model collapse" itself is
+contested terminology in the field. Schaeffer, Kazdan, Arulandu & Koyejo,
+"Position: Model Collapse Does Not Mean What You Think" (arXiv:2503.03150,
+2025) catalog at least eight distinct, sometimes-conflicting definitions of
+"model collapse" in active use and argue the term has drifted from a
+specific empirical finding into a loosely-defined threat narrative. The
+claim this addendum grounds is therefore the specific, narrow, replicated
+empirical result — narrowing without babbling — not "model collapse" taken
+as a single settled phenomenon.
+
+None of these three literatures uses this project's vocabulary, and none
+was written with this project in mind. That is the point of citing them
+here: the grounded/detached split is not a private formalism requiring
+this project's own framework to understand — it is a recurring finding
+across epistemology, NLG research, and applied philosophy of language,
+independently arrived at, because it is tracking something real rather
+than something invented for this document's convenience.
+
 ---
 
 ## Metrics vs. Soundness
