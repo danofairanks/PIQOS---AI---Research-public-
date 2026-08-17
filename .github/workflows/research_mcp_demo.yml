@@ -1,0 +1,46 @@
+name: research_mcp live demo (manual)
+
+# Manual-only: never runs on push/PR/schedule. Same reason as the
+# other three Groq-backed demo workflows in this repo: this project's
+# own dev sandbox has api.groq.com blocked at the network-egress-
+# policy level, so the live call happens here instead. See
+# tools/research_mcp/README.md "What's registered" for the three
+# Groq-backed tools this demo exercises and their advisory-only design.
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  offline-tests-and-live-demo:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: tools/research_mcp
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install wrapped packages (editable) then research_mcp itself
+        run: |
+          pip install -e ../basin_depth -e ../bifp -e ../attractor_scan -e ../verification_lint -e ../debasinizer -e ../paper_rigor
+          pip install -e .
+          pip install -e ".[dev]"
+
+      - name: Run offline test suite (real MCP wire protocol, no network, no secret required)
+        run: python3 -m pytest tests/ -v
+
+      - name: Run the 30-second MCP demo against Groq
+        # Repo secret is named GROQ_API; the three Groq-backed tools
+        # read GROQ_API_KEY specifically -- mapped here, same as the
+        # other three demo workflows, so the secret's stored name
+        # doesn't need to match the code's env var name. mcp_demo.py
+        # paces itself (65s between Groq calls) to stay inside this
+        # account's 8000 TPM cap -- see the script's own docstring.
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API }}
+        run: python3 examples/mcp_demo.py

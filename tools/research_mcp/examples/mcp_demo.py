@@ -8,7 +8,15 @@ each of the five wrapped packages, plus all three Groq-backed tools
 (bifp_judge_rebuttal, attractor_scan_judge_visual_proof,
 paper_rigor_triage_worklist) -- each skipped gracefully if
 GROQ_API_KEY isn't set, since those are the only calls here that make
-a real external API request; every other step is fully offline.
+a real external API request; every other step is fully offline. When
+GROQ_API_KEY is set, waits 65s after each Groq call before the next
+one -- this account's on_demand tier has an 8000 TPM cap and a single
+vision call alone has been observed to use 7996/8000 of it (see
+attractor_scan/examples/visual_proof_judge_demo.py), so all three Groq
+steps run back-to-back would very likely 429 the second and third.
+With three Groq calls, a full run with a key set takes a bit over two
+minutes; with no key set, all three skip instantly and the whole demo
+finishes in well under a second.
 
     python3 examples/mcp_demo.py
 
@@ -21,6 +29,8 @@ into an MCP host".
 import asyncio
 import json
 import os
+import sys
+import time
 from pathlib import Path
 
 from mcp.client.session import ClientSession
@@ -33,6 +43,15 @@ _VISUAL_PROOF_IMAGE = (
     Path(__file__).resolve().parents[2] / "attractor_scan" / "examples"
     / "visual_proof_demo_images" / "genuine_benchmark_chart.png"
 )
+
+# Confirmed live (attractor_scan/examples/visual_proof_judge_demo.py,
+# 2026-08-17): a single vision call on this account's on_demand tier
+# (8000 TPM) used 7996/8000 by itself -- any other Groq call inside the
+# same 60s window 429s regardless of its own size. This demo makes
+# three Groq calls in sequence (bifp, then vision, then paper_rigor);
+# without pacing, the calls on either side of the vision step would
+# almost certainly fail. Same fix as that demo script: wait it out.
+_SECONDS_BETWEEN_GROQ_CALLS = 65
 
 
 async def main() -> None:
@@ -78,6 +97,9 @@ async def main() -> None:
                         print(f"  error: {data['error']}")
                     else:
                         print(f"  candidate_read: {data['candidate_read']}")
+                    print(f"  (waiting {_SECONDS_BETWEEN_GROQ_CALLS}s before the next Groq call "
+                          f"-- see module docstring)", file=sys.stderr)
+                    time.sleep(_SECONDS_BETWEEN_GROQ_CALLS)
                 else:
                     print("  (GROQ_API_KEY not set -- skipping; makes a real external API call)")
 
@@ -99,6 +121,9 @@ async def main() -> None:
                         print(f"  error: {data['error']}")
                     else:
                         print(f"  candidate_read: {data['candidate_read']}")
+                    print(f"  (waiting {_SECONDS_BETWEEN_GROQ_CALLS}s before the next Groq call "
+                          f"-- see module docstring)", file=sys.stderr)
+                    time.sleep(_SECONDS_BETWEEN_GROQ_CALLS)
                 elif not _VISUAL_PROOF_IMAGE.is_file():
                     print(f"  ({_VISUAL_PROOF_IMAGE} not found -- run attractor_scan/examples/"
                           f"generate_visual_proof_demo_images.py first; skipping)")
