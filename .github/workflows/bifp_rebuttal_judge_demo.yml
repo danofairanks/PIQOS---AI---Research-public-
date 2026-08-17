@@ -31,6 +31,19 @@ jobs:
       - name: Run offline test suite (no network, no secret required)
         run: python3 -m pytest -q
 
+      - name: List currently available Groq models
+        # Ground truth for DEFAULT_MODEL in rebuttal_judge.py, which is
+        # a plain string constant and can drift out of date as Groq's
+        # catalog changes -- confirming against the real endpoint here
+        # instead of guessing again if the next step 404s.
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API }}
+        run: |
+          curl -sS https://api.groq.com/openai/v1/models \
+            -H "Authorization: Bearer $GROQ_API_KEY" \
+            -H "User-Agent: bifp-rebuttal-judge/0.1 (+https://github.com/danofairanks/PIQOS---AI---Research-public-)" \
+            | python3 -m json.tool
+
       - name: Run rebuttal-judge live demo against Groq
         env:
           # Repo secret is named GROQ_API; rebuttal_judge.py reads
