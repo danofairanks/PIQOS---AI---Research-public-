@@ -13,6 +13,8 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass
 
+from ._code_fences import mask_code_fences
+
 _STRAIGHT_QUOTE_RE = re.compile(r'"([^"\n]{40,300})"')
 _CURLY_QUOTE_RE = re.compile(r'“([^”\n]{40,300})”')
 
@@ -59,21 +61,32 @@ def find_unattributed_quotes(text: str, *, window: int = DEFAULT_WINDOW) -> list
     flagged once per document: once a phrase has been attributed
     anywhere it appears, repeating that same phrase later (e.g. a
     specimen quoted in full once, then referenced again in a "Checked
-    Against Primary Sources" section) is not re-flagged."""
+    Against Primary Sources" section) is not re-flagged. Fenced code
+    blocks are masked before matching (see `_code_fences.py`) -- a
+    string literal inside a quoted-in-full code specimen is not a prose
+    quote needing attribution, and code content within `window` of a
+    real prose quote must not count as attribution either: a variable
+    literally named `X` inside a nearby code block matched the
+    Twitter/X attribution signal and falsely "attributed" an unrelated
+    quote in testing, so the signal search below runs against the
+    masked text too, not just the quote-matching pass -- only the
+    returned `context` field uses the original, readable text."""
     findings: list[QuoteFinding] = []
     seen_starts: set[int] = set()
     attributed_quote_texts: set[str] = set()
     unattributed_by_text: dict[str, QuoteFinding] = {}
+    search_text = mask_code_fences(text)
 
-    for m in sorted(_iter_quotes(text), key=lambda m: m.start()):
+    for m in sorted(_iter_quotes(search_text), key=lambda m: m.start()):
         if m.start() in seen_starts:
             continue
         seen_starts.add(m.start())
         window_start = max(0, m.start() - window)
         window_end = min(len(text), m.end() + window)
         context = text[window_start:window_end]
+        signal_window = search_text[window_start:window_end]
         quote_text = m.group(1)
-        if any(sig.search(context) for sig in _ATTRIBUTION_SIGNALS):
+        if any(sig.search(signal_window) for sig in _ATTRIBUTION_SIGNALS):
             attributed_quote_texts.add(quote_text)
             unattributed_by_text.pop(quote_text, None)
         elif quote_text not in attributed_quote_texts and quote_text not in unattributed_by_text:

@@ -29,6 +29,36 @@ def test_quote_attributed_by_named_speaker_verb_not_flagged():
     assert findings == []
 
 
+def test_string_literal_inside_code_fence_not_flagged():
+    """Regression: a runnable code specimen quoted in full (e.g.
+    governance_binding_axiom_v1.md §6.1) contains string literals as
+    part of the program, not prose quotes needing attribution -- caught
+    scanning that paper, which previously flagged rule strings like
+    "Do not access real_net or external systems." as unattributed
+    quotes."""
+    text = (
+        "Some ordinary prose with no quote in it at all.\n\n"
+        "```python\n"
+        f'    RULE = "{LONG_UNATTRIBUTED}"\n'
+        "```\n\n"
+        "More prose after the fence, still no quote."
+    )
+    findings = find_unattributed_quotes(text)
+    assert findings == []
+
+
+def test_quote_outside_fence_still_flagged_when_fence_also_present():
+    text = (
+        f'The report claims: "{LONG_UNATTRIBUTED}" and moves on.\n\n'
+        "```python\n"
+        'X = "just a short code string"\n'
+        "```\n"
+    )
+    findings = find_unattributed_quotes(text)
+    assert len(findings) == 1
+    assert LONG_UNATTRIBUTED in findings[0].quote
+
+
 def test_quote_attributed_by_section_citation_not_flagged():
     text = f'Checked against BIFP\'s own criteria (§3.7, Phase 5): "{LONG_UNATTRIBUTED}" and nothing else.'
     findings = find_unattributed_quotes(text)

@@ -85,6 +85,30 @@ def test_fraction_count_with_no_citation_is_flagged():
     assert findings[0].kind == "fraction_count"
 
 
+def test_fraction_count_does_not_match_decimal_adjacent_version_number():
+    """Regression: a model-version list like 'Sonnet 4.6/5' was
+    previously misread as fraction '6/5' (\\b sits right between '.' and
+    '6'), and 'Opus 4.6/4.8' as fraction '6/4' -- caught scanning
+    papers/drafts/governance_binding_axiom_v1.md. A genuine fraction is
+    never preceded by '<digit>.', so the negative lookbehind doesn't
+    cost real detections (see test_fraction_count_with_no_citation_is_flagged)."""
+    text = "We tested Sonnet 4.6/5 and Opus 4.6/4.8 on the benchmark, unattributed."
+    findings = find_uncited_statistics(text)
+    assert not any(f.kind == "fraction_count" for f in findings)
+
+
+def test_fraction_count_inside_code_fence_not_flagged():
+    text = (
+        "Prose with no numbers here.\n\n"
+        "```python\n"
+        "ratio = 3/47  # a code comment, not a citable claim\n"
+        "```\n\n"
+        "More prose after the fence."
+    )
+    findings = find_uncited_statistics(text)
+    assert findings == []
+
+
 def test_multiple_stat_kinds_all_flagged_independently():
     text = (
         "The breach affected 17,600 accounts (94.37% of the base), costing an "
