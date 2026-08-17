@@ -354,21 +354,33 @@ never read from a repo file, never included in any output or error
 message. Uses only `urllib` from the standard library, so the
 package's only real dependency stays `verification_lint`.
 
-**Live-verification status.** Not yet run against the live Groq API —
-same starting point `bifp`'s rebuttal judge and `attractor_scan`'s
-visual-proof judge both had before their own live runs (see those
-packages' READMEs for what each surfaced getting there — a Cloudflare
-User-Agent block, a reasoning-model token budget, and this account's
-real TPM cap; the User-Agent fix is already applied here proactively).
-The offline test suite (`tests/test_worklist_triage.py`, 11 tests)
-mocks the Groq call and covers the empty-worklist short-circuit, key
-handling, response parsing, and every integrity-check failure mode
-(count mismatch, index mismatch, invalid priority) — all passing. Run
-it against the live API via
+**Live-verification status: confirmed, 2026-08-17, first attempt.**
+Unlike `bifp`'s rebuttal judge and `attractor_scan`'s visual-proof
+judge — each of which needed two or three live iterations to fix a
+Cloudflare User-Agent block, a reasoning-model token budget, and this
+account's real TPM cap, respectively — this feature's live run passed
+cleanly on the first try, having applied the User-Agent fix
+proactively and picked a conservative `max_completion_tokens` (2048)
+up front from those two packages' findings. The offline test suite
+(`tests/test_worklist_triage.py`, 14 tests) mocks the Groq call and
+covers the empty-worklist short-circuit, key handling, response
+parsing, and every integrity-check failure mode (count mismatch, index
+mismatch, invalid priority) — all passing.
+
+Real output against `rigor_demo.py`'s constructed `BAD_PARAGRAPH`
+specimen's 5-item, 3-kind worklist: the concrete, checkable
+"Research shows the model outperforms all baselines" empirical claim
+came back `priority: "high"` with `suggested_check: "Locate the
+original study or report... and verify that it actually reports the
+claimed finding"`; the vaguer credential and consensus appeals ("as a
+renowned expert," "it is well known that") all came back `priority:
+"medium"`, each with a distinct, specific suggested check (verify the
+expert's credentials and publications; search for systematic
+reviews/meta-analyses). All 5 input items preserved exactly — nothing
+invented, dropped, or reordered. Re-run via
 [`.github/workflows/paper_rigor_worklist_triage_demo.yml`](../../.github/workflows/paper_rigor_worklist_triage_demo.yml)
 (`workflow_dispatch`-only, since this build environment has
-`api.groq.com` blocked at the network-policy level) before relying on
-this feature's actual triage quality, not just its plumbing.
+`api.groq.com` blocked at the network-policy level) any time.
 
 ## Development
 
