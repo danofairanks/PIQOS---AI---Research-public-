@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paper-Rigor Scanner — PIQOS AI Research (Public)</title>
+<meta name="description" content="Paste or upload a paper and run it through five independent heuristic scanners -- entirely in your browser, nothing uploaded.">
+<link rel="stylesheet" href="assets/style.css">
+<!--
+  Runs entirely client-side via Pyodide (CPython compiled to WASM).
+  Pyodide itself loads from the jsdelivr CDN (see PYODIDE_BASE in
+  assets/scan-app.js) -- not vendored into this repo, matching standard
+  Pyodide deployment practice and keeping this a research-artifacts
+  repo rather than one carrying a ~14MB third-party binary runtime.
+  The five scanner packages ARE vendored, as tiny (~130KB total) pure-
+  Python wheels built from tools/*/ -- see docs/assets/wheels/ and
+  tools/*/README.md "Agent tool-calling surface" sections. Rebuild
+  wheels after any change to verification_lint, paper_rigor,
+  attractor_scan, bifp, or debasinizer's source and recommit them here;
+  there is no CI step that does this automatically (see the wheel-sync
+  decision noted in chat history / commit message).
+-->
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="index.html">PIQOS AI Research (Public)</a>
+    <nav class="site-nav">
+      <a href="index.html">Index</a>
+      <a href="index.html#tools">Tools</a>
+      <a href="https://github.com/danofairanks/PIQOS---AI---Research-public-">Repository</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="intro">
+    <h1>Paper-Rigor Scanner</h1>
+    <p>
+      Paste or upload a paper, get back a structured report from five
+      independent heuristic scanners from this repository's own
+      toolkit: <a href="https://github.com/danofairanks/PIQOS---AI---Research-public-/tree/claude/public-research-repo-setup-rppbk2/tools/paper_rigor"><code>paper_rigor</code></a>,
+      <a href="https://github.com/danofairanks/PIQOS---AI---Research-public-/tree/claude/public-research-repo-setup-rppbk2/tools/verification_lint"><code>verification_lint</code></a>,
+      <a href="https://github.com/danofairanks/PIQOS---AI---Research-public-/tree/claude/public-research-repo-setup-rppbk2/tools/attractor_scan"><code>attractor_scan</code></a>,
+      <a href="https://github.com/danofairanks/PIQOS---AI---Research-public-/tree/claude/public-research-repo-setup-rppbk2/tools/bifp"><code>bifp</code></a>, and
+      <a href="https://github.com/danofairanks/PIQOS---AI---Research-public-/tree/claude/public-research-repo-setup-rppbk2/tools/debasinizer"><code>debasinizer</code></a>.
+      Placeholder/hand-wave phrases, an unstated falsifiability
+      condition, self-citation ratio, uncited statistics, unattributed
+      quotes, semantic-laundering patterns, and more — each reported
+      separately, with the matched evidence, not blended into a single
+      score.
+    </p>
+    <p class="privacy-note">
+      This runs entirely in your browser via <a href="https://pyodide.org/">Pyodide</a>
+      (Python compiled to WebAssembly). The text you paste or upload is
+      never sent to a server — the only network requests this page
+      makes are for the Pyodide runtime itself and this repository's
+      own scanner packages, both fetched once and cached by your
+      browser. You can verify this yourself: open your browser's
+      network panel while scanning, or read
+      <a href="assets/scan-app.js"><code>assets/scan-app.js</code></a>
+      and <a href="assets/py/paper_scan.py"><code>assets/py/paper_scan.py</code></a> directly.
+    </p>
+  </div>
+
+  <div class="scan-form">
+    <label for="input-title">Title (optional, used only in the report heading)</label>
+    <input id="input-title" type="text" placeholder="e.g. the paper's own title">
+
+    <label for="input-text">Paper text</label>
+    <textarea id="input-text" placeholder="Paste the paper's text here, or choose a file below."></textarea>
+
+    <label for="file-input">...or load a .txt / .md file (read locally, never uploaded)</label>
+    <input id="file-input" type="file" accept=".txt,.md,text/plain,text/markdown">
+
+    <div class="scan-controls">
+      <button id="scan-button" class="btn" type="button">Scan</button>
+      <span id="status" role="status" aria-live="polite"></span>
+    </div>
+  </div>
+
+  <div id="downloads" hidden>
+    <button id="download-md" class="btn btn-secondary" type="button">Download Markdown report</button>
+    <button id="download-json" class="btn btn-secondary" type="button">Download JSON</button>
+  </div>
+
+  <div id="report"></div>
+</main>
+
+<footer class="site-footer">
+  <p>
+    Part of <a href="index.html">PIQOS AI Research (Public)</a>, released under the
+    <a href="https://github.com/danofairanks/PIQOS---AI---Research-public-/blob/claude/public-research-repo-setup-rppbk2/LICENSE">MIT License</a>.
+    Every check here is a heuristic lead, not a verdict — see each
+    linked tool's own README for exactly what it does and does not
+    detect, and its documented false-positive/negative rate.
+  </p>
+</footer>
+
+<script src="assets/scan-app.js"></script>
+</body>
+</html>

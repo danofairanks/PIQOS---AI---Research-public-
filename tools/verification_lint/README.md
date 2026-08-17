@@ -174,11 +174,27 @@ that merely use blanket end-sourcing.
 python3 -m pytest tests/ -v
 ```
 
-47 tests. Every quote/statistic/disclaimer/sourcing check is validated
+50 tests. Every quote/statistic/disclaimer/sourcing check is validated
 both against constructed examples and against this repo's own real
 `case_studies/` files (`tests/test_scan.py`), pinning the exact
 gap/severe-gap counts reported above so a future change to the
 heuristics has to consciously re-justify any shift in those numbers.
+`tests/test_agent_tools.py` covers the `agent_tools.py` surface below.
+
+## Agent tool-calling surface
+
+`agent_tools.py` exposes `verification_lint_scan_text(text, *,
+min_word_count=400) -> dict`, the same JSON-in/JSON-out contract as
+`basin_depth`, `bifp`, `attractor_scan`, `debasinizer`, and
+`paper_rigor`'s own `agent_tools.py` modules. Not wired into
+`tools/research_mcp/` — that server's own README scopes this package
+as a repository-maintenance tool (linting this repo's own
+`case_studies/` house format) rather than an agent-callable research
+tool, a distinction specific to research_mcp's own scope question. It
+is used directly by the in-browser paper-rigor scanner at
+[`docs/scan.html`](../../docs/scan.html), where unattributed-quote and
+uncited-statistic detection is directly relevant to an arbitrary
+uploaded paper regardless of source repository.
 
 ## License
 

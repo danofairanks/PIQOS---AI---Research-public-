@@ -1,0 +1,92 @@
+name: docs/scan.html live demo (manual)
+
+# Manual-only: never runs on push/PR/schedule. This repo's own dev
+# sandbox has cdn.jsdelivr.net blocked at the network-egress-policy
+# level (same class of restriction that made the Groq demo workflows
+# necessary), so the real Pyodide-CDN round trip can only be verified
+# here, on a runner with normal internet access. See
+# docs/tests/live_scan_test.mjs for what this actually checks.
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  offline-tests-and-live-demo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run verification_lint's offline test suite (covers the new agent_tools.py surface)
+        working-directory: tools/verification_lint
+        run: |
+          pip install -e ".[dev]"
+          python3 -m pytest tests/ -v
+
+      - name: Rebuild the 5 scanner wheels and diff their source against the committed copies
+        # Catches the real failure mode this feature is exposed to: a
+        # source change under tools/*/ landing without its wheel being
+        # rebuilt and recommitted (the wheel-sync approach chosen for
+        # this feature is manual, not automatic -- see docs/scan.html's
+        # own top-of-file comment). Diffs extracted *source files only*
+        # (excludes each wheel's own .dist-info/ metadata directory)
+        # rather than raw wheel bytes or a whole-file hash: the WHEEL
+        # metadata file embeds the building setuptools/wheel package's
+        # own version string, which can legitimately differ between
+        # this runner and wherever the committed wheel was built even
+        # when the actual Python source is identical -- a raw-byte or
+        # whole-file-hash diff would false-positive on that alone.
+        run: |
+          pip install --quiet build
+          workspace="$(pwd)"
+          mismatch=0
+          for pkg in verification_lint paper_rigor attractor_scan bifp debasinizer; do
+            check_dir="/tmp/wheel_check_$pkg"
+            rm -rf "$check_dir"
+            mkdir -p "$check_dir/committed" "$check_dir/rebuilt" "$check_dir/built"
+            python3 -m build --wheel --outdir "$check_dir/built" "$workspace/tools/$pkg"
+            committed_whl="$(ls "$workspace"/docs/assets/wheels/${pkg}-*.whl)"
+            rebuilt_whl="$(ls "$check_dir"/built/${pkg}-*.whl)"
+            unzip -q "$committed_whl" -d "$check_dir/committed" -x '*.dist-info/*'
+            unzip -q "$rebuilt_whl" -d "$check_dir/rebuilt" -x '*.dist-info/*'
+            if ! diff -rq "$check_dir/committed" "$check_dir/rebuilt"; then
+              echo "::error::docs/assets/wheels/$(basename "$committed_whl") is stale relative to tools/$pkg -- rebuild and recommit it."
+              mismatch=1
+            fi
+          done
+          if [ "$mismatch" -eq 1 ]; then
+            exit 1
+          fi
+          echo "All 5 committed wheels match a fresh rebuild of their current source."
+
+      - name: Install Playwright + Chromium
+        working-directory: docs/tests
+        run: |
+          npm init -y >/dev/null
+          npm install playwright
+          npx playwright install --with-deps chromium
+
+      - name: Serve docs/ locally
+        working-directory: docs
+        run: |
+          python3 -m http.server 8000 --bind 127.0.0.1 &
+          echo $! > /tmp/docs_server.pid
+          sleep 1
+          curl -sf http://127.0.0.1:8000/scan.html >/dev/null
+
+      - name: Run the real live-scan test against the production Pyodide CDN
+        working-directory: docs/tests
+        run: node live_scan_test.mjs http://127.0.0.1:8000/
+
+      - name: Stop the local static server
+        if: always()
+        run: kill "$(cat /tmp/docs_server.pid)" 2>/dev/null || true
