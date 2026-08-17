@@ -32,7 +32,15 @@ import urllib.request
 from dataclasses import dataclass, field
 
 GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
-DEFAULT_MODEL = "llama-3.3-70b-versatile"
+# Confirmed live against GET /openai/v1/models on 2026-08-17 (CI run
+# 32042275964's "List currently available Groq models" step) -- one of
+# three models on Groq's current catalog supporting both json_mode and
+# reasoning (the others: openai/gpt-oss-20b, qwen/qwen3.6-27b). Picked
+# the largest since this is a meaning-comparison judgment task, not
+# pattern matching, so reasoning quality matters more than latency/cost
+# here. Groq's catalog changes over time; re-run that workflow step if
+# this ever 404s with model_not_found again.
+DEFAULT_MODEL = "openai/gpt-oss-120b"
 
 # Honest, descriptive identification -- not a spoofed browser UA. Groq's
 # edge (Cloudflare) returns HTTP 403 "error code: 1010" (a browser-

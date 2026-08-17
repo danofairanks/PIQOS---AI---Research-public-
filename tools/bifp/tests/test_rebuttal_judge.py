@@ -143,9 +143,9 @@ def test_custom_model_is_passed_through(monkeypatch):
         })
 
     monkeypatch.setattr("bifp.rebuttal_judge._call_groq_api", fake_call)
-    result = judge_rebuttal("c", "r", model="llama-3.1-8b-instant")
-    assert seen["model"] == "llama-3.1-8b-instant"
-    assert result.model == "llama-3.1-8b-instant"
+    result = judge_rebuttal("c", "r", model="openai/gpt-oss-20b")
+    assert seen["model"] == "openai/gpt-oss-20b"
+    assert result.model == "openai/gpt-oss-20b"
 
 
 def test_call_groq_api_sets_identifying_user_agent(monkeypatch):
