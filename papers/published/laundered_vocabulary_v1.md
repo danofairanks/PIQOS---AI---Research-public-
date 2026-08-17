@@ -236,6 +236,35 @@ performance at comparable ARC-AGI-2 scores) documented against it.
 metric moving. If the only available check is "the number went up," the claim
 is resting on the metric, not on soundness.
 
+**A second illustration, dated, at individual scale, specimen redacted.** A
+mid-August 2026 LinkedIn thread shows the same substitution outside any lab
+context. A self-published builder posted a promotional graphic claiming to be
+"sitting at a level most people don't reach in twenty" after roughly one year
+of work, contrasting himself against people who "still have nothing
+verifiable." A commenter asked the actual soundness question directly and
+repeatedly: what metric defines "level," who is the comparison class, how was
+the comparison performed, what evidence supports the "twenty years" figure.
+The builder's answer, in an earlier post in the same thread, was a short demo
+video of a UI console — sliders, basic interactive controls — offered as if
+its existence settled the comparative claim. Applying this entry's own test
+(*what would falsify the claim independent of the metric moving?*): the video
+is a metric-shaped artifact — real, checkable, it runs — that says nothing
+about the specific comparison being claimed. A demo proves a demo exists; it
+does not establish "twenty years ahead of most people" any more than a
+benchmark score alone establishes general capability. The same substitution
+`basin_attractors_v1.md` §2.2 documents at lab scale (benchmark performance
+standing in for capability) recurs unchanged at individual scale (a demo
+video standing in for a comparative ranking) — same mechanism, no
+institutional apparatus required to produce it.
+
+**A note on redaction.** As with this document's "Law" entry, the specimen's
+real name and the specific product/demo referenced are withheld here on the
+same going-forward policy: this project redacts identifying detail for
+private individuals by default, while retaining the real identity and the
+full thread for a good-faith party seeking to verify or falsify the claim.
+See this document's "Law" entry for the fuller statement of this policy and
+its grounding in BIFP's own Phase 0 escrow logic.
+
 ---
 
 ## Confidence: Register vs. Calibration
