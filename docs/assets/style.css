@@ -1,0 +1,280 @@
+/* PIQOS AI Research (Public) -- docs site stylesheet.
+   Plain CSS, no framework, no build step -- matches the zero-runtime-
+   dependency ethos of every tools/* package in this repo. Light theme
+   is the default token set; dark theme redefines the same tokens under
+   prefers-color-scheme so the whole page stays legible either way. */
+
+:root {
+  --bg: #fdfdfb;
+  --bg-raised: #ffffff;
+  --text: #1c1e1f;
+  --text-muted: #55595c;
+  --border: #dedad2;
+  --accent: #2b4d47;
+  --accent-strong: #17332e;
+  --link: #1f5f52;
+  --link-visited: #4a4470;
+  --code-bg: #f1efe8;
+  --shadow: 0 1px 2px rgba(20, 20, 15, 0.06);
+  --tag-bg: #eef1e9;
+  --tag-text: #33513f;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14171a;
+    --bg-raised: #1b1f22;
+    --text: #e9e7e0;
+    --text-muted: #a3a9ac;
+    --border: #33383c;
+    --accent: #7fbfae;
+    --accent-strong: #a7d8cb;
+    --link: #86cdbb;
+    --link-visited: #b9a9e0;
+    --code-bg: #23282c;
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    --tag-bg: #212a26;
+    --tag-text: #9fcabb;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.55;
+}
+
+a {
+  color: var(--link);
+}
+
+a:visited {
+  color: var(--link-visited);
+}
+
+code {
+  background: var(--code-bg);
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+  font-size: 0.92em;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+header.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 0.9rem 1.25rem;
+}
+
+.header-inner {
+  max-width: 920px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+}
+
+.site-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+nav.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.92rem;
+}
+
+nav.site-nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+nav.site-nav a:hover {
+  color: var(--link);
+}
+
+.search-wrap {
+  margin-left: auto;
+  flex: 1 1 200px;
+  max-width: 260px;
+}
+
+#search {
+  width: 100%;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg-raised);
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+main {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 1.75rem 1.25rem 4rem;
+}
+
+.intro {
+  margin-bottom: 2.25rem;
+}
+
+.intro h1 {
+  font-size: 1.7rem;
+  margin: 0 0 0.6rem;
+}
+
+.intro p {
+  color: var(--text-muted);
+  max-width: 68ch;
+}
+
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+}
+
+.pill-row a {
+  font-size: 0.82rem;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+  color: var(--text-muted);
+}
+
+.pill-row a:hover {
+  color: var(--link);
+  border-color: var(--link);
+}
+
+section.doc-section {
+  margin-bottom: 2.75rem;
+  scroll-margin-top: 4.5rem;
+}
+
+section.doc-section h2 {
+  font-size: 1.25rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+section.doc-section > p.section-note {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  margin-top: 0;
+  margin-bottom: 1.1rem;
+  max-width: 68ch;
+}
+
+h3.subgroup {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  margin: 1.4rem 0 0.6rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.85rem;
+}
+
+.card {
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+  box-shadow: var(--shadow);
+}
+
+.card h4 {
+  margin: 0 0 0.35rem;
+  font-size: 0.98rem;
+  line-height: 1.35;
+}
+
+.card h4 a {
+  text-decoration: none;
+}
+
+.card h4 a:hover {
+  text-decoration: underline;
+}
+
+.card p {
+  margin: 0;
+  font-size: 0.86rem;
+  color: var(--text-muted);
+}
+
+.card .meta {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 0.3rem;
+}
+
+.tag {
+  display: inline-block;
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  border-radius: 5px;
+  padding: 0.05rem 0.4rem;
+  font-size: 0.72rem;
+  margin-right: 0.3rem;
+}
+
+.card.hidden {
+  display: none;
+}
+
+footer.site-footer {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--border);
+}
+
+footer.site-footer p {
+  max-width: 68ch;
+}
+
+.no-results {
+  max-width: 920px;
+  margin: 0.6rem auto 0;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  display: none;
+}
+
+section.doc-section.hidden,
+h3.subgroup.hidden,
+.card-grid.hidden {
+  display: none;
+}
