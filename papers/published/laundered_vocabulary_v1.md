@@ -478,31 +478,34 @@ mismeasured metric or a drifted definition, but the author-function itself,
 performing legitimizing work a physics law is specifically built not to
 need.
 
-**A concrete, dated illustration (2026-08-17).** A self-published author's
-promotional material describes her as "Founder of Psychology of
-Consciousness" and "Developer of the Law of Existence," stated as the
-formula T = C₇ × U³. No public material sighted defines C, U, or T, states
-their units, or derives the relation from anything — the notation asserts
-precision it never operationalizes. A companion LinkedIn post announcing a
-second "manuscript" states it "underwent structured external review and
-independent multi-system stress-testing coordinated by [a named individual],
-focused on internal consistency, theoretical boundaries and evidentiary
-discipline" — naming a review process with no stated institution, no
-disclosed methodology, and no stated credentials for the coordinator,
-functioning the same way `case_studies/2026-07-27_ssi_nvidia_partnership.md`
-names "The Opaque Promise": an impressive-sounding validation asserted with
-zero verifiable specifics, on a book distributed through a print-on-demand
-platform rather than a publisher with an editorial process. Running this
-project's own tools against the LinkedIn post text directly: `debasinizer`
-flags `register_flagged: True` on two co-occurring resonance categories
+**A concrete, dated illustration (2026-08-17), specimen redacted.** A
+self-published author's promotional material describes a self-conferred
+field-founding title (framed as founder of a named psychological/
+consciousness discipline) and a self-titled "Law of [X]," stated as a
+private formula combining an author-specific subscripted constant and an
+undefined cubed variable. No public material sighted defines any of the
+formula's terms, states their units, or derives the relation from anything
+— the notation asserts precision it never operationalizes. A companion
+social-media post announcing a second "manuscript" states it "underwent
+structured external review and independent multi-system stress-testing
+coordinated by [a named individual], focused on internal consistency,
+theoretical boundaries and evidentiary discipline" — naming a review process
+with no stated institution, no disclosed methodology, and no stated
+credentials for the coordinator, functioning the same way
+`case_studies/2026-07-27_ssi_nvidia_partnership.md` names "The Opaque
+Promise": an impressive-sounding validation asserted with zero verifiable
+specifics, on a book distributed through a print-on-demand platform rather
+than a publisher with an editorial process. Running this project's own
+tools against the post text directly: `debasinizer` flags
+`register_flagged: True` on two co-occurring resonance categories
 (`resonance_wave_signal` on "signal," `consciousness_continuity` on
 "consciousness" — its own documented bar of 2+ distinct categories, not one
 common word); `paper_rigor` flags `credential_substitution` specifically on
-"Founder of Psychology of Consciousness" — a self-conferred title doing
-argumentative work, distinct from an externally-verifiable credential used
-only as an identifying descriptor (contrast §5's treatment of "Nobel
-laureate John Jumper" in `mission_premise_v1.md`, judged a false positive on
-exactly that distinction); `verification_lint` flags a missing scoping
+the self-conferred founding title — a title doing argumentative work,
+distinct from an externally-verifiable credential used only as an
+identifying descriptor (contrast §5's treatment of "Nobel laureate John
+Jumper" in `mission_premise_v1.md`, judged a false positive on exactly that
+distinction); `verification_lint` flags a missing scoping
 section above the applicable word-count threshold. This entry evaluates the
 specific public text and claims described above, not the author's sincerity,
 mental state, or private beliefs — consistent with this project's standing
@@ -510,11 +513,26 @@ practice (`case_studies/2026-08-06_marcus_karapetyan_status_dismissal.md`:
 "this is not evaluated as bad faith") — and treats a single specimen as a
 single specimen, not an ongoing tracking subject.
 
+**A note on redaction.** The specimen's real name, exact self-styled
+titles, and exact formula notation are withheld here on a going-forward
+policy: when this project's specimens are private individuals rather than
+public institutions, public officials, or already-public-record corporate
+events, identifying detail is redacted from the published record by
+default. Redaction is not the same as unfalsifiability — the specimen is
+real, dated, and its full identifying detail (the real name, the source
+post, and the exact quoted text) is retained by this project's author and
+can be produced to substantiate the claim if a good-faith party seeks to
+verify or falsify it, the same accountability BIFP's own Phase 0 (§3.2)
+requires of an escrowed claim generally, applied here to specimen identity
+rather than to a financial or reputational stake. What is withheld is
+public amplification of a private individual's identity; what is not
+withheld is the claim's own checkability.
+
 **A documented gap this specimen surfaces in the project's own tooling.**
 `debasinizer`'s resonance-vocabulary detector is purely lexical (`resonat-`,
 `wave`, `signal`, `pattern`, `echo`, `frequenc-`, `mirror`; see
 `tools/debasinizer/debasinizer/resonance.py`) and does not and structurally
-cannot match `U³` — yet the exponent is doing the identical rhetorical job
+cannot match an undefined variable raised to a power — yet the exponent is doing the identical rhetorical job
 lexical resonance vocabulary does: borrowing genuine mathematical structure
 (here, exponentiation) to imply totalizing, dimensional, or cosmic-scale
 amplification, without any operationalization behind it. The mechanism this
