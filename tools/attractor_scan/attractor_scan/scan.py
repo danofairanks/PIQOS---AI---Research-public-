@@ -6,6 +6,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 
+from .formal_object import UnglossedFormalObjectResult, scan_unglossed_formal_object
 from .laundering import LaunderingResult, scan_laundering
 from .maneuvers import ManeuverResult, scan_maneuvers
 
@@ -14,6 +15,7 @@ from .maneuvers import ManeuverResult, scan_maneuvers
 class AttractorScanResult:
     maneuvers: dict[str, ManeuverResult]
     laundering: dict[str, LaunderingResult]
+    unglossed_formal_object: UnglossedFormalObjectResult
 
     @property
     def flagged_maneuvers(self) -> list[str]:
@@ -36,7 +38,12 @@ class AttractorScanResult:
         """Fraction of the 12 implemented categories (7 maneuvers + 5
         laundering cases) that flagged at least one match. A single
         summary scalar for corpus-level comparison; NOT a claim that a
-        higher density means a text is more 'captured' -- see README."""
+        higher density means a text is more 'captured' -- see README.
+        Deliberately does NOT fold in unglossed_formal_object: that
+        check's three-joint-condition, whole-document semantics aren't
+        comparable to the other 12 categories' phrase-match counts, and
+        folding it in would silently change what this metric has meant
+        everywhere else it's already cited."""
         if self.total_categories == 0:
             return 0.0
         return self.flagged_category_count / self.total_categories
@@ -45,6 +52,7 @@ class AttractorScanResult:
         return {
             "maneuvers": {k: v.to_dict() for k, v in self.maneuvers.items()},
             "laundering": {k: v.to_dict() for k, v in self.laundering.items()},
+            "unglossed_formal_object": self.unglossed_formal_object.to_dict(),
             "flagged_maneuvers": self.flagged_maneuvers,
             "flagged_laundering_cases": self.flagged_laundering_cases,
             "density": self.density,
@@ -54,7 +62,11 @@ class AttractorScanResult:
 def scan(text: str) -> AttractorScanResult:
     """Run every implemented maneuver and semantic-laundering scanner
     against a single piece of text."""
-    return AttractorScanResult(maneuvers=scan_maneuvers(text), laundering=scan_laundering(text))
+    return AttractorScanResult(
+        maneuvers=scan_maneuvers(text),
+        laundering=scan_laundering(text),
+        unglossed_formal_object=scan_unglossed_formal_object(text),
+    )
 
 
 @dataclass

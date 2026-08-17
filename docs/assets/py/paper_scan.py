@@ -119,6 +119,14 @@ def _md_attractor_scan(section: dict) -> list[str]:
     else:
         lines.append("- No semantic-laundering cases flagged.")
     lines.append(f"- Match density: **{section['density']:.3f}**")
+    ufo = section.get("unglossed_formal_object")
+    if ufo:
+        if ufo["flagged"]:
+            lines.append(f"- Unglossed Formal Object ({ufo['confidence']} confidence, not a §2.8 case): {ufo['explanation']}")
+            for span in ufo["unglossed_spans"]:
+                lines.append(f"  - `{span['text']}`")
+        else:
+            lines.append("- No unglossed formal object flagged.")
     lines.append("")
     return lines
 

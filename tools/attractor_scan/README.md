@@ -5,11 +5,15 @@ A text classifier for the qualitative pattern vocabulary named in
 the **seven defensive maneuvers** (§4.1 — goal-post movement,
 provisionalization, status dismissal, burden-shifting, equivocation,
 volume/velocity defense, appeal to future proof) and **five of the six
-semantic-laundering cases** (§2.8). Where the paper's own case studies
-apply this vocabulary to a specimen by reading it closely, this tool
-does the same first pass automatically — matched spans, not just a
-label — so the qualitative pattern language becomes something you can
-run over your own text or corpus and get tags back.
+semantic-laundering cases** (§2.8), plus one detector derived from
+running this tool against real specimens rather than from the paper's
+own case list: an **Unglossed Formal Object** check for bare private
+equation notation legitimated by self-titling language (see below).
+Where the paper's own case studies apply this vocabulary to a specimen
+by reading it closely, this tool does the same first pass
+automatically — matched spans, not just a label — so the qualitative
+pattern language becomes something you can run over your own text or
+corpus and get tags back.
 
 ## Install
 
@@ -67,6 +71,7 @@ attractor-scan corpus --corpus docs.jsonl    # {"id": ..., "text": ...} per line
 | Case 4: "Alignment" and "Safety" | §2.8 | `laundering.py` — flags mentions with none of the six named sub-problems specified |
 | Case 5: Bidirectional Drift (AGI down / Agentic up) | §2.8 | `laundering.py` — flags both directions; bidirectional regex, since the paper's own real cited example has the "agentic" term following, not preceding, the inevitability language |
 | Case 6: Borrowed Technical Precision as Visual Proof | §2.8 | Not a scanner — `visual_proof_judge.judge_visual_proof` (advisory only, single image+claim at a time). Confirmed against the live Groq API 2026-08-17 — see "AI-generated advisory reads" below |
+| Unglossed Formal Object (not a §2.8 case) | derived, not from the paper's own case list | `formal_object.py` — flags a bare equation carrying a private subscripted/superscripted variable, ungrounded within 400 characters, in a document that ALSO stakes both a "law of X" naming claim and a "founder of"/self-attribution claim. See "The Unglossed Formal Object detector" below |
 
 ## Why Case 6 isn't a scanner
 
@@ -106,6 +111,68 @@ result = judge_visual_proof("math Singularity", image_path="formula_collage.png"
 print(result.candidate_read)   # "unrelated_borrowed_precision", "genuine_technical_support", or "unclear"
 print(result.borrowed_term)    # the word doing double duty, if borrowed-precision
 ```
+
+## The Unglossed Formal Object detector
+
+`scan_unglossed_formal_object` is not one of `basin_attractors_v1.md`
+§2.8's six named semantic-laundering cases — it's a narrower, text-only
+pattern this package's own use (running against real specimens, see
+`papers/published/laundered_vocabulary_v1.md`'s "Law" entry) surfaced
+as tractable: bare mathematical notation asserting the *textual*
+precision a "Law" claims, in a document that also stakes a
+founder-of-discursivity claim about the term's own field.
+
+It requires **all three** independent conditions to co-occur before
+flagging anything:
+
+1. An equation-shaped span (`var = var op var...`, three terms
+   minimum) carrying at least one privately-modified variable — a
+   Unicode subscript/superscript or an ASCII `_N`/`^N` suffix.
+2. No definition, units, or falsifiability language ("where C is
+   defined as," "measured in," "would be falsified if," ...) within
+   400 characters of that span.
+3. The same document ALSO naming both a "law of X"/"theory of X"
+   phrase AND a "founder of"/"I discovered"/self-attribution phrase.
+
+Any one or two of these alone are ordinary and are not flagged: a
+textbook states `E = mc²` with no inline re-derivation; a real
+professor's bio says "founder of" an institute with no equation
+nearby; a real paper names "the law of gravitation" with no founder
+self-attribution nearby. Two real false positives caught in
+development and now pinned as regression tests
+(`tests/test_formal_object.py`) — a correctly-cited Newton's law next
+to an unrelated founder bio (no "law of X" phrase at all, so the third
+condition correctly never fires), and a truncated-match bug on
+bare-digit-suffix tokens like `m1`/`r2` (deliberately excluded from
+the variable pattern; see the module docstring for why) — both drove
+real fixes to the regex design, not just test additions.
+
+```python
+from attractor_scan.formal_object import scan_unglossed_formal_object
+
+result = scan_unglossed_formal_object(specimen_text)
+print(result.flagged)           # True only if all three conditions hold
+print(result.self_titling_present)
+print(result.unglossed_spans)   # matched equation spans, with has_gloss_nearby
+```
+
+**Why this is not Case 6.** Case 6 ("A Term's Own Technical Precision
+Borrowed as Visual Proof") is deliberately unimplemented as a scanner
+because it's cross-modal — an image read against a claim, resistant to
+a text-only tool (see "Why Case 6 isn't a scanner" above). This
+detector is different in kind: the notation itself is the text, sitting
+directly in the document next to the legitimation language, no image
+involved. It's a new, narrower pattern class, not a text-only revival
+of Case 6's reasoning — which is why it lives in its own module and is
+deliberately excluded from `density` (see `scan.py`): its
+three-joint-condition, whole-document semantics aren't comparable to
+the other twelve categories' phrase-match counts.
+
+**Confidence is always "weak" or "none."** This is text proximity, not
+semantic verification — a flag means "this formal object was never
+operationalized in a document that also stakes both a law-naming and a
+self-attribution claim about it," not a claim that the underlying idea
+is false. Review every flagged span directly.
 
 ## AI-generated advisory reads (Case 6 visual-proof judge)
 
@@ -191,7 +258,7 @@ pip install -e ".[dev]"
 pytest tests/ -q
 ```
 
-60 tests total. The original 36 cover: all seven maneuvers and all
+77 tests total. The original 36 cover: all seven maneuvers and all
 five laundering cases individually (positive and negative cases), a
 zero-false-positive check against clean scientific text, a regression
 test pinning the real Marcus/Karapetyan specimen at `combo` confidence,
@@ -204,6 +271,12 @@ test that caught it are both here. `tests/test_visual_proof_judge.py`
 adds 15 more (offline Groq-mocked) for the Case 6 advisory judge
 described above, including regression tests for both live findings
 (the User-Agent block and the account TPM budget).
+`tests/test_formal_object.py` adds 16 more for the Unglossed Formal
+Object detector, including regression tests for both real false
+positives caught during development (the founder-bio-without-"law of
+X" case and the bare-digit-suffix truncated-match bug) — plus a
+manual, non-pytest gate run against every real `.md` file in this
+repository (37 files, 0 false positives) before shipping.
 
 ## License
 

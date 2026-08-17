@@ -13,11 +13,15 @@ from .visual_proof_judge import DEFAULT_MODEL, VisualProofJudgeError, judge_visu
 
 
 def attractor_scan_text(text: str) -> dict:
-    """Run every implemented maneuver (§4.1, 7 categories) and
-    semantic-laundering (§2.8, 5 of 6 cases) classifier against a
-    single piece of text. Returns matched spans per category, not just
-    labels -- a lead for a human/agent review pass, not a verdict; see
-    README for what `density` does and does not mean."""
+    """Run every implemented maneuver (§4.1, 7 categories), semantic-
+    laundering (§2.8, 5 of 6 cases) classifier, and the unglossed-
+    formal-object detector (bare private equation notation + law-naming
+    + self-attribution co-occurrence; not one of the six §2.8 cases --
+    see formal_object.py) against a single piece of text. Returns
+    matched spans per category, not just labels -- a lead for a
+    human/agent review pass, not a verdict; see README for what
+    `density` does and does not mean, and why it excludes the
+    unglossed-formal-object result."""
     return scan(text).to_dict()
 
 

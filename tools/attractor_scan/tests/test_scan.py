@@ -17,6 +17,18 @@ def test_scan_combines_maneuvers_and_laundering():
     assert result.total_categories == 12
 
 
+def test_scan_includes_unglossed_formal_object_but_excludes_it_from_density():
+    """unglossed_formal_object is wired into the result and its to_dict(),
+    but is deliberately NOT one of the `total_categories`/`density`-counted
+    categories -- see scan.py's density docstring."""
+    result = scan(MARCUS_REPLY)
+    assert result.unglossed_formal_object is not None
+    assert result.total_categories == 12  # unchanged by the new field
+    d = result.to_dict()
+    assert "unglossed_formal_object" in d
+    assert "flagged" in d["unglossed_formal_object"]
+
+
 def test_flagged_maneuvers_and_cases_properties():
     result = scan(MARCUS_REPLY)
     assert "status_dismissal" in result.flagged_maneuvers

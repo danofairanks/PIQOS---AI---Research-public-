@@ -19,6 +19,7 @@ def test_scan_text_is_json_safe():
     json.dumps(result)  # must not raise
     assert "maneuvers" in result
     assert "laundering" in result
+    assert "unglossed_formal_object" in result
 
 
 def test_scan_text_flags_the_papers_own_cited_example():
