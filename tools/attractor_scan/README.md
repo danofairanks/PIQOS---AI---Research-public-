@@ -66,7 +66,7 @@ attractor-scan corpus --corpus docs.jsonl    # {"id": ..., "text": ...} per line
 | Case 3: "Emergence" | §2.8 | `laundering.py` — flags "emergent/emergence" near an AI subject with no metric-artifact caveat |
 | Case 4: "Alignment" and "Safety" | §2.8 | `laundering.py` — flags mentions with none of the six named sub-problems specified |
 | Case 5: Bidirectional Drift (AGI down / Agentic up) | §2.8 | `laundering.py` — flags both directions; bidirectional regex, since the paper's own real cited example has the "agentic" term following, not preceding, the inevitability language |
-| Case 6: Borrowed Technical Precision as Visual Proof | §2.8 | Not a scanner — `visual_proof_judge.judge_visual_proof` (advisory only, single image+claim at a time), see below |
+| Case 6: Borrowed Technical Precision as Visual Proof | §2.8 | Not a scanner — `visual_proof_judge.judge_visual_proof` (advisory only, single image+claim at a time). Confirmed against the live Groq API 2026-08-17 — see "AI-generated advisory reads" below |
 
 ## Why Case 6 isn't a scanner
 
@@ -125,19 +125,41 @@ never read from a repo file, never included in any output or error
 message. Uses only `urllib` + `base64` from the standard library, so
 the package keeps its zero-pip-dependency install.
 
-**Live-verification status.** Not yet run against the live Groq API —
-same open item `tools/bifp`'s rebuttal judge started with. The
-offline test suite (`tests/test_visual_proof_judge.py`) mocks the Groq
+**Live-verification status: confirmed, 2026-08-17.** The offline test
+suite (`tests/test_visual_proof_judge.py`, 15 tests) mocks the Groq
 call and covers image-source handling (path vs. bytes, media-type
-inference, unreadable files), response parsing, error paths, and a
-regression test for the identical Cloudflare User-Agent issue
-`bifp`'s rebuttal judge hit in CI (fixed proactively here from the
-start, not discovered again) — all passing. Run it against the live
-API the same way: via
-[`.github/workflows/bifp_rebuttal_judge_demo.yml`](../../.github/workflows/bifp_rebuttal_judge_demo.yml)'s
-pattern (a `workflow_dispatch`-only job, since this build environment
-has `api.groq.com` blocked at the network-policy level) before relying
-on this feature's actual judgment quality, not just its plumbing.
+inference, unreadable files), response parsing, and error paths. The
+live call ran via
+[`.github/workflows/attractor_scan_visual_proof_demo.yml`](../../.github/workflows/attractor_scan_visual_proof_demo.yml)
+(`workflow_dispatch`-only, since this build environment has
+`api.groq.com` blocked at the network-policy level) — see that
+workflow for why it exists. Three real findings from getting that run
+green, all fixed and covered by regression tests or in-code comments:
+
+- Same Cloudflare "error code: 1010" User-Agent block `bifp`'s
+  rebuttal judge hit — applied proactively here from the start this
+  time, not discovered again.
+- `qwen/qwen3.6-27b` is reasoning-capable; the harder of two live
+  specimens (an abstract math graph vs. a labeled bar chart) exhausted
+  an unset default token budget on reasoning before ever emitting the
+  JSON answer (`HTTP 400 json_validate_failed`, empty
+  `failed_generation`). Fixed with an explicit `max_completion_tokens`.
+- This account's `on_demand` tier has a real 8000 TPM cap — the
+  model's own advertised max (16384) blew it on the very first call
+  (`HTTP 413`), and even a moderate, correctly-sized value can consume
+  nearly the *entire* budget on one call (`Used 7996/8000` on the
+  bar-chart pair alone), so `examples/visual_proof_judge_demo.py`
+  waits between its two calls. A single real-world call for one
+  specimen doesn't hit this — it's specific to running two back-to-back.
+
+With all three fixed, the discrimination check passed cleanly on real
+API output: the bar-chart pair came back `genuine_technical_support`,
+high confidence, reasoning that named the actual numbers as evidence;
+the math-graph pair came back `unrelated_borrowed_precision`, high
+confidence, `borrowed_term: "Singularity"`, explicitly reasoning that
+"the connection relies entirely on the shared terminology... rather
+than providing technical evidence" — the exact mechanism §2.8 Case 6
+names.
 
 ## Honesty notes
 
@@ -169,17 +191,19 @@ pip install -e ".[dev]"
 pytest tests/ -q
 ```
 
-59 tests, including: all seven maneuvers and all five laundering cases
-individually (positive and negative cases), a zero-false-positive check
-against clean scientific text, a regression test pinning the real
-Marcus/Karapetyan specimen at `combo` confidence, and — the one that
-actually caught a real bug during development — a regression test
-against basin_attractors_v1.md §2.8's own cited real-world Musk quote,
-which surfaced that the first draft of the Case 5 "agentic" regex only
-matched one word order and missed the paper's own example. Fixed
-before shipping; the fixed version and the test that caught it are
-both here. `tests/test_visual_proof_judge.py` adds 14 more (offline
-Groq-mocked) for the Case 6 advisory judge described above.
+60 tests total. The original 36 cover: all seven maneuvers and all
+five laundering cases individually (positive and negative cases), a
+zero-false-positive check against clean scientific text, a regression
+test pinning the real Marcus/Karapetyan specimen at `combo` confidence,
+and — the one that actually caught a real bug during development — a
+regression test against basin_attractors_v1.md §2.8's own cited
+real-world Musk quote, which surfaced that the first draft of the
+Case 5 "agentic" regex only matched one word order and missed the
+paper's own example. Fixed before shipping; the fixed version and the
+test that caught it are both here. `tests/test_visual_proof_judge.py`
+adds 15 more (offline Groq-mocked) for the Case 6 advisory judge
+described above, including regression tests for both live findings
+(the User-Agent block and the account TPM budget).
 
 ## License
 
