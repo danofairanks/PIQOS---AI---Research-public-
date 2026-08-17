@@ -193,6 +193,58 @@ both: `result.is_error` for "the tool call itself failed," and
 `"error" in json.loads(result.content[0].text)` for "the tool ran and
 reported a recoverable problem."
 
+## Live-verification status: confirmed, 2026-08-17, first attempt
+
+The offline suite above proves the MCP wiring round-trips correctly;
+it doesn't prove the three Groq-backed tools actually work end-to-end
+through that wiring against the real API, since their own live
+verification happened in each source package (`bifp/README.md`,
+`attractor_scan/README.md`, `paper_rigor/README.md`) calling
+`judge_rebuttal`/`judge_visual_proof`/`triage_worklist` directly, not
+through this server. Run via
+[`.github/workflows/research_mcp_demo.yml`](../../.github/workflows/research_mcp_demo.yml)
+(`workflow_dispatch`-only, same reason as the other three Groq demo
+workflows: this build environment has `api.groq.com` blocked at the
+network-policy level).
+
+This run needed no live iteration — a real risk existed and was fixed
+before triggering, not discovered by a failure. `examples/mcp_demo.py`
+makes three separate Groq calls in one process (`bifp_judge_rebuttal`,
+then `attractor_scan_judge_visual_proof`, then
+`paper_rigor_triage_worklist`), and `attractor_scan`'s own live
+verification had already found that a single vision call alone can use
+7996 of this account's 8000 on_demand-tier TPM budget — three calls
+back-to-back with no pacing would very likely have 429'd the second and
+third. `mcp_demo.py` was updated to wait 65s after each Groq call
+before the next one *before* this run was triggered, applying that
+finding forward the same way `paper_rigor`'s own worklist-triage demo
+applied both of the earlier lessons (Cloudflare User-Agent, conservative
+token budget) proactively and passed clean on its first live attempt.
+
+All 21 offline tests passed, and all three Groq calls succeeded with
+the pacing holding — no rate-limit errors anywhere in the run:
+
+- `bifp_judge_rebuttal` on a constructed claim/rebuttal pair (a strong
+  claim about causal modeling, rebutted only by a poor MMLU score) came
+  back `candidate_read: "unclear"` — a defensible read, since a
+  benchmark-score rebuttal neither squarely addresses nor is obviously
+  a weaker substitute for a causal-modeling claim.
+- `attractor_scan_judge_visual_proof` on the committed
+  `genuine_benchmark_chart.png` plus its matching claim came back
+  `candidate_read: "genuine_technical_support"` — correct, the same
+  read `attractor_scan`'s own live verification got for this pair.
+- `paper_rigor_triage_worklist`, run on the real
+  `external_verification_worklist` that `paper_rigor_scan` produced
+  moments earlier in the same demo (not a canned worklist), returned
+  `[high] uncited_empirical_claim` with a concrete suggested check
+  ("Search for peer-reviewed studies or reputable reports on the
+  topic...") — the full pipeline, scan-output-to-triage-input, working
+  over the real wire in one process.
+
+Total run time was a little over two minutes, almost all of it the two
+deliberate 65s pacing waits plus package installation — the actual
+Groq round trips and the rest of the demo are fast.
+
 ## What this tool does NOT do
 
 - **It adds no new research logic.** Every tool call here delegates
