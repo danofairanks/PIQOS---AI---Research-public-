@@ -17,11 +17,20 @@ identical, that's a discrimination-failure signal, not just a demo
 curiosity. Neither image is a real specimen; see the generator
 script's docstring for why (Case 6's actual cited example is a real,
 copyrighted X post this project doesn't vendor).
+
+Waits between the two calls -- confirmed live 2026-08-17 that a single
+vision call on this account's on_demand tier (8000 TPM) can use nearly
+the entire budget by itself (one clean call used 7996/8000), so a
+second call in the same 60-second window gets HTTP 429 even though its
+own request is well under the limit on its own. This is a demo-pacing
+fact about two back-to-back calls, not a bug in judge_visual_proof --
+a single real-world call for one specimen doesn't hit this.
 """
 
 import json
 import os
 import sys
+import time
 from pathlib import Path
 
 from attractor_scan.visual_proof_judge import judge_visual_proof
@@ -39,6 +48,12 @@ GENUINE_IMAGE = IMAGES_DIR / "genuine_benchmark_chart.png"
 PUN_CLAIM = "This proves AI is approaching a societal singularity -- an irreversible, transformative event horizon for civilization."
 PUN_IMAGE = IMAGES_DIR / "singularity_pun_graphic.png"
 
+# Confirmed live 2026-08-17: a single clean call used 7996/8000 of this
+# account's on_demand-tier TPM budget by itself; a second call inside
+# the same 60s window gets HTTP 429 even at a well-under-limit request
+# size. The API's own 429 body reported "try again in 51.3825s".
+_SECONDS_BETWEEN_CALLS = 65
+
 
 def main() -> int:
     if not os.environ.get("GROQ_API_KEY"):
@@ -54,6 +69,11 @@ def main() -> int:
     print("=== Pair 1: expected candidate_read = genuine_technical_support ===\n")
     result_1 = judge_visual_proof(GENUINE_CLAIM, image_path=str(GENUINE_IMAGE))
     print(json.dumps(result_1.to_dict(), indent=2))
+
+    print(f"\n(waiting {_SECONDS_BETWEEN_CALLS}s -- this account's on_demand tier TPM "
+          f"budget doesn't cover two vision calls back-to-back, see module docstring)",
+          file=sys.stderr)
+    time.sleep(_SECONDS_BETWEEN_CALLS)
 
     print("\n=== Pair 2: expected candidate_read = unrelated_borrowed_precision ===\n")
     result_2 = judge_visual_proof(PUN_CLAIM, image_path=str(PUN_IMAGE))
