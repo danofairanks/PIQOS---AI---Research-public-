@@ -35,7 +35,7 @@ def test_protocol_level_error_is_distinct_from_payload_level_error():
     assert result.is_error is True
 
 
-def test_all_fifteen_tools_are_registered(list_tool_names):
+def test_all_sixteen_tools_are_registered(list_tool_names):
     names = set(list_tool_names())
     assert names == {
         "basin_depth_demo", "basin_depth_run", "basin_depth_derive_vocab",
@@ -43,7 +43,7 @@ def test_all_fifteen_tools_are_registered(list_tool_names):
         "bifp_scan_text", "bifp_attach_scan_to_audit", "bifp_get_status", "bifp_generate_report",
         "attractor_scan_text", "attractor_scan_corpus",
         "debasinizer_scan_text", "debasinizer_scan_corpus",
-        "paper_rigor_scan",
+        "paper_rigor_scan", "paper_rigor_triage_worklist",
     }
 
 
@@ -170,3 +170,19 @@ def test_paper_rigor_scan_clean_text_over_the_wire(call_tool):
     result = call_tool("paper_rigor_scan", {"text": "A short, clean note with nothing to flag."})
     assert result["ok"] is True
     assert result["structural_gap_count"] == 0
+
+
+def test_paper_rigor_triage_worklist_empty_over_the_wire_no_key_needed(call_tool):
+    """No GROQ_API_KEY required for this one -- an empty worklist short-
+    circuits before any API call, so this exercises the real MCP wire
+    round trip without needing network or a secret."""
+    result = call_tool("paper_rigor_triage_worklist", {"worklist": []})
+    assert result["items"] == []
+
+
+def test_paper_rigor_triage_worklist_missing_key_returns_error_payload(call_tool, monkeypatch):
+    monkeypatch.delenv("GROQ_API_KEY", raising=False)
+    worklist = [{"kind": "uncited_empirical_claim", "item": "x", "context": "c", "reason": "r"}]
+    result = call_tool("paper_rigor_triage_worklist", {"worklist": worklist})
+    assert "error" in result
+    assert "GROQ_API_KEY" in result["error"]

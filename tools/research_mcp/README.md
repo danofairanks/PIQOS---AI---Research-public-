@@ -40,7 +40,7 @@ by the wrapped tools beyond what they already require.
 
 ## What's registered
 
-All 15 functions across the five packages' `agent_tools.py` modules,
+All 16 functions across the five packages' `agent_tools.py` modules,
 unchanged:
 
 | Tool | From | Purpose |
@@ -60,6 +60,7 @@ unchanged:
 | `debasinizer_scan_text` | debasinizer | Classify a single text for the resonance-vocabulary register (2+ categories co-occurring) and self-coherence-assertion phrasing |
 | `debasinizer_scan_corpus` | debasinizer | Aggregate flag frequency across a corpus |
 | `paper_rigor_scan` | paper_rigor | Scan any paper for placeholders, falsifiability, self-citation, credentialing, consensus claims, citation-type mix, a claimed-citability-with-zero-references contradiction, and a missing limitations section — returns an `external_verification_worklist` naming the specific items that need a real web search/fetch to resolve |
+| `paper_rigor_triage_worklist` | paper_rigor | **The one tool here that calls an external API.** Takes an existing `external_verification_worklist` (pass `paper_rigor_scan`'s own output straight through) and attaches a Groq-generated `priority` + `suggested_check` to each item — advisory triage, not verification; never adds, removes, or resolves items. Requires `GROQ_API_KEY` in the environment; returns `{"error": ...}` if it's missing rather than failing the tool call itself. Empty worklist short-circuits with no API call. |
 
 Each tool's docstring (visible to an MCP client as its description)
 and type hints (used to generate its JSON input schema) come straight
@@ -82,7 +83,19 @@ for whatever agent is calling it — an MCP host with real web
 search/fetch access is expected to resolve each item and, optionally,
 use `bifp_start_audit`/`bifp_record_criterion` to track the resolution
 persistently, the same two-step flow the original scoping conversation
-for this tool described.
+for this tool described. `paper_rigor_triage_worklist` is an optional
+third step in that same flow: run it on the worklist before handing
+items to the search-capable agent, to get a priority order and a
+concrete suggested check per item — it does not shorten the flow (the
+agent still has to do the actual searching) but can make the order it
+works through the list better-informed.
+
+**`paper_rigor_triage_worklist` is architecturally different from
+every other tool in this table**: every other tool is pure local
+computation with no network access at all. This one calls Groq's API
+and requires a real secret. If you're running this server yourself,
+set `GROQ_API_KEY` in the environment before starting it — the other
+15 tools work with no setup beyond installation.
 
 ## 30-second demo
 
@@ -91,7 +104,7 @@ python3 examples/mcp_demo.py
 ```
 
 Connects a real `mcp.client.session.ClientSession` to this server over
-the SDK's own in-memory transport, lists all 15 tools, and calls one
+the SDK's own in-memory transport, lists all 16 tools, and calls one
 from each wrapped package — `basin_depth_demo`, `bifp_scan_text`,
 `attractor_scan_text` against the same real Musk quote
 `attractor_scan`'s own test suite validates against, `debasinizer_
@@ -132,7 +145,7 @@ project's actual `MCPServer` instance over its actual low-level
 protocol handler. Nothing in the request/response cycle is stubbed:
 JSON schema generation from type hints, request dispatch, tool
 invocation, and JSON-RPC content framing are all the real library
-code, exercised by 11 tests including a stateful bifp audit flow
+code, exercised by 18 tests including a stateful bifp audit flow
 (start → record → get_status) that persists across three separate
 tool calls the way an agent's turns actually would.
 
@@ -188,7 +201,7 @@ source .venv/bin/activate
 python3 -m pytest tests/ -v
 ```
 
-16 tests, all going over the real in-memory MCP wire protocol rather
+18 tests, all going over the real in-memory MCP wire protocol rather
 than calling Python functions directly (that coverage already exists
 in each source package's own test suite).
 

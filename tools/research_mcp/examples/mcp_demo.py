@@ -4,7 +4,10 @@
 the SDK's own in-memory transport (no subprocess, no stdio pipe --
 but no mock either; this is the identical client/server code path a
 real MCP host uses), lists the registered tools, and calls one from
-each of the five wrapped packages.
+each of the five wrapped packages, plus paper_rigor's second,
+Groq-backed tool (skipped gracefully if GROQ_API_KEY isn't set --
+it's the only call here that makes a real external API request; every
+other step is fully offline).
 
     python3 examples/mcp_demo.py
 
@@ -16,6 +19,7 @@ into an MCP host".
 
 import asyncio
 import json
+import os
 
 from mcp.client.session import ClientSession
 from mcp.shared.memory import create_client_server_memory_streams
@@ -82,7 +86,21 @@ async def main() -> None:
                 r = await session.call_tool("paper_rigor_scan", {"text": bad})
                 data = json.loads(r.content[0].text)
                 print(f"  ok: {data['ok']}, structural_gap_count: {data['structural_gap_count']}")
-                print(f"  worklist items: {[item['kind'] for item in data['external_verification_worklist']]}")
+                worklist = data["external_verification_worklist"]
+                print(f"  worklist items: {[item['kind'] for item in worklist]}")
+
+                print("\n=== Step 7: paper_rigor_triage_worklist (Groq-backed, needs GROQ_API_KEY) ===\n")
+                if os.environ.get("GROQ_API_KEY"):
+                    r = await session.call_tool("paper_rigor_triage_worklist", {"worklist": worklist})
+                    data = json.loads(r.content[0].text)
+                    if "error" in data:
+                        print(f"  error: {data['error']}")
+                    else:
+                        for item in data["items"]:
+                            print(f"  [{item['priority']}] {item['kind']}: {item['suggested_check'][:70]}")
+                else:
+                    print("  (GROQ_API_KEY not set -- skipping; this is the one tool in this demo "
+                          "that makes a real external API call)")
         finally:
             server_task.cancel()
 
