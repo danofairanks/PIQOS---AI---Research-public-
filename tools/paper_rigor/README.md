@@ -311,21 +311,83 @@ paper-rigor scan some_paper.md --authors "Smith,Jones"
 Exits 0 only if `structural_gap_count == 0` — the worklist is leads,
 not a CI-failing condition.
 
+## AI-generated advisory reads (worklist triage)
+
+`worklist_triage.py` adds one optional, Groq-backed feature:
+`triage_worklist(worklist)` takes an existing
+`external_verification_worklist` (exactly what `scan_paper(...)`
+already produced, unmodified) and attaches a `priority`
+(high/medium/low) and a `suggested_check` to each item — a speed/cost
+triage pass before the worklist reaches an agent with real web
+search/fetch access (`tools/research_mcp/`), not a replacement for
+that verification.
+
+**This is deliberately the narrowest of this repo's three Groq-backed
+advisory features.** `bifp`'s rebuttal judge and `attractor_scan`'s
+visual-proof judge each return one substantive candidate read on a
+genuine judgment call. This module never asserts anything about
+whether an item's underlying claim holds up — Groq has no live web
+access here, and implying otherwise would collapse the exact boundary
+"What this tool does NOT do" names above: *"It cannot verify a
+citation supports its claim."* Prioritizing and suggesting what to
+check is not verifying. It also never invents, drops, merges, or
+reorders items: `triage_worklist` validates the response's item count
+and indices match the input exactly and raises rather than silently
+trusting a mismatch — see `tests/test_worklist_triage.py`.
+
+```bash
+paper-rigor triage-worklist some_paper.md --authors "Smith,Jones"
+```
+
+```python
+from paper_rigor import scan_paper
+from paper_rigor.worklist_triage import triage_worklist
+
+result = scan_paper(text, byline_authors=["Smith"])
+triage = triage_worklist(result.external_verification_worklist)
+for item in triage.high_priority_items:
+    print(item.item, "->", item.suggested_check)
+```
+
+**Setup:** set `GROQ_API_KEY` in the environment — never hardcoded,
+never read from a repo file, never included in any output or error
+message. Uses only `urllib` from the standard library, so the
+package's only real dependency stays `verification_lint`.
+
+**Live-verification status.** Not yet run against the live Groq API —
+same starting point `bifp`'s rebuttal judge and `attractor_scan`'s
+visual-proof judge both had before their own live runs (see those
+packages' READMEs for what each surfaced getting there — a Cloudflare
+User-Agent block, a reasoning-model token budget, and this account's
+real TPM cap; the User-Agent fix is already applied here proactively).
+The offline test suite (`tests/test_worklist_triage.py`, 11 tests)
+mocks the Groq call and covers the empty-worklist short-circuit, key
+handling, response parsing, and every integrity-check failure mode
+(count mismatch, index mismatch, invalid priority) — all passing. Run
+it against the live API via
+[`.github/workflows/paper_rigor_worklist_triage_demo.yml`](../../.github/workflows/paper_rigor_worklist_triage_demo.yml)
+(`workflow_dispatch`-only, since this build environment has
+`api.groq.com` blocked at the network-policy level) before relying on
+this feature's actual triage quality, not just its plumbing.
+
 ## Development
 
 ```bash
 python3 -m pytest tests/ -v
 ```
 
-72 tests (including `tests/test_headings.py`, validated against the
-real specimen's exact heading text). Every check is validated both
-against constructed examples and against this repo's own real
-papers/protocols (`tests/test_citations.py`, `tests/test_scan.py`),
-pinning exact reference counts and gap counts so a future heuristic
-change has to consciously re-justify any shift in those numbers —
-plus two tests that run against private-repo specimens (the known-bad
+86 tests total. The original 72 (including `tests/test_headings.py`,
+validated against the real specimen's exact heading text) cover the
+deterministic scanner. Every check is validated both against
+constructed examples and against this repo's own real papers/protocols
+(`tests/test_citations.py`, `tests/test_scan.py`), pinning exact
+reference counts and gap counts so a future heuristic change has to
+consciously re-justify any shift in those numbers — plus two tests
+that run against private-repo specimens (the known-bad
 `rem_capture.md`, and the citability-claim specimen above) when
-they're available locally, skipped otherwise.
+they're available locally, skipped otherwise. `tests/test_worklist_
+triage.py` adds 14 more (offline Groq-mocked) for the worklist-triage
+advisory feature described above.
 
 ## License
 

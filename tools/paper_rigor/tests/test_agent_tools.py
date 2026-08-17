@@ -1,6 +1,6 @@
 import json
 
-from paper_rigor.agent_tools import paper_rigor_scan
+from paper_rigor.agent_tools import paper_rigor_scan, paper_rigor_triage_worklist
 
 
 def test_scan_is_json_safe_and_has_expected_shape():
@@ -28,3 +28,44 @@ def test_scan_flags_constructed_bad_paper():
     result = paper_rigor_scan(bad)
     assert result["ok"] is False
     assert result["structural_gap_count"] >= 1
+
+
+def test_triage_worklist_missing_key_returns_error_dict_not_exception(monkeypatch):
+    monkeypatch.delenv("GROQ_API_KEY", raising=False)
+    worklist = [{"kind": "uncited_empirical_claim", "item": "x", "context": "c", "reason": "r"}]
+    result = paper_rigor_triage_worklist(worklist)
+    assert "error" in result
+    assert "GROQ_API_KEY" in result["error"]
+
+
+def test_triage_worklist_empty_is_json_safe_no_key_needed(monkeypatch):
+    monkeypatch.delenv("GROQ_API_KEY", raising=False)
+    result = paper_rigor_triage_worklist([])
+    json.dumps(result)  # must not raise
+    assert result["items"] == []
+
+
+def test_triage_worklist_end_to_end_with_real_scan_output(monkeypatch):
+    """Confirms the two functions actually compose: a real scan's
+    worklist shape feeds cleanly into triage."""
+    bad = ("As a renowned expert with over 30 years of experience, research shows "
+           "this outperforms all baselines.") + (" filler word" * 400)
+    scan_result = paper_rigor_scan(bad)
+    worklist = scan_result["external_verification_worklist"]
+    assert len(worklist) >= 1
+
+    monkeypatch.setenv("GROQ_API_KEY", "k")
+    monkeypatch.setattr(
+        "paper_rigor.worklist_triage._call_groq_api",
+        lambda payload, api_key: {
+            "choices": [{"message": {"content": json.dumps({
+                "triaged": [
+                    {"index": i, "priority": "medium", "suggested_check": "check it"}
+                    for i in range(len(worklist))
+                ]
+            })}}]
+        },
+    )
+    result = paper_rigor_triage_worklist(worklist)
+    json.dumps(result)  # must not raise
+    assert len(result["items"]) == len(worklist)

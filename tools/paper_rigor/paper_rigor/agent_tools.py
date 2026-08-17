@@ -15,6 +15,7 @@ worklist is not itself a verdict.
 from __future__ import annotations
 
 from .scan import scan_paper
+from .worklist_triage import DEFAULT_MODEL, WorklistTriageError, triage_worklist
 
 
 def paper_rigor_scan(text: str, *, byline_authors: list[str] | None = None,
@@ -31,3 +32,21 @@ def paper_rigor_scan(text: str, *, byline_authors: list[str] | None = None,
     rather than a meaningless 0.0).
     """
     return scan_paper(text, byline_authors=byline_authors, min_word_count=min_word_count).to_dict()
+
+
+def paper_rigor_triage_worklist(worklist: list[dict], *, model: str = DEFAULT_MODEL) -> dict:
+    """Get an AI-generated (Groq) priority + suggested_check for each
+    item in an existing `external_verification_worklist` -- pass
+    `paper_rigor_scan(...)["external_verification_worklist"]` directly.
+    Advisory only: never verifies an item, never adds/removes items,
+    never claims web access. Speed/cost triage before the worklist
+    reaches an agent with real search access -- see worklist_triage.py's
+    module docstring for why this is scoped narrower than bifp's/
+    attractor_scan's judges. Requires GROQ_API_KEY in the environment;
+    returns {"error": ...} rather than raising if it's missing, the
+    call fails, or the response doesn't map cleanly onto the input."""
+    try:
+        result = triage_worklist(worklist, model=model)
+    except WorklistTriageError as exc:
+        return {"error": str(exc)}
+    return result.to_dict()
