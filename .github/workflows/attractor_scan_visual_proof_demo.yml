@@ -1,0 +1,56 @@
+name: attractor_scan visual-proof judge live demo (manual)
+
+# Manual-only: never runs on push/PR/schedule. Same reason as
+# tools/bifp's equivalent workflow: this project's own dev sandbox has
+# api.groq.com blocked at the network-egress-policy level, so the live
+# call happens here instead. See tools/attractor_scan/README.md
+# "AI-generated advisory reads" for what this does and does not verify.
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  offline-tests-and-live-demo:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: tools/attractor_scan
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install attractor_scan (editable, with dev extras)
+        run: pip install -e ".[dev]"
+
+      - name: Run offline test suite (no network, no secret required)
+        run: python3 -m pytest -q
+
+      - name: Regenerate demo images (Pillow, dev-only -- not a package dependency)
+        run: |
+          pip install Pillow
+          python3 examples/generate_visual_proof_demo_images.py
+
+      - name: List currently available Groq models
+        # Same ground-truth check as bifp's workflow -- DEFAULT_MODEL
+        # is a plain string constant and can drift out of date.
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API }}
+        run: |
+          curl -sS https://api.groq.com/openai/v1/models \
+            -H "Authorization: Bearer $GROQ_API_KEY" \
+            -H "User-Agent: attractor-scan-visual-proof-judge/0.1 (+https://github.com/danofairanks/PIQOS---AI---Research-public-)" \
+            | python3 -m json.tool
+
+      - name: Run visual-proof judge live demo against Groq
+        env:
+          # Repo secret is named GROQ_API; visual_proof_judge.py reads
+          # GROQ_API_KEY specifically -- mapped here, same as bifp's
+          # workflow, so the secret's stored name doesn't need to
+          # match the code's env var name.
+          GROQ_API_KEY: ${{ secrets.GROQ_API }}
+        run: python3 examples/visual_proof_judge_demo.py

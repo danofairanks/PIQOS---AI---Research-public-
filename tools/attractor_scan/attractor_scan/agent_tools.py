@@ -9,6 +9,7 @@ adaptation layer. `tools/mcp_server/` does exactly that.
 from __future__ import annotations
 
 from .scan import scan, scan_corpus
+from .visual_proof_judge import DEFAULT_MODEL, VisualProofJudgeError, judge_visual_proof
 
 
 def attractor_scan_text(text: str) -> dict:
@@ -30,3 +31,21 @@ def attractor_scan_corpus(documents: list[dict]) -> dict:
     except (KeyError, TypeError) as exc:
         return {"error": f"malformed document: {exc}"}
     return scan_corpus(pairs).to_dict()
+
+
+def attractor_scan_judge_visual_proof(claim_text: str, image_path: str, *,
+                                       model: str = DEFAULT_MODEL) -> dict:
+    """Get one AI-generated (Groq vision) candidate read on Case 6
+    (§2.8: technical precision borrowed as visual proof) for a single
+    image + claim pair. Advisory only -- a research aid for drafting a
+    case study, never a verdict, never wired into scan()/scan_corpus();
+    see visual_proof_judge.py's module docstring and the README's "Why
+    Case 6 isn't here" for why this stays single-specimen. Requires
+    GROQ_API_KEY in the environment; returns {"error": ...} rather than
+    raising if it's missing, the image can't be read, or the call
+    fails, matching this module's existing tool-calling ABI contract."""
+    try:
+        result = judge_visual_proof(claim_text, image_path=image_path, model=model)
+    except VisualProofJudgeError as exc:
+        return {"error": str(exc)}
+    return result.to_dict()

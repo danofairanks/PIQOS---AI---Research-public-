@@ -1,6 +1,13 @@
+import base64
 import json
 
-from attractor_scan.agent_tools import attractor_scan_corpus, attractor_scan_text
+from attractor_scan.agent_tools import (
+    attractor_scan_corpus, attractor_scan_judge_visual_proof, attractor_scan_text,
+)
+
+_TINY_PNG = base64.b64decode(
+    "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+)
 
 MUSK_QUOTE = "This will happen frequently as AI becomes smarter and more agentic"
 CLEAN_TEXT = "The classifier scored 87.3% accuracy on a held-out test set with a fixed random seed."
@@ -48,3 +55,39 @@ def test_scan_corpus_empty_list_is_json_safe():
     result = attractor_scan_corpus([])
     json.dumps(result)  # must not raise
     assert result["n_documents"] == 0
+
+
+def test_judge_visual_proof_missing_key_returns_error_dict_not_exception(monkeypatch, tmp_path):
+    monkeypatch.delenv("GROQ_API_KEY", raising=False)
+    img = tmp_path / "x.png"
+    img.write_bytes(_TINY_PNG)
+    result = attractor_scan_judge_visual_proof("claim", str(img))
+    assert "error" in result
+    assert "GROQ_API_KEY" in result["error"]
+
+
+def test_judge_visual_proof_is_json_safe(monkeypatch, tmp_path):
+    monkeypatch.setenv("GROQ_API_KEY", "k")
+    img = tmp_path / "x.png"
+    img.write_bytes(_TINY_PNG)
+    monkeypatch.setattr(
+        "attractor_scan.visual_proof_judge._call_groq_api",
+        lambda payload, api_key: {
+            "choices": [{"message": {"content": json.dumps({
+                "image_description": "a formula collage",
+                "candidate_read": "unrelated_borrowed_precision",
+                "reasoning": "no real connection to the claim",
+                "borrowed_term": "singularity", "self_reported_confidence": "medium",
+            })}}]
+        },
+    )
+    result = attractor_scan_judge_visual_proof("math Singularity", str(img))
+    json.dumps(result)  # must not raise
+    assert result["source"] == "ai_advisory"
+    assert result["flagged"] is True
+
+
+def test_judge_visual_proof_unreadable_image_returns_error_dict(monkeypatch):
+    monkeypatch.setenv("GROQ_API_KEY", "k")
+    result = attractor_scan_judge_visual_proof("claim", "/nonexistent/x.png")
+    assert "error" in result

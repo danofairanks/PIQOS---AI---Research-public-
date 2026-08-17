@@ -66,9 +66,9 @@ attractor-scan corpus --corpus docs.jsonl    # {"id": ..., "text": ...} per line
 | Case 3: "Emergence" | §2.8 | `laundering.py` — flags "emergent/emergence" near an AI subject with no metric-artifact caveat |
 | Case 4: "Alignment" and "Safety" | §2.8 | `laundering.py` — flags mentions with none of the six named sub-problems specified |
 | Case 5: Bidirectional Drift (AGI down / Agentic up) | §2.8 | `laundering.py` — flags both directions; bidirectional regex, since the paper's own real cited example has the "agentic" term following, not preceding, the inevitability language |
-| Case 6: Borrowed Technical Precision as Visual Proof | §2.8 | **Not implemented** — see below |
+| Case 6: Borrowed Technical Precision as Visual Proof | §2.8 | Not a scanner — `visual_proof_judge.judge_visual_proof` (advisory only, single image+claim at a time), see below |
 
-## Why Case 6 isn't here
+## Why Case 6 isn't a scanner
 
 The paper's own example for Case 6 is a specific image — a math-formula
 collage captioned "math Singularity" — read as visual support for an
@@ -76,11 +76,68 @@ unrelated hype claim via pun. That's a cross-modal, single-instance
 rhetorical move, not a generalizable text pattern. A keyword scanner
 pretending to detect "borrowing technical precision as visual proof"
 from text alone would be exactly the kind of unearned precision this
-project's own research exists to catch in other people's claims. If a
-second, independently-checkable instance of the pun-as-evidence move
-turns up, it belongs in a case study, not a keyword list — see
-`tools/bifp`'s README for the same reasoning applied to BIFP's "no
-weaker-substitute rebuttal" criterion.
+project's own research exists to catch in other people's claims. That
+reasoning still holds and still governs `scan()`/`scan_corpus()` —
+neither runs Case 6, and this package has no corpus-wide image
+classifier. If a second, independently-checkable instance of the
+pun-as-evidence move turns up, it belongs in a case study, not a
+keyword list — see `tools/bifp`'s README for the same reasoning
+applied to BIFP's "no weaker-substitute rebuttal" criterion.
+
+**What changed:** Groq's catalog now includes a vision-capable model
+(`qwen/qwen3.6-27b`), which makes a *single-specimen* version possible
+without reopening the scanner question. `visual_proof_judge.py` takes
+exactly one image and one claim at a time — never a corpus — and
+returns one AI-generated candidate read on whether the image's actual
+technical content genuinely supports the claim, or is connected to it
+only by wordplay. It exists to speed up drafting a case study, not to
+replace one: same advisory-only, never-a-verdict contract as `bifp`'s
+`rebuttal_judge.py`, extended to a cross-modal judgment instead of a
+text one. See "AI-generated advisory reads" below.
+
+```bash
+attractor-scan visual-proof --claim "math Singularity" --image formula_collage.png
+```
+
+```python
+from attractor_scan.visual_proof_judge import judge_visual_proof
+
+result = judge_visual_proof("math Singularity", image_path="formula_collage.png")
+print(result.candidate_read)   # "unrelated_borrowed_precision", "genuine_technical_support", or "unclear"
+print(result.borrowed_term)    # the word doing double duty, if borrowed-precision
+```
+
+## AI-generated advisory reads (Case 6 visual-proof judge)
+
+Same contract as `tools/bifp`'s rebuttal judge, restated here rather
+than only cross-referenced since the failure mode it guards against is
+specific to this package: a corpus-wide image classifier would be
+exactly the "unearned precision" mistake the section above names.
+`judge_visual_proof` never scans a corpus, is never called from
+`scan()`/`scan_corpus()`, and never stores or vendors the image it's
+given — it's a pass-through single call. Every result carries an
+explicit disclaimer that it's a research aid for drafting a case
+study, not a finding; independent verification of both the image and
+the claim is still required before anything here gets cited.
+
+**Setup:** set `GROQ_API_KEY` in the environment — never hardcoded,
+never read from a repo file, never included in any output or error
+message. Uses only `urllib` + `base64` from the standard library, so
+the package keeps its zero-pip-dependency install.
+
+**Live-verification status.** Not yet run against the live Groq API —
+same open item `tools/bifp`'s rebuttal judge started with. The
+offline test suite (`tests/test_visual_proof_judge.py`) mocks the Groq
+call and covers image-source handling (path vs. bytes, media-type
+inference, unreadable files), response parsing, error paths, and a
+regression test for the identical Cloudflare User-Agent issue
+`bifp`'s rebuttal judge hit in CI (fixed proactively here from the
+start, not discovered again) — all passing. Run it against the live
+API the same way: via
+[`.github/workflows/bifp_rebuttal_judge_demo.yml`](../../.github/workflows/bifp_rebuttal_judge_demo.yml)'s
+pattern (a `workflow_dispatch`-only job, since this build environment
+has `api.groq.com` blocked at the network-policy level) before relying
+on this feature's actual judgment quality, not just its plumbing.
 
 ## Honesty notes
 
@@ -112,7 +169,7 @@ pip install -e ".[dev]"
 pytest tests/ -q
 ```
 
-36 tests, including: all seven maneuvers and all five laundering cases
+59 tests, including: all seven maneuvers and all five laundering cases
 individually (positive and negative cases), a zero-false-positive check
 against clean scientific text, a regression test pinning the real
 Marcus/Karapetyan specimen at `combo` confidence, and — the one that
@@ -121,7 +178,8 @@ against basin_attractors_v1.md §2.8's own cited real-world Musk quote,
 which surfaced that the first draft of the Case 5 "agentic" regex only
 matched one word order and missed the paper's own example. Fixed
 before shipping; the fixed version and the test that caught it are
-both here.
+both here. `tests/test_visual_proof_judge.py` adds 14 more (offline
+Groq-mocked) for the Case 6 advisory judge described above.
 
 ## License
 

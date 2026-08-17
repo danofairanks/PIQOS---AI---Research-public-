@@ -7,6 +7,7 @@ import json
 import sys
 
 from .scan import scan, scan_corpus
+from .visual_proof_judge import DEFAULT_MODEL, VisualProofJudgeError, judge_visual_proof
 
 
 def _cmd_text(args: argparse.Namespace) -> int:
@@ -35,6 +36,16 @@ def _cmd_corpus(args: argparse.Namespace) -> int:
     return 0
 
 
+def _cmd_visual_proof(args: argparse.Namespace) -> int:
+    try:
+        result = judge_visual_proof(args.claim, image_path=args.image, model=args.model)
+    except VisualProofJudgeError as exc:
+        print(json.dumps({"error": str(exc)}, indent=2))
+        return 1
+    print(json.dumps(result.to_dict(), indent=2))
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(prog="attractor-scan",
                                  description="Classifier for basin_attractors_v1.md's defensive maneuvers and semantic-laundering cases")
@@ -48,6 +59,16 @@ def build_parser() -> argparse.ArgumentParser:
     p_corpus = sub.add_parser("corpus", help="scan a JSONL corpus ({\"id\":..., \"text\":...} per line) and aggregate")
     p_corpus.add_argument("--corpus", required=True)
     p_corpus.set_defaults(func=_cmd_corpus)
+
+    p_visual = sub.add_parser(
+        "visual-proof",
+        help="get an AI-generated (Groq vision) candidate read on Case 6 for one image + claim "
+             "(advisory only, single-specimen research aid -- requires GROQ_API_KEY)",
+    )
+    p_visual.add_argument("--claim", required=True)
+    p_visual.add_argument("--image", required=True, help="path to a local image file")
+    p_visual.add_argument("--model", default=DEFAULT_MODEL)
+    p_visual.set_defaults(func=_cmd_visual_proof)
 
     return p
 
