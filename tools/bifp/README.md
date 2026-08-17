@@ -131,7 +131,7 @@ round-trip test suite's own first draft caught.
 | §3.7 "no provisionalization" | `heuristics.scan_for_provisionalization` | Phrase-match against the paper's own seed vocabulary |
 | §3.7 "no status dismissal" | `heuristics.scan_for_status_dismissal` | Phrase-match + a credential-assertion/dismiss-interlocutor combined-signal detector, validated against a real specimen (see demo) |
 | §3.10 prohibited anthropomorphic terms | `heuristics.scan_for_prohibited_anthropomorphic_terms` | Coarse verb-list matcher, explicitly recall-oriented |
-| §3.7 "no weaker-substitute rebuttal" | `rebuttal_judge.judge_rebuttal` (advisory only) | A keyword scanner still can't do this honestly (see heuristics.py's docstring), so this is an optional Groq-backed candidate read instead of a regex heuristic — never a verdict, never calls `record()`. Requires `GROQ_API_KEY`. See "AI-generated advisory reads" below for why this doesn't conflict with §3.9's `no_ai_as_judge`. **Offline-mocked tests only as of this writing — not yet confirmed against the live Groq API from this build environment; see that section for status.** |
+| §3.7 "no weaker-substitute rebuttal" | `rebuttal_judge.judge_rebuttal` (advisory only) | A keyword scanner still can't do this honestly (see heuristics.py's docstring), so this is an optional Groq-backed candidate read instead of a regex heuristic — never a verdict, never calls `record()`. Requires `GROQ_API_KEY`. See "AI-generated advisory reads" below for why this doesn't conflict with §3.9's `no_ai_as_judge`. **Confirmed against the live Groq API 2026-08-17 — see that section for the actual result.** |
 | §3.2-3.6 everything requiring an actual independent team, red team, or contamination audit | `audit.py`'s `record()` call | Not automatable by construction — these are real-world processes this tool tracks the outcome of, not substitutes for |
 
 ## A design choice worth flagging
@@ -184,18 +184,39 @@ keeps its zero-pip-dependency install; the network call only happens
 if you call `judge_rebuttal`/`bifp_judge_rebuttal`/`bifp
 judge-rebuttal` directly.
 
-**Live-verification status.** The offline test suite
-(`tests/test_rebuttal_judge.py`) mocks the Groq call and covers key
-handling, prompt construction, response parsing, and error paths —
-all passing. `examples/rebuttal_judge_demo.py` is built to make a real
-call against two paired specimens (one designed to read as
-`weaker_substitute`, one as `addresses_actual_claim`) and fail loudly
-if the model doesn't discriminate between them, but has not yet been
-run against the live API from this project's own build environment
-(network egress to `api.groq.com` was blocked at the sandbox/policy
-level when this was built). Run it yourself with `GROQ_API_KEY=...
-python3 examples/rebuttal_judge_demo.py` before relying on this
-feature's actual discrimination quality, not just its plumbing.
+**Live-verification status: confirmed, 2026-08-17.** The offline test
+suite (`tests/test_rebuttal_judge.py`, 64 tests) mocks the Groq call
+and covers key handling, prompt construction, response parsing, and
+error paths. This project's own build environment has `api.groq.com`
+blocked at the sandbox/network-policy level, so the live call was run
+instead via a manual (`workflow_dispatch`-only) GitHub Actions
+workflow, [`.github/workflows/bifp_rebuttal_judge_demo.yml`](../../.github/workflows/bifp_rebuttal_judge_demo.yml)
+— see that file for why it exists and its own honesty note. Two
+findings from getting that run green, both fixed and covered by
+regression tests:
+
+- Groq's edge (Cloudflare) returned HTTP 403 "error code: 1010" — a
+  browser-signature bot-fight block triggered by Python's bare default
+  `urllib` User-Agent. Fixed by setting an honest, descriptive UA (not
+  a spoofed browser), same practice as `requests`/the official SDKs.
+- The original `DEFAULT_MODEL` (`llama-3.3-70b-versatile`) no longer
+  exists on Groq's catalog at all. Confirmed the current catalog via
+  `GET /openai/v1/models` and switched to `openai/gpt-oss-120b`, one of
+  three current models supporting both `json_mode` and `reasoning`.
+
+With both fixed, `examples/rebuttal_judge_demo.py`'s discrimination
+check passed cleanly against real API output: the `weaker_substitute`
+pair (a rebuttal attacking general MMLU performance instead of the
+specific claim) came back `flagged: true`, `weakened_restatement_quote:
+"it isn't reasoning"`, correctly explaining the rebuttal never engages
+the actual single-observation causal-model claim; the
+`addresses_actual_claim` pair (a rebuttal testing that exact claim)
+came back `flagged: false`, high confidence, correctly recognizing it
+as the real test. Re-run the workflow any time to re-confirm — Groq's
+catalog changing again is the most likely future failure mode, and the
+"List currently available Groq models" step in that workflow exists
+specifically to diagnose it quickly if `DEFAULT_MODEL` ever drifts
+stale again.
 
 ## Honesty notes
 
