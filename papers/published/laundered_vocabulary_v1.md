@@ -430,6 +430,114 @@ doing work the underlying argument was not.
 
 ---
 
+## Law
+
+**The precise sense.** In physics and the natural sciences, a "law" is a
+generalization whose authority is, by design, independent of who stated it.
+Newton's second law does not require continued deference to Newton to remain
+true; it is re-derivable, falsifiable, and checkable by anyone with no access
+to Newton's biography, reputation, or continued endorsement. Foucault's "What
+Is an Author?" (lecture to the Société française de Philosophie, Feb. 22,
+1969; published as "Qu'est-ce qu'un auteur?," *Bulletin de la Société
+française de Philosophie* 63(3), 73–104; English translation by Josué V.
+Harari in Rabinow, P. (Ed.), *The Foucault Reader*, 1984) names the specific
+historical transition this entry depends on: he traces how, from roughly the
+seventeenth century onward, scientific statements came to be received as
+true or false "without any question of the meaning of the discourse being
+connected with who its author was" — anonymous verifiability replaced
+authorial guarantee as the thing that makes a scientific claim stand. A law,
+in the technical sense, is precisely a claim built to survive the removal of
+its author's name.
+
+**The sense it gets confused with.** Foucault's essay spends most of its
+length on the opposite case: discourses — literary and philosophical
+foremost among them — where authorial identity never stopped being
+load-bearing, because "the meaning and value attributed to the text would be
+completely altered" if the identity of who wrote it were unknown. Within
+that category he names a further, stronger position: **founders of
+discursivity** (his own examples are Marx and Freud) — figures who do not
+merely author a text but establish "the possibility and the rules of
+formation of other texts," such that later work operates within the
+discourse they founded whether or not it cites them directly. When a
+self-published framework calls itself a "Law" while also styling its author
+as "Founder of" the field the law belongs to, it is claiming the founder-of-
+discursivity position — text and rule-for-producing-further-texts fused into
+one authorial act — while borrowing the vocabulary ("Law") of the register
+Foucault specifically documents as having *shed* that dependency.
+
+**The laundering mechanism.** "Law" sounds like the physics sense — durable,
+checkable, author-independent — while the actual claim depends entirely on
+continued deference to the namer's self-conferred authority, because there
+is no independent discourse outside her own texts against which the claim
+could be checked or falsified. This is structurally the same borrowed-
+precision move this glossary already names for Coherence, Emergence, and
+Singularity — a term with a genuine, rigorous meaning in one register
+lending its aura to an unfalsifiable claim in another — but the mechanism
+supplying the borrowed authority here is different in kind: not a
+mismeasured metric or a drifted definition, but the author-function itself,
+performing legitimizing work a physics law is specifically built not to
+need.
+
+**A concrete, dated illustration (2026-08-17).** A self-published author's
+promotional material describes her as "Founder of Psychology of
+Consciousness" and "Developer of the Law of Existence," stated as the
+formula T = C₇ × U³. No public material sighted defines C, U, or T, states
+their units, or derives the relation from anything — the notation asserts
+precision it never operationalizes. A companion LinkedIn post announcing a
+second "manuscript" states it "underwent structured external review and
+independent multi-system stress-testing coordinated by [a named individual],
+focused on internal consistency, theoretical boundaries and evidentiary
+discipline" — naming a review process with no stated institution, no
+disclosed methodology, and no stated credentials for the coordinator,
+functioning the same way `case_studies/2026-07-27_ssi_nvidia_partnership.md`
+names "The Opaque Promise": an impressive-sounding validation asserted with
+zero verifiable specifics, on a book distributed through a print-on-demand
+platform rather than a publisher with an editorial process. Running this
+project's own tools against the LinkedIn post text directly: `debasinizer`
+flags `register_flagged: True` on two co-occurring resonance categories
+(`resonance_wave_signal` on "signal," `consciousness_continuity` on
+"consciousness" — its own documented bar of 2+ distinct categories, not one
+common word); `paper_rigor` flags `credential_substitution` specifically on
+"Founder of Psychology of Consciousness" — a self-conferred title doing
+argumentative work, distinct from an externally-verifiable credential used
+only as an identifying descriptor (contrast §5's treatment of "Nobel
+laureate John Jumper" in `mission_premise_v1.md`, judged a false positive on
+exactly that distinction); `verification_lint` flags a missing scoping
+section above the applicable word-count threshold. This entry evaluates the
+specific public text and claims described above, not the author's sincerity,
+mental state, or private beliefs — consistent with this project's standing
+practice (`case_studies/2026-08-06_marcus_karapetyan_status_dismissal.md`:
+"this is not evaluated as bad faith") — and treats a single specimen as a
+single specimen, not an ongoing tracking subject.
+
+**A documented gap this specimen surfaces in the project's own tooling.**
+`debasinizer`'s resonance-vocabulary detector is purely lexical (`resonat-`,
+`wave`, `signal`, `pattern`, `echo`, `frequenc-`, `mirror`; see
+`tools/debasinizer/debasinizer/resonance.py`) and does not and structurally
+cannot match `U³` — yet the exponent is doing the identical rhetorical job
+lexical resonance vocabulary does: borrowing genuine mathematical structure
+(here, exponentiation) to imply totalizing, dimensional, or cosmic-scale
+amplification, without any operationalization behind it. The mechanism this
+glossary tracks is broader than the keyword lists any current tool in this
+project implements — notation itself can launder precision, not only words.
+This is named here as a scoping note for future tooling work, not built:
+a regex-based detector for "unusual exponents/operators applied to
+undefined single-letter variables in declarative, non-derivational prose"
+would need real negative-testing against legitimate applied-math and
+physics writing before shipping, to avoid the false-positive risk of
+flagging every genuine equation a paper states without re-deriving inline.
+
+**The test.** Ask whether the "law" would remain true, checkable, and
+independently re-derivable if every reference to its author's name, titles,
+and self-conferred field were removed from the text. A physics law survives
+that removal — the law and the discoverer's continued authority are
+separable, which is exactly Foucault's point about what changed in
+scientific discourse. A founder-of-discursivity "law" does not survive it,
+because the law and the author's authorized position were never separable
+objects to begin with.
+
+---
+
 ## Closing note
 
 This glossary will grow as new laundered terms are found and verified — the
