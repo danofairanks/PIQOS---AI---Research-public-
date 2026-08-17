@@ -34,6 +34,16 @@ from dataclasses import dataclass, field
 GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
 DEFAULT_MODEL = "llama-3.3-70b-versatile"
 
+# Honest, descriptive identification -- not a spoofed browser UA. Groq's
+# edge (Cloudflare) returns HTTP 403 "error code: 1010" (a browser-
+# signature bot-fight block) to Python's bare default urllib UA string
+# ("Python-urllib/3.x"), the same class of block any generic scripted
+# client hits. Identifying this as what it actually is -- this project's
+# own tool, with a repo link -- is standard practice for any API client
+# (requests, the official groq/openai SDKs all set a descriptive UA by
+# default) and resolves it without pretending to be something else.
+_USER_AGENT = "bifp-rebuttal-judge/0.1 (+https://github.com/danofairanks/PIQOS---AI---Research-public-)"
+
 _VALID_READS = ("addresses_actual_claim", "weaker_substitute", "unclear")
 
 _SYSTEM_PROMPT = (
@@ -114,6 +124,8 @@ def _call_groq_api(payload: dict, api_key: str) -> dict:
         headers={
             "Authorization": f"Bearer {api_key}",
             "Content-Type": "application/json",
+            "Accept": "application/json",
+            "User-Agent": _USER_AGENT,
         },
         method="POST",
     )

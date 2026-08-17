@@ -1,4 +1,6 @@
 import json
+import urllib.request
+from io import BytesIO
 
 import pytest
 
@@ -6,6 +8,7 @@ from bifp.rebuttal_judge import (
     DEFAULT_MODEL,
     RebuttalJudgeError,
     RebuttalJudgeResult,
+    _call_groq_api,
     judge_rebuttal,
 )
 
@@ -143,6 +146,43 @@ def test_custom_model_is_passed_through(monkeypatch):
     result = judge_rebuttal("c", "r", model="llama-3.1-8b-instant")
     assert seen["model"] == "llama-3.1-8b-instant"
     assert result.model == "llama-3.1-8b-instant"
+
+
+def test_call_groq_api_sets_identifying_user_agent(monkeypatch):
+    """Regression test for the Cloudflare 403 'error code: 1010' this
+    module hit in CI: Groq's edge bot-fights requests carrying Python's
+    bare default urllib User-Agent. This test exercises the actual
+    Request object _call_groq_api builds -- unlike every other test in
+    this file, which mocks _call_groq_api itself and so would not have
+    caught a missing/wrong header."""
+    captured = {}
+
+    class _FakeResponse(BytesIO):
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *exc):
+            return False
+
+    def fake_urlopen(request, timeout=None):
+        captured["headers"] = dict(request.header_items())
+        return _FakeResponse(json.dumps({
+            "choices": [{"message": {"content": json.dumps({
+                "candidate_read": "unclear", "reasoning": "",
+                "weakened_restatement_quote": None, "self_reported_confidence": "low",
+            })}}]
+        }).encode("utf-8"))
+
+    monkeypatch.setattr(urllib.request, "urlopen", fake_urlopen)
+    _call_groq_api({"model": DEFAULT_MODEL, "messages": []}, "test-key")
+
+    user_agent = captured["headers"].get("User-agent", "")
+    assert user_agent, "no User-Agent header was set at all"
+    assert "python-urllib" not in user_agent.lower(), (
+        "still sending urllib's bare default UA -- this is exactly what "
+        "triggered the Cloudflare 403 'error code: 1010' block in CI"
+    )
+    assert "bifp-rebuttal-judge" in user_agent
 
 
 def test_result_is_a_dataclass_with_expected_fields():
