@@ -212,12 +212,19 @@ def judge_visual_proof(
         # chart) can consume the whole default token budget on
         # reasoning before ever emitting the JSON answer, surfacing as
         # HTTP 400 json_validate_failed with an EMPTY failed_generation
-        # -- confirmed live 2026-08-17 (the bar-chart pair succeeded
-        # under the exact same code path; the graph pair failed this
-        # way). Explicit headroom at the model's own advertised cap
-        # (confirmed via GET /openai/v1/models) rather than leaving it
-        # to a provider default not sized for reasoning + vision.
-        "max_completion_tokens": 16384,
+        # -- confirmed live 2026-08-17. The model's own advertised cap
+        # (16384, per GET /openai/v1/models) is NOT usable here: it
+        # blows this account's on_demand tier TPM budget (confirmed
+        # live the same day -- HTTP 413 "Limit 8000, Requested 19146"
+        # on the very first call, before reasoning-budget was even the
+        # bottleneck, because providers reserve max_completion_tokens
+        # against the rate limit up front, not just what's actually
+        # generated). 4096 leaves headroom under the real 8000 TPM cap
+        # once the base64 image + prompt tokens are added, while still
+        # being meaningfully larger than whatever the unset default was
+        # (sufficient for the bar-chart pair, insufficient for the
+        # harder one).
+        "max_completion_tokens": 4096,
         "messages": [
             {"role": "system", "content": _SYSTEM_PROMPT},
             {

@@ -78,12 +78,18 @@ def test_image_path_media_type_inferred_from_suffix(monkeypatch, tmp_path):
     assert image_content["image_url"]["url"].startswith("data:image/png;base64,")
 
 
-def test_payload_sets_explicit_max_completion_tokens(monkeypatch, tmp_path):
-    """Regression test for the HTTP 400 json_validate_failed (empty
-    failed_generation) hit in CI on the harder of two live specimens:
-    a reasoning-capable model can exhaust the default token budget on
-    reasoning before emitting the JSON answer. Confirmed live
-    2026-08-17."""
+def test_payload_sets_explicit_max_completion_tokens_within_account_tpm_budget(monkeypatch, tmp_path):
+    """Regression test for two live findings, both confirmed 2026-08-17:
+    (1) HTTP 400 json_validate_failed with an empty failed_generation
+    on the harder of two live specimens -- a reasoning-capable model
+    can exhaust an unset default token budget on reasoning before
+    emitting the JSON answer; (2) HTTP 413 rate_limit_exceeded when
+    max_completion_tokens was set to the model's own advertised cap
+    (16384) -- this account's on_demand tier has an 8000 TPM budget,
+    and providers reserve max_completion_tokens against it up front.
+    Pins that some explicit value is set (finding 1) while staying
+    well under the account's real cap once image+prompt overhead is
+    added (finding 2) -- 4096 leaves that headroom."""
     monkeypatch.setenv("GROQ_API_KEY", "k")
     img = tmp_path / "x.png"
     img.write_bytes(_TINY_PNG)
@@ -98,7 +104,8 @@ def test_payload_sets_explicit_max_completion_tokens(monkeypatch, tmp_path):
 
     monkeypatch.setattr("attractor_scan.visual_proof_judge._call_groq_api", fake_call)
     judge_visual_proof("claim", image_path=str(img))
-    assert seen["payload"].get("max_completion_tokens", 0) >= 8192
+    max_tokens = seen["payload"].get("max_completion_tokens", 0)
+    assert 1024 <= max_tokens <= 6000
 
 
 def test_image_bytes_path_used_directly(monkeypatch):
