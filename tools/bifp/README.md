@@ -20,8 +20,9 @@ pip install -e .
 pip install -e ".[dev]"   # adds pytest, for running the test suite
 ```
 
-Zero runtime dependencies — no numpy, no network calls, nothing to
-download. Requires Python >= 3.10.
+Zero *pip* dependencies — no numpy, nothing to download; the HTTP
+call the optional Groq-backed advisory feature makes (see below) uses
+only the standard library. Requires Python >= 3.10.
 
 ## The core idea in one example
 
@@ -60,6 +61,12 @@ bifp record --audit claim.json --phase 5 --criterion no_status_dismissal \
 bifp scan-text --text "we're working on it" --audit claim.json  # attach heuristic flags
 bifp status --audit claim.json
 bifp report --audit claim.json       # full markdown report
+
+# Optional: AI-generated candidate read on §3.7's "no weaker-substitute
+# rebuttal" criterion (requires GROQ_API_KEY; see "AI-generated advisory
+# reads" below -- this never sets a criterion outcome itself)
+bifp judge-rebuttal --audit claim.json \
+    --claim "the original claim text" --rebuttal "the rebuttal text"
 ```
 
 Every `bifp` subcommand reads/writes the same JSON file (`--audit`),
@@ -98,6 +105,8 @@ adapter layer.
 | `bifp_attach_scan_to_audit(audit_path, text)` | Same, but attaches results to an audit's record |
 | `bifp_get_status(audit_path)` | Current phase-by-phase status + overall resolution |
 | `bifp_generate_report(audit_path)` | Full markdown report |
+| `bifp_judge_rebuttal(claim_text, rebuttal_text)` | AI-generated (Groq) candidate read on §3.7 no-weaker-substitute-rebuttal, standalone -- see "AI-generated advisory reads" below |
+| `bifp_attach_rebuttal_judgment(audit_path, claim_text, rebuttal_text)` | Same, attached to an audit's `ai_advisory_flags` -- never sets a criterion outcome |
 
 **On MCP specifically:** a live MCP server now exists —
 [`tools/research_mcp/`](../research_mcp/). It registers all seven
@@ -122,7 +131,7 @@ round-trip test suite's own first draft caught.
 | §3.7 "no provisionalization" | `heuristics.scan_for_provisionalization` | Phrase-match against the paper's own seed vocabulary |
 | §3.7 "no status dismissal" | `heuristics.scan_for_status_dismissal` | Phrase-match + a credential-assertion/dismiss-interlocutor combined-signal detector, validated against a real specimen (see demo) |
 | §3.10 prohibited anthropomorphic terms | `heuristics.scan_for_prohibited_anthropomorphic_terms` | Coarse verb-list matcher, explicitly recall-oriented |
-| §3.7 "no weaker-substitute rebuttal" | *(not implemented)* | Deliberately not given a heuristic — judging whether a rebuttal addresses a weaker version of the actual claim requires comparing two pieces of content's meaning, which a keyword scanner cannot do honestly. Left as a human/agent judgment call. |
+| §3.7 "no weaker-substitute rebuttal" | `rebuttal_judge.judge_rebuttal` (advisory only) | A keyword scanner still can't do this honestly (see heuristics.py's docstring), so this is an optional Groq-backed candidate read instead of a regex heuristic — never a verdict, never calls `record()`. Requires `GROQ_API_KEY`. See "AI-generated advisory reads" below for why this doesn't conflict with §3.9's `no_ai_as_judge`. **Offline-mocked tests only as of this writing — not yet confirmed against the live Groq API from this build environment; see that section for status.** |
 | §3.2-3.6 everything requiring an actual independent team, red team, or contamination audit | `audit.py`'s `record()` call | Not automatable by construction — these are real-world processes this tool tracks the outcome of, not substitutes for |
 
 ## A design choice worth flagging
@@ -140,6 +149,53 @@ verdict or get silently dropped. If you read §3.9-3.10 as intended to
 gate the claim itself, that's a one-line change in
 `AuditSession.overall_resolution` — flagged here so the choice is
 visible rather than buried.
+
+## AI-generated advisory reads (§3.7 rebuttal judge)
+
+`rebuttal_judge.py` adds one optional, Groq-backed feature:
+`judge_rebuttal(claim_text, rebuttal_text)` asks an LLM whether a
+rebuttal engages a claim as actually made, or a weaker substitute of
+it — the one §3.7 criterion `heuristics.py` deliberately declines to
+touch, because that comparison requires reading what two texts mean,
+not matching keywords.
+
+**Why this doesn't conflict with §3.9's `no_ai_as_judge`.** That
+criterion — "No AI-as-judge for claims about AI (structural conflict
+of interest avoided)" — is real, tracked, and unchanged by this
+feature. `judge_rebuttal` never calls `AuditSession.record()` and
+never touches `overall_resolution` or `protocol_integrity_resolution`.
+It returns one candidate read, stored separately from every other
+signal in `ai_advisory_flags` (not `heuristic_flags` — those are
+deterministic regex matches, a different kind of thing), explicitly
+labeled with a disclaimer naming §3.9 in every result. The actual
+`no_ai_as_judge` criterion is still recorded by a human, against the
+whole audit process, exactly as before this module existed — this
+feature does not touch that recording, is not evaluated by it, and
+cannot make it pass or fail. The contract is stricter than what §3.9
+already tolerates elsewhere in the same section (AI-generated audit
+reports spot-checked at ≥10% with override power): here, *every*
+candidate read requires a human/agent decision before it can support
+a `record()` call, with 0% treated as "reviewed by default."
+
+**Setup:** set `GROQ_API_KEY` in the environment — never hardcoded,
+never read from a repo file, never included in any output or error
+message. Uses only `urllib` from the standard library, so the package
+keeps its zero-pip-dependency install; the network call only happens
+if you call `judge_rebuttal`/`bifp_judge_rebuttal`/`bifp
+judge-rebuttal` directly.
+
+**Live-verification status.** The offline test suite
+(`tests/test_rebuttal_judge.py`) mocks the Groq call and covers key
+handling, prompt construction, response parsing, and error paths —
+all passing. `examples/rebuttal_judge_demo.py` is built to make a real
+call against two paired specimens (one designed to read as
+`weaker_substitute`, one as `addresses_actual_claim`) and fail loudly
+if the model doesn't discriminate between them, but has not yet been
+run against the live API from this project's own build environment
+(network egress to `api.groq.com` was blocked at the sandbox/policy
+level when this was built). Run it yourself with `GROQ_API_KEY=...
+python3 examples/rebuttal_judge_demo.py` before relying on this
+feature's actual discrimination quality, not just its plumbing.
 
 ## Honesty notes
 

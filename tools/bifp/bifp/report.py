@@ -97,6 +97,27 @@ def render_report(session: AuditSession) -> str:
                 parts.append(f"  - `{m.get('text')}`")
         parts.append("")
 
+    if session.ai_advisory_flags:
+        parts.append("## AI-Generated Advisory Reads (§3.9 applies -- not verdicts)\n")
+        parts.append(
+            "Candidate reads from an LLM (via `bifp judge-rebuttal` / "
+            "`agent_tools.bifp_judge_rebuttal`), kept in a separate list from the "
+            "deterministic heuristics above because they are a different kind of "
+            "thing. **§3.9's `no_ai_as_judge` criterion is not satisfied by review "
+            "of these flags** -- it is recorded, by a human, against the actual "
+            "audit process below, independently of whether this section is empty "
+            "or not. Nothing in this section calls `record()`; each entry is one "
+            "candidate read for a human/agent to weigh.\n"
+        )
+        for flag in session.ai_advisory_flags:
+            marker = "🚩" if flag.get("flagged") else "—"
+            parts.append(f"- {marker} **{flag.get('candidate_read')}** "
+                          f"(model: {flag.get('model')}, self-reported confidence: "
+                          f"{flag.get('self_reported_confidence')}) — {flag.get('reasoning')}")
+            if flag.get("weakened_restatement_quote"):
+                parts.append(f"  - Weakened restatement: `{flag['weakened_restatement_quote']}`")
+        parts.append("")
+
     parts.append("## What This Audit Does Not Claim\n")
     parts.append(
         "Does not claim any UNMET criterion above reflects fraud or bad faith on the "

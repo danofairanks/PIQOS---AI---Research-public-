@@ -80,6 +80,7 @@ class AuditSession:
     created_at: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
     phases: dict[int, PhaseRecord] = field(default_factory=dict)
     heuristic_flags: list[dict] = field(default_factory=list)
+    ai_advisory_flags: list[dict] = field(default_factory=list)
 
     @classmethod
     def new(cls, claim_text: str, *, is_timeline_claim: bool = False, escrowed: bool = False) -> "AuditSession":
@@ -103,6 +104,16 @@ class AuditSession:
 
     def add_heuristic_flags(self, flags: list[dict]) -> None:
         self.heuristic_flags.extend(flags)
+
+    def add_ai_advisory_flags(self, flags: list[dict]) -> None:
+        """Kept in a separate list from `heuristic_flags` on purpose:
+        the regex scanners in heuristics.py are deterministic pattern
+        matches, while these are AI-generated candidate reads (see
+        rebuttal_judge.py) -- distinct enough in kind, and distinct
+        enough in what §3.9 has to say about them, that conflating the
+        two lists would blur a distinction the rest of this package
+        goes out of its way to keep visible."""
+        self.ai_advisory_flags.extend(flags)
 
     def phase_status(self, phase_number: int) -> PhaseStatus:
         return self.phases[phase_number].status
@@ -158,6 +169,7 @@ class AuditSession:
             "created_at": self.created_at,
             "phases": {str(n): p.to_dict() for n, p in self.phases.items()},
             "heuristic_flags": self.heuristic_flags,
+            "ai_advisory_flags": self.ai_advisory_flags,
         }
 
     @classmethod
@@ -168,6 +180,7 @@ class AuditSession:
             escrowed=d.get("escrowed", False),
             created_at=d.get("created_at", ""),
             heuristic_flags=d.get("heuristic_flags", []),
+            ai_advisory_flags=d.get("ai_advisory_flags", []),
         )
         session.phases = {int(n): PhaseRecord.from_dict(p) for n, p in d["phases"].items()}
         return session

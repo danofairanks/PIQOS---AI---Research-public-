@@ -1,8 +1,9 @@
 import json
 
 from bifp.agent_tools import (
-    bifp_attach_scan_to_audit, bifp_generate_report, bifp_get_status,
-    bifp_list_phases, bifp_record_criterion, bifp_scan_text, bifp_start_audit,
+    bifp_attach_rebuttal_judgment, bifp_attach_scan_to_audit, bifp_generate_report,
+    bifp_get_status, bifp_judge_rebuttal, bifp_list_phases, bifp_record_criterion,
+    bifp_scan_text, bifp_start_audit,
 )
 
 
@@ -69,3 +70,71 @@ def test_generate_report_returns_markdown(tmp_path):
 def test_generate_report_missing_audit_returns_error():
     result = bifp_generate_report("/nonexistent/audit.json")
     assert "error" in result
+
+
+def test_judge_rebuttal_missing_key_returns_error_dict_not_exception(monkeypatch):
+    monkeypatch.delenv("GROQ_API_KEY", raising=False)
+    result = bifp_judge_rebuttal("claim", "rebuttal")
+    assert "error" in result
+    assert "GROQ_API_KEY" in result["error"]
+
+
+def test_judge_rebuttal_standalone_json_safe(monkeypatch):
+    monkeypatch.setenv("GROQ_API_KEY", "k")
+    monkeypatch.setattr(
+        "bifp.rebuttal_judge._call_groq_api",
+        lambda payload, api_key: {
+            "choices": [{"message": {"content": json.dumps({
+                "candidate_read": "addresses_actual_claim", "reasoning": "ok",
+                "weakened_restatement_quote": None, "self_reported_confidence": "high",
+            })}}]
+        },
+    )
+    result = bifp_judge_rebuttal("claim text", "rebuttal text")
+    json.dumps(result)  # must not raise
+    assert result["candidate_read"] == "addresses_actual_claim"
+    assert result["source"] == "ai_advisory"
+
+
+def test_attach_rebuttal_judgment_persists_to_ai_advisory_flags(tmp_path, monkeypatch):
+    path = str(tmp_path / "audit.json")
+    bifp_start_audit(path, "test claim")
+    monkeypatch.setenv("GROQ_API_KEY", "k")
+    monkeypatch.setattr(
+        "bifp.rebuttal_judge._call_groq_api",
+        lambda payload, api_key: {
+            "choices": [{"message": {"content": json.dumps({
+                "candidate_read": "weaker_substitute", "reasoning": "narrower target",
+                "weakened_restatement_quote": "easier claim", "self_reported_confidence": "medium",
+            })}}]
+        },
+    )
+    result = bifp_attach_rebuttal_judgment(path, "the actual claim", "a rebuttal of something easier")
+    assert result["flagged"] is True
+
+    from bifp.audit import AuditSession
+    session = AuditSession.load(path)
+    assert len(session.ai_advisory_flags) == 1
+    assert session.heuristic_flags == []  # kept in the separate list, not this one
+    assert session.ai_advisory_flags[0]["candidate_read"] == "weaker_substitute"
+
+    # Never sets a criterion outcome -- §3.7's criterion is still unassessed.
+    assert session.phases[5].criteria["no_weaker_substitute_rebuttal"].status.value == "unassessed"
+
+
+def test_attach_rebuttal_judgment_missing_audit_returns_error(monkeypatch):
+    monkeypatch.setenv("GROQ_API_KEY", "k")
+    result = bifp_attach_rebuttal_judgment("/nonexistent/audit.json", "c", "r")
+    assert "error" in result
+
+
+def test_attach_rebuttal_judgment_api_failure_does_not_write_partial_state(tmp_path, monkeypatch):
+    path = str(tmp_path / "audit.json")
+    bifp_start_audit(path, "test claim")
+    monkeypatch.delenv("GROQ_API_KEY", raising=False)
+    result = bifp_attach_rebuttal_judgment(path, "c", "r")
+    assert "error" in result
+
+    from bifp.audit import AuditSession
+    session = AuditSession.load(path)
+    assert session.ai_advisory_flags == []

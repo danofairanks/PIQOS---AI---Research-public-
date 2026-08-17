@@ -19,6 +19,7 @@ from __future__ import annotations
 from .audit import AuditSession
 from .heuristics import scan_text
 from .protocol import ALL_SECTIONS, CORE_AXIOM
+from .rebuttal_judge import DEFAULT_MODEL, RebuttalJudgeError, judge_rebuttal
 
 
 def bifp_list_phases() -> dict:
@@ -89,6 +90,46 @@ def bifp_attach_scan_to_audit(audit_path: str, text: str) -> dict:
     session.add_heuristic_flags([r.to_dict() for r in results.values()])
     session.save(audit_path)
     return {name: result.to_dict() for name, result in results.items()}
+
+
+def bifp_judge_rebuttal(claim_text: str, rebuttal_text: str, *, model: str = DEFAULT_MODEL) -> dict:
+    """Get one AI-generated (Groq) candidate read on §3.7's "no
+    weaker-substitute rebuttal" criterion: does `rebuttal_text`
+    address `claim_text` as actually made, or a weaker substitute?
+
+    This is advisory only -- see rebuttal_judge.py's module docstring
+    on why it does not conflict with §3.9's no_ai_as_judge criterion.
+    It never records a criterion outcome. Requires GROQ_API_KEY in the
+    environment; returns {"error": ...} rather than raising if it's
+    missing or the call fails, matching this module's existing
+    tool-calling ABI contract. Does not require or modify an audit
+    session -- call this for a quick check before deciding whether to
+    attach it to a full audit via `bifp_attach_rebuttal_judgment`."""
+    try:
+        result = judge_rebuttal(claim_text, rebuttal_text, model=model)
+    except RebuttalJudgeError as exc:
+        return {"error": str(exc)}
+    return result.to_dict()
+
+
+def bifp_attach_rebuttal_judgment(audit_path: str, claim_text: str, rebuttal_text: str, *,
+                                   model: str = DEFAULT_MODEL) -> dict:
+    """Run `bifp_judge_rebuttal` and attach the result to an existing
+    audit's `ai_advisory_flags`, without recording any criterion
+    outcome (same non-authoritative contract as
+    `bifp_attach_scan_to_audit` for the deterministic heuristics --
+    see that function and rebuttal_judge.py)."""
+    try:
+        session = AuditSession.load(audit_path)
+    except FileNotFoundError as exc:
+        return {"error": str(exc)}
+    try:
+        result = judge_rebuttal(claim_text, rebuttal_text, model=model)
+    except RebuttalJudgeError as exc:
+        return {"error": str(exc)}
+    session.add_ai_advisory_flags([result.to_dict()])
+    session.save(audit_path)
+    return result.to_dict()
 
 
 def bifp_get_status(audit_path: str) -> dict:

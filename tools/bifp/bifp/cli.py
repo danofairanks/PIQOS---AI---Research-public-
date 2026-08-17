@@ -7,9 +7,11 @@ import json
 import sys
 
 from .agent_tools import (
-    bifp_attach_scan_to_audit, bifp_generate_report, bifp_get_status,
-    bifp_list_phases, bifp_record_criterion, bifp_scan_text, bifp_start_audit,
+    bifp_attach_rebuttal_judgment, bifp_attach_scan_to_audit, bifp_generate_report,
+    bifp_get_status, bifp_judge_rebuttal, bifp_list_phases, bifp_record_criterion,
+    bifp_scan_text, bifp_start_audit,
 )
+from .rebuttal_judge import DEFAULT_MODEL
 
 
 def _cmd_new(args: argparse.Namespace) -> int:
@@ -33,6 +35,15 @@ def _cmd_scan_text(args: argparse.Namespace) -> int:
         result = bifp_scan_text(text)
     print(json.dumps(result, indent=2))
     return 0
+
+
+def _cmd_judge_rebuttal(args: argparse.Namespace) -> int:
+    if args.audit:
+        result = bifp_attach_rebuttal_judgment(args.audit, args.claim, args.rebuttal, model=args.model)
+    else:
+        result = bifp_judge_rebuttal(args.claim, args.rebuttal, model=args.model)
+    print(json.dumps(result, indent=2))
+    return 1 if "error" in result else 0
 
 
 def _cmd_status(args: argparse.Namespace) -> int:
@@ -87,6 +98,17 @@ def build_parser() -> argparse.ArgumentParser:
     p_scan.add_argument("--text", default=None, help="text to scan; reads stdin if omitted")
     p_scan.add_argument("--audit", default=None, help="optional: attach results to this audit's record")
     p_scan.set_defaults(func=_cmd_scan_text)
+
+    p_judge = sub.add_parser(
+        "judge-rebuttal",
+        help="get an AI-generated (Groq) candidate read on §3.7 no-weaker-substitute-rebuttal "
+             "(advisory only -- requires GROQ_API_KEY; never records a criterion outcome)",
+    )
+    p_judge.add_argument("--claim", required=True)
+    p_judge.add_argument("--rebuttal", required=True)
+    p_judge.add_argument("--audit", default=None, help="optional: attach result to this audit's record")
+    p_judge.add_argument("--model", default=DEFAULT_MODEL)
+    p_judge.set_defaults(func=_cmd_judge_rebuttal)
 
     p_status = sub.add_parser("status", help="print current phase-by-phase status")
     p_status.add_argument("--audit", required=True)

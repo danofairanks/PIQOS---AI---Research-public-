@@ -115,6 +115,8 @@ def test_roundtrip_to_dict_from_dict():
     session.record(1, "claim_specified", met=True, evidence="e1", notes="n1")
     session.add_heuristic_flags([{"name": "status_dismissal", "flagged": True}])
 
+    session.add_ai_advisory_flags([{"source": "ai_advisory", "candidate_read": "weaker_substitute"}])
+
     restored = AuditSession.from_dict(json.loads(json.dumps(session.to_dict())))
     assert restored.claim_text == session.claim_text
     assert restored.is_timeline_claim is True
@@ -122,7 +124,17 @@ def test_roundtrip_to_dict_from_dict():
     assert restored.phases[1].criteria["claim_specified"].status == CriterionStatus.MET
     assert restored.phases[1].criteria["claim_specified"].evidence == "e1"
     assert restored.heuristic_flags == session.heuristic_flags
+    assert restored.ai_advisory_flags == session.ai_advisory_flags
     assert restored.overall_resolution == session.overall_resolution
+
+
+def test_ai_advisory_flags_kept_separate_from_heuristic_flags():
+    session = AuditSession.new("claim")
+    session.add_heuristic_flags([{"name": "status_dismissal", "flagged": True}])
+    session.add_ai_advisory_flags([{"source": "ai_advisory", "candidate_read": "unclear"}])
+    assert len(session.heuristic_flags) == 1
+    assert len(session.ai_advisory_flags) == 1
+    assert session.heuristic_flags[0] != session.ai_advisory_flags[0]
 
 
 def test_save_and_load_roundtrip(tmp_path):
