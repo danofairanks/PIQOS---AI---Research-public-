@@ -78,6 +78,29 @@ def test_image_path_media_type_inferred_from_suffix(monkeypatch, tmp_path):
     assert image_content["image_url"]["url"].startswith("data:image/png;base64,")
 
 
+def test_payload_sets_explicit_max_completion_tokens(monkeypatch, tmp_path):
+    """Regression test for the HTTP 400 json_validate_failed (empty
+    failed_generation) hit in CI on the harder of two live specimens:
+    a reasoning-capable model can exhaust the default token budget on
+    reasoning before emitting the JSON answer. Confirmed live
+    2026-08-17."""
+    monkeypatch.setenv("GROQ_API_KEY", "k")
+    img = tmp_path / "x.png"
+    img.write_bytes(_TINY_PNG)
+    seen = {}
+
+    def fake_call(payload, api_key):
+        seen["payload"] = payload
+        return _groq_response({
+            "image_description": "x", "candidate_read": "unclear", "reasoning": "",
+            "borrowed_term": None, "self_reported_confidence": "low",
+        })
+
+    monkeypatch.setattr("attractor_scan.visual_proof_judge._call_groq_api", fake_call)
+    judge_visual_proof("claim", image_path=str(img))
+    assert seen["payload"].get("max_completion_tokens", 0) >= 8192
+
+
 def test_image_bytes_path_used_directly(monkeypatch):
     monkeypatch.setenv("GROQ_API_KEY", "k")
     seen = {}

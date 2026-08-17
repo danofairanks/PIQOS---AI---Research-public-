@@ -207,6 +207,17 @@ def judge_visual_proof(
         "model": model,
         "temperature": 0.1,
         "response_format": {"type": "json_object"},
+        # qwen/qwen3.6-27b is reasoning-capable; a harder cross-modal
+        # judgment call (an abstract math graph vs. a labeled bar
+        # chart) can consume the whole default token budget on
+        # reasoning before ever emitting the JSON answer, surfacing as
+        # HTTP 400 json_validate_failed with an EMPTY failed_generation
+        # -- confirmed live 2026-08-17 (the bar-chart pair succeeded
+        # under the exact same code path; the graph pair failed this
+        # way). Explicit headroom at the model's own advertised cap
+        # (confirmed via GET /openai/v1/models) rather than leaving it
+        # to a provider default not sized for reasoning + vision.
+        "max_completion_tokens": 16384,
         "messages": [
             {"role": "system", "content": _SYSTEM_PROMPT},
             {
