@@ -30,11 +30,14 @@ try:
 except ImportError:  # pragma: no cover -- exercised only on older mcp releases
     from mcp.server.fastmcp import FastMCP as MCPServer
 
-from attractor_scan.agent_tools import attractor_scan_corpus, attractor_scan_text
+from attractor_scan.agent_tools import (
+    attractor_scan_corpus, attractor_scan_judge_visual_proof, attractor_scan_text,
+)
 from basin_depth.agent_tools import basin_depth_demo, basin_depth_derive_vocab, basin_depth_run
 from bifp.agent_tools import (
-    bifp_attach_scan_to_audit, bifp_generate_report, bifp_get_status, bifp_list_phases,
-    bifp_record_criterion, bifp_scan_text, bifp_start_audit,
+    bifp_attach_rebuttal_judgment, bifp_attach_scan_to_audit, bifp_generate_report,
+    bifp_get_status, bifp_judge_rebuttal, bifp_list_phases, bifp_record_criterion,
+    bifp_scan_text, bifp_start_audit,
 )
 from debasinizer.agent_tools import debasinizer_scan_corpus, debasinizer_scan_text
 from paper_rigor.agent_tools import paper_rigor_scan, paper_rigor_triage_worklist
@@ -61,15 +64,23 @@ app = MCPServer(
         "external_verification_worklist output names the specific items that "
         "need a real web search/fetch to resolve (does citation X really say "
         "what's claimed, is this source credible), which this tool's own text "
-        "heuristics cannot determine. paper_rigor_triage_worklist is an optional, "
-        "Groq-backed advisory pass over an existing worklist (pass paper_rigor_"
-        "scan's own external_verification_worklist output straight through) -- "
-        "it attaches a priority and a suggested_check to each item without "
-        "adding, removing, or resolving any of them; it has no web access and "
-        "never claims to have verified anything. Requires GROQ_API_KEY. Every "
-        "tool here is a heuristic lead generator, not a verdict -- see each "
-        "source package's own README for exactly what it does and does not "
-        "detect."
+        "heuristics cannot determine. Three tools call Groq and require "
+        "GROQ_API_KEY, each advisory-only and never a verdict: "
+        "bifp_judge_rebuttal / bifp_attach_rebuttal_judgment return one "
+        "candidate read on whether a rebuttal addresses a claim as actually "
+        "made or a weaker substitute (BIFP §3.7), never calling record() "
+        "itself, since BIFP's own §3.9 forbids AI-as-judge for the claim's "
+        "actual adjudication; attractor_scan_judge_visual_proof returns one "
+        "candidate read on a single image + claim pair for whether the "
+        "image's genuine technical content supports the claim or is "
+        "connected only by wordplay (basin_attractors_v1.md §2.8 Case 6), "
+        "never scanning a corpus; paper_rigor_triage_worklist attaches a "
+        "priority and a suggested_check to each item in an existing "
+        "external_verification_worklist without adding, removing, or "
+        "resolving any of them -- it has no web access and never claims to "
+        "have verified anything. Every tool here is a heuristic lead "
+        "generator, not a verdict -- see each source package's own README "
+        "for exactly what it does and does not detect."
     ),
 )
 
@@ -84,8 +95,11 @@ _TOOLS = [
     bifp_attach_scan_to_audit,
     bifp_get_status,
     bifp_generate_report,
+    bifp_judge_rebuttal,
+    bifp_attach_rebuttal_judgment,
     attractor_scan_text,
     attractor_scan_corpus,
+    attractor_scan_judge_visual_proof,
     debasinizer_scan_text,
     debasinizer_scan_corpus,
     paper_rigor_scan,

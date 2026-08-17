@@ -35,13 +35,14 @@ def test_protocol_level_error_is_distinct_from_payload_level_error():
     assert result.is_error is True
 
 
-def test_all_sixteen_tools_are_registered(list_tool_names):
+def test_all_nineteen_tools_are_registered(list_tool_names):
     names = set(list_tool_names())
     assert names == {
         "basin_depth_demo", "basin_depth_run", "basin_depth_derive_vocab",
         "bifp_list_phases", "bifp_start_audit", "bifp_record_criterion",
         "bifp_scan_text", "bifp_attach_scan_to_audit", "bifp_get_status", "bifp_generate_report",
-        "attractor_scan_text", "attractor_scan_corpus",
+        "bifp_judge_rebuttal", "bifp_attach_rebuttal_judgment",
+        "attractor_scan_text", "attractor_scan_corpus", "attractor_scan_judge_visual_proof",
         "debasinizer_scan_text", "debasinizer_scan_corpus",
         "paper_rigor_scan", "paper_rigor_triage_worklist",
     }
@@ -111,6 +112,23 @@ def test_bifp_get_status_missing_audit_returns_error_payload(call_tool):
     assert "error" in result
 
 
+def test_bifp_judge_rebuttal_missing_key_returns_error_payload(call_tool, monkeypatch):
+    monkeypatch.delenv("GROQ_API_KEY", raising=False)
+    result = call_tool("bifp_judge_rebuttal", {"claim_text": "c", "rebuttal_text": "r"})
+    assert "error" in result
+    assert "GROQ_API_KEY" in result["error"]
+
+
+def test_bifp_attach_rebuttal_judgment_missing_audit_returns_error_payload(call_tool, monkeypatch):
+    # Missing-audit-file check happens before the GROQ_API_KEY check (see
+    # bifp/agent_tools.py) -- exercises that ordering over the real wire.
+    monkeypatch.setenv("GROQ_API_KEY", "irrelevant-for-this-path")
+    result = call_tool("bifp_attach_rebuttal_judgment", {
+        "audit_path": "/nonexistent/audit.json", "claim_text": "c", "rebuttal_text": "r",
+    })
+    assert "error" in result
+
+
 def test_attractor_scan_text_flags_the_papers_own_cited_example(call_tool):
     result = call_tool("attractor_scan_text", {
         "text": "This will happen frequently as AI becomes smarter and more agentic",
@@ -126,6 +144,17 @@ def test_attractor_scan_corpus_over_the_wire(call_tool):
         ],
     })
     assert result["n_documents"] == 2
+
+
+def test_attractor_scan_judge_visual_proof_missing_key_returns_error_payload(call_tool, monkeypatch):
+    monkeypatch.delenv("GROQ_API_KEY", raising=False)
+    # Key check happens before the image is ever read (see
+    # visual_proof_judge.py), so a nonexistent path is fine here.
+    result = call_tool("attractor_scan_judge_visual_proof", {
+        "claim_text": "c", "image_path": "/nonexistent/x.png",
+    })
+    assert "error" in result
+    assert "GROQ_API_KEY" in result["error"]
 
 
 def test_debasinizer_scan_text_flags_cross_category_register_over_the_wire(call_tool):

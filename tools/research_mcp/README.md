@@ -40,7 +40,7 @@ by the wrapped tools beyond what they already require.
 
 ## What's registered
 
-All 16 functions across the five packages' `agent_tools.py` modules,
+All 19 functions across the five packages' `agent_tools.py` modules,
 unchanged:
 
 | Tool | From | Purpose |
@@ -55,12 +55,24 @@ unchanged:
 | `bifp_attach_scan_to_audit` | bifp | Same, attached to an existing audit's record |
 | `bifp_get_status` | bifp | Phase-by-phase status + overall resolution |
 | `bifp_generate_report` | bifp | Render the full markdown report |
+| `bifp_judge_rebuttal` | bifp | **Calls Groq.** One candidate read on whether a rebuttal addresses a claim (BIFP §3.7) as actually made, or a weaker substitute — advisory only, never calls `record()`; see bifp/README.md for why this doesn't conflict with §3.9's `no_ai_as_judge`. Requires `GROQ_API_KEY`. |
+| `bifp_attach_rebuttal_judgment` | bifp | Same, attached to an existing audit's `ai_advisory_flags` rather than returned standalone |
 | `attractor_scan_text` | attractor_scan | Classify a single text for maneuvers + laundering cases |
 | `attractor_scan_corpus` | attractor_scan | Aggregate category frequency across a corpus |
+| `attractor_scan_judge_visual_proof` | attractor_scan | **Calls Groq (vision).** One candidate read on a single image + claim pair: does the image's genuine technical content support the claim, or is it connected only by wordplay (§2.8 Case 6)? Single-specimen only — never wired into `attractor_scan_corpus`; a corpus-wide version would be exactly the "unearned precision" mistake the package's own README argues against. Requires `GROQ_API_KEY`. |
 | `debasinizer_scan_text` | debasinizer | Classify a single text for the resonance-vocabulary register (2+ categories co-occurring) and self-coherence-assertion phrasing |
 | `debasinizer_scan_corpus` | debasinizer | Aggregate flag frequency across a corpus |
 | `paper_rigor_scan` | paper_rigor | Scan any paper for placeholders, falsifiability, self-citation, credentialing, consensus claims, citation-type mix, a claimed-citability-with-zero-references contradiction, and a missing limitations section — returns an `external_verification_worklist` naming the specific items that need a real web search/fetch to resolve |
-| `paper_rigor_triage_worklist` | paper_rigor | **The one tool here that calls an external API.** Takes an existing `external_verification_worklist` (pass `paper_rigor_scan`'s own output straight through) and attaches a Groq-generated `priority` + `suggested_check` to each item — advisory triage, not verification; never adds, removes, or resolves items. Requires `GROQ_API_KEY` in the environment; returns `{"error": ...}` if it's missing rather than failing the tool call itself. Empty worklist short-circuits with no API call. |
+| `paper_rigor_triage_worklist` | paper_rigor | **Calls Groq.** Takes an existing `external_verification_worklist` (pass `paper_rigor_scan`'s own output straight through) and attaches a Groq-generated `priority` + `suggested_check` to each item — advisory triage, not verification; never adds, removes, or resolves items. Requires `GROQ_API_KEY`. Empty worklist short-circuits with no API call. |
+
+**Three of these 19 tools call Groq and require `GROQ_API_KEY`** —
+every other tool is pure local computation with no network access at
+all. All three share the same contract: advisory-only, never a
+verdict, and each returns `{"error": ...}` rather than failing the
+tool call itself if the key is missing or the API call fails. If
+you're running this server yourself, set `GROQ_API_KEY` in the
+environment before starting it for those three; the other 16 work
+with no setup beyond installation.
 
 Each tool's docstring (visible to an MCP client as its description)
 and type hints (used to generate its JSON input schema) come straight
@@ -90,12 +102,15 @@ concrete suggested check per item — it does not shorten the flow (the
 agent still has to do the actual searching) but can make the order it
 works through the list better-informed.
 
-**`paper_rigor_triage_worklist` is architecturally different from
-every other tool in this table**: every other tool is pure local
-computation with no network access at all. This one calls Groq's API
-and requires a real secret. If you're running this server yourself,
-set `GROQ_API_KEY` in the environment before starting it — the other
-15 tools work with no setup beyond installation.
+The other two Groq-backed tools work the same way at their own scope:
+`bifp_judge_rebuttal` and `attractor_scan_judge_visual_proof` are each
+a single-specimen research aid for a genuine judgment call their
+source package's own text/corpus heuristics can't make honestly — see
+`bifp/README.md` "AI-generated advisory reads" and
+`attractor_scan/README.md` "Why Case 6 isn't a scanner" for the design
+reasoning each was built under, including the §3.9 `no_ai_as_judge`
+boundary `bifp_judge_rebuttal` respects and the "not a corpus
+classifier" boundary `attractor_scan_judge_visual_proof` respects.
 
 ## 30-second demo
 
@@ -104,13 +119,16 @@ python3 examples/mcp_demo.py
 ```
 
 Connects a real `mcp.client.session.ClientSession` to this server over
-the SDK's own in-memory transport, lists all 16 tools, and calls one
-from each wrapped package — `basin_depth_demo`, `bifp_scan_text`,
-`attractor_scan_text` against the same real Musk quote
-`attractor_scan`'s own test suite validates against, `debasinizer_
-scan_text` against a constructed specimen combining both patterns it
-detects, and `paper_rigor_scan` against a deliberately bad constructed
-paragraph.
+the SDK's own in-memory transport, lists all 19 tools, and calls one
+(sometimes two) from each wrapped package — `basin_depth_demo`,
+`bifp_scan_text` + `bifp_judge_rebuttal`, `attractor_scan_text` against
+the same real Musk quote `attractor_scan`'s own test suite validates
+against + `attractor_scan_judge_visual_proof`, `debasinizer_scan_text`
+against a constructed specimen combining both patterns it detects, and
+`paper_rigor_scan` against a deliberately bad constructed paragraph +
+`paper_rigor_triage_worklist` on that scan's own output. The three
+Groq-backed calls are skipped gracefully with a printed note if
+`GROQ_API_KEY` isn't set — every other step runs fully offline.
 
 ## Wiring this into an MCP host
 
@@ -145,7 +163,7 @@ project's actual `MCPServer` instance over its actual low-level
 protocol handler. Nothing in the request/response cycle is stubbed:
 JSON schema generation from type hints, request dispatch, tool
 invocation, and JSON-RPC content framing are all the real library
-code, exercised by 18 tests including a stateful bifp audit flow
+code, exercised by 21 tests including a stateful bifp audit flow
 (start → record → get_status) that persists across three separate
 tool calls the way an agent's turns actually would.
 
@@ -201,7 +219,7 @@ source .venv/bin/activate
 python3 -m pytest tests/ -v
 ```
 
-18 tests, all going over the real in-memory MCP wire protocol rather
+21 tests, all going over the real in-memory MCP wire protocol rather
 than calling Python functions directly (that coverage already exists
 in each source package's own test suite).
 
