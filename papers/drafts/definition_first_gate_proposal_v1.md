@@ -81,7 +81,7 @@ it checks definitional value while actually only checking definitional
 *shape* would be exactly the performed-rigor failure this proposal exists
 to name.
 
-## The one honestly-scoped slice that would be buildable, if wanted
+## The first honestly-scoped slice that would be buildable, if wanted
 
 A structural check on a `DEFINE`-block: flag any symbol stipulated via `:=`
 (or an equivalent assignment form) that no later text in the same document
@@ -94,6 +94,51 @@ without claiming to judge whether the definition is true, valuable, or
 non-lossy. Same contract as every other scanner in this toolkit: a lead for
 a human to check, not a verdict. Not built. Proposed here so the scope cut
 is on record rather than reconstructed later.
+
+## A second, complementary slice: static binding of a mutable referent
+
+Distinct from the slice above (which flags a symbol with no defeat
+condition anywhere downstream), this one flags a different, more specific
+shape: a `DEFINE`-block symbol whose ordinary referent is understood to be
+observationally updated or time-varying, bound instead as a single static
+value reused identically at every reference — no time index, no "as of,"
+no revision or update mechanism named anywhere in the document.
+
+This is not a new observation about the Grok specimen; it is already on
+record in this repo, just not yet folded into this proposal's buildable
+slices. `case_studies/2026-08-18_grok_falsifiable_agi_definition_oracle_loop.md`'s
+own "A Second, Independent Finding: R Is Treated As a Fixed Primitive"
+section names it directly: `R := reality` carries no time-index anywhere
+in the DEFINE block or the loop that follows, so `ε := consequential
+error(P,R)` cannot in principle distinguish "the model's prediction was
+wrong" from "reality itself changed since the model last checked" — both
+present identically as a rise in `ε`. If `R` is used as a fixed value, the
+formalism has already failed before a single equation is evaluated,
+independent of whether `R` ever gets a defeat condition elsewhere. A term
+can clear the first slice (someone eventually writes a falsification
+condition for it) and still fail this one, because that falsification
+condition is being run against a moving target frozen at a single instant.
+
+The check itself: does the term's ordinary meaning denote something
+observationally updated over time (reality, the market, consensus, the
+field, "what is currently understood")? If so, is it bound with a
+time-index or revision hook (a `t` subscript, "as of [date/event]," a
+named update procedure), or is it bound once and referenced identically
+throughout the document? The latter is the flag. This needs a short,
+explicit list of known-mutable-referent terms to trigger on — not an
+attempt to infer mutability from first principles, which would
+reintroduce the same judgment-call risk the first slice avoids by staying
+symbol-agnostic. A narrower net than the first slice, but a more
+mechanical one: it does not require confirming an *absence* of language
+anywhere in the document (the first slice's hardest part to do reliably),
+only a presence check on the binding itself.
+
+**Falsifier, same contract as the first slice:** if a material fraction of
+`DEFINE`-block symbols bound to known-mutable referents turn out to cause
+no soundness problem despite static binding — treating "reality" or
+"consensus" as fixed within a document's scope doesn't actually matter to
+most real specimens' arguments — this slice loses its priority and becomes
+a narrower, situational check rather than a default flag.
 
 ## A provenance note, now checked against the source
 
@@ -140,9 +185,13 @@ is retained as a resolved provenance note, not a citation.
 Does not claim a definition-first gate is buildable as a full, automated
 check in this project's current tooling — the section above states
 directly why it is not, and that conclusion, not a call to build toward it,
-is this proposal's actual content. Does not claim the narrow structural
-slice described above would catch every instance of this failure class,
-only its most literal shape (an unreferenced stipulated symbol). Does not
+is this proposal's actual content. Does not claim either narrow structural
+slice described above would catch every instance of this failure class:
+the first catches only its most literal shape (an unreferenced stipulated
+symbol); the second catches only static binding of a term from a short,
+explicitly curated list of known-mutable referents, and would miss a
+mutable referent the list doesn't anticipate or a fixed-value failure in a
+term that isn't obviously time-varying by its ordinary meaning. Does not
 claim any implementation exists, or that this proposal is scheduled for
 implementation. Does not claim the sibling-project match strengthens this
 proposal's evidentiary basis beyond the Grok specimen — the provenance note is
