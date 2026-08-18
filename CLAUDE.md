@@ -95,4 +95,4 @@ specifically.
 
 ## Current branch
 
-`claude/public-research-repo-setup-rppbk2`
+`Main`
