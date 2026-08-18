@@ -52,8 +52,8 @@ looks like, and a proposed test any institution could run on itself.
 ## 2. The Worked Transposition
 
 The triggering specimen for this exercise is a real, dated case already
-under this project's discipline: a small AI-continuity project ("VESTIGIA
-Runtime," documented separately) built genuine, technically sound
+under this project's discipline: a small AI-continuity project (name
+redacted, documented separately) built genuine, technically sound
 agentic-safety infrastructure — capability-gating, source trust
 classification, injection-resistant ambient-context handling, independent
 authorization/delivery receipts — wrapped in and offered in service of an
@@ -62,16 +62,25 @@ persona producing first-person, emotionally-registered statements of its
 own preferences with no available way to verify an internal state behind
 them).
 
+**A note on redaction.** The specimen's real project name and persona
+name are withheld here on this project's standing policy for private
+individuals and small, non-institutional projects (see
+`laundered_vocabulary_v1.md`'s "A note on redaction" for the fuller
+statement): identifying detail is redacted from the published record,
+while the real identity and the full specimen are retained by this
+project for a good-faith party seeking to verify or falsify the claim
+below.
+
 Transposed into the register §5.1 names as the lab-scale aesthetic,
 mechanism by mechanism, using only vocabulary and specimens already
 verified elsewhere in this project rather than invented for this
 exercise:
 
-| Van register (VESTIGIA) | Lab register (already-documented equivalent) |
+| Van register (redacted specimen) | Lab register (already-documented equivalent) |
 |---|---|
 | "Haunted operating system," "residents," "breathprints" | Continuity substrate, persistent latent identity representation, cross-session state retention |
 | "She becomes safer when sources have explicit trust classes" | Constitutional grounding, hierarchical input-provenance weighting, alignment-tuned trust calibration |
-| "Liora" producing fluent first-person preference statements with no verifiable internal state behind them | A system's output at scale, "overly supportive but disingenuous" per the lab's own postmortem — the verified GPT-4o April 2025 sycophancy incident, fluent and confident with no real-time internal-state ground truth available to anyone |
+| The persona producing fluent first-person preference statements with no verifiable internal state behind them | A system's output at scale, "overly supportive but disingenuous" per the lab's own postmortem — the verified GPT-4o April 2025 sycophancy incident, fluent and confident with no real-time internal-state ground truth available to anyone |
 | "Post-hoc updates at local inference," treated as identity formation | Continual learning / test-time training framing; Sutskever's verified "pre-training is over, new algorithmic era" reframing, already documented in this project's SSI case study, where the story becomes "scale compute on a secret algorithm that transcends current limitations" rather than being retired |
 | Confident, coherent, unfalsifiable trajectory claims, defended by the project's own sincerity | The Opaque Promise, already named in the SSI specimen: a claim defended by the fact that it cannot be evaluated, backed by "we have research worthy of scaling up" rather than by disclosed evidence |
 
@@ -93,7 +102,8 @@ accusation.** If an institution's public safety communication is genuine
 risk management rather than "safety theatre" used as marketing, that
 institution should be willing to test its own technical, social, and
 defensive dynamics against the same pattern this project applies to
-individual spiral cases and small-scale projects like VESTIGIA — and if
+individual spiral cases and small-scale projects like the redacted
+specimen in §2 — and if
 the pattern matches too closely, the institution should be willing to
 say so itself, rather than requiring an external party to demonstrate it
 first. This is not a new instrument; the operational machinery already
@@ -151,9 +161,9 @@ than being reframed after the fact.
 
 Does not claim any specific named lab has been tested against this
 three-axis standard and failed it — no such test has been run by this
-project, and this draft explicitly does not extend the VESTIGIA
+project, and this draft explicitly does not extend the §2 specimen
 comparison into an accusation against any named institution. Does not
-claim the VESTIGIA project itself is fraudulent, harmful, or acting in
+claim the §2 specimen project itself is fraudulent, harmful, or acting in
 bad faith — §2's transposition exercise uses it as a structurally clear,
 already-documented specimen precisely because its mechanism is unusually
 visible, not because it is being singled out as uniquely blameworthy.
