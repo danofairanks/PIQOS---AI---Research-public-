@@ -249,13 +249,19 @@ this paper treats them as adjacent rather than asserting either caused
 the other.
 
 **August 18, 2026.** OpenAI publishes "Pacing model development in an era
-of cyber-critical capabilities," announcing a real, dated operational
-pause: two weeks of halted RL training on frontier deployment-track
-models, with the largest planned frontier RL run still on hold at time of
-writing (full text and its own separate ambiguity analyzed in this
-project's companion draft,
-[`governance_binding_axiom_rl_pause_disclosure_addendum_v1.md`](governance_binding_axiom_rl_pause_disclosure_addendum_v1.md)).
-By the definition in §2 above, this is a genuine category-(c) event at the
+of cyber-critical capabilities." The operator later supplied the complete
+text directly, upgrading this project's sourcing on it to primary-source
+tier; the fuller document (analyzed at length in this project's companion
+draft,
+[`governance_binding_axiom_rl_pause_disclosure_addendum_v1.md`](governance_binding_axiom_rl_pause_disclosure_addendum_v1.md),
+which corrected a prior excerpt-only misreading) describes something
+broader and more ongoing than "two weeks, then done": frontier research
+inference paused broadly across "research clusters" immediately after the
+Hugging Face incident, a workload-by-workload security migration since,
+and — present tense, as of this post — "a significant number of workloads
+remain paused until they are fully migrated," on top of the two-week RL
+pause and the still-held largest frontier RL run. By the definition in §2
+above, this is a genuine category-(c) event at the
 *operational* level — a real, dated constraint that, if it holds as
 described, actually altered what was trained and when. §5 draws a
 distinction this paper needs here and did not yet state precisely enough:
