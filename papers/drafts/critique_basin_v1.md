@@ -32,14 +32,19 @@ inflow. Borrowing Jodi Dean's *communicative capitalism* and the empirical
 slacktivism literature, and reusing `governance_binding_axiom_v1.md`'s
 three-tier enforcement model applied to critique-as-policy instead of
 governance-as-policy, this paper names the mechanism **the Critique Basin**
-and applies `mirror_test_v1.md` §6.5's own outflow test to it directly. The
-paper's primary specimen — the 2023 "Pause Giant AI Experiments" letter and
-its three-year aftermath — is chosen because it does eventually produce a
-genuine, verifiable outflow event, which lets this paper make a sharper and
-more falsifiable claim than "critique never works": the outflow, when it
-came, is not credited by the party that produced it to the critique that
-preceded it by years, and its own stated trigger is a different kind of
-event entirely.
+and derives a two-tier falsifiability test from `mirror_test_v1.md` §6.5's
+own outflow instrument rather than a weaker one. The paper's primary
+specimen — the 2023 "Pause Giant AI Experiments" letter and its
+three-year aftermath — is chosen because it does eventually produce a
+real, dated, *operational* outflow event, which lets this paper make a
+sharper claim than "critique never works": that event is not credited by
+the party that produced it to the critique preceding it by years, its own
+stated trigger is a different kind of event entirely, and — the paper's
+sharpest point, reached only after checking the industry's own documented
+pattern of absorbing safety counter-evidence without structural change —
+even a fully credited operational pause would not by itself be sufficient
+to falsify this paper's reading, because the actual falsifier has to
+operate at the level of the attractor itself, not the pause.
 
 ## 1. Relationship to the existing framework — what this adds and does not
 
@@ -250,9 +255,26 @@ models, with the largest planned frontier RL run still on hold at time of
 writing (full text and its own separate ambiguity analyzed in this
 project's companion draft,
 [`governance_binding_axiom_rl_pause_disclosure_addendum_v1.md`](governance_binding_axiom_rl_pause_disclosure_addendum_v1.md)).
-This is, by the definition in §2 above, a genuine category-(c) event — an
-operational constraint that, if it holds as described, actually altered
-what was trained and when, not merely what was said.
+By the definition in §2 above, this is a genuine category-(c) event at the
+*operational* level — a real, dated constraint that, if it holds as
+described, actually altered what was trained and when. §5 draws a
+distinction this paper needs here and did not yet state precisely enough:
+operational outflow of this kind is not the same claim as attractor-level
+outflow, and the announcement's own language signals which one this is.
+"Our largest planned frontier RL run remains on hold... before proceeding"
+is resumption-conditional — it names a condition (harden, red-team,
+expand monitoring) under which scaling continues, not an abandonment of
+the scaling trajectory itself. That is exactly the shape
+`basin_attractors_v1.md` §2.4 (Attractor 4) already documents as the
+field's standard defensive response to safety counter-evidence: "red-
+teaming is ongoing," "the next safety layer will fix it," each incident
+treated as temporary rather than as evidence of a fundamental limit. A
+pause under that framing is not obviously evidence against Attractor 4's
+load-bearing claim ("safety layers create robust, externally verifiable
+constraints") — it can just as easily be read as an instance of the
+pattern, and even as inflow for it, since "we paused to hardened our
+systems" is itself pro-narrative content once it circulates. §5 makes this
+precise rather than resolving it by assertion.
 
 **The sharper claim this specimen supports.** An outflow event did
 eventually occur — more than three years after the letter that first named
@@ -306,35 +328,68 @@ actively reproduces the target mechanism inside itself, on a fellow
 critic, which is a stronger and more specific claim than "critique doesn't
 bind."
 
-## 5. The falsifiable test
+## 5. The falsifiable test — two tiers, not one
 
-Directly reusing `mirror_test_v1.md` §6.5's already-built instrument
-rather than proposing a new one: track, for any dated critique event
-(letter, paper, viral thread) directed at the AI-narrative attractor, (a)
-its own inflow-side variables — signature count, citation count,
-reshare/engagement volume, media coverage — and (b) whether a dated,
-verifiable outflow event (retraction, funding reversal, policy change,
-halted deployment, resumed only after a stated condition was met) can be
-found within some bounded window, and if so, whether the outflow event's
-own stated justification credits the critique or names an independent
-trigger.
+The first draft of this section asked only whether a dated outflow event's
+own justification credits the preceding critique. That test is necessary
+to log but was wrongly treated as sufficient: §3's own re-examination
+shows a credited, real, operational pause can still be fully consistent
+with — even confirmatory of — the attractor it was supposed to threaten,
+because the industry's documented pattern (`basin_attractors_v1.md` §2.4)
+is to absorb safety counter-evidence as "temporary, being handled" rather
+than as grounds to abandon the underlying trajectory. A test that stops at
+"was the pause credited to critique" cannot distinguish a genuine defeat
+from Attractor 4 functioning exactly as designed. Two tiers are needed,
+and only the second is the actual falsifier for this paper's central
+claim.
 
-- **Confirms the Critique-Basin reading:** inflow-side variables are high
-  and sustained; either no outflow event is found in the bounded window,
-  or an outflow event is found but its own stated justification does not
-  credit the critique.
-- **Falsifies it:** an outflow event is found whose own stated
-  justification explicitly credits the critique as a material cause —
-  a lab's own communication naming the letter, the paper, or the public
-  pressure as the reason for the change, not merely coinciding with it in
-  time.
+**Tier 1 — operational outflow (necessary to log, not sufficient to
+falsify).** Track, for any dated critique event directed at the
+AI-narrative attractor, (a) its inflow-side variables — signature count,
+citation count, reshare/engagement volume, media coverage — and (b)
+whether a dated, verifiable *operational* outflow event (a specific
+pause, retraction, or policy change) follows within some bounded window,
+and whether that event's own justification credits the critique. This
+tier is worth tracking because it is where this paper's own primary
+specimen (§3) lives, and because a *complete absence* of Tier 1 outflow
+across a long enough corpus is itself informative — but a Tier 1 event
+alone, however directly credited, does not defeat the Critique-Basin
+reading. It only shows that critique can sometimes coincide with or
+even proximately trigger an operational response; it says nothing about
+whether the underlying attractor the critique was actually aimed at moved.
 
-This is a stricter test than "did anything change after the critique" —
-it requires the correction to be attributed to the critique by the party
-making the correction, which is exactly what distinguishes an outflow
-event that falsifies this paper's reading from one that merely follows it
-in time without being caused by it, the same distinction §6.5 already
-draws for the ring model generally.
+**Tier 2 — attractor-level outflow (the actual falsifier).** This paper
+adopts `mirror_test_v1.md` §6.5's loop-polarity test directly rather than
+building a weaker one: a dated, verifiable instance of one of
+`basin_attractors_v1.md`'s nine load-bearing claims itself being
+abandoned or reversed — not a pause with a resumption condition attached,
+but a stock actually decrementing. §6.5's own examples are the right
+calibration: "a retraction that changes capital allocation, a hiring or
+funding decision reversed on falsified-prediction grounds, a peer-review
+rejection of a claim previously accepted at the same rigor level." Applied
+to a critique-originated event specifically: a lab abandoning or
+materially de-prioritizing its scaling commitment (Attractor 1) citing
+the critique; a benchmark practice discontinued because a critique
+demonstrated it was not a trustworthy capability proxy (Attractor 2); a
+compressed timeline claim publicly walked back, not merely hedged, because
+a critique's specific prediction failed (Attractor 6) — with the
+retraction or reversal itself, not merely a subsequent pause, dated and
+attributable.
+
+- **Confirms the Critique-Basin reading:** any amount of Tier 1 activity,
+  including credited operational outflow, so long as no Tier 2 event is
+  found in the corpus for the period — which is exactly §6.5's own
+  existing prediction, restated here for critique-originated events
+  specifically rather than for the attractor system generally.
+- **Falsifies it:** a documented Tier 2 event — an attractor's own stock
+  measurably decrementing, attributed to critique rather than to an
+  independent incident.
+
+By this stricter standard, §3's own specimen is Tier 1 only. It is a real,
+useful, and rare enough data point to be worth the full analysis given to
+it — but it is not, and this paper does not claim it is, a Tier 2 event,
+and its own resumption-conditional language is a reason to expect it will
+not become one without further, separately-dated evidence.
 
 ## 6. What this does not establish
 
