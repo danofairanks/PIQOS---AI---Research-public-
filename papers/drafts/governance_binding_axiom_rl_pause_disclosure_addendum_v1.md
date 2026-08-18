@@ -123,6 +123,22 @@ claim naming no observable outcome whatsoever (the RL-training pause itself
 is a concrete, falsifiable-in-principle fact; it is the claim's *scope and
 duration* that resist falsification, not its existence).
 
+A separate, worth-naming cross-reference rather than an argument this
+addendum makes on its own: `critique_basin_v1.md` §3 (a sibling draft in
+this same directory) analyzes this identical statement against
+`basin_attractors_v1.md` §2.4 (Attractor 4) and notes that "before
+proceeding" is resumption-conditional language — the field's documented
+default shape for absorbing safety counter-evidence without abandoning
+the underlying trajectory, not obviously a hard constraint. That is a
+claim about a different axis than this section's — whether the statement
+binds the lab's own model at all (this section) versus whether, if it
+does, it says anything about the broader narrative attractor moving
+(`critique_basin_v1.md`'s question) — and this addendum takes no position
+on the second axis. But the same textual signal (present-tense
+conditionality attached only to the frontier run, past tense everywhere
+else) is doing the analytic work in both places, worth flagging so a
+reader of one does not miss it in the other.
+
 ## What this does not establish
 
 - No claim that OpenAI's internal frontier development is in fact
