@@ -189,10 +189,27 @@ is this proposal's actual content. Does not claim either narrow structural
 slice described above would catch every instance of this failure class:
 the first catches only its most literal shape (an unreferenced stipulated
 symbol); the second catches only static binding of a term from a short,
-explicitly curated list of known-mutable referents, and would miss a
-mutable referent the list doesn't anticipate or a fixed-value failure in a
-term that isn't obviously time-varying by its ordinary meaning. Does not
-claim any implementation exists, or that this proposal is scheduled for
+explicitly curated list of known-mutable referents.
+
+The second slice's miss-size is not a bounded, known limitation — it is
+genuinely unmeasured, and stating a curated list makes it *look* scoped
+without actually scoping it. Whether the gap between "terms this list
+catches" and "terms that are actually pivotable between fixed and moving
+value" is small or huge, in any given domain, is not established here and
+is not established by making the list longer. A longer list does not
+shrink the gap in a measurable way, because the underlying problem —
+deciding whether a given term's referent is fixed or observationally
+updated in the context of a specific document — is the same
+world-knowledge judgment call the "Why this doesn't reduce to a library
+dependency" section already rules out of scope for the whole gate, just
+relocated one level down and dressed as a smaller, list-shaped problem.
+Building a general classifier for "pivotable" semantics is not a scaled-up
+version of the second slice; it is the same open problem the full gate
+already fails to reduce to a library, and should not be mistaken for a
+tractable engineering task because it can be entered from a shorter list.
+This gap is named here explicitly so a future pass does not rediscover it
+and re-litigate the same conclusion. Does not claim any implementation
+exists, or that this proposal is scheduled for
 implementation. Does not claim the sibling-project match strengthens this
 proposal's evidentiary basis beyond the Grok specimen — the provenance note is
 now confirmed to exist and to match closely, but two unbuilt, commonly-authored
