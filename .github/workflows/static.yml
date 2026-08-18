@@ -36,8 +36,10 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: '.'
+          # Site content lives under docs/ (index.html, scan.html, assets/) --
+          # uploading the whole repo root leaves no index.html at the served
+          # root, which 404s. Upload docs/ only.
+          path: './docs'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
