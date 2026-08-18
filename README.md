@@ -97,3 +97,9 @@ by its path and version. For example:
 
 Attribution is requested as a courtesy of the license, not a legal
 requirement beyond the MIT license terms themselves.
+
+## Contact
+
+Questions, corrections, or specimen tips: [piqosoracle@gmail.com](mailto:piqosoracle@gmail.com).
+Also reachable on X ([@piqosoracle](https://x.com/piqosoracle)) and
+[LinkedIn](https://www.linkedin.com/in/daniel-fairbanks-a831b43bb).
