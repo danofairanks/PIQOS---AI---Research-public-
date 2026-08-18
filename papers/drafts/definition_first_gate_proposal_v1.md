@@ -95,17 +95,45 @@ non-lossy. Same contract as every other scanner in this toolkit: a lead for
 a human to check, not a verdict. Not built. Proposed here so the scope cut
 is on record rather than reconstructed later.
 
-## A provenance note, stated as exactly that
+## A provenance note, now checked against the source
 
-A sibling, non-public project reportedly arrived at a rule resembling this
-one independently, after an incident in which a prior paper checked out
-structurally while its definition made the work meaningless. This is
-recorded here for context only — it has not been independently verified
-against that project's own source or derivation record in this session (a
-repository-access attempt failed for reasons unrelated to this project's
-own tooling), and it carries none of the evidentiary weight the Grok
-specimen above does. It should not be cited as grounding for this proposal;
-the Grok specimen is the grounding.
+*Updated 2026-08-18: an earlier session's repository-access attempt to this
+note's sibling project failed for reasons unrelated to either project's own
+tooling; a later session's attempt succeeded and the claim below was checked
+directly against that project's own internal material, not reconstructed from
+memory.*
+
+A sibling, non-public project does carry a rule matching this one — filed
+internally as one candidate item in a cluster of related detection-mechanism
+proposals, not shipped tooling, not wired into any automated pipeline, and not
+itself a citable public source (that project's own scope rules keep its
+internal design material out of this repository; this note describes the
+match at the level the public statement above already operates at, without
+importing that material). Its first line states, close to verbatim, "check
+definitions, not derivations": in a stacked-formalism document the load-
+bearing failure typically sits at the natural-language-to-formalism binding
+step — a definition asserted rather than earned — rather than inside the
+downstream math, which is frequently locally sound and therefore reads as
+verified once a reader checks the algebra and stops. It was arrived at in
+part from a real specimen in that project's own corpus where a downstream
+algebraic apparatus was independently confirmed correct while the definition
+it was built on was found illegitimate — the "prior paper checked out
+structurally while its definition made the work meaningless" shape the
+operator recalled, now confirmed rather than reconstructed.
+
+What does not match exactly: the internal item is broader than this proposal
+— it also covers prose-based term-binding failures (a word traded between
+shifting referents across an argument, not only a symbolic `DEFINE` block)
+— and it is filed as one candidate among several related mechanisms, not
+promoted past candidate status, with no automated detector built for it
+either. So this proposal and that internal item are two independent, unbuilt
+statements of close to the same idea, arrived at separately under common
+authorship — genuine convergence, not one confirming the other. Per this
+project's own standard for external convergence generally (`mirror_test_v1.md`,
+`laundered_vocabulary_v1.md`), convergence under shared authorship influence
+is suggestive, not independent verification, and is not elevated to grounding
+here for that reason. The Grok specimen remains the grounding; this section
+is retained as a resolved provenance note, not a citation.
 
 ## What this proposal does not claim
 
@@ -116,8 +144,11 @@ is this proposal's actual content. Does not claim the narrow structural
 slice described above would catch every instance of this failure class,
 only its most literal shape (an unreferenced stipulated symbol). Does not
 claim any implementation exists, or that this proposal is scheduled for
-implementation. Does not claim the sibling-project provenance note is
-verified; it is explicitly marked as unverified above and should be read
-that way. Does not extend or supersede `Metrics vs. Soundness` or
+implementation. Does not claim the sibling-project match strengthens this
+proposal's evidentiary basis beyond the Grok specimen — the provenance note is
+now confirmed to exist and to match closely, but two unbuilt, commonly-authored
+statements of the same idea are convergence, not independent confirmation, and
+the note is retained for context rather than as grounding. Does not extend or
+supersede `Metrics vs. Soundness` or
 `Performed Rigor vs. Demonstrated Rigor` in `laundered_vocabulary_v1.md` —
 this is an adjacent, sequencing-focused idea, not a replacement for either.

@@ -4,39 +4,6 @@ This file auto-loads at the start of any Claude Code session against this
 repository. If you are a fresh session reading this: welcome, here is what
 you need to know before doing anything else.
 
-## Handoff note (filed 2026-08-18, action pending)
-
-A prior session on branch `claude/public-research-repo-setup-rppbk2`
-repeatedly failed to add `piqos-ecosystem/piqos-isoaxiomv8-` to its session
-scope. Four separate `add_repo` calls across ~20 minutes all returned
-`MCP tool call requires approval` even after the operator confirmed
-approving the prompt each time — a session-level bug, not a real
-permission denial (the repo is in this project's normal allowed scope; see
-"Repository scope" below). **If you can reach that repo, the first thing
-worth doing is retrying `add_repo` once, cleanly, before anything else.**
-
-Why it matters: the operator recalled that `PIQOS-IsoAxiomV8-` already has
-a rule requiring a definition be checked for value/falsifiability *before*
-equations built on it are evaluated — arrived at independently, after a
-prior paper checked out structurally while its definition made the work
-meaningless. Likely in a derivations folder, or already built into
-Harold/CrossOracleAuditor's pipeline. This project has since filed
-[`papers/drafts/definition_first_gate_proposal_v1.md`](papers/drafts/definition_first_gate_proposal_v1.md),
-a *deliberately unbuilt* proposal for the same idea, grounded entirely in
-a fully-verified local specimen
-([`case_studies/2026-08-18_grok_falsifiable_agi_definition_oracle_loop.md`](case_studies/2026-08-18_grok_falsifiable_agi_definition_oracle_loop.md))
-because the IsoAxiomV8 precedent could not be independently verified this
-session. **If you can reach the source, check it and update the proposal
-accordingly** — confirm it, correct it, fold in a real citation, or say
-plainly that it doesn't match what the operator recalled. The proposal
-already states this provenance note as explicitly unverified; that's the
-thing to resolve.
-
-Do not treat this note as itself a citable source once the above is
-resolved — update or remove it in the same commit that acts on it. A stale
-handoff note left in place after its action item is done is exactly the
-kind of drift this project's own tooling exists to catch elsewhere.
-
 ## What this repository is
 
 Public research output related to the PIQOS Oracle framework —
