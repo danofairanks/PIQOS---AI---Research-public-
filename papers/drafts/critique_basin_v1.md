@@ -166,6 +166,8 @@ the general mechanism (weak-tie networks are structurally suited to wide,
 cheap circulation and poorly suited to sustained, costly pressure), not as
 evidence about AI critique specifically.
 
+**A fourth, independent convergence — temporal rather than social, and closer to this paper's own subject than any borrowed literature can be on its own.** Neil Postman's 1985 foreword to *Amusing Ourselves to Death* draws the same distinction this paper's circulation/correction split names, forty years earlier and about a different medium: "Orwell feared that the truth would be concealed from us. Huxley feared the truth would be drowned in a sea of irrelevance" (Postman, *Amusing Ourselves to Death: Public Discourse in the Age of Show Business*, Viking, 1985, Foreword). His argument is that a fact no longer needs to be suppressed once it can be buried under enough competing, undifferentiated content — burial and suppression produce the same practical outcome. Applied directly to this paper's own mechanism, in a live, dated specimen: Roman Sheremeta restated Postman's thesis for a modern feed-and-algorithm context on LinkedIn (2026-08-19) — "A fact no longer has to be disproven — it only has to be surrounded by a hundred competing claims, stripped of context and nuance... That is the more sophisticated form of control: not preventing people from knowing, but exhausting their capacity to care" — and this project's own operator replied, independently, with the sharper half this paper needed: "Finding truth buried under narrative is exhausting, less rewarding, and in the end never gets amplified once discovered. Because exposing the truth, just unloads the same level of cognitive exercise to anyone that needs to read it in depth to understand its full scope." That reply names *why* correction value stays flat even once a critique has cleared circulation and reached the truth underneath the noise: verifying a claim costs real, non-transferable cognitive labor for every subsequent reader who wants the correction rather than the original, while the original claim propagates by requiring none of that labor from anyone who merely repeats it — the same asymmetry Dean's exchange-value/use-value split names structurally, restated here at the level of individual reading cost. Neither Postman's book nor Sheremeta's post is about AI-narrative critique specifically, and the operator's reply is offered as illustration, not as independent evidence of this paper's AI-specific claims — the same discipline this paper already applies to Dean and Gladwell above.
+
 ## 3. Specimen: the Pause Letter, three years later
 
 **Sourcing note, stated directly.** Every domain touched by this specimen
@@ -459,6 +461,10 @@ specimen this paper did not select for fit.
   alter the original pattern or significance per the correcting source.)
 - Gladwell, M. (2010, Oct. 4). Small Change: Why the Revolution Will Not
   Be Tweeted. *The New Yorker*.
+- Postman, N. (1985). *Amusing Ourselves to Death: Public Discourse in the
+  Age of Show Business*. Viking. (Foreword.)
+- Sheremeta, R. (2026, Aug. 19). LinkedIn post on truth, noise, and
+  algorithmic attention.
 - Future of Life Institute (2023). Pause Giant AI Experiments: An Open
   Letter. futureoflife.org.
 - MIT Technology Review (2023, Sept. 26). Six months on from the "pause"
