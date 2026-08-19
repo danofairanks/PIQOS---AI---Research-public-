@@ -205,10 +205,58 @@ pattern already named there for SSI. Not proposed for merging into either
 published section directly, per this project's own convention that
 published papers take a new version suffix rather than a silent edit.
 
+## Addendum (2026-08-20) — the triggering source has an undisclosed stake, and LeCun's own public rhetoric has shifted
+
+**Testas is not a disinterested observer of the LeCun/Schmidhuber
+attribution question — this should have been flagged before his post was
+treated as a neutral flag.** Abdelaziz Testas, whose LinkedIn post naming
+"yanning" opened this line of inquiry, is the author of a full book,
+*The Battle for World Models: Schmidhuber, LeCun, and the Future of AI*,
+which frames Schmidhuber-vs-LeCun credit specifically as its subject.
+This is not background color: the dispute is live and mutual. Testas
+observed, in an earlier post, that LeCun "said little about [world
+models'] origins or predecessors," attributing the omission to his
+"long-standing reluctance to credit Jürgen Schmidhuber for foundational
+ideas in the area" — and LeCun responded to Testas directly and by name
+on LinkedIn: "So far, I've ignored this kind of non-sense. But enough is
+enough." Correction to how §§1–4 above should be read: this does not
+reopen the specific facts already independently verified in this
+session's prior conversation (Fukushima's Neocognitron priority over
+LeNet; Schmidhuber's 1990 coinage of "world model," 36 years before this
+paper's filing date) — those check out against primary sources
+regardless of who is pointing at them. What it corrects is the framing:
+the triggering post should have been read from the start as one side of
+a named, ongoing, commercially-invested dispute, not as a disinterested
+"sloppy journalism" flag, and this paper's own Abstract and References
+did not carry that disclosure. It now does.
+
+**LeCun's own public register has shifted since leaving Meta, checked
+against dated statements rather than asserted.** His earliest post-
+departure framing of the LLM-scaling path is combative and totalizing:
+"The path to superintelligence — simply train large language models,
+train with more synthetic data, hire thousands of people to 'educate'
+your system in post-training, and invent new tricks for reinforcement
+learning — I think it's complete nonsense. It simply won't work." His
+later 2026 public statements run measurably more hedged, and notably the
+hedge now extends past the LLM camp he was attacking: at the India AI
+Impact Summit, LeCun warned that AGI itself is "still years away" and
+cautioned against "overblown expectations" generally, adding that "we
+think of ourselves as being general, but it's simply an illusion" —
+philosophical hedging about the achievability and even definability of
+AGI as a category, not only a claim that LLMs specifically will fail to
+reach it. Paired with §2's product-timeline finding (industrial
+applications only "hoped for" in 2027, no product likely for roughly
+five years), the pattern is a real, dated shift from an early,
+totalizing dismissal of the rival path to a later, broader caution that
+now covers his own venture's timeline too — checked here as a
+description of his public statements over time, not as a claim about his
+private motivations or sincerity, which this paper has no instrument to
+measure.
+
 ## References
 
-- TechCrunch (2026, Mar. 9). Yann LeCun's AMI Labs raises $1.03B to build
-  world models.
+- TechCrunch (2026, Mar. 9). Yann LeCun's AMI Labs raises $1.03B (per
+  this same source) to build world models.
 - Tech Times (2026, May 31). Yann LeCun's World Model Earns a Formal
   Proof: Benchmark Finds Current Models Brittle.
 - Tech Times (2026, Jun. 6). Yann LeCun World Models Bet: AMI Labs Stakes
@@ -225,6 +273,13 @@ published papers take a new version suffix rather than a silent edit.
   forecastfools.com.
 - Digg (2026). Gary Marcus argues the eventual winners of the AI
   transition will rely on neurosymbolic systems.
+- Testas, A. (2026). *The Battle for World Models: Schmidhuber, LeCun, and
+  the Future of AI*. Amazon/Kindle self-published.
+- EdTech Innovation Hub (2026). Yann LeCun pushes back on LinkedIn over
+  who invented world models.
+- HPCwire/AIwire (2025, Feb. 11). Meta's Chief AI Scientist Yann LeCun
+  Questions the Longevity of Current GenAI and LLMs.
+- Fast Company (2026). Yann LeCun pushes back on AGI predictions.
 - This project's own already-verified material, reused per §1 and §4:
   `governance_binding_axiom_v1.md` §4 (three-tier enforcement method);
   `mission_premise_v1.md` (SSI Opaque Promise precedent);
