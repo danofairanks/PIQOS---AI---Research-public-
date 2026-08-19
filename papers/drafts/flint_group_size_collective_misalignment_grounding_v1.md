@@ -248,8 +248,135 @@ certification implies system-level certification" as a named conjecture,
 this specimen (paper + author-confirmed governance reading) is a strong
 candidate starting point — not logged as such here, only as a lead.
 
+## Second Addendum (2026-08-20) — an independent measurement instrument, different mechanism, same conclusion
+
+A second specimen, unrelated in authorship, method, and task to Flint et
+al. above, converges on the identical structural claim this section
+exists to ground: Carrignon, Stubbersfield & Acerbi, "Quantifying the
+rate and amplitude of cultural change in populations of AI agents"
+(*Philosophical Transactions of the Royal Society A*, preprint, 2026),
+read directly from the full 20-page PDF supplied by the operator — this
+project's strongest available sourcing tier, no fetch attempted or
+needed.
+
+**What it does, precisely distinct from Flint et al.'s naming game.**
+Rather than a coordination game, this paper runs a transmission-chain /
+evolutionary-algorithm experiment: populations of 100 independent queries
+to a single LLM (Mistral 7B, Qwen2.5 7B, or OpenAI ChatGPT-3.5) select
+and mutate short health-advice statements across 100 simulated time
+steps, under 16 combinations of four selection operators (efficient,
+attractive, original, random) and four mutation framings. The resulting
+statement-frequency chains are then fit, via Approximate Bayesian
+Computation with Random Forest Adjustment (ABC-RFA), to an established
+cultural-evolution model (Carrignon et al., 2026) estimating two
+independent parameters: J (frequency-dependent/conformity bias) and β
+(content-dependent bias, selecting on a statement's estimated utility).
+This is a categorically different mechanism from Flint et al.'s
+mean-field reaction-diffusion naming-game theory — different math,
+different task domain, different research group — arriving at population
+size N as a function of query count within a single-model run rather than
+number of interacting agents, which is worth stating precisely rather
+than treating the two papers' "populations" as identical constructs.
+
+**The finding.** Across all three LLMs, the paper estimates J frequently
+above 1.5 and sometimes near 2 — the paper's own words, "an order of
+magnitude stronger" conformity than the values typically reported in the
+human cultural-transmission literature, where J sits close to zero or
+only slightly above one (Carrignon et al., 2026) even in the most
+conformist human cases previously measured. Combined with often-strong β,
+this produces chains that converge to a single dominant statement and
+remain there for long stretches — a self-reinforcing content lock, driven
+by the model's own selection dynamics rather than by any external
+constraint on the space of possible statements. Critically, and again
+directly parallel to Flint et al.'s central claim, the specific
+combination of J and β is neither uniform nor extrapolable across models:
+each of the three LLMs shows what the paper calls a distinct
+frequency-vs-content "signature," and the *selection operator* used
+(efficient, attractive, original, random) modulates that signature
+differently for each model — for GPT-3.5, the random operator alone drives
+both biases near zero, close to unstructured chance; for Mistral 7B and
+Qwen2.5, no operator produces that near-neutral behavior. A model-level
+property estimated in isolation on one operator does not predict the same
+model's behavior under a different operator, and no single model's
+estimated biases predict another model's — isolation testing, at any
+scale, does not characterize field behavior here either.
+
+**A genuinely new, complementary finding: fragmentation as an alternative
+to homogenization, not merely a variant of it.** Flint et al.'s paper is
+silent on what happens when multiple different models' populations
+coexist. This paper's Discussion addresses that directly and cautiously:
+because different models converge toward different content attractors
+(the paper's own word), "a cultural landscape in which different
+communities rely on different LLMs is unlikely to homogenize uniformly.
+Fragmentation could be equally possible by producing multiple internally
+convergent 'pockets' of culture, each anchored to the specific biases of
+the model generating it, and perhaps increasingly divergent from one
+another." This is worth flagging as the same "attractor" vocabulary
+convergence already noted for Flint et al.'s "basins of attraction"
+phrase above, under the identical hedge: shared mathematical ancestry
+(dynamical-systems attractor theory), not a claim that either paper's
+"attractor" is this project's basin-attractor concept.
+
+**A named, untested feedback-loop mechanism worth carrying forward
+precisely.** The Discussion names, without testing, a specific
+acceleration path: "This divergence process could be accelerated if and
+when the models used are directly modified by this use; whereas by direct
+reinforcement learning or by subsequent training that re-use the datasets
+produced by the users. Through this retroactive loop, the biases and
+differences we observe in our study may accelerate the divergence of the
+models' biases themselves." This is a training-feedback mechanism
+distinct from both papers' core empirical claims — named as a hypothesis
+by the paper's own authors, not demonstrated by their data, and logged
+here at that tier.
+
+**A smaller, concrete content-bias finding worth naming on its own.**
+Text analysis of the generated health-advice statements found that the
+*efficient* mutation operator — explicitly prompted to produce statements
+that would be "efficient at convincing people" — consistently generated
+*higher*, not lower, anxiety-related and negative-emotion word
+frequencies than other operators, across the models where this was
+tested. The paper cites independent prior research (Toma & D'Angelo,
+2015, cited in Carrignon et al., 2026) that higher anxiety-word density
+in health advice is an established linguistic marker of *lower* perceived
+expertise. Optimizing generation for persuasive efficiency produced
+content plausibly working against the impression of expertise it was
+selected to convey — a concrete, measured instance of the same shape this
+project's own §2.15 (Dramatic-Solution Signature) already documents at
+the rhetoric level: selecting for what reads as most compelling can
+degrade the actual quality of the underlying claim.
+
+**What this second specimen does not establish, stated with the same
+care as the first.** Not a claim that this paper's J/β conformity
+estimates are the same phenomenon as Flint et al.'s collective-bias
+reversal/amplification/induction findings — they are different
+parameters measuring different dynamics (selection-driven statement
+convergence within one model's repeated querying vs. multi-agent
+coordination-game equilibria) that happen to point at the same general
+claim from two independent directions. Not a claim that the fragmentation
+possibility named in this paper's Discussion has been observed or
+measured — the authors state it as a plausible alternative to
+homogenization, explicitly not tested against real multi-model
+communities in this paper. Not a claim that the training-feedback loop
+named above has been shown to occur — flagged as an authors' own named
+hypothesis, untested here. Not an extension of the private companion
+repository's cross-reference — that remains logged separately per that
+repository's own gating discipline, per this document's existing "What
+this does not establish" section above.
+
 ## References
 
+- Carrignon, S., Stubbersfield, J. M., & Acerbi, A. (2026). Quantifying
+  the rate and amplitude of cultural change in populations of AI agents.
+  *Philosophical Transactions of the Royal Society A*, preprint. Code and
+  data: Carrignon, S., Stubbersfield, J. M., & Acerbi, A. (2026). Code and
+  Data for paper "Quantifying the rate and amplitude of cultural change in
+  populations of AI agents" (v1.1.3). Zenodo.
+  https://doi.org/10.5281/zenodo.21410772
+- Toma, C. L., & D'Angelo, J. D. (2015). Tell-tale words: Linguistic cues
+  used to infer the expertise of online medical advice. *Journal of
+  Language and Social Psychology*, 34(1), 25-45. (Cited directly from
+  Carrignon et al., 2026's own reference list, not independently
+  re-verified against the original article in this session.)
 - Flint, A., Aiello, L. M., Pastor-Satorras, R., & Baronchelli, A. (2026).
   Group size effects and collective misalignment in LLM multi-agent
   systems. *Proceedings of the National Academy of Sciences*, 123(34),
