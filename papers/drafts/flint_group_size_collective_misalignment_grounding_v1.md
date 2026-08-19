@@ -202,6 +202,52 @@ this material is merged — it remains a real, dated, differently-sourced
 instance of the same underlying claim, and multiple independent
 convergent sources is stronger than either alone.
 
+## Addendum (2026-08-20) — the paper's own corresponding author confirms the governance reading, same day
+
+In the comment thread on Baronchelli's original LinkedIn announcement,
+Massimo Buonomo (self-described AI governance / digital finance / public
+policy expert) posted a governance-framed restatement of §5's core point,
+quoted directly: "System behaviour cannot be assumed to be the sum of
+component behaviour... It also challenges a common assurance assumption:
+If every component is acceptable, the system must be acceptable. Not
+necessarily... You cannot certify a multi-agent system by certifying its
+agents separately. The collective may become something none of its
+components were." Andrea Baronchelli — the paper's own corresponding
+author, replying directly in the same thread — confirmed this reading
+without qualification: "exactly! the safety of the single model is not
+the safety of the population." This is first-party confirmation, from the
+paper's own corresponding author, of precisely the interpretation this
+addendum's §5 already draws — it upgrades that reading from this
+project's own inference to an author-confirmed one, though it remains
+informal (a LinkedIn reply, not a peer-reviewed statement) and is logged
+at that tier, not elevated to primary-source-paper status.
+
+**Does this confirm any of `governance_binding_axiom_v1.md` §4.1's six
+pre-registered defeat conditions?** Checked directly against the status
+table: no. None of the six rows (governance-binds types a/b/c, harness
+score vs. base-model capability, scale-alone alignment, RSI/continual-
+learning trend) concern multi-agent isolation-vs-field divergence or
+component-vs-system certification — this exchange is adjacent to that
+table's subject matter, not a specimen against any row already in it.
+
+**What it does supply, named precisely and not overclaimed:** Buonomo's
+framing — "if every component is acceptable, the system must be
+acceptable" — states a general governance assumption in exactly the
+falsifiable shape §5's own method calls for (a universal claim, open to a
+constructed or found counter-model). The paper's own reversal and
+induction findings (population converges on an outcome no individual
+agent, in isolation, preferred) are a plausible counter-model shape for
+that assumption. This is flagged as a candidate, not a cleared defeat
+condition: the paper does not define or test an "acceptability" threshold
+for individual-agent bias, so "every component is acceptable" is not
+itself demonstrated in the data — Buonomo's assumption and the paper's
+findings are adjacent, not yet formally joined into a completed
+theorem/counter-model/defeat-condition triple in the sense §5 requires. If
+this project ever formalizes a defeat condition for "component-level
+certification implies system-level certification" as a named conjecture,
+this specimen (paper + author-confirmed governance reading) is a strong
+candidate starting point — not logged as such here, only as a lead.
+
 ## References
 
 - Flint, A., Aiello, L. M., Pastor-Satorras, R., & Baronchelli, A. (2026).
