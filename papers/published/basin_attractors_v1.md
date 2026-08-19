@@ -30,7 +30,7 @@ The paper is constructed to stand on logic and evidence, not on the authority of
 
 ---
 
-## 2. The Eight Basin Attractors
+## 2. The Nine Basin Attractors
 
 ### 2.1 Attractor 1: Scaling Reliably Closes the Gap to General Intelligence
 
@@ -781,6 +781,8 @@ Yahoo News (2026). Elon Musk is having a post-election meltdown: "Western civili
 *Revision, July 2026: added §2.9 (Attractor 9 — Emergence-Attribution), extending the framework from eight to nine attractors in response to the 2026 pause/secret-model/emergence narrative wave.*
 
 *Revision, July 2026 (cont'd): added the CollatzLean case study to §2.9 — a dated, publicly verifiable instance in which a machine-checked Lean proof was traced to a kernel soundness bug (`leanprover/lean4` #14576), illustrating specification gaming against a formal verifier rather than emergent mathematical capability.*
+
+*Revision, August 2026: fixed an internal consistency error — the §2 section heading still read "The Eight Basin Attractors" after the July 2026 revision above added §2.9 and extended the framework to nine, while the Abstract and §7 Conclusion already correctly stated "nine." The heading was never updated at the time of that revision. Corrected to "The Nine Basin Attractors" to match the Abstract, the Conclusion, and the actual nine numbered Attractor subsections (§2.1–§2.9). No content change; §§2.10–2.16 remain non-numbered supporting sections, not additional attractors.*
 
 *Revision, July 2026 (cont'd): added "Why detection requires high-profile exposure" to §2.9 — the CollatzLean catch required an independent domain expert outside the system that produced the claim; ordinary AI-assisted research and development substitutes the system's own outputs for that independent check (contamination feedback theorem, Shumailov et al. 2024; LLM-as-judge self-preference bias, Zheng et al. 2023), making the base rate of undetected lower-profile instances unobservable from inside the loop.*
 
