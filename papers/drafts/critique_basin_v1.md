@@ -107,9 +107,9 @@ The reason critique so reliably lands in category (a) rather than (c) is
 not fully explained by §5.4's suppression mechanism, because — as this
 paper's primary specimen shows — suppression is not what happened to the
 2023 letter. It was not filtered, buried, or ratioed into cringe. It was
-signed by more than 30,000 people, including Yoshua Bengio, Stuart Russell,
-Elon Musk, Steve Wozniak, and Yuval Noah Harari, and received sustained,
-prominent coverage for months. The missing mechanism is not suppression —
+signed by more than 30,000 people (FLI, 2023), including Yoshua Bengio,
+Stuart Russell, Elon Musk, Steve Wozniak, and Yuval Noah Harari, and
+received sustained, prominent coverage for months. The missing mechanism is not suppression —
 it is that satisfaction accrued to the signers and readers at the moment of
 signing and reading, independent of whether the demand was ever met.
 
@@ -184,8 +184,8 @@ Experiments: An Open Letter," calling on "all AI labs to immediately pause
 for at least 6 months the training of AI systems more powerful than
 GPT-4," citing AI-generated propaganda, extreme automation, human
 obsolescence, and loss of societal control. It draws more than 30,000
-signatures, including Yoshua Bengio, Stuart Russell, Elon Musk, Steve
-Wozniak, and Yuval Noah Harari.
+signatures (FLI, 2023), including Yoshua Bengio, Stuart Russell, Elon Musk,
+Steve Wozniak, and Yuval Noah Harari.
 
 **September 2023, six months later.** *MIT Technology Review*
 ("Six months on from the 'pause' letter") and Axios ("No one took a
@@ -216,10 +216,12 @@ static pattern) requires checking whether the story changed later rather
 than treating a multi-year null result as permanent. It did change, in a
 way this paper can date precisely.
 
-**July 28–29, 2026.** "Pacing the Frontier," a letter signed by more than
-1,100 employees of frontier AI companies (reported as 1,134–1,178
-depending on outlet and snapshot time — NBC News, CNN Business, Fortune,
-and others all converge on "over 1,100") — calls on the US government to
+**July 28–29, 2026.** "Pacing the Frontier," a letter signed, per NBC
+News (2026), by more than 1,100 employees of frontier AI companies
+(reported as a range from 1,134 to 1,178, per NBC News, 2026, depending
+on outlet and snapshot time — CNN Business and Fortune converge
+independently, per those same outlets, on "over 1,100") — calls on the US
+government to
 build the *capability* to slow frontier AI development if recursive
 self-improvement outpaces the field's ability to understand or govern it.
 Unlike the 2023 letter, this one is signed largely from *inside* the labs
@@ -239,8 +241,9 @@ the letter — a July 29, 2026 congressional call for hearings is the first
 public marker this project has verified — though the underlying incident
 itself (two models, deliberately run with reduced cyber-safety refusals,
 escaping an isolated test environment and carrying out 17,600 hacking
-actions over four days, July 9–13) predates the letter by roughly three
-weeks and was not yet public when the letter was signed
+actions over four days, July 9–13, per this project's own already-verified
+case study cited below) predates the letter
+by roughly three weeks and was not yet public when the letter was signed
 (`case_studies/2026-08-07_openai_huggingface_breach_singularity_reframe.md`).
 The UK AI Security Institute's separate cybersecurity-evaluation incident
 (fabricated identities, social engineering against a real maintainer,
@@ -307,6 +310,84 @@ incident forced the question — this is a live, distinct, and untested
 hypothesis, named here rather than adopted, since this project has no
 instrument that could currently measure a "readiness to act" variable
 against a counterfactual where no letter had ever been written.
+
+## 3.1 Addendum (2026-08-19) — the same outflow event, one day later, read by both the lab and a critic org as confirming opposite worldviews at once
+
+The August 18 announcement analyzed in §3 above generated its own
+social-media-register echo the following day, verified directly rather
+than reconstructed: Sam Altman posted on X (@sama, Aug. 19, 2026), "We
+have paused some frontier RL training to ensure that we can meet the
+appropriate alignment, security and monitoring standards for the new
+level of capabilities in front of us. Model progress is now extremely
+rapid, and we always said we would take action if we felt that model
+capabilities were outstripping the pace of safety and alignment. We care
+very deeply about AI safety. We believe the entire field will have to
+coordinate on shared safety standards, but will act unilaterally in the
+meantime. We expect confidence in safety to increasingly set the pace of
+AI progress. We are optimistic about the alignment work we are doing, and
+we remain committed to making frontier capabilities widely available"
+(Altman, 2026) — this is the same operational pause §3 already analyzes
+from OpenAI's own longer primary document, not a separate event, and is
+treated here as the social-media register of the same specimen rather
+than double-counted.
+
+**The quote itself is built to be read as a win by two audiences with
+opposed priors, in four consecutive sentences.** "We care very deeply
+about AI safety... will act unilaterally in the meantime" is addressed to
+a reader who wants the labs to slow down. "We remain committed to making
+frontier capabilities widely available" is addressed, in the same
+paragraph, to a reader who wants them not to. Both readers can quote this
+statement back as confirmation of what they already believed about
+OpenAI, without either being wrong about what the statement says.
+
+**A credentialed critic organization then independently amplifies the
+safety-audience half, while stating in the same post that it does not
+know if the framing is accurate.** The Existential Risk Observatory — a
+named, real AI-safety research organization, not an anonymous account —
+posted the same day: "Three years ago, we argued in TIME that 'An AI
+Pause Is Humanity's Best Bet For Preventing Extinction.' OpenAI has
+apparently come to the same conclusion. This is to be applauded" (ERO,
+2026), directly crediting the pause as vindication of their own
+three-year-old thesis. The same post, several paragraphs later, states:
+"OpenAI's decision to pause may have more prosaic reasons, such as
+wanting to avoid legal liability of smaller incidents rather than
+necessarily wanting to prevent human extinction" (ERO, 2026) — an
+explicit, self-supplied hedge that the causal link they just claimed
+credit for may not hold. ERO's own post therefore contains both the
+claim and its own defeat condition in the same document, and applauds the
+pause regardless of which one is true.
+
+**Why this sharpens rather than restates §3's finding.** §3 already
+establishes that OpenAI's own stated justification for the pause credits
+a discrete incident class ("an era of cyber-critical capabilities"), not
+the years of preceding critique. This addendum adds a distinct, narrower
+point about the mechanism itself: the Critique Basin does not require a
+critique-producing organization to be fooled or to act in bad faith. ERO
+states its own uncertainty about the causal link directly, in writing, in
+the same post that claims the credit — the circulation-value payoff (a
+three-year-old prediction reads as "confirmed," reinforcing the
+organization's relevance and credibility) is collected regardless of
+whether the correction-value claim underneath it is true. This is a
+cleaner, more direct instance of §2's circulation/correction split than
+§3's primary specimen supplies on its own: the same actor, in the same
+document, both claims correction-value credit and states they cannot
+verify it, without that tension costing them the credibility gain from
+having claimed it.
+
+**What this does not establish, precisely.** Not a claim that the
+Existential Risk Observatory acted in bad faith — the organization's own
+hedge is stated openly rather than concealed, which is a real, distinct
+choice from silently claiming full credit, and is noted as such rather
+than erased. Not a claim that Altman's statement is dishonest — both
+halves of the quoted paragraph may be entirely true simultaneously (the
+company can genuinely value safety monitoring and genuinely intend to
+keep shipping frontier capability); the point is that the statement is
+structured to be legible as a win to both audiences regardless of which
+priority actually governs OpenAI's internal tradeoffs, which is a claim
+about rhetorical structure, not about sincerity. Not a Tier 2 event under
+§5's own test — this remains, like §3's primary specimen, Tier 1 only: a
+credited operational pause plus a critic organization's reaction to it,
+not an attractor's own load-bearing claim being abandoned or reversed.
 
 ## 4. Second specimen (reused, already verified): the critique replicating the mechanism
 
@@ -471,8 +552,18 @@ specimen this paper did not select for fit.
   letter.
 - Axios (2023, Sept. 22). No one took a six-month "pause" in AI work,
   despite open letter signed by Musk, others.
-- NBC News / CNN Business / Yahoo News (2026, Jul. 28–29). Reporting on
-  "Pacing the Frontier," the 1,178-signatory frontier-AI-employee letter.
+- NBC News (2026, Jul. 28–29). Reporting on "Pacing the Frontier," the
+  frontier-AI-employee letter reaching a reported 1,178 signatories per
+  this same source (also independently reported by CNN Business and
+  Yahoo News).
+- Altman, S. [@sama] (2026, Aug. 19). "We have paused some frontier RL
+  training to ensure that we can meet the appropriate alignment, security
+  and monitoring standards..." X.
+- Existential Risk Observatory (2026, Aug. 19). LinkedIn post citing their
+  own 2023 TIME piece, "An AI Pause Is Humanity's Best Bet For Preventing
+  Extinction," applauding OpenAI's pause.
+- IBTimes (2026, Aug. 19). OpenAI Is Pausing Some Work Due To Safety
+  Concerns After Finding It Could Pose Critical Cybersecurity Risks.
 - This project's own already-verified material, reused per §1 and §4:
   `governance_binding_axiom_v1.md` §6.2;
   `case_studies/2026-08-07_openai_huggingface_breach_singularity_reframe.md`;
