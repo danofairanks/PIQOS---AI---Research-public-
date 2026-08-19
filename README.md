@@ -21,6 +21,11 @@ server, nothing uploaded, downloadable Markdown/JSON report. See the
 comments at the top of `docs/scan.html` and `docs/assets/py/paper_scan.py`
 for the design reasoning (why Pyodide over a backend, why no blended
 "rigor score," why Pyodide itself is CDN-loaded rather than vendored).
+New to the vocabulary this repo uses ("basin," "attractor," "coherence,"
+"defeat condition")? [`docs/lay_bridge.md`](docs/lay_bridge.md) maps each
+term in plain language to the specific paper and section that actually
+defines it — no new claim, just a reading guide, including an explicit
+"what this project is not claiming" section up front.
 
 ## Index
 
