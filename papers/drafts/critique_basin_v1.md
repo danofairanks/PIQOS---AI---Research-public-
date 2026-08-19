@@ -389,6 +389,77 @@ about rhetorical structure, not about sincerity. Not a Tier 2 event under
 credited operational pause plus a critic organization's reaction to it,
 not an attractor's own load-bearing claim being abandoned or reversed.
 
+## 3.2 Addendum (2026-08-20) — a third reading of the same quote, which skips the safety content rather than contesting it
+
+The same Altman pause quote generates a third distinct reading, later the
+same week, checked directly rather than assumed to fit the existing two.
+Gary Marcus posted: "The opening stages of OpenAI's unraveling, which I
+first warned about in January 2024 (if not before), have begun... Take
+the reaction to OpenAI's Sam Altman's latest announcement that OpenAI
+would be pausing, ostensibly for safety reasoning... As far as I can
+tell, hardly anyone believed him." Marcus quotes Ross Hendricks' reading
+of the same pause approvingly: "the translation of this is 'we need to
+immediately stop torching cash to provide some semblance of a
+sustainable business model so we can rush this IPO out the door before
+the bubble pops.'" He pairs this with reported OpenAI Q1-to-Q2 2026
+figures, per Jin & Dribusch (2026) — revenue growing 18% to $6.7B while
+losses grew by $3B to
+$12.3B, per that same cited reporting — attributed by Marcus to *The Wall
+Street Journal*'s Jin and Dribusch.
+Checked independently: the $6.7B Q2 revenue figure and 18% growth rate,
+per Jin & Dribusch (2026),
+are internally consistent with a $5.7B Q1 2026 baseline independently
+reported elsewhere (per briefs.co, 2026); the specific $12.3B Q2 loss
+figure, per Jin & Dribusch (2026), could not be
+independently confirmed in this session and is logged as unverified,
+not endorsed.
+
+**What makes this a genuinely third reading, not a restatement of
+§3.1's two.** Altman's own quote (§3.1) is built to read as a win to
+both the safety-cautious and capability-maximalist audience. The
+Existential Risk Observatory (§3.1) reads it as safety-validating while
+explicitly hedging that the real motive may be financial. Marcus's
+reading does neither — it does not engage the safety/alignment content
+at all, favorable or skeptical. "Ostensibly for safety reasoning" is the
+full extent of his engagement with the stated justification; the
+argument moves directly from that dismissal to unit economics, never
+returning to ask whether the alignment, security, and monitoring
+standards Altman named are real, adequate, or being met. This is
+distinct from ERO's move (§3.1), which states its own uncertainty about
+motive while still crediting the pause as directionally safety-relevant.
+Marcus's move treats the safety framing as too obviously pretextual to
+require a counter-argument — skipped, not contested.
+
+**Why this is worth naming precisely rather than filed as more of the
+same critique-economy pattern.** Marcus's own public reputation is
+built substantially on alignment-adjacent critique — hallucination
+rates, agent reliability, the gap between AI-industry claims and
+delivered capability (already checked in this project's own
+`ami_labs_marcus_expressway_defeat_condition_v1.md` §3, which finds real
+falsifiable content in his tracked prediction record). A critic with
+that specific credibility base choosing not to engage the safety
+substance of a safety-framed announcement — not refuting it, not
+finding it wanting, simply treating it as beneath argument — is a
+different and more specific move than generic skepticism. It is also,
+per the same paper's §1 finding, paired with the identical self-narrated-
+prediction-credit framing already logged there ("which I first warned
+about in January 2024, if not before") — a live, dated repeat of the
+same pattern on a new specimen.
+
+**What this does not establish.** Not a claim that Marcus's financial
+skepticism is wrong — the revenue-growth-versus-loss-growth trajectory
+he cites is a real, substantially corroborated concern independent of
+this paper's own verification gap on the specific $12.3B figure (per
+§3.2's own already-stated hedge above). Not a
+claim that Marcus is obligated to relitigate AI safety in every post
+about OpenAI's finances — a single post's scope is the author's choice.
+What is claimed, precisely: when a credentialed critic whose standing
+partly rests on safety-adjacent expertise encounters a safety-framed
+announcement that does not serve his own prediction narrative, the
+observed pattern here is default dismissal without argument rather than
+either engagement or silence — worth watching for a second instance
+before treating it as more than one dated specimen.
+
 ## 4. Second specimen (reused, already verified): the critique replicating the mechanism
 
 `case_studies/2026-08-06_marcus_karapetyan_status_dismissal.md`, already
@@ -564,9 +635,19 @@ specimen this paper did not select for fit.
   Extinction," applauding OpenAI's pause.
 - IBTimes (2026, Aug. 19). OpenAI Is Pausing Some Work Due To Safety
   Concerns After Finding It Could Pose Critical Cybersecurity Risks.
+- Marcus, G. [@GaryMarcus] (2026, Aug. 20). The opening stages of
+  OpenAI's unraveling, which I first warned about in January 2024 (if
+  not before), have begun. LinkedIn (condensed from Marcus on AI).
+- Jin, B., & Dribusch, C. (2026). Reporting on OpenAI Q1-to-Q2 2026
+  revenue and loss figures. *The Wall Street Journal*. (Cited via
+  Marcus's own post; the specific $12.3B Q2 loss figure could not be
+  independently confirmed this session — see §3.2.)
 - This project's own already-verified material, reused per §1 and §4:
   `governance_binding_axiom_v1.md` §6.2;
   `case_studies/2026-08-07_openai_huggingface_breach_singularity_reframe.md`;
   `case_studies/2026-08-06_marcus_karapetyan_status_dismissal.md`;
   `governance_binding_axiom_rl_pause_disclosure_addendum_v1.md` (this
-  project's companion draft on the August 18, 2026 OpenAI announcement).
+  project's companion draft on the August 18, 2026 OpenAI announcement);
+  `ami_labs_marcus_expressway_defeat_condition_v1.md` §1 and §3 (Marcus's
+  tracked-prediction record and self-narrated-prophet framing, reused per
+  §3.2 above).
