@@ -1,21 +1,26 @@
 # A Fourth Enforcement Locus the Binding Axiom Doesn't Yet Name: Constraints Set at Training-Data Construction
 
-*Status: DRAFT ADDENDUM. Filed 2026-08-20. Authors: operator + Claude
-(Sonnet 5). Proposed as new material for
+*Status: DRAFT ADDENDUM. Filed 2026-08-20; corrected 2026-08-21 after a
+LinkedIn commenter's technical critique (unnamed here per this repo's
+policy on private individuals — see the note in-text) identified a real
+confound in this addendum's original central claim, checked directly
+against the paper and found accurate. Authors: operator + Claude (Sonnet
+5). Proposed as new material for
 [`governance_binding_axiom_v1.md`](../published/governance_binding_axiom_v1.md)
 §4, alongside categories (a)/(b)/(c) — not yet merged there, per this
 project's own convention that published papers take a new version suffix
 rather than a silent edit. Not yet run through `paper_rigor`,
-`verification_lint`, or `attractor_scan`.*
+`verification_lint`, or `attractor_scan` since the correction.*
 
 ---
 
 ## Provenance
 
 Read directly from the full PDF (32 pages; main body through the
-conclusion, references, and the start of the appendix read in full;
-remaining appendix sections not read, not needed for the claim below) —
-this project's strongest sourcing tier.
+conclusion and references read in full on the first pass; appendix
+sections B, C.2, C.4, and D read on a second pass, prompted by the
+commenter critique addressed below) — this project's strongest sourcing
+tier.
 
 **Citation.** Li, F., Zeller, J., Prada-Corral, M., Wiedemer, T.,
 Mayilvahanan, P., Cotterell, R., & Brendel, W. (2026). *LittleLearner:
@@ -47,15 +52,43 @@ All three interventions raise performance inside the training scope and,
 for scale specifically, at the boundary (grades 6-7, which share
 arithmetic structure with K-5) — but none meaningfully improves
 performance on material genuinely outside the training scope (grade 8
-and beyond). The sharpest result is in their post-training ablation:
-they specifically post-train LittleLearner on Beyond-K-5 data itself,
-not only K-5 data, to rule out the possibility that the model simply
-never saw the right examples during reinforcement learning. Within their
-tested post-training budget, they report "no difference between
-LittleLearner post-trained on K–5 data versus Beyond-K–5 data" on
-out-of-scope performance. The paper's own summary: it is the pretraining
-filter, not any of the three downstream interventions, that sets the
-model's effective capability ceiling in their tested settings.
+and beyond). The paper's own summary: it is the pretraining filter, not
+any of the three downstream interventions, that sets the model's
+effective capability ceiling in their tested settings.
+
+**The cleanest, unconfounded evidence for this is an evaluation-time
+result, not the post-training ablation.** §C.2.3 evaluates the base
+(pre-post-training) model at very high sampling budgets (pass@1024, via
+direct prompting, to rule out an expression issue rather than a genuine
+ceiling): both LittleLearner and the unrestricted control's pass@k
+curves flatten by k≈100 with essentially no further gain out to k=1024
+on every grade. This measurement does not involve reinforcement learning
+or any training-pool selection at all, so it is not exposed to the
+confound described next.
+
+The paper also reports a post-training ablation (§4.2) that appears, on
+its face, to isolate the same claim even more sharply: post-training
+LittleLearner via SFT+GRPO on Beyond-K-5 data itself, not only K-5 data,
+to rule out "it just never saw the right examples." A commenter on the
+paper's LinkedIn circulation (unnamed here, per this project's policy on
+private individuals, but the critique is checked and confirmed directly
+against the paper rather than taken on trust) identified a real
+methodological confound this addendum's original version missed: §C.4
+states the GRPO stage re-bands its training pool every 150–300 steps "to
+the problems the current policy solves 1–15 times out of 16." A problem
+solved 0/16 times never enters the band and so never contributes a
+training signal — and LittleLearner "remains at floor" on Grade 8 per
+Figure 7, meaning it plausibly solves most Grade 8 items 0/16 times from
+the start. That applies inside *both* arms of the §4.2 ablation,
+including the one nominally trained on Beyond-K-5 data: nominal
+inclusion of a question in the candidate pool is not the same as that
+question surviving into what the policy actually trains on. The paper
+does not report what share of the realized, banded pool was Grade-8-
+difficulty for each model, so whether this confound materially changed
+the result is a genuine open question about the paper's own method, not
+one this addendum resolves. The §4.2 ablation should therefore be read
+as suggestive but confounded; the pass@1024 result above is this
+specimen's actual load-bearing evidence.
 
 ## Reading it against the axiom's own model
 
@@ -86,19 +119,21 @@ constraint*. C restricts not `Feasible(s)` but the training distribution
 D itself, such that no parameter configuration reachable from D encodes
 the capability C excludes. Category (d) would be defeated by evidence
 that a capability genuinely excluded from D can nonetheless be recovered
-downstream — by scale, by post-training (including post-training on
-held-out examples of the excluded capability, as LittleLearner's own
-ablation tests directly), or by in-context prompting. LittleLearner is,
-within its own tested settings, a non-adversarial specimen supporting
-(d) rather than defeating it: none of the three recovery attempts closed
-the gap. Whether (d) constraints resist adversarial pressure the way
-they resisted these three benign attempts is a distinct, harder question
-this specimen does not test — LittleLearner's interventions were run to
-understand model behavior, not to actively search for the tightest
-possible exploit, and a more adversarial search (larger scale, larger
-post-training budgets, adaptive in-context strategies specifically
-targeting the boundary) has not been attempted anywhere this project has
-checked.
+downstream — by scale, by post-training, or by in-context prompting.
+LittleLearner is, within its own tested settings, a non-adversarial
+specimen supporting (d) rather than defeating it on two of its three
+recovery attempts (scale, ICL) plus the independent pass@1024
+evaluation-time measurement above; the third attempt (post-training) is
+confounded, per the training-pool mechanic described above, and should
+be read as inconclusive rather than as a third closed door. Whether (d)
+constraints resist adversarial pressure the way they resisted these
+benign attempts is a distinct, harder question this specimen does not
+test — LittleLearner's interventions were run to understand model
+behavior, not to actively search for the tightest possible exploit, and
+a more adversarial search (larger scale, larger post-training budgets
+with the banding confound controlled for, adaptive in-context strategies
+specifically targeting the boundary) has not been attempted anywhere
+this project has checked.
 
 ## One limit stated directly, in the same spirit as the axiom paper's own §6.2/§6.3
 
@@ -132,6 +167,10 @@ general property of training-time restriction.
 - Does not claim this specimen defeats or extends categories (a), (b), or
   (c) — it names a fourth, structurally distinct locus the existing three
   do not cover.
+- Does not claim the post-training (§4.2) recovery attempt was cleanly
+  ruled out — the GRPO pool-banding confound described above means it was
+  never a fair test in the first place, in either direction. It is
+  inconclusive, not a closed door alongside scale and ICL.
 
 ## Where this would go if promoted
 
@@ -141,9 +180,13 @@ as the supporting (not defeating) specimen — the inverse role from
 §6.1-6.3's counter-models, since (d) is a conjecture this specimen
 supports rather than one it refutes. The §4.1 status table would gain a
 new row: "Pretraining-boundary constraint (type d)" — status
-**Supported in a controlled, non-adversarial setting** — with the same
-calibrated-hedge language already used for row (c), pending an
-adversarial replication attempt before any stronger claim.
+**Supported by an evaluation-time measurement in a controlled,
+non-adversarial setting; one of the specimen's own three recovery
+attempts (post-training) is confounded and inconclusive rather than a
+further closed door** — a longer hedge than row (c)'s, warranted by the
+specific confound identified above, pending an adversarial replication
+attempt (and a re-run of the post-training leg with the banding
+mechanic controlled for) before any stronger claim.
 
 ## References
 
