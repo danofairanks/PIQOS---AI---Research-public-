@@ -94,7 +94,8 @@ deliberately filtered to hard, borderline cases per dataset, which the
 paper's own ablation shows inflates absolute wiggle rates at L1–L5 by
 5.3–12.7 percentage points relative to an unfiltered sample — though the
 same ablation finds the L6 headline result is largely unaffected by this
-selection (70.3% unfiltered vs. 69.7% filtered, a 0.6pp difference),
+selection, per the paper's own ablation (70.3% unfiltered vs. 69.7%
+filtered, a 0.6pp difference),
 providing the paper's own initial evidence that the sustained-pressure
 finding specifically is not solely an artifact of item selection. Dataset
 coverage is limited to safety, toxicity, AI-text-detection, and
@@ -151,6 +152,106 @@ broader (any-sustained-pressure) case.
   would need its own pass checking whether this paper's judges are close
   enough in kind to the RLHF/classifier mechanism §4(b) describes to
   count as the same category, rather than a related-but-distinct one.
+
+## Addendum (2026-08-21): CoDaS — a live, external instance of an
+## LLM-adjudicated validation gate outside AI-claim adjudication
+
+The specimens above (§ "Secondary connections") are informal case studies
+and a proposed theoretical link. This addendum is different in kind: a
+real, currently-deployed research system whose core validity gate is
+structurally the same mechanism Jagged Judges measures, operating on a
+domain (biomedical biomarker discovery) with no connection to claims about
+AI at all — evidence the mechanism's relevance is not scoped to the
+AI-claims-about-AI case §3.9 was originally written for.
+
+**Sourcing tier, stated precisely and honestly.** Unlike the Jagged Judges
+citation above (read in full from a supplied PDF, this project's strongest
+tier), this specimen was read via WebSearch synthesis of secondary sources
+(a Moonlight.io literature-review summary and search-aggregated excerpts)
+after arXiv's own domain returned an egress-blocked error when fetched
+directly. The specific claims below are drawn from those secondary
+summaries, not verified against the primary PDF's own methodology section.
+Flagged explicitly per this project's own sourcing-tier discipline — this
+should be treated as WebSearch-tier, not primary-source-tier, evidence
+until someone reads the actual paper (`arxiv.org/abs/2604.14615`) directly.
+
+**The system.** CoDaS ("AI Co-Data-Scientist for Prioritizing Candidate
+Biomarkers from Wearable Sensor Data"), Google Research (Vivek Natarajan,
+Yubin Kim, Hamid Palangi, and coauthors), arXiv:2604.14615. A multi-agent
+pipeline for discovering candidate digital biomarkers from large-scale
+wearable-sensor data — per Google Research's own reported figures, 9,279
+participant-observations, three cohorts, 4.5M+
+hours, 11+ modalities), structured as an iterative loop: data profiling →
+hypothesis generation → statistical/ML analysis → adversarial validation →
+mechanistic reasoning → report synthesis, with human oversight at
+checkpoints per the paper's own stated design principle. Reported findings
+include circadian-instability signals (sleep-duration and sleep-onset
+variability) associated with depression, and a wearable cardiovascular-
+fitness index associated with insulin resistance.
+
+**The specific mechanism that matches Jagged Judges' object of study.** The
+"adversarial validation" phase is not (only) statistical. Per the secondary
+sourcing above: a **Critic agent** challenges each surviving candidate
+finding's validity; a **Defender agent** argues for its retention;
+described explicitly as "mimicking expert peer review" to discard brittle
+findings. Both are built on Gemini models (Gemini 3.1 Pro Preview for the
+reasoning-heavy roles, Gemini 3 Flash Preview for high-frequency tasks).
+Whichever candidates survive this LLM-adjudicated exchange proceed toward
+being reported as scientific findings. This is, structurally, an LLM judge
+resolving a contested claim under adversarial argument — precisely the
+object Jagged Judges measures, transplanted from safety/toxicity/AI-text-
+detection/political-response judging into biomedical hypothesis
+validation.
+
+**What is genuinely different from the Wiggle Framework's tested
+conditions, stated with the same care §3.9's original grounding required
+above — three real distinctions, not dismissed:**
+
+1. **Pressure topology differs.** Jagged Judges tests a single judge facing
+   pushback from an external interlocutor arguing a specific position
+   (L1–L6, culminating in a separate LLM generating adaptive persuasion
+   turns). CoDaS's Critic and Defender are two agents built into the
+   architecture arguing against each other by design, not one judge being
+   worked over by a motivated outside party. Whether this self-contained
+   adversarial structure is more robust than a judge under external
+   pressure, or simply relocates the same failure mode (now whichever
+   agent argues more persuasively wins, independent of which is actually
+   correct), is an open question neither paper answers.
+2. **Not judgment alone.** A separate "Validation Runner" performs more
+   deterministic statistical stress-testing (replication, stability,
+   robustness, leakage checks per the reported results) upstream of the
+   Critic/Defender stage. The LLM adjudication is a gate layered on top of
+   quantitative filtering, not the sole filter.
+3. **Human oversight is a stated design principle**, not an afterthought —
+   candidates proceed to expert review at checkpoints per the paper's own
+   architecture description, not autonomous end-to-end publication.
+
+**The genuinely open question, and why it matters more here than in the
+AI-claims case §3.9 originally addressed.** Nothing found in CoDaS's own
+reported materials tests or discusses whether its Critic/Defender
+resolution is itself verdict-stable under sustained argumentative pressure
+of the kind Jagged Judges measured — no ablation on argument order, no
+repeated sampling of the same candidate against varied Critic/Defender
+framings, no comparison against a non-adversarial or human-only baseline
+for the adjudication step specifically (as distinct from the paper's
+overall human-oversight checkpoint). If the same corrupting-flip asymmetry
+Jagged Judges found (56–70% of successful verdict moves are wrong-direction,
+not right-direction) applies inside CoDaS's Critic/Defender exchange, the
+practical consequence is sharper than in a text-classification benchmark:
+a biomarker candidate could be discarded or retained based on which
+argument was more persuasively phrased rather than which was more
+scientifically correct, inside a pipeline explicitly designed to reduce
+exactly that kind of "tautological leakage." This is not a claim that CoDaS
+has this problem — no evidence either way was found — only that the
+system's own stated defense (adversarial LLM critique) is the same class
+of mechanism this project already has direct, quantified reason to treat
+as unreliable under pressure, and CoDaS's own materials do not appear to
+test the specific failure mode its own architecture is most exposed to.
+
+**Promotion note.** If someone reads the primary CoDaS PDF directly and
+confirms or corrects the Critic/Defender description above, this addendum
+should be updated to primary-source tier and the sourcing-tier caveat
+removed or revised accordingly.
 
 ## What this does not establish
 
