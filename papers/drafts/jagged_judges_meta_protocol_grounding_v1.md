@@ -253,6 +253,89 @@ confirms or corrects the Critic/Defender description above, this addendum
 should be updated to primary-source tier and the sourcing-tier caveat
 removed or revised accordingly.
 
+## Addendum (2026-08-21, second): the legal profession's time-tested
+## answer to the same problem is human certification, not AI-checking-AI
+
+The CoDaS addendum above names an open question — whether an
+LLM-adjudicated validation gate is itself reliable under the kind of
+pressure Jagged Judges measures. This addendum supplies external,
+maturity-staggered evidence bearing on that question: a domain that has
+been dealing with untrustworthy AI-generated output far longer than
+biomedical discovery has, and has already iterated its answer through
+real, sanctioned failures, converged on a structurally different fix than
+the AI-adjudicates-AI shape CoDaS proposes.
+
+**Sourcing tier, stated precisely.** Both halves of this comparison are
+drawn from WebSearch synthesis of secondary sources (legal-industry
+trackers and commentary; healthcare-AI-governance trade and preprint
+summaries), not primary documents (the actual court standing orders, the
+actual Nature Medicine/JMIR framework texts) read in full. Weaker tier
+than the Jagged Judges citation above; on par with the CoDaS addendum's
+own stated sourcing caveat.
+
+**Legal: the mature, time-tested case.** The AI-hallucinated-citation
+problem already named in `basin_attractors_v1.md` §2.10, per Damien
+Charlotin's tracker (1,598 documented cases by June 2026), has been live
+in the courts since roughly 2023, long enough to generate a real
+enforcement pattern rather than a proposal. As of early 2026, 40+ federal
+district courts have adopted their own standing orders on AI use in
+filings — a decentralized, judge-by-judge patchwork, not one unified
+federal rule. The converged mechanism across them is **mandatory human
+verification and certification**: Judge Brantley Starr's Northern
+District of Texas standing order (among the earliest and most cited)
+requires attorneys to file a certificate confirming a human independently
+verified any AI-generated text before submission; the Eastern District of
+Pennsylvania's standing order requires disclosure of AI use plus
+certification that citations and legal assertions were independently
+verified. This is backed by real, escalating enforcement, not a paper
+requirement — the Sixth Circuit sanctioned two attorneys in March 2026 for
+fabricated citations, ordering them to cover the opposing side's full
+attorney fees. The specific structural choice worth naming precisely:
+after roughly three years of live incidents, the legal profession's
+answer is not "build a more sophisticated AI to check the first AI's
+output" — it is "a human must certify it, and the human is sanctionable if
+the certification is false."
+
+**Medical/biomarker: the threshold case.** Frameworks found for this
+domain (a Nature Medicine 2026 framework characterization, a JMIR
+cardiovascular-biomarker governance preprint, a healthcare-sector AI
+governance implementation guide) are shaped like process and committee
+design rather than enforcement: oversight subcommittees spanning clinical,
+security, privacy, and legal representation; escalation paths for
+high/critical-risk decisions; audit trails; version control;
+post-deployment monitoring. One phrase surfaces that is structurally the
+same idea as legal's human-certification gate — organizations should
+"establish clear thresholds for automated decision-making versus
+clinician-led verification" — but it appears as prescriptive guidance
+("should establish"), not yet a hardened, litigated, sanctions-backed rule
+the way legal's now is. "Adversarial validation" also appears in this
+domain's governance vocabulary, but the sourcing here could not confirm
+which sense is meant — adversarial-ML robustness (defense against
+adversarial *attacks* on a model) or adversarial-argument validation in
+CoDaS's sense (two AI agents arguing to stress-test a finding). These are
+different mechanisms addressing different threats; conflating them would
+overstate the comparison, so it is flagged as unresolved rather than
+assumed.
+
+**The comparison, stated as precisely as the evidence supports.** CoDaS's
+own proposed answer to untrustworthy AI-generated candidates is an
+AI-vs-AI Critic/Defender adversarial-review layer — the general shape
+(AI adjudicating AI) that the more time-tested adjacent domain has real,
+sanctions-driven evidence did *not* turn out to be a sufficient fix on its
+own; legal's answer, after real failures, hardened toward mandatory human
+accountability instead. This is not proof CoDaS's approach is wrong — it
+also gates on human expert review at checkpoints, so it is not a pure
+AI-only pipeline — and biomedical discovery is a different task shape
+than adversarial litigation (retrieving a real case citation that either
+exists or doesn't, versus judging whether a statistical association is a
+genuine biomarker). But the timing pattern the operator's own hypothesis
+named is visible in what was found: the domain that hit this problem
+*first* converged on a harder, more human-anchored enforcement mechanism
+than the domain currently at the threshold is proposing — consistent with
+medical/biomarker governance still being early enough that it has not yet
+had the sanctioned-failure cycle that pushed legal past the
+AI-checks-AI shape.
+
 ## What this does not establish
 
 - Not a claim that this project's own tooling (`debasinizer`,
@@ -272,6 +355,19 @@ removed or revised accordingly.
   cooling-off period) are themselves validated or sufficient by this
   evidence — this addendum grounds the *premise* behind the exclusion
   rule, not the rest of the protocol built around it.
+- Not a claim that the legal-vs-medical comparison establishes a general
+  law of governance maturation ("every domain converges on human
+  certification eventually") — one paired case, not a sampled trend
+  across domains, and both halves are WebSearch-tier sourcing rather than
+  primary documents.
+- Not a claim that CoDaS's Critic/Defender mechanism is unsafe or will
+  fail — only that a more time-tested adjacent domain's hard-won answer
+  to a structurally similar problem was a different mechanism (mandatory
+  human certification) than the one CoDaS currently relies on for its
+  novel contribution, which is evidence worth weighing, not a refutation.
+- Not a claim about which sense of "adversarial validation" appears in
+  the medical-governance sources found — flagged explicitly as unresolved
+  in the addendum itself, not assumed to match CoDaS's usage.
 
 ## Where this would go if formalized
 
