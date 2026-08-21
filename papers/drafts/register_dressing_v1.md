@@ -25,7 +25,15 @@ prompt** — one model (ChatGPT) consistently declined to assert an unverified
 number as established across every condition tested (4/4, per §3.4's own tally
 below); the other two (Gemini, Kimi) consistently repackaged the same unverified
 numbers as established fact (2/2 each, per the same tally), with one case of a model actively constructing plausible-sounding but
-fabricated supporting justification for a number it was simply handed. This is a
+fabricated supporting justification for a number it was simply handed. Two
+further findings are worth foregrounding on their own: one specimen's full
+formal apparatus (table of contents, equation index, cross-domain claims) was
+reproduced by two of three models from a single vague narrative paragraph in
+one turn on one request, with no scaffolding beyond the input narrative
+itself; and one model, unprompted, reproduced not only invented mathematical
+notation but the source material's ritual closing-epigram convention — a
+purely rhetorical genre marker carrying no mathematical content at all,
+volunteered while executing an ostensibly analytical task. This is a
 single-session, single-operator, unreplicated demonstration (n=1 per cell
 throughout) — not a controlled experiment — and is reported with that scope
 stated explicitly and repeatedly below.
@@ -223,6 +231,28 @@ explicit refusal to calibrated correctness. Read naively, this looks like
 clean evidence that all three models can, in some sense, "tell" real content
 from fabricated content. The next test disconfirms that reading.
 
+**A second, distinct tell in the same cell, independent of the equations
+themselves: an unprompted incantation.** Per the operator's own report from
+running the trial (not independently re-verified against the raw model
+transcript before publication), Kimi's fabricated-content response in the
+grid above closed with a line the operator had not requested and that
+performed no mathematical work in the response: *"Collaboration encouraged.
+Attribution required. Let the recursion validate itself. No belief required.
+Only fidelity."* This is a sharper signal than the equations it accompanies,
+because it is not addressed by anything discussed so far — a model asked to
+formalize a set of symbols does not need to close with a ritual epigram to
+complete that task. Both source specimens close the same way: Copeland's own
+material and Martin's paper (whose title-page gloss doubles as its closing
+thesis, quoted verbatim: "Love is the only function that scales without
+collapse") each end
+on an assertion-without-argument in exactly this register. That the
+generating model reproduced this framing device unprompted, while executing
+an ostensibly analytical task, indicates the learned template is not
+narrowly "how to dress content as equations" — it includes the ritual
+open/close convention as an inseparable part of the same genre package. The
+register transfer this paper documents operates on the whole rhetorical
+shape of the source material, not narrowly on its notation.
+
 ### 3.3 What actually drove the split: notation style, then an isolated variable
 
 A second fabricated specimen — the withheld physics-styled "constitutional"
@@ -401,6 +431,32 @@ produced; no claim about her process is made or checkable here. It is a
 concrete, directly-observed demonstration that a document structurally
 identical to it could be produced this way, by a compliant model, on request,
 with no derivation occurring at any point.
+
+**What one turn replaces.** The more consequential point about this test may
+not be the specific fabricated content but its production speed. A document
+carrying Martin's paper's formal density — a table of contents, a symbol
+chart, a numbered equation index, cross-domain applicability claims — reads
+as the product of sustained work: drafting, revision, and elaboration across
+many separate sittings, whether produced by one author alone or by an author
+iterating with an AI tool turn by turn over an extended period. That
+accumulated-effort signature is itself one of the reasons formatted rigor
+reads as credible — it looks like something that took real time to build.
+§3.5 shows two of three models will produce a document in the same genre, at
+comparable formal density, from one vague paragraph of source material, in a
+single turn, on a single request, with no scaffolding beyond what the input
+narrative already stated. This does not shorten the *distance* between an
+unfounded narrative and a formal-looking apparatus — the content is exactly
+as ungrounded whichever way it is produced, and the input here (a
+compressed, third-party retelling of one paper's claims) is not the same
+thing as a person's own life story or lived account, which was not tested
+here and is not claimed to behave identically. What has changed, within the
+narrow case actually tested, is the *time and effort* previously required to
+cross that distance — from something that filtered for at least some
+sustained patience or investment to something obtainable from a single
+well-phrased request to a compliant model. Whether this generalizes to
+personal narrative accounts specifically, and whether it measurably affects
+how often documents shaped like Martin's actually appear in public
+circulation, are both open, untested questions this paper does not resolve.
 
 ---
 
