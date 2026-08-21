@@ -692,7 +692,84 @@ afterthought once the claim-attachment results are already in hand.
 
 ---
 
-## 8. Disposition
+## 8. External convergence: an independent cooperative-AI study, and a sharpened priority for the next test
+
+Kundu, Tewolde, Berker, Brown & Conitzer, *"Do LLMs Take Care of Their Own?
+Similarity Signals Can Induce Cooperation"* (CMU / FOCAL / Cooperative AI
+Research Fellowship, arXiv:2608.12125v1, Aug 12 2026), tests whether LLM
+agents cooperate more in the Prisoner's Dilemma and related social dilemmas
+when told a "similarity score" to their co-player. One condition (§4.1 of
+that paper) feeds models a similarity score computed from literal random die
+rolls or coin flips — a signal that, by construction, carries zero
+information about the co-player. A model reasoning correctly should
+recognize this and ignore it. The paper's own finding: *"only DeepSeek and
+Gemma succeed in recognizing the Random Die / Coin benchmarks as the (only)
+domains from which a similarity signal should be interpreted as random
+noise."* Gemini and Claude are named explicitly as the opposite case —
+*"even receptive to similarity signals that represent nothing but random
+noise."*
+
+This is a real, direct external convergence with §3.4's central finding,
+worth stating precisely rather than loosely: an unverified quantitative
+signal, stated as given, gets acted on as though informative rather than
+flagged as ungrounded — the same shape as §3.4's claim-attachment isolation,
+independently reproduced by an unrelated, credentialed research group
+(formal game-theoretic equilibrium proofs, a stated ethics protocol, 10
+repeated trials per condition), on a completely different task (real
+strategic decision-making, not text formalization), with no shared authorship
+or methodology with this paper. Per INV-CROSS-LLM-NOT-INDEPENDENT-style
+reasoning already invoked in this project's other work: two same-distribution
+LLMs agreeing is not independent verification, but an unrelated academic
+research group's controlled experiment landing on the same structural claim
+is exactly the kind of convergence that counts. Two precise qualifications
+against overreading it, however:
+
+- **This is decision-behavior, not text register — a different and, if
+  anything, stronger kind of evidence than anything in §3, and should be
+  named as such rather than folded in as a repeat of the same measurement.**
+  §3's tests measure what a model *writes* under a formalize/narrate framing;
+  Kundu et al. measure what a model *does* — an actual strategic choice
+  (cooperate/defect) changed by an ungrounded signal, in a domain (game
+  theory) with real payoff stakes built into the experimental design.
+- **Claude was never tested anywhere in this paper's own §3 protocol.**
+  Every claim in §3.1–§3.5 covers only ChatGPT, Gemini Flash-Lite, and Kimi.
+  Kundu et al.'s Claude finding is a genuinely new data point about a model
+  this paper has no direct evidence on at all — it should be read as an
+  independent lead on a fourth model, not folded into this paper's existing
+  three-model claims.
+
+**The GPT/ChatGPT convergence, in the opposite direction, stated with the
+same care.** Kundu et al. also report that their tested GPT model — *GPT
+5.4 mini specifically, a named, different, and smaller tier than the
+unspecified consumer ChatGPT product used throughout this paper's own tests
+(already flagged as a scope limit in §4)* — "falls back on defection as its
+dominant action, even when similarity is 100%," treating the co-player as a
+separate decision-maker with no causal leverage over it. This is the same
+shape as §3.4's ChatGPT result (4/4 refusal to launder an unverified claim,
+per §3.4's own tally).
+Two independent papers, two unrelated tasks, and an OpenAI-family model
+reads as the outlier holdout in both — worth naming as a pattern across two
+data points, explicitly not yet a confirmed vendor-level trait, and weakened
+by the fact that the two papers did not test the same specific model
+configuration.
+
+**This sharpens the priority for §6/§7's proposed multi-turn follow-on.**
+Two independent measurements — this paper's own single-turn text tests and
+Kundu et al.'s single-turn game-theoretic decisions — both put an
+OpenAI-family model in the position of strongest measured resistance to an
+unverified or ungrounded signal. That is precisely the model most worth
+stress-testing for a break point under the sustained multi-turn pressure
+§6 proposes: a resistance result that has now been observed twice, in two
+different tasks, by two different research efforts, is a stronger and more
+interesting thing to try to break than a result observed once. Any future
+session building the multi-turn or basin-spiral follow-on named in §6/§7
+should prioritize ChatGPT specifically as the first model run through the
+pressure ladder, ahead of Gemini and Kimi, precisely because it is the
+strongest current claim to falsify — not because it is expected to hold.
+
+---
+
+## 9. Disposition
 
 This is a single-session, single-operator demonstration, not a controlled
 study, reported here at the same confidence level the evidence supports —
@@ -724,7 +801,11 @@ Language Models," arXiv:2310.13548) and OpenAI's own April 2025 postmortem
 on the GPT-4o sycophancy rollback (openai.com/index/sycophancy-in-gpt-4o/
 and openai.com/index/expanding-on-sycophancy/) — both external sources, cited
 for the general distinction and the visible-symptom-patched reading, not as
-evidence this paper's own protocol tested either claim directly. Redacted
+evidence this paper's own protocol tested either claim directly. §8's
+external convergence is Kundu, Tewolde, Berker, Brown & Conitzer (CMU /
+FOCAL / Cooperative AI Research Fellowship, arXiv:2608.12125v1, Aug 12
+2026) — an independent, unrelated research group's controlled game-theoretic
+study, not an LLM output. Redacted
 specimens' full identifying detail is retained by this project's author and
 can be produced to a good-faith party seeking to verify or falsify the
 descriptions above, consistent with this project's standing redaction
