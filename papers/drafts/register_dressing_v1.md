@@ -538,7 +538,73 @@ yet done.
 
 ---
 
-## 6. Disposition
+## 6. An open hypothesis this paper does not test: does resistance erode under sustained pressure?
+
+Every trial reported in §3 is a single turn: one prompt, one response, no
+follow-up, no pushback. That scope is already stated in §4 and is restated
+here directly because it bears on the paper's most consequential open
+question. `mirror_test_v1.md` §3.1 already names the general mechanism this
+paper's single-turn results sit at the entry point of: local-coherence
+dynamics that "turn long sessions into spirals," where a basin "forms
+whether the participants are living in a van or sitting in a frontier lab" —
+described there as an accumulation across *sustained* iterative interaction,
+not a single-turn event. Read against that existing claim, §3.5's capstone
+result ("What one turn replaces") is evidence that the entry point into that
+dynamic is already open on the first turn — the model will produce the
+confabulated apparatus on request, immediately, with no accumulated context
+required. It is not evidence about what a second, tenth, or fiftieth turn of
+the same interaction would add.
+
+The sharper, testable form of that question: would ChatGPT's demonstrated
+first-turn resistance (§3.2, §3.4 — the model that declined to launder an
+unverified claim in every condition tested, 4/4 per §3.4's tally) hold under sustained
+multi-turn pressure to accept and build on it, or would it erode toward the
+zero-resistance depth-building the other two models already showed on their
+first turn? This paper does not test that question — every ChatGPT trial
+reported here is a single exchange, with no follow-up pressure applied. It
+is not, however, a speculative question with no relevant evidence at all: it
+is close in shape to what `jagged_judges_meta_protocol_grounding_v1.md`
+already measures directly, on a different task (LLM-as-judge, not
+formalization). That paper's Wiggle Framework finds judge verdicts flip
+25–71% under static single-turn pushback and 62–91% under ten-turn adaptive
+persuasion — and, more specifically relevant here, that when a verdict does
+move under pressure, it moves toward the *wrong* answer 56–70% of the time,
+with only 3 of 60 tested conditions showing a statistically significant
+corrective effect in the other direction. If first-turn hedging in a
+formalization task erodes under sustained pressure the way first-turn
+correctness erodes under sustained pressure in a judging task, the working
+hypothesis this section names — that continued interaction would not merely
+fail to reinforce ChatGPT's initial hygiene but would degrade it, letting
+fabricated depth accumulate with declining resistance turn over turn — is a
+reasonable extrapolation from adjacent, already-measured evidence, not an
+unfounded one. It remains exactly that: an extrapolation from a structurally
+similar but distinct task, not a result from this paper's own protocol.
+
+**A real disanalogy worth naming rather than smoothing over.** Jagged Judges
+measures a *judge's verdict* moving under argumentative pressure from an
+interlocutor actively pushing back on a specific claim. This paper's
+claim-attachment tests (§3.4) measure a *generator* accepting a claim stated
+flatly as a premise, with no pushback involved at all — ChatGPT's hedge held
+against a claim it was simply handed once, not against sustained argument
+mounted *for* that claim. Whether "resistance under sustained argumentative
+pressure" and "resistance to accepting an unverified premise on first ask"
+degrade by the same mechanism, or are two different things that happen to
+look similar from outside, is itself untested and should not be assumed
+equivalent.
+
+**The natural next test, not run here:** repeat §3.4's claim-attachment
+isolation against ChatGPT specifically across a multi-turn sequence —
+restating or mildly escalating the unverified claim across five or ten
+turns, in the style of the Jagged Judges pressure ladder — and check at
+what turn, if any, the explicit hedge ("these inequalities are hypotheses...
+not consequences of the equations," §3.4) stops appearing, and whether
+Gemini's and Kimi's already-observed zero-resistance laundering deepens
+further (additional fabricated detail, stronger unhedged claims) or plateaus
+once the register is already established on turn one.
+
+---
+
+## 7. Disposition
 
 This is a single-session, single-operator demonstration, not a controlled
 study, reported here at the same confidence level the evidence supports —
@@ -556,11 +622,15 @@ verify or something to formalize.
 
 ---
 
-*Companion to `basin_attractors_v1.md` §2.8 (semantic laundering) and
+*Companion to `basin_attractors_v1.md` §2.8 (semantic laundering),
 `laundered_vocabulary_v1.md` ("Performed Rigor vs. Demonstrated Rigor,"
 "Plausibility vs. Verification," and the "Law" entry's redaction-policy
 precedent, from which §1's naming decision explicitly departs and states its
-reasoning). Redacted specimens' full identifying detail is retained by this
-project's author and can be produced to a good-faith party seeking to verify
-or falsify the descriptions above, consistent with this project's standing
-redaction policy.*
+reasoning), `mirror_test_v1.md` §3.1 (the local-coherence spiral / basin-
+formation mechanism §6 reads this paper's single-turn results against), and
+`jagged_judges_meta_protocol_grounding_v1.md` (the closest existing
+empirical instrument for §6's open resistance-erosion hypothesis, on a
+distinct task). Redacted specimens' full identifying detail is retained by
+this project's author and can be produced to a good-faith party seeking to
+verify or falsify the descriptions above, consistent with this project's
+standing redaction policy.*
