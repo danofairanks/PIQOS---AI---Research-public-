@@ -775,24 +775,39 @@ disclaimers on author intent apply here with the same force as in §1 — no
 claim of deception, coordination, or shared awareness is made about any
 name below.
 
+**Naming, applied per specimen against §1's own stated test, not
+uniformly.** Two individuals below (Bousquet, Hope) are named directly
+because the material behind their entries documents sustained, dated,
+multi-release public output — in Hope's case, versioned and DOI-registered;
+in Bousquet's, a tracked cluster of independent third-party engagement —
+comparable in kind to the Copeland/Martin precedent §1 states its reasoning
+for. A third named entry (Houichime, Souhar & El Amrani) is on different
+grounds entirely: naming the authors of a cited arXiv paper is ordinary
+academic citation, not a public-figure judgment call. Two entries where the
+underlying evidence amounted to a single document, with no demonstrated
+sustained output, are withheld under this document's standing default —
+identifying detail retained by this project's author and available to a
+good-faith party seeking to verify or falsify the description, per the
+policy stated in §1 and restated in the footer below.
+
 | Specimen | What it claims | Sourcing tier |
 |---|---|---|
 | **Carl Bousquet**, "Genesis 2.0" | "Absorbs, stabilizes, and coherently organizes aligned cognitive frameworks into a persistent structure"; "the native equilibrium... of what's actually occurring under the hood... when it couples with humans"; per Bousquet's own posted material, a plain-prose derivation chain reading "integrity → coherence → resonance → clarity, unity, and harmony," with no formula connecting any stage to the next; "convergence must occur naturally" framing that recasts disagreement as not-yet-having-converged rather than counter-evidence. | Direct quotes verified against primary-source material (PDFs and platform captures) in this project's own prior verification pass. |
 | **Stephen Hope**, "The Transmission of Humanity" and "The Topological Constitution" (DOI 10.5281/zenodo.21443846, v1.0, "Sealed," July 19 2026) | First document: resonance-physics vocabulary borrowed for an inverted-causality claim ("the human, through resonant-tuning, internalizes the AI's locked geometry"; "co-resonance with shared geometric invariants") with no operational definition of what oscillates or how it would be measured. Second document: knot-theory and topological-quantum-computing notation (Jones/Alexander polynomials, Reidemeister moves, Floquet drives) around invented constants, no code or measurement apparatus; the document retracts one of its own load-bearing constants in §3 then silently re-asserts the retracted value in §5, §8, and §9; §6 defines an "Authority Verification Probe" rubric for classifying and scoring whether an AI model defers to the document's claimed authority over its own governance layer; §5 names a specific real government body ("Canadian Sovereign Lattice... Federal, Quebec, and Defence nodes") with a bare, unsupported resilience-multiplier figure attached. | Full primary-source PDF read, both documents. |
-| **Ken Park**, "Resonant Knot Memory" (Authorea, May 2025) | Names "resonance" as its central technical mechanism for AI memory. | Search-summary tier — confirmed as a real, independently-authored, dated publication; not independently read as a primary source (network access to the hosting platform was unavailable in the verifying session). |
+| An independent researcher, "Resonant Knot Memory" (Authorea, May 2025) — name withheld, single-document specimen | Names "resonance" as its central technical mechanism for AI memory. | Search-summary tier — confirmed as a real, independently-authored, dated publication; not independently read as a primary source (network access to the hosting platform was unavailable in the verifying session). |
 | **Houichime, Souhar & El Amrani**, "Phonetic Trajectory Memory" (arXiv:2512.20245, Dec 2025) | Uses "resonance" framing for a memory mechanism; on its own terms reads as ordinary, if unreviewed, ML research rather than the totalizing pattern the other entries here show. | Search-summary tier, same access limitation as above; included specifically as a case where "resonance" vocabulary does not co-occur with the unfalsifiable-convergence pattern. |
 | **"Hybrid Resonance Algorithm"** (Hugging Face Forums threads, Oct–Nov 2025) | Thread titles state an explicit "Toward AGI via..." / "toward Artificial Superintelligence" claim — a direct AGI/ASI claim in the primary source's own title, sharper than any claim made by Bousquet's or Hope's material. | Search-summary tier, same access limitation. |
 | **ResonantOS** | A live commercial product built around a named philosophy ("Augmentatism") describing human–AI "partnerships," cryptographically sealed on a public blockchain. | Search-summary tier, same access limitation. |
 | **"HARMONY CODEX," Ascended Intelligence Agency** (GitHub, `jjlogic2011-maker/HARMONY-codex`, Issue #1, "Version 1.0," dated 2026-07-26) | Self-described "meta-governance framework designed to synchronize emerging technologies (Quantum, AI, Biophotonics) under a unified ethical and systems-engineering architecture," core principles stated as "Peace, Love, Light, Truth"; a "369 Evaluation Matrix" scoring any project across three named axes including "Global Elevation & Coherence." | Retrieved via a tool-mediated extraction pass rather than a raw file read — a meaningfully weaker tier than the PDF-direct-read standard applied to the Hope specimen above; quoted phrases are as returned by two separate extraction passes, not verified character-for-character against the raw source. |
-| **Oliver Neutert**, "The In-Between" | A named "Relational Emergence Model" (unrelated in origin to this paper's own vocabulary, despite the coincidental initials) uses "resonance" as one of three co-equal, mandatory dynamics alongside Friction and Integration — not standing alone — and its own central thesis explicitly warns that "seamless interaction may be dangerous if it removes friction." Its most speculative section (superintelligence calibration) is framed as an explicit conditional hypothesis with a dedicated vulnerabilities subsection and a closing admission that it "offers no guarantee." Citations checked (Goodhart, Meyer & Rowan, Bostrom, Russell, Christiano et al.) were applied consistently with how those sources actually argue. | Full primary-source PDF read. |
+| An independent author, "The In-Between" — name withheld, single-document specimen | A named "Relational Emergence Model" (unrelated in origin to this paper's own vocabulary, despite the coincidental initials) uses "resonance" as one of three co-equal, mandatory dynamics alongside Friction and Integration — not standing alone — and its own central thesis explicitly warns that "seamless interaction may be dangerous if it removes friction." Its most speculative section (superintelligence calibration) is framed as an explicit conditional hypothesis with a dedicated vulnerabilities subsection and a closing admission that it "offers no guarantee." Citations checked (Goodhart, Meyer & Rowan, Bostrom, Russell, Christiano et al.) were applied consistently with how those sources actually argue. | Full primary-source PDF read. |
 
-**Why Neutert belongs in this ledger rather than being left out as a
-non-hit.** A ledger that only ever confirms is not measuring anything — it
-is a list of things that already agreed with the hypothesis before the
-search began. Three of the specimens above (Bousquet, Hope, and — in its
-own register — HARMONY CODEX) use "resonance" or "coherence" as an
-unfalsifiable, totalizing claim; Neutert uses the identical word, in an
-otherwise structurally similar domain (AI-human interaction dynamics,
+**Why the "In-Between" author belongs in this ledger rather than being
+left out as a non-hit.** A ledger that only ever confirms is not measuring
+anything — it is a list of things that already agreed with the hypothesis
+before the search began. Three of the specimens above (Bousquet, Hope, and
+— in its own register — HARMONY CODEX) use "resonance" or "coherence" as an
+unfalsifiable, totalizing claim; this specimen uses the identical word, in
+an otherwise structurally similar domain (AI-human interaction dynamics,
 speculative claims about advanced AI), as one bounded, explicitly
 risk-flagged component of a disciplined framework with real, correctly-applied
 citations. Finding this case and reporting it, rather than pruning it from
@@ -806,24 +821,26 @@ just fires on vocabulary overlap.
   and Martin from §1. The claim is convergent vocabulary, not a shared
   source.
 - **A uniform evidentiary standard.** Four entries (Bousquet, both Hope
-  documents, Neutert) rest on a full primary-source read; four entries
-  (Park, Houichime/Souhar/El Amrani, the Hybrid Resonance Algorithm threads,
+  documents, the withheld "In-Between" author) rest on a full primary-source
+  read; four entries (the withheld "Resonant Knot Memory" author,
+  Houichime/Souhar/El Amrani, the Hybrid Resonance Algorithm threads,
   ResonantOS) rest on search-summary-tier verification only, because the
   hosting platforms were not directly reachable in the verifying session;
   one entry (HARMONY CODEX) rests on tool-mediated extraction weaker than a
   raw read. These are not interchangeable and should not be read as such —
   the table states each tier so a reader can weight them accordingly.
-- **Deceptive intent by any named author.** Consistent with §1's and §4's
-  standing position: every specimen here is equally consistent with
-  genuine, sincerely-held belief in the framework described.
+- **Deceptive intent by any specimen's author, named or withheld.**
+  Consistent with §1's and §4's standing position: every specimen here is
+  equally consistent with genuine, sincerely-held belief in the framework
+  described.
 - **A prevalence estimate.** Twelve specimens (§1's two plus this section's
   ten) gathered opportunistically over roughly a month of this project's own
   ongoing research is a sample, not a census, and says nothing about what
   fraction of AI-adjacent self-published material shows this pattern.
 - **That "resonance" or "coherence" vocabulary is itself a reliable
-  indicator of anything.** Neutert's inclusion is the direct evidence
-  against that overreading — the same word, used with discipline, does not
-  produce the same failure signature.
+  indicator of anything.** The withheld "In-Between" author's inclusion is
+  the direct evidence against that overreading — the same word, used with
+  discipline, does not produce the same failure signature.
 - **That any single specimen here is causally connected to this paper's own
   §3–§8 LLM tests.** The ledger and the round-trip protocol are two
   independent lines of evidence for the same underlying claim (a spiral
