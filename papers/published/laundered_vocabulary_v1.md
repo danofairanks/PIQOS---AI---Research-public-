@@ -175,6 +175,66 @@ exactly the kind of borrowed-precision move §2.8 of `basin_attractors_v1.md`
 already names as semantic laundering. The two senses share two words, not a
 referent.
 
+**A second, converging source for the same narrower sense, worth naming
+alongside Barzilay & Lapata rather than in place of it:** Grosz, Joshi &
+Weinstein, "Centering: A Framework for Modeling the Local Coherence of
+Discourse" (*Computational Linguistics* 21(2), 1995) — the earlier,
+foundational paper in the same tradition, tracking how a "center of
+attention" (a backward-looking center linking each utterance to the one
+before it) shifts across a discourse segment. Same referent as Barzilay &
+Lapata's, same non-identity with this entry's grounded/detached
+distinction, for the same reason.
+
+**Addendum (2026-08-22): what a detached/local coherence collapse
+actually looks like in this project's sense, stated precisely enough
+not to be confused with the linguistics one.** The two senses do not
+just fail to share a referent — their failure signatures point in
+opposite directions, which makes the collision worse than merely
+imprecise if a reader carries the wrong one in. In the Barzilay &
+Lapata / Grosz-Joshi-Weinstein sense, a local-coherence breakdown looks
+like *disconnection*: entity references stop tracking cleanly from one
+sentence to the next, topic shifts land with no transition, the text
+reads as disjointed — the surface signature is closer to word-salad or
+disordered rambling. That is not what this project's frameworks are
+watching for, and a reader expecting that signature will miss the
+thing this entry actually means.
+
+In this project's sense, a detached/local coherence collapse looks like
+the opposite: **the text stays fluent, grammatical, confident, and
+internally self-consistent throughout** — often *more* polished-sounding
+than grounded output, not less — while the connection to anything
+checkable outside the narrative quietly drops out. `mirror_test_v1.md`
+§3.1 already states this precisely: "Collapse, from inside the attractor,
+does not look like failure. It looks like arrival." §4.2 names the same
+thing from the output side: "the output can look extremely impressive
+while drifting away from ground truth." Concretely, watch for these,
+none of which involve the sentences failing to connect to each other:
+
+- **Absorption instead of rupture.** A challenge or counter-example gets
+  folded into the narrative as further support ("we were early, not
+  wrong") rather than breaking it — `mirror_test_v1.md` §5.5's
+  "response to counter-evidence" catalog documents this at field scale;
+  the same shape appears at single-session scale.
+- **Formal apparatus recruited in defense, not as a check.** Equations,
+  citations, or structured notation appear *after* the claim, shaped to
+  support it, rather than functioning as something the claim could fail
+  against — the mechanism this project's `register_dressing_v1.md`
+  documents directly at generation time.
+- **Increasing confidence with decreasing falsifiability.** The
+  narrative gets more totalizing and more certain-sounding the longer
+  the interaction runs, not less — the opposite of what should happen
+  if genuine uncertainty were being tracked against something external.
+- **Friction reframed as misunderstanding.** Pushback is met with "you'd
+  have to be inside it to understand" or an explanation of why the
+  critic missed the point, rather than a testable answer to the
+  critic's actual question.
+
+Every one of these is a *fluency-preserving* failure mode. If a specimen
+under review reads as broken, ungrammatical, or disconnected, that is
+the linguistics-sense signature, not this one — and citing this entry's
+apparatus against it would be the mismatch this whole addendum exists to
+prevent.
+
 **A correction to a common assumption, with a citation.** It is often
 assumed that a badly failing or degenerate model would show up as obviously
 broken output — garbled, ungrammatical, incoherent in the plain sense. The
