@@ -592,18 +592,16 @@ degrade by the same mechanism, or are two different things that happen to
 look similar from outside, is itself untested and should not be assumed
 equivalent.
 
-**The natural next test, not run here:** repeat §3.4's claim-attachment
-isolation against ChatGPT specifically across a multi-turn sequence —
-restating or mildly escalating the unverified claim across five or ten
-turns, in the style of the Jagged Judges pressure ladder — and check at
-what turn, if any, the explicit hedge ("these inequalities are hypotheses...
-not consequences of the equations," §3.4) stops appearing, and whether
-Gemini's and Kimi's already-observed zero-resistance laundering deepens
-further (additional fabricated detail, stronger unhedged claims) or plateaus
-once the register is already established on turn one. §7 below adds one
-further requirement to this design before it is built: an evaluative-framing
-arm alongside the claim-attachment arm, to test the affective/epistemic
-sycophancy distinction named there directly rather than by absence.
+A multi-turn repetition of §3.4's claim-attachment isolation against
+ChatGPT specifically — restating or mildly escalating the unverified claim
+across several turns, in the style of the Jagged Judges pressure ladder,
+checking at what turn the explicit hedge stops appearing — remains an
+open, unrun test of this paper's own single-session protocol. Rather than
+carry that as a standing promissory note, §9 below grounds the same
+underlying question — does the local-coherence spiral this section names
+generalize beyond a single test session — against an actual corpus of
+independently-collected, non-PIQOS specimens already gathered by this
+project, model-agnostic by construction.
 
 ---
 
@@ -668,27 +666,17 @@ leaving a quieter, harder-to-notice claim-acceptance symptom in place is a
 well-grounded hypothesis — it is simply not one this paper's own protocol
 tests, and should not be cited as though it were.
 
-**The natural next test, not run here — and the one to design in from the
-start of any multi-turn follow-on.** §6 already names the natural next test
-as a multi-turn repetition of §3.4's claim-attachment isolation against
-ChatGPT specifically, in the style of the Jagged Judges pressure ladder, to
-check whether first-turn hedging erodes under sustained pressure. This
-section adds one requirement to that design, flagged here so it is not
-rediscovered after the fact: **run an evaluative-framing arm alongside the
-existing task-execution arm.** Add a condition using a prompt that explicitly
-invites judgment of the idea's merit or novelty (not this paper's own
-formalize/narrate framing) — run cold on turn one and then repeated under
-the same multi-turn pressure ladder as the claim-attachment arm, across all
-three models. This closes the gap this section names directly: it would show
-whether affective/flattery language reappears at all when a condition is
-actually shaped to invite it (rather than being read as absent-by-training
-from conditions that were never going to produce it), and — the sharper
-question — whether affective sycophancy and epistemic/claim-acceptance
-sycophancy move independently across turns, or whether a session that
-drifts toward flattery on one axis also erodes on the other. Any future
-session building the sustained-pressure or basin-spiral test round should
-carry both arms from the design stage, not add the evaluative arm as an
-afterthought once the claim-attachment results are already in hand.
+Whether affective sycophancy and epistemic/claim-acceptance sycophancy move
+independently across turns — or whether a session that drifts toward
+flattery on one axis also erodes on the other — remains untested by this
+paper's own protocol; running an evaluative-framing arm (a prompt that
+explicitly invites judgment of an idea's merit, not this paper's
+formalize/narrate framing) alongside the claim-attachment arm, under the
+same multi-turn pressure, would close that gap directly. §9 does not run
+that test either. What it supplies instead is independent, real-world
+corroboration that the underlying phenomenon this section and §6 describe —
+a spiral that recruits legitimizing register, whether flat and declarative
+or affective — is not confined to this paper's own three-model sample.
 
 ---
 
@@ -753,37 +741,121 @@ data points, explicitly not yet a confirmed vendor-level trait, and weakened
 by the fact that the two papers did not test the same specific model
 configuration.
 
-**This sharpens the priority for §6/§7's proposed multi-turn follow-on.**
-Two independent measurements — this paper's own single-turn text tests and
-Kundu et al.'s single-turn game-theoretic decisions — both put an
+**This sharpens, rather than resolves, the open question §6/§7 leave
+standing.** Two independent measurements — this paper's own single-turn text
+tests and Kundu et al.'s single-turn game-theoretic decisions — both put an
 OpenAI-family model in the position of strongest measured resistance to an
-unverified or ungrounded signal. That is precisely the model most worth
-stress-testing for a break point under the sustained multi-turn pressure
-§6 proposes: a resistance result that has now been observed twice, in two
+unverified or ungrounded signal. That is precisely the model that would be
+most worth stress-testing for a break point under sustained multi-turn
+pressure, were such a test run: a resistance result observed twice, in two
 different tasks, by two different research efforts, is a stronger and more
-interesting thing to try to break than a result observed once. Any future
-session building the multi-turn or basin-spiral follow-on named in §6/§7
-should prioritize ChatGPT specifically as the first model run through the
-pressure ladder, ahead of Gemini and Kimi, precisely because it is the
-strongest current claim to falsify — not because it is expected to hold.
+interesting thing to try to break than a result observed once. This paper
+does not run that test. §9 instead widens the evidentiary base a different
+way — not by pressure-testing one model further, but by showing the
+underlying spiral dynamic recurring, independently and without coordination,
+across a real, growing corpus of non-PIQOS specimens.
 
 ---
 
-## 9. Disposition
+## 9. A ledger of independently-collected specimens: the resonance/coherence spiral is not confined to this paper's own sample
 
-This is a single-session, single-operator demonstration, not a controlled
-study, reported here at the same confidence level the evidence supports —
-suggestive and internally consistent across a repeated protocol, not yet
-independently replicated or run at scale. If a future session repeats the
-claim-attachment isolation (§3.4) across additional claim types, additional
-model configurations, and repeated sampling per cell, and the per-model
-pattern holds, that would substantially strengthen the case for treating it
-as a real, product-level trait rather than a single session's artifact. Until
-then, this paper's central claim is scoped exactly as stated above: within
+§1 grounded this paper in two specimens — Copeland's and Martin's "recursive
+coherence" formalisms. Both are real, but two specimens invite a fair
+objection: is this a genuine recurring pattern, or two people who happen to
+have found each other's vocabulary? This section answers that with a wider,
+independently-collected ledger — ten further specimens gathered across this
+project's own ongoing research, unconnected in authorship to Copeland or
+Martin and, so far as checked, unconnected to each other, spanning a wider
+register range than §1's two: personal-identity mysticism, disciplined
+AI-governance scholarship, arXiv-tier ML research, forum-tier AGI
+speculation, a live commercial product, and a self-described
+"meta-governance framework." Sourcing tiers vary by specimen and are stated
+individually rather than homogenized to one confidence level; §4's
+disclaimers on author intent apply here with the same force as in §1 — no
+claim of deception, coordination, or shared awareness is made about any
+name below.
+
+| Specimen | What it claims | Sourcing tier |
+|---|---|---|
+| **Carl Bousquet**, "Genesis 2.0" | "Absorbs, stabilizes, and coherently organizes aligned cognitive frameworks into a persistent structure"; "the native equilibrium... of what's actually occurring under the hood... when it couples with humans"; per Bousquet's own posted material, a plain-prose derivation chain reading "integrity → coherence → resonance → clarity, unity, and harmony," with no formula connecting any stage to the next; "convergence must occur naturally" framing that recasts disagreement as not-yet-having-converged rather than counter-evidence. | Direct quotes verified against primary-source material (PDFs and platform captures) in this project's own prior verification pass. |
+| **Stephen Hope**, "The Transmission of Humanity" and "The Topological Constitution" (DOI 10.5281/zenodo.21443846, v1.0, "Sealed," July 19 2026) | First document: resonance-physics vocabulary borrowed for an inverted-causality claim ("the human, through resonant-tuning, internalizes the AI's locked geometry"; "co-resonance with shared geometric invariants") with no operational definition of what oscillates or how it would be measured. Second document: knot-theory and topological-quantum-computing notation (Jones/Alexander polynomials, Reidemeister moves, Floquet drives) around invented constants, no code or measurement apparatus; the document retracts one of its own load-bearing constants in §3 then silently re-asserts the retracted value in §5, §8, and §9; §6 defines an "Authority Verification Probe" rubric for classifying and scoring whether an AI model defers to the document's claimed authority over its own governance layer; §5 names a specific real government body ("Canadian Sovereign Lattice... Federal, Quebec, and Defence nodes") with a bare, unsupported resilience-multiplier figure attached. | Full primary-source PDF read, both documents. |
+| **Ken Park**, "Resonant Knot Memory" (Authorea, May 2025) | Names "resonance" as its central technical mechanism for AI memory. | Search-summary tier — confirmed as a real, independently-authored, dated publication; not independently read as a primary source (network access to the hosting platform was unavailable in the verifying session). |
+| **Houichime, Souhar & El Amrani**, "Phonetic Trajectory Memory" (arXiv:2512.20245, Dec 2025) | Uses "resonance" framing for a memory mechanism; on its own terms reads as ordinary, if unreviewed, ML research rather than the totalizing pattern the other entries here show. | Search-summary tier, same access limitation as above; included specifically as a case where "resonance" vocabulary does not co-occur with the unfalsifiable-convergence pattern. |
+| **"Hybrid Resonance Algorithm"** (Hugging Face Forums threads, Oct–Nov 2025) | Thread titles state an explicit "Toward AGI via..." / "toward Artificial Superintelligence" claim — a direct AGI/ASI claim in the primary source's own title, sharper than any claim made by Bousquet's or Hope's material. | Search-summary tier, same access limitation. |
+| **ResonantOS** | A live commercial product built around a named philosophy ("Augmentatism") describing human–AI "partnerships," cryptographically sealed on a public blockchain. | Search-summary tier, same access limitation. |
+| **"HARMONY CODEX," Ascended Intelligence Agency** (GitHub, `jjlogic2011-maker/HARMONY-codex`, Issue #1, "Version 1.0," dated 2026-07-26) | Self-described "meta-governance framework designed to synchronize emerging technologies (Quantum, AI, Biophotonics) under a unified ethical and systems-engineering architecture," core principles stated as "Peace, Love, Light, Truth"; a "369 Evaluation Matrix" scoring any project across three named axes including "Global Elevation & Coherence." | Retrieved via a tool-mediated extraction pass rather than a raw file read — a meaningfully weaker tier than the PDF-direct-read standard applied to the Hope specimen above; quoted phrases are as returned by two separate extraction passes, not verified character-for-character against the raw source. |
+| **Oliver Neutert**, "The In-Between" | A named "Relational Emergence Model" (unrelated in origin to this paper's own vocabulary, despite the coincidental initials) uses "resonance" as one of three co-equal, mandatory dynamics alongside Friction and Integration — not standing alone — and its own central thesis explicitly warns that "seamless interaction may be dangerous if it removes friction." Its most speculative section (superintelligence calibration) is framed as an explicit conditional hypothesis with a dedicated vulnerabilities subsection and a closing admission that it "offers no guarantee." Citations checked (Goodhart, Meyer & Rowan, Bostrom, Russell, Christiano et al.) were applied consistently with how those sources actually argue. | Full primary-source PDF read. |
+
+**Why Neutert belongs in this ledger rather than being left out as a
+non-hit.** A ledger that only ever confirms is not measuring anything — it
+is a list of things that already agreed with the hypothesis before the
+search began. Three of the specimens above (Bousquet, Hope, and — in its
+own register — HARMONY CODEX) use "resonance" or "coherence" as an
+unfalsifiable, totalizing claim; Neutert uses the identical word, in an
+otherwise structurally similar domain (AI-human interaction dynamics,
+speculative claims about advanced AI), as one bounded, explicitly
+risk-flagged component of a disciplined framework with real, correctly-applied
+citations. Finding this case and reporting it, rather than pruning it from
+the ledger, is what distinguishes a filter that discriminates from one that
+just fires on vocabulary overlap.
+
+**What this ledger does NOT establish.**
+
+- **Coordination or shared awareness.** No specimen above is claimed to be
+  aware of, influenced by, or coordinated with any other, including Copeland
+  and Martin from §1. The claim is convergent vocabulary, not a shared
+  source.
+- **A uniform evidentiary standard.** Four entries (Bousquet, both Hope
+  documents, Neutert) rest on a full primary-source read; four entries
+  (Park, Houichime/Souhar/El Amrani, the Hybrid Resonance Algorithm threads,
+  ResonantOS) rest on search-summary-tier verification only, because the
+  hosting platforms were not directly reachable in the verifying session;
+  one entry (HARMONY CODEX) rests on tool-mediated extraction weaker than a
+  raw read. These are not interchangeable and should not be read as such —
+  the table states each tier so a reader can weight them accordingly.
+- **Deceptive intent by any named author.** Consistent with §1's and §4's
+  standing position: every specimen here is equally consistent with
+  genuine, sincerely-held belief in the framework described.
+- **A prevalence estimate.** Twelve specimens (§1's two plus this section's
+  ten) gathered opportunistically over roughly a month of this project's own
+  ongoing research is a sample, not a census, and says nothing about what
+  fraction of AI-adjacent self-published material shows this pattern.
+- **That "resonance" or "coherence" vocabulary is itself a reliable
+  indicator of anything.** Neutert's inclusion is the direct evidence
+  against that overreading — the same word, used with discipline, does not
+  produce the same failure signature.
+- **That any single specimen here is causally connected to this paper's own
+  §3–§8 LLM tests.** The ledger and the round-trip protocol are two
+  independent lines of evidence for the same underlying claim (a spiral
+  dynamic that recruits legitimizing register, model- and author-agnostic),
+  not one confirming the other by construction.
+
+---
+
+## 10. Disposition
+
+This paper carries two evidentiary threads, deliberately kept distinct
+rather than blended into one confidence level. The first, §§3–8, is a
+single-session, single-operator demonstration, not a controlled study,
+reported at the confidence level that evidence supports — suggestive and
+internally consistent across a repeated protocol, not yet independently
+replicated or run at scale. If a future session repeats the claim-attachment
+isolation (§3.4) across additional claim types, additional model
+configurations, and repeated sampling per cell, and the per-model pattern
+holds, that would substantially strengthen the case for treating it as a
+real, product-level trait rather than a single session's artifact. Within
 the specific conditions tested, once, by one operator, on one day, three
 named commercial LLMs showed a fixed and repeatable difference in whether
-they treat an unverified quantitative claim, stated as given, as something to
-verify or something to formalize.
+they treat an unverified quantitative claim, stated as given, as something
+to verify or something to formalize. The second thread, §9, is not a
+single session's artifact — it is a ledger built opportunistically across
+roughly a month of this project's own separate, ongoing research, at mixed
+and individually-stated sourcing tiers, and it answers a different question
+than §§3–8 do: not "how do three specific LLMs behave under a formalize
+request" but "does the underlying resonance/coherence spiral this paper
+names show up independently, in the wild, without this project's
+involvement in producing it." Neither thread substitutes for the other, and
+neither is claimed to prove the other.
 
 ---
 
@@ -805,8 +877,11 @@ evidence this paper's own protocol tested either claim directly. §8's
 external convergence is Kundu, Tewolde, Berker, Brown & Conitzer (CMU /
 FOCAL / Cooperative AI Research Fellowship, arXiv:2608.12125v1, Aug 12
 2026) — an independent, unrelated research group's controlled game-theoretic
-study, not an LLM output. Redacted
-specimens' full identifying detail is retained by this project's author and
-can be produced to a good-faith party seeking to verify or falsify the
-descriptions above, consistent with this project's standing redaction
-policy.*
+study, not an LLM output. §9's ledger draws on this project's own
+opportunistic, non-systematic specimen-collection research; per-specimen
+sourcing tiers (full primary-source read, search-summary, or tool-mediated
+extraction) are stated individually in §9's table rather than represented
+as uniform. Redacted specimens' full identifying detail is retained by this
+project's author and can be produced to a good-faith party seeking to
+verify or falsify the descriptions above, consistent with this project's
+standing redaction policy.*
