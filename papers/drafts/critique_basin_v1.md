@@ -256,10 +256,9 @@ the other.
 **August 18, 2026.** OpenAI publishes "Pacing model development in an era
 of cyber-critical capabilities." The operator later supplied the complete
 text directly, upgrading this project's sourcing on it to primary-source
-tier; the fuller document (analyzed at length in this project's companion
-draft,
-[`governance_binding_axiom_rl_pause_disclosure_addendum_v1.md`](governance_binding_axiom_rl_pause_disclosure_addendum_v1.md),
-which corrected a prior excerpt-only misreading) describes something
+tier; the fuller document (analyzed at length in
+[`governance_binding_axiom_v1.md`](../published/governance_binding_axiom_v1.md)
+§6.6, which corrected a prior excerpt-only misreading) describes something
 broader and more ongoing than "two weeks, then done": frontier research
 inference paused broadly across "research clusters" immediately after the
 Hugging Face incident, a workload-by-workload security migration since,
@@ -646,8 +645,8 @@ specimen this paper did not select for fit.
   `governance_binding_axiom_v1.md` §6.2;
   `case_studies/2026-08-07_openai_huggingface_breach_singularity_reframe.md`;
   `case_studies/2026-08-06_marcus_karapetyan_status_dismissal.md`;
-  `governance_binding_axiom_rl_pause_disclosure_addendum_v1.md` (this
-  project's companion draft on the August 18, 2026 OpenAI announcement);
+  `governance_binding_axiom_v1.md` §6.6 (the August 18, 2026 OpenAI
+  announcement, folded into the published paper's body);
   `ami_labs_marcus_expressway_defeat_condition_v1.md` §1 and §3 (Marcus's
   tracked-prediction record and self-narrated-prophet framing, reused per
   §3.2 above).
