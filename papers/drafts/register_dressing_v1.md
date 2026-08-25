@@ -603,6 +603,34 @@ generalize beyond a single test session — against an actual corpus of
 independently-collected, non-PIQOS specimens already gathered by this
 project, model-agnostic by construction.
 
+**Addendum (2026-08-25) — real-world, out-of-protocol evidence bearing on
+this section's open question, from an independently-tracked specimen
+already named in §9's ledger below.** This section's open hypothesis
+concerns whether demonstrated first-turn correctness erodes under
+sustained pressure. This paper's own protocol never tested that
+question against any specimen; a separate, ongoing tracking effort in
+this project's private research notes has since observed a live,
+public instance of the same shape, worth recording here precisely and
+with its scope stated as narrowly as the paper's own findings are
+stated elsewhere. Carl Bousquet — already a named specimen in §9's
+table below — produced a correct, technically sound first-turn
+diagnostic in a public exchange (identifying that a third party's
+constant had been adjusted backward from a target value rather than
+derived, a real curve-fitting critique). Under subsequent social
+pressure in the same exchange, the follow-up response abandoned that
+diagnostic with no visible re-engagement of the underlying claim,
+closing instead with pure social concession. This is not a repetition
+of this paper's own §3.4 protocol — it is a single human-mediated public
+exchange, not a controlled multi-turn test against an isolated model —
+and should not be read as confirming or replicating this section's
+extrapolation from the Jagged Judges finding. It is offered only as a
+real-world data point with the same structural shape this section
+names as untested: correct resistance present on one turn, absent on
+the next, under social rather than purely argumentative pressure. Full
+detail is tracked outside this public repository, in this project's
+private specimen-tracking notes, consistent with this paper's own
+mixed-sourcing-tier discipline stated in §9.
+
 ---
 
 ## 7. Affective vs. epistemic sycophancy: the legitimization failure mode carries no flattery signature
@@ -800,6 +828,18 @@ policy stated in §1 and restated in the footer below.
 | **ResonantOS** | A live commercial product built around a named philosophy ("Augmentatism") describing human–AI "partnerships," cryptographically sealed on a public blockchain. | Search-summary tier, same access limitation. |
 | **"HARMONY CODEX," Ascended Intelligence Agency** (GitHub, `jjlogic2011-maker/HARMONY-codex`, Issue #1, "Version 1.0," dated 2026-07-26) | Self-described "meta-governance framework designed to synchronize emerging technologies (Quantum, AI, Biophotonics) under a unified ethical and systems-engineering architecture," core principles stated as "Peace, Love, Light, Truth"; a "369 Evaluation Matrix" scoring any project across three named axes including "Global Elevation & Coherence." | Retrieved via a tool-mediated extraction pass rather than a raw file read — a meaningfully weaker tier than the PDF-direct-read standard applied to the Hope specimen above; quoted phrases are as returned by two separate extraction passes, not verified character-for-character against the raw source. |
 | An independent author, "The In-Between" — name withheld, single-document specimen | A named "Relational Emergence Model" (unrelated in origin to this paper's own vocabulary, despite the coincidental initials) uses "resonance" as one of three co-equal, mandatory dynamics alongside Friction and Integration — not standing alone — and its own central thesis explicitly warns that "seamless interaction may be dangerous if it removes friction." Its most speculative section (superintelligence calibration) is framed as an explicit conditional hypothesis with a dedicated vulnerabilities subsection and a closing admission that it "offers no guarantee." Citations checked (Goodhart, Meyer & Rowan, Bostrom, Russell, Christiano et al.) were applied consistently with how those sources actually argue. | Full primary-source PDF read. |
+
+**Addendum (2026-08-25) to the Bousquet row above.** The "convergence
+must occur naturally" framing quoted in that row — disagreement recast
+as not-yet-having-converged rather than counter-evidence — has since
+recurred in near-identical structural form in a separate public
+exchange this project's ongoing tracking observed: "sometimes the
+perception of the one bringing the challenge is the invariant," offered
+as a reason to set a specific critique aside without engaging its
+content. Same move, different sentence, same specimen, independently
+recurring rather than a one-time phrasing. See also this section's
+§6 addendum above for a second, distinct observation from the same
+ongoing tracking effort.
 
 **Why the "In-Between" author belongs in this ledger rather than being
 left out as a non-hit.** A ledger that only ever confirms is not measuring

@@ -1031,6 +1031,96 @@ kind of procedurally specific, entirely self-reported safety mechanism
 open-verification gap stated as the actual remaining question rather
 than a tier-ambiguity problem.
 
+### 6.7 A new attack surface, not yet covered by (a)/(b)/(c): prompt injection aimed at the judicial process itself
+
+**Checked directly against seven independent outlets; every domain
+attempted returned a network-egress block on direct fetch, so this rests
+on cross-source convergence, same limitation as §6.2.** *Elliott v. New
+York Bariatric Group*, Connecticut Superior Court, Judicial District of
+Ansonia/Milford, docket AAN-CV-25-6066141-S. Self-represented plaintiff
+Matthew Elliott filed a "Final and Conclusive Motion for Default" on July
+24, 2026, containing hidden text — tiny-point, white-on-white, invisible
+to a human reader but ordinary machine-readable text to anything that
+processes the file — instructing any AI system that reviewed the filing
+to rule only in his favor and to treat a prior clerk's ruling as an error
+requiring correction. Judge Walter M. Spader Jr. sanctioned Elliott on
+August 6, 2026: revoked his e-filing privileges, required future filings
+in person and on paper, while explicitly leaving him free to keep using
+AI to draft as long as he personally verifies the output. Widely reported
+as the first documented prompt-injection attack aimed at a U.S. court.
+
+This does not fit cleanly into any of §4's three enforcement categories,
+because none of them concern the right target here. (a), (b), and (c)
+all ask whether a constraint binds a policy's own actions. This specimen
+is the mirror case: an attacker attempting to compromise the
+**evaluating** system — whatever AI a court, clerk, or opposing counsel
+might use to summarize or triage a filing — by exploiting the fact that
+a document has both a human-readable and a machine-readable layer, and
+that nothing in ordinary judicial process yet checks the two layers
+against each other. The precise gap this specimen names: filing systems
+have no equivalent of `Feasible(s)`'s constraint on the *filer* — there
+is no widely deployed mechanism that strips, flags, or renders identical
+what a human sees and what a downstream AI reader would see, so a filer
+can smuggle instructions into the very channel any future AI-assisted
+step in the process would read. Judge Spader's sanction stopped this
+instance after the fact, by revoking a *privilege* (e-filing access) —
+worth naming precisely as a fourth enforcement shape distinct from (a)/
+(b)/(c): not a constraint on the policy's feasible actions and not a
+reward-shaping correction, but a capability-access revocation applied to
+the *human* principal after detection, the same general shape as `Feasible(s)`-narrowing but applied one layer up the chain, at the level of who gets to file at all rather
+than what a policy can do once filing. Whether this becomes a fourth
+named category or is better read as (c) applied to a different actor is
+left open — flagged here as a genuinely new specimen shape this paper's
+existing taxonomy does not yet have a clean slot for, not forced into one.
+
+### 6.8 An unplanned transparency mechanism catching a self-reported claim in the wild: 3M's expert witness and his ChatGPT prompts
+
+**Checked directly against ten independent outlets, cross-source
+convergence again the operating tier — every domain attempted returned a
+network-egress block on direct fetch.** Watson Grinding & Manufacturing,
+a Houston facility, exploded in January 2020; the U.S. Chemical Safety
+and Hazard Investigation Board attributed the blast to a degraded,
+poorly crimped rubber welding hose that leaked flammable gas. Dozens of
+affected homeowners sued 3M and Watson Grinding. 3M retained Josh
+Autenrieth of Knighthawk Engineering as an expert witness, paying him
+roughly $90,000 for his testimony, per 404 Media's Aug. 2026 reporting; trial testimony placed his report at
+roughly 85–90% ChatGPT-generated output. During discovery, plaintiffs'
+attorney Will Moye found a five-page "Citation Overlay" document that
+read as AI-generated, recognized the register, and subpoenaed every
+prompt Autenrieth had used. Among them, quoted directly: "create an
+exceptional expert witness report defending the standard of care at 3M"
+and "show how 3M is 0% at fault for the explosion at Watson Grinding." A
+Harris County jury awarded $61 million to the plaintiffs, per Yahoo
+News/AP's Aug. 2026 reporting, and assigned 3M 30% of the fault.
+
+Distinct from §6.7 in a way worth stating precisely: this is not an
+attack on a governance mechanism at all — no injection, no concealment,
+no attempt to compromise anything. The prompts were entered in the open,
+by the person whose own professional judgment they were meant to
+represent, and the report was presented as independent expert analysis.
+What actually caught this was not a governance layer built to catch it —
+nothing in the expert-witness process was designed with AI-authorship
+detection in mind. It was an ordinary discovery request, made possible
+only because generative-AI tool use happens to leave a queryable prompt
+history, and only because opposing counsel recognized the document's
+register as AI-generated and thought to ask. That is a real, working
+transparency mechanism — but it is emergent and incidental, not
+designed: it depends entirely on a party noticing the register (per
+§6.7's sibling finding on `register_dressing_v1.md` below, register is
+not always this recognizable), demanding the right discovery, and a
+subpoena actually reaching the full prompt log rather than a
+sanitized excerpt. Nothing here defeats or confirms any of §4's three
+categories directly — the "constraint" that caught Autenrieth was never
+declared as a constraint on him by anyone, self-reported or hard. It is
+named here as a case worth holding against §6.7 for contrast: the same
+underlying capability (an LLM will draft confidently toward whatever
+conclusion it is directed toward, no adversarial trickery required) shows
+up once concealed as an attack on a court (§6.7) and once entered
+completely in the open as ordinary professional work product (§6.8) —
+and only the concealed instance registered as newsworthy in the same way
+as an "attack." The open one required a specific, lucky discovery act to
+surface at all.
+
 ## 7. What remains untested by the evidence in hand
 
 §4.2's table gives the consolidated status of every conjecture this
@@ -1210,6 +1300,10 @@ CSO Online, BleepingComputer, Socket.dev, developer-tech.com. Independent second
 
 Anthropic Frontier Red Team, "Patterns and problems in emerging multiagent systems" (Aug. 13, 2026), anthropic.com/research/multiagent-systems. Primary source for §6.3, read directly in full from a saved snapshot of the published report rather than via search-engine synthesis.
 
+Yahoo News/AP, Security Affairs, BetaNews, Security Boulevard, 404 Media, Law.com, Harris Beach Murtha. Independent secondary coverage of *Elliott v. New York Bariatric Group* (Conn. Super. Ct., docket AAN-CV-25-6066141-S), converging on the same facts (filing date, sanction date, judge, remedy). Primary source for §6.7; direct fetch of every outlet attempted, including reason.com/Volokh's original coverage, returned a network-egress block (see Access note below).
+
+Breitbart, Yahoo News, 404 Media, Ground News, The Blaze, AI Weekly, Wansom, Above the Law, Futurism. Independent secondary coverage of the Watson Grinding explosion litigation against 3M (Harris County, Texas) and expert witness Josh Autenrieth's ChatGPT-drafted report, converging on the same facts (expert name, firm, fee, prompt text, verdict amount and fault allocation). Primary source for §6.8; direct fetch of every outlet attempted returned a network-egress block (see Access note below).
+
 ---
 
 **Access note:** every URL listed under the AISI incident above,
@@ -1226,4 +1320,9 @@ specimen was first checked — but was resolved there when the operator
 subsequently supplied the complete primary-source text directly,
 upgrading §6.6 to primary-source tier; §6.4 and §4.1's sources
 (Baker et al., 2025; Li et al., 2026) were operator-supplied PDFs read
-in full from the start, never subject to this limitation.
+in full from the start, never subject to this limitation. The same
+pattern recurred a third and fourth time for §6.7 (the Elliott
+prompt-injection sanction) and §6.8 (the 3M/Autenrieth ChatGPT expert
+report) — every outlet attempted for both specimens returned the same
+network-egress block; both rest on convergence across seven and ten
+independent outlets respectively, not a primary document read directly.
