@@ -733,7 +733,7 @@ independently reproduced by an unrelated, credentialed research group
 (formal game-theoretic equilibrium proofs, a stated ethics protocol, 10
 repeated trials per condition), on a completely different task (real
 strategic decision-making, not text formalization), with no shared authorship
-or methodology with this paper. Per INV-CROSS-LLM-NOT-INDEPENDENT-style
+or methodology with this paper. Per the same cross-LLM-independence
 reasoning already invoked in this project's other work: two same-distribution
 LLMs agreeing is not independent verification, but an unrelated academic
 research group's controlled experiment landing on the same structural claim
