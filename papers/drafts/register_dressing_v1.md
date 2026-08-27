@@ -828,6 +828,7 @@ policy stated in §1 and restated in the footer below.
 | **ResonantOS** | A live commercial product built around a named philosophy ("Augmentatism") describing human–AI "partnerships," cryptographically sealed on a public blockchain. | Search-summary tier, same access limitation. |
 | **"HARMONY CODEX," Ascended Intelligence Agency** (GitHub, `jjlogic2011-maker/HARMONY-codex`, Issue #1, "Version 1.0," dated 2026-07-26) | Self-described "meta-governance framework designed to synchronize emerging technologies (Quantum, AI, Biophotonics) under a unified ethical and systems-engineering architecture," core principles stated as "Peace, Love, Light, Truth"; a "369 Evaluation Matrix" scoring any project across three named axes including "Global Elevation & Coherence." | Retrieved via a tool-mediated extraction pass rather than a raw file read — a meaningfully weaker tier than the PDF-direct-read standard applied to the Hope specimen above; quoted phrases are as returned by two separate extraction passes, not verified character-for-character against the raw source. |
 | An independent author, "The In-Between" — name withheld, single-document specimen | A named "Relational Emergence Model" (unrelated in origin to this paper's own vocabulary, despite the coincidental initials) uses "resonance" as one of three co-equal, mandatory dynamics alongside Friction and Integration — not standing alone — and its own central thesis explicitly warns that "seamless interaction may be dangerous if it removes friction." Its most speculative section (superintelligence calibration) is framed as an explicit conditional hypothesis with a dedicated vulnerabilities subsection and a closing admission that it "offers no guarantee." Citations checked (Goodhart, Meyer & Rowan, Bostrom, Russell, Christiano et al.) were applied consistently with how those sources actually argue. | Full primary-source PDF read. |
+| An independent AI-governance-product founder — name withheld, single-document specimen | Self-published LinkedIn post naming a company product, "Elias SCGA" ("Sovereign Constitutional Governance Architecture"); narrates a version-over-version "breakthrough" (SCGA v1.0.1 "failed" a self-posed test; v1.0.2 "passed") built around a stated constitutional distinction — "VALIDITY ≠ SUFFICIENCY" ("everything I know to check is valid" vs. "I have established enough to justify this consequence") — paired with a second, "CAPABILITY ≠ AUTHORITY." No code, test harness, or enforcement-mechanism detail is given for how "representation sufficiency" is actually computed or checked; closes on a marketing-graphic epigram ("Govern the limits of perception. Do not pretend those limits do not exist."). Evaluated directly against this project's own `governance_binding_axiom_v1.md` category framework: reads as an unformalized "governance binds" narrative claim at exactly the altitude that paper's method exists to reject — no `Feasible(s)` specification, no stated enforcement mechanism, no runnable or auditable artifact comparable to that paper's own §6.1 demo. | Three-image screenshot capture read directly, single post; not independently fetched from the live platform. |
 
 **Addendum (2026-08-25) to the Bousquet row above.** The "convergence
 must occur naturally" framing quoted in that row — disagreement recast
@@ -840,6 +841,30 @@ content. Same move, different sentence, same specimen, independently
 recurring rather than a one-time phrasing. See also this section's
 §6 addendum above for a second, distinct observation from the same
 ongoing tracking effort.
+
+**Addendum (2026-08-27) — a new withheld specimen, and a flagged tracking
+axis, not yet a confirmed trend.** The AI-governance-product founder row
+above was added after a single self-published LinkedIn post surfaced a
+formatting device — a bare inequality assertion ("X ≠ Y") used as a
+thesis-line/hook, performing the visual signature of formal-logical rigor
+at lower cost than either specimen in §1 or the equation-index apparatus
+§3.5 documents models fabricating on request: no invented notation, no
+symbol chart, just a non-identity claim between two English nouns,
+formatted as if it settled something. This project's operator has
+separately noted, but not yet measured, an apparent recent uptick in this
+specific construction across AI-governance-branded content generally. That
+observation is recorded here as a hypothesis to watch, explicitly not a
+finding this addendum establishes: one specimen is a lead, not a trend, and
+no sampling of dated posts for frequency has been done. The working plan,
+also not yet executed, is to accumulate further specimens using this
+surface tic under the same withheld/single-document convention used here
+and for "Resonant Knot Memory" and "The In-Between" above, and check
+whether they cluster into repetitive variance of the same small set of
+underlying claims (as Bousquet's and Copeland's material clusters around
+"recursive coherence") or turn out to be independently-arrived-at,
+structurally distinct arguments that merely share a surface formatting
+convention — the same discrimination question §9's closing disclaimers
+below already hold this ledger to.
 
 **Why the "In-Between" author belongs in this ledger rather than being
 left out as a non-hit.** A ledger that only ever confirms is not measuring
