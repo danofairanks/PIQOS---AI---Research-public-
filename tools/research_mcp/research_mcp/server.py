@@ -40,7 +40,7 @@ from bifp.agent_tools import (
     bifp_get_closed_path_status, bifp_get_status, bifp_judge_rebuttal, bifp_list_phases,
     bifp_record_criterion, bifp_record_fixture, bifp_scan_closed_path_language,
     bifp_scan_hardcoded_assertion_style, bifp_scan_text, bifp_start_audit,
-    bifp_start_closed_path_ledger,
+    bifp_start_closed_path_ledger, bifp_trace_field_assignments,
 )
 from debasinizer.agent_tools import debasinizer_scan_corpus, debasinizer_scan_text
 from paper_rigor.agent_tools import paper_rigor_scan, paper_rigor_triage_worklist
@@ -91,6 +91,15 @@ app = MCPServer(
         "bifp_scan_closed_path_language and bifp_scan_hardcoded_assertion_"
         "style are standalone lexical leads over prose/code for the same "
         "distinction, not a substitute for actually classifying fixtures. "
+        "bifp_trace_field_assignments is a sharper, AST-based check: for "
+        "caller-supplied field names, is each one ever assigned from an "
+        "expression touching input across caller-supplied source files, "
+        "or only ever a literal constant -- a field that is never proven "
+        "input-derived cannot vary with input at all, a stronger finding "
+        "than closed-loop. Conservative in one direction only: any "
+        "Name/Attribute/Subscript/Call reference in an assignment's "
+        "right-hand side rules out the flag for that field, even where "
+        "the reference is also constant in practice. "
         "attractor_scan_claim_boundary_portability checks whether a source "
         "document's own stated limitations show any lexical trace in a "
         "separate citation/reference text -- a two-document comparison, "
@@ -119,6 +128,7 @@ _TOOLS = [
     bifp_get_closed_path_status,
     bifp_scan_closed_path_language,
     bifp_scan_hardcoded_assertion_style,
+    bifp_trace_field_assignments,
     attractor_scan_text,
     attractor_scan_corpus,
     attractor_scan_judge_visual_proof,

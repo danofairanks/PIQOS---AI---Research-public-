@@ -34,12 +34,14 @@ from .protocol import (
     CriterionStatus, PhaseStatus, get_criterion, get_phase,
 )
 from .report import render_report
+from .uncomputed_field import AssignmentSite, FieldTrace, FieldTraceResult, trace_field_assignments
 
 __all__ = [
     "AuditSession", "CriterionRecord", "PhaseRecord",
     "HeuristicResult", "scan_text",
     "ClosedPathLedger", "FixtureRecord", "ClosedPathLanguageResult",
     "scan_for_closed_path_language", "scan_for_hardcoded_assertion_style",
+    "AssignmentSite", "FieldTrace", "FieldTraceResult", "trace_field_assignments",
     "ALL_SECTIONS", "CORE_AXIOM", "META_PROTOCOL", "PHASES", "SEMANTIC_HYGIENE",
     "CriterionStatus", "PhaseStatus", "get_criterion", "get_phase",
     "render_report",

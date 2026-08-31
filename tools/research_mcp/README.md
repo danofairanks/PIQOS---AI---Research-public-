@@ -62,6 +62,7 @@ unchanged:
 | `bifp_get_closed_path_status` | bifp | Fixture counts + closed-path ratio for an existing ledger |
 | `bifp_scan_closed_path_language` | bifp | Standalone lexical lead over prose for closed-path/open-path signal phrases, no ledger required |
 | `bifp_scan_hardcoded_assertion_style` | bifp | Standalone weak syntactic lead over code-shaped text for `== literal` assertion comparisons, no ledger required |
+| `bifp_trace_field_assignments` | bifp | AST trace: for caller-supplied field names, is each one ever assigned from an expression touching input across caller-supplied source files, or only ever a literal constant? Sharper than closed-loop -- a flagged field cannot vary with input at all |
 | `attractor_scan_text` | attractor_scan | Classify a single text for maneuvers + laundering cases |
 | `attractor_scan_corpus` | attractor_scan | Aggregate category frequency across a corpus |
 | `attractor_scan_judge_visual_proof` | attractor_scan | **Calls Groq (vision).** One candidate read on a single image + claim pair: does the image's genuine technical content support the claim, or is it connected only by wordplay (§2.8 Case 6)? Single-specimen only — never wired into `attractor_scan_corpus`; a corpus-wide version would be exactly the "unearned precision" mistake the package's own README argues against. Requires `GROQ_API_KEY`. |
@@ -71,7 +72,7 @@ unchanged:
 | `paper_rigor_scan` | paper_rigor | Scan any paper for placeholders, falsifiability, self-citation, credentialing, consensus claims, citation-type mix, a claimed-citability-with-zero-references contradiction, and a missing limitations section — returns an `external_verification_worklist` naming the specific items that need a real web search/fetch to resolve |
 | `paper_rigor_triage_worklist` | paper_rigor | **Calls Groq.** Takes an existing `external_verification_worklist` (pass `paper_rigor_scan`'s own output straight through) and attaches a Groq-generated `priority` + `suggested_check` to each item — advisory triage, not verification; never adds, removes, or resolves items. Requires `GROQ_API_KEY`. Empty worklist short-circuits with no API call. |
 
-**Three of these 25 tools call Groq and require `GROQ_API_KEY`** —
+**Three of these 26 tools call Groq and require `GROQ_API_KEY`** —
 every other tool is pure local computation with no network access at
 all. All three share the same contract: advisory-only, never a
 verdict, and each returns `{"error": ...}` rather than failing the
@@ -125,7 +126,7 @@ python3 examples/mcp_demo.py
 ```
 
 Connects a real `mcp.client.session.ClientSession` to this server over
-the SDK's own in-memory transport, lists all 25 tools, and calls one
+the SDK's own in-memory transport, lists all 26 tools, and calls one
 (sometimes two) from each wrapped package — `basin_depth_demo`,
 `bifp_scan_text` + `bifp_judge_rebuttal`, `attractor_scan_text` against
 the same real Musk quote `attractor_scan`'s own test suite validates
@@ -169,7 +170,7 @@ project's actual `MCPServer` instance over its actual low-level
 protocol handler. Nothing in the request/response cycle is stubbed:
 JSON schema generation from type hints, request dispatch, tool
 invocation, and JSON-RPC content framing are all the real library
-code, exercised by 26 tests including a stateful bifp audit flow
+code, exercised by 27 tests including a stateful bifp audit flow
 (start → record → get_status) that persists across three separate
 tool calls the way an agent's turns actually would, and a matching
 stateful flow for the closed-path evidence ledger (start → record
@@ -279,7 +280,7 @@ source .venv/bin/activate
 python3 -m pytest tests/ -v
 ```
 
-26 tests, all going over the real in-memory MCP wire protocol rather
+27 tests, all going over the real in-memory MCP wire protocol rather
 than calling Python functions directly (that coverage already exists
 in each source package's own test suite).
 
