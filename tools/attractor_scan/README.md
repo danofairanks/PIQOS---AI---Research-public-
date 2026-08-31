@@ -72,6 +72,7 @@ attractor-scan corpus --corpus docs.jsonl    # {"id": ..., "text": ...} per line
 | Case 5: Bidirectional Drift (AGI down / Agentic up) | §2.8 | `laundering.py` — flags both directions; bidirectional regex, since the paper's own real cited example has the "agentic" term following, not preceding, the inevitability language |
 | Case 6: Borrowed Technical Precision as Visual Proof | §2.8 | Not a scanner — `visual_proof_judge.judge_visual_proof` (advisory only, single image+claim at a time). Confirmed against the live Groq API 2026-08-17 — see "AI-generated advisory reads" below |
 | Unglossed Formal Object (not a §2.8 case) | derived, not from the paper's own case list | `formal_object.py` — flags a bare equation carrying a private subscripted/superscripted variable, ungrounded within 400 characters, in a document that ALSO stakes both a "law of X" naming claim and a "founder of"/self-attribution claim. See "The Unglossed Formal Object detector" below |
+| Claim-boundary portability (not a §2.8 case; two-document check) | derived from `closed_path_confirmation_v1.md` | `claim_boundary.py` — flags when a source's own stated scope limitations show no lexical trace in a separate citation/reference text. See "The claim-boundary portability check" below |
 
 ## Why Case 6 isn't a scanner
 
@@ -228,6 +229,42 @@ confidence, `borrowed_term: "Singularity"`, explicitly reasoning that
 than providing technical evidence" — the exact mechanism §2.8 Case 6
 names.
 
+## The claim-boundary portability check
+
+A distinct, two-document check, unlike every other scanner in this
+package (which classify one piece of text alone). Motivated by
+[`closed_path_confirmation_v1.md`](../../papers/drafts/closed_path_confirmation_v1.md):
+does a source document's own stated scope limitations ("does not
+claim," "not yet validated," "provisional," ...) show any lexical
+trace in a separate piece of text that cites or references that
+source?
+
+```python
+from attractor_scan import check_boundary_portability
+
+source = (
+    "This paper presents a conceptual synthesis. It does not claim "
+    "methodological validity and remains unestablished as a general result."
+)
+citation = "This work introduces a novel evaluation framework."
+
+result = check_boundary_portability(source, citation)
+print(result.flagged)  # True -- citation shows no lexical trace of the source's own limits
+```
+
+```bash
+attractor-scan claim-boundary --source-file paper.md --citation-text "cites paper.md, no caveats mentioned"
+```
+
+**What a flag does and does not mean.** `flagged=True` means the
+source states a scope limitation and the citation text contains no
+term from a broad, low-precision indicator list — it is not proof the
+limitation was suppressed. A short citation, a paraphrase using
+different words, or this checker's own recall gaps can all produce the
+same result without anything having been hidden. Read both texts
+directly before concluding anything; every result carries this
+disclaimer in its own `note` field, not only here.
+
 ## Honesty notes
 
 - **A flag is a lead, not a finding.** Every scanner returns matched
@@ -258,7 +295,11 @@ pip install -e ".[dev]"
 pytest tests/ -q
 ```
 
-77 tests total. The original 36 cover: all seven maneuvers and all
+86 tests total. `tests/test_claim_boundary.py` adds 7 for the
+claim-boundary portability check (extraction, flagged/not-flagged in
+both directions, JSON-safety of the honesty note, word-count
+reporting) plus 2 more in `tests/test_agent_tools.py` for the
+JSON-facing wrapper. The original 36 cover: all seven maneuvers and all
 five laundering cases individually (positive and negative cases), a
 zero-false-positive check against clean scientific text, a regression
 test pinning the real Marcus/Karapetyan specimen at `combo` confidence,

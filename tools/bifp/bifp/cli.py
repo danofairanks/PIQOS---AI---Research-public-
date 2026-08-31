@@ -8,8 +8,10 @@ import sys
 
 from .agent_tools import (
     bifp_attach_rebuttal_judgment, bifp_attach_scan_to_audit, bifp_generate_report,
-    bifp_get_status, bifp_judge_rebuttal, bifp_list_phases, bifp_record_criterion,
-    bifp_scan_text, bifp_start_audit,
+    bifp_get_closed_path_status, bifp_get_status, bifp_judge_rebuttal, bifp_list_phases,
+    bifp_record_criterion, bifp_record_fixture, bifp_scan_closed_path_language,
+    bifp_scan_hardcoded_assertion_style, bifp_scan_text, bifp_start_audit,
+    bifp_start_closed_path_ledger,
 )
 from .rebuttal_judge import DEFAULT_MODEL
 
@@ -71,6 +73,36 @@ def _cmd_phases(args: argparse.Namespace) -> int:
     return 0
 
 
+def _cmd_cp_new(args: argparse.Namespace) -> int:
+    result = bifp_start_closed_path_ledger(args.ledger, args.artifact_label)
+    print(json.dumps(result, indent=2))
+    return 0
+
+
+def _cmd_cp_record(args: argparse.Namespace) -> int:
+    result = bifp_record_fixture(args.ledger, args.fixture_id, args.derivation, notes=args.notes or "")
+    print(json.dumps(result, indent=2))
+    return 1 if "error" in result else 0
+
+
+def _cmd_cp_status(args: argparse.Namespace) -> int:
+    result = bifp_get_closed_path_status(args.ledger)
+    print(json.dumps(result, indent=2))
+    return 1 if "error" in result else 0
+
+
+def _cmd_cp_scan_language(args: argparse.Namespace) -> int:
+    text = args.text if args.text else sys.stdin.read()
+    print(json.dumps(bifp_scan_closed_path_language(text), indent=2))
+    return 0
+
+
+def _cmd_cp_scan_assertions(args: argparse.Namespace) -> int:
+    text = args.text if args.text else sys.stdin.read()
+    print(json.dumps(bifp_scan_hardcoded_assertion_style(text), indent=2))
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(prog="bifp", description="Basin-Immune Falsification Protocol audit tool")
     sub = p.add_subparsers(dest="command", required=True)
@@ -118,6 +150,30 @@ def build_parser() -> argparse.ArgumentParser:
     p_report.add_argument("--audit", required=True)
     p_report.add_argument("--out", default=None, help="write to this path instead of stdout")
     p_report.set_defaults(func=_cmd_report)
+
+    p_cp_new = sub.add_parser("cp-new", help="start a new closed-path evidence ledger (closed_path_confirmation_v1.md §2)")
+    p_cp_new.add_argument("--ledger", required=True, help="path to the ledger JSON file to create")
+    p_cp_new.add_argument("--artifact-label", required=True, help="caller-controlled free-text label; not inspected or validated")
+    p_cp_new.set_defaults(func=_cmd_cp_new)
+
+    p_cp_record = sub.add_parser("cp-record", help="classify one fixture as asserted/derived/unknown")
+    p_cp_record.add_argument("--ledger", required=True)
+    p_cp_record.add_argument("--fixture-id", required=True)
+    p_cp_record.add_argument("--derivation", required=True, choices=["asserted", "derived", "unknown"])
+    p_cp_record.add_argument("--notes", default="")
+    p_cp_record.set_defaults(func=_cmd_cp_record)
+
+    p_cp_status = sub.add_parser("cp-status", help="print current closed-path ratio and counts for a ledger")
+    p_cp_status.add_argument("--ledger", required=True)
+    p_cp_status.set_defaults(func=_cmd_cp_status)
+
+    p_cp_scan_lang = sub.add_parser("cp-scan-language", help="lexical scan of prose for closed-path/open-path signal phrases")
+    p_cp_scan_lang.add_argument("--text", default=None, help="text to scan; reads stdin if omitted")
+    p_cp_scan_lang.set_defaults(func=_cmd_cp_scan_language)
+
+    p_cp_scan_assert = sub.add_parser("cp-scan-assertions", help="weak syntactic scan for literal-comparison assertions")
+    p_cp_scan_assert.add_argument("--text", default=None, help="text to scan; reads stdin if omitted")
+    p_cp_scan_assert.set_defaults(func=_cmd_cp_scan_assertions)
 
     return p
 

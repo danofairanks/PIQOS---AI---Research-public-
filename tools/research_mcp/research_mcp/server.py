@@ -31,13 +31,16 @@ except ImportError:  # pragma: no cover -- exercised only on older mcp releases
     from mcp.server.fastmcp import FastMCP as MCPServer
 
 from attractor_scan.agent_tools import (
-    attractor_scan_corpus, attractor_scan_judge_visual_proof, attractor_scan_text,
+    attractor_scan_claim_boundary_portability, attractor_scan_corpus,
+    attractor_scan_judge_visual_proof, attractor_scan_text,
 )
 from basin_depth.agent_tools import basin_depth_demo, basin_depth_derive_vocab, basin_depth_run
 from bifp.agent_tools import (
     bifp_attach_rebuttal_judgment, bifp_attach_scan_to_audit, bifp_generate_report,
-    bifp_get_status, bifp_judge_rebuttal, bifp_list_phases, bifp_record_criterion,
-    bifp_scan_text, bifp_start_audit,
+    bifp_get_closed_path_status, bifp_get_status, bifp_judge_rebuttal, bifp_list_phases,
+    bifp_record_criterion, bifp_record_fixture, bifp_scan_closed_path_language,
+    bifp_scan_hardcoded_assertion_style, bifp_scan_text, bifp_start_audit,
+    bifp_start_closed_path_ledger,
 )
 from debasinizer.agent_tools import debasinizer_scan_corpus, debasinizer_scan_text
 from paper_rigor.agent_tools import paper_rigor_scan, paper_rigor_triage_worklist
@@ -78,9 +81,23 @@ app = MCPServer(
         "priority and a suggested_check to each item in an existing "
         "external_verification_worklist without adding, removing, or "
         "resolving any of them -- it has no web access and never claims to "
-        "have verified anything. Every tool here is a heuristic lead "
-        "generator, not a verdict -- see each source package's own README "
-        "for exactly what it does and does not detect."
+        "have verified anything. bifp_start_closed_path_ledger / "
+        "bifp_record_fixture / bifp_get_closed_path_status track, per "
+        "fixture, whether a governance artifact's evidence is closed-path "
+        "(expected outcome asserted as a literal matching the artifact's "
+        "own output) or open-path (expected outcome derived from an "
+        "independent specification) -- papers/drafts/closed_path_"
+        "confirmation_v1.md §2's defeat condition, operationalized; "
+        "bifp_scan_closed_path_language and bifp_scan_hardcoded_assertion_"
+        "style are standalone lexical leads over prose/code for the same "
+        "distinction, not a substitute for actually classifying fixtures. "
+        "attractor_scan_claim_boundary_portability checks whether a source "
+        "document's own stated limitations show any lexical trace in a "
+        "separate citation/reference text -- a two-document comparison, "
+        "unlike attractor_scan_text's single-document scan. Every tool "
+        "here is a heuristic lead generator, not a verdict -- see each "
+        "source package's own README for exactly what it does and does "
+        "not detect."
     ),
 )
 
@@ -97,9 +114,15 @@ _TOOLS = [
     bifp_generate_report,
     bifp_judge_rebuttal,
     bifp_attach_rebuttal_judgment,
+    bifp_start_closed_path_ledger,
+    bifp_record_fixture,
+    bifp_get_closed_path_status,
+    bifp_scan_closed_path_language,
+    bifp_scan_hardcoded_assertion_style,
     attractor_scan_text,
     attractor_scan_corpus,
     attractor_scan_judge_visual_proof,
+    attractor_scan_claim_boundary_portability,
     debasinizer_scan_text,
     debasinizer_scan_corpus,
     paper_rigor_scan,

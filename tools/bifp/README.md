@@ -107,9 +107,14 @@ adapter layer.
 | `bifp_generate_report(audit_path)` | Full markdown report |
 | `bifp_judge_rebuttal(claim_text, rebuttal_text)` | AI-generated (Groq) candidate read on §3.7 no-weaker-substitute-rebuttal, standalone -- see "AI-generated advisory reads" below |
 | `bifp_attach_rebuttal_judgment(audit_path, claim_text, rebuttal_text)` | Same, attached to an audit's `ai_advisory_flags` -- never sets a criterion outcome |
+| `bifp_start_closed_path_ledger(ledger_path, artifact_label)` | Create a new closed-path evidence ledger, persisted to a file -- see "The closed-path / open-path evidence ledger" above |
+| `bifp_record_fixture(ledger_path, fixture_id, outcome_derivation, notes)` | Classify one fixture as asserted/derived/unknown |
+| `bifp_get_closed_path_status(ledger_path)` | Current fixture counts + closed-path ratio for an existing ledger |
+| `bifp_scan_closed_path_language(text)` | Standalone lexical lead over prose, no ledger required |
+| `bifp_scan_hardcoded_assertion_style(text)` | Standalone weak syntactic lead over code-shaped text, no ledger required |
 
 **On MCP specifically:** a live MCP server now exists —
-[`tools/research_mcp/`](../research_mcp/). It registers all seven
+[`tools/research_mcp/`](../research_mcp/). It registers all fourteen
 `agent_tools.py` functions above (plus `basin_depth`'s and
 `attractor_scan`'s own agent_tools surfaces) against a real
 `MCPServer` instance, and is tested over the actual MCP wire protocol
@@ -119,6 +124,65 @@ closed the earlier blocker (`pip install mcp` conflicting with this
 build environment's system `PyJWT` package: install into an isolated
 virtualenv instead of the system interpreter) and for a real bug the
 round-trip test suite's own first draft caught.
+
+## The closed-path / open-path evidence ledger
+
+A separate, generic tool inside this package, distinct from the BIFP
+audit above: operationalizes the defeat condition in
+[`closed_path_confirmation_v1.md`](../../papers/drafts/closed_path_confirmation_v1.md)
+§2 for the specific case of a governance artifact whose only offered
+evidence is its own author-authored test suite. A green suite
+establishes only an *existential* claim over paths the author controls
+(closed-path); a binding claim needs the *universal* claim over all
+paths (open-path). This tool doesn't decide whether any artifact
+binds — it gives you a place to record, fixture by fixture, whether
+each one's expected outcome was asserted (a literal constant matching
+the artifact's own output) or derived (computed from an independent
+specification), and reports the ratio.
+
+```python
+from bifp import ClosedPathLedger
+
+ledger = ClosedPathLedger(artifact_label="generic artifact under test")
+ledger.add_fixture("f1", "asserted", notes="literal constant, matches code's own output")
+ledger.add_fixture("f2", "derived", notes="computed from an independent spec")
+print(ledger.closed_path_ratio)      # 0.5
+print(ledger.flagged_fixture_ids)    # ["f1"]
+```
+
+```bash
+bifp cp-new --ledger artifact.json --artifact-label "generic artifact under test"
+bifp cp-record --ledger artifact.json --fixture-id f1 --derivation asserted --notes "..."
+bifp cp-status --ledger artifact.json
+bifp cp-scan-language --text "..."       # lexical lead: closed-path vs open-path phrasing in prose
+bifp cp-scan-assertions --text "..."     # weak syntactic lead: `assert x == <literal>` in code
+```
+
+**`artifact_label` is entirely caller-controlled.** This tool never
+inspects, validates, or infers anything about it — redact it, name it
+generically, or leave it descriptive; that decision belongs to
+whoever is running the tool, not to this package.
+
+**What `closed_path_ratio` does and does not mean.** It is `None`
+until at least one fixture has been classified — distinct from `0.0`,
+which is a real result (everything classified so far is derived). It
+is computed only over fixtures actually read and classified; unread
+fixtures (`"unknown"`) don't count either way. A high ratio is a lead
+to go read the flagged fixtures, never a verdict that an artifact
+fails to bind — no defeat condition is evaluated by this tool, only
+recorded evidence about how that evidence was constructed. See
+`closed_path_confirmation_v1.md` §5 for why this project explicitly
+does not propose a numeric threshold (e.g. "10:1 means captured") —
+a single ledger, or even many, cannot support one without an
+independently-established base rate.
+
+**`cp-scan-language` and `cp-scan-assertions` are standalone lexical
+leads, not the ledger.** They scan prose or code-shaped text for
+signal phrases and hardcoded-literal-comparison patterns respectively
+— useful for a first pass before deciding whether an artifact is worth
+building a full fixture-by-fixture ledger for, but neither one reads
+or classifies an actual fixture. Both carry the same "read every match
+directly" caveat as every other heuristic in this package.
 
 ## What's implemented, mapped to the protocol text
 
@@ -243,15 +307,22 @@ pip install -e ".[dev]"
 pytest tests/ -q
 ```
 
-47 tests cover: the protocol schema's structural integrity (no
-duplicate criterion keys, only Phase 6 is timeline-only), audit
-session logic (phase pass/fail composition, the escrow-defaults-to-
-falsified rule, protocol-integrity independence from claim resolution,
-JSON round-tripping), the heuristic scanners (including a regression
-test pinning the real Marcus/Karapetyan specimen at `combo` confidence),
+83 tests total (`pytest tests/ -q` is the current, authoritative count
+— treat any specific number in prose as a snapshot, not a promise).
+Cover: the protocol schema's structural integrity (no duplicate
+criterion keys, only Phase 6 is timeline-only), audit session logic
+(phase pass/fail composition, the escrow-defaults-to-falsified rule,
+protocol-integrity independence from claim resolution, JSON
+round-tripping), the heuristic scanners (including a regression test
+pinning the real Marcus/Karapetyan specimen at `combo` confidence),
 the agent-tools JSON boundary (every function's output round-trips
 through `json.dumps`, errors return as dicts rather than raising across
-the tool-call boundary), and report rendering.
+the tool-call boundary), report rendering, and (`tests/test_closed_
+path.py` + additions to `tests/test_agent_tools.py`) the closed-path
+ledger's None-vs-0.0 ratio distinction, its fixture-replace-not-
+duplicate semantics, a regression pin against this project's own
+published 5-of-59 specimen ratio (generic fixture ids, no identifying
+detail), and both standalone lexical scanners.
 
 ## License
 
