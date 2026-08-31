@@ -35,14 +35,17 @@ def test_protocol_level_error_is_distinct_from_payload_level_error():
     assert result.is_error is True
 
 
-def test_all_nineteen_tools_are_registered(list_tool_names):
+def test_all_twenty_five_tools_are_registered(list_tool_names):
     names = set(list_tool_names())
     assert names == {
         "basin_depth_demo", "basin_depth_run", "basin_depth_derive_vocab",
         "bifp_list_phases", "bifp_start_audit", "bifp_record_criterion",
         "bifp_scan_text", "bifp_attach_scan_to_audit", "bifp_get_status", "bifp_generate_report",
         "bifp_judge_rebuttal", "bifp_attach_rebuttal_judgment",
+        "bifp_start_closed_path_ledger", "bifp_record_fixture", "bifp_get_closed_path_status",
+        "bifp_scan_closed_path_language", "bifp_scan_hardcoded_assertion_style",
         "attractor_scan_text", "attractor_scan_corpus", "attractor_scan_judge_visual_proof",
+        "attractor_scan_claim_boundary_portability",
         "debasinizer_scan_text", "debasinizer_scan_corpus",
         "paper_rigor_scan", "paper_rigor_triage_worklist",
     }
@@ -127,6 +130,52 @@ def test_bifp_attach_rebuttal_judgment_missing_audit_returns_error_payload(call_
         "audit_path": "/nonexistent/audit.json", "claim_text": "c", "rebuttal_text": "r",
     })
     assert "error" in result
+
+
+def test_bifp_closed_path_ledger_flow_persists_across_separate_tool_calls(call_tool, tmp_path):
+    ledger_path = str(tmp_path / "ledger.json")
+
+    started = call_tool("bifp_start_closed_path_ledger", {
+        "ledger_path": ledger_path, "artifact_label": "generic test artifact",
+    })
+    assert started["closed_path_ratio"] is None
+
+    recorded = call_tool("bifp_record_fixture", {
+        "ledger_path": ledger_path, "fixture_id": "f1", "outcome_derivation": "asserted",
+    })
+    assert recorded["asserted_count"] == 1
+
+    status = call_tool("bifp_get_closed_path_status", {"ledger_path": ledger_path})
+    assert status["flagged_fixture_ids"] == ["f1"]
+
+
+def test_bifp_record_fixture_unknown_derivation_returns_error_payload(call_tool, tmp_path):
+    ledger_path = str(tmp_path / "ledger.json")
+    call_tool("bifp_start_closed_path_ledger", {"ledger_path": ledger_path, "artifact_label": "x"})
+    result = call_tool("bifp_record_fixture", {
+        "ledger_path": ledger_path, "fixture_id": "f1", "outcome_derivation": "not_a_real_kind",
+    })
+    assert "error" in result
+
+
+def test_bifp_scan_closed_path_language_over_the_wire(call_tool):
+    result = call_tool("bifp_scan_closed_path_language", {
+        "text": "The repository was independently reproduced by a third-party audit.",
+    })
+    assert result["open_path_signals"]
+
+
+def test_bifp_scan_hardcoded_assertion_style_over_the_wire(call_tool):
+    result = call_tool("bifp_scan_hardcoded_assertion_style", {"text": 'assert status == "ALLOW"'})
+    assert len(result["matches"]) == 1
+
+
+def test_attractor_scan_claim_boundary_portability_over_the_wire(call_tool):
+    result = call_tool("attractor_scan_claim_boundary_portability", {
+        "source_text": "This does not claim general validity and remains unestablished.",
+        "citation_text": "This work introduces a novel governance framework.",
+    })
+    assert result["flagged"] is True
 
 
 def test_attractor_scan_text_flags_the_papers_own_cited_example(call_tool):

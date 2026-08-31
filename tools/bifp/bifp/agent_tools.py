@@ -17,6 +17,7 @@ internally. Think of this as the package's tool-calling ABI.
 from __future__ import annotations
 
 from .audit import AuditSession
+from .closed_path import ClosedPathLedger, scan_for_closed_path_language, scan_for_hardcoded_assertion_style
 from .heuristics import scan_text
 from .protocol import ALL_SECTIONS, CORE_AXIOM
 from .rebuttal_judge import DEFAULT_MODEL, RebuttalJudgeError, judge_rebuttal
@@ -158,3 +159,86 @@ def bifp_generate_report(audit_path: str) -> dict:
     except FileNotFoundError as exc:
         return {"error": str(exc)}
     return {"markdown": render_report(session)}
+
+
+# --- Closed-path / open-path evidence ledger ------------------------------
+# Operationalizes papers/drafts/closed_path_confirmation_v1.md §2's
+# defeat condition. See closed_path.py's module docstring. Generic by
+# construction -- `artifact_label` is caller-supplied free text; this
+# module never inspects or stores anything beyond what's explicitly
+# passed in.
+
+def bifp_start_closed_path_ledger(ledger_path: str, artifact_label: str) -> dict:
+    """Create a new, empty closed-path evidence ledger for one
+    artifact and persist it to `ledger_path`. `artifact_label` is a
+    free-text field the caller controls entirely (redact or not, as
+    appropriate for the caller's own use case)."""
+    ledger = ClosedPathLedger(artifact_label=artifact_label)
+    ledger.save(ledger_path)
+    return bifp_get_closed_path_status(ledger_path)
+
+
+def bifp_record_fixture(ledger_path: str, fixture_id: str, outcome_derivation: str, *,
+                         notes: str = "") -> dict:
+    """Classify one fixture as "asserted" (expected value is a literal
+    constant matching the artifact's own output), "derived" (expected
+    value is computed from an independent specification), or "unknown".
+    Re-recording an existing `fixture_id` replaces its prior
+    classification rather than duplicating it."""
+    try:
+        ledger = ClosedPathLedger.load(ledger_path)
+        ledger.add_fixture(fixture_id, outcome_derivation, notes=notes)
+        ledger.save(ledger_path)
+    except (ValueError, FileNotFoundError) as exc:
+        return {"error": str(exc)}
+    return bifp_get_closed_path_status(ledger_path)
+
+
+def bifp_get_closed_path_status(ledger_path: str) -> dict:
+    """Current fixture counts and closed-path ratio for an existing
+    ledger. `closed_path_ratio` is null until at least one fixture has
+    been classified as "asserted" or "derived" -- see
+    ClosedPathLedger.closed_path_ratio's docstring for why null and 0.0
+    are not the same result."""
+    try:
+        ledger = ClosedPathLedger.load(ledger_path)
+    except FileNotFoundError as exc:
+        return {"error": str(exc)}
+    return {
+        "artifact_label": ledger.artifact_label,
+        "total_fixtures": len(ledger.fixtures),
+        "asserted_count": ledger.asserted_count,
+        "derived_count": ledger.derived_count,
+        "unknown_count": ledger.unknown_count,
+        "closed_path_ratio": ledger.closed_path_ratio,
+        "flagged_fixture_ids": ledger.flagged_fixture_ids,
+    }
+
+
+def bifp_scan_closed_path_language(text: str) -> dict:
+    """Standalone lexical scan of prose (a README, a paper, a report)
+    for language describing an artifact's evidence as closed-path or
+    open-path. Does not require or modify a ledger -- this is a first
+    pass on prose, not a substitute for actually classifying fixtures
+    via bifp_record_fixture. See ClosedPathLanguageResult's "note" for
+    what this does not establish."""
+    return scan_for_closed_path_language(text).to_dict()
+
+
+def bifp_scan_hardcoded_assertion_style(text: str) -> dict:
+    """Standalone lexical scan of source-code-shaped text for
+    assertions comparing directly against a literal, a weak syntactic
+    lead for possibly-hardcoded expected values (see
+    scan_for_hardcoded_assertion_style's docstring for the false-
+    positive rate this carries -- many literal comparisons are entirely
+    legitimate)."""
+    matches = scan_for_hardcoded_assertion_style(text)
+    return {
+        "matches": [m.to_dict() for m in matches],
+        "note": (
+            "Purely syntactic: flags `== literal` comparisons in assertion-"
+            "shaped statements. Cannot distinguish a hardcoded expectation "
+            "from a legitimate constant comparison -- read every match "
+            "directly before concluding anything."
+        ),
+    }

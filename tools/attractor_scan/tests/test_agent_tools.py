@@ -2,7 +2,8 @@ import base64
 import json
 
 from attractor_scan.agent_tools import (
-    attractor_scan_corpus, attractor_scan_judge_visual_proof, attractor_scan_text,
+    attractor_scan_claim_boundary_portability, attractor_scan_corpus,
+    attractor_scan_judge_visual_proof, attractor_scan_text,
 )
 
 _TINY_PNG = base64.b64decode(
@@ -92,3 +93,19 @@ def test_judge_visual_proof_unreadable_image_returns_error_dict(monkeypatch):
     monkeypatch.setenv("GROQ_API_KEY", "k")
     result = attractor_scan_judge_visual_proof("claim", "/nonexistent/x.png")
     assert "error" in result
+
+
+def test_claim_boundary_portability_json_safe_and_flags_missing_trace():
+    source = "This does not claim general validity and remains unestablished."
+    citation = "This work introduces a novel governance framework."
+    result = attractor_scan_claim_boundary_portability(source, citation)
+    json.dumps(result)  # must not raise
+    assert result["flagged"] is True
+    assert result["source_has_boundary_language"] is True
+
+
+def test_claim_boundary_portability_not_flagged_when_trace_present():
+    source = "This does not claim general validity and remains unestablished."
+    citation = "This work introduces a novel governance framework with a stated limitation on scope."
+    result = attractor_scan_claim_boundary_portability(source, citation)
+    assert result["flagged"] is False

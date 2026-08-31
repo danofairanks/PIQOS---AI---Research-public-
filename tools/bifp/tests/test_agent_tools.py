@@ -2,8 +2,10 @@ import json
 
 from bifp.agent_tools import (
     bifp_attach_rebuttal_judgment, bifp_attach_scan_to_audit, bifp_generate_report,
-    bifp_get_status, bifp_judge_rebuttal, bifp_list_phases, bifp_record_criterion,
-    bifp_scan_text, bifp_start_audit,
+    bifp_get_closed_path_status, bifp_get_status, bifp_judge_rebuttal, bifp_list_phases,
+    bifp_record_criterion, bifp_record_fixture, bifp_scan_closed_path_language,
+    bifp_scan_hardcoded_assertion_style, bifp_scan_text, bifp_start_audit,
+    bifp_start_closed_path_ledger,
 )
 
 
@@ -70,6 +72,50 @@ def test_generate_report_returns_markdown(tmp_path):
 def test_generate_report_missing_audit_returns_error():
     result = bifp_generate_report("/nonexistent/audit.json")
     assert "error" in result
+
+
+def test_closed_path_ledger_full_flow_json_safe(tmp_path):
+    path = str(tmp_path / "ledger.json")
+    result = bifp_start_closed_path_ledger(path, "generic artifact under test")
+    json.dumps(result)
+    assert result["closed_path_ratio"] is None
+
+    result = bifp_record_fixture(path, "f1", "asserted", notes="literal constant")
+    json.dumps(result)
+    assert result["asserted_count"] == 1
+    assert result["closed_path_ratio"] == 1.0
+
+    result = bifp_record_fixture(path, "f2", "derived")
+    assert result["closed_path_ratio"] == 0.5
+
+    status = bifp_get_closed_path_status(path)
+    assert status["flagged_fixture_ids"] == ["f1"]
+
+
+def test_record_fixture_unknown_derivation_returns_error(tmp_path):
+    path = str(tmp_path / "ledger.json")
+    bifp_start_closed_path_ledger(path, "x")
+    result = bifp_record_fixture(path, "f1", "not_a_real_kind")
+    assert "error" in result
+
+
+def test_get_closed_path_status_missing_file_returns_error_dict():
+    result = bifp_get_closed_path_status("/nonexistent/ledger.json")
+    assert "error" in result
+
+
+def test_scan_closed_path_language_standalone_json_safe():
+    result = bifp_scan_closed_path_language(
+        "The repository was independently cloned and reproduced by a third-party audit."
+    )
+    json.dumps(result)
+    assert result["open_path_signals"]
+
+
+def test_scan_hardcoded_assertion_style_standalone_json_safe():
+    result = bifp_scan_hardcoded_assertion_style('assert result == "ALLOW"')
+    json.dumps(result)
+    assert len(result["matches"]) == 1
 
 
 def test_judge_rebuttal_missing_key_returns_error_dict_not_exception(monkeypatch):

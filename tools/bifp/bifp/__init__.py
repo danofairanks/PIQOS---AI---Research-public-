@@ -24,6 +24,10 @@ into an agent")::
 """
 
 from .audit import AuditSession, CriterionRecord, PhaseRecord
+from .closed_path import (
+    ClosedPathLanguageResult, ClosedPathLedger, FixtureRecord,
+    scan_for_closed_path_language, scan_for_hardcoded_assertion_style,
+)
 from .heuristics import HeuristicResult, scan_text
 from .protocol import (
     ALL_SECTIONS, CORE_AXIOM, META_PROTOCOL, PHASES, SEMANTIC_HYGIENE,
@@ -34,6 +38,8 @@ from .report import render_report
 __all__ = [
     "AuditSession", "CriterionRecord", "PhaseRecord",
     "HeuristicResult", "scan_text",
+    "ClosedPathLedger", "FixtureRecord", "ClosedPathLanguageResult",
+    "scan_for_closed_path_language", "scan_for_hardcoded_assertion_style",
     "ALL_SECTIONS", "CORE_AXIOM", "META_PROTOCOL", "PHASES", "SEMANTIC_HYGIENE",
     "CriterionStatus", "PhaseStatus", "get_criterion", "get_phase",
     "render_report",

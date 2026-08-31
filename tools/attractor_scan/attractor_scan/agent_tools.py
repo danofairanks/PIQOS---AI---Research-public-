@@ -8,6 +8,7 @@ adaptation layer. `tools/mcp_server/` does exactly that.
 
 from __future__ import annotations
 
+from .claim_boundary import check_boundary_portability
 from .scan import scan, scan_corpus
 from .visual_proof_judge import DEFAULT_MODEL, VisualProofJudgeError, judge_visual_proof
 
@@ -53,3 +54,16 @@ def attractor_scan_judge_visual_proof(claim_text: str, image_path: str, *,
     except VisualProofJudgeError as exc:
         return {"error": str(exc)}
     return result.to_dict()
+
+
+def attractor_scan_claim_boundary_portability(source_text: str, citation_text: str) -> dict:
+    """Check whether `source_text`'s own stated claim boundaries
+    (limitation/scope language) show any lexical trace in
+    `citation_text` -- a separate piece of text that cites or
+    references the source, not the source itself. Purely lexical, two-
+    document comparison; see claim_boundary.py's module docstring and
+    the result's own "note" field for what a flag does and does not
+    establish. `citation_text` should be the citing context only (an
+    abstract, a "prior work" paragraph, a citing sentence) or the check
+    trivially passes."""
+    return check_boundary_portability(source_text, citation_text).to_dict()

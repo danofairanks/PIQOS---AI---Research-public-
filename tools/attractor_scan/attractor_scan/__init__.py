@@ -15,6 +15,10 @@ Or from the command line::
     attractor-scan corpus --corpus docs.jsonl
 """
 
+from .claim_boundary import (
+    BoundaryPhraseMatch, BoundaryPortabilityResult, check_boundary_portability,
+    extract_claim_boundary_phrases,
+)
 from .laundering import LaunderingResult, scan_laundering
 from .maneuvers import MANEUVER_PHRASES, ManeuverResult, scan_maneuver, scan_maneuvers
 from .scan import AttractorScanResult, CorpusScanSummary, scan, scan_corpus
@@ -23,6 +27,8 @@ __all__ = [
     "LaunderingResult", "scan_laundering",
     "MANEUVER_PHRASES", "ManeuverResult", "scan_maneuver", "scan_maneuvers",
     "AttractorScanResult", "CorpusScanSummary", "scan", "scan_corpus",
+    "BoundaryPhraseMatch", "BoundaryPortabilityResult",
+    "check_boundary_portability", "extract_claim_boundary_phrases",
 ]
 
 __version__ = "0.1.0"
