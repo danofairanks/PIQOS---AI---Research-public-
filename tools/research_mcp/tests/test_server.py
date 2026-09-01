@@ -35,7 +35,7 @@ def test_protocol_level_error_is_distinct_from_payload_level_error():
     assert result.is_error is True
 
 
-def test_all_twenty_five_tools_are_registered(list_tool_names):
+def test_all_twenty_six_tools_are_registered(list_tool_names):
     names = set(list_tool_names())
     assert names == {
         "basin_depth_demo", "basin_depth_run", "basin_depth_derive_vocab",
@@ -44,6 +44,7 @@ def test_all_twenty_five_tools_are_registered(list_tool_names):
         "bifp_judge_rebuttal", "bifp_attach_rebuttal_judgment",
         "bifp_start_closed_path_ledger", "bifp_record_fixture", "bifp_get_closed_path_status",
         "bifp_scan_closed_path_language", "bifp_scan_hardcoded_assertion_style",
+        "bifp_trace_field_assignments",
         "attractor_scan_text", "attractor_scan_corpus", "attractor_scan_judge_visual_proof",
         "attractor_scan_claim_boundary_portability",
         "debasinizer_scan_text", "debasinizer_scan_corpus",
@@ -168,6 +169,14 @@ def test_bifp_scan_closed_path_language_over_the_wire(call_tool):
 def test_bifp_scan_hardcoded_assertion_style_over_the_wire(call_tool):
     result = call_tool("bifp_scan_hardcoded_assertion_style", {"text": 'assert status == "ALLOW"'})
     assert len(result["matches"]) == 1
+
+
+def test_bifp_trace_field_assignments_over_the_wire(call_tool):
+    result = call_tool("bifp_trace_field_assignments", {
+        "sources": {"m.py": "class C:\n    def __init__(self):\n        self.score = 0.83\n"},
+        "field_names": ["score"],
+    })
+    assert result["flagged_field_names"] == ["score"]
 
 
 def test_attractor_scan_claim_boundary_portability_over_the_wire(call_tool):

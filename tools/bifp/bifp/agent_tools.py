@@ -21,6 +21,7 @@ from .closed_path import ClosedPathLedger, scan_for_closed_path_language, scan_f
 from .heuristics import scan_text
 from .protocol import ALL_SECTIONS, CORE_AXIOM
 from .rebuttal_judge import DEFAULT_MODEL, RebuttalJudgeError, judge_rebuttal
+from .uncomputed_field import trace_field_assignments
 
 
 def bifp_list_phases() -> dict:
@@ -242,3 +243,20 @@ def bifp_scan_hardcoded_assertion_style(text: str) -> dict:
             "directly before concluding anything."
         ),
     }
+
+
+# --- Named-field input-derivation trace -----------------------------------
+# See uncomputed_field.py's module docstring: a sharper, AST-based variant
+# of the closed/open distinction above -- does a claimed field ever get
+# assigned from an expression touching input, or only ever a literal?
+
+def bifp_trace_field_assignments(sources: dict[str, str], field_names: list[str]) -> dict:
+    """For each name in `field_names`, find every assignment site
+    across `sources` (a dict of caller-supplied file_label -> Python
+    source text) and classify each site's right-hand side as literal-
+    only or not. Returns `flagged_field_names`: fields where every site
+    found is literal-only (see uncomputed_field.py's module docstring
+    for the conservative false-positive posture and what a flag does
+    and does not establish). A source file that fails to parse is
+    recorded in `parse_errors` rather than raising."""
+    return trace_field_assignments(sources, field_names).to_dict()

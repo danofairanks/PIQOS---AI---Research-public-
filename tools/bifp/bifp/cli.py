@@ -11,7 +11,7 @@ from .agent_tools import (
     bifp_get_closed_path_status, bifp_get_status, bifp_judge_rebuttal, bifp_list_phases,
     bifp_record_criterion, bifp_record_fixture, bifp_scan_closed_path_language,
     bifp_scan_hardcoded_assertion_style, bifp_scan_text, bifp_start_audit,
-    bifp_start_closed_path_ledger,
+    bifp_start_closed_path_ledger, bifp_trace_field_assignments,
 )
 from .rebuttal_judge import DEFAULT_MODEL
 
@@ -103,6 +103,16 @@ def _cmd_cp_scan_assertions(args: argparse.Namespace) -> int:
     return 0
 
 
+def _cmd_trace_field(args: argparse.Namespace) -> int:
+    sources = {}
+    for path in args.file:
+        with open(path, "r", encoding="utf-8") as fh:
+            sources[path] = fh.read()
+    result = bifp_trace_field_assignments(sources, args.field)
+    print(json.dumps(result, indent=2))
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(prog="bifp", description="Basin-Immune Falsification Protocol audit tool")
     sub = p.add_subparsers(dest="command", required=True)
@@ -174,6 +184,17 @@ def build_parser() -> argparse.ArgumentParser:
     p_cp_scan_assert = sub.add_parser("cp-scan-assertions", help="weak syntactic scan for literal-comparison assertions")
     p_cp_scan_assert.add_argument("--text", default=None, help="text to scan; reads stdin if omitted")
     p_cp_scan_assert.set_defaults(func=_cmd_cp_scan_assertions)
+
+    p_trace_field = sub.add_parser(
+        "trace-field",
+        help="AST trace: is a named field ever assigned from an expression touching input, "
+             "or only ever a literal constant? (uncomputed_field.py)",
+    )
+    p_trace_field.add_argument("--file", action="append", required=True,
+                                help="Python source file to scan; repeat for multiple files")
+    p_trace_field.add_argument("--field", action="append", required=True,
+                                help="field/attribute/variable name to trace; repeat for multiple names")
+    p_trace_field.set_defaults(func=_cmd_trace_field)
 
     return p
 

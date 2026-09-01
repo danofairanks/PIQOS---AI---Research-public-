@@ -112,9 +112,10 @@ adapter layer.
 | `bifp_get_closed_path_status(ledger_path)` | Current fixture counts + closed-path ratio for an existing ledger |
 | `bifp_scan_closed_path_language(text)` | Standalone lexical lead over prose, no ledger required |
 | `bifp_scan_hardcoded_assertion_style(text)` | Standalone weak syntactic lead over code-shaped text, no ledger required |
+| `bifp_trace_field_assignments(sources, field_names)` | AST trace: for each name in `field_names`, is it ever assigned from an expression touching input across `sources` (file_label -> Python source text), or only ever a literal? See "The uncomputed-field trace" below |
 
 **On MCP specifically:** a live MCP server now exists —
-[`tools/research_mcp/`](../research_mcp/). It registers all fourteen
+[`tools/research_mcp/`](../research_mcp/). It registers all fifteen
 `agent_tools.py` functions above (plus `basin_depth`'s and
 `attractor_scan`'s own agent_tools surfaces) against a real
 `MCPServer` instance, and is tested over the actual MCP wire protocol
@@ -156,6 +157,7 @@ bifp cp-record --ledger artifact.json --fixture-id f1 --derivation asserted --no
 bifp cp-status --ledger artifact.json
 bifp cp-scan-language --text "..."       # lexical lead: closed-path vs open-path phrasing in prose
 bifp cp-scan-assertions --text "..."     # weak syntactic lead: `assert x == <literal>` in code
+bifp trace-field --file app/state.py --field topology_shift_score --field recoverability_margin
 ```
 
 **`artifact_label` is entirely caller-controlled.** This tool never
@@ -183,6 +185,65 @@ signal phrases and hardcoded-literal-comparison patterns respectively
 building a full fixture-by-fixture ledger for, but neither one reads
 or classifies an actual fixture. Both carry the same "read every match
 directly" caveat as every other heuristic in this package.
+
+## The uncomputed-field trace
+
+A third, generic tool inside this package, distinct from both the BIFP
+audit and the closed-path ledger above: a sharper, AST-based variant of
+the closed/open distinction, for the specific case of a claimed
+detection or measurement field (a variable, attribute, or dataclass
+field a README or paper names as *computed*) that turns out to be
+assigned only ever a literal constant — never anything touching input.
+That's a stronger finding than closed-loop (checked against the
+system's own declared rule, but at least computed from *something*):
+the field isn't computed from anything at all.
+
+```python
+from bifp import trace_field_assignments
+
+sources = {"state.py": open("state.py").read(), "fabric.py": open("fabric.py").read()}
+result = trace_field_assignments(sources, ["topology_shift_score", "recoverability_margin"])
+print(result.flagged_field_names)   # fields where every assignment site found is a literal constant
+```
+
+```bash
+bifp trace-field --file state.py --file fabric.py \
+    --field topology_shift_score --field recoverability_margin
+```
+
+**Three possible statuses per field**, not just flagged/not-flagged:
+`no_assignment_found` (the name never appeared as an assignment
+target or call keyword argument in the supplied sources — an input
+gap, not a finding), `never_proven_input_derived` (every site found is
+a literal — the lead this tool exists to surface), and
+`input_derived_or_unknown` (at least one site could not be proven
+literal, so the field is not flagged).
+
+**Two site shapes are recognized**, because real code sets a field's
+value both ways: a plain/annotated/augmented assignment
+(`self.x = ...`, `x: T = ...`, `x += ...`), and a call's keyword
+argument (`SomeClass(x=...)`) — the latter covers a dataclass whose
+fields are declared only as type annotations, with every actual value
+supplied at each constructor call site, which in practice is at least
+as common a pattern as a `self.x = ...` statement or a `field(default
+=...)` class-body default (both of the latter are also recognized).
+
+**Conservative in one direction only, matching
+`scan_for_hardcoded_assertion_style`'s posture.** A site is
+"literal-only" only if it's provably a constant expression — any
+`Name`, `Attribute`, `Subscript`, or ordinary `Call` reference makes it
+`not_proven_literal`, even where that reference happens to also be
+constant in practice. This means the flag can under-report: a field
+copied from an upstream object's own attribute (`Output(x=state.x,
+...)`) is correctly not flagged at this tool's single-hop analysis,
+even if `state.x` itself, traced one hop further, turns out to be
+built only from literals elsewhere in the codebase — closing that last
+hop is still a manual read, the same way it was before this tool
+existed. A flagged field is a lead for review, never proof of
+fabrication — the field may be set outside the sources supplied, via a
+mechanism this scanner doesn't parse (`setattr`, `exec`, a C
+extension), or the literal may be entirely correct and intentional.
+Read every site directly.
 
 ## What's implemented, mapped to the protocol text
 
@@ -307,7 +368,7 @@ pip install -e ".[dev]"
 pytest tests/ -q
 ```
 
-83 tests total (`pytest tests/ -q` is the current, authoritative count
+115 tests total (`pytest tests/ -q` is the current, authoritative count
 — treat any specific number in prose as a snapshot, not a promise).
 Cover: the protocol schema's structural integrity (no duplicate
 criterion keys, only Phase 6 is timeline-only), audit session logic

@@ -5,7 +5,7 @@ from bifp.agent_tools import (
     bifp_get_closed_path_status, bifp_get_status, bifp_judge_rebuttal, bifp_list_phases,
     bifp_record_criterion, bifp_record_fixture, bifp_scan_closed_path_language,
     bifp_scan_hardcoded_assertion_style, bifp_scan_text, bifp_start_audit,
-    bifp_start_closed_path_ledger,
+    bifp_start_closed_path_ledger, bifp_trace_field_assignments,
 )
 
 
@@ -116,6 +116,19 @@ def test_scan_hardcoded_assertion_style_standalone_json_safe():
     result = bifp_scan_hardcoded_assertion_style('assert result == "ALLOW"')
     json.dumps(result)
     assert len(result["matches"]) == 1
+
+
+def test_trace_field_assignments_standalone_json_safe():
+    sources = {"m.py": "class C:\n    def __init__(self):\n        self.score = 0.83\n"}
+    result = bifp_trace_field_assignments(sources, ["score"])
+    json.dumps(result)
+    assert result["flagged_field_names"] == ["score"]
+
+
+def test_trace_field_assignments_does_not_flag_input_derived_field():
+    sources = {"m.py": "def f(state):\n    score = compute(state)\n"}
+    result = bifp_trace_field_assignments(sources, ["score"])
+    assert result["flagged_field_names"] == []
 
 
 def test_judge_rebuttal_missing_key_returns_error_dict_not_exception(monkeypatch):
