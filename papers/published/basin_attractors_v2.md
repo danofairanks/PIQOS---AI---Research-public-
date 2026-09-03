@@ -9,6 +9,11 @@ detail in the companion draft `jagged_judges_meta_protocol_grounding_v1.md`).
 No other content changed from v1. Per this project's convention, v1 remains
 published unchanged for provenance rather than silently edited.*
 
+*Superseded by [`basin_attractors_v4.md`](basin_attractors_v4.md) — kept
+published unchanged for provenance per the same convention. See
+`papers/README.md`'s index for the full version history and what each
+later version added.*
+
 ---
 
 ## Abstract

@@ -14,6 +14,11 @@ rather than from secondary coverage. No other content changed from v2. Per
 this project's convention, v1 and v2 remain published unchanged for
 provenance rather than silently edited.*
 
+*Superseded by [`basin_attractors_v4.md`](basin_attractors_v4.md) — kept
+published unchanged for provenance per the same convention. See
+`papers/README.md`'s index for the full version history and what each
+later version added.*
+
 ---
 
 ## Abstract
