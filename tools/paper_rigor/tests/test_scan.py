@@ -22,7 +22,15 @@ def _skip_if_repo_layout_unavailable():
 @pytest.mark.parametrize("relpath,expect_ok,expect_structural,expect_total", [
     ("papers/published/basin_attractors_v1.md", True, 0, 2),
     ("papers/published/conjecture_tracker_v1.md", True, 0, 1),
-    ("papers/published/laundered_vocabulary_v1.md", False, 1, 1),
+    # Was (False, 1, 1) until credentialing.py's three matches on this file
+    # (Founder of / founder of / Nobel laureate, all inside the "Law" entry's
+    # own description OF the founder-of-discursivity pattern, not a claim the
+    # document makes on its own behalf) were confirmed as false positives and
+    # fixed at the detector level -- see credentialing.py's module docstring
+    # and _shared.py's _STYLED_AS_RE. Independently corroborated externally
+    # (2026-09-04): an outside reader ran this suite directly and reported
+    # the identical stale-pin mismatch before this fix landed.
+    ("papers/published/laundered_vocabulary_v1.md", True, 0, 0),
     ("papers/published/mirror_test_v1.md", False, 1, 1),
     ("protocols/elaboration_drift_prevalence_protocol_v1.md", True, 0, 0),
     ("protocols/noether_coherence_test_protocol_v1.md", True, 0, 0),

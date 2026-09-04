@@ -42,14 +42,27 @@ def test_marcus_case_study_has_zero_gaps():
     assert result.ok
 
 
-def test_openai_breach_case_study_has_one_non_severe_gap():
-    """Has end-of-document sourcing, so its one flagged item (a
-    large comma-grouped count with no *proximate* citation) is real but
-    non-severe -- a checklist item to verify against the sources line,
-    not a hard failure."""
+def test_openai_breach_case_study_has_four_non_severe_gaps():
+    """Has end-of-document sourcing, so its flagged items -- originally
+    one (a large comma-grouped count with no *proximate* citation) --
+    are real but non-severe: checklist items to verify against the
+    sources line, not hard failures. The 2026-08-27 primary-source
+    addendum appended to this same file (per its own "Sourcing tier,
+    stated precisely" section) legitimately introduced three more of
+    the same shape -- a second, separate mention of the 17,600 count,
+    a decimal-percent range (0.2% to 3.5-4%), and a direct quote
+    ("would have flagged most of the dangerous actions") whose
+    attribution ("OpenAI's own report states that...") sits in the
+    same compound sentence but outside quotes.py's proximity window --
+    all covered by the addendum's own end-of-document sources line,
+    same as the original gap. Was pinned at gap_count == 1 until an
+    outside reader (2026-09-04) ran this suite directly and reported
+    the resulting stale-pin mismatch (4 actual vs. 1 expected);
+    confirmed here by reading each of the three new matches directly,
+    not just accepting the count."""
     _skip_if_repo_layout_unavailable()
     result = scan_file(CASE_STUDIES_DIR / "2026-08-07_openai_huggingface_breach_singularity_reframe.md")
-    assert result.gap_count == 1
+    assert result.gap_count == 4
     assert result.severe_gap_count == 0
     assert result.ok
     assert result.sourcing.has_end_sourcing is True
