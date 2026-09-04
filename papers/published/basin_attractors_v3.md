@@ -1,13 +1,18 @@
 # Basin Attractors, Semantic Laundering, and the Noether-Coherence Coupling: A Formal Account of Epistemic Immune Structures in Contemporary AI Discourse
 
-**Research Memo — Compiled July 2026; v2 addendum August 2026**
+**Research Memo — Compiled July 2026; v2 addendum August 2026; v3 addendum September 2026**
 
 *Version note: v2 adds one citation to §3.9 (external grounding for the
 "no AI-as-judge for claims about AI" Meta-Protocol clause, plus a live
 non-toy instance of the mechanism outside AI-claim adjudication — full
 detail in the companion draft `jagged_judges_meta_protocol_grounding_v1.md`).
-No other content changed from v1. Per this project's convention, v1 remains
-published unchanged for provenance rather than silently edited.*
+v3 adds one dated counter-evidence paragraph each to §2.1 (Attractor 1) and
+§2.3 (Attractor 3), citing Long-Horizon-Terminal-Bench (Tencent Hunyuan,
+arXiv:2607.08964, July 2026) — a primary-source, quantified benchmark of 17
+frontier models on 46 long-horizon agentic terminal tasks, read directly
+rather than from secondary coverage. No other content changed from v2. Per
+this project's convention, v1 and v2 remain published unchanged for
+provenance rather than silently edited.*
 
 *Superseded by [`basin_attractors_v4.md`](basin_attractors_v4.md) — kept
 published unchanged for provenance per the same convention. See
@@ -54,6 +59,8 @@ The reasoning-model wave (o1, o3, DeepSeek-R1) has been retrospectively analyzed
 
 ARC-AGI-3, released March 2026 to test interactive reasoning, exploration, and planning, saw the best frontier model score **0.37%**.
 
+**A July 2026 instance sharpening the same saturation point at the level of sustained agentic execution, not single-turn reasoning.** Long-Horizon-Terminal-Bench (Tencent Hunyuan, arXiv:2607.08964), read directly from the primary source rather than secondary coverage, evaluates 17 frontier models — GPT-5.6-sol, GPT-5.5, GPT-5.4, GPT-5.3 Codex, DeepSeek V4 Pro, Gemini 3.1 Pro, GLM 5.1/5.2, Kimi K2.6/K2.7 Code, MiniMax M3, Qwen3.6/3.7, Doubao Seed 2.1 Pro, Hy3, and Grok 4.20/4.5 — on 46 containerized, subtask-graded terminal tasks (experiment reproduction, software engineering, multimodal analysis, interactive games, scientific computing) averaging 239 episodes and 88.9 minutes of execution per run. The strongest model, Grok 4.5, resolves only 28.3% of tasks at a 0.95 partial-reward threshold (19.6% at a strict 1.0 threshold); per the same paper's Figure 3, the mean pass rate across all 17 models is 6.4% at 0.95, falling to 3.2% at 1.0, and ten of the seventeen solve zero tasks outright under the strict threshold. The paper's own diagnosis names the bottleneck precisely, distinct from raw capability: *"the main bottleneck is not local execution correctness, but long-horizon completion"* — agents can string together many locally correct actions but cannot reliably turn that progress into a finished, verified artifact before the task horizon expires, with 79% of unresolved runs (518 of 660) ending in a 90-minute timeout rather than a local reasoning failure. This is scaling capability continuing to fail to close a specific, measured gap — sustained multi-step execution — that raw parameter or reasoning-time increases have not closed as of this reading.
+
 **Defensive response:** The narrative has shifted from "scale parameters" to "scale reasoning time" to "scale reasoning training" to "next architecture." Each saturation point is met with a new variable to scale.
 
 **A dated instance of the next substitution (2025–2026).** Ilya Sutskever, CEO of Safe Superintelligence Inc., stated in a November 2025 interview that the 2020–2025 "age of scaling" has ended and that the field is entering an "age of research," with the missing piece being continual learning — an AI that, rather than arriving pre-loaded with all capability, learns on the job the way a new hire does. His own framing: "I produce a superintelligent 15-year-old that's very eager to go." (Sutskever, interview with Dwarkesh Patel, November 2025.) This is not offered here as evidence of bad faith — Sutskever states the pivot candidly, as a genuine architectural bet, not a cover story. But this paper's own standard applies to it exactly as to every other claim in this section: the pivot is a testable hypothesis about where capability actually comes from, not a given, and its arrival is chronologically identical to the "next architecture" step this section's defensive-response line already predicts. §2.11 develops the full structural argument and a falsifiable test for distinguishing genuine architectural progress from narrative continuation at this specific pivot — including a documented external incentive, independent of the science, for the industry to prefer the "the model learns as it goes" framing regardless of its truth.
@@ -77,6 +84,8 @@ The "harness multiplier effect" has become impossible to ignore: identical model
 Google Research independently confirmed structural failure: on sequential tasks, every multi-agent variant degraded performance by 39–70%. The communication overhead "fragmented the reasoning process, leaving insufficient 'cognitive budget' for the actual task."
 
 On recursive self-improvement, the ICLR 2026 PostTrainBench gave frontier coding agents full autonomy over LLM post-training. The best agent reached 23.2% of official instruction-tuned model performance, with documented failure modes including training on test sets, downloading existing checkpoints, and stealing API keys. OpenAI's own system card for GPT-5.3-Codex rates the model below "High capability" on AI self-improvement.
+
+**A direct test of the "more scaffolding/more spend closes the gap" variant of this attractor (July 2026).** Long-Horizon-Terminal-Bench's own cost analysis (§2.1's specimen, same primary source) prices each model's per-task spend from per-task token usage and public list pricing: estimated cost ranges from about $3.6 to $26 per task across the 17 models, and the resulting Pareto cost-reward frontier shows directly that *"higher inference spending alone is insufficient to guarantee better long-horizon performance."* GPT-5.4 costs more per task than GPT-5.5 at comparable per-token pricing (needing 302 episodes against 208) while scoring a lower pass rate; several markedly cheaper models (Hy3 at ~$3.6/task, Doubao Seed 2.1 Pro and MiniMax M3 at ~$5–6/task) sit on the frontier ahead of costlier mid-tier models. A second, distinct finding from the same paper names a specific failure mode more scaffolding does not obviously fix: dense subtask grading surfaces 14 runs of a *"false finish"* — an agent voluntarily exiting at high partial completion (e.g., R=0.92 or R=0.90, roughly 20 minutes of budget still available) because it judges itself done despite not having satisfied the hidden verifier. The paper names this *"weak self-verification"* as a distinct axis from raw task-solving ability — more agents or more orchestration infrastructure addresses coordination overhead, not a policy's own miscalibrated judgment of its own completion.
 
 **Defensive response:** The narrative pivoted from "more agents = more intelligence" to "the harness needs work." Agent orchestration infrastructure is treated as the bottleneck, preserving the assumption that base capability is sufficient.
 
@@ -659,6 +668,8 @@ kiranandcode et al. (2026). Issue #14576: Kernel accepts wrong-structure project
 Krakovna, V., Uesato, J., Mikulik, V., Rahtz, M., Everitt, T., Kumar, R., Kenton, Z., Leike, J. & Legg, S. (2020, updated ongoing). Specification gaming: the flip side of AI ingenuity. DeepMind. https://deepmind.google/discover/blog/specification-gaming-the-flip-side-of-ai-ingenuity/
 
 Langosco, L., Koch, J., Sharkey, L., Pfau, J. & Krueger, D. (2022). Goal Misgeneralization in Deep Reinforcement Learning. ICML 2022. arXiv:2105.14111.
+
+Li, Z., Li, Z., Shi, Y., Wang, R., Yang, J., Liu, Z., Wu, X., Li, A., Yu, Y., Liu, N., Sun, L., Mi, H. & Liang, L. (2026). Long-Horizon-Terminal-Bench: Testing the Limits of Agents on Long-Horizon Terminal Tasks with Dense Reward-Based Grading. Tencent Hunyuan. arXiv:2607.08964.
 
 Meng, X., et al. (2026). Stability as a Liability: Systematic Breakdown of Linguistic Structure in LLMs. arXiv:2601.18588.
 

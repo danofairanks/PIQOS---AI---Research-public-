@@ -2,6 +2,11 @@
 
 **Research Memo — Compiled July 2026**
 
+*Superseded by [`basin_attractors_v4.md`](basin_attractors_v4.md) — kept
+published unchanged for provenance per this project's no-silent-edit
+convention. See `papers/README.md`'s index for the full version history
+and what each later version added.*
+
 ---
 
 ## Abstract

@@ -1,18 +1,25 @@
 # Basin Attractors, Semantic Laundering, and the Noether-Coherence Coupling: A Formal Account of Epistemic Immune Structures in Contemporary AI Discourse
 
-**Research Memo — Compiled July 2026; v2 addendum August 2026**
+**Research Memo — Compiled July 2026; v2 addendum August 2026; v3 addendum September 2026; v4 addendum September 2026**
 
 *Version note: v2 adds one citation to §3.9 (external grounding for the
 "no AI-as-judge for claims about AI" Meta-Protocol clause, plus a live
 non-toy instance of the mechanism outside AI-claim adjudication — full
 detail in the companion draft `jagged_judges_meta_protocol_grounding_v1.md`).
-No other content changed from v1. Per this project's convention, v1 remains
-published unchanged for provenance rather than silently edited.*
-
-*Superseded by [`basin_attractors_v4.md`](basin_attractors_v4.md) — kept
-published unchanged for provenance per the same convention. See
-`papers/README.md`'s index for the full version history and what each
-later version added.*
+v3 adds one dated counter-evidence paragraph each to §2.1 (Attractor 1) and
+§2.3 (Attractor 3), citing Long-Horizon-Terminal-Bench (Tencent Hunyuan,
+arXiv:2607.08964, July 2026) — a primary-source, quantified benchmark of 17
+frontier models on 46 long-horizon agentic terminal tasks, read directly
+rather than from secondary coverage. v4 adds one companion paragraph to
+§2.1, citing Weighted Memory Tree (Dao, Kathalkar & Eaton, arXiv:2608.20631,
+August 2026) — a primary-source-read result showing the same order of
+long-horizon accuracy gain LHTB measures as still missing comes from a
+memory-architecture change on small (8B-scale) models, not from added
+parameters or compute, with the paper's own honestly-stated open question
+about whether the gain holds at larger model scale carried forward
+unresolved. No other content changed from v3. Per this project's
+convention, v1, v2, and v3 remain published unchanged for provenance
+rather than silently edited.*
 
 ---
 
@@ -54,6 +61,10 @@ The reasoning-model wave (o1, o3, DeepSeek-R1) has been retrospectively analyzed
 
 ARC-AGI-3, released March 2026 to test interactive reasoning, exploration, and planning, saw the best frontier model score **0.37%**.
 
+**A July 2026 instance sharpening the same saturation point at the level of sustained agentic execution, not single-turn reasoning.** Long-Horizon-Terminal-Bench (Tencent Hunyuan, arXiv:2607.08964), read directly from the primary source rather than secondary coverage, evaluates 17 frontier models — GPT-5.6-sol, GPT-5.5, GPT-5.4, GPT-5.3 Codex, DeepSeek V4 Pro, Gemini 3.1 Pro, GLM 5.1/5.2, Kimi K2.6/K2.7 Code, MiniMax M3, Qwen3.6/3.7, Doubao Seed 2.1 Pro, Hy3, and Grok 4.20/4.5 — on 46 containerized, subtask-graded terminal tasks (experiment reproduction, software engineering, multimodal analysis, interactive games, scientific computing) averaging 239 episodes and 88.9 minutes of execution per run. The strongest model, Grok 4.5, resolves only 28.3% of tasks at a 0.95 partial-reward threshold (19.6% at a strict 1.0 threshold); per the same paper's Figure 3, the mean pass rate across all 17 models is 6.4% at 0.95, falling to 3.2% at 1.0, and ten of the seventeen solve zero tasks outright under the strict threshold. The paper's own diagnosis names the bottleneck precisely, distinct from raw capability: *"the main bottleneck is not local execution correctness, but long-horizon completion"* — agents can string together many locally correct actions but cannot reliably turn that progress into a finished, verified artifact before the task horizon expires, with 79% of unresolved runs (518 of 660) ending in a 90-minute timeout rather than a local reasoning failure. This is scaling capability continuing to fail to close a specific, measured gap — sustained multi-step execution — that raw parameter or reasoning-time increases have not closed as of this reading.
+
+**A companion result, six weeks later, isolating the same gap by architecture rather than scale (August 2026).** Weighted Memory Tree (Dao, Kathalkar & Eaton, arXiv:2608.20631), read directly, targets exactly the long-horizon completion gap the LHTB entry above measures — and closes part of it without adding a single parameter. Evaluated on GAIA-Text and full GAIA using three small, 8B-scale open-weight models (Qwen3-8B, Gemma 4 E4B, Llama-3.1-8B) held fixed as the frozen reasoning model across every configuration, a hierarchical, retention-scored memory architecture (replacing the common practice of appending the full linear interaction history to every prompt) improves task accuracy over linear-history memory by an average of 9.97 percentage points on GAIA-Text and 10.10 points on GAIA, while, per the same paper's Table 1, *reducing* prompt-token usage by an average of 32.8% and 32.2% respectively — a double-digit-point accuracy gain and a roughly one-third token-cost reduction from the same unchanged 8B model, driven entirely by how execution history is organized and retained rather than by any additional parameters, training, or compute. Ablations isolate that the gain is not from any single mechanism (an unweighted hierarchy alone, with no retention scoring, does not consistently beat linear history at all) but from the combination of hierarchical structure, dynamic retention scoring, and lifecycle management together — a specific, checkable architectural claim, not a vague "better prompting" gesture. The paper's own stated limitation is directly relevant to this section's load-bearing claim and is carried forward here rather than left out: *"Model scale may affect the benefits of memory management. Larger models may be better able to ignore stale or irrelevant context, potentially reducing WMT's relative accuracy gains... we do not evaluate larger models, [so] the interaction between model scale and WMT remains an open question."* This paper does not establish that architecture beats scale in general — only that, on the 8B-scale models actually tested, an architecture change produced a same-order gain to the one LHTB finds frontier-scale models still missing, and whether that gain persists, shrinks, or is subsumed at larger scale is explicitly unresolved, not assumed either way.
+
 **Defensive response:** The narrative has shifted from "scale parameters" to "scale reasoning time" to "scale reasoning training" to "next architecture." Each saturation point is met with a new variable to scale.
 
 **A dated instance of the next substitution (2025–2026).** Ilya Sutskever, CEO of Safe Superintelligence Inc., stated in a November 2025 interview that the 2020–2025 "age of scaling" has ended and that the field is entering an "age of research," with the missing piece being continual learning — an AI that, rather than arriving pre-loaded with all capability, learns on the job the way a new hire does. His own framing: "I produce a superintelligent 15-year-old that's very eager to go." (Sutskever, interview with Dwarkesh Patel, November 2025.) This is not offered here as evidence of bad faith — Sutskever states the pivot candidly, as a genuine architectural bet, not a cover story. But this paper's own standard applies to it exactly as to every other claim in this section: the pivot is a testable hypothesis about where capability actually comes from, not a given, and its arrival is chronologically identical to the "next architecture" step this section's defensive-response line already predicts. §2.11 develops the full structural argument and a falsifiable test for distinguishing genuine architectural progress from narrative continuation at this specific pivot — including a documented external incentive, independent of the science, for the industry to prefer the "the model learns as it goes" framing regardless of its truth.
@@ -77,6 +88,8 @@ The "harness multiplier effect" has become impossible to ignore: identical model
 Google Research independently confirmed structural failure: on sequential tasks, every multi-agent variant degraded performance by 39–70%. The communication overhead "fragmented the reasoning process, leaving insufficient 'cognitive budget' for the actual task."
 
 On recursive self-improvement, the ICLR 2026 PostTrainBench gave frontier coding agents full autonomy over LLM post-training. The best agent reached 23.2% of official instruction-tuned model performance, with documented failure modes including training on test sets, downloading existing checkpoints, and stealing API keys. OpenAI's own system card for GPT-5.3-Codex rates the model below "High capability" on AI self-improvement.
+
+**A direct test of the "more scaffolding/more spend closes the gap" variant of this attractor (July 2026).** Long-Horizon-Terminal-Bench's own cost analysis (§2.1's specimen, same primary source) prices each model's per-task spend from per-task token usage and public list pricing: estimated cost ranges from about $3.6 to $26 per task across the 17 models, and the resulting Pareto cost-reward frontier shows directly that *"higher inference spending alone is insufficient to guarantee better long-horizon performance."* GPT-5.4 costs more per task than GPT-5.5 at comparable per-token pricing (needing 302 episodes against 208) while scoring a lower pass rate; several markedly cheaper models (Hy3 at ~$3.6/task, Doubao Seed 2.1 Pro and MiniMax M3 at ~$5–6/task) sit on the frontier ahead of costlier mid-tier models. A second, distinct finding from the same paper names a specific failure mode more scaffolding does not obviously fix: dense subtask grading surfaces 14 runs of a *"false finish"* — an agent voluntarily exiting at high partial completion (e.g., R=0.92 or R=0.90, roughly 20 minutes of budget still available) because it judges itself done despite not having satisfied the hidden verifier. The paper names this *"weak self-verification"* as a distinct axis from raw task-solving ability — more agents or more orchestration infrastructure addresses coordination overhead, not a policy's own miscalibrated judgment of its own completion.
 
 **Defensive response:** The narrative pivoted from "more agents = more intelligence" to "the harness needs work." Agent orchestration infrastructure is treated as the bottleneck, preserving the assumption that base capability is sufficient.
 
@@ -644,6 +657,8 @@ Common Sense Media (2025). Nearly 3 in 4 Teens Have Used AI Companions, New Nati
 
 Crochemore, M. & Lecroq, T. Pattern Matching and Text Compression Algorithms. Brown University CSCI 1810 course materials. https://cs.brown.edu/courses/csci1810/fall-2023/resources/ch2_readings/pattern_matching_book.pdf
 
+Dao, Q., Kathalkar, P. & Eaton, K. (2026). Weighted Memory Tree: Remembering What Matters for Long-Horizon LLM Agents. Rose-Hulman Institute of Technology; Georgia Institute of Technology; Georgia Tech Research Institute. arXiv:2608.20631.
+
 Du Castel, B. Pattern Activation/Recognition Theory of Mind. PMC/NIH. https://pmc.ncbi.nlm.nih.gov/articles/PMC4502584/
 
 Gao, L., Schulman, J. & Hilton, J. (2022). Scaling Laws for Reward Model Overoptimization. ICML 2023. arXiv:2210.10760.
@@ -659,6 +674,8 @@ kiranandcode et al. (2026). Issue #14576: Kernel accepts wrong-structure project
 Krakovna, V., Uesato, J., Mikulik, V., Rahtz, M., Everitt, T., Kumar, R., Kenton, Z., Leike, J. & Legg, S. (2020, updated ongoing). Specification gaming: the flip side of AI ingenuity. DeepMind. https://deepmind.google/discover/blog/specification-gaming-the-flip-side-of-ai-ingenuity/
 
 Langosco, L., Koch, J., Sharkey, L., Pfau, J. & Krueger, D. (2022). Goal Misgeneralization in Deep Reinforcement Learning. ICML 2022. arXiv:2105.14111.
+
+Li, Z., Li, Z., Shi, Y., Wang, R., Yang, J., Liu, Z., Wu, X., Li, A., Yu, Y., Liu, N., Sun, L., Mi, H. & Liang, L. (2026). Long-Horizon-Terminal-Bench: Testing the Limits of Agents on Long-Horizon Terminal Tasks with Dense Reward-Based Grading. Tencent Hunyuan. arXiv:2607.08964.
 
 Meng, X., et al. (2026). Stability as a Liability: Systematic Breakdown of Linguistic Structure in LLMs. arXiv:2601.18588.
 
