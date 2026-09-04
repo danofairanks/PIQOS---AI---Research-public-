@@ -46,19 +46,31 @@ specifically.
   committed wheel against a fresh rebuild and fails the workflow if
   they drift, since `docs/scan.html` and `research_mcp` both depend on
   the committed copies.
-- Known pre-existing gap, not yet fixed, out of scope in every session so
-  far: `tools/paper_rigor/tests/test_scan.py::test_real_document_gap_counts`
-  pins `papers/published/laundered_vocabulary_v1.md` at
-  `(ok=False, structural=1, total=1)`; the file as it stands now actually
-  scores `(ok=True, structural=0, total=3)`. The 3 flagged items are all
-  `credential_substitution` matches ("Founder of," "founder of," "Nobel
-  laureate") sitting inside the "Law" and "Coherence" entries' own
-  discussion *of* credential substitution as a topic — plausibly false
-  positives from the document using the phrases as examples, not making
-  credential-substitution claims itself, but not yet checked closely
-  enough to say for certain. Flagged repeatedly across sessions, never
-  actually the task at hand — worth investigating and fixing properly
-  rather than re-flagging it a fifth time.
+- Fixed 2026-09-04 (previously flagged repeatedly across sessions as an
+  open gap, never actually the task at hand until an outside reader ran
+  this project's own test suite directly and reported the mismatch):
+  `paper_rigor/credentialing.py` was flagging the 3
+  `credential_substitution` matches inside
+  `papers/published/laundered_vocabulary_v1.md`'s "Law" entry ("Founder
+  of," "founder of," "Nobel laureate") as false positives — that entry
+  *describes* the founder-of-discursivity pattern and cross-references
+  another document's specimen by section number, it doesn't make a
+  credential-substitution claim on its own behalf. `credentialing.py`
+  now shares `citations.py`/`consensus.py`'s `has_meta_framing_nearby`
+  helper (extended in `_shared.py` with a `styled`/`styling ... as`
+  pattern) and gained a `§N` evidence signal matching this project's own
+  section-citation convention (already used the same way in
+  `quotes.py`). The file now scores `(ok=True, structural=0, total=0)`,
+  pinned at `tools/paper_rigor/tests/test_scan.py`. The same session
+  also corrected a related stale pin in
+  `tools/verification_lint/tests/test_scan.py` — the OpenAI/Hugging
+  Face breach case study's 2026-08-27 addendum legitimately added 3
+  more non-severe gaps (now pinned at 4, still `severe_gap_count == 0`)
+  that a since-superseded test still expected at 1. Both were the same
+  underlying defect class: counts pinned against this repo's own
+  mutable content silently going stale when either side changes without
+  the other — worth remembering next time a real-document test starts
+  failing instead of assuming the fixture moved for no reason.
 
 ## Current branch
 
