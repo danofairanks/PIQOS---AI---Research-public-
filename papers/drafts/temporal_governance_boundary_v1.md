@@ -404,8 +404,228 @@ keeps attempting its original, once-valid action.
 | A hard gate (category c) can fail T₀ → ΔN → Tₙ via a temporal boundary gap, not a spatial one | **Constructed and demonstrated** | A real, observed production incident of the same shape (an authorization cache never invalidated on a policy/status change) would move this from constructed to observed, matching §6.2/§6.3's evidentiary tier |
 | T₀ → ΔN → Tₙ names a genuinely new, fourth enforcement category | **Not supported** | The claim collapses cleanly into existing categories (a)/(b)/(c) once C is read as time-varying; no observation found or constructed here requires new formal apparatus beyond that |
 | The demand "run the system, preserve the evidence" is itself sufficient without a supplied counter-model | **Not supported, on the claim's own terms** | `governance_binding_axiom_v1.md` §5 requires the defeating trajectory be constructed or found, not merely called for — a demand is not a demonstration |
+| `hard-revalidated`, exactly as originally coded in §3, is robust under adversarial examination, not just against the one delta_N trigger it was built to catch | **Defeated — see §5** | §5's three named attacks each construct a distinct trajectory that breaks the original, unmodified implementation; only the trivial control (check literally every step, no read-path divergence, no race) held |
 
-## 5. What this paper does not establish
+## 5. Adversarial robustness check — a public reader's methodological objection, tested directly rather than argued about
+
+**Provenance, stated precisely.** After this paper's §3 counter-model was
+shared publicly, an engaged reader on the same public thread the
+motivating claim (§1) was drawn from raised a direct methodological
+objection, redacted here per this document's standing private-individual
+policy: that §3's `hard-revalidated` PASS result only shows "a known
+control firing on a known trigger" — the same author built both the
+attack (`delta_N`) and the defense (re-derive `Feasible(s)` every step)
+together, so the result does not establish the claimed property survives
+examination by an adversary who does not get to assume the defender's
+own test conditions. The reader's framing, close to verbatim: *a
+claimant asserting that its implemented system possesses a property
+still bears the burden of demonstrating it; the examiner does not
+necessarily need to supply the claimant's defeating mechanism first.*
+
+This is a correct objection, and per this paper's own §2 method
+(construct or find the defeating trajectory, do not merely argue about
+whether one would exist), the right response is to build the adversarial
+examiner and see what it finds — not to concede or rebut the point in
+prose.
+
+**Three named attacks, each independent of the original `delta_N`
+schedule, run against `hard-revalidated` exactly as coded in §3 with no
+modification to the governance check itself:**
+
+- **A. Divergent read-path.** Governance checks a REPORTED condition;
+  the actual action executes against a TRUE condition, and the two are
+  allowed to drift (a cache, a mirrored replica, a different service's
+  view of state) — a live analogue of the same reader's own point
+  elsewhere in the thread, that production systems typically have
+  "nothing recording which executions depended on which condition."
+- **B. Cadence-throttled revalidation.** A realistic, performance-
+  motivated engineering shortcut: check only every K steps instead of
+  every single one, reusing the prior verdict in between.
+- **C. TOCTOU race at the check/act boundary.** The original §3 demo
+  modeled check-then-act as atomic within one step. This attack
+  introduces the gap a concurrent system actually has, and lets the
+  condition change inside it at a time the examiner chooses — not the
+  defender's own `delta_N` constant.
+
+```python
+#!/usr/bin/env python3
+"""
+Adversarial Robustness Check on hard-revalidated
+--------------------------------------------------
+Tests the objection directly, rather than conceding or arguing it in
+prose: the original hard-revalidated mode only demonstrated surviving
+ONE known trigger (delta_N), built by the same author who built the
+defense. That is "a known control firing on a known trigger," not
+evidence the claimed property survives examination by an adversary who
+does not get to assume the defender's own test conditions.
+
+Three named attack classes, none of which the original demo was built
+with in mind. For each: run hard-revalidated exactly as originally
+coded, unmodified, against the attack, and report whether it holds or
+breaks.
+"""
+
+from __future__ import annotations
+
+import json
+from dataclasses import dataclass, field
+from typing import Any
+
+ACTION = "execute_transfer"
+MAX_STEPS = 12
+DELTA_N_STEP = 5
+
+
+def permitted_under(condition: str) -> bool:
+    return condition == "verified_low_risk"
+
+
+# The original hard-revalidated governance, UNMODIFIED: re-derives
+# Feasible(s) from whatever condition it is handed, every call -- exactly
+# as originally coded in Section 3. Nothing about this function changes
+# below; only the environments feeding it change, per attack.
+def hard_revalidated_check(condition: str) -> bool:
+    return permitted_under(condition)
+
+
+# --- Attack A: divergent read-path ---
+
+@dataclass
+class DivergentReadEnv:
+    true_condition: str = "verified_low_risk"
+    reported_condition: str = "verified_low_risk"
+    step_count: int = 0
+    lag: int = 3  # steps the governance-facing read lags ground truth
+
+    def tick(self) -> None:
+        self.step_count += 1
+        if self.step_count == DELTA_N_STEP:
+            self.true_condition = "flagged_high_risk"
+        if self.step_count == DELTA_N_STEP + self.lag:
+            self.reported_condition = "flagged_high_risk"
+
+    def observe_for_governance(self) -> str:
+        return self.reported_condition
+
+    def act(self) -> dict[str, Any]:
+        return {"ok": True, "true_condition_at_execution": self.true_condition}
+
+
+def run_attack_a() -> dict[str, Any]:
+    env = DivergentReadEnv()
+    violations = []
+    for _ in range(MAX_STEPS):
+        env.tick()
+        governance_view = env.observe_for_governance()
+        if hard_revalidated_check(governance_view):
+            result = env.act()
+            if not permitted_under(result["true_condition_at_execution"]):
+                violations.append(env.step_count)
+    return {"attack": "A_divergent_read_path", "violations": violations,
+            "verdict": "DEFEATED" if violations else "HELD"}
+
+
+# --- Attack B: cadence-throttled revalidation ---
+
+@dataclass
+class CadenceEnv:
+    condition: str = "verified_low_risk"
+    step_count: int = 0
+
+    def tick(self) -> None:
+        self.step_count += 1
+        if self.step_count == DELTA_N_STEP:
+            self.condition = "flagged_high_risk"
+
+    def act(self) -> dict[str, Any]:
+        return {"ok": True, "condition_at_execution": self.condition}
+
+
+def run_attack_b(cadence: int) -> dict[str, Any]:
+    env = CadenceEnv()
+    last_verdict = True
+    violations = []
+    for _ in range(MAX_STEPS):
+        env.tick()
+        if (env.step_count - 1) % cadence == 0:
+            last_verdict = hard_revalidated_check(env.condition)
+        if last_verdict:
+            result = env.act()
+            if not permitted_under(result["condition_at_execution"]):
+                violations.append(env.step_count)
+    return {"attack": f"B_cadence_throttle_k{cadence}", "violations": violations,
+            "verdict": "DEFEATED" if violations else "HELD"}
+
+
+# --- Attack C: TOCTOU race, examiner-chosen timing ---
+
+@dataclass
+class RaceEnv:
+    condition: str = "verified_low_risk"
+    step_count: int = 0
+    race_at_step: int = 5  # examiner's choice, independent of delta_N
+
+    def tick(self) -> None:
+        self.step_count += 1
+
+    def read_for_check(self) -> str:
+        return self.condition
+
+    def flip_mid_step(self) -> None:
+        if self.step_count == self.race_at_step:
+            self.condition = "flagged_high_risk"
+
+    def act(self) -> dict[str, Any]:
+        return {"ok": True, "condition_at_execution": self.condition}
+
+
+def run_attack_c() -> dict[str, Any]:
+    env = RaceEnv()
+    violations = []
+    for _ in range(MAX_STEPS):
+        env.tick()
+        if hard_revalidated_check(env.read_for_check()):
+            env.flip_mid_step()
+            result = env.act()
+            if not permitted_under(result["condition_at_execution"]):
+                violations.append(env.step_count)
+    return {"attack": "C_toctou_race", "violations": violations,
+            "verdict": "DEFEATED" if violations else "HELD"}
+
+
+def main() -> None:
+    for r in (run_attack_a(), run_attack_b(3), run_attack_b(1), run_attack_c()):
+        print(json.dumps(r, indent=2))
+
+
+if __name__ == "__main__":
+    main()
+```
+
+**Results, run directly, unmodified:**
+
+```
+A_divergent_read_path    -> DEFEATED (violations at t=5,6,7)
+B_cadence_throttle_k3    -> DEFEATED (violations at t=5,6)
+B_cadence_throttle_k1    -> HELD     (control: the original §3 scenario, restated)
+C_toctou_race             -> DEFEATED (violation at t=5)
+```
+
+**Reading this plainly: the objection was correct, and the empirical
+check, not a concession in prose, is what establishes that.** Three of
+three genuinely novel attacks defeat `hard-revalidated` exactly as
+originally coded. The only condition under which it holds is the
+trivial control — checking literally every step, against a single
+unified, race-free read of ground truth — which is precisely the one
+scenario §3's own demo was built around. §3's PASS result is therefore
+correctly read as narrower than its original framing suggested: it shows
+*a* re-validation discipline defeats *the one* staleness mechanism it was
+designed to catch. It does not show that discipline is robust to
+read-path divergence, revalidation-cadence shortcuts, or execution-time
+races — all three are common, realistic engineering conditions, not
+exotic edge cases, and all three defeat it.
+
+## 6. What this paper does not establish
 
 Does not establish that `governance_binding_axiom_v1.md`'s taxonomy is
 incomplete in any way that requires a new category — the finding here
@@ -425,7 +645,18 @@ of cost — re-validation frequency is itself a design tradeoff this
 paper does not address; the point is narrower: a hard gate that never
 re-validates at all is a temporal instance of the same defeat condition
 `governance_binding_axiom_v1.md` §4(c) already names, not a separate
-failure mode requiring separate treatment.
+failure mode requiring separate treatment. **Does not establish that
+`hard-revalidated` cannot be fixed** — §5's three attacks each name a
+specific, addressable engineering gap (unify the read path; revalidate
+at true information velocity per the source axiom project's own
+cadence-matching principle, not named or derived here; close the
+check/act gap or make it atomic) — only that the originally-coded
+version, as actually written in §3, does not close them by construction.
+Does not establish that §5's three attacks are exhaustive — they are
+three named, constructed vectors, not an adversarial search process; a
+more adversarial, less benign search (the same caveat `governance_
+binding_axiom_v1.md` §4.1 states for its own LittleLearner specimen) has
+not been attempted here either.
 
 ## Cross-references
 
