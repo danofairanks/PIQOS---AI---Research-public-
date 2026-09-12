@@ -40,6 +40,25 @@ def test_clean_text_flags_nothing():
     assert result["labeled"] == []
 
 
+def test_mathstodon_platform_name_not_flagged_as_todo():
+    """Regression test for a real false positive: bare-substring matching
+    on "todo" flagged the word "Mathstodon" (a real Mastodon instance for
+    mathematicians, cited as a primary source in basin_attractors_v5.md's
+    Andreas Thom entry) because "todo" appears inside "Maths-todo-n".
+    Word-boundary-wrapping single-word markers fixes this without
+    weakening genuine bare "TODO" detection (see the adjacent test)."""
+    text = "He posted a detailed account via Mathstodon on September 10, 2026."
+    result = find_placeholder_issues(text)
+    assert result["gaps"] == []
+
+
+def test_bare_todo_still_flagged_after_boundary_fix():
+    text = "TODO: verify this claim before publishing."
+    result = find_placeholder_issues(text)
+    phrases = [g.phrase for g in result["gaps"]]
+    assert any(p.lower() == "todo" for p in phrases)
+
+
 def test_to_dict_json_safe():
     import json
     result = find_placeholder_issues("It is trivial to show this. TODO: cite source.")

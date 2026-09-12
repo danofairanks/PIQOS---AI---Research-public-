@@ -54,8 +54,19 @@ LABELED_PLACEHOLDER_PHRASES = [
     "awaiting empirical", "empirically-gated", "empirical-gated",
 ]
 
+def _boundaried(phrase: str) -> str:
+    """Word-boundary-wrap a bare-word marker so it can't match as a
+    substring of an unrelated word -- e.g. "todo" inside "Mathstodon"
+    (a real platform name), tuned against that exact false positive.
+    Markers containing non-word characters (like "[insert") already
+    can't collide with ordinary words this way, so they pass through
+    as plain substring matches."""
+    escaped = re.escape(phrase)
+    return rf"\b{escaped}\b" if re.fullmatch(r"\w+", phrase) else escaped
+
+
 _HAND_WAVE_RE = re.compile("|".join(re.escape(p) for p in HAND_WAVE_PHRASES), re.IGNORECASE)
-_UNLABELED_RE = re.compile("|".join(re.escape(p) for p in UNLABELED_MARKERS), re.IGNORECASE)
+_UNLABELED_RE = re.compile("|".join(_boundaried(p) for p in UNLABELED_MARKERS), re.IGNORECASE)
 _LABELED_RE = re.compile("|".join(re.escape(p) for p in LABELED_PLACEHOLDER_PHRASES), re.IGNORECASE)
 
 CONTEXT_CHARS = 80
