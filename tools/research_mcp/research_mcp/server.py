@@ -1,6 +1,6 @@
 """MCP server exposing basin_depth, bifp, attractor_scan, debasinizer,
-and paper_rigor's already-JSON-safe `agent_tools.py` function surfaces
-as real MCP tools.
+paper_rigor, rigor_cosplay, and hedge_dogwhistle's already-JSON-safe
+`agent_tools.py` function surfaces as real MCP tools.
 
 Every registered function is unmodified from its source package --
 this module is pure wiring, not a reimplementation. Each function's
@@ -43,7 +43,9 @@ from bifp.agent_tools import (
     bifp_start_closed_path_ledger, bifp_trace_field_assignments,
 )
 from debasinizer.agent_tools import debasinizer_scan_corpus, debasinizer_scan_text
+from hedge_dogwhistle.agent_tools import hedge_dogwhistle_scan_corpus, hedge_dogwhistle_scan_text
 from paper_rigor.agent_tools import paper_rigor_scan, paper_rigor_triage_worklist
+from rigor_cosplay.agent_tools import rigor_cosplay_scan_corpus, rigor_cosplay_scan_text
 
 app = MCPServer(
     "piqos-research-tools",
@@ -103,7 +105,20 @@ app = MCPServer(
         "attractor_scan_claim_boundary_portability checks whether a source "
         "document's own stated limitations show any lexical trace in a "
         "separate citation/reference text -- a two-document comparison, "
-        "unlike attractor_scan_text's single-document scan. Every tool "
+        "unlike attractor_scan_text's single-document scan. "
+        "rigor_cosplay_scan_* classifies text for Rigor Cosplay -- a "
+        "response that adopts the surface markers of critical engagement "
+        "(announcing pushback, offering to steelman an opposing view, "
+        "declaring an intent to be honest) while the function is inverted; "
+        "three independent signatures (cosmetic_pushback, "
+        "weak_man_steelman, honesty_as_flattery), any one of which flags "
+        "on its own. hedge_dogwhistle_scan_* finds paralipsis "
+        "constructions (\"I'm not saying X, but...\") and mechanizes the "
+        "first step of a removal test -- deleting each disclaiming "
+        "sentence and returning what remains -- so the calling agent can "
+        "judge whether the disclaimed content's association survives "
+        "without the hedge (established elsewhere, unhedged) or depended "
+        "on it. Every tool "
         "here is a heuristic lead generator, not a verdict -- see each "
         "source package's own README for exactly what it does and does "
         "not detect."
@@ -137,6 +152,10 @@ _TOOLS = [
     debasinizer_scan_corpus,
     paper_rigor_scan,
     paper_rigor_triage_worklist,
+    rigor_cosplay_scan_text,
+    rigor_cosplay_scan_corpus,
+    hedge_dogwhistle_scan_text,
+    hedge_dogwhistle_scan_corpus,
 ]
 
 for _fn in _TOOLS:

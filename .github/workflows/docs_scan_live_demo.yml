@@ -32,7 +32,7 @@ jobs:
           pip install -e ".[dev]"
           python3 -m pytest tests/ -v
 
-      - name: Rebuild the 5 scanner wheels and diff their source against the committed copies
+      - name: Rebuild the 7 scanner wheels and diff their source against the committed copies
         # Catches the real failure mode this feature is exposed to: a
         # source change under tools/*/ landing without its wheel being
         # rebuilt and recommitted (the wheel-sync approach chosen for
@@ -49,7 +49,7 @@ jobs:
           pip install --quiet build
           workspace="$(pwd)"
           mismatch=0
-          for pkg in verification_lint paper_rigor attractor_scan bifp debasinizer; do
+          for pkg in verification_lint paper_rigor attractor_scan bifp debasinizer rigor_cosplay hedge_dogwhistle; do
             check_dir="/tmp/wheel_check_$pkg"
             rm -rf "$check_dir"
             mkdir -p "$check_dir/committed" "$check_dir/rebuilt" "$check_dir/built"
@@ -66,7 +66,7 @@ jobs:
           if [ "$mismatch" -eq 1 ]; then
             exit 1
           fi
-          echo "All 5 committed wheels match a fresh rebuild of their current source."
+          echo "All 7 committed wheels match a fresh rebuild of their current source."
 
       - name: Install Playwright + Chromium
         working-directory: docs/tests

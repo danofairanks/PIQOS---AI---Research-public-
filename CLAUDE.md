@@ -7,7 +7,7 @@ you need to know before doing anything else.
 ## What this repository is
 
 Public research output related to the PIQOS Oracle framework —
-papers, protocols, case studies, and eight `pip install`-able scanner
+papers, protocols, case studies, and ten `pip install`-able scanner
 tools that operationalize the papers' own frameworks. Full index, tool
 list, and site: [`README.md`](README.md). This repo is research
 artifacts only — it does not and should not contain `PIQOS-IsoAxiomV8-`

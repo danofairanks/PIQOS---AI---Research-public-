@@ -14,8 +14,9 @@ This repository ships a static GitHub Pages site under [`docs/`](docs/)
 case studies), each entry linking out to GitHub's own rendered view of
 the real source file rather than duplicating content. It also ships an
 in-browser **Paper-Rigor Scanner** ([`docs/scan.html`](docs/scan.html))
-that runs five of the tools below (`paper_rigor`, `verification_lint`,
-`attractor_scan`, `bifp`, `debasinizer`) against pasted or uploaded
+that runs seven of the tools below (`paper_rigor`, `verification_lint`,
+`attractor_scan`, `bifp`, `debasinizer`, `rigor_cosplay`,
+`hedge_dogwhistle`) against pasted or uploaded
 text entirely client-side via [Pyodide](https://pyodide.org/) — no
 server, nothing uploaded, downloadable Markdown/JSON report. See the
 comments at the top of `docs/scan.html` and `docs/assets/py/paper_scan.py`
@@ -61,7 +62,7 @@ See [`papers/`](papers/) for the full index. Papers are split into
 
 | Skill | Description |
 |---|---|
-| [`skills/paper-rigor-scan/`](skills/paper-rigor-scan/) | [Claude Agent Skill](https://github.com/anthropics/skills) packaging of the five text-scanning tools above (`paper_rigor`, `verification_lint`, `attractor_scan`, `bifp`, `debasinizer`) — the same pipeline `docs/scan.html` runs in-browser, packaged as a `SKILL.md` so an agent session with local code execution can install and run it directly. Documents real, verified CLI and `agent_tools.py` call surfaces only — no new scanning logic, pure packaging. |
+| [`skills/paper-rigor-scan/`](skills/paper-rigor-scan/) | [Claude Agent Skill](https://github.com/anthropics/skills) packaging of the seven text-scanning tools above (`paper_rigor`, `verification_lint`, `attractor_scan`, `bifp`, `debasinizer`, `rigor_cosplay`, `hedge_dogwhistle`) — the same pipeline `docs/scan.html` runs in-browser, packaged as a `SKILL.md` so an agent session with local code execution can install and run it directly. Documents real, verified CLI and `agent_tools.py` call surfaces only — no new scanning logic, pure packaging. |
 
 ### Case Studies
 

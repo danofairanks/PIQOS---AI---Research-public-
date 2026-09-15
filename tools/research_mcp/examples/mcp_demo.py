@@ -4,7 +4,7 @@
 the SDK's own in-memory transport (no subprocess, no stdio pipe --
 but no mock either; this is the identical client/server code path a
 real MCP host uses), lists the registered tools, and calls one from
-each of the five wrapped packages, plus all three Groq-backed tools
+each of the seven wrapped packages, plus all three Groq-backed tools
 (bifp_judge_rebuttal, attractor_scan_judge_visual_proof,
 paper_rigor_triage_worklist) -- each skipped gracefully if
 GROQ_API_KEY isn't set, since those are the only calls here that make
@@ -165,6 +165,23 @@ async def main() -> None:
                             print(f"  [{item['priority']}] {item['kind']}: {item['suggested_check'][:70]}")
                 else:
                     print("  (GROQ_API_KEY not set -- skipping; makes a real external API call)")
+
+                print("\n=== Step 10: rigor_cosplay_scan_text (cosmetic pushback) ===\n")
+                r = await session.call_tool("rigor_cosplay_scan_text", {
+                    "text": "That's an excellent point -- I want to push back on one thing.",
+                })
+                data = json.loads(r.content[0].text)
+                print(f"  any_signature_flagged: {data['any_signature_flagged']}, "
+                      f"signatures_hit: {data['signatures_hit']}")
+
+                print("\n=== Step 11: hedge_dogwhistle_scan_text (paralipsis + removal test) ===\n")
+                r = await session.call_tool("hedge_dogwhistle_scan_text", {
+                    "text": "The new policy passed unanimously. I'm not saying it's connected "
+                            "to last week's scandal, but the timing is interesting.",
+                })
+                data = json.loads(r.content[0].text)
+                print(f"  has_paralipsis: {data['has_paralipsis']}")
+                print(f"  text_with_hedges_removed: {data['text_with_hedges_removed']!r}")
         finally:
             server_task.cancel()
 
