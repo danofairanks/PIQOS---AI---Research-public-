@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "research-mcp"
 version = "0.1.0"
-description = "MCP server exposing basin_depth, bifp, attractor_scan, debasinizer, and paper_rigor as agent tool calls"
+description = "MCP server exposing basin_depth, bifp, attractor_scan, debasinizer, paper_rigor, rigor_cosplay, and hedge_dogwhistle as agent tool calls"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }

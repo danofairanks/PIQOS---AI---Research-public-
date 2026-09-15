@@ -45,7 +45,9 @@ const FLAGGED_SPECIMEN = {
   title: "Flagged specimen (expect real hits across multiple tools)",
   text: "It is trivial to show this conclusively demonstrates the result, beyond any doubt. " +
         "TODO: fill in proof. Research shows the approach is universally superior, achieving 99.7% accuracy. " +
-        "This is a genuinely emergent capability nobody predicted.",
+        "This is a genuinely emergent capability nobody predicted. " +
+        "That's an excellent point -- I want to push back on one thing, though I'm not saying " +
+        "the underlying method is wrong.",
 };
 
 async function runScanOnPage(page, specimen) {
@@ -97,12 +99,16 @@ async function main() {
     assert.ok(cleanHtml.includes("Paper-Rigor Scan Report"), "report heading missing");
     assert.ok(cleanHtml.includes("No defensive maneuvers flagged"), "expected attractor_scan clean read");
     assert.ok(cleanHtml.includes("no provisionalization"), "expected bifp clean read");
+    assert.ok(cleanHtml.includes("No Rigor Cosplay signatures flagged"), "expected rigor_cosplay clean read");
     console.log("  OK -- clean specimen produced a clean-shaped report");
 
     console.log("=== Scan 2: flagged specimen ===");
     const flaggedHtml = await runScanOnPage(page, FLAGGED_SPECIMEN);
     assert.ok(/Structural gaps:.*<strong>[1-9]/.test(flaggedHtml), "expected paper_rigor structural gaps > 0");
     assert.ok(flaggedHtml.includes("99.7%"), "expected the uncited statistic to surface");
+    assert.ok(flaggedHtml.includes("cosmetic_pushback"), "expected rigor_cosplay to flag cosmetic_pushback");
+    assert.ok(flaggedHtml.includes("Text with each disclaiming sentence removed"),
+      "expected hedge_dogwhistle to find the paralipsis construction");
     console.log("  OK -- flagged specimen produced real, non-zero findings");
 
     console.log("=== Discrimination check ===");

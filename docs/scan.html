@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Paper-Rigor Scanner — PIQOS AI Research (Public)</title>
-<meta name="description" content="Paste or upload a paper and run it through five independent heuristic scanners -- entirely in your browser, nothing uploaded.">
+<meta name="description" content="Paste or upload a paper and run it through seven independent heuristic scanners -- entirely in your browser, nothing uploaded.">
 <link rel="stylesheet" href="assets/style.css">
 <!--
   Runs entirely client-side via Pyodide (CPython compiled to WASM).
@@ -12,13 +12,14 @@
   assets/scan-app.js) -- not vendored into this repo, matching standard
   Pyodide deployment practice and keeping this a research-artifacts
   repo rather than one carrying a ~14MB third-party binary runtime.
-  The five scanner packages ARE vendored, as tiny (~130KB total) pure-
+  The seven scanner packages ARE vendored, as tiny (~155KB total) pure-
   Python wheels built from tools/*/ -- see docs/assets/wheels/ and
   tools/*/README.md "Agent tool-calling surface" sections. Rebuild
   wheels after any change to verification_lint, paper_rigor,
-  attractor_scan, bifp, or debasinizer's source and recommit them here;
-  there is no CI step that does this automatically (see the wheel-sync
-  decision noted in chat history / commit message).
+  attractor_scan, bifp, debasinizer, rigor_cosplay, or hedge_dogwhistle's
+  source and recommit them here; there is no CI step that does this
+  automatically (see the wheel-sync decision noted in chat history /
+  commit message).
 -->
 </head>
 <body>
@@ -38,18 +39,20 @@
   <div class="intro">
     <h1>Paper-Rigor Scanner</h1>
     <p>
-      Paste or upload a paper, get back a structured report from five
+      Paste or upload a paper, get back a structured report from seven
       independent heuristic scanners from this repository's own
       toolkit: <a href="https://github.com/danofairanks/PIQOS---AI---Research-public-/tree/Main/tools/paper_rigor"><code>paper_rigor</code></a>,
       <a href="https://github.com/danofairanks/PIQOS---AI---Research-public-/tree/Main/tools/verification_lint"><code>verification_lint</code></a>,
       <a href="https://github.com/danofairanks/PIQOS---AI---Research-public-/tree/Main/tools/attractor_scan"><code>attractor_scan</code></a>,
-      <a href="https://github.com/danofairanks/PIQOS---AI---Research-public-/tree/Main/tools/bifp"><code>bifp</code></a>, and
-      <a href="https://github.com/danofairanks/PIQOS---AI---Research-public-/tree/Main/tools/debasinizer"><code>debasinizer</code></a>.
+      <a href="https://github.com/danofairanks/PIQOS---AI---Research-public-/tree/Main/tools/bifp"><code>bifp</code></a>,
+      <a href="https://github.com/danofairanks/PIQOS---AI---Research-public-/tree/Main/tools/debasinizer"><code>debasinizer</code></a>,
+      <a href="https://github.com/danofairanks/PIQOS---AI---Research-public-/tree/Main/tools/rigor_cosplay"><code>rigor_cosplay</code></a>, and
+      <a href="https://github.com/danofairanks/PIQOS---AI---Research-public-/tree/Main/tools/hedge_dogwhistle"><code>hedge_dogwhistle</code></a>.
       Placeholder/hand-wave phrases, an unstated falsifiability
       condition, self-citation ratio, uncited statistics, unattributed
-      quotes, semantic-laundering patterns, and more — each reported
-      separately, with the matched evidence, not blended into a single
-      score.
+      quotes, semantic-laundering patterns, cosmetic pushback, paralipsis,
+      and more — each reported separately, with the matched evidence,
+      not blended into a single score.
     </p>
     <p class="privacy-note">
       This runs entirely in your browser via <a href="https://pyodide.org/">Pyodide</a>

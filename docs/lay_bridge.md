@@ -96,7 +96,7 @@ applies to both without modification.
 
 ## What the tools actually check for
 
-The eight tools in [`tools/`](https://github.com/danofairanks/PIQOS---AI---Research-public-/tree/Main/tools)
+The ten tools in [`tools/`](https://github.com/danofairanks/PIQOS---AI---Research-public-/tree/Main/tools)
 (installable, and runnable directly in-browser via the
 [Paper-Rigor Scanner](scan.html)) don't detect truth or falsehood — no
 tool here claims to. They check for the *shape* of the patterns above:

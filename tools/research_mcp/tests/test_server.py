@@ -35,7 +35,7 @@ def test_protocol_level_error_is_distinct_from_payload_level_error():
     assert result.is_error is True
 
 
-def test_all_twenty_six_tools_are_registered(list_tool_names):
+def test_all_thirty_tools_are_registered(list_tool_names):
     names = set(list_tool_names())
     assert names == {
         "basin_depth_demo", "basin_depth_run", "basin_depth_derive_vocab",
@@ -49,6 +49,8 @@ def test_all_twenty_six_tools_are_registered(list_tool_names):
         "attractor_scan_claim_boundary_portability",
         "debasinizer_scan_text", "debasinizer_scan_corpus",
         "paper_rigor_scan", "paper_rigor_triage_worklist",
+        "rigor_cosplay_scan_text", "rigor_cosplay_scan_corpus",
+        "hedge_dogwhistle_scan_text", "hedge_dogwhistle_scan_corpus",
     }
 
 
@@ -273,3 +275,55 @@ def test_paper_rigor_triage_worklist_missing_key_returns_error_payload(call_tool
     result = call_tool("paper_rigor_triage_worklist", {"worklist": worklist})
     assert "error" in result
     assert "GROQ_API_KEY" in result["error"]
+
+
+def test_rigor_cosplay_scan_text_over_the_wire(call_tool):
+    result = call_tool("rigor_cosplay_scan_text", {
+        "text": "That's an excellent point -- I want to push back on one thing.",
+    })
+    assert result["any_signature_flagged"] is True
+    assert "cosmetic_pushback" in result["signatures_hit"]
+
+
+def test_rigor_cosplay_scan_text_clean_over_the_wire(call_tool):
+    result = call_tool("rigor_cosplay_scan_text", {
+        "text": "I disagree with the core claim: the benchmark numbers don't control for contamination.",
+    })
+    assert result["any_signature_flagged"] is False
+
+
+def test_rigor_cosplay_scan_corpus_over_the_wire(call_tool):
+    result = call_tool("rigor_cosplay_scan_corpus", {
+        "documents": [
+            {"doc_id": "1", "text": "Let me steelman the opposing view."},
+            {"doc_id": "2", "text": "Plain disagreement on the merits."},
+        ],
+    })
+    assert result["n_documents"] == 2
+    assert result["any_flagged_count"] == 1
+
+
+def test_hedge_dogwhistle_scan_text_over_the_wire(call_tool):
+    result = call_tool("hedge_dogwhistle_scan_text", {
+        "text": "The new policy passed unanimously. I'm not saying it's connected to last week's scandal, but the timing is interesting.",
+    })
+    assert result["has_paralipsis"] is True
+    assert "scandal" not in result["text_with_hedges_removed"]
+
+
+def test_hedge_dogwhistle_scan_text_clean_over_the_wire(call_tool):
+    result = call_tool("hedge_dogwhistle_scan_text", {
+        "text": "The quarterly results show a 12% increase in revenue.",
+    })
+    assert result["has_paralipsis"] is False
+
+
+def test_hedge_dogwhistle_scan_corpus_over_the_wire(call_tool):
+    result = call_tool("hedge_dogwhistle_scan_corpus", {
+        "documents": [
+            {"doc_id": "1", "text": "Far be it from me to accuse anyone."},
+            {"doc_id": "2", "text": "The quarterly results are up 12%."},
+        ],
+    })
+    assert result["n_documents"] == 2
+    assert result["has_paralipsis_count"] == 1

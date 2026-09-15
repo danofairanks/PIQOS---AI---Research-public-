@@ -1,27 +1,28 @@
 ---
 name: paper-rigor-scan
-description: Use this skill whenever the user wants to check a research paper, article, claim, or piece of written argument for evidentiary rigor gaps or epistemic-capture rhetoric -- unattributed quotes, uncited statistics, missing falsifiability/limitations sections, credential-substituted-for-evidence claims, defensive-maneuver rhetoric (goal-post movement, provisionalization, status dismissal), semantic-laundering patterns ("emergence"/"alignment" misuse, AGI-vs-agentic drift), and resonance-vocabulary register. Trigger on "scan this paper", "check this for rigor", "run this through paper-rigor / attractor-scan / BIFP / debasinizer", or when text is pasted/uploaded and the user asks whether it holds up evidentially.
+description: Use this skill whenever the user wants to check a research paper, article, claim, or piece of written argument for evidentiary rigor gaps or epistemic-capture rhetoric -- unattributed quotes, uncited statistics, missing falsifiability/limitations sections, credential-substituted-for-evidence claims, defensive-maneuver rhetoric (goal-post movement, provisionalization, status dismissal), semantic-laundering patterns ("emergence"/"alignment" misuse, AGI-vs-agentic drift), resonance-vocabulary register, cosmetic pushback / weak-man steelmanning / honesty-as-flattery, and paralipsis ("I'm not saying X, but..."). Trigger on "scan this paper", "check this for rigor", "run this through paper-rigor / attractor-scan / BIFP / debasinizer / rigor-cosplay / hedge-dogwhistle", or when text is pasted/uploaded and the user asks whether it holds up evidentially.
 license: MIT -- see this repository's root LICENSE.
 ---
 
 # Paper-Rigor Scan
 
-Runs the five text-scanning tools this repository ships
+Runs the seven text-scanning tools this repository ships
 (`paper_rigor`, `verification_lint`, `attractor_scan`, `bifp`,
-`debasinizer`) against a piece of text and returns a structured,
-multi-axis report -- matched spans and named categories, not a single
-blended "rigor score." This is the same five-tool pipeline
-`docs/scan.html` already runs client-side in-browser via Pyodide; this
-skill runs the identical logic locally through the real Python
-packages, for use inside an agent session rather than a browser tab.
+`debasinizer`, `rigor_cosplay`, `hedge_dogwhistle`) against a piece of
+text and returns a structured, multi-axis report -- matched spans and
+named categories, not a single blended "rigor score." This is the same
+seven-tool pipeline `docs/scan.html` already runs client-side
+in-browser via Pyodide; this skill runs the identical logic locally
+through the real Python packages, for use inside an agent session
+rather than a browser tab.
 
-**Deliberately covers 5 of this repository's 8 tools**, matching the
+**Deliberately covers 7 of this repository's 10 tools**, matching the
 scope `docs/scan.html` and `docs/assets/py/paper_scan.py` already
 established: `basin_depth` needs a real multi-document corpus and a
 significance-tested run, not a one-shot text scan; `case_scaffold`
 generates and lints new `case_studies/` files rather than scanning
 arbitrary text; `research_mcp` is the MCP server that wires these same
-five tools' `agent_tools.py` surfaces up as callable tools over the
+seven tools' `agent_tools.py` surfaces up as callable tools over the
 MCP wire protocol -- infrastructure, not a task a user asks for by
 name. If this session already has an MCP client connected to
 `tools/research_mcp/`, prefer calling its tools directly over anything
@@ -37,7 +38,7 @@ degrade to a `{"error": ...}` payload rather than failing if
 `GROQ_API_KEY` is unset). From a clone of this repository:
 
 ```bash
-for t in paper_rigor verification_lint attractor_scan bifp debasinizer; do
+for t in paper_rigor verification_lint attractor_scan bifp debasinizer rigor_cosplay hedge_dogwhistle; do
   pip install -e "tools/$t"
 done
 ```
@@ -57,6 +58,8 @@ verification-lint scan path/to/paper.md
 attractor-scan text --file path/to/paper.md
 bifp scan-text --text "$(cat path/to/paper.md)"
 debasinizer text --file path/to/paper.md
+rigor-cosplay text --file path/to/paper.md
+hedge-dogwhistle text --file path/to/paper.md
 ```
 
 Each prints a JSON report to stdout. `verification-lint` also has a
@@ -79,6 +82,8 @@ from verification_lint.agent_tools import verification_lint_scan_text
 from attractor_scan.agent_tools import attractor_scan_text
 from bifp.agent_tools import bifp_scan_text
 from debasinizer.agent_tools import debasinizer_scan_text
+from rigor_cosplay.agent_tools import rigor_cosplay_scan_text
+from hedge_dogwhistle.agent_tools import hedge_dogwhistle_scan_text
 
 text = open("path/to/paper.md").read()
 
@@ -88,6 +93,8 @@ report = {
     "attractor_scan": attractor_scan_text(text),
     "bifp": bifp_scan_text(text),
     "debasinizer": debasinizer_scan_text(text),
+    "rigor_cosplay": rigor_cosplay_scan_text(text),
+    "hedge_dogwhistle": hedge_dogwhistle_scan_text(text),
 }
 ```
 
@@ -107,6 +114,8 @@ canonical, already-tested reference for exactly this composition.
 | `attractor_scan` | Seven defensive-maneuver rhetorical patterns (goal-post movement, provisionalization, status dismissal, burden-shifting, equivocation, volume/velocity defense, appeal-to-future-proof) and five semantic-laundering cases (pattern-recognition-vs-matching, understanding/reasoning, emergence, alignment/safety, AGI/agentic bidirectional drift), plus an Unglossed Formal Object detector (a bare equation with a private variable, ungrounded, co-occurring with "law of X" + "founder of" self-titling language). |
 | `bifp` | Two of the Basin-Immune Falsification Protocol's Phase 5 criteria detectable from text alone (status dismissal, provisionalization) and the §3.10 prohibited-anthropomorphic-terms check. Also structures a full six-phase audit record if the user wants to formally work through BIFP against a specific claim (`bifp new`/`bifp record`), not just run the text heuristics. |
 | `debasinizer` | Resonance-vocabulary register (resonance/wave/signal/mirror language, consciousness/persistence themes, "great convergence" inevitability framing) requiring 2+ categories co-occurring, not any single common word, plus a separate self-coherence-assertion detector ("this proves," "the pieces align"). |
+| `rigor_cosplay` | Three independent signatures for a response that adopts the surface markers of critical engagement while the function is inverted: cosmetic pushback (praise + a pushback-announcement close together), weak-man steelmanning (a steelman-announcement phrase, flagged on presence alone), and honesty-as-flattery (an honesty marker + praise close together). Any one flags on its own. |
+| `hedge_dogwhistle` | Paralipsis constructions ("I'm not saying X, but...") plus a mechanized removal test: deletes each disclaiming sentence and returns what remains, so the reader can judge whether the disclaimed content's association survives without the hedge. Deliberately does not detect insinuation-without-denial phrasing ("make of that what you will"). |
 
 ## What this does not do
 

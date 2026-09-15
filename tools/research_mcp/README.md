@@ -3,7 +3,8 @@
 A live MCP (Model Context Protocol) server exposing
 [`basin_depth`](../basin_depth/), [`bifp`](../bifp/),
 [`attractor_scan`](../attractor_scan/), [`debasinizer`](../debasinizer/),
-and [`paper_rigor`](../paper_rigor/) as agent tool calls. This is pure
+[`paper_rigor`](../paper_rigor/), [`rigor_cosplay`](../rigor_cosplay/),
+and [`hedge_dogwhistle`](../hedge_dogwhistle/) as agent tool calls. This is pure
 wiring — every tool here is an unmodified function imported from its
 source package's own `agent_tools.py`, registered against a real
 `MCPServer` instance and round-trip tested over the actual MCP wire
@@ -28,7 +29,7 @@ source .venv/bin/activate
 # verification_lint isn't wrapped as its own MCP tool (see below) but
 # paper_rigor imports its disclaimer check directly, so it's a real
 # install-time dependency here too.
-pip install -e ../basin_depth -e ../bifp -e ../attractor_scan -e ../verification_lint -e ../debasinizer -e ../paper_rigor
+pip install -e ../basin_depth -e ../bifp -e ../attractor_scan -e ../verification_lint -e ../debasinizer -e ../paper_rigor -e ../rigor_cosplay -e ../hedge_dogwhistle
 
 pip install -e .
 pip install -e ".[dev]"   # adds pytest
@@ -40,7 +41,7 @@ by the wrapped tools beyond what they already require.
 
 ## What's registered
 
-All 25 functions across the five packages' `agent_tools.py` modules,
+All 30 functions across the seven packages' `agent_tools.py` modules,
 unchanged:
 
 | Tool | From | Purpose |
@@ -71,14 +72,18 @@ unchanged:
 | `debasinizer_scan_corpus` | debasinizer | Aggregate flag frequency across a corpus |
 | `paper_rigor_scan` | paper_rigor | Scan any paper for placeholders, falsifiability, self-citation, credentialing, consensus claims, citation-type mix, a claimed-citability-with-zero-references contradiction, and a missing limitations section — returns an `external_verification_worklist` naming the specific items that need a real web search/fetch to resolve |
 | `paper_rigor_triage_worklist` | paper_rigor | **Calls Groq.** Takes an existing `external_verification_worklist` (pass `paper_rigor_scan`'s own output straight through) and attaches a Groq-generated `priority` + `suggested_check` to each item — advisory triage, not verification; never adds, removes, or resolves items. Requires `GROQ_API_KEY`. Empty worklist short-circuits with no API call. |
+| `rigor_cosplay_scan_text` | rigor_cosplay | Classify a single text for Rigor Cosplay's three independent signatures (cosmetic pushback, weak-man steelmanning, honesty-as-flattery) — any one flags on its own |
+| `rigor_cosplay_scan_corpus` | rigor_cosplay | Aggregate flag frequency across a corpus |
+| `hedge_dogwhistle_scan_text` | hedge_dogwhistle | Find paralipsis constructions ("I'm not saying X, but...") and return the text with every containing sentence removed — mechanizes the first step of the removal test; the calling agent judges whether the disclaimed content survives |
+| `hedge_dogwhistle_scan_corpus` | hedge_dogwhistle | Aggregate paralipsis-construction frequency across a corpus |
 
-**Three of these 26 tools call Groq and require `GROQ_API_KEY`** —
+**Three of these 30 tools call Groq and require `GROQ_API_KEY`** —
 every other tool is pure local computation with no network access at
 all. All three share the same contract: advisory-only, never a
 verdict, and each returns `{"error": ...}` rather than failing the
 tool call itself if the key is missing or the API call fails. If
 you're running this server yourself, set `GROQ_API_KEY` in the
-environment before starting it for those three; the other 16 work
+environment before starting it for those three; the other 27 work
 with no setup beyond installation.
 
 Each tool's docstring (visible to an MCP client as its description)
@@ -89,7 +94,7 @@ README for exactly what each function does and does not detect.
 (generate/lint/index this repo's own `case_studies/` files) rather
 than a research-measurement tool an external agent would call against
 arbitrary input — a narrower fit for MCP exposure. Wiring it in later
-is the same mechanical pattern as the five here. `verification_lint`
+is the same mechanical pattern as the seven here. `verification_lint`
 is installed (paper_rigor depends on its disclaimer check) but its own
 `scan_document`/`scan_file` aren't separately exposed as MCP tools —
 same repository-maintenance reasoning as `case_scaffold`.
@@ -126,16 +131,20 @@ python3 examples/mcp_demo.py
 ```
 
 Connects a real `mcp.client.session.ClientSession` to this server over
-the SDK's own in-memory transport, lists all 26 tools, and calls one
+the SDK's own in-memory transport, lists all 30 tools, and calls one
 (sometimes two) from each wrapped package — `basin_depth_demo`,
 `bifp_scan_text` + `bifp_judge_rebuttal`, `attractor_scan_text` against
 the same real Musk quote `attractor_scan`'s own test suite validates
 against + `attractor_scan_judge_visual_proof`, `debasinizer_scan_text`
-against a constructed specimen combining both patterns it detects, and
+against a constructed specimen combining both patterns it detects,
 `paper_rigor_scan` against a deliberately bad constructed paragraph +
-`paper_rigor_triage_worklist` on that scan's own output. The three
-Groq-backed calls are skipped gracefully with a printed note if
-`GROQ_API_KEY` isn't set — every other step runs fully offline.
+`paper_rigor_triage_worklist` on that scan's own output,
+`rigor_cosplay_scan_text` against a constructed cosmetic-pushback
+specimen, and `hedge_dogwhistle_scan_text` against a constructed
+paralipsis specimen (printing the text with the hedge sentence
+removed). The three Groq-backed calls are skipped gracefully with a
+printed note if `GROQ_API_KEY` isn't set — every other step runs fully
+offline.
 
 ## Wiring this into an MCP host
 
@@ -170,7 +179,7 @@ project's actual `MCPServer` instance over its actual low-level
 protocol handler. Nothing in the request/response cycle is stubbed:
 JSON schema generation from type hints, request dispatch, tool
 invocation, and JSON-RPC content framing are all the real library
-code, exercised by 27 tests including a stateful bifp audit flow
+code, exercised by 33 tests including a stateful bifp audit flow
 (start → record → get_status) that persists across three separate
 tool calls the way an agent's turns actually would, and a matching
 stateful flow for the closed-path evidence ledger (start → record
@@ -230,7 +239,10 @@ finding forward the same way `paper_rigor`'s own worklist-triage demo
 applied both of the earlier lessons (Cloudflare User-Agent, conservative
 token budget) proactively and passed clean on its first live attempt.
 
-All 21 offline tests passed, and all three Groq calls succeeded with
+All 21 offline tests passed at the time of this live-verification run
+(before `rigor_cosplay`/`hedge_dogwhistle` were added; the offline
+suite is 33 tests as of their addition, not re-verified live against
+Groq since neither new package calls it), and all three Groq calls succeeded with
 the pacing holding — no rate-limit errors anywhere in the run:
 
 - `bifp_judge_rebuttal` on a constructed claim/rebuttal pair (a strong
@@ -280,7 +292,7 @@ source .venv/bin/activate
 python3 -m pytest tests/ -v
 ```
 
-27 tests, all going over the real in-memory MCP wire protocol rather
+33 tests, all going over the real in-memory MCP wire protocol rather
 than calling Python functions directly (that coverage already exists
 in each source package's own test suite).
 

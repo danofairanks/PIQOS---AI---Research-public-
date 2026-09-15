@@ -1,4 +1,4 @@
-// Drives docs/scan.html: boots Pyodide, installs the 5 scanner wheels
+// Drives docs/scan.html: boots Pyodide, installs the 7 scanner wheels
 // via micropip, runs assets/py/paper_scan.py's aggregator against
 // user-supplied text, and renders the resulting report. The scanned
 // text never leaves this tab -- the only network requests this file
@@ -20,6 +20,8 @@ const WHEELS = [
   "assets/wheels/attractor_scan-0.1.0-py3-none-any.whl",
   "assets/wheels/bifp-0.1.0-py3-none-any.whl",
   "assets/wheels/debasinizer-0.1.0-py3-none-any.whl",
+  "assets/wheels/rigor_cosplay-0.1.0-py3-none-any.whl",
+  "assets/wheels/hedge_dogwhistle-0.1.0-py3-none-any.whl",
 ];
 
 let pyodideReadyPromise = null;
