@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hedge-dogwhistle"
+version = "0.1.0"
+description = "Paralipsis detector plus a mechanized removal-test helper for distinguishing genuine scope-limiting hedges from coded signaling"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "PIQOS AI Research (Public)" }]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+hedge-dogwhistle = "hedge_dogwhistle.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["hedge_dogwhistle*"]
