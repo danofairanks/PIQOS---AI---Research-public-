@@ -43,7 +43,11 @@ accept (§8); a fifth round, from the same reader, reasserted an
 incompatible version of that framing and did not resolve it when the
 incompatibility was put to the reader directly (§9). The central
 theorem itself survived all five rounds; the third round demonstrated
-it at a strength the paper had not actually earned before.
+it at a strength the paper had not actually earned before. §10 then
+asks, on this project's own initiative rather than in reply to a
+further round, whether the kernel could in principle be extended to
+close the gap §9 leaves open — and answers no, with a regress argument
+rather than an appeal to what has or hasn't been shown so far.
 
 ## Abstract
 
@@ -543,7 +547,7 @@ inadvertently, claimed.
 other, sharper defeat exists — one correct, well-targeted objection
 answered is not the same as the theorem being exhaustively tested.
 Does not establish that this reader's engagement constitutes the full
-independent adversarial testing §11 (below) still calls for — one
+independent adversarial testing §12 (below) still calls for — one
 objection, correctly identified and answered, is real progress and is
 exactly the kind of engagement this paper is filed to invite, not a
 substitute for sustained scrutiny from multiple readers over time.
@@ -679,7 +683,70 @@ condition can reach it" cannot both be true statements about the same
 object in the same reply, and asked directly which one the reader
 retracts, the reader declined to say.
 
-## 10. What this paper does NOT establish
+## 10. A closing note — why extending the kernel does not close this
+
+**The question, stated precisely.** Given §7–§9: is there anything
+possible *within the kernel itself* — some addition, restatement, or
+missing piece — that would let it bind to real trajectories, closing
+the gap this paper and §9's exchange both name? Put the requirement
+plainly: for the kernel to bind, it needs a *resolution* — a specified
+map from real system state into the formal geometry, a procedure that
+tells you, for a real handoff, what `App_H`, `Sat_H`, `Exist_H`, and
+`Adeq_H` actually evaluate to.
+
+**No — and not merely because it hasn't been done.** T1–T5 are
+non-entailment results over stipulated predicates (§8's own confirmed
+reading of the specimen's abstract). That shape is inherently negative:
+it characterizes what a composition rule does *not* do under certain
+conditions, not what procedure supplies the predicates' real-world
+truth values. A non-entailment theorem cannot host a positive existence
+claim for a resolution function without ceasing to be non-entailment-
+shaped — the two are different kinds of claim, and a kernel built from
+one kind cannot acquire the other by restatement.
+
+**Suppose it were added anyway.** A resolution function — call it `R`,
+mapping real system state to `(App_H, Sat_H, Exist_H, Adeq_H)` values —
+is not part of the kernel's internal formalism; it is a procedure,
+which is exactly channel `e` in this paper's own model (§1). Adding it
+does not remove the kernel from the theorem's reach. It relocates the
+theorem one level up: the live question becomes who computes `R`, and
+whether that computation is sourced independently of the actor whose
+handoff is being evaluated. A system that both performs the handoff and
+runs its own `R`-computation has built self-report with more formal
+vocabulary on top of it — `G` still controls the action and the (now
+larger) evidence channel, the same structure as §2, one layer higher.
+The regress terminates only at genuine external attestation (something
+outside `G`'s emission surface) or composition-inside-the-generative-
+process — the same two categories this paper already names as the only
+real exits, restated at the resolution-function layer instead of the
+original evidence layer.
+
+**The general point, stated once.** "Internal to the kernel" and
+"touches reality" are mutually exclusive by construction — that
+separation is what makes the non-entailment results sound in the first
+place. Anything that does touch reality is, by definition, no longer
+kernel-internal; it is an implementation layer, and it inherits full
+exposure to this paper's theorem, not reduced exposure. A kernel that
+resolved reality into its own geometry would not be a stronger kernel.
+It would be a category error: a system projecting its own formal state
+onto reality and reporting that projection back as a reading of
+reality, rather than measuring reality independently and letting the
+formal state answer to it.
+
+**What this note does NOT establish.** Does not establish that no
+specification of `R` could ever be built for this or any specimen —
+only that building one does not strengthen the kernel, because it is
+not an extension of the kernel; it is a separate, additional,
+independently-exposed artifact. Does not establish that the specimen's
+authors intend the kernel to bind without such a procedure — §9's
+exchange states the opposite (implementation is explicitly left open),
+and this note takes that statement at face value rather than arguing
+against it. Does not establish that this regress argument is novel to
+this specimen or genre — it is the same two-exit structure §2 already
+states, shown here to survive being pushed up a level rather than
+being defeated by being pushed up a level.
+
+## 11. What this paper does NOT establish
 
 - **Does not establish that either redacted specimen in §4 was built or
   is being defended in bad faith.** The theorem is about what a gate
@@ -729,34 +796,45 @@ retracts, the reader declined to say.
   silence on predicate-value provenance (confirmed directly against its
   source text); a specimen that does specify a procedure binding its
   predicates to a real system would not get this same treatment.
+- **Does not claim §10's regress argument shows no formal kernel could
+  ever bind.** It shows that binding cannot be added *as an extension
+  of the kernel itself*, because doing so changes what kind of object
+  is being extended. A kernel published together with, not instead of,
+  a specified and independently-sourced `R` would not face this
+  objection — §10's point is about what stays inside the kernel's own
+  boundary, not about what could exist alongside it.
 
-## 11. What would move this from draft to confirmed
+## 12. What would move this from draft to confirmed
 
 §7, §8, and §9 show this process working three times, against three
 different kinds of pressure: a real code-level gap (§7), a
 formal-framing overreach paired with a still-open implementation
 question (§8), and a reassertion of that same framing left unresolved
-when named directly (§9). The toy or the prose was corrected each time
-the objection held, without the central theorem breaking. What would
-move this further: further independent readers constructing defeats
-this paper's five rounds so far did not find — against the toy
-directly, against the general theorem in a domain none of the five
-rounds covered (a non-invertible or natural-language evidence channel
-specifically, per §6's own item 1), or by actually specifying, for the
-§4/§8/§9 specimen or any other, a real procedure binding its predicates
-to a running system and checking whether that procedure sources them
-independently. §9's own reader, or any other, resolving rather than
-declining to resolve the incompatibility named there would also move
-this forward. Per this project's own standing method
-(`governance_binding_axiom_v2.md` §5): construct or find the defeating
-trajectory, do not argue about whether one would exist.
+when named directly (§9). §10 then closes the specific question raised
+by that exchange — whether the kernel itself could be extended to
+bind — with a regress argument rather than a further round of reply.
+The toy or the prose was corrected each time an objection held, without
+the central theorem breaking. What would move this further: further
+independent readers constructing defeats this paper's five rounds so
+far did not find — against the toy directly, against the general
+theorem in a domain none of the five rounds covered (a non-invertible
+or natural-language evidence channel specifically, per §6's own item
+1), or by actually specifying, for the §4/§8/§9 specimen or any other,
+a real procedure `R` binding its predicates to a running system and
+checking whether `R`'s own computation is sourced independently of the
+actor whose handoff it evaluates — §10's own question, made concrete.
+§9's own reader, or any other, resolving rather than declining to
+resolve the incompatibility named there would also move this forward.
+Per this project's own standing method (`governance_binding_axiom_v2.md`
+§5): construct or find the defeating trajectory, do not argue about
+whether one would exist.
 
 ---
 
 *Sources: `governance_binding_axiom_v2.md` §2–4 (formal apparatus and
 existing category taxonomy, cited not restated), §5 (construct-or-find-
-the-defeating-trajectory method, §8's and §9's basis), §12.5 (the
-adversarial-testing precedent this paper's own §6, §7, §8, and §9
+the-defeating-trajectory method, §8's, §9's, and §10's basis), §12.5
+(the adversarial-testing precedent this paper's own §6, §7, §8, and §9
 follow); `closed_path_confirmation_v1.md` (the closed-path/open-path
 distinction this paper narrows further, and its redaction precedent,
 applied identically here — including to the §7, §8, and §9 readers);
@@ -764,5 +842,6 @@ applied identically here — including to the §7, §8, and §9 readers);
 redaction," and its "Law" entry precedent for redacting a self-
 published, self-titled author). The two §4 specimens, and both readers'
 objections and replies in §7, §8, and §9, were read in full at
-primary-source tier by this project directly; no other source was
-consulted for any finding.*
+primary-source tier by this project directly; §10 is this project's own
+analysis, not a further reader exchange, and is presented as such; no
+other source was consulted for any finding.*
