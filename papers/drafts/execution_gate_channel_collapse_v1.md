@@ -32,10 +32,13 @@ sandbox boundary itself had a gap). Here the gate is real, the check is
 real, the re-derivation is exhaustive — and it still cannot establish
 the one thing it is being relied on to establish, because of where its
 input comes from, not because of any flaw in how rigorously it checks
-that input. Section 5 gives a runnable demonstration and two rounds of
-adversarial self-testing against it, the second of which found the
-first version of this paper's central claim genuinely overstated and
-corrects it on the record rather than quietly softening it.
+that input. Section 5 gives a runnable demonstration and three rounds
+of adversarial testing against it (two self-run, one from an
+independent reader). Two of the three found genuine overclaims — one
+in the toy's own strongest claim, one in a mode's prose description —
+and both are corrected on the record rather than quietly softened; the
+central theorem itself survived all three, the third round demonstrating
+it at a strength the paper had not actually earned before.
 
 ## Abstract
 
@@ -54,9 +57,13 @@ honestly execute a procedure or fabricate a plausible-looking evidence
 trace for it, and three verifier tiers of increasing rigor, the
 strongest of which is *structurally* incapable of telling a fabricated-
 but-correct trace from a genuine one. We ran two rounds of adversarial
-self-testing against the toy's own strongest claim; round 1 defeated an
+self-testing against the toy's own strongest claim (round 1 defeated an
 overstated version of it, round 2 shows the underlying claim survives
-in corrected form. We check the general pattern against two redacted,
+in corrected form), then a third round answering a genuine objection
+from an independent public reader, which required building a generator
+mode that obtains the correct answer via a provably different
+computational path from the declared procedure — the central theorem
+held against it. We check the general pattern against two redacted,
 independently-read specimens circulating in AI-governance-adjacent
 discourse, both of which check evidence supplied by the same process
 that supplies the action being gated.
