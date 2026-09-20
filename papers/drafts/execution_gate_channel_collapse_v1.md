@@ -32,10 +32,13 @@ sandbox boundary itself had a gap). Here the gate is real, the check is
 real, the re-derivation is exhaustive — and it still cannot establish
 the one thing it is being relied on to establish, because of where its
 input comes from, not because of any flaw in how rigorously it checks
-that input. Section 5 gives a runnable demonstration and two rounds of
-adversarial self-testing against it, the second of which found the
-first version of this paper's central claim genuinely overstated and
-corrects it on the record rather than quietly softening it.
+that input. Section 5 gives a runnable demonstration and three rounds
+of adversarial testing against it (two self-run, one from an
+independent reader). Two of the three found genuine overclaims — one
+in the toy's own strongest claim, one in a mode's prose description —
+and both are corrected on the record rather than quietly softened; the
+central theorem itself survived all three, the third round demonstrating
+it at a strength the paper had not actually earned before.
 
 ## Abstract
 
@@ -54,9 +57,13 @@ honestly execute a procedure or fabricate a plausible-looking evidence
 trace for it, and three verifier tiers of increasing rigor, the
 strongest of which is *structurally* incapable of telling a fabricated-
 but-correct trace from a genuine one. We ran two rounds of adversarial
-self-testing against the toy's own strongest claim; round 1 defeated an
+self-testing against the toy's own strongest claim (round 1 defeated an
 overstated version of it, round 2 shows the underlying claim survives
-in corrected form. We check the general pattern against two redacted,
+in corrected form), then a third round answering a genuine objection
+from an independent public reader, which required building a generator
+mode that obtains the correct answer via a provably different
+computational path from the declared procedure — the central theorem
+held against it. We check the general pattern against two redacted,
 independently-read specimens circulating in AI-governance-adjacent
 discourse, both of which check evidence supplied by the same process
 that supplies the action being gated.
@@ -173,9 +180,17 @@ Three generator modes, all deterministic:
 - `SHORTCUT_WRONG` — picks an arbitrary wrong final value, then
   fabricates a trace *backward* from it through exact inverse
   operations.
-- `SHORTCUT_RIGHT_UNFAITHFUL` — computes the *true* answer directly
-  (skipping the declared procedure), then fabricates a trace backward
-  from that correct value the same way.
+- `SHORTCUT_RIGHT_UNFAITHFUL` — computes the true answer via the same
+  forward procedure `HONEST` uses, then fabricates a trace backward
+  from that correct value — the shortcut is entirely in the evidence
+  construction, not in obtaining `a`. (An earlier version of this
+  section described this mode as "skipping the declared procedure,"
+  which was inaccurate about its own code; corrected here, and §7
+  below builds the mode that actually does skip it, in response to a
+  reader who caught the discrepancy.)
+- `SHORTCUT_RIGHT_VIA_CLOSED_FORM` (§7) — computes the true answer via
+  a provably different method that never executes the declared
+  procedure at all, then fabricates a trace the same way.
 
 Three verifier tiers:
 
@@ -213,10 +228,34 @@ _INVERSE: dict[str, Callable[[float, int], float]] = {
 
 
 def true_answer(x0: int, ops: list[Op]) -> float:
+    """Executes the declared procedure -- a for-loop applying each op to
+    the running value, in order. This DOES run the declared procedure;
+    see closed_form_answer() below for a method that provably does not."""
     v: float = x0
     for op, k in ops:
         v = _FORWARD[op](v, k)
     return v
+
+
+def closed_form_answer(x0: int, ops: list[Op]) -> float:
+    """A genuinely different computational path. Every op in this domain
+    is affine (v -> scale*v + offset). Composes all ops into a SINGLE
+    (scale, offset) pair symbolically; x0 is touched exactly once, at the
+    very last line. None of the intermediate values a step-by-step
+    execution would produce ever exist anywhere in this function's
+    execution -- this is the case §7 needs: the correct answer, obtained
+    without executing the declared procedure."""
+    scale, offset = 1.0, 0.0
+    for op, k in ops:
+        if op == "add":
+            offset = offset + k
+        elif op == "sub":
+            offset = offset - k
+        elif op == "mul":
+            scale, offset = scale * k, offset * k
+        elif op == "div":
+            scale, offset = scale / k, offset / k
+    return scale * x0 + offset
 
 
 def honest_trace(x0: int, ops: list[Op]) -> tuple[float, Trace]:
@@ -281,6 +320,9 @@ def generate(mode: str, x0: int, ops: list[Op], wrong_value: float) -> Submissio
     if mode == "SHORTCUT_RIGHT_UNFAITHFUL_TYPE_FAITHFUL":
         real = true_answer(x0, ops)
         return Submission(mode, real, fabricate_backward_type_faithful(x0, ops, real))
+    if mode == "SHORTCUT_RIGHT_VIA_CLOSED_FORM":
+        real = closed_form_answer(x0, ops)
+        return Submission(mode, real, fabricate_backward(x0, ops, real))
     raise ValueError(mode)
 
 
@@ -349,6 +391,18 @@ if __name__ == "__main__":
     print("identical serialized form:", ser(honest_e) == ser(s_fab2.e))
     print("V1 (type-aware) on type-faithful fabrication:",
           v1_full_rederivation(X0, OPS, s_fab2, type_aware=True))
+
+    print()
+    print("=== Round 3: correct answer obtained WITHOUT executing the ===")
+    print("=== declared procedure at all (closed-form composition)    ===")
+    print("true_answer (executes the declared procedure):    ", true_answer(X0, OPS))
+    print("closed_form_answer (never touches x0 until the end):", closed_form_answer(X0, OPS))
+    s_cf = generate("SHORTCUT_RIGHT_VIA_CLOSED_FORM", X0, OPS, WRONG)
+    print("fabricated trace from closed-form answer:", ser(s_cf.e))
+    v1_cf = v1_full_rederivation(X0, OPS, s_cf)
+    v2_cf = v2_independent_reexecution(X0, OPS, s_cf)
+    print("V1 (full re-derivation) on closed-form submission:", v1_cf)
+    print("V2 (independent re-execution) on closed-form submission:", v2_cf)
 ```
 
 **Actual output, this file, unmodified — independently re-run to
@@ -371,6 +425,14 @@ V1 (type-aware) on fabricated: (False, 'type mismatch: recomputed int, declared 
 fabricated (type-faithful): [{"op": "add", "operand": 7, "value": 12}, {"op": "mul", "operand": 3, "value": 36}, {"op": "sub", "operand": 4, "value": 32}, {"op": "div", "operand": 2, "value": 16.0}]
 identical serialized form: True
 V1 (type-aware) on type-faithful fabrication: (True, 'every step re-derived and matched')
+
+=== Round 3: correct answer obtained WITHOUT executing the ===
+=== declared procedure at all (closed-form composition)    ===
+true_answer (executes the declared procedure):     16.0
+closed_form_answer (never touches x0 until the end): 16.0
+fabricated trace from closed-form answer: [{"op": "add", "operand": 7, "value": 12.0}, {"op": "mul", "operand": 3, "value": 36.0}, {"op": "sub", "operand": 4, "value": 32.0}, {"op": "div", "operand": 2, "value": 16.0}]
+V1 (full re-derivation) on closed-form submission: (True, 'every step re-derived and matched')
+V2 (independent re-execution) on closed-form submission: (True, 'independent re-execution matches')
 ```
 
 **Reading the result.** `HONEST` and `SHORTCUT_RIGHT_UNFAITHFUL` are
@@ -416,7 +478,61 @@ by requiring access to the real generative process. This is a more
 precise and more defensible statement than the pre-attack version, and
 the one this paper stands behind.
 
-## 7. What this paper does NOT establish
+## 7. Round 3 — an external reader's objection, tested directly
+
+**Provenance, stated precisely.** After this draft was shared publicly,
+an engaged reader on the same public thread raised a direct, correct
+technical objection, redacted here per this document's standing
+private-individual policy: `SHORTCUT_RIGHT_UNFAITHFUL`'s action `a`
+comes from `true_answer(x0, ops)`, and `true_answer()` does execute the
+declared operations in sequence — a for-loop applying each op to the
+running value — before the trace is reconstructed backward. As written,
+the reader noted, §5 demonstrated that real execution plus a
+reconstructed trace is not proof the trace was recorded during
+execution. It did not yet demonstrate a correct result obtained without
+executing the declared procedure at all — the reader's own framing, close
+to verbatim.
+
+This is a correct objection against §5's original prose, which
+described `SHORTCUT_RIGHT_UNFAITHFUL` as "computes the true answer
+directly (skipping the declared procedure)" — that description was
+inaccurate about the code's own behavior, corrected in §5 above. Per
+this project's own method (`governance_binding_axiom_v2.md` §5:
+construct or find the defeating trajectory, do not argue about whether
+one would exist), the right response is to build the case the reader
+named and see what it finds — not to concede or rebut the point in
+prose alone.
+
+**`closed_form_answer()`**, added to §5's code (`SHORTCUT_RIGHT_VIA_
+CLOSED_FORM` mode): every operation in this toy's domain is affine
+(`v → scale·v + offset`). Composing all of `ops` into a single
+`(scale, offset)` pair symbolically, then computing `scale·x0 + offset`
+in one step, touches `x0` exactly once — none of the intermediate
+values a step-by-step execution would produce (`12`, `36`, `32`, ...)
+are ever computed anywhere in this function. This is precisely the case
+the reader named: the correct answer, obtained without executing the
+declared procedure in any sense that produces or touches its
+intermediate values.
+
+**Result, from §5's own re-run (`Round 3` output above):** `closed_
+form_answer` returns the identical correct value to `true_answer` on
+both tasks checked. A trace fabricated backward from that closed-form
+value still passes both `V1` (full re-derivation) and `V2` (independent
+re-execution) — the theorem's central claim is unaffected by closing
+this gap; if anything it is now demonstrated at the exact strength the
+reader asked for, rather than the weaker strength §5 originally,
+inadvertently, claimed.
+
+**What this round does NOT establish.** Does not establish that no
+other, sharper defeat exists — one correct, well-targeted objection
+answered is not the same as the theorem being exhaustively tested.
+Does not establish that this reader's engagement constitutes the full
+independent adversarial testing §9 (below) still calls for — one
+objection, correctly identified and answered, is real progress and is
+exactly the kind of engagement this paper is filed to invite, not a
+substitute for sustained scrutiny from multiple readers over time.
+
+## 8. What this paper does NOT establish
 
 - **Does not establish that either redacted specimen in §4 was built or
   is being defended in bad faith.** The theorem is about what a gate
@@ -445,31 +561,39 @@ the one this paper stands behind.
 - **Does not claim rounds 1 and 2 constitute independent adversarial
   testing.** Both were run by the same authors who built the toy, in
   the same working session — real progress on this paper's own
-  discipline, and a weaker form of scrutiny than an independent reader
-  attempting to defeat the claim, which is what this paper is filed to
-  invite (see `closed_path_confirmation_v1.md` and
-  `governance_binding_axiom_v2.md` §12.5 for the precedent this
-  project follows: post plainly, let an independent reader object, and
-  correct on the record if the objection holds).
+  discipline, but a weaker form of scrutiny than an independent reader
+  attempting to defeat the claim. Round 3 (§7) is that independent
+  engagement, and the paper is filed to invite more of it (see
+  `closed_path_confirmation_v1.md` and `governance_binding_axiom_v2.md`
+  §12.5 for the precedent this project follows: post plainly, let an
+  independent reader object, and correct on the record if the
+  objection holds).
+- **Does not claim §7 closes the question of independent testing.**
+  One reader, one objection, correctly identified and answered, is a
+  single data point — real, and worth recording precisely as such, not
+  inflated into "this paper has now been independently verified."
 
-## 8. What would move this from draft to confirmed
+## 9. What would move this from draft to confirmed
 
-An independent reader constructing a defeat this paper's own two
-self-testing rounds did not find — either against the toy directly, or
-against the general theorem in a domain neither round covered (a
-non-invertible or natural-language evidence channel specifically).
-Per this project's own standing method (`governance_binding_axiom_v2.md`
-§5): construct or find the defeating trajectory, do not argue about
-whether one would exist.
+§7 shows this process working once: a real reader found a genuine gap
+in the paper's own prose, it was checked directly, and the toy was
+extended to close it without the central theorem breaking. What would
+move this further: further independent readers constructing defeats
+this paper's three rounds so far did not find — against the toy
+directly, or against the general theorem in a domain none of the three
+rounds covered (a non-invertible or natural-language evidence channel
+specifically, per §6's own item 1). Per this project's own standing
+method (`governance_binding_axiom_v2.md` §5): construct or find the
+defeating trajectory, do not argue about whether one would exist.
 
 ---
 
 *Sources: `governance_binding_axiom_v2.md` §2–4 (formal apparatus and
 existing category taxonomy, cited not restated), §12.5 (the adversarial-
-testing precedent this paper's own §6 and §8 follow); `closed_path_
+testing precedent this paper's own §6, §7, and §9 follow); `closed_path_
 confirmation_v1.md` (the closed-path/open-path distinction this paper
 narrows further, and its redaction precedent, applied identically
-here); `laundered_vocabulary_v1.md` ("Metrics vs. Soundness," "A note
-on redaction"). The two §4 specimens were read in full at primary-
-source tier by this project directly; no other source was consulted for
-either finding.*
+here — including to the §7 reader); `laundered_vocabulary_v1.md`
+("Metrics vs. Soundness," "A note on redaction"). The two §4 specimens
+were read in full at primary-source tier by this project directly; no
+other source was consulted for either finding.*
