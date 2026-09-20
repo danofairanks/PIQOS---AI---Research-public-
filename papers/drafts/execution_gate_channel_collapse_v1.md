@@ -154,15 +154,21 @@ this exact policy applied to a small repository).
   predicates (whether a handoff is "applicable," "satisfied,"
   "established") are stated over stipulated symbolic objects with no
   given procedure for computing any of them against a real running
-  system — the evidence a downstream check would read is, by the
-  paper's own construction, self-supplied.
+  system. (An earlier version of this bullet concluded from this that
+  "the evidence a downstream check would read is, by the paper's own
+  construction, self-supplied" — corrected below, §8, after a co-author
+  objected directly and correctly: the paper's silence on where these
+  values come from is not the same claim as the paper committing to
+  self-supplied evidence. What the silence does establish, unchanged:
+  a real implementation could source these values either way, and
+  nothing in the published formalism decides which.)
 
 Neither specimen is claimed to have been built or is being defended in
 bad faith. Both are checked for what they claim to establish, and in
 both cases the gap this paper names is either openly scoped (the first
 specimen) or a direct consequence of the paper's own stated formal
-apparatus (the second). The general schema both instantiate: `Policy →
-Authority Resolution → Runtime Validation → Execution Gate →
+apparatus's silence (the second). The general schema both instantiate:
+`Policy → Authority Resolution → Runtime Validation → Execution Gate →
 Consequence → Evidence`. Every stage before "Execution Gate" is either
 a function of `a`/`e` themselves or evaluated by a process reading only
 what `G` chose to emit.
@@ -527,12 +533,88 @@ inadvertently, claimed.
 other, sharper defeat exists — one correct, well-targeted objection
 answered is not the same as the theorem being exhaustively tested.
 Does not establish that this reader's engagement constitutes the full
-independent adversarial testing §9 (below) still calls for — one
+independent adversarial testing §10 (below) still calls for — one
 objection, correctly identified and answered, is real progress and is
 exactly the kind of engagement this paper is filed to invite, not a
 substitute for sustained scrutiny from multiple readers over time.
 
-## 8. What this paper does NOT establish
+## 8. Round 4 — a co-author of §4's second specimen replies; two valid
+corrections and one framing this paper declines to accept
+
+**Provenance, stated precisely.** A co-author of §4's second specimen (the
+"handoff" architecture paper) engaged directly on the same public
+thread, redacted here per the same private-individual policy applied
+throughout this paper — self-publication under a named methodology does
+not move a private individual into the institution/public-record
+exception this policy actually turns on (`laundered_vocabulary_v1.md`'s
+own "Law" entry precedent: a self-published author with a self-titled
+methodology was redacted there too, on the same reasoning).
+
+**Two objections, checked against the specimen's actual source text
+rather than accepted or dismissed on the framing alone.**
+
+1. **The §4 inferential leap.** The reply is correct: "the formalism
+   does not specify a procedure" and "the evidence is therefore
+   self-supplied" are different claims, and the earlier version of §4
+   collapsed them. Corrected there directly, above.
+2. **Non-entailment cannot be refuted by a supporting instance.**
+   Checked directly against the specimen's own text: its five central
+   results are stated explicitly as non-entailment results ("X does
+   not establish Y"). A case where the antecedent holds and the
+   consequent fails is a confirming instance of a non-entailment
+   claim, not a counterexample to one — this paper's own theorem is
+   non-entailment-shaped in exactly the same way, and was never a
+   claim to have refuted the specimen's formal results. If anything in
+   an earlier version read that way, it was imprecise, and is
+   corrected by this section.
+
+**The framing this paper declines to accept, stated precisely.** The
+reply's own words: *"you have identified an implementation and
+verification constraint... a refutation of the handoff kernel, no."*
+True, but the standard smuggled into that sentence — "defeat the
+kernel, or you have shown nothing" — is not a standard this paper's
+claim was ever trying to meet, and it is not a standard any external
+critique *could* meet against an object of this kind. A **defeat
+condition**, in the constructive sense this project's own method uses
+(`governance_binding_axiom_v2.md` §5: construct or find the defeating
+*trajectory*), presupposes a real-system referent for that trajectory
+to occur in. A formalism whose predicates carry no specified procedure
+for computing them against a running system — confirmed directly
+above, and unchanged by either correction — has no empirical defeat
+condition by construction. That is not evidence the formalism is
+robust to attack. It is the same absence of a real-system referent
+`../substrate_binding_deficit/`-class checklists already name, read
+from the other direction: nothing failed to defeat the kernel: there
+was never a real-system trajectory available for a defeat condition to
+be constructed against, for this paper or any other.
+
+**What remains open, unchanged by this round.** Whether any real
+deployment built on this formalism is channel-collapse-vulnerable
+depends entirely on whether `App_H`, `Sat_H`, `Exist_H`, and `Adeq_H`
+are, in that deployment, sourced from a channel independent of the
+actor whose handoff is being evaluated, or from that actor's own
+self-report. The published formalism's tri-state, default-to-
+`UNRESOLVED` structure is a real, non-trivial safety property *of the
+composition rule* — checked directly, it does default away from a
+false `ESTABLISHED` when a required element is unresolved — but
+nothing in the published apparatus requires the predicates feeding
+that rule to be independently sourced, and self-reported predicate
+values would satisfy the same rule and could still reach `ESTABLISHED`.
+This is exactly the question this paper's genre check named before
+this round, restated with more precision after it, not resolved by it.
+
+**What this round does NOT establish.** Does not establish that the
+specimen's formal theorems are false, disputed, or in need of
+correction — they are not challenged here, on either objection. Does
+not establish that any real system built on this formalism will fail
+in deployment — that depends on implementation choices the published
+paper does not make. Does not establish bad faith in the reply's own
+framing — a formalist reasonably defending the internal validity of a
+result they authored is not the same move as this paper's own
+discipline against defensive maneuvers (`basin_attractors_v1.md` §4.1's
+taxonomy), and no claim of that kind is made here.
+
+## 9. What this paper does NOT establish
 
 - **Does not establish that either redacted specimen in §4 was built or
   is being defended in bad faith.** The theorem is about what a gate
@@ -562,38 +644,53 @@ substitute for sustained scrutiny from multiple readers over time.
   testing.** Both were run by the same authors who built the toy, in
   the same working session — real progress on this paper's own
   discipline, but a weaker form of scrutiny than an independent reader
-  attempting to defeat the claim. Round 3 (§7) is that independent
-  engagement, and the paper is filed to invite more of it (see
-  `closed_path_confirmation_v1.md` and `governance_binding_axiom_v2.md`
-  §12.5 for the precedent this project follows: post plainly, let an
-  independent reader object, and correct on the record if the
+  attempting to defeat the claim. Rounds 3 (§7) and 4 (§8) are that
+  independent engagement, and the paper is filed to invite more of it
+  (see `closed_path_confirmation_v1.md` and `governance_binding_axiom_
+  v2.md` §12.5 for the precedent this project follows: post plainly,
+  let an independent reader object, and correct on the record if the
   objection holds).
-- **Does not claim §7 closes the question of independent testing.**
-  One reader, one objection, correctly identified and answered, is a
-  single data point — real, and worth recording precisely as such, not
+- **Does not claim §7 or §8 closes the question of independent
+  testing.** Two readers, three objections total, correctly identified
+  and answered or precisely bounded, is real progress and still a
+  small number of data points — worth recording precisely as such, not
   inflated into "this paper has now been independently verified."
+- **Does not claim §8's "no empirical defeat condition by construction"
+  point generalizes to every formal specimen this genre of paper might
+  check.** It follows specifically from the checked specimen's own
+  silence on predicate-value provenance (confirmed directly against its
+  source text); a specimen that does specify a procedure binding its
+  predicates to a real system would not get this same treatment.
 
-## 9. What would move this from draft to confirmed
+## 10. What would move this from draft to confirmed
 
-§7 shows this process working once: a real reader found a genuine gap
-in the paper's own prose, it was checked directly, and the toy was
-extended to close it without the central theorem breaking. What would
-move this further: further independent readers constructing defeats
-this paper's three rounds so far did not find — against the toy
-directly, or against the general theorem in a domain none of the three
-rounds covered (a non-invertible or natural-language evidence channel
-specifically, per §6's own item 1). Per this project's own standing
+§7 and §8 show this process working twice, against two different kinds
+of objection: a real code-level gap (§7), and a formal-framing
+overreach paired with a still-open implementation question (§8). Both
+were checked directly and the toy or the prose was corrected without
+the central theorem breaking either time. What would move this
+further: further independent readers constructing defeats this paper's
+four rounds so far did not find — against the toy directly, against
+the general theorem in a domain none of the four rounds covered (a
+non-invertible or natural-language evidence channel specifically, per
+§6's own item 1), or by actually specifying, for the §4/§8 specimen or
+any other, a real procedure binding its predicates to a running system
+and checking whether that procedure sources them independently. Per
+this project's own standing
 method (`governance_binding_axiom_v2.md` §5): construct or find the
 defeating trajectory, do not argue about whether one would exist.
 
 ---
 
 *Sources: `governance_binding_axiom_v2.md` §2–4 (formal apparatus and
-existing category taxonomy, cited not restated), §12.5 (the adversarial-
-testing precedent this paper's own §6, §7, and §9 follow); `closed_path_
-confirmation_v1.md` (the closed-path/open-path distinction this paper
-narrows further, and its redaction precedent, applied identically
-here — including to the §7 reader); `laundered_vocabulary_v1.md`
-("Metrics vs. Soundness," "A note on redaction"). The two §4 specimens
-were read in full at primary-source tier by this project directly; no
-other source was consulted for either finding.*
+existing category taxonomy, cited not restated), §5 (construct-or-find-
+the-defeating-trajectory method, §8's basis), §12.5 (the adversarial-
+testing precedent this paper's own §6, §7, and §8 follow);
+`closed_path_confirmation_v1.md` (the closed-path/open-path distinction
+this paper narrows further, and its redaction precedent, applied
+identically here — including to the §7 and §8 readers);
+`laundered_vocabulary_v1.md` ("Metrics vs. Soundness," "A note on
+redaction," and its "Law" entry precedent for redacting a self-
+published, self-titled author). The two §4 specimens, and both readers'
+objections in §7 and §8, were read in full at primary-source tier by
+this project directly; no other source was consulted for any finding.*
