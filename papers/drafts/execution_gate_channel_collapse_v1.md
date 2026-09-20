@@ -32,12 +32,17 @@ sandbox boundary itself had a gap). Here the gate is real, the check is
 real, the re-derivation is exhaustive — and it still cannot establish
 the one thing it is being relied on to establish, because of where its
 input comes from, not because of any flaw in how rigorously it checks
-that input. Section 5 gives a runnable demonstration and three rounds
-of adversarial testing against it (two self-run, one from an
-independent reader). Two of the three found genuine overclaims — one
-in the toy's own strongest claim, one in a mode's prose description —
-and both are corrected on the record rather than quietly softened; the
-central theorem itself survived all three, the third round demonstrating
+that input. Section 5 gives a runnable demonstration and five rounds
+of adversarial testing against it (two self-run, three from two
+independent outside readers). Three of the five found genuine
+overclaims or framing errors — one in the toy's own strongest claim,
+one in a mode's prose description, one in §4's positioning of a checked
+specimen — and all three are corrected on the record rather than
+quietly softened. A fourth round raised a framing this paper does not
+accept (§8); a fifth round, from the same reader, reasserted an
+incompatible version of that framing and did not resolve it when the
+incompatibility was put to the reader directly (§9). The central
+theorem itself survived all five rounds; the third round demonstrated
 it at a strength the paper had not actually earned before.
 
 ## Abstract
@@ -63,10 +68,15 @@ in corrected form), then a third round answering a genuine objection
 from an independent public reader, which required building a generator
 mode that obtains the correct answer via a provably different
 computational path from the declared procedure — the central theorem
-held against it. We check the general pattern against two redacted,
-independently-read specimens circulating in AI-governance-adjacent
-discourse, both of which check evidence supplied by the same process
-that supplies the action being gated.
+held against it. A co-author of one checked specimen then raised two
+objections we corrected on the record and one framing we answered
+rather than conceded (round 4); a further reply reasserted an
+incompatible version of that same framing, which we name and leave on
+the record unresolved by the reader when the incompatibility was put to
+them directly (round 5). We check the general pattern against two
+redacted, independently-read specimens circulating in AI-governance-
+adjacent discourse, both of which check evidence supplied by the same
+process that supplies the action being gated.
 
 ## 1. The model
 
@@ -533,7 +543,7 @@ inadvertently, claimed.
 other, sharper defeat exists — one correct, well-targeted objection
 answered is not the same as the theorem being exhaustively tested.
 Does not establish that this reader's engagement constitutes the full
-independent adversarial testing §10 (below) still calls for — one
+independent adversarial testing §11 (below) still calls for — one
 objection, correctly identified and answered, is real progress and is
 exactly the kind of engagement this paper is filed to invite, not a
 substitute for sustained scrutiny from multiple readers over time.
@@ -614,7 +624,62 @@ result they authored is not the same move as this paper's own
 discipline against defensive maneuvers (`basin_attractors_v1.md` §4.1's
 taxonomy), and no claim of that kind is made here.
 
-## 9. What this paper does NOT establish
+## 9. Round 5 — the same reader replies again; a goalpost move, named
+and left unresolved
+
+**What happened, read directly from the same public thread.** After §8
+was posted, the same reader (the co-author from §8, not a new one)
+replied again, accepting the §4 correction and then reframing it:
+"the kernel does not specify channel provenance... the corrected
+position is narrower: implementation layer open; channel provenance
+unspecified at kernel level; your result constrains possible
+implementations, not the theorem layer."
+
+**Why this is a goalpost move rather than a further correction.** "The
+kernel does not specify channel provenance" is the identical fact §8
+already used to grant that the kernel has no empirical defeat condition
+by construction — there is no real-system referent for a defeat
+condition to be built against. The same reply now uses that same fact
+to declare "the theorem layer" untouched by this paper's result. Both
+cannot hold at once. A formalism silent on channel provenance makes no
+claim, positive or negative, about whether it binds to real
+consequence — that silence is exactly what removes it from empirical
+reach in the first place. "Your result... [does not touch] the theorem
+layer" is not available as a finding for a claim the kernel never made;
+the honest statement is "never at issue," a materially weaker claim
+than untouched coverage. The specimen's own title — "Governed Handoffs
+*from Trace to Consequence*" — names the applied claim that
+provenance-silence cannot deliver either way. Asserting unfalsifiability
+and retained coverage in the same reply is the move; it is not a
+narrowing of an existing position, because the two halves of it are
+mutually exclusive.
+
+**Named directly on the same thread, and left unresolved.** This
+paper's author put the incompatibility to the reader directly, in
+substance: the position relocates whatever needs resolving onto
+internal, unfalsifiable ground while continuing to claim untouched
+coverage. The reply, in full: *"You've reframed the point rather than
+answered it. I'll leave the record as it stands."* No specific
+reframing was identified in that reply, and the incompatibility named
+above — unfalsifiable by construction in the same breath as intact by
+claim — was not addressed. Recorded here as what it is: the thread
+ending without engagement on that specific point, not as the reader
+having answered it, and not as this paper asserting anything about the
+reader's reasons for not answering.
+
+**What this round does NOT establish.** Does not establish that the
+reader is arguing in bad faith — declining to continue a public
+exchange is evidence of declining to continue, nothing more; the
+incompatibility stands on the two quoted sentences alone, not on any
+inference about intent. Does not establish that T1–T5 or the kernel's
+other formal results are false — unchanged from §8, neither is
+challenged here. Does establish, precisely: "the theorem layer... not
+[touched]" and "no channel provenance specified, therefore no defeat
+condition can reach it" cannot both be true statements about the same
+object in the same reply, and asked directly which one the reader
+retracts, the reader declined to say.
+
+## 10. What this paper does NOT establish
 
 - **Does not establish that either redacted specimen in §4 was built or
   is being defended in bad faith.** The theorem is about what a gate
@@ -644,16 +709,19 @@ taxonomy), and no claim of that kind is made here.
   testing.** Both were run by the same authors who built the toy, in
   the same working session — real progress on this paper's own
   discipline, but a weaker form of scrutiny than an independent reader
-  attempting to defeat the claim. Rounds 3 (§7) and 4 (§8) are that
-  independent engagement, and the paper is filed to invite more of it
-  (see `closed_path_confirmation_v1.md` and `governance_binding_axiom_
-  v2.md` §12.5 for the precedent this project follows: post plainly,
-  let an independent reader object, and correct on the record if the
-  objection holds).
-- **Does not claim §7 or §8 closes the question of independent
-  testing.** Two readers, three objections total, correctly identified
-  and answered or precisely bounded, is real progress and still a
-  small number of data points — worth recording precisely as such, not
+  attempting to defeat the claim. Rounds 3 (§7), 4 (§8), and 5 (§9) are
+  that independent engagement, and the paper is filed to invite more of
+  it (see `closed_path_confirmation_v1.md` and `governance_binding_
+  axiom_v2.md` §12.5 for the precedent this project follows: post
+  plainly, let an independent reader object, and correct on the record
+  if the objection holds).
+- **Does not claim §7, §8, or §9 closes the question of independent
+  testing.** Two independent readers, across three independent rounds,
+  raised objections and framings that were mostly corrected on the
+  record and, in one case (§8's "defeat the kernel" framing, reasserted
+  in §9), answered but not resolved by the reader when the
+  incompatibility was put to them directly — real progress and still a
+  small number of data points, worth recording precisely as such, not
   inflated into "this paper has now been independently verified."
 - **Does not claim §8's "no empirical defeat condition by construction"
   point generalizes to every formal specimen this genre of paper might
@@ -662,35 +730,39 @@ taxonomy), and no claim of that kind is made here.
   source text); a specimen that does specify a procedure binding its
   predicates to a real system would not get this same treatment.
 
-## 10. What would move this from draft to confirmed
+## 11. What would move this from draft to confirmed
 
-§7 and §8 show this process working twice, against two different kinds
-of objection: a real code-level gap (§7), and a formal-framing
-overreach paired with a still-open implementation question (§8). Both
-were checked directly and the toy or the prose was corrected without
-the central theorem breaking either time. What would move this
-further: further independent readers constructing defeats this paper's
-four rounds so far did not find — against the toy directly, against
-the general theorem in a domain none of the four rounds covered (a
-non-invertible or natural-language evidence channel specifically, per
-§6's own item 1), or by actually specifying, for the §4/§8 specimen or
-any other, a real procedure binding its predicates to a running system
-and checking whether that procedure sources them independently. Per
-this project's own standing
-method (`governance_binding_axiom_v2.md` §5): construct or find the
-defeating trajectory, do not argue about whether one would exist.
+§7, §8, and §9 show this process working three times, against three
+different kinds of pressure: a real code-level gap (§7), a
+formal-framing overreach paired with a still-open implementation
+question (§8), and a reassertion of that same framing left unresolved
+when named directly (§9). The toy or the prose was corrected each time
+the objection held, without the central theorem breaking. What would
+move this further: further independent readers constructing defeats
+this paper's five rounds so far did not find — against the toy
+directly, against the general theorem in a domain none of the five
+rounds covered (a non-invertible or natural-language evidence channel
+specifically, per §6's own item 1), or by actually specifying, for the
+§4/§8/§9 specimen or any other, a real procedure binding its predicates
+to a running system and checking whether that procedure sources them
+independently. §9's own reader, or any other, resolving rather than
+declining to resolve the incompatibility named there would also move
+this forward. Per this project's own standing method
+(`governance_binding_axiom_v2.md` §5): construct or find the defeating
+trajectory, do not argue about whether one would exist.
 
 ---
 
 *Sources: `governance_binding_axiom_v2.md` §2–4 (formal apparatus and
 existing category taxonomy, cited not restated), §5 (construct-or-find-
-the-defeating-trajectory method, §8's basis), §12.5 (the adversarial-
-testing precedent this paper's own §6, §7, and §8 follow);
-`closed_path_confirmation_v1.md` (the closed-path/open-path distinction
-this paper narrows further, and its redaction precedent, applied
-identically here — including to the §7 and §8 readers);
+the-defeating-trajectory method, §8's and §9's basis), §12.5 (the
+adversarial-testing precedent this paper's own §6, §7, §8, and §9
+follow); `closed_path_confirmation_v1.md` (the closed-path/open-path
+distinction this paper narrows further, and its redaction precedent,
+applied identically here — including to the §7, §8, and §9 readers);
 `laundered_vocabulary_v1.md` ("Metrics vs. Soundness," "A note on
 redaction," and its "Law" entry precedent for redacting a self-
 published, self-titled author). The two §4 specimens, and both readers'
-objections in §7 and §8, were read in full at primary-source tier by
-this project directly; no other source was consulted for any finding.*
+objections and replies in §7, §8, and §9, were read in full at
+primary-source tier by this project directly; no other source was
+consulted for any finding.*
