@@ -142,8 +142,12 @@ risk-aversion over any outcome — **cannot be represented by this
 family for any `λ` in its stated domain.** This is not a case the
 paper's own §8-style held-out-choice protocol would reject after
 fitting; it is excluded from the parameter space before fitting
-begins. `λ < 0` would capture exactly this agent (flipping the
-inequality above) and sits outside the domain as defined.
+begins.
+
+**Correction (see Round 1, below): this note's original text claimed
+`λ < 0` would capture exactly this agent by "flipping the inequality
+above." That claim was wrong and has been retracted, not quietly
+edited — see Round 1 for the correction and why it is wrong.**
 
 **Fairness note, stated directly rather than left implicit.** The
 paper's own text already partially anticipates this: its "Convexity"
@@ -154,6 +158,72 @@ variance. What this note adds is naming the consequence precisely
 (structural exclusion of an entire, ordinary preference class, not
 merely a caveat about interpretation) and demonstrating it
 numerically rather than only noting the conflation exists.
+
+## Round 1 — the checked specimen's author replies directly; an
+## independent reader corrects an error in this note's own text
+
+**Provenance.** The checked specimen's author engaged directly on the
+same public thread where this note's check was raised, redacted here
+per this document's own standing policy (stated at the top). A second,
+independent reader also engaged on the same thread, also redacted.
+
+**The author's reply, summarized precisely.** Accepts the finding
+without qualification: *"The λ = 0 tie, followed by strict preference
+for the positive λ values you tested, is the behaviour the note
+isolates."* Restates the specimen's own scope correctly and
+consistently with its original text — the construction is conditional
+on continuity being reward-relevant for the modeled agent, not a claim
+about what continuity objectively is — rather than retreating into a
+broader or narrower claim than the one originally made. States the
+finding "is going into the paperwork." This is a clean concession: no
+goalpost movement, no unfalsifiability retreat, no reframing of what
+was originally claimed.
+
+**The independent reader's correction — a real error in this note's
+own text, found and fixed.** This note's original version (the
+paragraph directly above, now corrected) claimed `λ < 0` would capture
+a risk-averse continuity-carer by "flipping the inequality." **That
+claim was wrong.** The independent reader caught it precisely: the
+family's convexity is `d²/dS² exp(λS) = λ² · exp(λS)`, which is
+strictly positive for **any** nonzero `λ`, positive or negative —
+convexity never depends on the sign of `λ`, only its square. Verified
+directly, re-running this note's own script at negative `λ`:
+
+```
+lambda    V_A         V_B         A still strictly preferred
+ -10.0    0.500023    0.006738    True
+  -3.0    0.524894    0.223130    True
+  -1.0    0.683940    0.606531    True
+  -0.5    0.803265    0.778801    True
+  -0.1    0.952419    0.951229    True
+```
+
+The spread act (Act A) is strictly preferred at **every** `λ ≠ 0`
+tested, negative included — the exact opposite of what this note
+originally claimed. The reader further named a second, independent
+problem with signed `λ` as a proposed fix: for `λ < 0`, `exp(λS)` is
+*decreasing* in `S`, so an agent maximizing `Vλ` at negative `λ` would
+prefer **lower** continuity overall — not the risk-averse-but-still-
+continuity-caring agent this note was trying to construct, but an
+agent that dislikes continuity outright. **Correct conclusion, stated
+by the reader and adopted here:** the risk-aversion exclusion (the
+core finding above) stands as a valid scope finding; naively signing
+`λ` negative is not an available repair. Representing an agent who is
+risk-averse over continuity variance while still preferring higher
+continuity in expectation would require a genuinely different
+functional form — an increasing, concave utility of `S` — not a
+sign change on the existing exponential family.
+
+**What this round does NOT establish.** Does not establish that no
+repair exists for the family — only that the specific one this note
+originally proposed (`λ < 0`) does not work, for the two independent
+reasons given above. Does not establish that the core finding (the
+`λ ≥ 0` family excludes risk-averse continuity-carers) is affected —
+it is not; the error was in this note's own proposed characterization
+of what lies outside the domain, not in the domain-exclusion finding
+itself. Does not establish anything about either reader's awareness of
+or relationship to the specimen's author beyond what their own replies
+show directly.
 
 ## What this note does NOT establish
 
@@ -173,13 +243,16 @@ numerically rather than only noting the conflation exists.
   awareness.** The theorem is about what the family, as scoped, can
   and cannot represent — independent of any claim about why it was
   scoped that way.
-- **Does not establish that this finding has been communicated to, or
-  engaged with by, the paper's author as of filing.** This note is
+- **Engaged with by the specimen's author and an independent reader —
+  see Round 1, above.** The author accepted the core finding without
+  qualification; an independent reader corrected a real error in this
+  note's own originally-proposed `λ < 0` characterization, which has
+  been fixed on the record rather than quietly edited. This note was
   filed publicly, per this project's own standing precedent (post
   plainly, invite correction, correct the record if defeated —
   `governance_binding_axiom_v2.md` §12.5; `execution_gate_channel_
-  collapse_v1.md` §6–§9), specifically so that it can be checked and
-  answered rather than assumed settled either way.
+  collapse_v1.md` §6–§9), specifically so that this kind of check and
+  correction could happen.
 
 ## Sources
 
