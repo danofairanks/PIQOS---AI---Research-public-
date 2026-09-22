@@ -547,7 +547,7 @@ inadvertently, claimed.
 other, sharper defeat exists — one correct, well-targeted objection
 answered is not the same as the theorem being exhaustively tested.
 Does not establish that this reader's engagement constitutes the full
-independent adversarial testing §12 (below) still calls for — one
+independent adversarial testing §13 (below) still calls for — one
 objection, correctly identified and answered, is real progress and is
 exactly the kind of engagement this paper is filed to invite, not a
 substitute for sustained scrutiny from multiple readers over time.
@@ -746,7 +746,80 @@ this specimen or genre — it is the same two-exit structure §2 already
 states, shown here to survive being pushed up a level rather than
 being defeated by being pushed up a level.
 
-## 11. What this paper does NOT establish
+## 11. The same shape, checked independently in the same co-author's
+own solo work
+
+**What was checked.** The co-author named in §8–§9 has three further
+formal papers, solo-authored, self-published on the same preprint-
+hosting platform. Two were read in full at primary-source tier this
+session; the third was checked against already primary-sourced
+excerpts covering its central predicates and both of its stated
+hedges, not a fresh complete read — held at that lower tier throughout
+what follows. Each of the three states its own formal kernel over
+stipulated symbolic predicates — distinct notation in each paper, none
+shared with §4's second specimen or with one another, none reproduced
+here since no finding below depends on the specific notation. Each
+paper's own text was checked directly for whether a procedure is given
+anywhere for computing those predicates against a real system. None is,
+in any of the three. All three read the same way §8 already reads the
+joint specimen: internally consistent, the stated theorems sound over
+the stipulated objects, silent on where the objects' real-world values
+would come from.
+
+**The co-author's own hedging discipline, checked separately from the
+binding question, holds up — the opposite finding from §9.** Each of
+the three papers states its own domain restrictions directly, in its
+own words, at the point a reader would look for them (a stated
+non-universal-derivation clause in one, a stated domain-specificity
+disclaimer in another, a stated bounded-literature-search caveat in
+the third). Reversing each hedge — asking what the paper would have to
+additionally claim for the hedge's negation to hold — produces a claim
+the same paper's own adversarial-case sections already rule out
+elsewhere in its own text, not a newly exposed defeat; in six of eight
+reversals checked across the two full-text reads, the reversal
+collides with an explicit passage stated independently, elsewhere in
+the same document. This is not the §9 pattern. §9's reader used one
+fact two incompatible ways in the same reply. These three papers' own
+hedges are, on this check, honest bookkeeping: real caution, correctly
+scoped, not a shield for an unstated broader claim. The binding gap
+above is independent of that finding — a paper can hedge its own
+formal reach accurately and still supply no procedure for reaching a
+real system with what it does formally claim.
+
+**Why this is reported with no claim about how the four specimens
+relate to one another.** Four kernels now show the identical shape —
+§4's second specimen and these three — each checked directly against
+its own text, with no reference to any of the others in the checking
+procedure itself. That is the entire finding. It does not require, and
+does not claim, that any one of the four produced, inspired, or
+shares an origin with any other; whether they do is not addressed
+here, was not investigated, and is not needed for what is being
+reported. A claim that required resolving that question to hold would
+be weaker than one that does not.
+
+**What this section does NOT establish.** Does not establish that the
+three solo papers were built or are being defended in bad faith — same
+standing practice as §4 and §12 (below) apply to the joint specimen.
+Does not establish that the three papers' formal results are
+themselves unsound — the checked theorems hold over their own
+stipulated objects; only the objects' real-world binding is in
+question, the same distinction §8 already draws for the joint
+specimen. Does not establish any relationship, causal or otherwise,
+among the four specimens named across this paper — deliberately not
+claimed, per the paragraph above. Does not establish that the third
+paper (excerpt-tier here) would show the identical hedge-honesty
+pattern under a fresh complete read — plausible given the two full
+reads' consistency, not confirmed for that specific paper. Does not
+promote any part of this beyond what is stated here.
+
+**Cross-references.** §4 (the joint specimen this section's finding
+runs parallel to); §8–§9 (the hedge *dishonesty* signature this
+section's finding is the documented contrast to); `laundered_
+vocabulary_v1.md`'s "A note on redaction" (the policy this section's
+omission of titles, notation, and identifying detail follows,
+identical to §4's own application of it).
+
+## 12. What this paper does NOT establish
 
 - **Does not establish that either redacted specimen in §4 was built or
   is being defended in bad faith.** The theorem is about what a gate
@@ -804,7 +877,7 @@ being defeated by being pushed up a level.
   objection — §10's point is about what stays inside the kernel's own
   boundary, not about what could exist alongside it.
 
-## 12. What would move this from draft to confirmed
+## 13. What would move this from draft to confirmed
 
 §7, §8, and §9 show this process working three times, against three
 different kinds of pressure: a real code-level gap (§7), a
@@ -843,5 +916,8 @@ redaction," and its "Law" entry precedent for redacting a self-
 published, self-titled author). The two §4 specimens, and both readers'
 objections and replies in §7, §8, and §9, were read in full at
 primary-source tier by this project directly; §10 is this project's own
-analysis, not a further reader exchange, and is presented as such; no
-other source was consulted for any finding.*
+analysis, not a further reader exchange, and is presented as such; §11's
+three solo-authored specimens were operator-supplied directly to this
+project (two as complete source documents, read in full; the third via
+already primary-sourced excerpts, tier stated in §11 itself); no other
+source was consulted for any finding.*
