@@ -36,11 +36,13 @@ because the equations are downstream of the definition, not upstream of it.
 Check a definition for value, falsifiability, and information-loss *before*
 any equation built on it is worth evaluating. Not as a replacement for
 existing checks (`Metrics vs. Soundness` and `Performed Rigor vs.
-Demonstrated Rigor` in `laundered_vocabulary_v1.md`, and `attractor_scan`'s
-`Unglossed Formal Object` detector all describe adjacent failure shapes) but
-as a sequencing discipline sitting upstream of all of them: don't spend
-verification effort on a formalism's internal consistency until its ground
-terms have separately earned scrutiny.
+Demonstrated Rigor` in `laundered_vocabulary_v1.md`, `attractor_scan`'s
+`Unglossed Formal Object` detector, and a claim-size check — bound what a
+result's own proof establishes against the broader claim asserted for it,
+and state the size of that gap directly — all describe adjacent failure
+shapes) but as a sequencing discipline sitting upstream of all of them:
+don't spend verification effort on a formalism's internal consistency until
+its ground terms have separately earned scrutiny.
 
 ## Why this doesn't reduce to a library dependency
 
@@ -216,5 +218,10 @@ now confirmed to exist and to match closely, but two unbuilt, commonly-authored
 statements of the same idea are convergence, not independent confirmation, and
 the note is retained for context rather than as grounding. Does not extend or
 supersede `Metrics vs. Soundness` or
-`Performed Rigor vs. Demonstrated Rigor` in `laundered_vocabulary_v1.md` —
-this is an adjacent, sequencing-focused idea, not a replacement for either.
+`Performed Rigor vs. Demonstrated Rigor` in `laundered_vocabulary_v1.md`, or
+a claim-size check that bounds what a formal result's own proof establishes
+against the broader claim asserted for it and states the size of that gap
+directly (filed internally as an unbuilt candidate in the same sibling,
+non-public project the provenance note above already cites, not yet a
+public instrument) — these are adjacent, sequencing- or scope-focused
+ideas, not replacements for any of them.
