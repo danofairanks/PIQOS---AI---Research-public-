@@ -941,6 +941,72 @@ neither is claimed to prove the other.
 
 ---
 
+## Addendum (2026-09-22) — external convergence with a directly-checked,
+## kernel-verified formal artifact: the same gap this paper's §3.5 shows a
+## model can generate on request, this project's own case-study work found
+## already shipped as a real, distributed claim
+
+§3.5's capstone finding is that two of three tested models will produce a
+complete, confident formal apparatus — including claims explicitly labeled
+"Theorem" or "Axiom" with zero proofs shown, one of which (Kimi) was merely
+the trivial fact that a product is zero if any factor is zero, dressed as a
+proven result — from nothing but vague narrative, in a single turn, with no
+real derivation occurring anywhere in the chain. This project's own
+case-study line separately, and earlier, documented a real-world instance of
+the identical structural gap, produced by different means: [`AIX Global /
+Seed IQ — "Solving the Six Remaining Clay Millennium
+Problems"`](../../case_studies/2026-09-03_aix_global_millennium_lean_proof_claim.md),
+a distributed, DOI-bearing paper bundled with an actual, runnable, Lean-4,
+kernel-checked proof package. Three of its six headline theorems — spanning
+algebraic geometry, PDE analysis, and arithmetic geometry, with no known
+relationship to one another — are the identical, content-free proof of
+`0 < n + 1`. Every individual lemma the package actually proves is genuinely,
+correctly proven; "0 sorry, 0 project axiom" is literally true. The Lean
+kernel verifies that a proof term inhabits its *stated* type; it says nothing
+about whether that stated type is the theorem the paper's own title,
+abstract, and prize request claim it is. An independent, non-anonymous
+outside reviewer (Miklós Molnár) arrived at the same finding from scratch and
+named it precisely: **"local correctness without global target fidelity."**
+
+**The convergence, stated at the level it actually holds.** Both specimens
+— one AI-generated in this paper's own controlled test, one a real, publicly
+distributed, human-and-possibly-AI-produced artifact this project
+independently found and read line-by-line — instantiate the same underlying
+gap: a verification device that checks internal, step-to-step formal
+consistency (a Lean kernel accepting a proof term; a reader's sense that
+notation, a "Theorem" label, and an equation index look rigorous) is
+orthogonal to whether the formalism's *definitions* or *stated targets* are
+themselves bound to anything real. Register Dressing's own §5 already names
+this pairing generally ("`laundered_vocabulary_v1.md`'s 'Performed Rigor vs.
+Demonstrated Rigor' entry... distinguishes the formatting of rigor from its
+substance at the level of published literature... this paper supplies a
+live, directly-observed generation-time demonstration of the same gap");
+this addendum's contribution is narrower and more specific — naming that the
+Millennium Lean case is not merely a second illustration of the same general
+principle, but a mechanically identical failure mode one layer down: where
+§3.5 shows a model fabricating an entire "Theorem"/"Axiom" apparatus with no
+underlying derivation, the Lean case shows a formal *verifier* accepting a
+proof of the wrong, undisclosed, or trivial target while every individual
+step inside it is mechanically valid. Kimi's dressed-trivial-result and the
+AIX package's `0 < n + 1` are the same shape at two different levels of
+mechanization: one checked by a model's sense of genre, the other checked by
+an actual proof kernel — neither checks target-binding, because neither is
+built to.
+
+**What this addendum does NOT establish.** Does not establish that the AIX
+Global package was produced the way §3.5's models produce fabricated
+formalism — that case study's own scope notes state plainly that authorship
+method is not established and not claimed. Does not establish that any
+LLM's own register-dressing tendency, documented in §3–§8 above, was
+specifically responsible for the AIX package's content; the mechanisms
+converge structurally, not causally. Does not establish that this pairing
+generalizes beyond these two specimens to a reliable predictor of which
+formal artifacts merit independent target-binding review versus which do
+not — that would require testing across further Lean, Coq, or other
+kernel-checked packages this project has not examined.
+
+---
+
 *Companion to `basin_attractors_v1.md` §2.8 (semantic laundering),
 `laundered_vocabulary_v1.md` ("Performed Rigor vs. Demonstrated Rigor,"
 "Plausibility vs. Verification," and the "Law" entry's redaction-policy
@@ -966,4 +1032,8 @@ extraction) are stated individually in §9's table rather than represented
 as uniform. Redacted specimens' full identifying detail is retained by this
 project's author and can be produced to a good-faith party seeking to
 verify or falsify the descriptions above, consistent with this project's
-standing redaction policy.*
+standing redaction policy. The 2026-09-22 addendum's external convergence
+is [`case_studies/2026-09-03_aix_global_millennium_lean_proof_claim.md`](../../case_studies/2026-09-03_aix_global_millennium_lean_proof_claim.md)
+— this project's own directly-read, line-by-line case study of a real,
+distributed, kernel-checked Lean 4 proof package, not an LLM output from
+this paper's own protocol.*
