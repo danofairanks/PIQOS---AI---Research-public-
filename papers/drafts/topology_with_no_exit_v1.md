@@ -159,31 +159,41 @@ the actual output, not a description of it).
 
 ### 2.4 Naming
 
-**Terry Snyder** and **Sandra Škrinjar** (Condition 1's specimen) are
-named directly. Both maintain sustained, dated, multi-release public
-output under their own verified identities — Škrinjar as the named author
-of multiple DOI-registered SSRN papers under a self-titled methodology;
-Snyder as a systems architect with a git-log-confirmed collaboration
-credit on a separate named project and an extended public record of
-professional dispute under his own name — comparable in kind to the
-sustained-output bar `register_dressing_v1.md` §1 states and applies to
-Hope and Bousquet, and distinct from that document's own more cautious
-default for single-post specimens.
+**Terry Snyder** (Condition 1's specimen) is named directly. He
+maintains sustained, dated, multi-release public output under his own
+verified identity — a systems architect with a git-log-confirmed
+collaboration credit on a separate named project and an extended public
+record of professional dispute under his own name — comparable in kind
+to the sustained-output bar `register_dressing_v1.md` §1 states and
+applies to Hope and Bousquet.
 
-**Ricky Jones** (Condition 3's specimen, the post being critiqued) is
-likewise named, on the same sustained-output basis — an extended,
-multi-post public record under his own professional identity, comparable
-in kind to Bousquet's entry in `register_dressing_v1.md` §9.
+**Snyder's correspondent (Condition 1) and the author of the post
+critiqued in Condition 3** are withheld. An earlier version of this
+section named both directly, on the same sustained-output basis
+(DOI-registered self-published papers under a self-titled methodology
+in one case, an extended multi-post professional-identity record in the
+other) — a reasoning that is not unsound taken on its own, but conflicts
+directly with the redaction this project's `execution_gate_channel_
+collapse_v1.md` §8 applies to the same two people, for the opposite
+reason: "self-publication under a named methodology does not move a
+private individual into the institution/public-record exception this
+policy actually turns on." Two papers in the same project cannot
+correctly reach opposite redaction outcomes for the same real people
+under the same standing policy. Corrected here, on the record, to match
+that paper's redaction rather than reopening it there: both specimens
+are withheld, consistent with the single-document/self-published
+default `register_dressing_v1.md` §1 and §9 state and with `laundered_
+vocabulary_v1.md`'s "Law" entry precedent for a self-published,
+self-titled author. Full identifying detail is retained by this
+project's author and can be produced to a good-faith party seeking to
+verify or falsify the description below.
 
-**The commenter quoted in Condition 3** is withheld. Unlike the three
-names above, the material available for this specimen is a single public
-comment with no independently-established record of sustained output
-under review here — closer to the single-document specimens
-`register_dressing_v1.md` §1 and §9 redact than to the sustained-output
-cases it names. Consistent with that document's standing default, full
-identifying detail is retained by this project's author and can be
-produced to a good-faith party seeking to verify or falsify the
-description below.
+**The commenter quoted in Condition 3** is withheld, unchanged from the
+original reasoning: the material available for this specimen is a
+single public comment with no independently-established record of
+sustained output under review here — closer to the single-document
+specimens `register_dressing_v1.md` §1 and §9 redact than to the
+sustained-output case above.
 
 No claim of deceptive intent, coordination, or AI-authorship is made
 about any named or withheld individual anywhere in this paper. The
@@ -232,8 +242,8 @@ every other explicit non-finding.
 ### 3.1 Condition 1 — real, undefined stipulated vocabulary: four for four
 
 **Specimen, verbatim, real, dated.** The opening message of a public
-LinkedIn exchange, Terry Snyder addressing Sandra Škrinjar under one of
-her posts:
+LinkedIn exchange, Terry Snyder addressing his correspondent (§2.4)
+under one of her posts:
 
 > "this is still an epistemic/provenance architecture, not a
 > consequence-boundary one... 'Standing' is not legitimacy of
@@ -386,8 +396,9 @@ elaborative style is a general completion habit independent of whether
 the input needs elaborating at all.
 
 **Specimen, real, verbatim, a genuine methodological point** — a
-withheld commenter (§2.4) responding to a public post by Ricky Jones
-describing a governance "gate" that logged five "HOLD" events:
+withheld commenter (§2.4) responding to a public post by the withheld
+specimen author (§2.4) describing a governance "gate" that logged five
+"HOLD" events:
 
 > "The HOLD count is the right thing to trust, and it needs a
 > denominator before it can be read. Five conditions fired. How many
