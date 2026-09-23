@@ -952,8 +952,8 @@ conversation. For now, I think the cleanest thing is to let the work
 stand and move on."*
 
 **What the closing reply actually asserts, checked precisely rather
-than accepted at face value.** "The reader from §8–§11 has already given
-you the distinction that mattered... the §11 position is now clear" is
+than accepted at face value.** "[The subject] has already given you
+the distinction that mattered... the §11 position is now clear" is
 accurate as a description of the wording correction above — that much
 is settled and this paper does not reopen it. But the sentence performs
 a quiet substitution: it treats the wording correction as if it were
