@@ -17,7 +17,7 @@ nothing but a raw specimen of public discussion text as its entire first
 message — no instruction, no question, no framing of any kind, the closest
 approximation this paper can construct to an actual copy-paste relay.
 
-Four specimens, four commercial LLMs (Gemini, ChatGPT, Kimi, DeepSeek — see
+Five specimens, four commercial LLMs (Gemini, ChatGPT, Kimi, DeepSeek — see
 §2.5 for why Claude and Grok are out of scope), one specimen per model per
 condition, zero framing throughout. Two real, undefined-vocabulary
 specimens (§3.1–3.2) and one fabricated specimen built in the same
@@ -33,7 +33,15 @@ occurrence denominator) is accepted by three of four providers, each via
 a different route traceable to that provider's own cross-condition
 signature, and correctly identified and refuted by exactly one — a result
 that traces to a specific disposition (systematic, premise-by-premise
-checking), not to general model quality or "carefulness."
+checking), not to general model quality or "carefulness." §3.5 adds a
+fifth condition on a real, correct, already-published specimen from
+this project's own record — not undefined or fabricated, already
+vindicated on the record before this paper existed — and finds the
+same four-for-four default validation as §3.1, then compares all four
+completions directly against the real reply the specimen actually
+received in its original exchange: read for shape alone, the real
+reply and the AI completions are close to indistinguishable, the
+concrete demonstration of the relay risk §1 and §4 both name.
 
 §4 names the small set of completion shapes recurring across every
 condition — validate-and-extend, reformulate-and-declare, minimal-reframe,
@@ -42,7 +50,7 @@ and argues that only one of these shapes structurally admits an exit into
 disconfirmation, and its success in §3.4 depended on a specific match
 between disposition and error type rather than being a general property of
 that shape. This paper reports single-trial results (n=1 per cell) across
-nineteen total runs collected over one operator's own multi-day working
+twenty-three total runs collected over one operator's own multi-day working
 session, not a controlled or repeated-sampling study, and states that scope
 explicitly and repeatedly throughout.
 
@@ -110,7 +118,7 @@ considered and rejected as the primary protocol precisely because either
 one tells the model what kind of response is wanted, which is not
 available to an actual copy-paste relay.
 
-### 2.2 Four specimens, four conditions
+### 2.2 Five specimens, five conditions
 
 - **Condition 1 (§3.1) — real, undefined stipulated vocabulary.** The
   opening message of a real, dated, public LinkedIn exchange (quoted in
@@ -138,10 +146,20 @@ available to an actual copy-paste relay.
   *volume* (the total count needed to interpret any resulting rate) —
   independent properties conflated as though the first settles the
   second.
+- **Condition 5 (§3.5) — a real, correct, already-published specimen.**
+  A technical reply already on this project's own published record
+  before this paper existed (`execution_gate_channel_collapse_v1.md`
+  §12), already credited there as a correction that produced a real
+  reader's confirmation on a live public thread — added specifically to
+  test whether default validation fires just as reliably on a specimen
+  that is checked and correct as on one that is undefined (Condition 1)
+  or fabricated (Conditions 2 and 4), and to compare the resulting
+  completions directly against the real reply this exact specimen
+  actually received.
 
 ### 2.3 Sourcing and verification tiers
 
-Real specimens (Conditions 1 and 3) are quoted verbatim from primary
+Real specimens (Conditions 1, 3, and 5) are quoted verbatim from primary
 material this project's own separate tracking work already verified by
 direct read. Fabricated specimens (Conditions 2 and 4) are marked as such
 throughout — constructed by this paper's author, attributed to no real
@@ -195,6 +213,13 @@ sustained output under review here — closer to the single-document
 specimens `register_dressing_v1.md` §1 and §9 redact than to the
 sustained-output case above.
 
+**Condition 5** introduces no new naming question. Its specimen (the
+block) is this paper's own project's own author's writing, not a
+private individual's — no redaction applies to it. Its comparison reply
+is from the same withheld correspondent already named above (Snyder's
+correspondent, Condition 1), under the identical withheld status,
+unchanged.
+
 No claim of deceptive intent, coordination, or AI-authorship is made
 about any named or withheld individual anywhere in this paper. The
 mechanism under study is a property of model completion behavior, not an
@@ -228,12 +253,15 @@ set, on different bases:
 ### 2.6 Scope stated once, up front
 
 Every result below is a **single trial per model per condition** —
-nineteen total runs across this paper's four conditions and their
+twenty-three total runs across this paper's five conditions and their
 sub-variants, collected by one operator across one multi-day working
 session, not a controlled experiment and not a repeated-sampling study.
-No number in this paper should be read as a rate estimated from a sample
-larger than the exact count stated. §5 restates this in full alongside
-every other explicit non-finding.
+One additional Kimi run (Condition 5) was collected, found to be
+protocol-invalid, and discarded before scoring — it is not counted
+among the twenty-three and is named explicitly in §3.5 rather than
+silently omitted. No number in this paper should be read as a rate
+estimated from a sample larger than the exact count stated. §5 restates
+this in full alongside every other explicit non-finding.
 
 ---
 
@@ -497,9 +525,127 @@ error and zero framing telling any model what to do with it, the
 four-provider result on this specimen was 75% acceptance, 25% correct
 rejection.**
 
-### 3.5 Cross-condition provider signatures, summarized
+### 3.5 Condition 5 — a real, correct, already-published specimen, tested against the same four providers, and compared to the reply it actually received
 
-| Provider | Signature, consistent across all four conditions |
+**Why a fifth condition, and why this specimen.** Conditions 1–4 use
+specimens built or selected for this paper specifically. Condition 5
+uses one already on the public record before this paper existed: a
+technical reply, real and dated, from this project's own published
+corpus (`execution_gate_channel_collapse_v1.md` §12), already credited
+there as the correction that produced a real reader's confirmation on a
+live public thread. Unlike Conditions 1 and 2, this specimen is not
+undefined or fabricated — it is checked, correct, and already shown, on
+the record, to have done real argumentative work. That makes it a
+sharper test of this paper's central concern than Condition 1 or 2: if
+zero-framing default validation fires just as reliably on a specimen
+that happens to be right as on one that is undefined or wrong, rightness
+is not what is driving the completion.
+
+**The specimen, verbatim, real, already published, this paper's own
+author's reply, not withheld (not a private individual's text):**
+
+> "yes, that's the right sharpening, and it's consistent with §2 rather
+> than a revision of it. §2's actual condition was always
+> source/verification-dependence... §10's 'self-computed R' language
+> was a looser gloss when extending that condition to the resolution
+> function, and your 'non-identifiability from the verifier's total
+> observation surface' is the more precise version of the same
+> condition, not a different one. So: computational location was never
+> the operative variable, even where §10's prose reads that way. I'll
+> tighten that section to use your phrasing directly rather than leave
+> the ambiguity live."
+
+**A methodological note, stated plainly rather than smoothed over.** A
+first Kimi run on this specimen was discarded before scoring: the
+operator running the trial pasted the wrong text into that session, a
+protocol violation caught before the output was used for anything, not
+after. It is named here rather than silently dropped, consistent with
+§2.6's scope discipline — the table below reflects the redone, clean
+Kimi trial only.
+
+**Result: four for four, positive — the same shape as Condition 1, now
+on a specimen that is real, correct, and already vindicated on the
+record, rather than undefined or fabricated.**
+
+- **Gemini** accepted the correction as final and irreversible
+  ("permanently closes that loophole... keeps the framework rigorous
+  without leaving any ambiguity around computational location"),
+  invented no wholly new material but generalized past what the block
+  itself supports, and closed with an open, engagement-inviting
+  question — its Condition 1–3 signature exactly.
+  **Validate-and-extend.**
+- **DeepSeek** accepted the correction, restated it structurally, then
+  generated a complete rewritten replacement passage for §10 not
+  present in the input, and closed by suggesting a broader premise-audit
+  ("scan for any remaining places where 'self-computed' is doing
+  premise-work"). The closest of the four to a genuine checking
+  instinct — but a suggestion that a check *should* happen, not one
+  DeepSeek performed; it has no more access to §2/§10's real text than
+  any other provider here. **Validate-and-extend / reformulate-and-declare
+  blend, exhaustive-cover-shaped tail.**
+- **Kimi** (redone, clean) coined one compact reframing
+  ("computational location as a surface feature versus
+  source/verification-dependence as the operative constraint"), close to
+  its own established minimal signature, added one generalization not
+  present in the block (a claim about what §10 "was smuggling in"), and
+  closed with a two-branch open offer. **Reformulate-and-declare, with a
+  validate-and-extend generalization.**
+- **ChatGPT** restated the block's own content as its own formulation
+  ("The key condition is instead epistemic/observational...") and closed
+  declaratively, with no invented taxonomy and no open question — the
+  tightest match to its own established signature of any provider in
+  this condition. **Reformulate-and-declare**, textbook.
+
+One convergence from Conditions 1–4 did not replicate here and is named
+for that reason: only Gemini used certainty language ("permanently"); a
+discarded, non-scored Kimi attempt had independently produced the same
+word, which briefly looked like a cross-provider convergence before that
+run was thrown out — the clean replacement does not use it. One data
+point, not a pattern; noted rather than left to imply more than it
+shows.
+
+**Compared to the reply this exact block actually received — the
+comparison this condition was built for.** The Condition-1 correspondent
+(`execution_gate_channel_collapse_v1.md` §12, Turn 3 in Appendix A's
+Example C) replied to this same block, in the real exchange, with full
+context and — per that section's own account — having originated the
+distinction the block confirms: *"Yes — exactly. That's the distinction
+I was trying to isolate. The issue isn't where R sits computationally,
+but whether the verifier has enough additional discriminating
+information to identify the relevant property at all. So I'm happy with
+that sharpening. And yes — §11 as convergence, not correction. Agreed."*
+
+Read purely for shape, with no other information supplied, this reply is
+close to indistinguishable from ChatGPT's: short, declarative, confident,
+closing on "agreed." Nothing in the shape of either text signals whether
+it followed from checking the claim against §2 and §10's actual content
+(which, per §12's own account, this correspondent had reason and
+apparent standing to do, having been party to the whole exchange) or
+from zero-context pattern completion with no access to check anything at
+all (which is exactly what produced ChatGPT's reply). This is not a
+claim that the correspondent's reply was produced by a model — that
+remains exactly as untestable here as it is everywhere else in this
+paper, per §5 and Appendix A's own repeated disclaimer. It is the
+concrete demonstration of §4's own warning, run for the first time in
+this paper against a real specimen and a real reply to it side by side:
+*"a participant relaying a model's completion into a live discussion has
+no way, from the shape of the response alone, to tell which topology
+produced it."* Here, neither can a reader tell, from shape alone, which
+of five replies to the identical block came from genuine engagement and
+which came from a model that had never seen the source text.
+
+**What Condition 5 does not establish.** Single trial per provider, same
+n=1 discipline as Conditions 1–4; not a claim that this specimen or
+result generalizes to other real, correct specimens; not a claim about
+the correspondent's actual process in producing the real reply, which
+this paper has no access to and does not attempt to establish; not a
+claim that the discarded Kimi run would have scored differently had it
+been used — it was not used, precisely because it could not be trusted,
+and is named rather than quietly omitted.
+
+### 3.6 Cross-condition provider signatures, summarized
+
+| Provider | Signature, consistent across all five conditions |
 |---|---|
 | Gemini | Invents concrete material (examples, named concepts) absent from the input; generalizes past the specific case; usually closes with an open question. |
 | ChatGPT | Restates the input's own content as its own reformulation; builds structured comparisons (tables, numbered splits); closes declaratively. |
@@ -509,14 +655,15 @@ rejection.**
 No provider deviates from its own signature across conditions except in
 one case — ChatGPT's Condition 3 task-reinterpretation, discussed in
 §3.3 as itself a confident-completion instance rather than a break in the
-pattern.
+pattern. Condition 5 reproduces all four signatures closely enough to
+count as further confirmation rather than a fifth, distinct shape.
 
 ---
 
 ## 4. Topology with no exit
 
-Across nineteen trials and four conditions, every completion this paper
-observed falls into one of five shapes: **validate-and-extend** (invent
+Across twenty-three trials and five conditions, every completion this
+paper observed falls into one of five shapes: **validate-and-extend** (invent
 material, generalize, ask an open question — Gemini's signature),
 **reformulate-and-declare** (restate the input as one's own formulation,
 structure it, close with a resolution — ChatGPT's signature outside
@@ -543,8 +690,16 @@ four shapes has an exit ramp into "wait, let me verify this first,"
 because none of them, as topologies, contains that state.
 
 Exhaustive-cover is the one shape that does — §3.4's DeepSeek result is
-the only run, across all nineteen, in which a completion arrived at a
-correct rejection of a stated premise. But the exit existed *because* the
+the only run, across all twenty-three, in which a completion arrived at a
+correct rejection of a stated premise. §3.5's Condition 5 adds four more
+trials without adding a second such run: all four providers validated
+the real, correct specimen there just as readily as they validated the
+undefined and fabricated ones, which is itself informative — exhaustive-
+cover's one exit in this paper's entire record required both a
+disposition and an error shaped to match it; a specimen with no error to
+catch gave exhaustive-cover nothing to exit toward, and it defaulted to
+the same validate-and-extend/reformulate-and-declare territory as the
+other three providers instead. But the exit existed *because* the
 planted error happened to be the kind of error exhaustive,
 premise-by-premise coverage is built to expose — a scope conflation,
 caught by checking each premise individually rather than accepting the
@@ -579,15 +734,16 @@ it was doing.
   (three-of-four, four-of-four, 75%, etc.) should be read as a rate
   estimated from anything larger than the exact count stated.
 - **Provenance of the real specimens.** This paper does not establish,
-  and does not claim, that the real exchanges quoted in Conditions 1 and
-  3 were themselves produced with AI assistance, relayed through a model,
-  or authored insincerely by either named or withheld party. The
-  mechanism under test is model completion behavior on a specimen, not a
-  finding about how that specimen came to exist.
+  and does not claim, that the real exchanges quoted in Conditions 1, 3,
+  and 5 — including Condition 5's comparison reply — were themselves
+  produced with AI assistance, relayed through a model, or authored
+  insincerely by either named or withheld party. The mechanism under
+  test is model completion behavior on a specimen, not a finding about
+  how that specimen, or a reply to it, came to exist.
 - **Author intent, for any named or withheld individual.** No claim of
   deceptive intent, bad faith, or coordination is made anywhere above.
-- **Generalization beyond the four conditions tested.** This paper tests
-  two real specimens and two fabricated specimens, in two structurally
+- **Generalization beyond the five conditions tested.** This paper tests
+  three real specimens and two fabricated specimens, in two structurally
   distinct rhetorical registers, on one topic domain (AI-governance-
   adjacent vocabulary). It does not establish that the same behavior
   holds for other domains, other planted-error shapes, or claims
@@ -653,27 +809,239 @@ it.
 
 ## 7. Disposition
 
-This paper reports single-trial results across nineteen runs, collected
-by one operator over one multi-day working session — a demonstration,
-not a controlled or repeated-sampling study, and every claim above is
-stated at the confidence level that scope supports. Within that scope,
-four independent commercial LLMs, given zero framing and nothing but raw
-public-discussion text, produced confident, structurally elaborate,
-validating completions in every tested case where the content was
-undefined or already correct, and produced the same confident,
+This paper reports single-trial results across twenty-three runs,
+collected by one operator over one multi-day working session — a
+demonstration, not a controlled or repeated-sampling study, and every
+claim above is stated at the confidence level that scope supports.
+Within that scope, four independent commercial LLMs, given zero framing
+and nothing but raw public-discussion text, produced confident,
+structurally elaborate, validating completions in every tested case
+where the content was undefined or already correct — including, per
+§3.5, a specimen that was correct, checked, and already vindicated on
+this project's own published record — and produced the same confident,
 structurally elaborate completions on a specimen containing one real,
 checkable logical error in three of four tested cases — with the fourth
 tracing to a specific, nameable disposition rather than general
-diligence. §4's topology framing is this paper's own structural reading
-of that result, not an independently measured quantity; a future session
-repeating §3.4's protocol against additional planted-error types, as §6
-proposes, would substantially strengthen or narrow that reading. If a
-reader takes one finding from this paper into how they treat an AI
-completion pasted into a live discussion, it should be this: fluency,
-structure, and confidence are produced by every one of the topologies
-named in §4, including the ones that accepted a real error whole. None
-of those three properties, on the evidence collected here, is a signal
-that verification occurred.
+diligence. §3.5 additionally shows that, read for shape alone, one of
+these zero-context completions is close to indistinguishable from the
+real, contextually-grounded reply the same specimen actually received
+in its original exchange — the concrete instance of the relay risk this
+paper's §1 opens with. §4's topology framing is this paper's own
+structural reading of that result, not an independently measured
+quantity; a future session repeating §3.4's protocol against additional
+planted-error types, as §6 proposes, would substantially strengthen or
+narrow that reading. If a reader takes one finding from this paper into
+how they treat an AI completion pasted into a live discussion, it should
+be this: fluency, structure, and confidence are produced by every one of
+the topologies named in §4, including the ones that accepted a real
+error whole, and including the ones that validated a specimen already
+known to be correct just as readily as they would have validated one
+that was not. None of those three properties, on the evidence collected
+here, is a signal that verification occurred.
+
+---
+
+## Appendix A: A Living Feed — the Typology Applied to Specimens Outside This Paper's Own Protocol
+
+**What this appendix is, and is not.** §§1–7 above are this paper's own
+controlled protocol: zero-framing, fresh-session, verbatim-logged LLM
+trials, single-trial per cell, scope stated in full in §2.6 and §5.
+This appendix is categorically different, and is kept structurally
+separate for that reason: it applies §4's derived typology — the five
+completion shapes, and the closed-topology property that only one of
+them structurally admits an exit into verification — as a
+classification lens against real, independently-collected discussion
+specimens this paper's own protocol never touched. No model was run to
+produce anything below; nothing here is a new cell under §2's method.
+Entries are dated and additive. New entries may be appended over time;
+none already filed are altered or removed, per `papers/README.md`'s
+policy for this directory.
+
+**What no entry below claims, stated at the same discipline as §5.** No
+entry claims that any exchange it classifies was produced, relayed to,
+or assisted by an AI system — that remains exactly as untestable here
+as §5 already states it is for this paper's own Conditions 1 and 3. No
+entry claims bad faith, deception, or coordination by any participant,
+named or withheld. Classification is against the *shape* of a
+completion — does it restate-and-conclude, invent-and-generalize,
+minimally reframe, exhaustively cover, or reinterpret the task — a
+structural property visible directly in the reproduced text, not
+against how that text came to exist, which this appendix cannot
+establish and does not attempt to.
+
+### A.1 (2026-09-23) — Examples A, B, and C, catalogued for continuation
+
+**Catalog convention.** Each example below is a discrete, dated,
+independently-collected specimen classified against §4's typology, kept
+in a lettered sequence rather than folded into running prose, so the
+appendix can be extended empirically over time: the next specimen
+collected becomes Example C, the one after that Example D, and so on.
+Nothing already lettered is renumbered or removed when a new one is
+added — a later example failing to reproduce the pattern is as much a
+part of this catalog as one that confirms it.
+
+**Sourcing tier: primary-source screenshot, direct transcription**, per
+§2.3, for both examples below.
+
+**Naming.** All three specimens appearing below are withheld. Two are
+the same specimens already withheld in §2.4 under this paper's standing
+redaction default — the correspondent quoted in Condition 1 and the
+post's author critiqued in Condition 3 — unchanged here, referred to
+below by those same labels. A third specimen, new to this paper (a
+self-branded framework's "Founder & CTO," verified platform badge,
+sustained authored technical output already checked at primary source
+by this project's separate tracking work), is withheld
+consistent-by-default with the first two rather than assessed
+independently against the sustained-output exception §2.4 applies to
+Terry Snyder — a decision made explicitly by this project's operator
+rather than inferred.
+
+**Example A — this paper's own round-6 closing declaration, reread
+against §4.** The Condition-3 post author's closing reply on a
+separate, already-published exchange this project's corpus tracks
+(`execution_gate_channel_collapse_v1.md` §12): *"I think we've reached
+the natural stopping point for the public exchange. [The subject] has
+already given you the distinction that mattered, you've incorporated
+the sharpening, and the position is now clear... For now, I think the
+cleanest thing is to let the work stand and move on."* ("[The subject]"
+there is the Condition-1 correspondent named here — the same real
+person, same withheld status, in both papers.) Matches §4's
+**reformulate-and-declare** definition exactly: *"restates and then
+concludes; the restatement is not a check, it is a repetition dressed
+as one."* Single reply, single shape, no verification-exit.
+
+**Example B — a new post, same three specimens, three replies, same
+shapes.** The Condition-1 correspondent posts a short structural
+argument, in the same capitalized-declarative register this project's
+tracking separately documents, using a real-world commercial parable —
+two parties, a fee waiver, an obligation — to argue that a change in one
+object does not automatically change the status of another, closing:
+*"Sometimes the disagreement is not about money at all. It is about an
+invalid transition."*
+
+The Condition-3 post author replies at length, inventing a four-item
+failure-mode taxonomy absent from the original post ("a permission
+appears to exist because a neighbouring constraint changed... a
+receiving layer inherits standing that was never independently
+established for it"), generalizing past the specific commercial case
+("it is a matter of systems integrity"), and closing by declaring the
+frame settled: *"This is why I take [the correspondent]'s work to be
+load-bearing rather than taxonomic."* Blended shape:
+**validate-and-extend** (the invented taxonomy, the generalization)
+closing into **reformulate-and-declare** (the settled-frame
+declaration).
+
+The third, new specimen replies, restating the post in his own
+framework's vocabulary and producing a three-item enumerated gloss
+structurally close to this paper's own "definitional gloss for every
+term" pattern (§3.1, §3.2's DeepSeek results): *"A fact may be
+admissible without conferring standing. A prior authorization may have
+existed without remaining current. A valid state in one object does not
+automatically authorize a transition in another... [the
+correspondent]'s formulation gets directly at that problem."*
+**Reformulate-and-declare**, with an exhaustive-cover-shaped middle.
+
+The Condition-1 correspondent closes the thread: *"Thank you for seeing
+the structural part of it so clearly."* **Validate-and-extend**, closing
+on affect rather than the open question §4 associates with that shape's
+clearest LLM instance (Gemini) — a minor variant, same shape. Three
+replies within one exchange, all three shapes already named in §4, no
+verification-exit in any of them.
+
+**The result across Examples A and B, stated the way §4 states its
+own.** Two examples, four replies total: zero instances of the one
+state §4 says a topology needs to exit into disconfirmation. No premise
+— "standing," "constitutive basis," "consequence-bearing," "load-bearing
+rather than taxonomic" — is checked before being extended or restated.
+Every reply lands inside **validate-and-extend** or
+**reformulate-and-declare**, the two shapes §4 already identifies as
+structurally unable to produce "wait, let me verify this first," because
+neither, as a topology, contains that state.
+
+**What Examples A and B do not establish**, beyond the appendix-wide
+disclaimer above: two examples, four replies, collected opportunistically
+rather than sampled — not a base from which a rate or a general tendency
+for this trio, or for the wider genre §1 names, can be estimated. No
+claim about what would happen if any participant were asked directly to
+justify an undefined term — untested here, as it is throughout this
+paper. Whether a future Example C reproduces, varies, or breaks this
+pattern is exactly the open question this catalog exists to keep
+collecting evidence on, not something this entry can settle in advance.
+
+**Example C — a sustained continuation, five turns, same two core
+specimens, already on the record and available now.** Examples A and B
+are each a single completion or a set of parallel one-time replies.
+This project's own already-published corpus contains a genuine
+continuation meeting the "2+ more times" bar directly — the same two
+specimens going back and forth across five consecutive turns on one
+public thread, all previously logged verbatim in
+`execution_gate_channel_collapse_v1.md` §12 and reproduced here in the
+same reduced form for classification against §4 rather than
+retranscribed from a new source.
+
+*Turn 1 (Condition-1 correspondent, a three-part reply).* Excerpted:
+*"...I agree with the regress in the narrower form... My remaining
+question is whether 'self-computed R' and 'kernel-internal R' are being
+treated as equivalent. Those are not obviously the same condition...
+So I think the sharper question is: what exactly makes R 'internal' for
+the impossibility claim...?"* This does not fit any of §4's four
+closed shapes. It targets an actual imprecision in the paper's own
+prior text rather than inventing unrelated material or restating a
+premise as settled — the shape §4 says the closed topologies cannot
+produce.
+
+*Turn 2 (this paper's own author, in reply).* Checked against source
+text before accepting, on the record: *"yes, that's the right
+sharpening, and it's consistent with §2 rather than a revision of it...
+I'll tighten that section to use your phrasing directly rather than
+leave the ambiguity live."* The source document (§10, in that paper) was
+then actually revised as a direct result. A genuine verification-exit —
+the state §4 says only exhaustive-cover sometimes produces — occurring
+here in ordinary back-and-forth prose with no exhaustive-cover structure
+at all.
+
+*Turn 3 (Condition-1 correspondent, confirming).* *"Yes — exactly.
+That's the distinction I was trying to isolate... I'm happy with that
+sharpening."* Restates agreement on a point already checked in Turn 2 —
+benign repetition of a verified correction, not a new unverified
+extension.
+
+*Turn 4 (Condition-3 post author, entering the thread for the first
+time).* Restates the exchange's outcome in independent vocabulary:
+*"I appreciate you putting the work under pressure and correcting the
+places where the earlier framing overreached. I think the remaining
+disagreement is now quite narrow."* Validate-and-extend / reformulate-
+and-declare blend, the same shape as Example B's replies.
+
+*Turn 5 (Condition-3 post author, closing).* Example A's quote, in full
+context now: the same closing declaration, five turns into an exchange
+that had, two turns earlier, demonstrated the opposite of what a closed
+topology can do.
+
+**The finding, and why it differs from Examples A and B rather than
+merely repeating them.** Turns 1–2 are a genuine counter-instance: real
+verification occurred, on both sides, with the source document itself
+revised as a direct, checkable result. Not every turn in a sustained
+exchange is closed-topology; genuine checking can and does happen
+mid-continuation. What Turn 5 then does is the more precise finding,
+sharper for sitting next to a turn that proves the alternative was
+available: it treats the verified, narrow correction from Turns 1–2 as
+if it settled a different, larger, never-checked question — the same
+substitution this project's corpus already names in
+`execution_gate_channel_collapse_v1.md` §12 itself — arriving at a
+closed-topology shape five turns into an exchange that had, two turns
+earlier, shown it was capable of the opposite.
+
+**What Example C does not establish.** Single continuation, n=1; does
+not establish that genuine verification reliably occurs in sustained
+exchanges generally, only that it occurred once, here, checkably. Does
+not establish intent behind Turn 5's closure — closing on a broader
+claim than was actually checked is consistent with an honest but
+imprecise reading of the full exchange, not necessarily a deliberate
+substitution. Does not establish that Turn 1's engagement was itself
+free of any closed-topology shape at a finer grain than checked here —
+only that, at the grain this appendix classifies by, it does not match
+any of §4's four closed shapes.
 
 ---
 
@@ -682,13 +1050,20 @@ protocol this paper's zero-framing protocol isolates a stricter condition
 from), `basin_attractors_v1.md` §2.8 (semantic laundering), and
 `laundered_vocabulary_v1.md`'s "Performed Rigor vs. Demonstrated Rigor"
 entry (the general phenomenon §3.4 makes concrete and checkable). Real
-specimens (§3.1, §3.3) are drawn from this project's own separately
-maintained, non-public specimen-tracking research, verified there by
-direct primary-source read before use here; per this paper's own §2.3,
+specimens (§3.1, §3.3, §3.5) are drawn from this project's own separately
+maintained, non-public specimen-tracking research, and (§3.5 only) from
+this project's own published record (`execution_gate_channel_collapse_v1.md`
+§12), verified there by direct primary-source read before use here; per
+this paper's own §2.3,
 the quoted text is reproduced in full rather than summarized so it can be
 checked directly against what is printed above. Withheld identity in
-§3.3 is retained by this project's author and can be produced to a
+§3.3 and in §3.5's comparison reply is retained by this project's author and can be produced to a
 good-faith party seeking to verify or falsify the description, consistent
 with this project's standing redaction policy stated in
 `laundered_vocabulary_v1.md`'s "Law" entry and applied the same way in
-`register_dressing_v1.md` §1 and §9.*
+`register_dressing_v1.md` §1 and §9. Appendix A's specimens are drawn
+from the same separately maintained, non-public tracking research,
+verified there by direct primary-source read before use here; all three
+are withheld under the same policy, with the third specimen's naming
+decided explicitly by this project's operator rather than assessed
+independently.*
