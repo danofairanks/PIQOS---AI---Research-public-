@@ -1152,6 +1152,27 @@ same process being evaluated. In each shape, the proof is airtight
 *given* the definition — and the definition is exactly the place nobody
 went back to test.
 
+There is a further reason this specific gap is so easy to produce with
+AI assistance and so easy to miss, worth naming directly rather than
+leaving implicit in the examples above. Fluent, confident, well-
+structured output is not evidence that the thing being described was
+actually understood — it is a separate capability, one that can run
+with or without genuine comprehension underneath it, and from outside,
+during an ordinary read, the two do not look different. A system can
+produce a definition, a derivation, or a full proof that reads exactly
+the way work grounded in real comprehension would read — same register,
+same structural discipline, same confident precision at each step —
+while the actual relationship between what is written and what it
+claims to describe is closer to fluent completion than to checked
+correspondence. This is not a claim that these systems never understand
+anything, and it is not a claim about any specific system's internals;
+it is narrower and more load-bearing than either: fluency is not
+evidence either way, and the specific failure this section names — a
+definition nobody went back and checked — is exactly the kind of gap
+fluent performance is best positioned to conceal, because the
+performance and the checking would look identical from the outside even
+when only one of them actually happened.
+
 These are composite illustrations of a documented shape, not citations
 to specific instances — offered to name the pattern precisely, not to
 claim any one paper or system as a checked specimen of it. §4 and §12
