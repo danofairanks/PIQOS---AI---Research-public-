@@ -47,7 +47,16 @@ it at a strength the paper had not actually earned before. §10 then
 asks, on this project's own initiative rather than in reply to a
 further round, whether the kernel could in principle be extended to
 close the gap §9 leaves open — and answers no, with a regress argument
-rather than an appeal to what has or hasn't been shown so far.
+rather than an appeal to what has or hasn't been shown so far. A sixth
+round (§12), from the same reader, accepted that regress in narrower
+form and correctly sharpened its own stated condition — a genuine
+improvement, incorporated directly into §10 — while a further,
+previously-unseen participant then declared the public exchange closed
+before the sharpened condition was tested against any concrete system.
+§15–§21 close the paper with a reflection on what six rounds of
+technical convergence do and do not settle, and on why a declared close
+is not the same event as an earned one, applied to this paper's own
+claims with the same standard it applies to everyone else's.
 
 ## Abstract
 
@@ -77,10 +86,19 @@ objections we corrected on the record and one framing we answered
 rather than conceded (round 4); a further reply reasserted an
 incompatible version of that same framing, which we name and leave on
 the record unresolved by the reader when the incompatibility was put to
-them directly (round 5). We check the general pattern against two
-redacted, independently-read specimens circulating in AI-governance-
-adjacent discourse, both of which check evidence supplied by the same
-process that supplies the action being gated.
+them directly (round 5). A sixth round has the same reader accept our
+regress argument in narrower form and sharpen its own stated condition
+into a general, verifier-centric one we adopt directly; a further
+participant then declares the exchange closed, treating that wording
+correction as if it settled a separate and larger question — whether
+the sharpened condition is actually satisfied by any concrete system —
+which nobody in six rounds has tested in either direction. We check the
+general pattern against two redacted, independently-read specimens
+circulating in AI-governance-adjacent discourse, both of which check
+evidence supplied by the same process that supplies the action being
+gated, and close with a general reflection on why a sharpened condition
+and a satisfied one are not the same fact, applied to this paper's own
+claims as much as to anyone else's.
 
 ## 1. The model
 
@@ -709,17 +727,24 @@ mapping real system state to `(App_H, Sat_H, Exist_H, Adeq_H)` values —
 is not part of the kernel's internal formalism; it is a procedure,
 which is exactly channel `e` in this paper's own model (§1). Adding it
 does not remove the kernel from the theorem's reach. It relocates the
-theorem one level up: the live question becomes who computes `R`, and
-whether that computation is sourced independently of the actor whose
-handoff is being evaluated. A system that both performs the handoff and
-runs its own `R`-computation has built self-report with more formal
-vocabulary on top of it — `G` still controls the action and the (now
-larger) evidence channel, the same structure as §2, one layer higher.
-The regress terminates only at genuine external attestation (something
-outside `G`'s emission surface) or composition-inside-the-generative-
-process — the same two categories this paper already names as the only
-real exits, restated at the resolution-function layer instead of the
-original evidence layer.
+theorem one level up: the live question becomes whether `R`'s output is
+identifiable from information already within the actor's own emission
+surface, or whether the verifier has some further, independent source
+of discriminating information about it. *(An earlier version of this
+paragraph put the condition in terms of who computes `R` — "self-
+computed" versus "kernel-internal" — which conflates computational
+location with source dependence; §12 corrects this directly, from a
+reader's objection, and gives the derivation for why location was never
+the operative variable.)* A system whose `R`-computation is
+non-identifiable from the verifier's total available observation
+surface — regardless of where that computation sits, architecturally —
+has built self-report with more formal vocabulary on top of it: `G`
+still controls the action and the (now larger) evidence channel, the
+same structure as §2, one layer higher. The regress terminates only at
+genuine external attestation (something outside `G`'s emission surface)
+or composition-inside-the-generative-process — the same two categories
+this paper already names as the only real exits, restated at the
+resolution-function layer instead of the original evidence layer.
 
 **The general point, stated once.** "Internal to the kernel" and
 "touches reality" are mutually exclusive by construction — that
@@ -819,7 +844,157 @@ vocabulary_v1.md`'s "A note on redaction" (the policy this section's
 omission of titles, notation, and identifying detail follows,
 identical to §4's own application of it).
 
-## 12. What this paper does NOT establish
+## 12. Round 6 — the same reader sharpens §10's own condition; a further
+participant declares the exchange closed before the sharpened condition
+is tested against anything
+
+**Provenance, stated precisely.** After §10 and §11 were posted, the
+same reader (the co-author from §8–§9, whose three solo-authored papers
+§11 checks) replied again on the same public thread, in three short
+messages, engaging §10's regress argument and §11's finding directly
+rather than reopening either.
+
+**The reply, in full, three parts, redacted per this paper's standing
+policy (identical treatment to §7–§9, §11).**
+
+> [1/3] "— yes, that narrows it usefully. On §11, agreed: I am not
+> treating §11 as something my 5/6 corrects. Your wording there already
+> states the separation I am pointing to: theorems sound over
+> stipulated objects; real-world binding unspecified. I'm happy to
+> leave that as convergence rather than disagreement. On §10, I agree
+> with the regress in the narrower form: if R is evaluated only over
+> information generated or supplied within the same G-controlled
+> evidentiary surface, then the channel-collapse problem is simply
+> relocated one level up. And if an external independent channel
+> supplies or verifies the relevant information, that is an exit."
+>
+> [2/3] "My remaining question is whether 'self-computed R' and
+> 'kernel-internal R' are being treated as equivalent. Those are not
+> obviously the same condition. The location of R's computation and the
+> provenance of the information on which R operates are separate
+> properties. An R could be formally specified — or even evaluated —
+> within the architecture while depending on independently sourced or
+> attested inputs whose relevant content is not generated solely by G.
+> If so, the regress establishes: self-supplied / self-verified R does
+> not close the gap. It does not yet establish: any kernel-internal
+> resolution relation is incapable of establishing the relevant
+> empirical binding."
+>
+> [3/3] "So I think the sharper question is: what exactly makes R
+> 'internal' for the impossibility claim — computational location,
+> source dependence, verification dependence, or some conjunction of
+> those? If the impossibility turns on source/verification dependence,
+> then I think we are converging on the same condition:
+> non-identifiability of the relevant property from the verifier's
+> total available observation surface. And yes — I think that is the
+> sharper condition for §2 as well."
+
+**Checked directly against §2 and §10's own text before accepting it.**
+The reply's first part restates §11 in terms that match this paper's
+own language closely enough to require no correction. Its second and
+third parts raise a distinction that is real and
+targets an actual looseness in §10's prose rather than in §2's original
+theorem: §2 (above) states the condition entirely in terms of source
+and verification — "no independent channel supplying or verifying `e`
+against `g*`" — never in terms of where a computation is physically or
+architecturally located. §10's "self-computed `R`" phrasing, added when
+extending that condition to the resolution-function layer, was a looser
+gloss than the theorem it was extending. The reader's proposed sharper
+condition — non-identifiability of the relevant property from the
+verifier's total available observation surface — is a general,
+verifier-centric restatement that correctly subsumes §2's original
+condition as a special case, not a weakening or a reframing away from
+it. This paper's reply, in relevant part: *"yes, that's the right
+sharpening, and it's consistent with §2 rather than a revision of it.
+§2's actual condition was always source/verification-dependence...
+§10's 'self-computed R' language was a looser gloss when extending that
+condition to the resolution function, and your 'non-identifiability
+from the verifier's total observation surface' is the more precise
+version of the same condition, not a different one. So: computational
+location was never the operative variable, even where §10's prose reads
+that way. I'll tighten that section to use your phrasing directly rather
+than leave the ambiguity live."* §10 above has been revised accordingly,
+with an inline note crediting this exchange directly rather than
+silently absorbing the correction.
+
+**The reader's confirmation, in full.** *"Yes — exactly. That's the
+distinction I was trying to isolate. The issue isn't where R sits
+computationally, but whether the verifier has enough additional
+discriminating information to identify the relevant property at all. So
+I'm happy with that sharpening. And yes — §11 as convergence, not
+correction. Agreed."* Restating the same condition a third time, in
+independent phrasing each time (the reply's own third part, this
+paper's reply, and this confirmation), is a mild positive signal for
+the correction having
+actually landed rather than being accepted as a form of words.
+
+**A further participant, not previously part of this thread, replies
+twice; the second reply declares the exchange concluded.** A commenter
+identifying a professional background in AI execution-control systems,
+not otherwise appearing anywhere in §7–§11, posted two comments on the
+same public thread. The first restates this paper's central result in
+independent vocabulary: *"I appreciate you putting the work under
+pressure and correcting the places where the earlier framing
+overreached. I think the remaining disagreement is now quite narrow.
+Your result is useful at the implementation layer: a reconstructible,
+self-reported trace cannot by itself establish the causal history that
+produced it."* The second declares the thread closed: *"I think we've
+reached the natural stopping point for the public exchange. [The reader
+from §8–§11] has already given you the distinction that mattered, you've
+incorporated the sharpening, and the §11 position is now clear. At this
+point, any further iteration on the paper is your research programme to
+carry forward. We're happy to read serious new work when we have the
+capacity, but this can't become an open-ended public review loop or a
+standing subscription to our analysis. We've given what we can usefully
+give here. If at some point you want a more formal, bounded technical
+engagement around a specific question, that is a different
+conversation. For now, I think the cleanest thing is to let the work
+stand and move on."*
+
+**What the closing reply actually asserts, checked precisely rather
+than accepted at face value.** "The reader from §8–§11 has already given
+you the distinction that mattered... the §11 position is now clear" is
+accurate as a description of the wording correction above — that much
+is settled and this paper does not reopen it. But the sentence performs
+a quiet substitution: it treats the wording correction as if it were
+the whole of what mattered, and declares the exchange resolved on that
+basis. A separate, larger question — opened directly by the reply's
+second part above and never closed by anyone in this exchange — is left
+completely untouched by this declaration: whether the sharpened,
+non-identifiability condition is actually *satisfied* by any concrete
+system, checked or discussed anywhere in this paper, including this
+paper's own toy in §5. That second part's own sentence names the gap
+precisely: the regress establishes that
+self-supplied, self-verified `R` does not close the gap; it does *not*
+establish that any kernel-internal `R` is incapable of the relevant
+binding. Nobody in this exchange — not this paper's author, not the
+reader, not the closing participant — has tested that second claim
+against a concrete case in either direction. The closing reply's own
+language is, if anything, the shape this exact section of this paper
+would predict for what happens next: a declared resolution that makes
+raising the remaining question cost more, socially, than not raising
+it, regardless of whether raising it would be correct.
+
+**What this round does NOT establish.** Does not establish that either
+party to the closing exchange is acting in bad faith — a closing
+statement asserting more than has actually been tested is consistent
+with an entirely good-faith read of where the exchange stands, and no
+claim about intent is made here, same standing practice as §4, §8, and
+§11. Does not establish any relationship between the further
+participant in this round and the reader from §7–§11 beyond what each
+person's own words state; the further participant's use of "we" and
+"our analysis" is noted, not interpreted. Does not establish that the
+non-identifiability condition (§2, §10 as revised, and the sharpening
+this round produced) fails to hold for any specific system named in
+this paper — only that it has not yet been checked against one. Does
+not establish that this exchange is in fact concluded; a further round
+could still arrive on this or any other thread. Does establish,
+precisely: the wording correction to §10 is real, earned, and
+incorporated; the applicability question the reply's second part opened
+is real, unearned, and unaddressed by anyone party to this round,
+including this paper.
+
+## 13. What this paper does NOT establish
 
 - **Does not establish that either redacted specimen in §4 was built or
   is being defended in bad faith.** The theorem is about what a gate
@@ -876,8 +1051,17 @@ identical to §4's own application of it).
   a specified and independently-sourced `R` would not face this
   objection — §10's point is about what stays inside the kernel's own
   boundary, not about what could exist alongside it.
+- **Does not claim the non-identifiability condition sharpened in §12
+  is satisfied — or fails to be satisfied — by any system named
+  anywhere in this paper, including this paper's own toy.** §12's
+  reader opened that question directly and it was not closed by
+  anyone party to the exchange, this paper included. A sharpened
+  condition surviving every technical challenge put to it is not the
+  same fact as the condition being met by a concrete case; §15–§21
+  treat this distinction, and the general pattern behind it, at
+  length.
 
-## 13. What would move this from draft to confirmed
+## 14. What would move this from draft to confirmed
 
 §7, §8, and §9 show this process working three times, against three
 different kinds of pressure: a real code-level gap (§7), a
@@ -886,38 +1070,307 @@ question (§8), and a reassertion of that same framing left unresolved
 when named directly (§9). §10 then closes the specific question raised
 by that exchange — whether the kernel itself could be extended to
 bind — with a regress argument rather than a further round of reply.
-The toy or the prose was corrected each time an objection held, without
-the central theorem breaking. What would move this further: further
-independent readers constructing defeats this paper's five rounds so
-far did not find — against the toy directly, against the general
-theorem in a domain none of the five rounds covered (a non-invertible
-or natural-language evidence channel specifically, per §6's own item
-1), or by actually specifying, for the §4/§8/§9 specimen or any other,
-a real procedure `R` binding its predicates to a running system and
-checking whether `R`'s own computation is sourced independently of the
-actor whose handoff it evaluates — §10's own question, made concrete.
-§9's own reader, or any other, resolving rather than declining to
-resolve the incompatibility named there would also move this forward.
-Per this project's own standing method (`governance_binding_axiom_v2.md`
-§5): construct or find the defeating trajectory, do not argue about
-whether one would exist.
+§12 shows the same reader accepting and sharpening §10's own condition
+in a sixth round, a genuine further improvement, incorporated directly
+into §10 above. The toy or the prose was corrected each time an
+objection held, without the central theorem breaking. What would move
+this further: further independent readers constructing defeats this
+paper's six rounds so far did not find — against the toy directly,
+against the general theorem in a domain none of the six rounds covered
+(a non-invertible or natural-language evidence channel specifically,
+per §6's own item 1), or by actually specifying, for the §4/§8/§9
+specimen or any other, a real procedure `R` binding its predicates to a
+running system and checking whether `R`'s own computation is sourced
+independently of the actor whose handoff it evaluates — §10's own
+question, made concrete. Most directly: testing §12's sharpened
+non-identifiability condition against any concrete system — the
+applicability question §12 names and leaves open — would move this
+further than a seventh round of definitional refinement would. §9's own
+reader, or any other, resolving rather than declining to resolve the
+incompatibility named there would also move this forward. Per this
+project's own standing method (`governance_binding_axiom_v2.md` §5):
+construct or find the defeating trajectory, do not argue about whether
+one would exist.
+
+---
+
+**A second kind of channel collapse.** *On sharpened conditions,
+unopened frameworks, and a question left open rather than answered.*
+
+## 15. What this closes out
+
+Earlier in this series, a public exchange worked through a formal
+impossibility result — call it the channel-collapse theorem — and then,
+across several rounds, sharpened its own stated condition. What began as
+"a system cannot verify itself using only its own output" narrowed,
+correctly, into something more precise: a system's verification fails
+when the verifier has no source of discriminating information beyond
+what the system itself already supplied. The sharpening was earned. It
+survived direct technical pressure, from more than one direction, and it
+held.
+
+That is worth saying plainly and without qualification: the tightened
+condition is better than the original. Nothing in what follows disputes
+that, or reopens it.
+
+## 16. The pattern this is actually about
+
+But a sharpened condition and a *satisfied* one are not the same fact,
+and the gap between them is where this piece lives.
+
+Once a condition like this gets its precise form — "the verifier needs
+independent discriminating information" — the next question is not
+rhetorical, it is empirical: *does any given system, including the one
+that motivated sharpening the condition in the first place, actually
+have that information from somewhere outside itself?* That question is
+not automatically answered by the sharpening. It is, if anything, made
+easier to stop asking, because the sharpened condition now sounds
+complete. A precise definition has a way of feeling like a settled
+matter even when nothing has yet been checked against it.
+
+This is not specific to any one framework, exchange, or person. It is a
+general shape: reasoning that becomes more rigorous at the level of its
+own definitions while the question of whether the definitions are
+actually met by the case in front of you goes quietly unasked. The
+sharpening consumes the attention that the application should have
+gotten.
+
+## 17. The shape it takes in AI-assisted reasoning specifically
+
+This shape shows up with some regularity in proofs, arguments, and
+formal claims that pass through — or are produced by — AI systems, and
+it is worth naming why, structurally, rather than pointing at any single
+instance of it.
+
+A proof can be step-for-step valid and still fail, not because an
+inference is wrong, but because a *definition* upstream of the proof was
+never independently checked against the thing it claims to describe.
+"Independent" defined as "not literally the same function call." "Novel"
+defined as "not found by a string match against the training corpus."
+"Aligned" defined relative to a specification that itself came from the
+same process being evaluated. In each shape, the proof is airtight
+*given* the definition — and the definition is exactly the place nobody
+went back to test.
+
+These are composite illustrations of a documented shape, not citations
+to specific instances — offered to name the pattern precisely, not to
+claim any one paper or system as a checked specimen of it. §4 and §12
+above are this paper's own checked specimens; the general pattern named
+here is broader than either.
+
+This is a variant of the channel-collapse problem, not a different one.
+A definition supplied by the same process that will be measured against
+it is exactly a self-supplied channel. Sharpening the proof's *logic*
+does nothing to close that channel if the *definitions feeding the
+logic* are still self-supplied. The failure does not surface as a broken
+proof. It surfaces as a correctly-applied one, arriving in the wrong
+place, with nothing in the reasoning itself flagging that anything went
+wrong.
+
+## 18. Why this risk does not show up early
+
+Everything about this failure mode is quiet at first. The proof checks
+out. The argument is rigorous by every internal standard applied to it.
+Progress — genuine progress, not performed progress — is visible and
+often substantial. None of that is in dispute, and none of it is what
+this section is about.
+
+The risk is not in the proof-checking. It is in what happens once the
+system built on the proof meets pressure the proof's own definitions did
+not anticipate: an adversarial case, a genuinely novel input, a
+real-world deployment condition nobody wrote a definition for because
+nobody thought to. Under that kind of pressure, systems that were
+coherent against every case their definitions anticipated can fail
+completely against the case their definitions didn't reach — and because
+the definitions looked settled, nobody was still checking.
+
+The gap between "clean in review" and "holds under real pressure" is not
+closed by more rigor of the same kind. It is closed only by someone
+going back, after the definitions feel finished, and asking whether they
+were ever actually tested against the case that matters most —
+independent of how satisfying the sharpened version sounds.
+
+## 19. What retrofitting under exposure actually tells you
+
+Two different phenomena get confused here, and the confusion is exactly
+what lets one hide inside the other.
+
+The first is old and well-documented: correct work resisted for reasons
+that have nothing to do with whether it is correct. Einstein spent
+decades defending general relativity — not because the theory was
+wrong, but because of the scope of the "no" it delivered to the physics
+that came before it. People, institutions, entire fields have a
+documented, persistent difficulty accepting a "no," even from work that
+is fully sound, even from work that has already been checked every way
+it can be checked. Versions of that same resistance to a settled "no"
+are still running today, against results decades past the point of
+reasonable dispute. This is a fact about human reception, not about the
+theory. The theory did not need to change. The people around it needed
+time — and some of them, demonstrably, still haven't taken it.
+
+The second phenomenon looks similar from the outside and is
+structurally different: not a claim meeting resistance while staying
+the same, but a claim's own definitions moving in response to the
+exposure. Not "people took a while to accept this was right," but "the
+thing itself needed adjustment before it could survive contact." Both
+get filed under the same heading from the outside — "the work held up
+under scrutiny" — because, to a casual reading, scrutiny is scrutiny
+and survival is survival. They are not the same event. One is evidence the
+claim was already grounded and the audience was slow. The other is
+evidence the claim was not yet grounded and the exposure is what did
+the grounding, live, in front of witnesses who are being invited to
+read it as the first kind. The reason the second can pass as the first
+is precisely because everyone is trained to expect the first — a
+framework whose content changes under scrutiny gets social credit for
+looking like the noble, battle-tested position, when what actually
+happened is different in kind, not just in degree.
+
+A framework that has genuinely captured something real about its
+domain does not need retrofitting when it meets pressure. It may meet
+resistance. It will not need to change what it says to survive being
+looked at, because what it says was already checked against the thing
+it claims to describe, before anyone else needed to ask. A structure
+that actually holds does not need to retrofit itself the moment it is
+exposed.
+
+A claim to have modeled something as unbounded as human intent, human
+reasoning, or reality itself — and to have compressed that into a
+framework small enough to state cleanly — is a claim about an
+extraordinary amount of territory. And reality does not wait outside
+that territory for a scheduled, occasional test. It was never not
+there. At every scale, all the time, it sits right at the edge of
+whatever has been built, ready to press in — and it takes very little
+to set that off. The smallest disturbance is enough to reach the
+boundary, and so is the largest. There is no register of significance
+small enough or large enough for reality to politely stay outside: not
+the faintest motion, not the most massive force the universe can
+produce. Or, put the other way around: there will never be a time
+reality does not sit right outside the box, waiting to bite. Nothing
+that size — human intent, reasoning, reality itself — gets captured
+cheaply, by anyone, in any framework, including frameworks built on the
+same instinct as this one. And nothing that size stays captured without
+eventually meeting exactly the kind of unplanned, informal, real-time
+pressure a public exchange turns out to be.
+
+Read plainly rather than as a sequence of edits, that is what an
+exchange like §7–§12 above actually is: not a side conversation about a
+theorem, but the theorem's claim to grounding meeting the thing it
+claims to be grounded in, in real time, in public, with no time to
+prepare. A framework that already had what it claimed to have would
+stand on that contact the way it stands everywhere else — on paper, in
+computation, against a live and unscheduled challenge — without needing
+the challenge itself to hand it its final shape. What happens instead,
+when it happens, is several rounds of the definitions changing to fit
+what the pressure required. That process is correctly described, and
+often genuinely earned, as sharpening at the level of any single
+exchange — that part is not necessarily in dispute. What is in dispute
+is something else: what it shows that the sharpening was still needed
+at this stage, this late, on a point this specific. Not that the
+reasoning in the room was bad. That the grounding it was reasoning from
+was not fully there when the exchange started, and the exchange is
+where the missing part got assembled, rather than where it got
+demonstrated.
+
+This does not resolve that question for anyone's framework, including
+the one writing this — §20 below holds itself to the same standard on
+purpose, for the same reason. What this section can say plainly is what
+the shape looks like when it happens: technical agreement reached,
+definitions improved, both sides satisfied, the exchange itself treated
+afterward as a closed and settled thing — and the actual question, was
+this ever standing on its own before the pressure arrived, never asked,
+because the conversation that would have asked it just finished
+agreeing that it didn't need to. §12 above is this paper's own
+documented instance of exactly that shape, named there in real time
+rather than reconstructed after the fact.
+
+## 20. The closer analogy
+
+Consider a framework that holds its own core methodology as a trade
+secret — the derivation undisclosed, the verification steps proprietary,
+its claims about its own performance offered without any way for an
+outside reader to check them — while still asking to be trusted on the
+strength of its results. That structure is a self-supplied channel by
+construction, in exactly the sense §§15–19 describe. Whatever a verifier
+is told is told by the same party whose claim is being verified, with no
+independent way to tell "true and unchecked" from "false and unchecked"
+from outside the wall. The trust being asked for and the trust being
+demonstrated are, formally, the same act wearing two names.
+
+This series does not make that move, and it is worth saying plainly
+rather than leaving it to be assumed either way: nothing argued in these
+papers rests on an undisclosed system. The claims here stand on what is
+public — the theorem's own stated text, reasoning any reader can follow
+and re-derive independently, and this repo's own verification tools
+(`paper_rigor`, `verification_lint`, `attractor_scan`), published and
+runnable by anyone, not held in reserve for this argument's own benefit.
+Any private research infrastructure the authors of this series happen to
+maintain elsewhere plays no evidentiary role here and is not invoked to
+support anything in this piece — it has no public footprint, is not
+deployed publicly, makes no claims in this venue, and does not appear in
+this argument in any form. The analogy above is offered purely as a
+structural illustration of the failure mode being described, not as a
+description of this project.
+
+That is the standard this piece is holding itself to: not "trust this
+because the source cares about the problem," but a claim built to be
+checked on terms that don't require anyone's vault opened first. A
+framework that cannot meet that bar without quietly invoking something
+undisclosed has not closed the channel-collapse problem — it has
+relocated it one level up, behind a wall the reader can't see past. Same
+shape as the regress argument in §10, applied here to methodology rather
+than to a resolution function.
+
+## 21. The question, left open
+
+So here is what this actually leaves, and it is left as a question, not
+a verdict, because the answer isn't mine to reach for someone else's
+work — including, per §20, my own.
+
+When a sharpened condition is accepted because it survives every
+technical challenge put to it, has anyone gone back and checked whether
+it is actually *satisfied* — by the system that motivated sharpening it,
+by the framework defending it, by any of the frameworks in this
+exchange, including the one writing this sentence? Or has the moment of
+sharpening itself become the resting point: the place reasoning stops,
+not because the question closed, but because the definition got precise
+enough that it stopped sounding open?
+
+That is not a challenge aimed at any one participant in the exchange
+§7–§12 document. It's the same question this piece has been building
+toward the whole way through, and it doesn't come with an answer
+attached. Anyone reading this — including whoever sharpened a condition
+somewhere in those rounds — gets to sit with it on their own terms, and
+decide for themselves whether their own reasoning has been tested past
+the point where it started sounding finished, or only up to it.
+
+*This is not a refusal to engage with the argument, and it is not an
+attempt to win it. It is the shape this project keeps arriving at when
+it works all the way through a real exchange rather than stopping at the
+first clean resolution: hear the argument out, follow it as far as it
+actually goes, and then hand the remaining question back — not
+unanswered because no one tried, but unanswered because it was never
+this piece's question to answer for someone else.*
 
 ---
 
 *Sources: `governance_binding_axiom_v2.md` §2–4 (formal apparatus and
 existing category taxonomy, cited not restated), §5 (construct-or-find-
 the-defeating-trajectory method, §8's, §9's, and §10's basis), §12.5
-(the adversarial-testing precedent this paper's own §6, §7, §8, and §9
-follow); `closed_path_confirmation_v1.md` (the closed-path/open-path
+(the adversarial-testing precedent this paper's own §6, §7, §8, §9, and
+§12 follow); `closed_path_confirmation_v1.md` (the closed-path/open-path
 distinction this paper narrows further, and its redaction precedent,
-applied identically here — including to the §7, §8, and §9 readers);
-`laundered_vocabulary_v1.md` ("Metrics vs. Soundness," "A note on
-redaction," and its "Law" entry precedent for redacting a self-
+applied identically here — including to the §7, §8, §9, and §12
+readers); `laundered_vocabulary_v1.md` ("Metrics vs. Soundness," "A note
+on redaction," and its "Law" entry precedent for redacting a self-
 published, self-titled author). The two §4 specimens, and both readers'
-objections and replies in §7, §8, and §9, were read in full at
+objections and replies in §7, §8, §9, and §12, were read in full at
 primary-source tier by this project directly; §10 is this project's own
-analysis, not a further reader exchange, and is presented as such; §11's
+analysis, not a further reader exchange, and is presented as such, with
+a direct correction from §12 incorporated into it on the record; §11's
 three solo-authored specimens were operator-supplied directly to this
 project (two as complete source documents, read in full; the third via
-already primary-sourced excerpts, tier stated in §11 itself); no other
-source was consulted for any finding.*
+already primary-sourced excerpts, tier stated in §11 itself); §15–§21
+are this project's own closing analysis, extending §10's regress
+argument to the general pattern §12's exchange instantiates, drafted and
+held internally for review before this publication; no other source was
+consulted for any finding.*
