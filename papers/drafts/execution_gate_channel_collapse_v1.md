@@ -939,8 +939,8 @@ overreached. I think the remaining disagreement is now quite narrow.
 Your result is useful at the implementation layer: a reconstructible,
 self-reported trace cannot by itself establish the causal history that
 produced it."* The second declares the thread closed: *"I think we've
-reached the natural stopping point for the public exchange. [The reader
-from §8–§11] has already given you the distinction that mattered, you've
+reached the natural stopping point for the public exchange. [The
+subject] has already given you the distinction that mattered, you've
 incorporated the sharpening, and the §11 position is now clear. At this
 point, any further iteration on the paper is your research programme to
 carry forward. We're happy to read serious new work when we have the
