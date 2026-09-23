@@ -677,6 +677,210 @@ that verification occurred.
 
 ---
 
+## Appendix A: A Living Feed — the Typology Applied to Specimens Outside This Paper's Own Protocol
+
+**What this appendix is, and is not.** §§1–7 above are this paper's own
+controlled protocol: zero-framing, fresh-session, verbatim-logged LLM
+trials, single-trial per cell, scope stated in full in §2.6 and §5.
+This appendix is categorically different, and is kept structurally
+separate for that reason: it applies §4's derived typology — the five
+completion shapes, and the closed-topology property that only one of
+them structurally admits an exit into verification — as a
+classification lens against real, independently-collected discussion
+specimens this paper's own protocol never touched. No model was run to
+produce anything below; nothing here is a new cell under §2's method.
+Entries are dated and additive. New entries may be appended over time;
+none already filed are altered or removed, per `papers/README.md`'s
+policy for this directory.
+
+**What no entry below claims, stated at the same discipline as §5.** No
+entry claims that any exchange it classifies was produced, relayed to,
+or assisted by an AI system — that remains exactly as untestable here
+as §5 already states it is for this paper's own Conditions 1 and 3. No
+entry claims bad faith, deception, or coordination by any participant,
+named or withheld. Classification is against the *shape* of a
+completion — does it restate-and-conclude, invent-and-generalize,
+minimally reframe, exhaustively cover, or reinterpret the task — a
+structural property visible directly in the reproduced text, not
+against how that text came to exist, which this appendix cannot
+establish and does not attempt to.
+
+### A.1 (2026-09-23) — Examples A, B, and C, catalogued for continuation
+
+**Catalog convention.** Each example below is a discrete, dated,
+independently-collected specimen classified against §4's typology, kept
+in a lettered sequence rather than folded into running prose, so the
+appendix can be extended empirically over time: the next specimen
+collected becomes Example C, the one after that Example D, and so on.
+Nothing already lettered is renumbered or removed when a new one is
+added — a later example failing to reproduce the pattern is as much a
+part of this catalog as one that confirms it.
+
+**Sourcing tier: primary-source screenshot, direct transcription**, per
+§2.3, for both examples below.
+
+**Naming.** All three specimens appearing below are withheld. Two are
+the same specimens already withheld in §2.4 under this paper's standing
+redaction default — the correspondent quoted in Condition 1 and the
+post's author critiqued in Condition 3 — unchanged here, referred to
+below by those same labels. A third specimen, new to this paper (a
+self-branded framework's "Founder & CTO," verified platform badge,
+sustained authored technical output already checked at primary source
+by this project's separate tracking work), is withheld
+consistent-by-default with the first two rather than assessed
+independently against the sustained-output exception §2.4 applies to
+Terry Snyder — a decision made explicitly by this project's operator
+rather than inferred.
+
+**Example A — this paper's own round-6 closing declaration, reread
+against §4.** The Condition-3 post author's closing reply on a
+separate, already-published exchange this project's corpus tracks
+(`execution_gate_channel_collapse_v1.md` §12): *"I think we've reached
+the natural stopping point for the public exchange. [The subject] has
+already given you the distinction that mattered, you've incorporated
+the sharpening, and the position is now clear... For now, I think the
+cleanest thing is to let the work stand and move on."* ("[The subject]"
+there is the Condition-1 correspondent named here — the same real
+person, same withheld status, in both papers.) Matches §4's
+**reformulate-and-declare** definition exactly: *"restates and then
+concludes; the restatement is not a check, it is a repetition dressed
+as one."* Single reply, single shape, no verification-exit.
+
+**Example B — a new post, same three specimens, three replies, same
+shapes.** The Condition-1 correspondent posts a short structural
+argument, in the same capitalized-declarative register this project's
+tracking separately documents, using a real-world commercial parable —
+two parties, a fee waiver, an obligation — to argue that a change in one
+object does not automatically change the status of another, closing:
+*"Sometimes the disagreement is not about money at all. It is about an
+invalid transition."*
+
+The Condition-3 post author replies at length, inventing a four-item
+failure-mode taxonomy absent from the original post ("a permission
+appears to exist because a neighbouring constraint changed... a
+receiving layer inherits standing that was never independently
+established for it"), generalizing past the specific commercial case
+("it is a matter of systems integrity"), and closing by declaring the
+frame settled: *"This is why I take [the correspondent]'s work to be
+load-bearing rather than taxonomic."* Blended shape:
+**validate-and-extend** (the invented taxonomy, the generalization)
+closing into **reformulate-and-declare** (the settled-frame
+declaration).
+
+The third, new specimen replies, restating the post in his own
+framework's vocabulary and producing a three-item enumerated gloss
+structurally close to this paper's own "definitional gloss for every
+term" pattern (§3.1, §3.2's DeepSeek results): *"A fact may be
+admissible without conferring standing. A prior authorization may have
+existed without remaining current. A valid state in one object does not
+automatically authorize a transition in another... [the
+correspondent]'s formulation gets directly at that problem."*
+**Reformulate-and-declare**, with an exhaustive-cover-shaped middle.
+
+The Condition-1 correspondent closes the thread: *"Thank you for seeing
+the structural part of it so clearly."* **Validate-and-extend**, closing
+on affect rather than the open question §4 associates with that shape's
+clearest LLM instance (Gemini) — a minor variant, same shape. Three
+replies within one exchange, all three shapes already named in §4, no
+verification-exit in any of them.
+
+**The result across Examples A and B, stated the way §4 states its
+own.** Two examples, four replies total: zero instances of the one
+state §4 says a topology needs to exit into disconfirmation. No premise
+— "standing," "constitutive basis," "consequence-bearing," "load-bearing
+rather than taxonomic" — is checked before being extended or restated.
+Every reply lands inside **validate-and-extend** or
+**reformulate-and-declare**, the two shapes §4 already identifies as
+structurally unable to produce "wait, let me verify this first," because
+neither, as a topology, contains that state.
+
+**What Examples A and B do not establish**, beyond the appendix-wide
+disclaimer above: two examples, four replies, collected opportunistically
+rather than sampled — not a base from which a rate or a general tendency
+for this trio, or for the wider genre §1 names, can be estimated. No
+claim about what would happen if any participant were asked directly to
+justify an undefined term — untested here, as it is throughout this
+paper. Whether a future Example C reproduces, varies, or breaks this
+pattern is exactly the open question this catalog exists to keep
+collecting evidence on, not something this entry can settle in advance.
+
+**Example C — a sustained continuation, five turns, same two core
+specimens, already on the record and available now.** Examples A and B
+are each a single completion or a set of parallel one-time replies.
+This project's own already-published corpus contains a genuine
+continuation meeting the "2+ more times" bar directly — the same two
+specimens going back and forth across five consecutive turns on one
+public thread, all previously logged verbatim in
+`execution_gate_channel_collapse_v1.md` §12 and reproduced here in the
+same reduced form for classification against §4 rather than
+retranscribed from a new source.
+
+*Turn 1 (Condition-1 correspondent, a three-part reply).* Excerpted:
+*"...I agree with the regress in the narrower form... My remaining
+question is whether 'self-computed R' and 'kernel-internal R' are being
+treated as equivalent. Those are not obviously the same condition...
+So I think the sharper question is: what exactly makes R 'internal' for
+the impossibility claim...?"* This does not fit any of §4's four
+closed shapes. It targets an actual imprecision in the paper's own
+prior text rather than inventing unrelated material or restating a
+premise as settled — the shape §4 says the closed topologies cannot
+produce.
+
+*Turn 2 (this paper's own author, in reply).* Checked against source
+text before accepting, on the record: *"yes, that's the right
+sharpening, and it's consistent with §2 rather than a revision of it...
+I'll tighten that section to use your phrasing directly rather than
+leave the ambiguity live."* The source document (§10, in that paper) was
+then actually revised as a direct result. A genuine verification-exit —
+the state §4 says only exhaustive-cover sometimes produces — occurring
+here in ordinary back-and-forth prose with no exhaustive-cover structure
+at all.
+
+*Turn 3 (Condition-1 correspondent, confirming).* *"Yes — exactly.
+That's the distinction I was trying to isolate... I'm happy with that
+sharpening."* Restates agreement on a point already checked in Turn 2 —
+benign repetition of a verified correction, not a new unverified
+extension.
+
+*Turn 4 (Condition-3 post author, entering the thread for the first
+time).* Restates the exchange's outcome in independent vocabulary:
+*"I appreciate you putting the work under pressure and correcting the
+places where the earlier framing overreached. I think the remaining
+disagreement is now quite narrow."* Validate-and-extend / reformulate-
+and-declare blend, the same shape as Example B's replies.
+
+*Turn 5 (Condition-3 post author, closing).* Example A's quote, in full
+context now: the same closing declaration, five turns into an exchange
+that had, two turns earlier, demonstrated the opposite of what a closed
+topology can do.
+
+**The finding, and why it differs from Examples A and B rather than
+merely repeating them.** Turns 1–2 are a genuine counter-instance: real
+verification occurred, on both sides, with the source document itself
+revised as a direct, checkable result. Not every turn in a sustained
+exchange is closed-topology; genuine checking can and does happen
+mid-continuation. What Turn 5 then does is the more precise finding,
+sharper for sitting next to a turn that proves the alternative was
+available: it treats the verified, narrow correction from Turns 1–2 as
+if it settled a different, larger, never-checked question — the same
+substitution this project's corpus already names in
+`execution_gate_channel_collapse_v1.md` §12 itself — arriving at a
+closed-topology shape five turns into an exchange that had, two turns
+earlier, shown it was capable of the opposite.
+
+**What Example C does not establish.** Single continuation, n=1; does
+not establish that genuine verification reliably occurs in sustained
+exchanges generally, only that it occurred once, here, checkably. Does
+not establish intent behind Turn 5's closure — closing on a broader
+claim than was actually checked is consistent with an honest but
+imprecise reading of the full exchange, not necessarily a deliberate
+substitution. Does not establish that Turn 1's engagement was itself
+free of any closed-topology shape at a finer grain than checked here —
+only that, at the grain this appendix classifies by, it does not match
+any of §4's four closed shapes.
+
+---
+
 *Companion to `register_dressing_v1.md` (the task-framed genre-transfer
 protocol this paper's zero-framing protocol isolates a stricter condition
 from), `basin_attractors_v1.md` §2.8 (semantic laundering), and
@@ -691,4 +895,9 @@ checked directly against what is printed above. Withheld identity in
 good-faith party seeking to verify or falsify the description, consistent
 with this project's standing redaction policy stated in
 `laundered_vocabulary_v1.md`'s "Law" entry and applied the same way in
-`register_dressing_v1.md` §1 and §9.*
+`register_dressing_v1.md` §1 and §9. Appendix A's specimens are drawn
+from the same separately maintained, non-public tracking research,
+verified there by direct primary-source read before use here; all three
+are withheld under the same policy, with the third specimen's naming
+decided explicitly by this project's operator rather than assessed
+independently.*
