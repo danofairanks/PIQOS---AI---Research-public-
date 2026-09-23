@@ -1372,6 +1372,52 @@ actually goes, and then hand the remaining question back — not
 unanswered because no one tried, but unanswered because it was never
 this piece's question to answer for someone else.*
 
+## 22. Addendum (2026-09-23) — why this paper never attacks a theorem
+directly
+
+A theorem with a checked, valid proof is, in the relevant sense, closed.
+Re-attacking a sound proof produces nothing: either a real error turns
+up, in which case it was never actually attacked, it was simply wrong,
+or none does, and repeating the attempt teaches nothing new. The
+genuinely contestable territory sits one level up, in the gap between a
+theorem and what gets built on top of it — its premises (do the stated
+conditions actually hold of the real case someone wants to apply it to),
+its application (does a specific implementation or claim actually
+instantiate what the theorem quantifies over, or only resemble it), and
+its extrapolation (is the conclusion being stretched to support
+something broader than it licenses). This is old, common practice, not
+a house convention invented for this paper: nobody attacks Gödel's
+incompleteness proofs directly — the live disputes are over
+*applications* of them (claims that they show science is inherently
+limited, or that minds cannot be formalized). Nobody attacks the Central
+Limit Theorem — statisticians scrutinize whether independence and finite
+variance actually hold in a given dataset before invoking it. Nobody
+attacks Arrow's Impossibility Theorem — economists debate which of its
+axioms a real voting system should relax. The theorem is the fixed
+point; the argument happens in the gap between it and what is claimed on
+its behalf.
+
+This is worth stating explicitly because it is, precisely, the shape of
+every round in this paper. Not one round in §7–§12 disputes the checked
+specimen's own formal results — each says so directly, on the record
+(§8: "does not establish that the specimen's formal theorems are false";
+§11: "the checked theorems hold over their own stipulated objects"; §12:
+the reply's first part is accepted without correction). What gets tested
+across all six rounds is always the binding layer one level up: whether
+a real system's evidence channel actually satisfies a theorem's
+antecedent, whether a resolution function's information source actually
+counts as independent, whether the non-identifiability condition §12
+sharpens is actually satisfied by anything checked. That is "what has
+been built from the theorem," not the theorem itself — the same
+territory the examples above name as where genuine scrutiny belongs.
+
+It is also why §21's closing question is the methodologically correct
+move rather than only the diplomatic one. It does not ask whether any
+theorem in this exchange is wrong. It asks whether the sharpened
+condition has actually been tested against a concrete case — the one
+question left open by six rounds that, correctly, never went anywhere
+near the proofs themselves.
+
 ---
 
 *Sources: `governance_binding_axiom_v2.md` §2–4 (formal apparatus and
@@ -1393,5 +1439,10 @@ project (two as complete source documents, read in full; the third via
 already primary-sourced excerpts, tier stated in §11 itself); §15–§21
 are this project's own closing analysis, extending §10's regress
 argument to the general pattern §12's exchange instantiates, drafted and
-held internally for review before this publication; no other source was
-consulted for any finding.*
+held internally for review before this publication; §22 is a further,
+same-project methodological addendum naming the theorem/application
+distinction §7–§12 and §15–§21 already followed in practice, citing
+standard, textbook mathematical examples (Gödel's incompleteness
+theorems, the Central Limit Theorem, Arrow's Impossibility Theorem) as
+commonly known illustration, not as newly sourced claims; no other
+source was consulted for any finding.*
