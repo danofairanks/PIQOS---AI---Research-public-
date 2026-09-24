@@ -916,6 +916,29 @@ matched case or was specific to the one error type tested. This paper
 states that test as the single highest-value next step and does not run
 it.
 
+**Independent convergence from a different field, worth naming
+precisely rather than either ignored or overstated.** Jeong et al.,
+*"Beneath the Surface of Chains-of-Thought: A Mechanistic
+Interpretation of Reasoning Operations in LLMs"* (KAIST / NAVER AI Lab,
+arXiv:2509.04753v1), uses hidden-state probing — a method with nothing
+in common with this paper's zero-framing behavioral trials — to ask
+whether labeled chain-of-thought reasoning operations have separable
+internal geometry. They find that operation-identity structure survives
+almost intact when the reasoning it labels is factually wrong: probes
+score 0.955/0.877 AUROC/AUPRC on spans containing a genuine error,
+against 0.971/0.901 on matched correct spans, a result the authors
+characterize as *"a partial dissociation between the functional
+identity of a reasoning operation and the factual correctness with
+which it is executed."* That is a different question, answered by a
+different method, arriving at a result compatible with this paper's own
+finding — that fluent, structured completion is not, by its shape
+alone, evidence of the checking it appears to perform. Read at the
+strength the source paper itself claims and no further: its own
+Limitations section states the analysis is *"primarily diagnostic
+rather than interventional"* and explicitly leaves verification and
+correctness-binding to future work. Cited here as convergence from an
+unrelated method, not as confirmation this paper did not itself earn.
+
 ---
 
 ## 7. Disposition
