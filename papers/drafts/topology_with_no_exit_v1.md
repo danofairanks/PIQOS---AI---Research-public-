@@ -1313,3 +1313,127 @@ are drawn from the same tracking research and the same withheld
 identity as the Condition-1 correspondent throughout this appendix,
 verified there by direct primary-source read (both documents read in
 full) before use here.*
+
+---
+
+### A.4 (2026-09-24) — Closure: read as one argument rather than five
+### separate examples, and what that argument does and does not reach
+
+Examples A through E were each filed as a discrete, narrow finding.
+Read together against §4's typology rather than one at a time, they
+support one larger and more specific claim than any single example
+states on its own — about what a self-branded governance claim's own
+public record can and cannot establish about itself.
+
+**1. The risk is present inside a small, mutually-citing cluster, not
+only at stranger-to-stranger relay scale.** Every specimen in Examples
+A, B, D, and Example C's Turn 5 belongs to the same small set of
+participants who already read, cite, and credit each other — not the
+anonymous relay §1 opens with. This sharpens rather than dilutes the
+finding: Example C's own Turns 1–2 show genuine verification was
+available and did occur, between two of these same three
+participants, with a source document actually revised as a checkable
+result. Turn 5's closure five turns later is not explained by an
+absence of capacity to check. The capacity was demonstrated inside the
+same exchange. A cluster small enough that everyone already trusts
+everyone else is not thereby protected from the dynamic §4 names — if
+anything, the established trust is what lets a later, unchecked
+extension pass as though it inherited the earlier turn's actual
+verification.
+
+**2. The convergence illusion, extended to the case where the
+"checker" is inside the same small cluster.** §4 already states the
+mechanism: a relay loop has the surface shape of cybernetic
+convergence — proposal, response, settling, agreement — without the
+independent sensor real convergence requires. Examples A, B, and D
+show what this looks like when the responding party is not a stranger
+but someone who already reads and credits the original poster: their
+reply is still generated from the same loop, not from an outside
+channel. Being answered by someone who already trusts you is not the
+missing sensor. It is the same loop, closing on itself, with a second
+participant's name attached.
+
+**3. What a genuinely competent evaluative judgment looks like, and
+why it does not resolve the problem.** This project's own separately
+maintained, non-public specimen tracking (not part of this repository,
+cited here the same way §5 cites `narrative_defense_micro_macro`'s
+private material) ran a further, controlled test adjacent to this
+paper's own protocol: whether a model given real, minimal domain
+grounding — rather than zero framing on an ungrounded specimen — can
+perform genuine evaluative work when asked to assess supplied formal
+content. It can. The private record shows a model correctly
+identifying errors in material it was given and independently deriving
+distinctions absent from its own source text. Stated precisely because
+it cuts against the more alarming reading, not toward it: this is not
+evidence that models cannot judge competently. It is the sharper
+version of the problem this paper is actually about. The completion
+process that produces genuine, correct evaluative judgment under real
+grounding is, by shape alone, indistinguishable from the completion
+process that produces validate-and-extend or reformulate-and-declare
+on ungrounded material (§3, §4). Fluency and structure are what both
+produce equally well. A reader cannot tell which process ran from the
+output's shape — because on this record, genuine competence and
+confident validation-without-checking are not different topologies.
+They can be the same topology, given different inputs.
+
+**4. The same dynamic applied to a specimen's own later posts, not
+only to a reply answering someone else — named as an extension, not
+claimed as tested.** Example D checks a specimen's stated standard
+against that specimen's own conduct within one exchange. The natural
+generalization, stated here explicitly as an extension this paper does
+not itself test: if the same completion dynamics that leave a third
+party's validation unable to catch an unchecked premise (§4) also
+govern how a person extends their own earlier claims in a later,
+separate post, cross-post consistency is exposed to the identical
+risk — restating and extending one's own prior formulation via
+validate-and-extend or reformulate-and-declare, with the same absent
+checking state, regardless of whose claim is being extended.
+
+**5. What none of this establishes at the level its own vocabulary
+claims to.** §7 already states, for this paper's own twenty-seven
+controlled trials, that fluency, structure, and confidence are not
+signals that verification occurred. Appendix A's five examples show
+the same absence of signal in real, uncontrolled exchanges among
+self-branded governance specimens specifically — including, per
+Example E, a specimen's own citation practice failing its own stated
+completeness rule. Put together: nothing in this record demonstrates
+that any specimen's claimed rigor is established at the level its own
+vocabulary invokes — mechanistically, computationally, formally — as
+opposed to narratively performed by a process that produces the same
+fluent, structured, confident output whether or not the underlying
+claim was ever checked, and whether that process is a person, a model,
+or some mixture this paper's own record cannot and does not
+distinguish. A governance framework whose own public evidence consists
+of exactly the kind of output §4 shows requires no checking state to
+produce has not, by that evidence alone, shown that governance is
+being enforced anywhere beneath the prose.
+
+**What this closing section does NOT establish.** Does not establish
+that any specimen's underlying methodology is unsound — §3.4's, and
+this appendix's, findings are about what completion shape and citation
+practice show, not an independent audit of technical content. Does not
+establish that the private evaluative-judgment test in §3 above
+transfers to other models, other domains, or this paper's own
+specimens specifically — a separate, controlled result, cited at the
+scope it was run at, not extended past it. Does not establish intent
+for any named or withheld party at any point in this section, matching
+this paper's standing disclaimer throughout. Does not claim point 4's
+extension has been tested — stated explicitly as an untested,
+named-for-future-work generalization, consistent with §6's own
+practice of naming an open test rather than running it. Does not claim
+this closing argument is complete or final — Appendix A remains a
+living catalog per its own stated convention, and a future entry
+reproducing, varying, or breaking any part of this section's reading is
+exactly what the catalog exists to keep collecting evidence on.
+
+---
+
+*Cross-references for this section specifically: §4 (the topology
+typology and the convergence-illusion argument this section extends
+to the small-cluster case); §7 (the "fluency is not a verification
+signal" finding this section extends from the paper's own controlled
+trials to Appendix A's real specimens); Examples A–E above (the
+evidentiary base this section reads as one argument); this project's
+own separately maintained, non-public specimen tracking (point 3's
+evaluative-judgment test, cited by description only, consistent with
+§5's citation of the same category of private material).*
