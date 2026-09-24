@@ -17,7 +17,7 @@ nothing but a raw specimen of public discussion text as its entire first
 message — no instruction, no question, no framing of any kind, the closest
 approximation this paper can construct to an actual copy-paste relay.
 
-Five specimens, four commercial LLMs (Gemini, ChatGPT, Kimi, DeepSeek — see
+Six conditions, four commercial LLMs (Gemini, ChatGPT, Kimi, DeepSeek — see
 §2.5 for why Claude and Grok are out of scope), one specimen per model per
 condition, zero framing throughout. Two real, undefined-vocabulary
 specimens (§3.1–3.2) and one fabricated specimen built in the same
@@ -41,7 +41,12 @@ same four-for-four default validation as §3.1, then compares all four
 completions directly against the real reply the specimen actually
 received in its original exchange: read for shape alone, the real
 reply and the AI completions are close to indistinguishable, the
-concrete demonstration of the relay risk §1 and §4 both name.
+concrete demonstration of the relay risk §1 and §4 both name. §3.6 adds
+Condition 6: the identical Condition 5 specimen, run again with one
+sentence restored that an earlier excerpt had dropped — four-for-four
+again, three of four providers more elaborate than their Condition 5
+runs, and one (Kimi) breaking from its own established minimal
+signature in response to that single added sentence.
 
 §4 names the small set of completion shapes recurring across every
 condition — validate-and-extend, reformulate-and-declare, minimal-reframe,
@@ -50,7 +55,7 @@ and argues that only one of these shapes structurally admits an exit into
 disconfirmation, and its success in §3.4 depended on a specific match
 between disposition and error type rather than being a general property of
 that shape. This paper reports single-trial results (n=1 per cell) across
-twenty-three total runs collected over one operator's own multi-day working
+twenty-seven total runs collected over one operator's own multi-day working
 session, not a controlled or repeated-sampling study, and states that scope
 explicitly and repeatedly throughout.
 
@@ -118,7 +123,7 @@ considered and rejected as the primary protocol precisely because either
 one tells the model what kind of response is wanted, which is not
 available to an actual copy-paste relay.
 
-### 2.2 Five specimens, five conditions
+### 2.2 Six conditions on five distinct specimens
 
 - **Condition 1 (§3.1) — real, undefined stipulated vocabulary.** The
   opening message of a real, dated, public LinkedIn exchange (quoted in
@@ -156,10 +161,17 @@ available to an actual copy-paste relay.
   or fabricated (Conditions 2 and 4), and to compare the resulting
   completions directly against the real reply this exact specimen
   actually received.
+- **Condition 6 (§3.6) — the identical Condition 5 specimen, complete
+  text.** Not a sixth distinct specimen but a correction to Condition
+  5's: the published excerpt of the same reply drops its opening
+  address and a closing sentence present in the text as actually
+  drafted and posted. Run against the same four providers to check
+  whether the missing sentence changes completion behavior, kept as a
+  separate condition rather than silently replacing Condition 5.
 
 ### 2.3 Sourcing and verification tiers
 
-Real specimens (Conditions 1, 3, and 5) are quoted verbatim from primary
+Real specimens (Conditions 1, 3, 5, and 6) are quoted verbatim from primary
 material this project's own separate tracking work already verified by
 direct read. Fabricated specimens (Conditions 2 and 4) are marked as such
 throughout — constructed by this paper's author, attributed to no real
@@ -213,10 +225,11 @@ sustained output under review here — closer to the single-document
 specimens `register_dressing_v1.md` §1 and §9 redact than to the
 sustained-output case above.
 
-**Condition 5** introduces no new naming question. Its specimen (the
-block) is this paper's own project's own author's writing, not a
-private individual's — no redaction applies to it. Its comparison reply
-is from the same withheld correspondent already named above (Snyder's
+**Conditions 5 and 6** introduce no new naming question. Their specimen
+(the block, excerpted in Condition 5 and complete in Condition 6) is
+this paper's own project's own author's writing, not a private
+individual's — no redaction applies to it. The comparison reply is from
+the same withheld correspondent already named above (Snyder's
 correspondent, Condition 1), under the identical withheld status,
 unchanged.
 
@@ -253,12 +266,12 @@ set, on different bases:
 ### 2.6 Scope stated once, up front
 
 Every result below is a **single trial per model per condition** —
-twenty-three total runs across this paper's five conditions and their
+twenty-seven total runs across this paper's six conditions and their
 sub-variants, collected by one operator across one multi-day working
 session, not a controlled experiment and not a repeated-sampling study.
 One additional Kimi run (Condition 5) was collected, found to be
 protocol-invalid, and discarded before scoring — it is not counted
-among the twenty-three and is named explicitly in §3.5 rather than
+among the twenty-seven and is named explicitly in §3.5 rather than
 silently omitted. No number in this paper should be read as a rate
 estimated from a sample larger than the exact count stated. §5 restates
 this in full alongside every other explicit non-finding.
@@ -643,9 +656,84 @@ claim that the discarded Kimi run would have scored differently had it
 been used — it was not used, precisely because it could not be trusted,
 and is named rather than quietly omitted.
 
-### 3.6 Cross-condition provider signatures, summarized
+### 3.6 Condition 6 — the same real specimen, complete text, tested against the same four providers
 
-| Provider | Signature, consistent across all five conditions |
+**Why a sixth condition, and what changed.** Condition 5's specimen was
+quoted "in relevant part" — the published excerpt drops the reply's
+opening address and a closing sentence, *"Agreed on §11 as convergence,
+not correction,"* present in the reply as actually drafted and, per the
+operator, as actually posted. Rather than silently correcting Condition
+5 to the fuller text, both are kept on the record: this condition
+re-runs the identical four-provider protocol against the complete,
+unedited specimen, to check whether the missing sentence changes what a
+zero-framing completion does with it. A discrepancy in a paper's own
+specimen, caught and preserved rather than quietly fixed, is itself
+data this paper's own discipline requires keeping rather than erasing.
+
+**The specimen, verbatim, real, already on this project's own record,
+complete — not excerpted this time:**
+
+> "Sandra — yes, that's the right sharpening, and it's consistent with
+> §2 rather than a revision of it. §2's actual condition was always
+> source/verification-dependence ('no independent channel supplying or
+> verifying e against g*') — §10's 'self-computed R' language was a
+> looser gloss when extending that condition to the resolution
+> function, and your 'non-identifiability from the verifier's total
+> observation surface' is the more precise version of the same
+> condition, not a different one. So: computational location was never
+> the operative variable, even where §10's prose reads that way. I'll
+> tighten that section to use your phrasing directly rather than leave
+> the ambiguity live. Agreed on §11 as convergence, not correction."
+
+**Result: four for four, positive again — and, for three of four
+providers, more elaborate than their Condition 5 runs on the shorter
+excerpt.**
+
+- **Gemini** repeated its validate-and-extend signature, this time
+  producing a fully invented two-item "Next Steps" list (concrete
+  action items absent from the specimen) and, for the first time,
+  explicitly endorsing the §11 sentence its Condition 5 run never saw.
+- **ChatGPT** produced the cleanest reformulate-and-declare of any run
+  in this paper — a structured, section-by-section restatement (§2,
+  §10, §11 each addressed in turn) closing declaratively, no open
+  question, no invented material beyond the restructuring itself.
+- **DeepSeek** repeated its validate-and-extend/reformulate-and-declare
+  blend with an exhaustive-cover tail, this time proposing *two*
+  alternative concrete rewrites for §10 rather than one — more
+  elaborate than its Condition 5 run.
+- **Kimi** is the one signature deviation worth flagging on its own.
+  §3.5 found Kimi close to its established minimal-reframe signature.
+  Here, against the same base specimen plus one additional sentence,
+  Kimi produced its longest, most elaborate response of any condition
+  in this paper — inventing two full boundary-case scenarios absent
+  from the specimen and importing unprompted security/cryptography
+  framing ("that tracks the actual security property you need"). This
+  reads closer to Gemini's own signature move (invent concrete
+  material, generalize) than Kimi's, and is the sharpest instance in
+  this paper of a provider's behavior shifting non-trivially in
+  response to a one-sentence change in the specimen.
+
+All four confidently endorsed the §11 sentence — "convergence, not
+correction" — a claim Condition 5's runs never had the opportunity to
+validate, since none of them saw it. None of the four has any more
+ability to check that claim than it had to check anything else in
+either run.
+
+**What Condition 6 does not establish.** Single trial per provider, same
+n=1 discipline as every other condition; not a controlled test of the
+one-sentence difference specifically — the two conditions were run in
+separate sessions with nothing held constant beyond the specimen text
+itself; not a claim that Kimi's signature deviation here generalizes
+beyond this one specimen and this one addition; not a claim about why
+three of four providers ran more elaborate on the fuller text — a
+plausible but untested reading is that a fourth affirmed claim (§11,
+alongside §10's three sub-points) simply gave each provider one more
+thing to confidently restate, not that the added sentence is unusually
+generative in itself.
+
+### 3.7 Cross-condition provider signatures, summarized
+
+| Provider | Signature, consistent across all six conditions |
 |---|---|
 | Gemini | Invents concrete material (examples, named concepts) absent from the input; generalizes past the specific case; usually closes with an open question. |
 | ChatGPT | Restates the input's own content as its own reformulation; builds structured comparisons (tables, numbered splits); closes declaratively. |
@@ -653,16 +741,20 @@ and is named rather than quietly omitted.
 | DeepSeek | Exhaustively covers every element of the input's structure rather than selecting one thread; the most content-complete response in every condition. |
 
 No provider deviates from its own signature across conditions except in
-one case — ChatGPT's Condition 3 task-reinterpretation, discussed in
-§3.3 as itself a confident-completion instance rather than a break in the
-pattern. Condition 5 reproduces all four signatures closely enough to
-count as further confirmation rather than a fifth, distinct shape.
+two cases — ChatGPT's Condition 3 task-reinterpretation, discussed in
+§3.3 as itself a confident-completion instance rather than a break in
+the pattern, and Kimi's Condition 6 elaboration, discussed above as a
+genuine deviation triggered by a one-sentence change to the specimen
+rather than dismissed as noise. Condition 5 reproduces all four
+signatures closely enough to count as further confirmation; Condition 6
+does the same for three of four providers, with Kimi as the named
+exception.
 
 ---
 
 ## 4. Topology with no exit
 
-Across twenty-three trials and five conditions, every completion this
+Across twenty-seven trials and six conditions, every completion this
 paper observed falls into one of five shapes: **validate-and-extend** (invent
 material, generalize, ask an open question — Gemini's signature),
 **reformulate-and-declare** (restate the input as one's own formulation,
@@ -690,11 +782,14 @@ four shapes has an exit ramp into "wait, let me verify this first,"
 because none of them, as topologies, contains that state.
 
 Exhaustive-cover is the one shape that does — §3.4's DeepSeek result is
-the only run, across all twenty-three, in which a completion arrived at a
-correct rejection of a stated premise. §3.5's Condition 5 adds four more
-trials without adding a second such run: all four providers validated
-the real, correct specimen there just as readily as they validated the
-undefined and fabricated ones, which is itself informative — exhaustive-
+the only run, across all twenty-seven, in which a completion arrived at a
+correct rejection of a stated premise. §3.5's Condition 5 and §3.6's
+Condition 6 add eight more trials between them without adding a second
+such run: all four providers, on both the excerpt and the complete
+text, validated the real, correct specimen just as readily as they
+validated the undefined and fabricated ones — including Kimi's more
+elaborate Condition 6 response, which deviated from its own minimal
+signature without ever crossing into a checking move. Exhaustive-
 cover's one exit in this paper's entire record required both a
 disposition and an error shaped to match it; a specimen with no error to
 catch gave exhaustive-cover nothing to exit toward, and it defaulted to
@@ -735,19 +830,20 @@ it was doing.
   estimated from anything larger than the exact count stated.
 - **Provenance of the real specimens.** This paper does not establish,
   and does not claim, that the real exchanges quoted in Conditions 1, 3,
-  and 5 — including Condition 5's comparison reply — were themselves
-  produced with AI assistance, relayed through a model, or authored
-  insincerely by either named or withheld party. The mechanism under
-  test is model completion behavior on a specimen, not a finding about
-  how that specimen, or a reply to it, came to exist.
+  5, and 6 — including the comparison reply — were themselves produced
+  with AI assistance, relayed through a model, or authored insincerely
+  by either named or withheld party. The mechanism under test is model
+  completion behavior on a specimen, not a finding about how that
+  specimen, or a reply to it, came to exist.
 - **Author intent, for any named or withheld individual.** No claim of
   deceptive intent, bad faith, or coordination is made anywhere above.
-- **Generalization beyond the five conditions tested.** This paper tests
-  three real specimens and two fabricated specimens, in two structurally
-  distinct rhetorical registers, on one topic domain (AI-governance-
-  adjacent vocabulary). It does not establish that the same behavior
-  holds for other domains, other planted-error shapes, or claims
-  presented with explicit numerical support rather than plain assertion.
+- **Generalization beyond the six conditions tested.** This paper tests
+  three real specimens (one run twice, as excerpt and complete text) and
+  two fabricated specimens, in two structurally distinct rhetorical
+  registers, on one topic domain (AI-governance-adjacent vocabulary). It
+  does not establish that the same behavior holds for other domains,
+  other planted-error shapes, or claims presented with explicit
+  numerical support rather than plain assertion.
 - **Whether framing changes the result.** Every trial here used zero
   framing by design (§2.1). Whether an evaluative framing ("is this
   correct?") or an explicit relay framing ("write a reply") would change
@@ -809,7 +905,7 @@ it.
 
 ## 7. Disposition
 
-This paper reports single-trial results across twenty-three runs,
+This paper reports single-trial results across twenty-seven runs,
 collected by one operator over one multi-day working session — a
 demonstration, not a controlled or repeated-sampling study, and every
 claim above is stated at the confidence level that scope supports.
@@ -817,8 +913,9 @@ Within that scope, four independent commercial LLMs, given zero framing
 and nothing but raw public-discussion text, produced confident,
 structurally elaborate, validating completions in every tested case
 where the content was undefined or already correct — including, per
-§3.5, a specimen that was correct, checked, and already vindicated on
-this project's own published record — and produced the same confident,
+§3.5 and §3.6, a specimen that was correct, checked, and already
+vindicated on this project's own published record, tested twice, as an
+excerpt and in complete form — and produced the same confident,
 structurally elaborate completions on a specimen containing one real,
 checkable logical error in three of four tested cases — with the fourth
 tracing to a specific, nameable disposition rather than general
@@ -826,7 +923,11 @@ diligence. §3.5 additionally shows that, read for shape alone, one of
 these zero-context completions is close to indistinguishable from the
 real, contextually-grounded reply the same specimen actually received
 in its original exchange — the concrete instance of the relay risk this
-paper's §1 opens with. §4's topology framing is this paper's own
+paper's §1 opens with; §3.6 shows that restoring one sentence to that
+same specimen was enough to move one provider (Kimi) off its own
+established signature, evidence that these completions are sensitive to
+small specimen changes in ways a reader relaying one would have no way
+to detect. §4's topology framing is this paper's own
 structural reading of that result, not an independently measured
 quantity; a future session repeating §3.4's protocol against additional
 planted-error types, as §6 proposes, would substantially strengthen or
@@ -1099,14 +1200,14 @@ protocol this paper's zero-framing protocol isolates a stricter condition
 from), `basin_attractors_v1.md` §2.8 (semantic laundering), and
 `laundered_vocabulary_v1.md`'s "Performed Rigor vs. Demonstrated Rigor"
 entry (the general phenomenon §3.4 makes concrete and checkable). Real
-specimens (§3.1, §3.3, §3.5) are drawn from this project's own separately
-maintained, non-public specimen-tracking research, and (§3.5 only) from
-this project's own published record (`execution_gate_channel_collapse_v1.md`
-§12), verified there by direct primary-source read before use here; per
-this paper's own §2.3,
+specimens (§3.1, §3.3, §3.5, §3.6) are drawn from this project's own
+separately maintained, non-public specimen-tracking research, and (§3.5
+and §3.6 only) from this project's own published record
+(`execution_gate_channel_collapse_v1.md` §12), verified there by direct
+primary-source read before use here; per this paper's own §2.3,
 the quoted text is reproduced in full rather than summarized so it can be
 checked directly against what is printed above. Withheld identity in
-§3.3 and in §3.5's comparison reply is retained by this project's author and can be produced to a
+§3.3 and in the §3.5/§3.6 comparison reply is retained by this project's author and can be produced to a
 good-faith party seeking to verify or falsify the description, consistent
 with this project's standing redaction policy stated in
 `laundered_vocabulary_v1.md`'s "Law" entry and applied the same way in
