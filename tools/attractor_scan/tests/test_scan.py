@@ -1,6 +1,11 @@
 import json
+from pathlib import Path
+
+import pytest
 
 from attractor_scan.scan import scan, scan_corpus
+
+REPO_ROOT = Path(__file__).resolve().parents[3]
 
 MARCUS_REPLY = (
     "OMG i wrote some of the original work on what is to be neurosymbolic in "
@@ -80,3 +85,28 @@ def test_scan_corpus_to_dict_json_safe():
     docs = [("doc1", MARCUS_REPLY)]
     summary = scan_corpus(docs)
     json.dumps(summary.to_dict())  # must not raise
+
+
+def _skip_if_repo_layout_unavailable():
+    if not (REPO_ROOT / "papers" / "drafts").is_dir():
+        pytest.skip("papers/drafts/ not found; run tests from a full repo checkout")
+
+
+def test_real_document_case2_excludes_own_arxiv_citation():
+    """Regression pin for the false positive this package found in its own
+    real-document check (see laundering.py's `_in_arxiv_citation` comment):
+    scanning topology_with_no_exit_v1.md §6 previously flagged the word
+    'Reasoning' inside a cited paper's own title --
+    "...Interpretation of Reasoning Operations in LLMs" (arXiv:2509.04753v1)
+    -- as an unqualified first-person AI-reasoning claim under case2. That
+    citation is not this document's own assertion. Same defect class, same
+    fix shape, as paper_rigor/credentialing.py's meta-framing suppression
+    (see this repo's CLAUDE.md "Fixed 2026-09-04" entry) -- ported here
+    rather than re-derived, since attractor_scan had no real-document
+    regression coverage at all before this test."""
+    _skip_if_repo_layout_unavailable()
+    text = (REPO_ROOT / "papers" / "drafts" / "topology_with_no_exit_v1.md").read_text()
+    result = scan(text)
+    case2 = result.laundering["case2"]
+    assert case2.flagged is False
+    assert case2.matches == []

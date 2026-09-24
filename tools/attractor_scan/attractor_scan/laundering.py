@@ -94,6 +94,24 @@ def scan_case1_pattern_recognition(text: str) -> LaunderingResult:
 _UNDERSTANDING_REASONING_RE = re.compile(r"\b(understanding|reasoning|understands|reasons)\b", re.IGNORECASE)
 _QUALIFIER_WINDOW = 60  # characters of proximity counted as "near" the AI-subject word
 
+# Found during this package's own real-document check against
+# `papers/drafts/topology_with_no_exit_v1.md` §6: a cited paper's own
+# title -- *"...Interpretation of Reasoning Operations in LLMs"* (KAIST /
+# NAVER AI Lab, arXiv:2509.04753v1) -- was flagged as an unqualified
+# first-person AI-reasoning claim. It is a citation, not this document's
+# own assertion. Narrow rule, built against exactly this shape: an arXiv
+# identifier shortly after the match is treated as citation context and
+# suppressed. Not a general "is this describing AI capability" classifier
+# -- checked against this package's full existing fixture corpus first,
+# and only excludes the shape it was built for.
+_ARXIV_CITATION_RE = re.compile(r"arxiv\s*:\s*\d{4}\.\d{4,5}", re.IGNORECASE)
+_CITATION_AFTER_WINDOW = 200
+
+
+def _in_arxiv_citation(text: str, end: int, *, after_window: int = _CITATION_AFTER_WINDOW) -> bool:
+    after = text[end:end + after_window]
+    return bool(_ARXIV_CITATION_RE.search(after))
+
 
 def scan_case2_understanding_reasoning(text: str) -> LaunderingResult:
     """§2.8 Case 2: 'understanding'/'reasoning' used to describe model
@@ -101,12 +119,14 @@ def scan_case2_understanding_reasoning(text: str) -> LaunderingResult:
     benchmark-meaning to narrative-meaning laundering chain the paper
     names. Flags occurrences within `_QUALIFIER_WINDOW` characters of
     an AI-subject word (i.e. actually describing the system, not used
-    in an unrelated sentence)."""
+    in an unrelated sentence), unless the match sits inside a quoted
+    citation immediately followed by an arXiv identifier (see
+    `_in_arxiv_citation`)."""
     matches = []
     for m in _UNDERSTANDING_REASONING_RE.finditer(text):
         window_start = max(0, m.start() - _QUALIFIER_WINDOW)
         window_end = min(len(text), m.end() + _QUALIFIER_WINDOW)
-        if _AI_SUBJECT_RE.search(text[window_start:window_end]):
+        if _AI_SUBJECT_RE.search(text[window_start:window_end]) and not _in_arxiv_citation(text, m.end()):
             matches.append(Match("understanding_reasoning", m.group(0), m.start(), m.end()))
     return LaunderingResult(
         "case2", '"Understanding" and "Reasoning"', "§2.8 Case 2",
