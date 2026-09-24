@@ -1418,6 +1418,131 @@ condition has actually been tested against a concrete case — the one
 question left open by six rounds that, correctly, never went anywhere
 near the proofs themselves.
 
+## 23. Standard-consistency is not drift-exemption
+
+Checked directly against §12's exchange: the reader's own three-part
+reply, her confirmation, and her broader independently-published record
+(a September 2026 article and its companion formal paper, both checked
+directly at primary-source tier by this project's separate tracking
+work) show a consistent, honestly-scoped practice throughout — every
+claim checked states its own limits precisely, and nothing in the
+reader's own words, in this exchange or in her wider published output,
+claims more than her own formal results establish. That finding should
+not be read as though it implies her output did not participate in the
+drift this section's companion paper names. It did — in form, not in
+content.
+
+A separate companion check
+([`topology_with_no_exit_v1.md`](topology_with_no_exit_v1.md) §3.5's
+Condition 5, drafts) tested this paper's own reply from §12 against
+four independent commercial LLMs, given zero framing, then compared all
+four completions directly against the reader's actual confirmation
+quoted above. Read for shape alone — short, declarative, closing on
+agreement — the reader's real confirmation is close to indistinguishable
+from at least one of the four zero-context AI completions tested there.
+Nothing in that comparison claims the reader's reply was produced the
+way the AI completions were; it establishes something narrower and
+independent of that question: correctness of content and closure of
+form are separate properties, and a reply can hold the first while
+still exhibiting the second. The further participant's closing
+declaration treats the reader's confirmation as part of what the whole
+exchange resolved. Without that confirmation sitting there, honestly
+worded and precisely scoped, the closing declaration would have had
+less to point to.
+
+## 24. The self-implicating finding, conceded in one clause, then never returned to
+
+§11 above is not an abstract or general finding. It is a specific,
+self-implicating fact about the reader's own decade-plus body of
+published work — established by direct primary-source read, before
+round 6 in §12 ever began: real, sound, checked mathematics, and no
+procedure given anywhere for connecting the stipulated objects to a
+real system.
+
+Reread §12's own quoted reply with that in view. The reader's first
+message in round 6 opens: *"On §11, agreed: I am not treating §11 as
+something my 5/6 corrects... I'm happy to leave that as convergence
+rather than disagreement."* That is the entire engagement with §11
+across all of round 6. One clause, in the first sentence of the first
+reply, conceding the point without elaboration, contest, or return.
+Every sentence that follows — the rest of that first message, the two
+further messages after it, this paper's own reply, the reader's
+confirmation, the further participant's closing declaration — is about
+§10's wording instead.
+
+This is not a neutral shift of topic. §11's finding requires nothing
+further to be true; it is already checked, already primary-sourced,
+already a fact about a real, dated body of published work. Engaging
+further with it costs something, because it implicates the person being
+asked to respond. §10's wording question requires no such cost:
+resolvable entirely by rereading this paper's own prior text, and
+resolving it validates a real, legitimate technical point without
+touching anything the reader would need to answer for personally. Given
+a choice between continuing to engage with the open, costly finding and
+continuing to engage with the closed, safe one, round 6 spent every
+subsequent turn on the second and no further turn on the first. The
+closing declaration's "the cleanest thing is to let the work stand and
+move on" credits the whole exchange as settled, making no distinction
+between what was actually resolved (§10's wording) and what was
+conceded in a single clause and never returned to (§11's finding). §11
+is exactly as unaddressed after round 6 as it was before round 6
+started.
+
+## 25. Independent replication, without the one variable this exchange cannot rule out on its own
+
+§24's finding has one obvious alternative reading worth naming directly
+rather than leaving to a reader's own inference: perhaps the reader's
+own avoidance of §11 is best explained by something personal to her —
+an author declining to dwell, in a public exchange, on an uncomfortable
+finding about her own published work specifically. That reading is
+available, and this paper cannot rule it out from the transcript alone.
+
+A separate, informal check tested it directly. The document as it stood
+immediately before round 6 — this paper's own text through §11, nothing
+from §12 onward — was given, in full, to four independent commercial
+LLM providers (the same four `topology_with_no_exit_v1.md` tests
+throughout), across nine total zero-history sessions with no prior
+conversation and no PIQOS-specific framework or vocabulary of any kind,
+each instructed to construct an argument from the document. Checked
+directly: not one of the nine sessions mentions, cites, quotes, or
+engages with §11 anywhere. Every other major section — §4, §5, §8, §9,
+§10, and this paper's own limitations sections — is cited freely and
+often precisely across the nine. §11 alone is absent from all nine,
+without exception.
+
+No fresh AI session has any stake in the reader's reputation, prior
+work, or standing, and none of the nine prompts mention or steer toward
+or away from §11 specifically. If §11 were simply overlooked for
+content-neutral reasons — its position in the document, its length, its
+density — some fraction of nine independent sessions across four
+architectures should have surfaced it by chance. None did. §24's
+finding is not explained by anything specific to the reader's own
+situation, because the identical avoidance reproduces with that
+situation entirely absent.
+
+What this supports, at the correct strength: not that §11 is
+unimportant or hard to find — it is one section in an eleven-section
+document, no harder to locate than §9 or §10, both of which every
+session found and used freely. What it supports is that §11's finding
+is open in the specific sense this paper's own regress argument (§10)
+already turns on: it implicates something outside the document's own
+frame — a real, external, already-checked body of published work —
+rather than being resolvable by rereading the document itself. Ten
+independent instances now, one human and nine machine, across four
+different architectures: nothing has surfaced it unprompted.
+
+**What this section does not establish.** Not that any of the nine
+sessions were instructed, primed, or steered away from §11 — checked
+directly against the prompts used, none were. Not that this generalizes
+beyond this one document and this one task — nine sessions, one
+document, one sitting; a fuller, independently reproducible version of
+this check, run under the same controlled, single-trial-per-cell
+discipline as `topology_with_no_exit_v1.md`'s own conditions, is a
+natural next step and has not yet been filed. Not that a differently
+framed prompt — one that asked directly what the document says about
+the reader's own prior published work — would fail to surface §11;
+untested, and the most direct way to sharpen this finding further.
+
 ---
 
 *Sources: `governance_binding_axiom_v2.md` §2–4 (formal apparatus and
@@ -1444,5 +1569,13 @@ same-project methodological addendum naming the theorem/application
 distinction §7–§12 and §15–§21 already followed in practice, citing
 standard, textbook mathematical examples (Gödel's incompleteness
 theorems, the Central Limit Theorem, Arrow's Impossibility Theorem) as
-commonly known illustration, not as newly sourced claims; no other
+commonly known illustration, not as newly sourced claims; §23 draws
+directly on `topology_with_no_exit_v1.md` §3.5 (Condition 5's shape
+comparison, published the same project, drafts), applied here to §12's
+own reader rather than restated from that paper; §24 is this project's
+own analysis of material already established in §11 and §12 above, no
+new source consulted; §25's nine-session check is this project's own
+informal, single-sitting test, run outside `topology_with_no_exit_v1.md`'s
+own controlled per-cell protocol and stated as such, using the same
+four commercial LLM providers that paper names throughout; no other
 source was consulted for any finding.*
