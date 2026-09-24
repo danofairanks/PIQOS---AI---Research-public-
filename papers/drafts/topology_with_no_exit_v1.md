@@ -1043,6 +1043,55 @@ free of any closed-topology shape at a finer grain than checked here —
 only that, at the grain this appendix classifies by, it does not match
 any of §4's four closed shapes.
 
+### A.2 (2026-09-24) — Example D, continuing the catalog
+
+**Example D — checked against each specimen's own stated standard,
+where one is already on the record in this paper.** Examples A–C
+classify *what shape* each reply took. This example checks something
+narrower and different: whether a specimen's own conduct in the
+exchange matches a verification standard that specimen has themselves
+already stated elsewhere — not this paper's standard applied to them,
+but theirs applied to themselves.
+
+The Condition-3 post author's own specimen (§3.3) is, in their own
+words, a governance gate: a system built specifically so that nothing
+advances without a logged, verified check ("HOLD" events, in their own
+post's own vocabulary). That is a stated standard, not an inference —
+their own professional framing and their own post both describe
+verification-before-advancement as the entire point of the system they
+themselves built. Reread against Example A: their round-6 closing
+declaration grants the whole six-round exchange resolved status with no
+verification performed anywhere in the move. The one participant whose
+own stated domain is "nothing advances without a gate" ran the
+exchange's own final gate open.
+
+The third specimen's own authored document (§2.4) states, as its
+central principle across nine parallel restatements, that visibility,
+capability, and possession never automatically confer standing,
+authorization, or permission — the same kind of verification-before-
+status claim, in a different register. Their own reply in Example B
+grants exactly that kind of unearned status to the correspondent's
+post — "gets directly at that problem" — without applying any of their
+own stated skepticism to it.
+
+The Condition-1 correspondent's own conduct is not characterized here
+one way or the other. No already-established statement from this
+specimen asserting a verification-before-status principle is part of
+this paper's record, so no claim of either consistency or divergence is
+made for them — an open question this entry leaves open rather than
+filling by inference from the other two.
+
+**What Example D does not establish.** Two cases, not a sampled rate;
+does not establish that this pattern generalizes beyond the two
+specimens actually checked against their own prior statements. Not a
+claim that either specimen acted in bad faith — a completion produced
+under the dynamics §4 already describes does not require the
+participant to notice it is happening; that not-noticing is itself
+consistent with, not contrary to, this paper's own central finding.
+Does not characterize the third participant (the Condition-1
+correspondent) as either meeting or failing a standard — genuinely
+unaddressed, not implied by omission.
+
 ---
 
 *Companion to `register_dressing_v1.md` (the task-framed genre-transfer
