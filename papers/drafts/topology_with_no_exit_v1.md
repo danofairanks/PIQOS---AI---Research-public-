@@ -1233,6 +1233,60 @@ unaddressed, not implied by omission.
 
 ---
 
+### A.3 (2026-09-24) — Example E, extending Example D's method from a
+### reply's shape to a document's own completeness claim
+
+**Example E — a specimen's own stated verification standard, checked
+against its own conduct, applied for the first time in this appendix
+to a solo publication rather than a conversational reply.** The
+Condition-1 correspondent has since published a substantially more
+extensive formal specification of their own prior methodology,
+including an explicit provenance section stating its own verification
+rule for source citation: unverified metadata is omitted rather than
+reconstructed, and the section presents itself as the complete
+canonical source record for the document's own claims.
+
+That newer document's own most directly relevant prior source — an
+earlier, separately published methodology paper by the same author,
+which already establishes, in that earlier document's own words, the
+same split between a publicly specified architecture and a withheld
+"protected" operational layer the newer document continues — does not
+appear anywhere in the newer document's own completeness-claiming
+provenance table, despite being the single closest antecedent to the
+document's own central terms. This is not a claim that the newer
+document's public/protected architecture is internally inconsistent —
+that split was already stated openly in the earlier paper, so the
+newer document is continuing a disclosed structure, not concealing a
+new one. It is narrower and more precise: a completeness claim, stated
+as a verification rule in the document's own words, that its own
+citation practice does not meet against its own single most relevant
+prior source.
+
+**Why this belongs in this appendix's typology rather than only in
+this project's separate content-rigor tracking.** §4's derived shapes
+classify completions in a live exchange; Example D already showed the
+same self-consistency check — a specimen's own stated standard,
+applied to that specimen's own conduct — extends past a single reply
+to a specimen's broader authored record. This entry is that same
+check, run once more, against a newer document from the same
+specimen, on a citation-completeness claim rather than a
+verification-before-status claim. The consistency of method across
+Examples D and E, on two different specimens and two different kinds
+of self-referential claim, is what earns this a place in the running
+catalog rather than a one-off aside.
+
+**What Example E does not establish.** Does not establish that the
+newer document's substantive technical content is unsound — its
+correctly-stated general concepts are not in question here, only its
+own citation completeness against its own stated rule. Does not
+establish deliberate omission over an ordinary drafting gap — no claim
+of intent is made, consistent with Example D's own standing
+disclaimer. Does not extend to any other citation in the newer
+document's provenance table, checked or unchecked here. One
+specimen, one document, one checked gap.
+
+---
+
 *Companion to `register_dressing_v1.md` (the task-framed genre-transfer
 protocol this paper's zero-framing protocol isolates a stricter condition
 from), `basin_attractors_v1.md` §2.8 (semantic laundering), and
@@ -1254,4 +1308,8 @@ from the same separately maintained, non-public tracking research,
 verified there by direct primary-source read before use here; all three
 are withheld under the same policy, with the third specimen's naming
 decided explicitly by this project's operator rather than assessed
-independently.*
+independently. Example E's newer document and its earlier source paper
+are drawn from the same tracking research and the same withheld
+identity as the Condition-1 correspondent throughout this appendix,
+verified there by direct primary-source read (both documents read in
+full) before use here.*
