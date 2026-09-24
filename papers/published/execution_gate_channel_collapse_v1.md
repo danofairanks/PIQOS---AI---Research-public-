@@ -1488,6 +1488,27 @@ conceded in a single clause and never returned to (§11's finding). §11
 is exactly as unaddressed after round 6 as it was before round 6
 started.
 
+One further, purely technical point about the sharpening itself, worth
+stating precisely rather than left as an implication. §12's sharpened
+condition is not merely a valid restatement — checked there directly,
+the reader's proposed condition "is a general, verifier-centric
+restatement that correctly subsumes §2's original condition as a
+special case, not a weakening or a reframing away from it." That
+generalization changes how directly §11's finding falls under it. Under
+the condition §10 originally stated — self-computed `R`, a regress tied
+to where a computation is located — §11's finding is only loosely
+analogous: §11 is not a regress-location problem, it is a total absence
+of any procedure connecting stipulated objects to a real system. Under
+the sharpened, verifier-centric condition — non-identifiability of the
+relevant property from the verifier's total available observation
+surface — §11's finding is a direct instance rather than an analogy: no
+procedure given anywhere, across three solo papers, for computing the
+stipulated predicates against a real system is close to as clean a case
+of that condition as exists. The correction the reader supplied, and
+this paper adopted, is — precisely because it generalizes — the more
+general instrument her own already-checked finding fits more exactly
+than the condition it replaced.
+
 ## 25. Independent replication, without the one variable this exchange cannot rule out on its own
 
 §24's finding has one obvious alternative reading worth naming directly
