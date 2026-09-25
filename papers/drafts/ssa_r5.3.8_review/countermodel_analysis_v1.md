@@ -493,7 +493,10 @@ Adeq = E (the single-obligation, exact-match specification completely
 represents the one load-bearing fact at issue); σ = E, per §7 of SSA
 R5.3.8 itself.
 
-**Result.** σ_SSA(𝔇) = B(𝔇), and no step of the apparatus introduced a
+**Result.** σ_SSA(𝔇) = B(𝔇). If any step had introduced a requirement
+ordinary practice does not use — a relational obligation with no
+counterpart in git authorship convention, for instance — σ could have
+diverged from B; none did. No step of the apparatus introduced a
 fact or requirement ordinary practice did not already use: App is
 trivial, Sat's condition is the identical name-match ordinary practice
 already performs, CP and Γ are structurally forced by the declared
