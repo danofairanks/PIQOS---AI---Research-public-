@@ -463,19 +463,28 @@ determination with no connection to SSA, its author, or its cited
 corpus.
 
 **B(𝔇), stated first in ordinary practice with no constitutive
-vocabulary.** The commit's author metadata field, recorded on the git
-object itself, reads "torvalds" — the account of record for Linus
-Torvalds, whose merges into this repository's mainline branch are, by
-longstanding and public convention in Linux kernel development, treated
-as authoritative. A commit authored by him carries maintainer standing
-under that convention without further inquiry. B(𝔇) = established.
+vocabulary.** GitHub's commit metadata distinguishes two fields worth
+being precise about separately: the git-level commit author name — for
+this commit, "Linus Torvalds" — and the linked GitHub account of
+record, login `torvalds`. This session's own tooling directly confirmed
+the linked login via two independent page reads; the separate git-level
+author-name string is confirmed by the well-documented convention of
+Torvalds' own git configuration rather than by this session's own
+(GitHub-API-restricted) tooling independently re-deriving it. Under
+ordinary practice, either field is sufficient: a commit whose author
+name reads "Linus Torvalds," linked to the account `torvalds`, whose
+merges into this repository's mainline branch are, by longstanding and
+public convention in Linux kernel development, treated as authoritative,
+carries maintainer standing without further inquiry. B(𝔇) = established.
 
 **The same 𝔇 run through the full SSA apparatus.** Declaring
 K^v(𝔇, t_v) = ⟨P*, R*, C*⟩ with P* = {obligation `author_is_maintainer`,
-SatCond: author field = "torvalds"}, R* = ∅, C* = {HEAD of default
-branch, assessed at fetch time}: App(`author_is_maintainer`) = E
-(trivially, every commit carries an author field); Sat = E (the fetched
-value matches); CP = E (the sole participant obligation is satisfied
+SatCond: author name matches "Linus Torvalds" (case-insensitive),
+the git-level field identified above}, R* = ∅, C* = {HEAD of default
+branch, assessed at fetch time}:
+App(`author_is_maintainer`) = E (trivially, every commit carries an
+author field); Sat = E (the value matches); CP = E (the sole participant
+obligation is satisfied
 and no other P* member exists to aggregate against); Γ = E (R* is
 empty, and an empty relational surface supports Γ = E where the
 specification warrants that no relational obligation is required for
