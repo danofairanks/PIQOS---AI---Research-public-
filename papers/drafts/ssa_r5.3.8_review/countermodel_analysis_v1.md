@@ -26,9 +26,12 @@ formalize what a genuine countermodel against SSA would require as five
 pre-registered defeat conditions (D0–D4), show that none has been
 attempted anywhere in the document's public record, and situate this
 finding within this project's own prior results on self-referential
-verification loops. We name the specimen's author and credited reviewer
-directly, a departure from this project's usual redaction practice,
-justified in §1 below.
+verification loops. To confirm the protocol is executable rather than
+one further unexecuted prediction, we run one of its five conditions
+(D1, inertness) to a completed result against a determination chosen
+outside SSA's own corpus, before publication. We name the specimen's
+author and credited reviewer directly, a departure from this project's
+usual redaction practice, justified in §1 below.
 
 ---
 
@@ -442,6 +445,70 @@ by itself satisfy either condition — only a demonstrated inertness
 against ordinary practice (D1) or a binding failure against a named
 independent channel (D2) would.
 
+### 7.3 A completed D1 trial, run outside the SSA corpus to validate the protocol itself
+
+Section 3 above establishes that every worked case inside SSA R5.3.8
+stipulates its inputs rather than deriving them from an external fact.
+That observation invites an obvious question about this paper's own
+§7.1: is the D0–D4 protocol itself anything more than one further
+prediction, published as text and never executed? We ran D1 to a
+completed result against a determination chosen deliberately outside
+SSA's own corpus, so that the trial's inputs could not be shaped by
+familiarity with SSA's own vocabulary.
+
+**𝔇** — "Does the author field of the current HEAD commit of the
+public repository `torvalds/linux` establish maintainer-authorship
+standing for that commit?" — a real, live, externally checkable
+determination with no connection to SSA, its author, or its cited
+corpus.
+
+**B(𝔇), stated first in ordinary practice with no constitutive
+vocabulary.** The commit's author metadata field, recorded on the git
+object itself, reads "torvalds" — the account of record for Linus
+Torvalds, whose merges into this repository's mainline branch are, by
+longstanding and public convention in Linux kernel development, treated
+as authoritative. A commit authored by him carries maintainer standing
+under that convention without further inquiry. B(𝔇) = established.
+
+**The same 𝔇 run through the full SSA apparatus.** Declaring
+K^v(𝔇, t_v) = ⟨P*, R*, C*⟩ with P* = {obligation `author_is_maintainer`,
+SatCond: author field = "torvalds"}, R* = ∅, C* = {HEAD of default
+branch, assessed at fetch time}: App(`author_is_maintainer`) = E
+(trivially, every commit carries an author field); Sat = E (the fetched
+value matches); CP = E (the sole participant obligation is satisfied
+and no other P* member exists to aggregate against); Γ = E (R* is
+empty, and an empty relational surface supports Γ = E where the
+specification warrants that no relational obligation is required for
+this single-participant claim, which it is here by construction);
+Adeq = E (the single-obligation, exact-match specification completely
+represents the one load-bearing fact at issue); σ = E, per §7 of SSA
+R5.3.8 itself.
+
+**Result.** σ_SSA(𝔇) = B(𝔇), and no step of the apparatus introduced a
+fact or requirement ordinary practice did not already use: App is
+trivial, Sat's condition is the identical name-match ordinary practice
+already performs, CP and Γ are structurally forced by the declared
+shape of K^v rather than independent judgments, and Adeq certifies
+completeness without adding a constraint. This is a genuine D1 hit —
+one pre-registered case in which the full apparatus, honestly run
+against real external evidence rather than a stipulated value, adds no
+constitutive force beyond what ordinary practice already supplies. A
+single case does not defeat SSA's universal claim by exhaustive
+survey, but under this paper's own protocol (§7.1) a single
+pre-registered success of D1 is sufficient to defeat the *stronger*
+reading — that SSA constitutively governs rather than taxonomizes.
+More determinations would strengthen the demonstration; they are not
+required for the logical force already stated.
+
+This trial is offered as validation that D1 is executable to a real
+result — the same discipline §3 finds absent throughout SSA R5.3.8
+itself — not as a claim about SSA specifically, since 𝔇 here lies
+entirely outside its corpus. It is also a different kind of event from
+§7.2's prediction: that section predicts how a third party would
+likely respond to this analysis; this section is the analysis's own
+author running one of its own stated tests to completion, on the
+record, before publication rather than after a challenge.
+
 ---
 
 ## 8. Relation to this project's existing framework
@@ -545,7 +612,11 @@ document invites the reader to attack the architecture rather than
 restyle it. Sections 3, 4, and 7 above take up that invitation
 directly and report what the primary source itself already concedes,
 assembled into one argument rather than left distributed across five
-disclaimer boxes a linear reading encounters one at a time.
+disclaimer boxes a linear reading encounters one at a time. Section 7.3
+closes on the same distinction this paper opens with: the protocol
+proposed against SSA was itself run once, against a real external fact,
+rather than left as one further recorded prediction awaiting its own
+foundation.
 
 ---
 
