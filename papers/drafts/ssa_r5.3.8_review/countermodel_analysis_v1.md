@@ -404,6 +404,44 @@ family permits. Under this framing, that outcome is not adversarial
 success against SSA's own stated mandate. It is non-responsiveness to
 a challenge that was never posed in falsifiable form.
 
+### 7.2 A predicted engagement pattern for this analysis itself, stated as prediction rather than finding
+
+No such engagement has occurred as of this writing. What follows is a
+falsifiable prediction, stated in advance so that if or when it occurs
+it can be checked against a stated expectation rather than read at
+face value on its own terms — consistent with `governance_binding_
+axiom_v2.md`'s own practice of pre-registering rather than asserting
+after the fact.
+
+`topology_with_no_exit_v1.md` names a fixed set of completion shapes a
+long-horizon model session defaults to when confronted with material in
+an already-established register, and argues that none but one contains
+a state that exits into genuine disconfirmation. Applied to this
+analysis's own likely reception, the predicted shape is specific rather
+than generic: this paper, pasted into a session already tuned to SSA's
+own vocabulary, would plausibly be met with a completion optimized for
+coherence with the existing frame rather than for whether D1 or D2 is
+satisfied — reframing the critique as specification-level commentary,
+restyling, a difference in claim ceiling, or a failure to understand
+domain-native warrant; conceding a peripheral point while praising the
+rigor of the attack; and stopping there, without installing D0–D4,
+without naming an independent channel, and without running inertness or
+binding failure. A public reply citing "adversarial engagement" without
+a smallest countermodel classified under SSA's own §1 mandate would
+complete the pattern.
+
+This is `topology_with_no_exit_v1.md`'s own typology applied reflexively
+to the present paper rather than to SSA — the same shape of response
+without exit into disconfirmation, now predicted for this document
+specifically. It is also the reason §7.1's protocol is stated as it is:
+under D1 and D2, a fluent rebuttal that never installs a pre-registered
+defeat condition is non-responsive by construction, whether or not it
+reads, in isolation, as serious engagement. Refining jurisdiction
+language or producing coherent prose in reply to this analysis would not
+by itself satisfy either condition — only a demonstrated inertness
+against ordinary practice (D1) or a binding failure against a named
+independent channel (D2) would.
+
 ---
 
 ## 8. Relation to this project's existing framework
