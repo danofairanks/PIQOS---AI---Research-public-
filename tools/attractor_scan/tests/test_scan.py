@@ -110,3 +110,25 @@ def test_real_document_case2_excludes_own_arxiv_citation():
     case2 = result.laundering["case2"]
     assert case2.flagged is False
     assert case2.matches == []
+
+
+def test_real_document_case3_excludes_own_table_row_title():
+    """Regression pin for the false positive this package found scanning
+    papers/drafts/ssa_r5.3.8_review/countermodel_analysis_v1.md: a cited
+    source paper's own title, reproduced verbatim in the paper's citation
+    table ("...A Structural Condition for Residual Emergence Under Bounded
+    State Trajectories"), was flagged as an unqualified AI-emergence claim
+    under case3 purely because an unrelated AI-subject word ("model")
+    appeared elsewhere in the document -- case3 has no proximity window at
+    all, unlike case2, so this false-positive shape is broader than
+    case2's citation-only fix. See laundering.py's `_in_markdown_table_row`
+    comment for the exact shape."""
+    _skip_if_repo_layout_unavailable()
+    text = (
+        REPO_ROOT / "papers" / "drafts" / "ssa_r5.3.8_review"
+        / "countermodel_analysis_v1.md"
+    ).read_text()
+    result = scan(text)
+    case3 = result.laundering["case3"]
+    assert case3.flagged is False
+    assert case3.matches == []

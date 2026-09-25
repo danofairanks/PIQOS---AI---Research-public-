@@ -148,6 +148,31 @@ _METRIC_ARTIFACT_CAVEAT_RE = re.compile(
     re.IGNORECASE,
 )
 
+# Found during this package's own real-document check against
+# `papers/drafts/ssa_r5.3.8_review/countermodel_analysis_v1.md`: a source
+# paper's own title, reproduced verbatim in a citation table ("...A
+# Structural Condition for Residual Emergence Under Bounded State
+# Trajectories"), was flagged as an unqualified AI-emergence claim purely
+# because an unrelated AI-subject word appeared elsewhere in the same
+# document -- this case has no proximity window at all (unlike case2),
+# so any "emergence" anywhere in a document that mentions "model" anywhere
+# else gets flagged. Narrow fix built against exactly this shape: a match
+# whose own line is a markdown table row (starts with `|` after stripping
+# leading whitespace, and contains at least one more `|`) is citation/
+# tabulated-title context, not prose assertion, and is suppressed. Not a
+# general "is this a citation" classifier -- checked against this
+# package's full existing fixture corpus first, and only excludes the
+# shape it was built for.
+
+
+def _in_markdown_table_row(text: str, start: int, end: int) -> bool:
+    line_start = text.rfind("\n", 0, start) + 1
+    line_end = text.find("\n", end)
+    if line_end == -1:
+        line_end = len(text)
+    line = text[line_start:line_end].strip()
+    return line.startswith("|") and line.count("|") >= 2
+
 
 def scan_case3_emergence(text: str) -> LaunderingResult:
     """§2.8 Case 3: 'emergence' used in its physics sense (ontologically
@@ -155,8 +180,12 @@ def scan_case3_emergence(text: str) -> LaunderingResult:
     benchmark-performance jump at a scale threshold -- often a metric
     artifact (Schaeffer et al. 2023), not a phase transition. Flags
     'emergen(t/ce)' near an AI subject with no metric-artifact caveat
-    anywhere in the text."""
-    em_matches = _finditer_matches(_EMERGENCE_RE, text, "emergence")
+    anywhere in the text, unless the match sits in a markdown table row
+    (see `_in_markdown_table_row`)."""
+    em_matches = [
+        m for m in _finditer_matches(_EMERGENCE_RE, text, "emergence")
+        if not _in_markdown_table_row(text, m.start, m.end)
+    ]
     ai_subject_present = bool(_AI_SUBJECT_RE.search(text))
     caveat_present = bool(_METRIC_ARTIFACT_CAVEAT_RE.search(text))
     flagged_matches = em_matches if (em_matches and ai_subject_present and not caveat_present) else []
