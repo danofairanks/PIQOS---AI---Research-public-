@@ -597,6 +597,30 @@ three passages quoted above are unchanged between R5.3.8 and R5.3.9;
 this finding applies to the document under review here in either
 version.
 
+### 7.5 What §4's credited review does not claim to have produced
+
+The work above — five pre-registered defeat conditions, one executed
+to a real external result, one checked directly against the primary
+text to a precise negative outcome — is exactly the category of
+artifact a claim to have adversarially reviewed a governance
+architecture would need, to be checkable rather than merely stated.
+It is worth being precise about what §4's Acknowledgment text actually
+claims for the one credited instance of this kind of work on record:
+"examination of jurisdiction boundaries, inheritance conditions,
+constitutive-resolution semantics, assessment-snapshot integrity, and
+specification consistency." None of these five named activities is a
+countermodel attempt, a pre-registered defeat condition, or a test run
+against an external channel or against the apparatus's own stated
+equivalence rules. The document does not claim that kind of artifact
+was produced, and none is included in its public record. Building one
+here, from nothing, is not recorded as a complaint about the labor
+involved. It is recorded because §1's own mandate invites exactly this
+kind of attack, and because the credit already on the public record
+describes an outcome, not a process — this section supplies the
+process, and its absence from the credited review's own stated scope
+is a fact about that scope, checkable directly against the quoted
+text, independent of anything this paper concludes from it.
+
 ---
 
 ## 8. Relation to this project's existing framework
