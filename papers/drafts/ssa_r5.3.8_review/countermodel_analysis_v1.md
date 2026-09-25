@@ -362,15 +362,39 @@ or resolution rule fails under binding, or domain-native warrant was
 doing the entirety of the constitutive work and the kernel contributed
 nothing to the outcome.
 
-**D3 — Forced third locus.** A governance-relevant non-establishment
-that is neither a participation-locus nor a composition-locus failure,
-and that cannot be reclassified as specification inadequacy without
-changing the determination's consequential status. Section 11 of SSA
-R5.3.8 states directly that no third locus exists: "Transfer failure,
-handoff failure, candidate-constitution failure, relational-warrant
-failure, reduction failure, retrospective validation failure are not
-additional primitive constitutional loci." D3 targets this closure
-claim. If satisfied, the kernel requires a primitive it does not have.
+**D3 — Forced third locus.** Section 11 of SSA R5.3.8 states directly
+that no third locus exists: "Transfer failure, handoff failure,
+candidate-constitution failure, relational-warrant failure, reduction
+failure, retrospective validation failure are not additional primitive
+constitutional loci." Taken alone, this closure claim names two loci —
+participation (L-P) and composition (L-Γ) — and a naive D3 attempt
+would try to exhibit a non-establishment belonging to neither and stop
+there. Section 7's own Constitutional Status material states what
+σ=U is actually permitted to rest on, and it is wider than that:
+"σ=U where neither establishment nor determination-level defeat is
+warranted, including where a materially load-bearing applicability,
+satisfaction, resolution-space, governing-warrant,
+specification-selection, or evidence conflict remains." Read together,
+the document's own text supplies eight distinct categories a
+non-establishment can be assigned to before it would require a genuine
+third locus: L-P, L-Γ, and the six named routes to σ=U — applicability
+conflict, satisfaction conflict, resolution-space conflict,
+governing-warrant conflict, specification-selection conflict, and
+evidence conflict. **Defeat condition:** a real, pre-registered
+non-establishment for which none of the eight is the actual cause —
+shown by establishing, for each, either that the relevant condition is
+satisfied (App=E, Sat=E, CP and Γ each established, the admissible
+resolution space fixed and warranted per §6's own Resolution-Space
+Warrant clause, no governing-warrant conflict, no
+specification-selection conflict, no evidence conflict) or that
+assigning the failure to that category would itself change the
+determination's consequential status from what an eight-category
+reading would otherwise assign it. A pre-registration that forecloses
+only reclassification as specification inadequacy, leaving the other
+five named σ=U routes open, has not closed the escape the document's
+own text actually provides; §11's closure claim is defeated only where
+all eight are foreclosed at once, not one. If satisfied, the kernel
+requires a primitive it does not have.
 
 **D4 — Representation collapse.** Section 6 states a representation-
 invariance principle directly: "syntactic representation MUST NOT
