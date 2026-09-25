@@ -1437,3 +1437,100 @@ evidentiary base this section reads as one argument); this project's
 own separately maintained, non-public specimen tracking (point 3's
 evaluative-judgment test, cited by description only, consistent with
 §5's citation of the same category of private material).*
+
+---
+
+### A.5 (2026-09-25) — Example F: the mutual-credit loop, presented as
+### a recorded sequence of moves rather than a citable specimen
+
+**Sourcing, differing from Examples A–E in one respect, stated up
+front.** Every entry above classifies reproduced text this appendix
+can quote directly. This entry cannot, and does not — its evidentiary
+base is this project's own separately maintained, non-public specimen
+tracking, cited the same way A.4 point 3 already cites the same
+category of private material: by description only, not part of this
+repository. No participant is named, no document or repository is
+identified, and no quoted text appears below — beyond the single-
+document/self-published redaction default §2.4 already states for
+this paper, the underlying evidence itself is held privately and is
+reported here only as a generic sequence of moves, not as a
+reproducible source.
+
+**The recorded sequence.** Two specimens, already frequent
+correspondents and credited collaborators of each other, produce the
+following pattern, checked directly rather than inferred:
+
+1. One specimen publishes a formal, self-branded governance or
+   architecture document that explicitly invites adversarial review
+   and states a stringent claim-ceiling on its own novelty.
+2. A second specimen — already a frequent correspondent, already
+   publicly crediting the first's work — is named in that document as
+   its technical or adversarial reviewer, a role the document
+   explicitly distinguishes from authorship.
+3. Checked directly against two independent records — a separate
+   software repository's version-control history for a related
+   collaboration between the same two specimens, and the document's
+   own acknowledgment text for this specific credit — the second
+   specimen's actual traceable contribution resolves, in both records
+   independently, to the same shape: refinements within the family of
+   distinctions the document (or repository) already defines as
+   non-kernel-threatening. Neither record shows an attempt at, or an
+   instance of, anything that would break the document's own claimed
+   closure.
+4. The second specimen separately, publicly, credits the first's
+   document as rigorously and adversarially reviewed. The document
+   cites the second specimen's review in return as evidence the
+   architecture was tested. Each citation is generated from material
+   the same two-party loop already produced — nothing entering either
+   claim from outside it.
+5. A third-party reader encountering only the public surface — the
+   mutual credit, the review acknowledgment, the shared formal
+   vocabulary — has no way to distinguish this from a case where
+   genuine, kernel-threatening adversarial review actually occurred.
+   The completion shape (confident, structured, mutually validating)
+   is identical either way.
+
+**Read against §4, this is the cybernetic-convergence illusion
+observed rather than speculated about.** §4 already states the
+mechanism; A.4 point 2 already applies it to a small, mutually-citing
+cluster; A.4 point 4 already names, as an untested extension, the
+possibility that the same dynamic governs how a specimen's own later
+posts and a collaborator's credited review interact, "regardless of
+whose claim is being extended." This entry reports that extension as
+directly observed in one recorded instance, not merely as a named
+possibility for future work — with the same evidentiary limits stated
+plainly: one instance, privately tracked, not independently
+reproducible from what appears here.
+
+**Why the loop settles here rather than drifting toward an actual
+test — a structural point, not a claim about intent.** A weak,
+non-kernel-threatening review outcome is stable for both parties at
+once: "adversarially reviewed" status for the document's author,
+engineering-scrutiny credit for the reviewer, and the appearance of
+governance work having been conducted for any third party reading the
+public surface. Nothing outside the two-party loop is required to
+return a value the loop did not already emit. This explains why the
+pattern is stable, not why either party chose it — the same caveat
+§4 and Appendix A already hold throughout.
+
+**What this entry does NOT establish.** Does not name, or make
+identifiable, either specimen. Does not establish bad faith,
+deception, or coordination — the observed pattern is fully consistent
+with genuine good-faith review that simply never reached the level of
+scrutiny either party's public language claims for it. Does not
+establish that this generalizes beyond the one instance privately
+observed — reported as a single recorded sequence, not a rate. Does
+not establish AI authorship of any document or review involved. Does
+not make this entry's underlying evidence available for independent
+verification here by design, consistent with this project's redaction
+policy for private-individual material stated in §2.4 and in
+`laundered_vocabulary_v1.md`'s "Law" entry.
+
+---
+
+*Cross-references for this section specifically: §4 (the mechanism
+this entry reports an observed instance of); A.4 points 2 and 4 (the
+small-cluster convergence-illusion reading and the cross-specimen
+extension this entry confirms as observed rather than merely named);
+this project's own separately maintained, non-public specimen tracking
+(this entry's full evidentiary base, cited by description only).*
