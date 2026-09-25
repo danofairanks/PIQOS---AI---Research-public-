@@ -605,6 +605,18 @@ baseline: if such a bias exists, an already-shallow result could be
 shallower than an equivalent review conducted without it, not merely
 equally shallow.
 
+**Note (2026-09-25) — SSA R5.3.9.** A successor release, R5.3.9, was
+published after this paper's initial draft and has been read in full
+against this paper's findings. R5.3.9's own release note describes it
+as bounded semantic hardening; on direct comparison, that
+self-description holds. The added content is three narrow additions —
+an obligation-level fatal-defeater-priority rule, a resolution rule
+for materially contrary adequacy bases, and an empty-resolution-space
+non-conferment rule — layered onto an apparatus that is otherwise
+unchanged, including every structural non-entailment proposition and
+worked instantiation this paper examines in §3. Nothing in R5.3.9
+alters any finding above.
+
 ---
 
 ## 10. Conclusion
