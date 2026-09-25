@@ -521,6 +521,82 @@ likely respond to this analysis; this section is the analysis's own
 author running one of its own stated tests to completion, on the
 record, before publication rather than after a challenge.
 
+### 7.4 D4 checked directly against SSA's own text: an equivalence test with no ex-ante procedure
+
+Unlike D1 and D2, D4's target is entirely internal to SSA's own stated
+apparatus — no external channel or system trajectory is required, only
+careful reading. We checked it directly against the primary text
+rather than leaving it, like D3, unattempted.
+
+§7.1 above quotes the Representation Invariance principle in full:
+"syntactic representation MUST NOT determine constitutional status. Two
+representations purporting to encode the same domain-native
+constitutive structure are admissibly equivalent only where they
+preserve the same determination-level establishment, defeat, and
+unresolved result across every warranted admissible resolution of the
+load-bearing conditions." Two further passages state variants of the
+same principle at the CP/Γ boundary specifically. Closing §5's
+constitutive-composition material: "A CP-only reduction is valid only
+where it eliminates the relational dependency itself while preserving
+σ, admissible counterfactual variation, obligation status, and failure
+localization without introducing an equivalent relational structure
+elsewhere." Closing §15's countermodel material, under the header
+"Reification non-collapse condition": "where reification eliminates
+every independently variable load-bearing relational condition without
+loss of governance-relevant discriminatory power, a separate Γ claim
+is not warranted."
+
+All three passages state the same structural test in three independent
+locations across the document, and all three define it the same way: a
+re-encoding is admissible exactly where it preserves the
+determination-level output — σ, obligation status, failure
+localization, "discriminatory power" — that the test exists to
+constrain. None supplies a way to check this in advance of computing
+that output for both encodings. To confirm two representations are
+"admissibly equivalent" under the §6 formulation, one must already know
+that they "preserve the same determination-level establishment,
+defeat, and unresolved result" — which is to say, one must already have
+run both representations through the full apparatus to σ and compared.
+Read this way, the principle cannot function as an ex-ante constraint
+on which re-encodings are legitimate, of the kind the rest of Appendix
+A's Minimal Generative Specification otherwise supplies for every other
+primitive it defines: App, Sat, Adeq, CP, and Γ are each given a type
+signature and a governing rule stateable before evaluation; "admissible
+equivalence" between representations is not.
+
+This has a direct consequence for D4's defeat condition as stated in
+§7.1: "two encodings the document's own rule treats as equivalent that
+nonetheless yield different σ under identical evidence." On the
+formulation actually given, no such pair can be exhibited as a
+counterexample, because the rule's own definition of "equivalent"
+already requires σ-preservation. Any two encodings run to completion
+and found to diverge in σ would, by the same definition, simply never
+have been "admissibly equivalent" to begin with — the rule accommodates
+divergence by narrowing which encodings count as equivalent after the
+fact, rather than by being falsified when a divergence is found. D4,
+tested against SSA's actual text rather than against a hypothetical
+improved version of it, is neither defeated nor satisfied: it cannot
+currently be posed as a testable claim at all, because the equivalence
+relation it would need to hold fixed in advance is defined circularly,
+in terms of the very quantity a test would exist to check.
+
+This is a different outcome from D1 (executed, satisfied — §7.3) and
+from D2 (attempted; this session's own infrastructure prevented a valid
+result, logged privately rather than claimed here). It sits closer in
+shape to §3's central finding about T1–T6 — every worked case
+stipulates rather than derives — except located one layer up, in the
+rule meant to govern which stipulations are allowed to differ without
+consequence. R5.3.9's added "Empty Resolution-Space Non-Conferment"
+rule, in the immediately adjacent §6 continuation material, is worth
+noting as circumstantial support: it exists specifically because an
+under-specified resolution space was found to risk conferring
+establishment through vacuous agreement, the same family of concern
+raised here about representation equivalence, addressed there for one
+narrow case rather than for the general equivalence test itself. All
+three passages quoted above are unchanged between R5.3.8 and R5.3.9;
+this finding applies to the document under review here in either
+version.
+
 ---
 
 ## 8. Relation to this project's existing framework
