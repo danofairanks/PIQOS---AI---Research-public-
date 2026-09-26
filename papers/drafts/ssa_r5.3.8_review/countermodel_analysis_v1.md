@@ -941,6 +941,20 @@ condition run to a result — and every model asked so far, regardless
 of which question it was asked, has supplied the first and stopped
 short of the second.
 
+One further note, kept deliberately narrow: this paper does not
+establish, and does not speculate about, how §4's credited review was
+actually produced. What is checkable does not depend on that question.
+The review's own described scope — jurisdiction boundaries, inheritance
+conditions, constitutive-resolution semantics, assessment-snapshot
+integrity, specification consistency — names close to the same
+categories this section's four transcripts produced unprompted, and
+R5.3.9's own three additions sit near specific items on ChatGPT's list
+above. Whether or not a model was involved in producing it, the
+credited review's public output is not distinguishable from what an
+unexecuted weaknesses-pass of the kind run in §7.8 would generate on
+its own — diagnosis converted directly into hardening, with no step in
+between that either process would need to include a run test.
+
 ---
 
 ## 8. Relation to this project's existing framework
