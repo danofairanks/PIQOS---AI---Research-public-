@@ -817,6 +817,130 @@ that share nothing but the request and the document, exactly where
 §7.6 predicts it should, and in ChatGPT's case, replicates as a stated
 preference rather than only an unexamined default.
 
+### 7.8 The same two models, asked to find weaknesses instead
+
+§7.7 asked both models to harden the text. A separate pair of
+sessions, same date, asked the more adversarial question directly —
+"find the weaknesses" — to check whether a request aimed at critique
+rather than construction changes the pattern. It does not, though it
+fails in a more differentiated way, and one of the two runs is the
+most substantively convergent transcript this investigation has
+produced.
+
+**Gemini** (a lighter model variant than §7.7's run) returned five
+weaknesses. The first is the most interesting to check precisely,
+because it is not a hallucination the way §7.7's citation error was —
+it is an accurate quotation with an omission. Gemini describes a
+"potential infinite regress" in the Terminal Warrant Boundary rule
+(§3.7): if a terminal warrant's validity becomes independently
+variable and materially load-bearing, it must become recursively
+governed. That is a correct reading of half the sentence. The rule in
+full reads: "W_T MUST become recursively governed **or the receiving
+result MUST remain unresolved**." Gemini's summary omits the second
+branch — the same σ=U exit already catalogued across §7.1's eight
+closure categories — and concludes regress where the text supplies a
+bounded stop. The remaining four findings fare similarly on direct
+check: recommendation two claims evaluators "possess wide discretion"
+over the admissible resolution space against a clause stating plainly
+that "the evaluator MUST NOT select, omit, or construct admissible
+resolutions to obtain a preferred σ"; recommendation three is a
+usability complaint about versioning overhead, not a claim about the
+architecture's validity; recommendation four calls the
+Bounded-Omitted-Obligation-Defeat asymmetry a "paradox," when the
+document states that asymmetry openly and by design; recommendation
+five — that the protected methodology limits independent
+falsifiability — is accurate but restates what §20 already discloses
+about itself, D0 territory rather than a discovered gap.
+
+**ChatGPT**, asked the identical question, returned fifteen numbered
+vulnerabilities plus a closing synthesis, and several of them
+converge substantively with findings this paper reached independently
+through direct primary-source work — without having read this paper.
+Vulnerability six revisits the same Terminal Warrant Boundary
+recursion Gemini misread, but does not make Gemini's error: it
+explicitly names the "or remain unresolved" branch and asks the
+sharper question — "you have a stopping criterion, but not a
+demonstrated termination theorem" — treating σ=U itself as a possible
+"arbitrary stopping point" rather than ignoring it. That is
+structurally the same question §7.6 already asks about hardening's own
+terminus, now aimed at the architecture's recursion mechanism instead
+of its revision cycle. Vulnerability thirteen goes further, asking for
+"a case where SSA itself makes a determinate prediction that a
+competing architecture would make differently, with the result
+independently adjudicated" — a plain-language reconstruction of what
+an independent channel is for, arrived at without reference to D1 or
+D2. The closing synthesis restates §5's scope-narrowing finding almost
+exactly: "SSA is a general architecture for organizing and
+constraining constitution judgments, not a domain-independent decision
+procedure for determining them." And the response's final paragraph
+names, unprompted, the same reason this paper's own §7 required as
+much formal apparatus as it did: "the document's own sophistication
+makes it harder to criticize casually... the productive attack is not
+to repeat those objections; it's to ask whether the machinery
+introduced to defeat them is itself sufficiently determined." One
+claim is flagged rather than verified: ChatGPT's seventh vulnerability
+states that negation is "explicitly excluded unless an extension is
+supplied" from the three-valued semantics — not checked against the
+primary text this session, and not relied on here.
+
+What ChatGPT's weaknesses-run does not do is different from what it
+does well. Fifteen vulnerabilities, several of them landing precisely
+on real gaps, and not one is pursued to a checkable result. Every
+finding stays as a named question rather than a pre-registered test
+run to σ. The response's own closing line offers to keep going — "a
+much harsher 'peer reviewer #2' pass... including proposed replacement
+language" — before any of the fifteen questions already on the table
+has been closed.
+
+### 7.9 Across all four runs, checked against the question that motivated them
+
+Four transcripts, two models, two opposed requests, same document,
+same date. The question worth asking directly: was this mostly the
+same semantic material circulating again, in a document whose most
+recent version was itself a record of exactly that circulation?
+
+For three of the four runs, yes, checked precisely rather than
+assumed. Gemini's hardening run (§7.7) proposes tightening the
+empty-resolution-space rule further — the identical clause R5.3.9's
+own delta had just added, hardened a second time the moment a model
+was asked to look at it. Gemini's weaknesses run (§7.8) restates or
+mischaracterizes existing clauses in four of five findings, and its
+one substantive-sounding claim is an accurate quotation with the
+resolving half of its own source sentence removed. ChatGPT's hardening
+run is mostly the same — nine of ten proposals are new procedural
+boxes in the shape R5.3.9's own additions already take, and its own
+featured proposal is introduced with its non-novelty stated by the
+model itself.
+
+The fourth run breaks the pattern, and it is worth being precise about
+how. ChatGPT's weaknesses run does not mostly recirculate existing
+semantic material — it independently reconstructs, in different
+language and without having read this paper, three of this paper's
+own findings: that the architecture's real work happens at a locus it
+delegates rather than derives (§3), that its actual scope is narrower
+than some of its own language suggests (§5), and that what would
+settle the question is an independently adjudicated, determinate
+prediction (§7.1's D1/D2). That is not washing. It is an independent
+model, asked to attack the document, landing on the same coordinates
+this paper reached by direct textual work — which is corroboration
+worth taking seriously, not proof of anything beyond that a second
+route to the same findings exists.
+
+What holds across all four runs without exception is sharper than the
+washing question alone: none of the four ever ran anything. Not one
+of the nineteen recommendations, vulnerabilities, or "major" proposals
+across all four transcripts was carried to a pre-registered result the
+way §7.3's D1 trial or §7.4's textual check were. Even the run that
+correctly identified where the real gaps are stopped at identifying
+them, and closed by offering to keep going rather than to test
+anything. That is the finding this section's four data points converge
+on, independent of whether any individual transcript amounts to
+washing, convergence, or something else: diagnosis without execution,
+offered in unlimited supply, is not the same thing as a defeat
+condition run to a result — and every model asked so far, regardless
+of which question it was asked, has supplied the first and stopped
+short of the second.
+
 ---
 
 ## 8. Relation to this project's existing framework
