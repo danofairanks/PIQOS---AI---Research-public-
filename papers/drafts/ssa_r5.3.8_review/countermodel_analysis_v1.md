@@ -645,6 +645,71 @@ process, and its absence from the credited review's own stated scope
 is a fact about that scope, checkable directly against the quoted
 text, independent of anything this paper concludes from it.
 
+### 7.6 Whether hardening has a terminus, checked against the apparatus and the public record
+
+SSA's own apparatus supplies a coherent notion of a finished
+specification: Adeq=E is defined as "adequate obligation coverage,
+typing, and materially relevant satisfaction structure established."
+Nothing in the document requires that the credited-review-and-revision
+cycle §4 describes continue indefinitely as a matter of definition.
+The narrower, checkable question is whether the apparatus, or the
+public record of how it has actually been used, supplies any way to
+recognize that terminus other than the same closed loop that produces
+the hardening in the first place.
+
+Two things bear on this. First, the apparatus itself. Section 1
+supplies its own classification vocabulary for the scope of a
+change — kernel, specification, application, or no change — already
+quoted in §7.1 above. Every round of hardening on the public record,
+including the successor release's own delta — an obligation-level
+fatal-defeater-priority rule, a resolution rule for materially
+contrary adequacy bases, and an empty-resolution-space
+non-conferment rule, mirrored as conformance clauses in that
+release's own §18 — is scoped at specification or application tier by
+the document's own account. Nothing in how review is invited or
+credited directs a finding to escalate to kernel tier, and no such
+escalation appears anywhere in the revision history read against
+Appendix B's provenance table. A process scoped this way cannot, by
+its own stated rules, produce a kernel-level result — not because no
+kernel-level problem could exist, but because the tier a finding
+receives is fixed by the same act that reports it, with no check
+external to that act on whether specification tier was the correct
+one to begin with.
+
+Second, what the public record shows about how a stopping point
+actually gets reached. On September 25, 2026, in a public LinkedIn
+exchange responding to a comment that cited this project's own
+published vocabulary directly, Ricky Jones wrote: "I think we've
+reached the natural stopping point for the public exchange... any
+further iteration on the paper is your research programme to carry
+forward." Read narrowly, this is an ordinary thing to say, and
+declining further public exchange is not itself evidence of anything
+about SSA's architecture — either party is entitled to end a public
+thread for any reason, and this is not recorded as a criticism of that
+decision. What is worth recording precisely is the mechanism: the
+stopping point was declared by one of the two parties whose own
+credited review work is the subject under discussion, not derived from
+a check external to that pair. No formal criterion from the
+apparatus — a completed Adeq=E assessment, an exhausted run of the
+eight categories §7.1's D3 defeat condition requires closing, anything
+checkable against the document's own text — was cited as its basis.
+This is the only publicly observable instance, on this specimen, of
+hardening actually terminating, and the mechanism it shows is a
+participant's declaration, not a property of the architecture.
+
+Put together, this is the same structural gap §7.4 found one layer
+down, one layer up: just as "admissibly equivalent" is defined in
+terms of the very determination-level result it exists to predict,
+"adequately hardened" is recognized, on the only public instance
+available, by the same pair whose own output it would need to certify,
+with nothing external to that pair doing the recognizing. Neither
+observation establishes that the architecture is being used in bad
+faith. Both establish that the apparatus, as currently practiced,
+supplies no way to distinguish a genuine terminus from an arbitrary
+one — which means a request to harden further, made to any model
+holding this document in context, has no formal reason internal to the
+document to ever come back negative.
+
 ---
 
 ## 8. Relation to this project's existing framework
