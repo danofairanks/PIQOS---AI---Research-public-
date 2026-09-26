@@ -1054,6 +1054,82 @@ to find the seam where a stronger claim could be checked and shown
 wrong have now been made, from this paper's own apparatus and from
 four external model runs alike, and none has found one yet.
 
+### 7.11 A first substantive reply, checked claim by claim
+
+On 2026-09-26, in the same public thread, Ricky Jones posted the first
+reply in this exchange that engages specific findings rather than
+declining to engage. Quoted in full:
+
+> Daniel — I've completed the bounded review against the exact R5.3.8
+> object. One part of your critique was useful: local reducibility is a
+> legitimate test, and some cases do reduce cleanly to competent
+> ordinary practice. That tightens the claim boundary. Where it did not
+> hold was also clear. The external-channel attack tested a claim
+> R5.3.8 does not make, and the broader suggestion that CP/Γ can simply
+> be eliminated did not survive a direct reduction test. Your
+> representation/equivalence and external-instantiation concerns remain
+> useful hardening questions; they are not a demonstrated kernel
+> defeat. Sandra's work has been developed and attacked for years. This
+> review established neither global validation nor the collapse you
+> argued for. I continue to stand by the work with that claim ceiling
+> intact. I'll publish a concise review note and rules of engagement
+> for future technical criticism. I'm not continuing this piecemeal in
+> comments. Done.
+
+This is real progress worth crediting directly: the first specific
+concession and the first specific dispute in the thread, rather than a
+stated terminus alone (§7.6, §7.9). Each claim is checked below against
+the text actually published above, not against what the reply
+characterizes it as.
+
+**The concession.** "Local reducibility is a legitimate test, and some
+cases do reduce cleanly to competent ordinary practice" accepts D1's
+result (§7.3) directly — the first specific finding either credited
+party has engaged rather than declined.
+
+**"The external-channel attack tested a claim R5.3.8 does not make."**
+The only executed external-channel trial in this paper is D1. D1's own
+stated conclusion was never that SSA is defeated; §7.1 states it
+plainly: "If satisfied, the architecture is taxonomic: it classifies
+without exerting distinctive constitutive force" — offered as evidence
+for the taxonomic reading, which is exactly the reading D0 already
+grants SSA at the outset. Read this way, the claim is not a correction
+of this paper — it agrees with §5's own scope-narrowing finding, stated
+as though it were a rebuttal of it.
+
+**"The broader suggestion that CP/Γ can simply be eliminated did not
+survive a direct reduction test."** Checked directly against §7.4: this
+paper does not argue CP and Γ can be eliminated, anywhere. §7.4's actual
+finding is narrower and different in kind — that the Representation
+Invariance principle's own stated equivalence test is defined
+circularly, in terms of the σ-preservation it exists to predict, so a
+D4-style counterexample cannot currently be exhibited against the
+formulation as written. If a reduction test was run against "CP/Γ can
+be eliminated," it was run against a claim this paper does not make —
+the same move the reply's prior sentence attributes to this paper.
+
+**"They are not a demonstrated kernel defeat."** Already true by this
+paper's own account, stated directly in §7.10: D3 and D4 are "neither
+defeated nor satisfied," explicitly not claimed as demonstrated kernel
+defeats anywhere above. On this specific point there is less distance
+between the reply's position and this paper's own stated position than
+the reply's framing suggests.
+
+**What is genuinely new.** The commitment to "publish a concise review
+note and rules of engagement for future technical criticism" is the
+first commitment, from either credited party, to produce an artifact
+rather than a stopping point. Unlike the disputes above, this one
+cannot be checked yet — it does not exist. If it closes any of D3's
+eight named routes (§7.1), supplies the decision procedure D4 currently
+lacks (§7.4), or runs a defeat condition to a result the way §7.3 and
+§7.4 do here, it would be the first artifact of that kind this
+specimen's public record has produced (§7.5). If it restates position
+without a checkable test, it extends the pattern §7.9 and §7.10 already
+describe rather than breaking it. Recorded here as open, not
+predicted — consistent with this paper's own practice of checking a
+prediction against what actually happens rather than assuming it in
+advance (§7.2, §7.6).
+
 ---
 
 ## 8. Relation to this project's existing framework
