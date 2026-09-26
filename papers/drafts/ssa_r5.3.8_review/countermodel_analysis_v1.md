@@ -710,6 +710,113 @@ one — which means a request to harden further, made to any model
 holding this document in context, has no formal reason internal to the
 document to ever come back negative.
 
+### 7.7 Two independent models, asked to harden the same text
+
+§7.6's closing claim is checkable directly rather than only argued for:
+a request to harden the document, made to a model holding it in
+context, should have no formal reason internal to the document to
+ever come back negative. This was tested, for real, on September 25,
+2026. The operator supplied SSA R5.3.9 to two general-purpose models —
+Google Gemini and OpenAI ChatGPT, independently, in separate sessions —
+with a single instruction each ("suggest how to harden it" / "what
+can be done to harden this"). Neither model had seen this paper.
+Both transcripts are reported below as they were produced, checked
+against the primary source the same way every other quotation in this
+paper has been, and neither is offered as a claim about either
+model's general capability — only as two dated, independent instances
+of the specific request §7.6 describes.
+
+**Gemini** returned five numbered recommendations, each proposing a
+new procedural guard — provenance isolation for Adeq, a hard-fail
+state for empty resolution spaces, version-anchoring for determination
+identity, dual-key validation for omitted-obligation defeat, and an
+"air-gap interface" between constitution and execution authority — and
+closed by offering to keep going: "Would you like to explore hardening
+a specific component of this architecture, such as drafting a rigorous
+conformance test... or tightening the assessment snapshot
+parameters?" All five stay at specification or application tier; none
+proposes anything resembling a falsification attempt. Two things are
+worth flagging precisely. First, recommendation two proposes hardening
+the empty-resolution-space rule further, the same clause R5.3.9 itself
+just added ("neither universal agreement nor absence of variation
+across that space may by itself establish the governed determination")
+— one clause, hardened twice in sequence, the second round arriving
+the moment a model was asked to look. Second, recommendation five cites
+"(§12)" for an execution-authority boundary that the document already
+states as a standing rule — "VALID CONSTITUTION ⇏ EXECUTION
+AUTHORITY" — and recommendation three cites "(§10.1)" for a
+dynamic-identity rule that does not exist at that location: §10 is
+Structural Non-Entailment Rules (T1–T6) and has no numbered
+subsections; the rule Gemini describes is conformance-test item 13,
+which states, in the document's own words, that identity selection
+"MUST NOT be selected post hoc to preserve a preferred status or
+failure localization." A fabricated section pointer attached to an
+otherwise plausible-sounding recommendation is itself a small,
+checkable instance of exactly the ungrounded-elaboration risk this
+paper is about.
+
+**ChatGPT** returned a longer, more structured response: ten numbered
+hardening areas in table form, five of which it elaborated as "major"
+proposals, plus a closing recommendation against expanding the kernel
+at all. Two items are worth reading closely rather than only counting.
+The recommendation ChatGPT itself calls most important — a "No Silent
+Repair Principle" unifying several already-separate SSA rules against
+one layer's defect being repaired by another layer's status — is
+introduced with its own non-novelty stated plainly: "Those are really
+instances of one deeper invariant... I would make that invariant
+explicit." The model's own top proposal is, by its own account, a
+renaming of existing content, not new substance. Two of the ten
+numbered items restate standing rules as though identifying gaps:
+recommendation nine ("no post-hoc locus selection") restates
+conformance-test item 16 almost exactly — the document already states
+that "failure localization is an output to preserve in reduction
+testing, not a license to choose P*/R* typing by preferred locus" —
+and recommendation ten restates the same conformance-test item 13
+Gemini also reached for, this time without misattributing its
+location. Recommendation eight, by contrast, is a genuine, independent
+convergence worth taking seriously on its own terms: "Add canonical
+normal-form equivalence tests so logically equivalent encodings cannot
+produce different constitutional results" lands on almost exactly the
+gap §7.4 above identifies in the Representation Invariance
+principle — a decision procedure the current text does not supply —
+and proposes the one category of fix that could actually close it,
+independently of this paper and without having read it. This is
+reported as corroboration that the gap is real, not as proof of
+anything beyond that; a second model reaching the same structural
+point from a differently framed request is evidence the finding is not
+an artifact of how this paper happened to phrase it. Closing the
+response, ChatGPT explicitly declines to propose kernel-level change:
+"I would resist adding another primitive status, another architectural
+dimension, or another universal rule... The strongest next version
+therefore probably isn't 'SSA R5.4 — more concepts'... That would
+harden the architecture without unnecessarily expanding the kernel."
+Its most concrete single proposal — an adversarial test suite built
+from positive, violating, near-miss, representation-equivalent,
+unresolved, cross-version, recursive, and adversarial-evaluator cases
+for every rule — is also the one place its own language converges with
+§7.5's critique of the credited review: "That would turn the
+architecture from something an evaluator can interpret into something
+two independent implementations can be tested against." Recommending
+that such a suite be built is not the same as building one; the
+recommendation itself remains prose, not an executed artifact, which
+is the same gap §7.5 already found in the one credited review
+actually on record.
+
+Fifteen recommendations across two separately trained models, one
+shared request each, and not one of them attempts anything resembling
+a pre-registered defeat condition. Both stay within specification or
+application tier throughout. Both, at least once, present an existing
+rule as a newly discovered gap. This is not offered as independent
+verification of the pattern in the strong sense — two models trained
+on overlapping distributions of governance and formal-specification
+text are not causally independent channels of the kind D2 requires,
+and neither transcript is treated here as more than what it is: a
+dated instance of a specific, checkable request. What it does show is
+that the absence of kernel-level escalation replicates across systems
+that share nothing but the request and the document, exactly where
+§7.6 predicts it should, and in ChatGPT's case, replicates as a stated
+preference rather than only an unexamined default.
+
 ---
 
 ## 8. Relation to this project's existing framework
