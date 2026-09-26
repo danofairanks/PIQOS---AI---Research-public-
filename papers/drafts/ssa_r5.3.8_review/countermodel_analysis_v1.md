@@ -955,6 +955,72 @@ unexecuted weaknesses-pass of the kind run in §7.8 would generate on
 its own — diagnosis converted directly into hardening, with no step in
 between that either process would need to include a run test.
 
+### 7.10 What the pattern, taken together, is evidence of
+
+§§7.1 through 7.9 are five independent attempts to expose SSA's
+stronger claim — that it does genuine constitutive work rather than
+organizing existing practice — to something it could fail. It is worth
+stating precisely what the combined result does and does not establish,
+because the honest version is stronger than an overstated one and
+easier to defend.
+
+What was tried. D1 is a real, falsifiable test, and it was run to
+completion (§7.3): σ_SSA(𝔇) could have diverged from ordinary practice
+and did not, which is evidence the apparatus can be exposed to a test
+that has a way of coming out wrong. D2 remains open — blocked by this
+session's own infrastructure, not defeated by the architecture, and
+explicitly not counted as evidence either way. D3 was not defeated, but
+checked against the primary text directly (§7.1), it requires closing
+eight separately named routes to non-kernel status simultaneously
+before a challenge can even be posed, not merely finding one
+non-establishment. D4 was not defeated either, but for a different and
+sharper reason (§7.4): its own equivalence test is defined in terms of
+the very determination-level output it exists to predict, so no
+counterexample can be exhibited against it as currently stated — not
+"passed," not "failed," but not yet posable as a testable claim at all.
+Hardening's own terminus (§7.6) shows the identical shape one layer up,
+checked against a real, dated public instance rather than only argued
+for. And across four independent model runs (§7.7–7.9), nineteen total
+recommendations, two request framings, two separately trained
+systems — not one exposure to anything that would count as a
+kernel-level concession.
+
+What that does and does not show. It does not show SSA is
+unfalsifiable in the strict sense — that would require demonstrating
+that no possible observation, under any reformulation, could ever
+defeat the stronger claim, and five failed attempts, however
+independent, do not establish a universal negative. D1's own result is
+proof the architecture is not immune to every test; something did get
+checked, and it could have come out the other way. What the combined
+pattern does show is narrower and still substantial: every specific
+attempt to construct a test capable of failing has run into the same
+kind of obstacle — absorption into one of eight named escape routes
+(D3), a circular definition that pre-empts recognizing a counterexample
+as such (D4, and hardening's own terminus in §7.6), or a request
+answered with more of the same kind of elaboration rather than
+anything resembling a check (all nineteen recommendations across
+§7.7–7.9). That is evidence for a well-founded unfalsifiability concern
+about the stronger reading of SSA's claims, accumulating across five
+independent angles rather than resting on any one of them — distinct
+from, and stronger than, what D2, D3, or D4 shows individually. It is
+also not a novel concern manufactured by this paper's own framing: §7.8
+already recorded ChatGPT reaching the same conclusion independently —
+"difficult to falsify at the architectural level... the abstraction may
+be so permissive that almost any substantive outcome can be
+accommodated by supplying an appropriate domain-native warrant and
+resolution structure" — from a differently posed question, without
+having read this paper.
+
+The honest summary is the same shape D0 already commits this paper to:
+SSA's own §17 Claim Ceiling states a narrow, taxonomic contribution.
+Read at that strength, none of the above is an attack — a taxonomy is
+not supposed to be falsifiable the way a constitutive mechanism would
+need to be. The concern applies specifically where the document's
+language, or its use, claims more than that. Five independent attempts
+to find the seam where a stronger claim could be checked and shown
+wrong have now been made, from this paper's own apparatus and from
+four external model runs alike, and none has found one yet.
+
 ---
 
 ## 8. Relation to this project's existing framework
