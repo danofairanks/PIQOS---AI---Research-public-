@@ -1011,6 +1011,39 @@ accommodated by supplying an appropriate domain-native warrant and
 resolution structure" — from a differently posed question, without
 having read this paper.
 
+A physical analogy sharpens exactly what kind of concern this is,
+worth stating precisely because the honest version is narrower than
+"unfalsifiable" alone conveys. A physical law not yet discovered is
+still constrained by every measurement taken before its discovery —
+Newton's law of gravitation bound falling apples in 1600, and
+measurements made decades before 1687 already ruled out most of the
+mathematical space a correct law could occupy. "Not yet determined"
+there means the final form is unknown, not that nothing can be checked
+against it in the meantime: the measurements come first and constrain
+the law, not the reverse. SSA's domain-native warrant does not work
+this way. Nothing in the text commits, in advance and across cases, to
+what counts as a valid domain-native warrant; each K^v declares its own
+warrant, per determination, with no stated requirement that it match
+what a warrant looked like in a prior case. A warrant reinvented after
+every result to match whatever that result was is not an unknown law
+awaiting discovery — it is a name for the result itself, retrofitted.
+This is not a new problem introduced here: it is the same one D2's own
+design (§7.1) exists to close for Adeq specifically — "closing, by
+construction rather than by subsequent argument, the escape the
+document's own Adequacy Independence principle (§3.6) otherwise
+permits, in which a failed outcome can be attributed after the fact to
+inadequate specification rather than to the composition rule itself."
+D2 closes that move, but only when an external tester pre-registers
+Adeq deliberately, before running the trial. Nothing in SSA's own text
+extends that discipline by default to the wider category of
+domain-native warrant — App, Sat, CP, Γ, and the resolution space
+itself all share the same structure Adeq has, and D2's fix has only
+ever been applied to Adeq specifically, by a tester working from
+outside. What is checkable here, precisely: no passage found so far
+requires warrant-consistency across cases; what is not checkable is
+whether the text positively permits reinvention, since no passage
+found so far addresses that question either way.
+
 The honest summary is the same shape D0 already commits this paper to:
 SSA's own §17 Claim Ceiling states a narrow, taxonomic contribution.
 Read at that strength, none of the above is an attack — a taxonomy is
