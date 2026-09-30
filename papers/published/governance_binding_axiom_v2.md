@@ -1507,7 +1507,13 @@ Greek-letter form relabels the schema; the plain-language content is
 is used colloquially for the same thing. This note gives prior art for
 the idea. It does not say how any author arrived at the notation, and it
 does not claim the two settings are identical — the mapping is
-structural.
+structural. One difference is granularity: dataset shift concerns a
+distribution over many cases and is measured on averages, such as the
+calibration or loss of a classifier over a population, whereas the
+claim evaluated here concerns one grant and its consequence, where an
+average cannot show that this approval still stands. Methods that adjust
+a classifier's outputs to a shifted distribution therefore do not carry
+over to the authorization setting.
 
 A claim of this shape circulates in AI-governance discourse: *if a
 governance system cannot survive a state that is validly authorized at
