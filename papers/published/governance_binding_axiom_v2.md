@@ -1475,6 +1475,46 @@ a correction.
 
 ### 12.1 Motivating claim, stated generically
 
+*Provenance of the notation (added 2026-09-30, revised the same day after
+reading free sources; no finding, figure or claim below is changed by
+this note).* The three-point schema used from here on — a state that is
+valid at one time (T₀), a material change in the conditions that made it
+valid (ΔN), and the same action or consequence attempted at a later time
+(Tₙ) — is a notation for an older idea, not a new construct. In machine
+learning and statistics the idea belongs to the **dataset shift**
+family: a rule validated under the conditions that held at one time is
+applied under different conditions later, and its validity does not
+transfer automatically. Two members of the family matter here, defined
+as in Moreno-Torres et al. 2012 and, in practitioner wording, the DataEval
+documentation (both in the References). **Covariate shift** (also called
+virtual drift): P(x) changes while P(y | x) does not; the covariate-shift
+definition is attributed there to Shimodaira 2000. **Concept shift**
+(concept drift when it accrues over time; also called real drift):
+P(y | x) changes while P(x) does not. When both change, that taxonomy
+calls it general dataset shift. It defines covariate shift for problems
+in which the inputs determine the label (X→Y); a grant decided by
+current facts is such a problem. §12.3's stand-ins for ΔN (a policy
+revision, a threshold move, a counterparty status change) span all
+three cases: a change in the facts, a change in the rule, or both. The
+authorization setting this section evaluates has the same structure
+with a different object — a grant validated against the facts that held
+at T₀ rather than a predictor validated against an input distribution —
+and the security-engineering form of the same structure,
+time-of-check-to-time-of-use, is tested as Attack C in §12.5. The
+Greek-letter form relabels the schema; the plain-language content is
+"what was valid then is not automatically valid now". The term
+"covariate drift" does not appear in the sources read for this note; it
+is used colloquially for the same thing. This note gives prior art for
+the idea. It does not say how any author arrived at the notation, and it
+does not claim the two settings are identical — the mapping is
+structural. One difference is granularity: dataset shift concerns a
+distribution over many cases and is measured on averages, such as the
+calibration or loss of a classifier over a population, whereas the
+claim evaluated here concerns one grant and its consequence, where an
+average cannot show that this approval still stands. Methods that adjust
+a classifier's outputs to a shifted distribution therefore do not carry
+over to the authorization setting.
+
 A claim of this shape circulates in AI-governance discourse: *if a
 governance system cannot survive a state that is validly authorized at
 time T₀, undergoes a material change in its justifying conditions at
@@ -2286,6 +2326,14 @@ Baker, B., Huizinga, J., Gao, L., Dou, Z., Guan, M. Y., Madry, A., Zaremba, W., 
 Li, F., Zeller, J., Prada-Corral, M., Wiedemer, T., Mayilvahanan, P., Cotterell, R., & Brendel, W. (2026). LittleLearner: Language Models Under Pedagogically Controlled Knowledge Exposure. Max Planck Institute for Intelligent Systems / ETH Zurich / Ellis Institute. arXiv:2608.13545. Primary source for §4.1, read directly in full (32 pages, main body and references, plus appendix sections B/C.2/C.4/D on a second pass) from an operator-supplied PDF.
 
 OpenAI, "Pacing model development in an era of cyber-critical capabilities" (openai.com, Aug. 18, 2026). Primary source for §6.6, complete text supplied directly by the operator after an initial excerpt-only reading (via Andrew Curran, `@AndrewCurran_`, X, Aug 18 2026) was corrected; independently reported the same day by Time, Axios, and Fortune. Direct fetch of the primary URL returned a network-egress block when first checked (see Access note below).
+
+Shimodaira, H. (2000). Improving predictive inference under covariate shift by weighting the log-likelihood function. Journal of Statistical Planning and Inference, 90(2), 227–244. Origin attributed, in the Moreno-Torres et al. taxonomy, for the covariate-shift definition in the provenance note at the head of §12.1. Bibliographic details confirmed by search metadata and by that taxonomy's citation of it; not read.
+
+Quiñonero-Candela, J., Sugiyama, M., Schwaighofer, A. & Lawrence, N. D. (eds.) (2009). Dataset Shift in Machine Learning. MIT Press. Standard reference for dataset shift and its covariate-shift special case, cited in the same note. Bibliographic details confirmed by search metadata; not read.
+
+Moreno-Torres, J. G., Raeder, T., Alaiz-Rodríguez, R., Chawla, N. V. & Herrera, F. (2012). A unifying view on dataset shift in classification. Pattern Recognition, 45(1), 521–530. Source of the covariate-shift / prior-probability-shift / concept-shift definitions used in the provenance note at the head of §12.1. Read as reproduced in the first author's doctoral thesis (Universidad de Granada, 2013, https://digibug.ugr.es/handle/10481/29456), which includes the article's definitions; the journal version itself was not read. An author-hosted PDF of the article is at https://www3.nd.edu/~dial/publications/moreno2012unifying.pdf.
+
+DataEval documentation, "Drift" (v0.89.0). https://dataeval.readthedocs.io/en/v0.89.0/concepts/Drift.html. Practitioner-level statement of the same definitions, including the synonyms virtual drift (covariate shift) and real drift (concept drift); saved page read 2026-09-30.
 
 UK AI Security Institute, "Incident Report: unsanctioned agent behaviour during cyber testing" (Aug. 2026). Primary source for §6.2; not independently fetched in this pass (see Access note below).
 
