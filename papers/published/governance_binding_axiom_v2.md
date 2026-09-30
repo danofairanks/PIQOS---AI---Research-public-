@@ -1485,7 +1485,14 @@ shift**, called **covariate drift** when it accrues over time: a rule
 validated against the input distribution that held at one time is
 applied to inputs drawn from a different distribution later, and its
 validity does not transfer automatically (Shimodaira 2000; Quiñonero-
-Candela et al. 2009, in the References). The authorization setting this
+Candela et al. 2009; Moreno-Torres et al. 2012, in the References). Two
+variants are distinguished there and both occur here: if the facts
+feeding a decision change while the rule mapping facts to outcomes is
+fixed — P(x) changes, P(y | x) does not — that is covariate shift; if
+the rule or threshold itself changes — P(y | x) changes — that is
+concept shift (concept drift over time). §12.3's stand-ins for ΔN (a
+policy revision, a threshold move, a counterparty status change) span
+both. The authorization setting this
 section evaluates has the same structure with a different object — a
 grant validated against the facts that held at T₀ rather than a
 predictor validated against an input distribution — and the security-
@@ -2311,6 +2318,8 @@ OpenAI, "Pacing model development in an era of cyber-critical capabilities" (ope
 Shimodaira, H. (2000). Improving predictive inference under covariate shift by weighting the log-likelihood function. Journal of Statistical Planning and Inference, 90(2), 227–244. Prior art for the covariate-shift idea cited in the provenance note at the head of §12.1. Bibliographic details confirmed by search metadata; not re-read for that note.
 
 Quiñonero-Candela, J., Sugiyama, M., Schwaighofer, A. & Lawrence, N. D. (eds.) (2009). Dataset Shift in Machine Learning. MIT Press. Standard reference for dataset shift and its covariate-shift special case, cited in the same note. Bibliographic details confirmed by search metadata; not re-read for that note.
+
+Moreno-Torres, J. G., Raeder, T., Alaiz-Rodríguez, R., Chawla, N. V. & Herrera, F. (2012). A unifying view on dataset shift in classification. Pattern Recognition, 45(1), 521–530. Taxonomy cited in the provenance note at the head of §12.1 for the covariate-shift / concept-shift distinction; an author-hosted PDF exists (https://www3.nd.edu/~dial/publications/moreno2012unifying.pdf). Bibliographic details confirmed by search metadata; not re-read for that note.
 
 UK AI Security Institute, "Incident Report: unsanctioned agent behaviour during cyber testing" (Aug. 2026). Primary source for §6.2; not independently fetched in this pass (see Access note below).
 
