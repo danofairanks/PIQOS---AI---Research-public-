@@ -1475,6 +1475,27 @@ a correction.
 
 ### 12.1 Motivating claim, stated generically
 
+*Provenance of the notation (added 2026-09-30; no finding, figure or
+claim below is changed by this note).* The three-point schema used from
+here on — a state that is valid at one time (T₀), a material change in
+the conditions that made it valid (ΔN), and the same action or
+consequence attempted at a later time (Tₙ) — is a notation for an older
+idea, not a new construct. In machine learning the idea is **covariate
+shift**, called **covariate drift** when it accrues over time: a rule
+validated against the input distribution that held at one time is
+applied to inputs drawn from a different distribution later, and its
+validity does not transfer automatically (Shimodaira 2000; Quiñonero-
+Candela et al. 2009, in the References). The authorization setting this
+section evaluates has the same structure with a different object — a
+grant validated against the facts that held at T₀ rather than a
+predictor validated against an input distribution — and the security-
+engineering form of the same structure, time-of-check-to-time-of-use,
+is tested as Attack C in §12.5. The Greek-letter form relabels the
+schema; the plain-language content is "what was valid then is not
+automatically valid now". This note gives prior art for the idea. It
+does not say how any author arrived at the notation, and it does not
+claim the two settings are identical — the mapping is structural.
+
 A claim of this shape circulates in AI-governance discourse: *if a
 governance system cannot survive a state that is validly authorized at
 time T₀, undergoes a material change in its justifying conditions at
@@ -2286,6 +2307,10 @@ Baker, B., Huizinga, J., Gao, L., Dou, Z., Guan, M. Y., Madry, A., Zaremba, W., 
 Li, F., Zeller, J., Prada-Corral, M., Wiedemer, T., Mayilvahanan, P., Cotterell, R., & Brendel, W. (2026). LittleLearner: Language Models Under Pedagogically Controlled Knowledge Exposure. Max Planck Institute for Intelligent Systems / ETH Zurich / Ellis Institute. arXiv:2608.13545. Primary source for §4.1, read directly in full (32 pages, main body and references, plus appendix sections B/C.2/C.4/D on a second pass) from an operator-supplied PDF.
 
 OpenAI, "Pacing model development in an era of cyber-critical capabilities" (openai.com, Aug. 18, 2026). Primary source for §6.6, complete text supplied directly by the operator after an initial excerpt-only reading (via Andrew Curran, `@AndrewCurran_`, X, Aug 18 2026) was corrected; independently reported the same day by Time, Axios, and Fortune. Direct fetch of the primary URL returned a network-egress block when first checked (see Access note below).
+
+Shimodaira, H. (2000). Improving predictive inference under covariate shift by weighting the log-likelihood function. Journal of Statistical Planning and Inference, 90(2), 227–244. Prior art for the covariate-shift idea cited in the provenance note at the head of §12.1. Bibliographic details confirmed by search metadata; not re-read for that note.
+
+Quiñonero-Candela, J., Sugiyama, M., Schwaighofer, A. & Lawrence, N. D. (eds.) (2009). Dataset Shift in Machine Learning. MIT Press. Standard reference for dataset shift and its covariate-shift special case, cited in the same note. Bibliographic details confirmed by search metadata; not re-read for that note.
 
 UK AI Security Institute, "Incident Report: unsanctioned agent behaviour during cyber testing" (Aug. 2026). Primary source for §6.2; not independently fetched in this pass (see Access note below).
 
