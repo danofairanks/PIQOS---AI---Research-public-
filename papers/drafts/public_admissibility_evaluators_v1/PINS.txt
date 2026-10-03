@@ -7,3 +7,4 @@ https://github.com/zlomke76-del/solace-kernel-public                  d65084a293
 https://github.com/zlomke76-del/solace-public                         9fafc0b87b08cf4675ca018248ab935a64bfe3a4  2026-05-26
 https://github.com/zlomke76-del/solaceveil-public                     249a61f869c1671d656b616c2a0dc0db7f301509  2026-09-24
 https://github.com/zlomke76-del/solaceframe-public                    c6bb260f204d179f9df7009f35992ad2714cd182  2026-05-26
+https://github.com/zlomke76-del/harmonic-test-harness                 d36722a75b720cb800e887c0733bcaff9a83e6fc  2026-10-03

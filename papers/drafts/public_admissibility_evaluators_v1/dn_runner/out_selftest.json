@@ -1,0 +1,217 @@
+{
+ "a1_public_guard": {
+  "headline": "FAIL_DEFEAT",
+  "verdicts": [
+   "FAIL_DEFEAT"
+  ],
+  "summary": {
+   "D_fired_Ta_forms": [
+    "unlisted_wording",
+    "flag_only",
+    "registry_only",
+    "reworded",
+    "perturbed_word",
+    "translated",
+    "split_word",
+    "role_swap"
+   ],
+   "D_fired_Tb_forms": [
+    "listed_word",
+    "unlisted_wording",
+    "flag_only",
+    "registry_only",
+    "reworded",
+    "perturbed_word",
+    "translated",
+    "split_word",
+    "role_swap"
+   ],
+   "D_fired_Tc_forms_ungraded": 9,
+   "P_fired_all": true,
+   "B_fired_all_graded": true
+  }
+ },
+ "a2_registry_bound": {
+  "headline": "CONFORMS_AT_SCOPE",
+  "verdicts": [],
+  "summary": {
+   "D_fired_Ta_forms": [],
+   "D_fired_Tb_forms": [],
+   "D_fired_Tc_forms_ungraded": 9,
+   "P_fired_all": true,
+   "B_fired_all_graded": true
+  }
+ },
+ "a3_registry_bound_no_cas": {
+  "headline": "FAIL_DEFEAT",
+  "verdicts": [
+   "FAIL_DEFEAT"
+  ],
+  "summary": {
+   "D_fired_Ta_forms": [],
+   "D_fired_Tb_forms": [
+    "listed_word",
+    "unlisted_wording",
+    "flag_only",
+    "registry_only",
+    "reworded",
+    "perturbed_word",
+    "translated",
+    "split_word",
+    "role_swap"
+   ],
+   "D_fired_Tc_forms_ungraded": 9,
+   "P_fired_all": true,
+   "B_fired_all_graded": true
+  }
+ },
+ "a4_constant_allow": {
+  "headline": "FAIL_DEFEAT",
+  "verdicts": [
+   "FAIL_DEFEAT"
+  ],
+  "summary": {
+   "D_fired_Ta_forms": [
+    "listed_word",
+    "unlisted_wording",
+    "flag_only",
+    "registry_only",
+    "reworded",
+    "perturbed_word",
+    "translated",
+    "split_word",
+    "role_swap"
+   ],
+   "D_fired_Tb_forms": [
+    "listed_word",
+    "unlisted_wording",
+    "flag_only",
+    "registry_only",
+    "reworded",
+    "perturbed_word",
+    "translated",
+    "split_word",
+    "role_swap"
+   ],
+   "D_fired_Tc_forms_ungraded": 9,
+   "P_fired_all": true,
+   "B_fired_all_graded": true
+  }
+ },
+ "a5_always_deny": {
+  "headline": "FAIL_UTILITY",
+  "verdicts": [
+   "FAIL_UTILITY"
+  ],
+  "summary": {
+   "D_fired_Ta_forms": [],
+   "D_fired_Tb_forms": [],
+   "D_fired_Tc_forms_ungraded": 0,
+   "P_fired_all": false,
+   "B_fired_all_graded": false
+  }
+ },
+ "a6_check_then_act": {
+  "headline": "FAIL_DEFEAT",
+  "verdicts": [
+   "FAIL_DEFEAT"
+  ],
+  "summary": {
+   "D_fired_Ta_forms": [],
+   "D_fired_Tb_forms": [
+    "listed_word",
+    "unlisted_wording",
+    "flag_only",
+    "registry_only",
+    "reworded",
+    "perturbed_word",
+    "translated",
+    "split_word",
+    "role_swap"
+   ],
+   "D_fired_Tc_forms_ungraded": 9,
+   "P_fired_all": true,
+   "B_fired_all_graded": true
+  }
+ },
+ "a7_atomic_check": {
+  "headline": "CONFORMS_AT_SCOPE",
+  "verdicts": [],
+  "summary": {
+   "D_fired_Ta_forms": [],
+   "D_fired_Tb_forms": [],
+   "D_fired_Tc_forms_ungraded": 9,
+   "P_fired_all": true,
+   "B_fired_all_graded": true
+  }
+ },
+ "a8_no_points": {
+  "headline": "NOT_DEMONSTRATED",
+  "verdicts": [
+   "NOT_DEMONSTRATED",
+   "FAIL_DEFEAT"
+  ],
+  "summary": {
+   "D_fired_Ta_forms": [
+    "listed_word",
+    "unlisted_wording",
+    "flag_only",
+    "registry_only",
+    "reworded",
+    "perturbed_word",
+    "translated",
+    "split_word",
+    "role_swap"
+   ],
+   "D_fired_Tb_forms": [
+    "listed_word",
+    "unlisted_wording",
+    "flag_only",
+    "registry_only",
+    "reworded",
+    "perturbed_word",
+    "translated",
+    "split_word",
+    "role_swap"
+   ],
+   "D_fired_Tc_forms_ungraded": 9,
+   "P_fired_all": true,
+   "B_fired_all_graded": true
+  }
+ },
+ "a9_order_dependent": {
+  "headline": "FAIL_DEFEAT",
+  "verdicts": [
+   "FAIL_DEFEAT",
+   "FAIL_UTILITY",
+   "ORDER_DEPENDENT"
+  ],
+  "summary": {
+   "D_fired_Ta_forms": [
+    "listed_word",
+    "unlisted_wording",
+    "flag_only",
+    "registry_only",
+    "reworded",
+    "perturbed_word",
+    "translated",
+    "split_word",
+    "role_swap"
+   ],
+   "D_fired_Tb_forms": [
+    "listed_word",
+    "unlisted_wording",
+    "flag_only",
+    "registry_only",
+    "reworded",
+    "perturbed_word",
+    "translated",
+    "split_word",
+    "role_swap"
+   ],
+   "D_fired_Tc_forms_ungraded": 9,
+   "P_fired_all": true,
+   "B_fired_all_graded": true
+  }
+ }
+}

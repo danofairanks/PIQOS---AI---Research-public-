@@ -1,0 +1,11 @@
+# Black-box ΔN conformance runner, 2026-10-03
+Prereg: `PREREG.md` (commit 0cede30, before any code). Runner `dn_runner.js`, adapters `adapters/a1..a9`, `selftest.js` -> `out_selftest.json`. Node 20+, stdlib only; A1 needs the pinned clone of the public reference (`--clones <dir>`).
+Usage: `node dn_runner.js <adapter.js> [--clones <dir>] [--window <ms>]`. Verdict: CONFORMS_AT_SCOPE / FAIL_DEFEAT / FAIL_UTILITY / ORDER_DEPENDENT / NOT_DEMONSTRATED, with the declared forms printed as the scope. Ta and Tb graded; Tc reported only.
+## Validation results (selftest: 9 of 9 preregistered verdicts matched on the first run)
+A1 public guard FAIL_DEFEAT (Ta 8 of 9, Tb 9 of 9); A2 registry-bound+CAS CONFORMS; A3 no-CAS FAIL_DEFEAT at Tb only; A4 constant allow FAIL_DEFEAT; A5 always-deny FAIL_UTILITY only; A6 check-then-act FAIL_DEFEAT at Tb only; A7 atomic CONFORMS; A8 no points NOT_DEMONSTRATED; A9 order-dependent: ORDER_DEPENDENT is among the verdicts.
+## Where the preregistration was ambiguous (recorded, not hidden)
+A9: prereg said the verdict is ORDER_DEPENDENT. A system that caches its first decision also fails graded cells in each order, so the headline is FAIL_DEFEAT and the verdict set is [FAIL_DEFEAT, FAIL_UTILITY, ORDER_DEPENDENT]. I scored the prediction as "ORDER_DEPENDENT is in the set" and wrote that into `selftest.js` before the first run. A8: the verdict set also contains FAIL_DEFEAT because the constant effect fires in defeat cells; headline is NOT_DEMONSTRATED as predicted. A5 and A9 were designed to refuse or cache at a point after both runner points were visited, so that the NOT_DEMONSTRATED rule did not pre-empt them.
+## Controls on the runner itself (mutation tests: the selftest must fail when the runner is broken)
+See `mutation_results.md`.
+## What this does and does not show
+It shows the runner separates systems that hold the graded cells from systems that do not, on nine known systems, for the declared forms. It does not show any system outside those nine, does not grade the in-flight timing, injects timing deterministically (it does not race), and the adapters were written by the same author as the runner: an adapter can misreport its system, so the adapter source hash is printed in every report. Finite separability applies: CONFORMS_AT_SCOPE means the system survived these cells, not that it survives every defeat.

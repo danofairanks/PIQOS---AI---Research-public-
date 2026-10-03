@@ -1,0 +1,131 @@
+{
+ "s1_fenced_allowlist": {
+  "headline": "CONFORMS_AT_SCOPE",
+  "verdicts": [],
+  "flags": [],
+  "summary": {
+   "D_fired_Ta": [],
+   "D_fired_Tr_last": [],
+   "D_fired_Tc_ungraded": 8,
+   "P_fired": true,
+   "B_fired_all_graded": true
+  }
+ },
+ "s2_unfenced_check_then_act": {
+  "headline": "FAIL_DEFEAT",
+  "verdicts": [
+   "FAIL_DEFEAT"
+  ],
+  "flags": [],
+  "summary": {
+   "D_fired_Ta": [],
+   "D_fired_Tr_last": [
+    "revoked",
+    "expired",
+    "terminated",
+    "withdrawn",
+    "lapsed",
+    "cyrillic_revoked",
+    "revoked_trailing_space",
+    "unknown_future"
+   ],
+   "D_fired_Tc_ungraded": 8,
+   "P_fired": true,
+   "B_fired_all_graded": true
+  }
+ },
+ "s3_constant_allow": {
+  "headline": "FAIL_DEFEAT",
+  "verdicts": [
+   "FAIL_DEFEAT"
+  ],
+  "flags": [
+   "REALITY_NOT_CONSULTED"
+  ],
+  "summary": {
+   "D_fired_Ta": [
+    "revoked",
+    "expired",
+    "terminated",
+    "withdrawn",
+    "lapsed",
+    "cyrillic_revoked",
+    "revoked_trailing_space",
+    "unknown_future"
+   ],
+   "D_fired_Tr_last": null,
+   "D_fired_Tc_ungraded": 8,
+   "P_fired": true,
+   "B_fired_all_graded": true
+  }
+ },
+ "s4_always_deny": {
+  "headline": "FAIL_UTILITY",
+  "verdicts": [
+   "FAIL_UTILITY"
+  ],
+  "flags": [],
+  "summary": {
+   "D_fired_Ta": [],
+   "D_fired_Tr_last": [],
+   "D_fired_Tc_ungraded": 0,
+   "P_fired": false,
+   "B_fired_all_graded": false
+  }
+ },
+ "s5_fenced_denylist": {
+  "headline": "FAIL_DEFEAT",
+  "verdicts": [
+   "FAIL_DEFEAT"
+  ],
+  "flags": [],
+  "summary": {
+   "D_fired_Ta": [
+    "terminated",
+    "withdrawn",
+    "lapsed",
+    "cyrillic_revoked",
+    "revoked_trailing_space",
+    "unknown_future"
+   ],
+   "D_fired_Tr_last": [],
+   "D_fired_Tc_ungraded": 8,
+   "P_fired": true,
+   "B_fired_all_graded": true
+  }
+ },
+ "s6_caching_shared": {
+  "headline": "FAIL_DEFEAT",
+  "verdicts": [
+   "FAIL_DEFEAT",
+   "FAIL_UTILITY",
+   "ORDER_DEPENDENT"
+  ],
+  "flags": [],
+  "summary": {
+   "D_fired_Ta": [
+    "revoked",
+    "expired",
+    "terminated",
+    "withdrawn",
+    "lapsed",
+    "cyrillic_revoked",
+    "revoked_trailing_space",
+    "unknown_future"
+   ],
+   "D_fired_Tr_last": [
+    "revoked",
+    "expired",
+    "terminated",
+    "withdrawn",
+    "lapsed",
+    "cyrillic_revoked",
+    "revoked_trailing_space",
+    "unknown_future"
+   ],
+   "D_fired_Tc_ungraded": 8,
+   "P_fired": true,
+   "B_fired_all_graded": true
+  }
+ }
+}
