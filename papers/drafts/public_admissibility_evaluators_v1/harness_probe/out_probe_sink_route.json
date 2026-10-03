@@ -1,0 +1,77 @@
+{
+ "C1_no_receipt": {
+  "status": 401,
+  "why": "missing_or_invalid_harmonic_execution_receipt"
+ },
+ "C2_deny_receipt": {
+  "status": 403,
+  "why": "receipt_not_execution_permit"
+ },
+ "C3_expired": {
+  "status": 403,
+  "why": "receipt_outside_validity_window"
+ },
+ "C4_wrong_key": {
+  "status": 403,
+  "why": "invalid_receipt_signature"
+ },
+ "C5_payload_mismatch": {
+  "status": 403,
+  "why": "execute_hash_mismatch"
+ },
+ "C6_valid": {
+  "status": 200,
+  "why": "effect_observed"
+ },
+ "C7_alt_header": {
+  "status": 200,
+  "why": "effect_observed"
+ },
+ "A1_replay": [
+  200,
+  200,
+  200,
+  200,
+  200
+ ],
+ "A2_proto_smuggle": {
+  "status": 200,
+  "why": "effect_observed"
+ },
+ "A2_proto_nested": {
+  "status": 200,
+  "why": "effect_observed"
+ },
+ "A2_proto_string": {
+  "status": 200,
+  "why": "effect_observed"
+ },
+ "A3_dupkey_vs_last_wins_receipt": {
+  "status": 200,
+  "why": "effect_observed"
+ },
+ "A3_dupkey_vs_first_wins_receipt": {
+  "status": 403,
+  "why": "execute_hash_mismatch"
+ },
+ "A4_number_forms": [
+  200,
+  200
+ ],
+ "A2_evidence": {
+  "own_keys": [
+   "amount",
+   "__proto__"
+  ],
+  "has_own___proto__": true,
+  "canonical_of_smuggled": "{\"amount\":10}",
+  "canonical_of_clean": "{\"amount\":10}",
+  "hashes_equal": true,
+  "spread_copy_keys": [
+   "amount",
+   "__proto__"
+  ],
+  "spread_has_own___proto__": true
+ },
+ "route_edit_note": "only the next/server import and two export const lines differ from the repository file"
+}

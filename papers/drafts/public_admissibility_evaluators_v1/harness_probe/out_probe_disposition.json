@@ -1,0 +1,12 @@
+{
+ "control_allow": "ALLOW",
+ "control_block": "BLOCK",
+ "control_pass_only": "UNRESOLVED",
+ "control_permit_not_admissible": "BLOCK",
+ "control_block_and_allow": "BLOCK",
+ "conflict_hold_vs_allowed": "ALLOW",
+ "conflict_review_vs_permit": "ALLOW",
+ "nested_governance_over_toplevel_block": "ALLOW",
+ "nested_harmonic_over_toplevel_block": "ALLOW",
+ "whitespace_case": "ALLOW"
+}
