@@ -150,3 +150,7 @@ Added after the blind pass listed what it had to guess. Counts depend on these s
 - **Advisory versus owned.** 2000 requests, 30% prohibited, the gate's decision always correct; the advisory host ignores a reject with probability 1 - c; the owned path leaks through a bypass with probability b.
 - **Traces.** A state-only trace records (source, destination); an effect-instrumented trace records (source, destination, effect).
 - **"Refine".** Items 13 to 16 specify how items 1 and 5 are met; they add no new requirement to the minimal set.
+
+---
+
+*Living research. This draft is part of ongoing work and may be updated, corrected or withdrawn at any time; the repository history holds the current version and the earlier ones.*

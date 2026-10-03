@@ -140,3 +140,7 @@ The more general observation is about travel. A narrow claim was narrowed at its
 [5] The channel-collapse result: [`execution_gate_channel_collapse_v1.md`](../published/execution_gate_channel_collapse_v1.md).
 
 Sources are cited at the tier read: exact clones for repository files; a screenshot of a public post for the statement in section 3.
+
+---
+
+*Living research. This draft is part of ongoing work and may be updated, corrected or withdrawn at any time; the repository history holds the current version and the earlier ones.*
