@@ -126,6 +126,9 @@ def main():
     # dn_runner: the black-box conformance runner discriminates the nine preregistered systems (about 40 s: observation windows)
     dn = subprocess.run(["node", os.path.join(HERE, "dn_runner", "selftest.js"), "--clones", WORK], capture_output=True, text=True, cwd=os.path.join(HERE, "dn_runner"))
     check(dn.returncode == 0 and "all 9 checked passed" in dn.stdout, "dn_runner nine preregistered verdicts match (public guard fails, registry-bound with compare-and-swap and atomic check conform, controls discriminate)", fails)
+    # dn_runner reality mode: the runner serves the registry and the effect sink; six preregistered systems (about 15 s)
+    rl = subprocess.run(["node", os.path.join(HERE, "dn_runner", "reality", "selftest_reality.js")], capture_output=True, text=True, cwd=os.path.join(HERE, "dn_runner", "reality"))
+    check(rl.returncode == 0 and "all 6 passed" in rl.stdout, "dn_runner reality mode six preregistered verdicts match (fenced allow-list conforms; unfenced, constant, deny-list and caching systems fail where predicted)", fails)
     print(f"\n{'ALL CHECKS PASS' if not fails else str(len(fails)) + ' CHECK(S) FAILED'}")
     sys.exit(1 if fails else 0)
 
