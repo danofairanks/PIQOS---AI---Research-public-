@@ -36,6 +36,17 @@ A family of governance claims says that a deterministic gate placed *before* exe
 
 Each defeat has the same structure as the channel-collapse result in [`execution_gate_channel_collapse_v1.md`](execution_gate_channel_collapse_v1.md), at a new site: **the check runs on a channel the governed side produces or can influence** (its report, its reported context, a model of its state space, an upstream interpretation stage). Each closes by one of the two exits that paper names: an observation channel the governed side does not control (independent probe, trace-derived model), or a stated placement that removes the second channel. The toys that closed under an independent channel are results for the requirement, not against the claim form.
 
+## 4a. What the user side reads
+
+If the check inside a gate is of the channel-collapse kind (it runs on a channel the governed side produces or can influence), what a user sees reads satisfied by construction for anything the governed side can make look consistent, and the reading is insensitive to whether the consequence was acceptable. Four observations from the toys and the cited result:
+
+- **Inside-the-set outputs.** With a clamp-style guarantee the output is always inside the permitted set, for every transition function tried including an adversarial one (section 3). "Inside" can never read unsatisfied, and it says nothing about whether the set matches the consequence that matters.
+- **Receipts and logs.** An append-only log, a compliance flag or a completed audit chain satisfies record-quality criteria whether or not the effect was prevented; they are produced on the same side.
+- **Refusals do not discriminate.** In the latent-state toy the same gate that read the system's own report blocked every violating step of the honest generator (0 passed) and passed every violating step of the masking generator (10 of 10). "It blocked something in the demonstration" is consistent with both a sound gate and an uninformative one.
+- **Where it stops reading satisfied.** Only where an independent channel disagrees, or where an input reaches an effect outside the modeled state space.
+
+This is conditional. The public text of the series studied does not disclose the mechanism, so nothing outside can tell whether its internal check is of this kind; the evidence presented is all produced on the same side. What would distinguish the two from the user side: examiner-chosen inputs compared against an independent monitor on the effect channel (items 5, 9 and 14 below), plus the side-channel and check-to-use cases (items 1 and 13). If outputs still read satisfied while the independent monitor records a violation, the check is uninformative. A clean demonstration, a passing receipt and a clean log do not discriminate.
+
 ## 5. What a pre-execution gate claim needs
 
 Generic and testable; none is a statement about what exists in any product.
