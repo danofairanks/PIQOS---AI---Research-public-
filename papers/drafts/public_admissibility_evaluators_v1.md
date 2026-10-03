@@ -165,7 +165,7 @@ The mechanisms are not unusual. A pilot over four widely used authorization libr
 
 **What would show this paper wrong.** The companion harness failing at the pinned commits; a quoted line that does not appear at the stated path and line; or a later commit that changes the stated behavior.
 
-**Reproduce.** `python3 run_all.py` in [`public_admissibility_evaluators_v1/`](public_admissibility_evaluators_v1/) clones the pinned commits into a work directory, runs the Node scripts and prints PASS or FAIL for 41 qualitative checks (about a minute, mostly observation windows in the runners' selftests; needs git, network, Node 22 or newer and Python 3.10 or newer).
+**Reproduce.** `python3 run_all.py` in [`public_admissibility_evaluators_v1/`](public_admissibility_evaluators_v1/) clones the pinned commits into a work directory, runs the Node scripts and prints PASS or FAIL for 44 qualitative checks (about a minute, mostly observation windows in the runners' selftests; needs git, network, Node 22 or newer and Python 3.10 or newer).
 
 ## Appendix A. Survival in finite math
 
