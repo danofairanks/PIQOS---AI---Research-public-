@@ -79,7 +79,7 @@ The literal impossibility claim is defeated but a narrowed form survives. The mo
 - Anything about patent claims, which were not read.
 - Single rater; the round-2 attacks are same-source.
 
-**What would show this paper wrong.** A failing `--selftest` on a clean checkout; a defeat condition shown to be mis-specified against the source text; or a published placement, trust root, effect-path list and third-party run protocol that satisfies items 1, 2, 4 and 9 for a specific gate. Owed: a non-author reproduction and an independent attack round.
+**What would show this paper wrong.** A failing `--selftest` on a clean checkout; a defeat condition shown to be mis-specified against the source text; or a published placement, trust root, effect-path list and third-party run protocol that satisfies items 1, 2, 4 and 9 for a specific gate. Reproduction so far is execution only: a run by a different model family (Python 3.12.3) and the author's runs (Python 3.10.20, 3.11.15) give byte-identical output for all three scripts ([`REPRODUCTION.md`](pre_execution_gate_counter_models_v1/REPRODUCTION.md)); it did not re-implement from this text. Owed: a re-implementation from this text alone and an independent attack round.
 
 ## References
 
