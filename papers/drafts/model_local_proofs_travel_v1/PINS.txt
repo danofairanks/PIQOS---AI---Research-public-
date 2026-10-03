@@ -1,0 +1,7 @@
+# repository, pinned commit (full SHA), commit date (author)
+https://github.com/LalaSkye/no-direct-bind        37af3801df5a0040ff38921aee6d5a0a39d5a8af  2026-09-02
+https://github.com/LalaSkye/ndb-gate              1b5208582050fc717182ab862788ccbdc6ae6941  2026-06-03
+https://github.com/LalaSkye/commit-gate-core      7d774539dadd105d3b9976d54c4b3f3005da205f  2026-09-22
+https://github.com/LalaSkye/stop-machine          d744f8bf724edae93f823e398789b4d47db1d591  2026-09-02
+https://github.com/google/cybernetic-agent-governance-engine  a11f0caa5198fbff4c2ef1443c25abc8a8f11ca7  2026-10-03   (read-only: attribution facts and the model check)
+https://github.com/LalaSkye/no-direct-bind        7fe9ff99636798accd5e04136991e1d3d3079417  2026-06-03   (original version; the commit CAGE cites)
