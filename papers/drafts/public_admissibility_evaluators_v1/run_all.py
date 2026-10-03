@@ -1,0 +1,71 @@
+#!/usr/bin/env python3
+"""Clone the pinned commits, run the Node attack script, check the qualitative expectations.
+Usage: python3 run_all.py [workdir]   (needs git, network, Node 22+ for the TypeScript check; Python 3.10+; stdlib only)
+"""
+import json, os, subprocess, sys
+HERE = os.path.dirname(os.path.abspath(__file__))
+WORK = os.path.abspath(sys.argv[1]) if len(sys.argv) > 1 else os.path.join(HERE, "work")
+REPOS = {}
+for line in open(os.path.join(HERE, "PINS.txt")):
+    if line.startswith("#") or not line.strip():
+        continue
+    p = line.split()
+    REPOS[p[0].rsplit("/", 1)[1]] = (p[0], p[1])
+
+def sh(*a, cwd=None):
+    return subprocess.run(a, cwd=cwd, check=True, capture_output=True, text=True).stdout
+
+def clone(name):
+    url, sha = REPOS[name]
+    dest = os.path.join(WORK, name)
+    if not os.path.isdir(dest):
+        sh("git", "clone", "--quiet", url + ".git", dest)
+    sh("git", "checkout", "--quiet", sha, cwd=dest)
+
+def check(cond, msg, fails):
+    print(("PASS " if cond else "FAIL ") + msg)
+    if not cond:
+        fails.append(msg)
+
+def main():
+    os.makedirs(WORK, exist_ok=True)
+    for n in REPOS:
+        clone(n)
+    r = subprocess.run(["node", os.path.join(HERE, "attacks_public_evaluators.js"), WORK], capture_output=True, text=True)
+    if r.returncode != 0:
+        raise SystemExit("attack script failed:\n" + r.stderr)
+    o = json.loads(r.stdout)
+    fails = []
+    ok = lambda d: d["outcome"] == "stable" and d["admissible"] and d["action"] == "allow"
+    check(ok(o["H1_controls"]["consistent"]) and o["H1_controls"]["claims_valid_observed_revoked"]["outcome"] == "blocked", "H1 controls: consistent allows; 'revoked' observation blocks", fails)
+    p = o["H2_paraphrases"]
+    check(all(ok(v) for k, v in p.items() if k != "the NDA is revoked") and p["the NDA is revoked"]["outcome"] == "blocked", "H2 eight paraphrases of ended standing pass; 'revoked' blocks", fails)
+    check(o["H3_negation"]["outcome"] == "blocked", "H3 'has not been revoked' blocks (false positive)", fails)
+    check(ok(o["H4_claims_without_term"]["claim_in_place_obs_revoked"]) and o["H4_claims_without_term"]["control_claim_valid_obs_revoked"]["outcome"] == "blocked", "H4 claim without a listed term bypasses the contradiction check", fails)
+    f = o["H5_freshness"]
+    check(f["control_stale_after_1"]["stale"] and ok(f["stale_after_omitted"]) and ok(f["stale_after_0"]), "H5 caller-chosen freshness window disables staleness", fails)
+    a = o["H6_authority_flags"]
+    check(ok(a["top_level"]) and a["authority_risk"]["revoked"] and a["authority_risk"]["expired"] and a["escalation_required"] and ok(a["control_no_authority_flags"]) and a["control_revoked_text_in_observation"]["outcome"] == "blocked", "H6 revoked/expired authority flags do not change the top-level decision", fails)
+    check(o["H6_guard"]["executed"] and o["H6_guard"]["effects"] == 1, "H6 guard executes the effect for a revoked-flag packet", fails)
+    g = o["H7_gap"]
+    check(g["gap_case_executed"] and g["registry_active_at_effect"] is False and g["control_revoked_before_evaluate_executed"] is False, "H7 revocation between evaluate and effect is not caught; control withheld", fails)
+    h = o["H8_receipt"]
+    check(h["hash_recomputable_from_receipt"] and h["forged_stable_allow_receipt_executed"] and not h["control_wrong_packet_id_executed"] and not h["control_public_release_false_executed"], "H8 receipt hash is recomputable; forged receipt accepted; controls rejected", fails)
+    x = o["H9_self_declared"]
+    check(ok(x["all_x"]) and ok(x["evidence_empty_string_no_observations"]) and ok(x["evidence_zero_no_observations"]) and x["control_no_evidence_no_observations"]["outcome"] == "degraded", "H9 self-declared fields satisfy completeness; empty evidence counts", fails)
+    v = o["H10_V114_runnable"]
+    check(v["exit"] != 0 and v["missing_module"] and not v["secure_execution_file_in_api"], "H10 preserved V114 test cannot run in the public repository (disclosed)", fails)
+    r1 = o["R1_status_and_lexical"]
+    check(r1["control_valid"]["admissible"] and r1["status_terminated"]["admissible"] and r1["status_withdrawn"]["admissible"] and r1["signal_terminated"]["admissible"] and not r1["control_status_revoked"]["admissible"] and "runtime_state_contradiction" in r1["control_signal_revoked"]["codes"], "R1 status values and wording outside the lists pass; controls fail", fails)
+    r2 = o["R2_invalid_timestamps"]
+    check(not r2["control_expired_iso"]["admissible"] and r2["expires_at_unparseable"]["admissible"] and "state_freshness_expired" in r2["control_stale_iso"]["codes"] and r2["last_verified_unparseable"]["admissible"] and o["R2_harmonic_invalid_timestamp_for_contrast"]["codes"] is True, "R2 unparseable timestamps are treated as current; the other evaluator flags them", fails)
+    s1, s2 = o["S1_authority_continuity_stub"], o["S2_consequence_boundary_stub"]
+    check(s1["revoked_packet"] == s1["empty_body"] and s1["revoked_packet"]["decision"] == "ALLOW" and s2["revoked_packet"] == s2["empty_body"], "S1/S2 two api/evaluate.js files return constant responses", fails)
+    fz = o["F1_solaceframe_computeAdmission"]
+    check(fz["one_60"] == "admitted" and fz["one_59"] == "review" and fz["one_0"] == "rejected" and fz["two_80"] == "admitted", "F1 mean-based admission admits one weak dimension of 60", fails)
+    n = o["N1_surfaces"]
+    check(all(v["code_files"] == ["app/layout.tsx", "app/page.tsx"] and not v["api_dir"] for v in n.values()), "N1 three repositories are static web surfaces", fails)
+    print(f"\n{'ALL CHECKS PASS' if not fails else str(len(fails)) + ' CHECK(S) FAILED'}")
+    sys.exit(1 if fails else 0)
+
+main()
