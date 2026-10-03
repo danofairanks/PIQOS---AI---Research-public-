@@ -117,6 +117,12 @@ def main():
     check(W["controls"] == {"revoked": deny, "valid": allow} and all(x == allow for x in W["rewording"].values()) and all(x == allow for x in W["surface_perturbation"].values()) and all(x == allow for x in W["translation"].values()) and W["split_across_statements"] == allow and W["role_swap"] == allow and all(x == deny for x in W["order_permutation"].values()) and all(x == deny for x in W["mention_negation_modality"].values()), "S-shuffle the wording check evades rewording, perturbation, translation, splitting and role swap, blocks mention, negation and modality, and is order invariant", fails)
     rv = W["registry_vocabulary"]; unlisted = ("terminated", "withdrawn", "lapsed", "cyrillic_e_revoked")
     check(rv["A_allow_list_exact"]["active"] == "allow" and all(v == "deny" for k, v in rv["A_allow_list_exact"].items() if k != "active") and all(rv["B_deny_list_raw"][k] == "allow" for k in unlisted) and all(rv["C_deny_list_lower_trim"][k] == "allow" for k in unlisted) and rv["C_deny_list_lower_trim"]["Revoked_trailing_space"] == "deny", "S-shuffle a registry status vocabulary holds only as an allow-list with default deny", fails)
+    # Appendix A: survival in finite math (exhaustive, model-local)
+    sp = subprocess.run([sys.executable, os.path.join(HERE, "check_separability.py")], capture_output=True, text=True)
+    if sp.returncode != 0:
+        raise SystemExit("separability check failed:\n" + sp.stderr)
+    F = json.loads(sp.stdout)
+    check(F["worlds"] == 10756 and all(F[k] == 0 for k in ("T1_fail", "T2_fail", "T3_fail", "T4_fail", "T5a_fail", "T5b_fail")) and F["witness_worlds_with_survival_and_utility"] > 0 and F["T4_checked"] > 0 and F["T5a_separating_worlds"] > 0, "Appendix A the finite statements T1-T5 hold in every enumerated world", fails)
     print(f"\n{'ALL CHECKS PASS' if not fails else str(len(fails)) + ' CHECK(S) FAILED'}")
     sys.exit(1 if fails else 0)
 

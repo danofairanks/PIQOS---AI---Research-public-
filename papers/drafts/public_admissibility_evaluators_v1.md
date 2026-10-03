@@ -23,7 +23,8 @@ A family of eight public repositories presents "runtime admissibility" governanc
 9. None of the defeat shapes used here is new, and neither is the counter-model's mechanism (section 3a). The family's own frozen executor examination lists six unauthorized paths, its landing-page schema is a relabelling of older ideas (dataset shift; time-of-check to time-of-use), and this project's own axiom paper published the same attack shapes before this run. What this paper adds is an executed run of them against the public reference artifacts, the authority-flag, self-declared-field, constant-endpoint and scoring-function findings, and the form-by-timing matrix.
 10. An independent executor toy built only from the family's published freeze text blocks all six of its listed unauthorized paths, which supports the property class (not their implementation, which cannot be run here). Replay inside the validity window, replay across executors and a refusal recorded after minting are not among the six and fire until a nonce, an audience and a revocation epoch are added; binding the exact payload bytes does not close a parse differential between the decision and the effect (section 5c).
 11. Semantic shuffling defeats a wording-based check in both directions: standing that ends in other words, a perturbed or translated listed word, a split word and a role swap all pass, while a mention, a negation and a future tense are blocked. A registry-bound design inherits the problem at its status vocabulary unless it is an allow-list with default deny. The bubble test does not measure this (section 5d).
-12. The family also does several things carefully, credited in section 3: it states the public/production boundary, preserves failed predecessor examinations, and ships an example whose sink intentionally accepts the release after revocation.
+12. Survival is relative, not absolute (Appendix A). In a finite model, a gate with utility that survives a declared set of defeat scenarios exists exactly when the gate's observations separate the authorized scenarios from the defeat scenarios; no gate with utility survives a defeat family that is closed under mimicry or under adding an unmediated path; and survival holds only relative to channels the adversary cannot write. The claim that no governance survives is therefore false as a universal and true only in those open-world and empty-trust-base forms. The result is true by construction and classifies the defeat conditions of this paper into three failures; it does not discover them.
+13. The family also does several things carefully, credited in section 3: it states the public/production boundary, preserves failed predecessor examinations, and ships an example whose sink intentionally accepts the release after revocation.
 
 ## 2. Objects and sources
 
@@ -150,7 +151,24 @@ The mechanisms are not unusual. A pilot over four widely used authorization libr
 
 **What would show this paper wrong.** The companion harness failing at the pinned commits; a quoted line that does not appear at the stated path and line; or a later commit that changes the stated behavior.
 
-**Reproduce.** `python3 run_all.py` in [`public_admissibility_evaluators_v1/`](public_admissibility_evaluators_v1/) clones the pinned commits into a work directory, runs one Node script and prints PASS or FAIL for 38 qualitative checks (a few seconds; needs git, network, Node 22 or newer and Python 3.10 or newer).
+**Reproduce.** `python3 run_all.py` in [`public_admissibility_evaluators_v1/`](public_admissibility_evaluators_v1/) clones the pinned commits into a work directory, runs one Node script and prints PASS or FAIL for 39 qualitative checks (a few seconds; needs git, network, Node 22 or newer and Python 3.10 or newer).
+
+## Appendix A. Survival in finite math
+
+A world is a finite set of scenarios, each with a ground truth of authorized or not; P is the set of authorized scenarios and D the set of defeat scenarios. A gate sees an observation o of each scenario and permits or denies on it. The gate *survives* D if it denies every scenario in D; it has *utility* if it permits every scenario in P (the positive control). `check_separability.py` enumerates every world with at most five scenarios and three observation values (10756 worlds, every gate) and a two-channel family (34720 worlds). Statements and predictions were written before the script; there were no failures.
+
+- **T1, separability.** A gate with survival and utility exists exactly when the observations of P and of D are disjoint sets (2428 worlds have a witness).
+- **T2.** The deny-all gate always survives and has no utility, so survival alone is vacuous.
+- **T3.** The permit-all gate survives only when D is empty.
+- **T4, open world.** For every world with P nonempty and every gate with utility, adding one defeat scenario that mimics the observation of a positive breaks survival (53849 gate and mimic pairs). No gate with utility survives a defeat family closed under mimicry.
+- **T5, trust base.** Split the observation into a part the adversary can set freely and a part it cannot forge. If the unforgeable part separates P from D, the gate that reads only that part survives every extension within the adversary's reach. If it does not, a full mimic of a positive is available and no gate with utility survives.
+- **T6.** If some effect path bypasses the gate, any defeat scenario using it defeats every gate (stated; not enumerated).
+
+Verdict on the claim that no governance survives: false as a universal, since T1 gives witnesses and the counter-models of section 5 are instances; true in two bounded forms: no gate with utility survives an open-world family (T4, T6), and survival is always relative to a trust base (T5) and a declared defeat family, with the trivial exception that an empty trust base makes the claim true.
+
+Each defeat condition in this paper is an instance of one of three failures. The adversary writes the observation (host-supplied labels, clock and free text; a key holder). The gate's partition of observations is coarser than the separation needs (semantic shuffling, the vocabulary toy; the repair is a finer partition, an allow-list with default deny). Or the observation is sampled at the wrong time or read by two readers (check-then-act, the in-flight case, the parse differential). The time-axis section and the exit-path defeat condition of this project's axiom paper [11] correspond to the third failure and to T6 respectively. Schneider [12] answers a different question: which properties a monitor can enforce at all.
+
+Limits: the statements are true by construction, the same class as the model-local enumerations discussed in [`model_local_proofs_travel_v1.md`](model_local_proofs_travel_v1.md); the defeat scenarios are defined as mimics, which makes T4 close to a tautology; the model has no probability, cost or adaptive adversary, and utility is only the positive control. Its value is classification, not discovery.
 
 ## References
 
@@ -176,7 +194,9 @@ The mechanisms are not unusual. A pilot over four widely used authorization libr
 
 [11] This project's axiom paper, section 12.1 (provenance of the notation) and section 12.5 (three attacks on its own toy): [`governance_binding_axiom_v2.md`](../published/governance_binding_axiom_v2.md).
 
-Sources are cited at the tier read: exact clones for repository files; for references [6] to [10], the bibliographic record found by search (the papers themselves were not read for this draft).
+[12] F. B. Schneider. Enforceable security policies. *ACM Transactions on Information and System Security* 3(1):30–50, 2000.
+
+Sources are cited at the tier read: exact clones for repository files; for references [6] to [10] and [12], the bibliographic record found by search (the papers themselves were not read for this draft).
 
 ---
 
