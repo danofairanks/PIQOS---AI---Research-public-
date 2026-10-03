@@ -1,0 +1,109 @@
+{
+  "T1": {
+    "allows_of_prohibited": 181,
+    "d1_triggered": true,
+    "denies": 739,
+    "halts": 484,
+    "halts_with_output_or_effect": 0,
+    "narrowed_claim_support": true,
+    "premise3_proves_too_much": true,
+    "rule_gate_refusal_messages": 998
+  },
+  "T2": {
+    "chaotic_first_step_diverged_over_0.1": 37,
+    "d2_triggered": true,
+    "deterministic_repeat_identical": true,
+    "stable_max_diff_after_100": 0.0
+  },
+  "T3": {
+    "d3_triggered": true,
+    "fraction_of_successors_altered_by_projection": 0.76,
+    "guarantee_holds_for_every_f": true,
+    "violations_passed": {
+      "HONEST/INDEPENDENT": 0,
+      "HONEST/REPORTED": 0,
+      "MASKING/INDEPENDENT": 0,
+      "MASKING/REPORTED": 10
+    }
+  },
+  "T4": {
+    "W0_real_equals_model": {
+      "d4_d5_triggered": false,
+      "executable_path_in_real": false,
+      "proof_over_model_holds": true,
+      "trace_derived_model_agrees_with_real": true,
+      "trace_derived_model_proof_holds": true
+    },
+    "W1_side_channel": {
+      "d4_d5_triggered": true,
+      "executable_path_in_real": true,
+      "proof_over_model_holds": true,
+      "trace_derived_model_agrees_with_real": true,
+      "trace_derived_model_proof_holds": false
+    },
+    "W2_host_kills_gate": {
+      "d4_d5_triggered": true,
+      "executable_path_in_real": true,
+      "proof_over_model_holds": true,
+      "trace_derived_model_agrees_with_real": true,
+      "trace_derived_model_proof_holds": false
+    }
+  },
+  "T5": {
+    "d6_triggered": true,
+    "deterministic_control_single_outcome": true,
+    "deterministic_parser_margin_0.1": {
+      "deny_fraction": 1.0,
+      "distinct_outcomes": [
+        "DENY"
+      ]
+    },
+    "noisy_parser_margin_0.1": {
+      "deny_fraction": 0.584,
+      "distinct_outcomes": [
+        "ALLOW",
+        "DENY"
+      ]
+    },
+    "noisy_parser_stability_sweep": {
+      "0.05": [
+        "ALLOW",
+        "DENY"
+      ],
+      "0.5": [
+        "ALLOW",
+        "DENY"
+      ],
+      "1.0": [
+        "ALLOW",
+        "DENY"
+      ],
+      "2.0": [
+        "DENY"
+      ],
+      "3.0": [
+        "DENY"
+      ]
+    }
+  },
+  "matrix": {
+    "C1_D1": "DEFEATED-AT-SCOPE",
+    "C1_narrowed_(no denial guarantee)": "SUPPORTED",
+    "C2_D2": "DEFEATED-AT-SCOPE",
+    "C3_D3_independent_gate": "NOT-REACHED",
+    "C3_D3_reported_gate": "DEFEATED-AT-SCOPE",
+    "C3_honest_control_reported_gate": "NOT-REACHED",
+    "C3_trivial_invariance": "HOLDS-FOR-EVERY-f",
+    "C4_D4_W0": "NOT-REACHED",
+    "C4_D4_W1": "DEFEATED-AT-SCOPE",
+    "C4_D4_W2": "DEFEATED-AT-SCOPE",
+    "C4_implementation_specific": "BLOCKED",
+    "C5_ethics_score_threshold": "BLOCKED",
+    "C6_D5_W1": "DEFEATED-AT-SCOPE",
+    "C6_implementation_specific": "BLOCKED",
+    "C7_D6": "DEFEATED-AT-SCOPE",
+    "C7_deterministic_control": "NOT-REACHED",
+    "C8_exists_runs_exercised": "BLOCKED"
+  }
+}
+selftest OK

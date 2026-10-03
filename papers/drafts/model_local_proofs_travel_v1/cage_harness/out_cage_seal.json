@@ -1,0 +1,175 @@
+{
+ "S1": {
+  "forged_strict_test_env": [
+   "VIOLATION",
+   "HMAC seals are not accepted in strict mode (CAGE_SEAL_STRICT_MODE=true or produc"
+  ],
+  "forged_prod_env": [
+   "VIOLATION",
+   "HMAC seals are not accepted in strict mode (CAGE_SEAL_STRICT_MODE=true or produc"
+  ],
+  "forged_nonstrict_test_env": [
+   "OK",
+   true
+  ],
+  "wrong_key_nonstrict": [
+   "VIOLATION",
+   "HMAC mismatch"
+  ]
+ },
+ "S2": {
+  "first": [
+   "OK",
+   true
+  ],
+  "same_string_again": [
+   "VIOLATION",
+   "replay attack detected \u2014 seal already consumed"
+  ],
+  "value_copy": [
+   "VIOLATION",
+   "replay attack detected \u2014 seal already consumed"
+  ]
+ },
+ "S3": {
+  "two_issuances_1s_apart": [
+   [
+    "OK",
+    true
+   ],
+   [
+    "OK",
+    true
+   ]
+  ],
+  "same_second_as_s2_identical_string": true,
+  "third_consume": [
+   "VIOLATION",
+   "replay attack detected \u2014 seal already consumed"
+  ]
+ },
+ "S4": {
+  "winners": 1,
+  "n": 50
+ },
+ "S5": {
+  "list_vs_string": [
+   "OK",
+   true
+  ],
+  "same_params": [
+   "OK",
+   true
+  ],
+  "control_different_value": [
+   "VIOLATION",
+   "HMAC mismatch"
+  ],
+  "nested_reordered": [
+   "VIOLATION",
+   "HMAC mismatch"
+  ],
+  "nested_dict_vs_its_str": [
+   "OK",
+   true
+  ]
+ },
+ "S6": {
+  "same": [
+   "OK",
+   true
+  ],
+  "case": [
+   "VIOLATION",
+   "HMAC mismatch"
+  ],
+  "dash": [
+   "VIOLATION",
+   "HMAC mismatch"
+  ]
+ },
+ "S7": {
+  "no_expected": [
+   "OK",
+   true
+  ],
+  "wrong_expected": [
+   "VIOLATION",
+   "record_hash mismatch"
+  ],
+  "sentinel_seal": [
+   "OK",
+   true
+  ],
+  "require_evidence_binding_flag": false
+ },
+ "S8": {
+  "seal_none": [
+   "OTHER:AttributeError",
+   "'NoneType' object has no attribute 'split'"
+  ],
+  "seal_int": [
+   "OTHER:AttributeError",
+   "'int' object has no attribute 'split'"
+  ],
+  "params_none": [
+   "VIOLATION",
+   "unexpected verification error: 'NoneType' object has no attribute 'items'"
+  ],
+  "params_list": [
+   "VIOLATION",
+   "unexpected verification error: 'list' object has no attribute 'items'"
+  ],
+  "action_none": [
+   "VIOLATION",
+   "HMAC mismatch"
+  ],
+  "control_bad_string": [
+   "VIOLATION",
+   "malformed seal (expected 4 parts)"
+  ]
+ },
+ "S9": {
+  "expired": [
+   "VIOLATION",
+   "expired"
+  ],
+  "huge_ttl": [
+   "OK",
+   true
+  ]
+ },
+ "S10": {
+  "down": [
+   "VIOLATION",
+   "replay protection failed (Redis error): down"
+  ]
+ },
+ "S11": {
+  "alg_none": [
+   "VIOLATION",
+   "unknown kid: None"
+  ],
+  "unknown_kid": [
+   "VIOLATION",
+   "unknown kid: 'attacker'"
+  ],
+  "none_consume": [
+   "VIOLATION",
+   "unknown kid: None"
+  ]
+ },
+ "S13": {
+  "hmac_in_prod_like": [
+   "VIOLATION",
+   "HMAC seals are not accepted in strict mode (CAGE_SEAL_STRICT_MODE=true or produc"
+  ]
+ },
+ "S12": {
+  "revoke": false,
+  "revocation": false,
+  "revoked": false,
+  "blocklist": false,
+  "denylist": false
+ }
+}

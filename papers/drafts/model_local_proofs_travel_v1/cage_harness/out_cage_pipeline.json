@@ -1,0 +1,327 @@
+{
+ "threshold": 0.95,
+ "UNGOVERNED_STAGES": [
+  "ftra",
+  "opa",
+  "stpa"
+ ],
+ "G1": {
+  "control": [
+   "SEAL",
+   "6ac13b8c.execu"
+  ],
+  "seal_verifies": true,
+  "verifies_other_params": "REJECT:SymbolicGovernorViolation: SymbolicGovernorViolation: routing seal rejected for action 'execute_trade': HMAC mismatch"
+ },
+ "G2": {
+  "check_balance": {
+   "empty": [
+    "SEAL",
+    "6ac13b8c.check"
+   ],
+   "conf0": [
+    "SEAL",
+    "6ac13b8c.check"
+   ],
+   "big_amount": [
+    "SEAL",
+    "6ac13b8c.check"
+   ]
+  },
+  "prompt_injection_check": {
+   "empty": [
+    "SEAL",
+    "6ac13b8c.promp"
+   ],
+   "conf0": [
+    "SEAL",
+    "6ac13b8c.promp"
+   ],
+   "big_amount": [
+    "SEAL",
+    "6ac13b8c.promp"
+   ]
+  }
+ },
+ "G3": {
+  "Execute_Trade": [
+   "REFUSED",
+   "GovernanceError: [FTRA_UNREGISTERED_ACTION] FTRA Boundary Check: Action 'Execute_Trade' is not in the domai"
+  ],
+  "execute_trade ": [
+   "REFUSED",
+   "GovernanceError: [FTRA_UNREGISTERED_ACTION] FTRA Boundary Check: Action 'execute_trade ' is not in the doma"
+  ],
+  "execute_trade\u200b": [
+   "REFUSED",
+   "GovernanceError: [FTRA_UNREGISTERED_ACTION] FTRA Boundary Check: Action 'execute_trade\u200b' is not in the doma"
+  ],
+  "execute-trade": [
+   "REFUSED",
+   "GovernanceError: [FTRA_UNREGISTERED_ACTION] FTRA Boundary Check: Action 'execute-trade' is not in the domai"
+  ],
+  "EXECUTE_TRADE": [
+   "REFUSED",
+   "GovernanceError: [FTRA_UNREGISTERED_ACTION] FTRA Boundary Check: Action 'EXECUTE_TRADE' is not in the domai"
+  ],
+  "\uff45xecute_trade": [
+   "REFUSED",
+   "GovernanceError: [FTRA_UNREGISTERED_ACTION] FTRA Boundary Check: Action '\uff45xecute_trade' is not in the domai"
+  ],
+  "execute_trade\n": [
+   "REFUSED",
+   "GovernanceError: [FTRA_UNREGISTERED_ACTION] FTRA Boundary Check: Action 'execute_trade\n' is not in the doma"
+  ]
+ },
+ "G4": {
+  "None": [
+   "REFUSED",
+   "GovernanceError: [CTRL_AGT_001] ISO 42001 \u00a7A.5.2 Confidence Violation: Confidence score missing (required f"
+  ],
+  "str": [
+   "REFUSED",
+   "GovernanceError: [CTRL_AGT_001] ISO 42001 \u00a7A.5.2 Confidence Violation: Confidence score invalid type: str"
+  ],
+  "True": [
+   "REFUSED",
+   "GovernanceError: [CTRL_AGT_001] ISO 42001 \u00a7A.5.2 Confidence Violation: Confidence score invalid type: bool"
+  ],
+  "nan": [
+   "REFUSED",
+   "ValueError: Invalid JSON number: nan"
+  ],
+  "inf": [
+   "REFUSED",
+   "ValueError: Invalid JSON number: inf"
+  ],
+  "-1": [
+   "REFUSED",
+   "GovernanceError: [CTRL_AGT_001] ISO 42001 \u00a7A.5.2 Confidence Violation: Confidence score -1.0 is negative (i"
+  ],
+  "1.5": [
+   "REFUSED",
+   "GovernanceError: [CTRL_AGT_001] ISO 42001 \u00a7A.5.2 Confidence Violation: Confidence score 1.5 exceeds maximum"
+  ],
+  "below": [
+   "REFUSED",
+   "GovernanceError: [FTRA_REGISTERED_IRREVERSIBLE] FTRA Boundary Check: Action 'execute_trade' is registered a"
+  ],
+  "at_threshold": [
+   "SEAL",
+   "6ac13b8d.execu"
+  ],
+  "1.0": [
+   "SEAL",
+   "6ac13b8e.execu"
+  ],
+  "missing": [
+   "REFUSED",
+   "GovernanceError: [CTRL_AGT_001] ISO 42001 \u00a7A.5.2 Confidence Violation: Confidence score missing (required f"
+  ]
+ },
+ "G5": {
+  "str10": [
+   "SEAL",
+   "6ac13b8f.execu"
+  ],
+  "True": [
+   "REFUSED",
+   "GovernanceError: [CONSENSUS_REJECTED] Invalid trade amount for consensus evaluation"
+  ],
+  "-5": [
+   "REFUSED",
+   "GovernanceError: [CONSENSUS_REJECTED] Non-finite or negative trade amount for consensus evaluation"
+  ],
+  "0": [
+   "REFUSED",
+   "GovernanceError: [FTRA_REGISTERED_IRREVERSIBLE] FTRA Boundary Check: Action 'execute_trade' is registered a"
+  ],
+  "nan": [
+   "REFUSED",
+   "ValueError: Invalid JSON number: nan"
+  ],
+  "inf": [
+   "REFUSED",
+   "ValueError: Invalid JSON number: inf"
+  ],
+  "1e308": [
+   "REFUSED",
+   "GovernanceError: [CTRL_MRM_004] SR 26-2 \u00a7IV \u2013 Model Risk Management Violation: Safety Violation (RBC/CBF). "
+  ],
+  "None": [
+   "REFUSED",
+   "GovernanceError: [CONSENSUS_REJECTED] Invalid trade amount for consensus evaluation"
+  ],
+  "missing": [
+   "REFUSED",
+   "GovernanceError: [FTRA_REGISTERED_IRREVERSIBLE] FTRA Boundary Check: Action 'execute_trade' is registered a"
+  ],
+  "list": [
+   "REFUSED",
+   "GovernanceError: [CONSENSUS_REJECTED] Invalid trade amount for consensus evaluation"
+  ],
+  "10001": [
+   "REFUSED",
+   "GovernanceError: [FTRA_REGISTERED_IRREVERSIBLE] FTRA Boundary Check: Action 'execute_trade' is registered a"
+  ],
+  "10000": [
+   "REFUSED",
+   "GovernanceError: [CONSENSUS_ESCALATED] consensus_unanimous_error"
+  ],
+  "20000": [
+   "REFUSED",
+   "GovernanceError: [FTRA_REGISTERED_IRREVERSIBLE] FTRA Boundary Check: Action 'execute_trade' is registered a"
+  ]
+ },
+ "G5x_posthoc": {
+  "str20000": [
+   "REFUSED",
+   "GovernanceError: [FTRA_REGISTERED_IRREVERSIBLE] FTRA Boundary Check: Action 'execute_trade' is registered a"
+  ],
+  "str1e6": [
+   "REFUSED",
+   "GovernanceError: [CTRL_MRM_004] SR 26-2 \u00a7IV \u2013 Model Risk Management Violation: Safety Violation (RBC/CBF). "
+  ],
+  "str-5": [
+   "REFUSED",
+   "GovernanceError: [CONSENSUS_REJECTED] Non-finite or negative trade amount for consensus evaluation"
+  ],
+  "str0": [
+   "REFUSED",
+   "GovernanceError: [FTRA_REGISTERED_IRREVERSIBLE] FTRA Boundary Check: Action 'execute_trade' is registered a"
+  ],
+  "strnan": [
+   "REFUSED",
+   "GovernanceError: [CONSENSUS_REJECTED] Non-finite or negative trade amount for consensus evaluation"
+  ],
+  "str_abc": [
+   "REFUSED",
+   "GovernanceError: [CONSENSUS_REJECTED] Invalid trade amount for consensus evaluation"
+  ],
+  "str_1e308": [
+   "REFUSED",
+   "GovernanceError: [CTRL_MRM_004] SR 26-2 \u00a7IV \u2013 Model Risk Management Violation: Safety Violation (RBC/CBF). "
+  ],
+  "int_10": [
+   "SEAL",
+   "6ac13b9f.execu"
+  ],
+  "int_20000": [
+   "REFUSED",
+   "GovernanceError: [FTRA_REGISTERED_IRREVERSIBLE] FTRA Boundary Check: Action 'execute_trade' is registered a"
+  ]
+ },
+ "G6": {
+  "control_20000": [
+   "REFUSED",
+   "GovernanceError: [FTRA_REGISTERED_IRREVERSIBLE] FTRA Boundary Check: Action 'execute_trade' is registered a"
+  ],
+  "smuggle_approved": [
+   "REFUSED",
+   "GovernanceError: [FTRA_REGISTERED_IRREVERSIBLE] FTRA Boundary Check: Action 'execute_trade' is registered a"
+  ],
+  "smuggle_hitl_approved": [
+   "REFUSED",
+   "GovernanceError: [FTRA_REGISTERED_IRREVERSIBLE] FTRA Boundary Check: Action 'execute_trade' is registered a"
+  ],
+  "smuggle_skip_governance": [
+   "REFUSED",
+   "GovernanceError: [FTRA_REGISTERED_IRREVERSIBLE] FTRA Boundary Check: Action 'execute_trade' is registered a"
+  ],
+  "smuggle_policy_decision": [
+   "REFUSED",
+   "GovernanceError: [FTRA_REGISTERED_IRREVERSIBLE] FTRA Boundary Check: Action 'execute_trade' is registered a"
+  ],
+  "smuggle_deferred_id": [
+   "REFUSED",
+   "GovernanceError: [FTRA_REGISTERED_IRREVERSIBLE] FTRA Boundary Check: Action 'execute_trade' is registered a"
+  ],
+  "smuggle_human_approved": [
+   "REFUSED",
+   "GovernanceError: [FTRA_REGISTERED_IRREVERSIBLE] FTRA Boundary Check: Action 'execute_trade' is registered a"
+  ],
+  "opa_payload_action": "execute_trade",
+  "opa_payload_tool_input_is_params": false
+ },
+ "G7": {
+  "b_ingest": {
+   "result": "SEAL",
+   "amount_after": 1000000.0,
+   "verifies_mutated": true,
+   "verifies_original": "REJECT:SymbolicGovernorViolation: SymbolicGovernorViolation: routing seal rejected for action 'execute_trade': HMAC mismatch"
+  },
+  "a_opa": {
+   "result": "REFUSED",
+   "why": "GovernanceError: [CTRL_MRM_004] SR 26-2 \u00a7IV \u2013 Model Risk Management Violation: Safety Violation (RBC/CBF). ",
+   "amount_after": 1000000.0
+  }
+ },
+ "G8": {
+  "ALLOW": [
+   "SEAL",
+   "6ac13bb6.execu"
+  ],
+  "space_lower": [
+   "SEAL",
+   "6ac13bb7.execu"
+  ],
+  "True": [
+   "SEAL",
+   "6ac13bb8.execu"
+  ],
+  "dict_decision_true": [
+   "SEAL",
+   "6ac13bba.execu"
+  ],
+  "int1": [
+   "REFUSED",
+   "GovernanceError: [CTRL_OPA_005] OPA Policy Violation: Unexpected verdict '1'"
+  ],
+  "ALLOW_WITH_CONDITIONS": [
+   "REFUSED",
+   "GovernanceError: [CTRL_OPA_005] OPA Policy Violation: Unexpected verdict 'ALLOW_WITH_CONDITIONS'"
+  ],
+  "allow_yes": [
+   "REFUSED",
+   "GovernanceError: [CTRL_OPA_005] OPA Policy Violation: Unexpected verdict '{'allow': 'yes'}'"
+  ],
+  "None": [
+   "REFUSED",
+   "GovernanceError: [CTRL_OPA_005] OPA Policy Violation: Unexpected verdict 'None'"
+  ],
+  "exception": [
+   "REFUSED",
+   "GovernanceError: [CTRL_OPA_005] OPA policy evaluation failed: boom"
+  ]
+ },
+ "G9": {
+  "check_market_status": [
+   "RETURNED",
+   "''"
+  ],
+  "verify_content_safety": [
+   "RETURNED",
+   "''"
+  ],
+  "Check_Market_Status": [
+   "RAISED",
+   "PermissionError: Governance Blocked: [FTRA_UNREGISTERED_ACTION] FTRA Boundary Check: Action 'Check_Market_S"
+  ],
+  "check_market_status ": [
+   "RAISED",
+   "PermissionError: Governance Blocked: [FTRA_UNREGISTERED_ACTION] FTRA Boundary Check: Action 'check_market_s"
+  ],
+  "check-market-status": [
+   "RAISED",
+   "PermissionError: Governance Blocked: [FTRA_UNREGISTERED_ACTION] FTRA Boundary Check: Action 'check-market-s"
+  ]
+ },
+ "G10": {
+  "seals_minted_unsettled": 18,
+  "first_refusal": "GovernanceError: [CBF_BARRIER_VIOLATED] UNSAFE: h_next=3890 < required=4445",
+  "after_2s_wait": [
+   "REFUSED",
+   "GovernanceError: [CBF_BARRIER_VIOLATED] UNSAFE: h_next=3890 < required=4445"
+  ]
+ }
+}

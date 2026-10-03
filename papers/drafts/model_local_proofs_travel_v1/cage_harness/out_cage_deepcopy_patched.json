@@ -1,0 +1,35 @@
+{
+ "mode": "patched",
+ "F1": {
+  "seal_verifies": true,
+  "rejects_11": "REJECT"
+ },
+ "F2_amount": {
+  "result": "SEAL",
+  "verifies_original": true,
+  "verifies_mutated": "REJECT",
+  "evidence_hash_equals_original": true,
+  "evidence_hash_equals_mutated": false
+ },
+ "F4_nested": {
+  "result": "SEAL",
+  "verifies_original": true,
+  "verifies_mutated": "REJECT",
+  "evidence_hash_equals_original": true,
+  "evidence_hash_equals_mutated": false
+ },
+ "F3_9999": {
+  "result": "SEAL",
+  "verifies_original": true,
+  "verifies_mutated": "REJECT"
+ },
+ "F3_1000000": {
+  "result": "SEAL",
+  "verifies_original": true,
+  "verifies_mutated": "REJECT"
+ },
+ "F5": {
+  "result": "REFUSED",
+  "why": "TypeError: cannot pickle '_thread.lock' object"
+ }
+}

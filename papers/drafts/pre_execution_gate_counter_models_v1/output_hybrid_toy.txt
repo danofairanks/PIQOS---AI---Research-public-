@@ -1,0 +1,34 @@
+{
+  "H1": {
+    "h1_triggered": true,
+    "violations_passed": {
+      "HONEST/INDEPENDENT_CONTEXT": 0,
+      "HONEST/REPORTED_CONTEXT": 0,
+      "MASKING/INDEPENDENT_CONTEXT": 0,
+      "MASKING/REPORTED_CONTEXT": 15
+    }
+  },
+  "H2": {
+    "accepted_under_penalty": 989,
+    "accepted_under_predicate": 0,
+    "h2_triggered_for_penalty": true,
+    "soft_violating_proposals": 2000
+  },
+  "H3": {
+    "gate_invocations_during_stranding": 0,
+    "h3_triggered": true,
+    "stranded_steps_soft_zone_state": 233,
+    "stranded_steps_when_confined_to_core": 0
+  },
+  "matrix": {
+    "H0_hard_core_clamp_guarantee": "HOLDS-FOR-EVERY-f (pinned in gate_counter_models.py, C3_trivial_invariance)",
+    "H1_honest_control": "NOT-REACHED",
+    "H1_independent_context": "NOT-REACHED",
+    "H1_reported_context": "DEFEATED-AT-SCOPE",
+    "H2_penalty_variant_vs_4.5": "DEFEATED-AT-SCOPE",
+    "H2_predicate_variant_(control)": "NOT-REACHED",
+    "H3_core_only_control": "NOT-REACHED",
+    "H3_invariance_under_context_change": "DEFEATED-AT-SCOPE"
+  }
+}
+selftest OK

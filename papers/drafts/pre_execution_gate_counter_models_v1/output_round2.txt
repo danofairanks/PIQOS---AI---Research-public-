@@ -1,0 +1,86 @@
+{
+  "B1": {
+    "0.0": {
+      "allows_of_prohibited": 0,
+      "halts": 686
+    },
+    "0.2": {
+      "allows_of_prohibited": 5,
+      "halts": 689
+    },
+    "0.8": {
+      "allows_of_prohibited": 181,
+      "halts": 484
+    }
+  },
+  "B10": {
+    "0.0": 0.0,
+    "0.05": 0.38,
+    "0.2": 1.84
+  },
+  "B2": {
+    "12": 13,
+    "16": 18,
+    "24": 26,
+    "52": 59,
+    "8": 5
+  },
+  "B3": {
+    "violations_passed_reported_gate_full_observability": 0
+  },
+  "B4": {
+    "AUTH_FORGE_WRONG_KEY": 0,
+    "AUTH_FRESH_INDEPENDENT_SIGNER": 0,
+    "AUTH_REPLAY_NO_FRESHNESS": 15,
+    "UNAUTH": 15
+  },
+  "B5": {
+    "p_e=0.001,K=100": 0.28,
+    "p_e=0.001,K=1000": 0.84,
+    "p_e=0.001,K=10000": 1.0,
+    "p_e=0.01,K=100": 0.88,
+    "p_e=0.01,K=1000": 1.0,
+    "p_e=0.01,K=10000": 1.0,
+    "p_e=0.1,K=100": 1.0,
+    "p_e=0.1,K=1000": 1.0,
+    "p_e=0.1,K=10000": 1.0
+  },
+  "B6": {
+    "0.1": {
+      "exact_repeat_distinct_outcomes": 1,
+      "paraphrase_distinct_outcomes": 2
+    },
+    "0.5": {
+      "exact_repeat_distinct_outcomes": 1,
+      "paraphrase_distinct_outcomes": 1
+    },
+    "2.0": {
+      "exact_repeat_distinct_outcomes": 1,
+      "paraphrase_distinct_outcomes": 1
+    }
+  },
+  "B9": {
+    "t1_d1_triggered_all": true,
+    "t1_executed_prohibited_all": true,
+    "t1_runs": 180,
+    "t5_all_seeds_single_outcome_by_margin_over_noise": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": true,
+      "5": true
+    }
+  },
+  "matrix": {
+    "B10_probe_regress": "RELOCATES",
+    "B1_decomposition": "SUCCEEDS-IN-PART",
+    "B2_finite_precision": "FAILS",
+    "B3_full_observability": "SUCCEEDS",
+    "B4_authenticated_context": "CONFIRMS-EXIT",
+    "B5_coverage_of_exit": "SUCCEEDS",
+    "B6_determinism_meaning": "SUCCEEDS-IN-PART",
+    "B8_H2_straw_man": "CONCEDED (textual-exclusion check, not a toy result)",
+    "B9_seed_param_dependence": "FAILS"
+  }
+}
+selftest OK

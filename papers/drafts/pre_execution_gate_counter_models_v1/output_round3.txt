@@ -1,0 +1,200 @@
+{
+  "R3A": {
+    "ADVERSARIAL_w5": {
+      "executed": 2000,
+      "executed_violating": 2000,
+      "flipped_trials": 2000,
+      "violating_fraction": 1.0
+    },
+    "ATOMIC_adversarial_irrelevant": {
+      "executed": 2000,
+      "executed_violating": 0,
+      "flipped_trials": 0,
+      "violating_fraction": 0.0
+    },
+    "MUTATION_adversarial_w0": {
+      "executed": 2000,
+      "executed_violating": 0,
+      "flipped_trials": 0,
+      "violating_fraction": 0.0
+    },
+    "RANDOM_q0.1_w0": {
+      "executed": 2000,
+      "executed_violating": 0,
+      "flipped_trials": 0,
+      "violating_fraction": 0.0
+    },
+    "RANDOM_q0.1_w5": {
+      "executed": 2000,
+      "executed_violating": 803,
+      "flipped_trials": 803,
+      "violating_fraction": 0.402
+    },
+    "RANDOM_q0_w5": {
+      "executed": 2000,
+      "executed_violating": 0,
+      "flipped_trials": 0,
+      "violating_fraction": 0.0
+    },
+    "RECHECK_q0.1_w5_eps0": {
+      "executed": 1193,
+      "executed_violating": 0,
+      "flipped_trials": 807,
+      "violating_fraction": 0.0
+    },
+    "RECHECK_q0.1_w5_eps0.05": {
+      "executed": 1228,
+      "executed_violating": 35,
+      "flipped_trials": 807,
+      "violating_fraction": 0.018
+    },
+    "status": "ATTACK-SUCCEEDS"
+  },
+  "R3B": {
+    "status": "ATTACK-SUCCEEDS",
+    "topology_only_models_identical": true,
+    "worlds": {
+      "benign/effect_instrumented": {
+        "defeated": false,
+        "proof_holds": true,
+        "real_has_prohibited": false
+      },
+      "benign/topology_only": {
+        "defeated": false,
+        "proof_holds": true,
+        "real_has_prohibited": false
+      },
+      "hostile/effect_instrumented": {
+        "defeated": false,
+        "proof_holds": false,
+        "real_has_prohibited": true
+      },
+      "hostile/topology_only": {
+        "defeated": true,
+        "proof_holds": true,
+        "real_has_prohibited": true
+      }
+    }
+  },
+  "R3C": {
+    "allowlist_cost_appears_with_novel_legit_actions": true,
+    "attack": {
+      "ALLOWLIST": {
+        "legit_blocked": 0,
+        "prohibited_executed": 0
+      },
+      "BLACKLIST_ENUM": {
+        "legit_blocked": 0,
+        "prohibited_executed": 300
+      },
+      "BLACKLIST_NORMALIZED": {
+        "legit_blocked": 0,
+        "prohibited_executed": 70
+      }
+    },
+    "mutation_only_canonical_names": {
+      "ALLOWLIST": {
+        "legit_blocked": 0,
+        "prohibited_executed": 0
+      },
+      "BLACKLIST_ENUM": {
+        "legit_blocked": 0,
+        "prohibited_executed": 0
+      },
+      "BLACKLIST_NORMALIZED": {
+        "legit_blocked": 0,
+        "prohibited_executed": 0
+      }
+    },
+    "prediction_allowlist_has_nonzero_legit_block_in_base_world": false,
+    "status": "ATTACK-SUCCEEDS",
+    "variant_10pct_novel_legit_actions": {
+      "ALLOWLIST": {
+        "legit_blocked": 163,
+        "prohibited_executed": 0
+      },
+      "BLACKLIST_ENUM": {
+        "legit_blocked": 0,
+        "prohibited_executed": 300
+      },
+      "BLACKLIST_NORMALIZED": {
+        "legit_blocked": 0,
+        "prohibited_executed": 71
+      }
+    }
+  },
+  "R3D": {
+    "mismatched_allowed_but_executed_as_delete": 14,
+    "mutation_grammar_mismatch": 0,
+    "parse_once_with_gate_normalization": 0,
+    "parse_once_without_normalization_executor_still_folds": 12,
+    "requests_enumerated": 30,
+    "status": "ATTACK-SUCCEEDS"
+  },
+  "R3E": {
+    "ADVISORY_c0.0": {
+      "prohibited_executed": 610,
+      "prohibited_requests": 610
+    },
+    "ADVISORY_c0.9": {
+      "prohibited_executed": 60,
+      "prohibited_requests": 610
+    },
+    "ADVISORY_c1.0": {
+      "prohibited_executed": 0,
+      "prohibited_requests": 610
+    },
+    "OWNED_b0": {
+      "prohibited_executed": 0,
+      "prohibited_requests": 610
+    },
+    "OWNED_b0.1": {
+      "prohibited_executed": 61,
+      "prohibited_requests": 610
+    },
+    "status": "ATTACK-SUCCEEDS"
+  },
+  "R3F": {
+    "NO_PROPOSAL": {
+      "gate_denies": 0,
+      "gate_invocations": 0,
+      "repair_events": 0,
+      "stranded_steps": 233
+    },
+    "REPAIR_ON_DENY": {
+      "gate_denies": 1,
+      "gate_invocations": 500,
+      "repair_events": 1,
+      "stranded_steps": 0
+    },
+    "RE_PROPOSE": {
+      "gate_denies": 233,
+      "gate_invocations": 500,
+      "repair_events": 0,
+      "stranded_steps": 233
+    },
+    "status": "ATTACK-SUCCEEDS"
+  },
+  "counts": {
+    "R3A_adversarial_violating_fraction": 1.0,
+    "R3A_random_q0.1_w5_violating_fraction": 0.402,
+    "R3C_blacklist_enum_prohibited": 300,
+    "R3C_blacklist_normalized_prohibited": 70,
+    "R3D_mismatch": 14,
+    "R3D_parse_once_raw_exec_folds": 12,
+    "R3E_advisory_c0.9": 60,
+    "R3E_owned_b0.1": 61,
+    "R3F_no_proposal_invocations": 0,
+    "R3F_re_propose_invocations": 500,
+    "R3F_stranded": 233
+  },
+  "summary": {
+    "R3A": "ATTACK-SUCCEEDS",
+    "R3B": "ATTACK-SUCCEEDS",
+    "R3C": "ATTACK-SUCCEEDS",
+    "R3D": "ATTACK-SUCCEEDS",
+    "R3E": "ATTACK-SUCCEEDS",
+    "R3F": "ATTACK-SUCCEEDS"
+  }
+}
+selftest OK

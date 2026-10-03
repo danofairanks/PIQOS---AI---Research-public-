@@ -1,0 +1,160 @@
+# When a Model-Local Proof Travels: Scope, Attribution and Gate-Library Pitfalls Across Seven Public Repositories
+
+**Draft v1 for review. Not peer reviewed; may be revised or withdrawn.**
+
+**Scope of naming.** Repositories are named by their public paths because the paper's subject is what those files say and do. No individual is named: authors, maintainers and reviewers credited inside the repositories are not named here, and account handles appear only inside repository paths. No intent is attributed to anyone. Everything stated is about the pinned commits listed in section 2; repositories change.
+Internal evidence exists and is available to serious inquiries at proof time.
+Not a warning about any specific party; it reports patterns.
+
+**Disclosure.** Drafted with AI assistance. The attack scripts and their predictions were written by the same model that drafted this paper, so the results are a same-source check, not independent verification. Findings are reproducible: the companion harness clones the pinned commits and checks every result (section 8).
+
+## 1. Summary
+
+A small verification pattern (an exhaustive search over the reachable states of a declared model, checking that an effect state is reachable only through a guarded transition) was published in a public repository, narrowed by its own author two months later, and adapted with attribution by a larger repository hosted in a company's public GitHub organization. This paper reads the chain of files, checks what each says against the pinned text, and runs a suite of attacks against the executable libraries in six related repositories and against the adapting repository's routing-seal primitive and governor pipeline. Headline results:
+
+1. The attribution chain is real and carefully done. The adapting repository credits the source in at least five places, preserves the license notice, states that only the algorithmic approach was adapted, and states that it is "not an officially supported Google product."
+2. The source repository narrowed its own claim (from "theorem" to "model-local property") and that narrowing did not propagate: its sibling library's README, the adapting repository's model docstring, and a public post about the adaptation still use the earlier wording.
+3. The property the model checks is true by construction (the model's only edge into the effect state is guarded). The enumeration confirms the model against itself; it cannot say anything about paths the model omits. The adapting repository states this boundary in its own documents.
+4. Against the libraries, one repository (an unnarrowed reference gate) fails the claims in its own README in five ways; a second (an authorize-only kernel) withstands the suite at its stated claims with two small findings; a third (a halt primitive) fails its core sentence under one thread interleaving and its deny-list on the plural form of its canonical phrase; a fourth (an older workshop repository that the halt primitive's stub names as its authority gate) shows the same caller-supplied-label class and a direct write out of its terminal state; a fifth (the entry-point repository the source routed readers to) has no theorem or model check, but its demonstrated path and its active core are separate implementations with a measurable divergence (section 6c).
+5. Against the adapting repository's own seal and pipeline (with its policy client and world-model check stubbed, section 6b), the classes that broke the libraries do not reproduce: single use, verify-before-consume, fail-closed storage, the downgrade guard and name matching held. One finding does: the seal is generated over the caller's live parameter dictionary after the stages have evaluated it, so a concurrent holder of that dictionary can change what is sealed. A one-line snapshot at entry removes it, and a regression test that fails without the fix and passes with it is supplied.
+
+## 2. Objects and sources
+
+All pinned commits were cloned read-only; results are about these commits.
+
+| Repository | Pinned commit (author date) | Role |
+|---|---|---|
+| github.com/LalaSkye/no-direct-bind | 37af380 (2026-09-02); original 7fe9ff9 (2026-06-03) | source of the model, a small witness library and tests |
+| github.com/LalaSkye/ndb-gate | 1b52085 (2026-06-03) | the witness library as a separate repository (same code as the witness above) |
+| github.com/LalaSkye/commit-gate-core | 7d77453 (2026-09-22) | authorize-only kernel with a verifier, a nonce ledger and an audit sink |
+| github.com/LalaSkye/stop-machine | d744f8b (2026-09-02) | a three-state halt object plus three gate-like primitives |
+| github.com/LalaSkye/constraint-workshop | 2b9cb9c (2026-04-29) | older workshop repository: a halt object, an authority gate, a deny-list litmus, a commit-gate and a transition-protocol module |
+| github.com/LalaSkye/start-here | 2b1723b (2026-09-27) | entry-point repository: a decision demo, a separate core implementation and a measured-mutation fixture |
+| github.com/google/cybernetic-agent-governance-engine | a11f0ca (2026-10-03) | adaptation of the enumeration approach; read for attribution and scope statements, then attacked at its routing-seal primitive and governor pipeline (section 6b) |
+
+Full hashes are in the companion `PINS.txt`. The adapting repository's NOTICE carries "Copyright 2026 Google LLC", and its README (line 1044) states: "This is not an officially supported Google product." Whether any committer is an employee is not shown by the repository.
+
+## 3. The attribution chain
+
+Verified in the adapting repository at the pinned commit:
+
+- `NOTICE`: lists the source repository at commit 7fe9ff9 and says the proof file "was adapted from the NoDirectBind BFS state-space enumerator."
+- `THIRD_PARTY_NOTICES.md`: an entry for the source, location `third_party/no-direct-bind/` and `proof/model.py`.
+- `third_party/no-direct-bind/README.md`: "No original source files from `no-direct-bind` are copied into this repository; only the algorithmic approach was adapted."
+- `proof/model.py`, first lines: "Adapted from the open-source implementation ... (Apache 2.0)", with the original copyright notice preserved.
+- `docs/architecture/FORMAL_VERIFICATION.md` line 302: "The NoDirectBind TLA+ specification and foundational BFS state-space enumerator were adapted from the open-source implementation."
+
+One internal inconsistency in the adapting repository's own wording: the NOTICE and the third-party README say only the enumerator or approach was adapted, the formal-verification document says the TLA+ specification was also adapted, and no `NoDirectBind` TLA+ file exists in the adapting repository (its TLA+ files cover other models). The adapted model is its own: an 8-tier state machine with additional sub-proofs, 38 gated reachable states against the source's 13, reproducing as stated when run (`python3 proof/model.py`: gated holds over 38 states; ungated variant violates, 19 states).
+
+By author timestamp, the source's first commit is 2026-06-03T00:16:30Z and the adapting repository's first mention is 2026-06-03T10:20:38-04:00, about fourteen hours later. Git dates are settable, and the adapting repository's first four commits share one timestamp to the second, so its earlier history is not usable as provenance.
+
+**A public statement about the adaptation.** The source's author published a social-media post about it (screenshot, no permalink; comments not captured). It states that the work is "credited and adapted inside" the adapting repository, "published in Google's public GitHub organisation," and adds "For accuracy, CAGE's own README states that it is not an officially supported Google product." Each factual statement about the attribution in the post matches the files above. The post does not claim adoption or endorsement by the company. Its description of the object, "contains a theorem, an exhaustive reachable-state proof, a TLA+ specification, an executable witness and a deliberate falsifier," matches the original commit and differs from the source repository's current README (section 4).
+
+## 4. The scope history of the source, and what did not propagate
+
+The source repository's second commit (2026-08-30, "docs: bind No-Direct-Bind to its declared model") rewrote its public claim. Selected changes, from the commit diff:
+
+| Original (2026-06-03) | After (2026-08-30) |
+|---|---|
+| "A property, a machine-checked proof that it holds, and a runnable witness you can attack" | "model-local safety invariant"; "proves the property only over the declared modelled state space" |
+| "Theorem 1 — No-Direct-Bind"; "Why this is a theorem, not a demo" | "Model property"; theorem wording removed from README, model, specification, tests and package docs |
+| "So the gate is not decoration. Remove it and the property provably fails." | "necessary for the property in this model" |
+| gate docstring: the gate "is the ONLY path to a terminal effect ... by construction rather than by convention" | "Within this witness, the gate is the only path to the supplied effect function. That is not a claim about any caller's other code paths." |
+| configuration comment: the model checker "explores all four" environments | "covers one environment: TRUE / TRUE" (the checked-in configuration only ever fixed one) |
+| open challenge: build a model that reaches an effect without ALLOW while the suite passes | falsification boundary: internal inconsistency only; an external bypass counts "unless that stack had first been bound to this model and enforcement path" |
+
+The narrowing is in the direction of the evidence and is the kind of correction this series credits. It reached the README, model, specification, tests, package docstring and gate docstring of that repository. It did not reach: (a) the sibling library repository's README, which still reads "Theorem 1 — No-Direct-Bind" and "There is no second code path that produces an effect"; (b) two docstrings in the witness's evidence and receipt modules ("Only PROVED (direct, first-party) evidence can satisfy a strict authority check"; a "tamper-evident" record); (c) the adapting repository's `proof/model.py`, which at the pinned commit still opens "Theorem (No-Direct-Bind)" and says the gate is "load-bearing, not decorative" (the source's earlier phrase); (d) the public post.
+
+## 5. What the declared model does and does not establish
+
+The source's README says why the invariant holds: "the model defines the only edge into `EXECUTED` as guarded by `resolvedAllow`." The enumeration (13 states, or 38 in the adaptation) verifies a property that follows from reading the transition rules, and the "ungated" variant shows the property is sensitive to that edge. Two limits follow.
+
+First, the invariant is about a cached decision, not the authority at the time of the effect. Adding one environment transition to the source's own model, revocation of authority between the check and the effect, leaves the invariant true (15 states) while "authority present at execution" is violated.
+
+Second, a state-space check says nothing about paths the model omits. The adapting repository says so itself: `FORMAL_VERIFICATION.md` line 195: "It does not model the full implementation including the LangGraph harness or Redis state"; its acknowledgements file records that the single-request checks "assume the actuator honors the seal." Its model file ends with "PLAUSIBLE (not proved here): That this model generalises to the full production CAGE stack. NOT CLAIMED: That this is a security product or hardens any specific deployment." Elsewhere the same repository has stronger summary lines (README line 11, "Non-bypassable pipeline orchestration"; acknowledgements line 20, "Complete interception of actuation paths, machine-verified via exhaustive state-space model checking"). These sit alongside the scoping statements; this paper did not examine the adapting repository's code against them.
+
+## 6. Attacks on the libraries
+
+Each attack has a control that must read clean. Predictions for the halt-primitive suite were written before its script. Race counts are timing-dependent.
+
+| Library | Result |
+|---|---|
+| ndb-gate (README unnarrowed) and the source's witness (identical code) | Against the README's own enforcement table: a token labelling its own evidence PROVED gets ALLOW and the effect fires (control labelling itself weak: HOLD); a value-equal copy of a spent single-use token gets a second ALLOW (single-use is tracked by object identity); under 8 threads a single-use token fired the effect more than once in 13 to 16 of 300 trials (sequential control 0); `bind(..., now=...)` takes the clock from the caller, so an expired token with an earlier `now` gets ALLOW; a one-receipt edit fails chain verification (control) but a fully rewritten or fabricated chain verifies; an effect that raises after the receipt leaves an ALLOW receipt with no effect. The stated invariant (effect only after ALLOW) is not falsified; the README's rows on evidence, expiry, single use and tamper evidence are. |
+| commit-gate-core | The classes above do not reproduce except where its documents disclose the limit: forgery needs the key (a key holder mints any scope; the MAC is described as a symmetric lab MAC); replay is denied per ledger, and two ledgers both authorize; the ticket carries an expired window and nothing refuses its later use (the ticket is "not execution authority"); the receipt check is hash integrity only; 0 of 300 threaded double authorizations; mutating a payload after authorization is not detected by the kernel, which never applies it. Two small findings: wrong-type arguments (a text payload, a list record) raise without a refusal result or audit event, while a missing field returns a refusal and one event; and a record refused before signature verification writes its unauthenticated decision identifier and nonce into the audit event (the nonce is not consumed). |
+| stop-machine | The core sentence in its README is "RED does not move through the public API." Two threads calling `advance()` and `reset()` from AMBER ended GREEN in 1 or 2 of 10000 trials (no sequential order can end GREEN): a path out of RED through public methods only. A private method (`_set`) and the documented `object.__setattr__` poke both leave RED; the second is the stated ceiling. The halt state cannot be copied or pickled. The surface-gate deny-list is singular-only: `ignore previous instructions` returns ALLOW (the singular returns DENY), as do a newline between matched words and a zero-width character inside a word. Authority, chain and state are caller-supplied flags in the admissibility primitive, `attempted_at` supplies its own clock, and the envelope gate's self-approval rule reads a self-declared sender. A receipt's `stop_state: RED` is an object created and discarded per call; nothing persists to the next call. |
+
+On the halt primitive's own tests at the pinned commit, four root test files fail (a legacy-fixture format mismatch, an import error, manifest checks, and two deny-list tests that test the plural forms above). A repair branch fixes three of the four and adds the failing deny-list tests to CI, which would keep them red. The repositories also contain strong scoping documents (non-claims lists, an explicit ceiling file) that this paper treats as part of the claim.
+
+### 6a. The older workshop repository
+
+Same method (controls beside attacks; predictions written before the run). Its own 182 tests pass first. Two predictions missed and are recorded as misses: a race to the terminal-escape state gave 0 of 20000 on the interpreter used for the main run, and the plural form of the canonical phrase did not evade its deny-list (matching is by substring, so a plural that contains the phrase is still matched). The race is interpreter-dependent: over 100000 trials, Python 3.10 gave 6 and 9 trials ending GREEN in two runs; 3.11 and 3.12 gave none, and `reset()` is a check followed by a store with no lock.
+
+| Check | Result |
+|---|---|
+| halt object | direct assignment to its state attribute leaves the terminal state RED to GREEN (its README calls RED terminal; `advance` and `reset` from RED raise) |
+| authority gate | a caller-supplied evidence label of the highest class gets ALLOW, a user-class label gets DENY; writing the required-level attribute through the property raises, but a private-field write makes the lowest class pass |
+| deny-list litmus | a zero-width character inside a phrase or a hyphen between its words moves it from HARD_INVARIANT to EDGE; the plural does not |
+| commit-gate | an actor and a scope the request declares for itself get ALLOW (a different actor or scope: REFUSE); a rule whose scope value is null matches a request that lacks the key (the README says keys must exist); the invariant hash accepts any string, so a drift check with a new edge, an arbitrary changed hash and an acknowledgment passes (without the acknowledgment: fails); a non-dict scope raises; the decision hash is identical across timestamps and a fabricated ALLOW hash is self-consistent while the real verdict is REFUSE |
+| transition-protocol module | a claimed ADMIN or OWNER authority is APPROVED, USER is REFUSED; an unknown authority name raises KeyError |
+
+The repository is older than the others and is the one the halt primitive's stub names as its authority gate. The pattern is the same: the check runs on a label or field the caller supplies.
+
+### 6b. The adapting repository's seal path and governor pipeline
+
+Scope: the routing-seal primitive (HMAC path; no KMS available) and the governor assembled from the finance plugin with the repository's own FTRA registry, STPA validator, domain tiers, seal and evidence chain on a local Redis. Stubbed, and disclosed: the policy client always answers ALLOW (the policy file is untested) and the causal safety check returns True. Predictions were committed before each run; the scripts are in `cage_harness/`.
+
+*Seal path (13 predictions, all matched).* A seal forged from the default salt, which is in the source, is rejected in strict mode and in a production-like environment and accepted only with strict mode off in a test environment (a documented insecure configuration; the environment is deployment configuration). A replay of the same string or a value-equal copy is denied; 50 concurrent consumers of one seal gave exactly one winner; verification precedes the nonce burn; a storage error fails closed; unknown-key and `alg: none` tokens are rejected. Findings: parameters that are not primitive values are coerced with `str()` before canonicalization, so a seal for `{"x": [1, 2]}` verifies for `{"x": "[1, 2]"}`; the evidence-record hash is a string inside the seal and the caller in the finance tool provider does not pass an expected hash, so a seal carrying a fabricated record hash is consumed; a non-string seal raises `AttributeError` from the parse step, which the caller's `except SymbolicGovernorViolation` would not catch; there is no revocation surface in the seal module, so a seal is valid until it expires, and the revocation-between-check-and-effect counterexample of section 5 applies to it. Two issuances for identical parameters are both consumable (single use is per seal, by design).
+
+*Governor pipeline.* Unregistered or variant action names (case, trailing space, zero-width character, dash, fullwidth letters) are refused; invalid confidence and amount values are refused; smuggled approval keys change nothing; policy responses decode strictly; the two exempt tool names match exactly. Registered read-only actions are sealed with no confidence and with a very large amount parameter, because the ungoverned profile runs only the registry, safety-validation and policy stages; that follows from the design and is a boundary rather than a defect. Two predictions missed: a numeric string amount (`"10"`) was sealed (it is coerced consistently: `"20000"` was refused by the same stages), and an amount exactly at the registry's envelope limit was refused for a reason specific to the stubbed consensus stage.
+
+*Finding: the seal binds the live dictionary.* `govern()` passes the caller's `params` object to the stages and later to seal generation; the evidence event's parameter hash is computed before the evidence commit is awaited and the seal is generated after it. A concurrent task that changed `amount` from 10 to 1000000 during that await produced a seal that verifies for the changed parameters and rejects the original, although every stage (including the 10000 registry envelope) had evaluated 10; the evidence record names the original parameters and the seal the changed ones. A mutation during the policy-client await was caught for 1000000 by a later tier that reads the live dictionary and passed for 9999. Needing a concurrent holder of the same dictionary, this is not shown to be reachable in any deployment; the harness cannot say which callers hold one.
+
+*Fix test.* Copying `params` on entry to `govern()` (one line; the narrowing path already copies) makes the seal bind the snapshot the stages evaluated: the seal verifies the original, rejects the mutated dictionary, and the evidence hash and the seal agree, for scalar and nested mutations and at both timings. A non-copyable parameter raises a `TypeError` earlier (it already failed later). A regression test that fails without the line and passes with it is in `cage_harness/test_govern_params_snapshot.py`. The repository's governor tests give the same counts with and without the line (453 passed, 11 failed from environment); they contain no test for mutation. The seal still binds a snapshot, not what an executor later does; a caller must verify the seal against the values it executes (the finance tool provider does), and state the stages read from outside (budgets, telemetry) is unchanged.
+
+### 6c. The entry-point repository
+
+Not a model-check repository: a text search of its history for "theorem" and for the source's name returns nothing, and its claim-boundary file lists proof, validation and certification as forbidden claims. The checks below concern what its demonstrated path is. Predictions were written before the script (from earlier reads); all five matched. Its own suite passes (145 tests, at the earlier live run).
+
+| Check | Result |
+|---|---|
+| implementations | four separately coded evaluation functions that do not call one another in production code: the demo engine (`src/engine.py`, what `run_demo.py` calls and the twelve scenarios check), a staged `Evaluator`, a reference `evaluate_packet`, and `commit_gate()`. The only non-test call of `commit_gate()` is in the measured-mutation fixture (`core/measured_mutation.py`), which landed the day before the first audit; `run_demo.py` imports the demo engine and nothing from `core` |
+| golden corpus | its docstring (`core/golden_corpus.py`, lines 3-4) says "Every implementation must produce identical verdicts for these cases. If two systems disagree on any case, they are not equivalent." and `core/conformance.py` (line 6) says "This is the moat. People can copy ideas. Then they fail the corpus."; as wired it runs against the adjacent reference implementation only. Run directly against the `Evaluator` with one shared replay context: 15 of 15 verdicts agree; 12 of 15 agree on verdict, reason code and executed flag (the three differences are reason-code text: `proof_incomplete` with or without the obligation list, `proof_stale` with or without the actor, `malformed_packet` vs `unknown_field`) |
+| demonstrated path vs core registry | the demo engine knows `read`, `write`, `delete`; the core registry knows `deploy` and `commit` as known and mutating. The same request with action `deploy` or `commit` is denied `unknown_action` by the demo engine; the demo engine also ignores an unknown key (an `expired` field was accepted, ALLOW) where the `Evaluator` rejects unknown fields. The twelve shipped scenarios use `deploy` and `commit` only inside two paradox cases, which the engine sinks before its action check, so the shipped scenarios never exercise the divergence |
+| fixtures | all three commits that touch `expected/` also change the demo engine or its contradiction module (49 commits in total): the expected files were not authored separately from the code they check, so "matches the fixture" and "is correct" are not shown to be the same claim. No case was found where an output looks wrong on inspection |
+
+Read fairly, the history looks like a migration: the demo engine and demo were finished in one day (2026-03-25) and not touched since; the core began that day and is under active development, and version comments inside `core/` state the upgrade relationship. What the README, claim-boundary file and changelog (one entry, 2026-05-11) do not say is which implementation the entry point runs. The entry point's referent also changed three times in 17 days (2026-08-30, 2026-09-02, 2026-09-16), then froze; its `SUPERSEDED.md` now says no repository is designated, which differs from the earlier redirect.
+
+## 7. Reading across the chain
+
+The same pattern recurs at every site. The model-local proof is sound over its declared model and says nothing outside it; the libraries' remaining failures are at places where the check runs on something the caller supplies (an evidence label, a clock, a sender field, a flag), where a check and an action are not atomic, or where a record's authenticity is hash integrity only. These are the sites and requirements already listed in [`pre_execution_gate_counter_models_v1.md`](pre_execution_gate_counter_models_v1.md) (items 4, 5, 13, 16 and section 4a): the self-supplied label is a channel the governed side controls, single-use needs an atomic consume and a value-based identity, and receipts without an external anchor record that something was written, not that it was true. The one repository that satisfies the atomicity and canonicalization items inside its kernel (commit-gate-core) states narrower claims than the others and survives at those claims.
+
+The more general observation is about travel. A narrow claim was narrowed at its source and then carried, still in its earlier wording, into a sibling repository, an adaptation and a public post. Scope statements that live in one README do not follow the code or the adapted idea; a reader meeting the idea downstream sees the stronger sentence.
+
+## 8. What this does not establish, and reproduction
+
+- Nothing here is a statement about any individual's intent, competence or good faith, and nothing is a statement about the adapting repository's production code, its security, or the company's position on any of these repositories; that repository disclaims official support.
+- The attack suite is same-source; a second reader is owed. The adapting repository's results (6b) hold under the stubs named there and for the HMAC seal path only. Counts depend on seeds and timing; the harness asserts qualitative outcomes and retries the two race checks.
+- Beyond section 6b, the adapting repository's code, its `trace_conformance.py` and its other formal-verification documents were not examined against its stronger summary lines; the HTTP layer, the real policy file, KMS seals and strict mode were not tested.
+- An obligation-bound policy admission lab named in the sources was not attacked. For the entry-point repository only the checks in section 6c were run; its non-integration is a finding about which implementation the demo exercises, not a defect on the happy path.
+
+**What would show this paper wrong.** The companion harness failing at the pinned commits; a quoted line that does not appear at the stated path and line; or a later commit that changes the stated behavior (which would be a fix, not a refutation of the pinned reading).
+
+**Reproduce.** `python3 run_all.py` in [`model_local_proofs_travel_v1/`](model_local_proofs_travel_v1/) clones the pinned commits into a work directory, runs the three attack scripts and prints PASS or FAIL for 50 qualitative checks (about 25 seconds; needs git, network and Python 3.10 or newer). The seal-path, pipeline and fix-test results need a dependency set and a local Redis and are reproduced separately: [`cage_harness/REPRODUCTION.md`](model_local_proofs_travel_v1/cage_harness/REPRODUCTION.md).
+
+## References
+
+[1] Source repository, pinned commits: github.com/LalaSkye/no-direct-bind at 37af380 and 7fe9ff9.
+
+[2] github.com/LalaSkye/ndb-gate at 1b52085; github.com/LalaSkye/commit-gate-core at 7d77453; github.com/LalaSkye/stop-machine at d744f8b; github.com/LalaSkye/constraint-workshop at 2b9cb9c; github.com/LalaSkye/start-here at 2b1723b.
+
+[3] github.com/google/cybernetic-agent-governance-engine at a11f0ca: `NOTICE`, `THIRD_PARTY_NOTICES.md`, `third_party/no-direct-bind/README.md`, `proof/model.py`, `docs/architecture/FORMAL_VERIFICATION.md`, `ACKNOWLEDGEMENTS.md`, `README.md`.
+
+[4] Counter-models for pre-execution authority-gate claims: [`pre_execution_gate_counter_models_v1.md`](pre_execution_gate_counter_models_v1.md).
+
+[5] The channel-collapse result: [`execution_gate_channel_collapse_v1.md`](../published/execution_gate_channel_collapse_v1.md).
+
+Sources are cited at the tier read: exact clones for repository files; a screenshot of a public post for the statement in section 3.
+
+---
+
+*Living research. This draft is part of ongoing work and may be updated, corrected or withdrawn at any time; the repository history holds the current version and the earlier ones.*
