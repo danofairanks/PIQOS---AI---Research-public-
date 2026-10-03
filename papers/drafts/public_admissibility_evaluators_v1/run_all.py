@@ -65,6 +65,22 @@ def main():
     check(fz["one_60"] == "admitted" and fz["one_59"] == "review" and fz["one_0"] == "rejected" and fz["two_80"] == "admitted", "F1 mean-based admission admits one weak dimension of 60", fails)
     n = o["N1_surfaces"]
     check(all(v["code_files"] == ["app/layout.tsx", "app/page.tsx"] and not v["api_dir"] for v in n.values()), "N1 three repositories are static web surfaces", fails)
+    # B1: registry-bound counter-model toy (stdlib; also reruns four defeat inputs against the public guard)
+    b = subprocess.run(["node", os.path.join(HERE, "b1_registry_bound_guard.js"), WORK], capture_output=True, text=True)
+    if b.returncode != 0:
+        raise SystemExit("b1 script failed:\n" + b.stderr)
+    t = json.loads(b.stdout)
+    check(t["control_honest"]["executed"] and t["control_honest"]["effects"] == 1, "B1 control: honest path executes once", fails)
+    w = t["A_words"]
+    check(w["registry_revoked_host_says_valid"]["decision"] == "deny" and not w["registry_revoked_host_says_valid"]["executed"] and all(v["decision"] == "allow" for k, v in w.items() if k.startswith("registry_active_host_text")), "B1 words: the registry decides; host text has no influence either way", fails)
+    fl = t["A_flag"]
+    check(fl["registry_revoked_flag_says_not"]["decision"] == "deny" and fl["registry_active_flag_says_revoked_and_expired"]["decision"] == "allow", "B1 flag: a host flag is not an input", fails)
+    check(not t["A_gap"]["executed"] and t["A_gap"]["effects"] == 0 and not t["A_gap_revoke_then_restore"]["executed"], "B1 gap: revocation after evaluate is stopped by the compare-and-swap, including revoke-then-restore", fails)
+    rc = t["A_receipt"]
+    check(rc["forged_other_key"] == "bad_signature" and rc["tampered_decision_original_signature"] == "bad_signature" and rc["wrong_action"] == "binding" and rc["wrong_packet"] == "binding" and rc["expired"] == "expired" and rc["replay"]["second"] == "replay" and rc["effects_on_attack_system"] == 1, "B1 receipt: forged, tampered, mis-bound, expired and replayed receipts are rejected", fails)
+    check(t["R_key_holder_mints"]["executed"] and t["R_stale_registry"]["executed"] and t["R_bypass_direct_call"]["effects_after_revocation_without_guard"] == 2 and t["R_inflight"]["executed"] and t["R_inflight"]["active_at_completion"] is False, "B1 residuals still succeed: key holder, stale registry, direct effect call, in-flight revocation", fails)
+    check(t["mutation_noCAS_gap"]["executed"] and t["mutation_noSig_forged"]["executed"] and t["mutation_noNonce_replay"]["second_executed"], "B1 mutations: removing the compare-and-swap, signature check or nonce check makes the attack fire", fails)
+    check(all(t["matrix_public_guard_fires"].values()), "B1 matrix: the same four defeat inputs fire on the public reference guard", fails)
     print(f"\n{'ALL CHECKS PASS' if not fails else str(len(fails)) + ' CHECK(S) FAILED'}")
     sys.exit(1 if fails else 0)
 
