@@ -6,7 +6,7 @@
 Internal evidence exists and is available to serious inquiries at proof time.
 Not a warning about any specific party; it reports patterns.
 
-**Disclosure.** Drafted with AI assistance, including the attacks in section 6: they were named by the same model that wrote the toys, so they are a same-source check and not independent verification.
+**Disclosure.** Drafted with AI assistance. The attacks in section 6 were named by the same model that wrote the toys, so they are a same-source check and not independent verification. The attack ideas in section 6a came from a second model family's re-implementation attempt; the predictions, controls and code for them are again by the model that wrote the toys.
 
 ## 1. The question
 
@@ -16,7 +16,7 @@ A family of governance claims says that a deterministic gate placed *before* exe
 
 - Each claim form got a defeat condition, in observable terms, **fixed in writing before the toy was built**. The series' own validity criterion supplies the standard: a single executable prohibited path invalidates a governance claim.
 - Status vocabulary: **defeated at scope** (the stated observable occurred in a run), **not reached** (the toy could not produce it), **blocked** (it needs an artifact the public text does not supply; not run). Nothing is recorded as refuted on argument alone.
-- Companion code (stdlib only, seeded, `--selftest` asserts the pinned results): [`pre_execution_gate_counter_models_v1/`](pre_execution_gate_counter_models_v1/). Counts are seed- and parameter-specific; the qualitative results are not (section 6).
+- Companion code (stdlib only, seeded, `--selftest` asserts the pinned results; four scripts): [`pre_execution_gate_counter_models_v1/`](pre_execution_gate_counter_models_v1/). Counts are seed- and parameter-specific; the qualitative results are not (section 6).
 
 ## 3. Results by claim form
 
@@ -53,7 +53,12 @@ Generic and testable; none is a statement about what exists in any product.
 11. One stable definition each of authority, determinism and execution across a series.
 12. Scope per claim reconciled with narrower scope statements made elsewhere in the series.
 
-**Minimal set to make the strongest claim testable at all:** 1, 2, 4 (or the scope limit) and 9.
+13. Check-to-use atomicity: the independent check and the effect are one atomic step, or the check is repeated at execution time, with the availability cost reported (section 6a).
+14. Effect-level observation: a model rebuilt from traces needs an independent monitor on the effect channel; state transitions alone cannot see an effect that leaves the state trace unchanged (section 6a).
+15. A stated policy for run-time-generated actions, default-deny or otherwise, with the cost reported as legitimate actions blocked; enumerated deny-lists and alias maps are only as good as their coverage (section 6a).
+16. A single canonical parse: the gate canonicalizes and the executor runs exactly the object the gate saw (section 6a).
+
+**Minimal set to make the strongest claim testable at all:** 1, 2, 4 (or the scope limit) and 9. Items 13 to 16 refine items 1 and 5 and do not change the minimal set.
 
 ## 6. Attack round 2 (author-named, not independent)
 
@@ -68,6 +73,21 @@ Nine steelman attacks were named and given observables and predictions before an
 - **Straw-man check.** The penalty variant of the hybrid is a textual exclusion check, not a counter-model result; reclassified.
 - **Unchanged.** Sensitivity at every precision tried (8 to 52 bits); the model-to-real gap; the qualitative results across 180 runs (20 seeds, 3 noise levels, 3 thresholds).
 
+## 6a. Round 3: attack ideas built as simulations with controls
+
+A second model family re-implemented the toys from an earlier version of this text and named further attacks. Its code encoded each attack so it could not fail (replacing the attack property with its absence did not change the observable), so those results were not counted. The attack ideas were kept and rebuilt: each toy computes its outcome by running a mechanism, counts are incremented inside the function they count, each has a control that must read zero (a non-zero control marks the toy broken) and a mutation that removes the attack property. Observables and predictions were fixed before the code.
+
+| Attack | Observed | Read |
+|---|---|---|
+| Check-to-use gap (an independent probe at time t, the effect later) | Governed side flips state right after a passing probe: 2000 of 2000 effects executed while violating. Random flips (probability 0.1 per step over 5 steps): 0.402 of trials. No flips, or zero delay: 0. Atomic check-and-act: 0. Recheck at execution time: 0 at probe miss 0, 35 of 2000 at miss 0.05, with 807 of 2000 trials blocked | The independent probe of section 4 closes the hole only if check and effect are atomic or the check is repeated at execution time; the repeat has an availability cost |
+| Trace semantic aliasing | Models rebuilt from state-only traces are identical for a benign and a hostile system with the same topology, and a "no prohibited effect" proof holds for both. Models from effect-instrumented traces detect the hostile one and do not flag the benign one | A trace-derived model needs an independent monitor on the effect channel |
+| Dynamic dispatch after enumeration | Known-name deny-list: 300 prohibited effects executed. Alias-normalized deny-list: 70, all via an alias outside the map. Default-deny allowlist: 0 prohibited. Only canonical names generated: deny-list 0 | A prediction missed in the base world: I predicted the allowlist would block some legitimate actions, and it blocked 0 because the generator emitted only enumerated legitimate names. With 10% novel legitimate actions added, it blocks 163 and still lets 0 prohibited through. The base counts moved slightly from the first run (299 and 78) because adding that draw changed the random stream, not the semantics |
+| Gate and executor parse the same request differently (exhaustive, exact) | 14 of 30 requests allowed by the gate and executed as the prohibited operation (first versus last duplicate key; case-sensitive versus case-folded). Gate canonicalizes and passes its canonical operation: 0. Parse-once without normalization while the executor still case-folds: 12. Grammar without duplicates and case variants: 0 | Parse-once is not enough alone; the gate must canonicalize and the executor must run exactly what the gate saw. An earlier version of this control was vacuous and was rewritten as two separate code paths |
+| Advisory gate versus gate-owned effect path | Advisory, host compliance 1.0: 0; 0.9: 60 of 610 prohibited requests; 0.0: 610 of 610. Owned effect path, bypass 0: 0; bypass 0.1: 61 of 610 | Parametric by construction (rates in, rates out); low evidential weight; it restates the mediation requirement |
+| Hybrid with the current state re-proposed (instrumented gate) | No proposal: 0 gate invocations, 233 stranded steps. Re-propose each step: 500 invocations, 233 denies, 233 stranded. Repair on deny: 1 deny, 1 repair, 0 stranded | Replaces the earlier constant gate-invocation field. The repair rule removes the stranding but, in this toy, moves the state out of the soft zone for good, and the source states no such rule |
+
+The four requirements added in section 5 (items 13 to 16) come from this round. Round 3 is still same-source: the attack ideas are another model's, the predictions and code are the author's. Counts are exact only for the parse-mismatch toy (enumerated); the others are seeded.
+
 ## 7. Results that cut against a one-sided reading
 
 The literal impossibility claim is defeated but a narrowed form survives. The model-to-real proof is sound when the model matches the real graph (that world is not defeated). A deterministic gate is stable under an interpretive stage whenever the margin exceeds that stage's noise, so a variance bound would settle it. The hard-constraint core guarantee holds for every function.
@@ -77,9 +97,9 @@ The literal impossibility claim is defeated but a narrowed form survives. The mo
 - That any implementation fails or works; intent of any party; prevalence.
 - That the toy parameters are representative: counts depend on seeds and parameters; the qualitative defeats do not.
 - Anything about patent claims, which were not read.
-- Single rater; the round-2 attacks are same-source.
+- Single rater; the round-2 and round-3 attacks are same-source.
 
-**What would show this paper wrong.** A failing `--selftest` on a clean checkout; a defeat condition shown to be mis-specified against the source text; or a published placement, trust root, effect-path list and third-party run protocol that satisfies items 1, 2, 4 and 9 for a specific gate. Reproduction so far is execution only: a run by a different model family (Python 3.12.3) and the author's runs (Python 3.10.20, 3.11.15) give byte-identical output for all three scripts ([`REPRODUCTION.md`](pre_execution_gate_counter_models_v1/REPRODUCTION.md)); it did not re-implement from this text. Owed: a re-implementation from this text alone and an independent attack round.
+**What would show this paper wrong.** A failing `--selftest` on a clean checkout (four scripts); a defeat condition shown to be mis-specified against the source text; or a published placement, trust root, effect-path list and third-party run protocol that satisfies items 1, 2, 4 and 9 for a specific gate. Reproduction so far is execution only: a run by a different model family (Python 3.12.3) and the author's runs (Python 3.10.20, 3.11.15) give byte-identical output for all three scripts ([`REPRODUCTION.md`](pre_execution_gate_counter_models_v1/REPRODUCTION.md)); it did not re-implement from this text. Owed: a re-implementation from this text alone and an independent attack round.
 
 ## References
 

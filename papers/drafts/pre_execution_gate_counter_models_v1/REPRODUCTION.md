@@ -17,3 +17,6 @@ Python 3.11.15 and Python 3.10.20, unmodified runs: stdout SHA256 **identical to
 ## Reading
 Output is byte-identical across Python 3.10.20, 3.11.15 and 3.12.3 and across two environments. Runner A had access to the code and so is not independent of it; the hash comparison is self-consistent with this folder and the anchor is the filing commit plus independently recomputed hashes. A fabricated report would need the output hashes, which were not published before this run.
 **Still owed:** a re-implementation from the paper text alone, and an independent attack round.
+
+## Addendum: `gate_round3.py`
+Added after the runs above; run by the author only (Python 3.10, 3.11, 3.12: `--selftest` OK, pinned counts hold). It has not been run by anyone else, so the cross-environment claim above covers the first three scripts only.
