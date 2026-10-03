@@ -6,6 +6,8 @@
 Internal evidence exists and is available to serious inquiries at proof time.
 Not a warning about any specific party; it reports patterns.
 
+**Corrections.** Section 3 (TLA+ attribution wording) was corrected on 2026-10-03; the correction is marked in place.
+
 **Disclosure.** Drafted with AI assistance. The attack scripts and their predictions were written by the same model that drafted this paper, so the results are a same-source check, not independent verification. Findings are reproducible: the companion harness clones the pinned commits and checks every result (section 8).
 
 ## 1. Summary
@@ -44,7 +46,7 @@ Verified in the adapting repository at the pinned commit:
 - `proof/model.py`, first lines: "Adapted from the open-source implementation ... (Apache 2.0)", with the original copyright notice preserved.
 - `docs/architecture/FORMAL_VERIFICATION.md` line 302: "The NoDirectBind TLA+ specification and foundational BFS state-space enumerator were adapted from the open-source implementation."
 
-One internal inconsistency in the adapting repository's own wording: the NOTICE and the third-party README say only the enumerator or approach was adapted, the formal-verification document says the TLA+ specification was also adapted, and no `NoDirectBind` TLA+ file exists in the adapting repository (its TLA+ files cover other models). The adapted model is its own: an 8-tier state machine with additional sub-proofs, 38 gated reachable states against the source's 13, reproducing as stated when run (`python3 proof/model.py`: gated holds over 38 states; ungated variant violates, 19 states).
+One difference in the adapting repository's own wording: the NOTICE and the third-party README say only the enumerator or approach was adapted, while the formal-verification document says the NoDirectBind TLA+ specification was also adapted (line 302). No file is named for the invariant (the source's `spec/NoDirectBind.tla` was not copied), but the invariant is restated inside a different TLA+ module: `proof/LangGraphHarness.tla`, a model of an advisor-graph harness, defines `NoDirectBind == (phase = "RESPONSE") => resolved_allow` at line 179 and lists it as an invariant at line 70, with a comment naming `proof/model.py` as its Python cross-reference (verify: `git show a11f0caa5198fbff4c2ef1443c25abc8a8f11ca7:proof/LangGraphHarness.tla | grep -n NoDirectBind`). So the formal-verification document's TLA+ statement has a counterpart, and what remains is that the attribution files describe what was adapted differently. **Correction (2026-10-03):** an earlier version of this paper said no NoDirectBind TLA+ file exists and that the TLA+ files cover other models; that overstated the inconsistency and is replaced here. The adapted model is its own: an 8-tier state machine with additional sub-proofs, 38 gated reachable states against the source's 13, reproducing as stated when run (`python3 proof/model.py`: gated holds over 38 states; ungated variant violates, 19 states).
 
 By author timestamp, the source's first commit is 2026-06-03T00:16:30Z and the adapting repository's first mention is 2026-06-03T10:20:38-04:00, about fourteen hours later. Git dates are settable, and the adapting repository's first four commits share one timestamp to the second, so its earlier history is not usable as provenance.
 
