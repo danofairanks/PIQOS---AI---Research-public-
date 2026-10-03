@@ -203,6 +203,18 @@ A maintainer of the family replied on a public professional-network thread after
 
 The maintainer said the findings will be dispositioned individually and that any correction will be a successor version of the frozen result. Per-finding dispositions are not yet in; Appendix B will take them as they appear, recorded as given, with the date and the artifact read.
 
+### C1. Verifiability of the frozen proposition
+
+This is a statement about how the proposition is published, not about its truth or anyone's intent.
+
+- A falsifier exists in principle: the family's V114 freeze text names six unauthorized paths and a pass or fail frame.
+- No outside reader can run it. `V114_TEST.js` imports a private module, and the harness archives named in the family's checksum lists are not in the public repository. A falsifying result could therefore not be produced from outside whether or not one exists.
+- "Not falsified by this submission" is true and uninformative here, because this submission did not run the harness.
+- A proposition scoped to six listed paths can fail only on those six. The freeze text's own non-claim says a deployment claim needs an inventory of every effect-capable route, so the six are a subset. If findings beyond the six are classed as successor properties and never as falsifiers, no finding can count against the frozen result; whether that happens is open and is read from the dispositions as they arrive.
+- The accurate record today is: unverifiable outside the private harness, with the boundary of what counts as a falsifier set by classification labels whose criteria were requested and not yet stated.
+
+What would settle it: (1) the criteria for each label (pass, fail, unresolved, successor property) stated before items are classified; (2) a public run of the harness, or at least the missing V114 module, so the six-path result can be reproduced and this paper's independent toy compared against it; (3) one pre-stated condition accepted as failing the proposition that is not reclassified as a successor. Until one of these exists, this paper claims nothing about the frozen harness proposition in either direction.
+
 ## References
 
 [1] The repositories and pinned commits in section 2; each statement quoted in section 3 is cited with its path and line.
