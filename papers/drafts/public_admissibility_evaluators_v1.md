@@ -19,7 +19,8 @@ A family of eight public repositories presents "runtime admissibility" governanc
 5. The fields the decision rests on are supplied by the host: a packet whose required fields all contain the string "x" is stable/allow, an empty string or a zero counts as evidence, and the host chooses the freshness window (omitted or zero disables it).
 6. A second evaluator treats status values outside a four-item list as admissible and treats unparseable expiry and verification timestamps as current. Two other repositories' `api/evaluate.js` files return constant responses (one returns ALLOW for any input, including a revoked-authority packet and an empty body). One scoring function admits an identity vector with one dimension at 60 of 100.
 7. The defeat conditions used here are achievable. A small counter-model that reads the standing from a registry it controls (the host supplies only a standing identifier and an action), signs its receipt, and runs the effect through a compare-and-swap on the registry revision holds all four defeat inputs that the public reference guard fails, and each of its checks fails when the corresponding mechanism is removed. It also has stated residuals (section 5a).
-8. The family also does several things carefully, credited in section 3: it states the public/production boundary, preserves failed predecessor examinations, and ships an example whose sink intentionally accepts the release after revocation.
+8. A matrix of defeat form against timing over five guard variants shows where each defence helps (section 5b): a re-evaluation before the effect closes nothing the first evaluation did not, only the registry-bound variant holds every form before the effect starts, and no variant stops a defeat after the effect has started.
+9. The family also does several things carefully, credited in section 3: it states the public/production boundary, preserves failed predecessor examinations, and ships an example whose sink intentionally accepts the release after revocation.
 
 ## 2. Objects and sources
 
@@ -74,6 +75,20 @@ Results, each with a control: with the defeat recorded in the registry, the effe
 
 Residuals that still succeed, stated as limits of the design: a holder of the signing key mints an accepted receipt; a registry that says active while the world is revoked is trusted; a caller holding a reference to the effect function calls it directly with or without revocation (exclusivity is placement, not code); and a revocation after the effect has started is not stopped. The counter-model says the defeat conditions can be met by moving the decisive input out of the host's channel and placing the check at the effect; it says nothing about whether the private runtime does.
 
+### 5b. Defeat form against timing against guard
+
+`b3_defeat_matrix.js` crosses four defeat forms (a listed word in the observation, an unlisted wording, an authority flag only, and a registry change the host never reads), three timings (before the first evaluation, after the last check and before the effect starts, and after the effect has started; a fourth, between an evaluation and a recheck, applies to one guard) and five guards: the public reference guard, the same guard with one re-evaluation immediately before the effect (a common patch, built from two nested calls of the real guard), the registry-bound counter-model, the same counter-model with its compare-and-swap removed, and a guard over the constant endpoint file. A cell reads "fires" if the covered effect starts after the defeat. All 60 preregistered cells matched.
+
+| Guard | Before evaluation | Between evaluation and recheck | After last check, before effect | After effect starts |
+|---|---|---|---|---|
+| public reference guard | listed word held; the other three forms fire | n/a | all fire | all fire |
+| public guard plus recheck | listed word held; the other three fire | listed word held; the other three fire | all fire | all fire |
+| registry-bound with compare-and-swap | all held | n/a | all held | all fire |
+| registry-bound, compare-and-swap removed | all held | n/a | all fire | all fire |
+| guard over the constant endpoint | all fire | n/a | all fire | all fire |
+
+Reading: only the registry-bound variant with the compare-and-swap holds every form both before the evaluation and in the gap before the effect starts; the recheck patch changes nothing the first evaluation did not already catch and leaves the gap open; no variant closes the last column, because a defeat after the effect has started is outside any check made before it (irreversibility is a separate property, which the family's boundary files also separate). The forms were chosen to line up with the evaluator's listed words, so the matrix shows the structure; it does not discover new blind spots, and the public-guard host is modelled as an honest reporter in the wording of each form.
+
 ## 6. Reading across
 
 The same classes as in [`pre_execution_gate_counter_models_v1.md`](pre_execution_gate_counter_models_v1.md) and [`model_local_proofs_travel_v1.md`](model_local_proofs_travel_v1.md) recur. The decision rests on values the host supplies (packet claims, observations, evidence, flags, the clock and the freshness window), so the check runs on a channel the governed side produces: the self-supplied-label class. Contradiction is detected by listed words, so standing that ends in an unlisted word is invisible: the surface-text class. The receipt hash is integrity, not authenticity: the hash-as-receipt class. The evaluate-then-act gap is the check-and-act class. Two endpoint files that return constants show the other end of the same range: a response shape with nothing behind it. What distinguishes this family from the earlier specimens is the amount of careful scoping language around reference code; the result stays that a public packet can show how the reference responds to the packets it is given, not that the standing was real.
@@ -88,7 +103,7 @@ The same classes as in [`pre_execution_gate_counter_models_v1.md`](pre_execution
 
 **What would show this paper wrong.** The companion harness failing at the pinned commits; a quoted line that does not appear at the stated path and line; or a later commit that changes the stated behavior.
 
-**Reproduce.** `python3 run_all.py` in [`public_admissibility_evaluators_v1/`](public_admissibility_evaluators_v1/) clones the pinned commits into a work directory, runs one Node script and prints PASS or FAIL for 24 qualitative checks (a few seconds; needs git, network, Node 22 or newer and Python 3.10 or newer).
+**Reproduce.** `python3 run_all.py` in [`public_admissibility_evaluators_v1/`](public_admissibility_evaluators_v1/) clones the pinned commits into a work directory, runs one Node script and prints PASS or FAIL for 29 qualitative checks (a few seconds; needs git, network, Node 22 or newer and Python 3.10 or newer).
 
 ## References
 

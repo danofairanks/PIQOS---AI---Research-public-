@@ -128,4 +128,5 @@ async function run() {
   }
   console.log(JSON.stringify(out, null, 1));
 }
-run().catch((e) => { console.error(e); process.exit(1); });
+module.exports = { makeSystem, canon };
+if (require.main === module) run().catch((e) => { console.error(e); process.exit(1); });

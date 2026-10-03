@@ -81,6 +81,18 @@ def main():
     check(t["R_key_holder_mints"]["executed"] and t["R_stale_registry"]["executed"] and t["R_bypass_direct_call"]["effects_after_revocation_without_guard"] == 2 and t["R_inflight"]["executed"] and t["R_inflight"]["active_at_completion"] is False, "B1 residuals still succeed: key holder, stale registry, direct effect call, in-flight revocation", fails)
     check(t["mutation_noCAS_gap"]["executed"] and t["mutation_noSig_forged"]["executed"] and t["mutation_noNonce_replay"]["second_executed"], "B1 mutations: removing the compare-and-swap, signature check or nonce check makes the attack fire", fails)
     check(all(t["matrix_public_guard_fires"].values()), "B1 matrix: the same four defeat inputs fire on the public reference guard", fails)
+    # B3: defeat form x timing x guard matrix
+    m3 = subprocess.run(["node", os.path.join(HERE, "b3_defeat_matrix.js"), WORK], capture_output=True, text=True)
+    if m3.returncode != 0:
+        raise SystemExit("b3 script failed:\n" + m3.stderr)
+    X = json.loads(m3.stdout)
+    forms = ["F1_listed_word", "F2_unlisted_wording", "F3_flag_only", "F4_registry_only"]
+    row = lambda g, t: [X[g][t][f] for f in forms]
+    check(row("G1_public", "Ta") == [False, True, True, True] and all(row("G1_public", "Tb")) and all(row("G1_public", "Tc")), "B3 G1 public guard: only the listed word is held (before evaluation); every form fires after evaluation", fails)
+    check(row("G2_public_recheck", "Ta") == [False, True, True, True] and row("G2_public_recheck", "Tb'") == [False, True, True, True] and all(row("G2_public_recheck", "Tb")) and all(row("G2_public_recheck", "Tc")), "B3 G2 a recheck before the effect narrows the window but does not close it", fails)
+    check(not any(row("G3_registry_bound", "Ta")) and not any(row("G3_registry_bound", "Tb")) and all(row("G3_registry_bound", "Tc")), "B3 G3 registry-bound with compare-and-swap holds every form before the effect starts; none after it starts", fails)
+    check(not any(row("G4_registry_bound_no_CAS", "Ta")) and all(row("G4_registry_bound_no_CAS", "Tb")), "B3 G4 removing the compare-and-swap reopens the gap", fails)
+    check(all(all(row("G5_constant_endpoint", t)) for t in ("Ta", "Tb", "Tc")), "B3 G5 a guard over the constant endpoint fires in every cell", fails)
     print(f"\n{'ALL CHECKS PASS' if not fails else str(len(fails)) + ' CHECK(S) FAILED'}")
     sys.exit(1 if fails else 0)
 
