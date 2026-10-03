@@ -108,6 +108,15 @@ def main():
     check(all(v == 1 or v == 2 for rr in Y["p12_residuals"].values() for v in rr.values()) and all(rr["key_holder_mints"] == 1 and rr["executor_clock_behind_accepts_expired"] == 1 and rr["refusal_after_effect_started"] == 1 and rr["direct_consequence_call_after_refusal"] == 2 for rr in Y["p12_residuals"].values()), "B2 residuals fire on both variants: key holder, direct call, executor clock, in-flight refusal", fails)
     mc = Y["mutation_checks_consequences"]
     check(all(mc[k] >= 1 for k in ("noHash_p3", "noSig_p2", "noExpiry_p4", "noDecision_p5", "noEvidence_p6", "noEpoch_p10")) and mc["noNonce_p8"] == 2 and mc["noAud_p9"] == 2, "B2 mutations: removing each check makes its attack fire", fails)
+    # semantic shuffling: meaning kept with the surface changed, surface kept with the meaning changed, and the registry vocabulary
+    z = subprocess.run(["node", os.path.join(HERE, "semantic_shuffle_probes.js"), WORK], capture_output=True, text=True)
+    if z.returncode != 0:
+        raise SystemExit("semantic shuffle script failed:\n" + z.stderr)
+    W = json.loads(z.stdout)
+    allow = "stable/allow"; deny = "blocked/deny"
+    check(W["controls"] == {"revoked": deny, "valid": allow} and all(x == allow for x in W["rewording"].values()) and all(x == allow for x in W["surface_perturbation"].values()) and all(x == allow for x in W["translation"].values()) and W["split_across_statements"] == allow and W["role_swap"] == allow and all(x == deny for x in W["order_permutation"].values()) and all(x == deny for x in W["mention_negation_modality"].values()), "S-shuffle the wording check evades rewording, perturbation, translation, splitting and role swap, blocks mention, negation and modality, and is order invariant", fails)
+    rv = W["registry_vocabulary"]; unlisted = ("terminated", "withdrawn", "lapsed", "cyrillic_e_revoked")
+    check(rv["A_allow_list_exact"]["active"] == "allow" and all(v == "deny" for k, v in rv["A_allow_list_exact"].items() if k != "active") and all(rv["B_deny_list_raw"][k] == "allow" for k in unlisted) and all(rv["C_deny_list_lower_trim"][k] == "allow" for k in unlisted) and rv["C_deny_list_lower_trim"]["Revoked_trailing_space"] == "deny", "S-shuffle a registry status vocabulary holds only as an allow-list with default deny", fails)
     print(f"\n{'ALL CHECKS PASS' if not fails else str(len(fails)) + ' CHECK(S) FAILED'}")
     sys.exit(1 if fails else 0)
 
