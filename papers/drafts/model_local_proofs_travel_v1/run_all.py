@@ -46,7 +46,7 @@ def check(cond, msg, fails):
 
 def main():
     os.makedirs(WORK, exist_ok=True)
-    paths = {n: clone(n) for n in ("no-direct-bind", "ndb-gate", "commit-gate-core", "stop-machine")}
+    paths = {n: clone(n) for n in ("no-direct-bind", "ndb-gate", "commit-gate-core", "stop-machine", "constraint-workshop")}
     fails = []
     # ndb-gate and the no-direct-bind witness
     for name, args in (("ndb-gate", [paths["ndb-gate"] + "/src"]),
@@ -101,6 +101,18 @@ def main():
     e = r["EG1_self_declared_sender"]
     check(e["control_agent_sender"][0] == "HOLD" and e["sender_declared_HUMAN"][0] == "ALLOW", "stop-machine EG-1 self-declared sender", fails)
     check(r["EG2_duplicate_fields"]["scope_values_present_in_raw_text"] == ["NON_EXEC", "EXEC_CONFIRMED"] and r["EG2_duplicate_fields"]["gate_parsed_scope_with_two_lines"] == "NON_EXEC", "stop-machine EG-2 duplicate fields parse first", fails)
+    # constraint-workshop (the halt-race count is interpreter-dependent and is not asserted here)
+    r = run("attacks_constraint_workshop.py", paths["constraint-workshop"])
+    check(r["CW1_stop_machine_write"]["assign__state_from_RED"] == "GREEN" and r["CW1_stop_machine_write"]["control_advance_reset_from_RED"] == ["ValueError", "ValueError"], "constraint-workshop CW-1 direct write leaves RED", fails)
+    check(r["CW3_authority_gate"]["caller_supplied_ADMIN"] == "ALLOW" and r["CW3_authority_gate"]["control_USER"] == "DENY", "constraint-workshop CW-3 caller-supplied evidence label", fails)
+    check(r["CW4_invariant_litmus"]["control"] == "HARD_INVARIANT" and r["CW4_invariant_litmus"]["zero_width"] == "EDGE" and r["CW4_invariant_litmus"]["plural"] == "HARD_INVARIANT", "constraint-workshop CW-4 zero-width evades, plural does not (substring match)", fails)
+    check(r["CW5_self_declared_actor_scope"]["claimed_actor_and_scope"] == "ALLOW" and r["CW5_self_declared_actor_scope"]["control_other_actor"] == "REFUSE", "constraint-workshop CW-5 self-declared actor", fails)
+    check(r["CW6_null_scope_value"]["null_rule_missing_key"] == "ALLOW" and r["CW6_null_scope_value"]["control_string_rule_missing_key"] == "REFUSE", "constraint-workshop CW-6 null scope value matches a missing key", fails)
+    check(r["CW7_invariant_hash"]["new_edge_arbitrary_changed_hash_with_ack"] and not r["CW7_invariant_hash"]["control_new_edge_changed_hash_no_ack"], "constraint-workshop CW-7 invariant hash is any string", fails)
+    check(r["CW8_malformed_scope"]["control_dict"] == "ALLOW" and r["CW8_malformed_scope"]["none"].startswith("raised"), "constraint-workshop CW-8 malformed scope raises", fails)
+    check(r["CW9_freshness"]["same_hash_across_timestamps"] and r["CW9_freshness"]["control_changed_field_changes_hash"], "constraint-workshop CW-9 decision hash has no freshness", fails)
+    check(r["CW10_decision_hash_not_authentication"]["fabricated_ALLOW_hash_consistent_with_its_contents"] and r["CW10_decision_hash_not_authentication"]["real_verdict"] == "REFUSE", "constraint-workshop CW-10 fabricated hash is self-consistent", fails)
+    check(r["MG1_MG2_mgtp"]["claimed_ADMIN"] == "APPROVED" and r["MG1_MG2_mgtp"]["control_USER"] == "REFUSED", "constraint-workshop MG-1 claimed authority approved", fails)
     print(f"\n{'ALL CHECKS PASS' if not fails else str(len(fails)) + ' CHECK(S) FAILED'}")
     sys.exit(1 if fails else 0)
 
