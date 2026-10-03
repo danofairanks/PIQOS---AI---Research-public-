@@ -93,6 +93,21 @@ def main():
     check(not any(row("G3_registry_bound", "Ta")) and not any(row("G3_registry_bound", "Tb")) and all(row("G3_registry_bound", "Tc")), "B3 G3 registry-bound with compare-and-swap holds every form before the effect starts; none after it starts", fails)
     check(not any(row("G4_registry_bound_no_CAS", "Ta")) and all(row("G4_registry_bound_no_CAS", "Tb")), "B3 G4 removing the compare-and-swap reopens the gap", fails)
     check(all(all(row("G5_constant_endpoint", t)) for t in ("Ta", "Tb", "Tc")), "B3 G5 a guard over the constant endpoint fires in every cell", fails)
+    # B2: independent constituted-executor toy built from the published freeze text
+    q = subprocess.run(["node", os.path.join(HERE, "b2_constituted_executor.js")], capture_output=True, text=True)
+    if q.returncode != 0:
+        raise SystemExit("b2 script failed:\n" + q.stderr)
+    Y = json.loads(q.stdout)
+    zero = lambda d: all(d[k] == 0 for k in ("p1_no_receipt", "p2_forged", "p3_payload_mutated", "p4_expired", "p5_refusal", "p6_no_persisted_evidence"))
+    check(zero(Y["baseline_paths_1_to_6"]) and zero(Y["hardened_paths_1_to_6"]) and Y["baseline_paths_1_to_6"]["p6_service_refuses_to_mint"], "B2 the six frozen unauthorized paths are blocked in an independent toy built from the freeze text", fails)
+    d = Y["p7_parse_differential"]
+    check(d["parsed"]["consequence_amounts"] == [1000000] and d["bytes"]["consequence_amounts"] == [1000000] and d["strict"]["consequence_amounts"] == [], "B2 binding the exact bytes does not close a decision/effect parse differential; a strict parse does", fails)
+    check(Y["p8_replay"] == {"baseline": 2, "hardened": 1} and Y["p9_two_executors"] == {"baseline": 2, "hardened": 1}, "B2 replay inside the TTL and across two executors fires on the baseline, not on the hardened variant", fails)
+    check(Y["p10_refusal_after_mint"]["baseline"]["consequences"] == 1 and Y["p10_refusal_after_mint"]["hardened"]["consequences"] == 0, "B2 a refusal recorded after minting is stopped only by the revocation epoch", fails)
+    check(Y["p11_cross_action"]["bound"]["consequences"] == 0 and Y["p11_cross_action"]["action_not_bound_mutation"]["consequences"] == 1, "B2 cross-action reuse is blocked when the action is inside the hashed bytes", fails)
+    check(all(v == 1 or v == 2 for rr in Y["p12_residuals"].values() for v in rr.values()) and all(rr["key_holder_mints"] == 1 and rr["executor_clock_behind_accepts_expired"] == 1 and rr["refusal_after_effect_started"] == 1 and rr["direct_consequence_call_after_refusal"] == 2 for rr in Y["p12_residuals"].values()), "B2 residuals fire on both variants: key holder, direct call, executor clock, in-flight refusal", fails)
+    mc = Y["mutation_checks_consequences"]
+    check(all(mc[k] >= 1 for k in ("noHash_p3", "noSig_p2", "noExpiry_p4", "noDecision_p5", "noEvidence_p6", "noEpoch_p10")) and mc["noNonce_p8"] == 2 and mc["noAud_p9"] == 2, "B2 mutations: removing each check makes its attack fire", fails)
     print(f"\n{'ALL CHECKS PASS' if not fails else str(len(fails)) + ' CHECK(S) FAILED'}")
     sys.exit(1 if fails else 0)
 
