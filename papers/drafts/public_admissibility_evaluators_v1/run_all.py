@@ -123,6 +123,9 @@ def main():
         raise SystemExit("separability check failed:\n" + sp.stderr)
     F = json.loads(sp.stdout)
     check(F["worlds"] == 10756 and all(F[k] == 0 for k in ("T1_fail", "T2_fail", "T3_fail", "T4_fail", "T5a_fail", "T5b_fail")) and F["witness_worlds_with_survival_and_utility"] > 0 and F["T4_checked"] > 0 and F["T5a_separating_worlds"] > 0, "Appendix A the finite statements T1-T5 hold in every enumerated world", fails)
+    # dn_runner: the black-box conformance runner discriminates the nine preregistered systems (about 40 s: observation windows)
+    dn = subprocess.run(["node", os.path.join(HERE, "dn_runner", "selftest.js"), "--clones", WORK], capture_output=True, text=True, cwd=os.path.join(HERE, "dn_runner"))
+    check(dn.returncode == 0 and "all 9 checked passed" in dn.stdout, "dn_runner nine preregistered verdicts match (public guard fails, registry-bound with compare-and-swap and atomic check conform, controls discriminate)", fails)
     print(f"\n{'ALL CHECKS PASS' if not fails else str(len(fails)) + ' CHECK(S) FAILED'}")
     sys.exit(1 if fails else 0)
 
