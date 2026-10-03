@@ -1,0 +1,9 @@
+# repository, pinned commit (full SHA), commit date (author)
+https://github.com/zlomke76-del/harmonic-public                       7fe1597544925b052386ed01e89377734da01d72  2026-10-03
+https://github.com/zlomke76-del/runtime-admissibility-core-public     9305b8248e56d955674cd1184c12f85f1bbcf952  2026-05-26
+https://github.com/zlomke76-del/consequence-boundary-public           a6ee5f862da07000e74322802c57c9d40112b91a  2026-05-26
+https://github.com/zlomke76-del/authority-continuity-primitive-public 95ee54d4e82034c2aa6c1ef77999c50fc86ae014  2026-05-26
+https://github.com/zlomke76-del/solace-kernel-public                  d65084a293b2330067b238b995e561f2e73fc645  2026-05-26
+https://github.com/zlomke76-del/solace-public                         9fafc0b87b08cf4675ca018248ab935a64bfe3a4  2026-05-26
+https://github.com/zlomke76-del/solaceveil-public                     249a61f869c1671d656b616c2a0dc0db7f301509  2026-09-24
+https://github.com/zlomke76-del/solaceframe-public                    c6bb260f204d179f9df7009f35992ad2714cd182  2026-05-26
