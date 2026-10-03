@@ -147,6 +147,7 @@ The mechanisms are not unusual. A pilot over four widely used authorization libr
 - The Temporal Standing Test protocol page and the site were not examined; this paper does not assess them.
 - The defeat shapes and the counter-model's mechanism are not new (section 3a); the contribution is the executed run on the public reference artifacts. The screening protocol cited in section 3a was read at screenshot tier and is not in the repository.
 - The attack suite is same-source; a second reader is owed. The control scan is a pilot of four libraries in one language, with probes written by this paper's author from its own pattern list. A control scan of unrelated authorization libraries, to estimate how often these classes appear elsewhere, was not run.
+- Scope of the conclusions. Every finding is about a public file at a pinned commit, read against that file's own statements and against the defeat conditions in the family's published V114 freeze text. None is a finding about the frozen harness proposition, about the private runtime, or about the Temporal Standing Test; where a sentence in this paper reads as reaching past the public demonstrator, the narrower reading is the intended one and the sentence is the error. The frozen harness cited in the family's checksum lists (two zips named in `FORENSIC_SHA256SUMS.txt`) is not in the public repository, so this paper cannot test it.
 - Counts are about the pinned commits; later commits may change the behavior, which would be a fix, not a refutation.
 
 **What would show this paper wrong.** The companion harness failing at the pinned commits; a quoted line that does not appear at the stated path and line; or a later commit that changes the stated behavior.
@@ -169,6 +170,38 @@ Verdict on the claim that no governance survives: false as a universal, since T1
 Each defeat condition in this paper is an instance of one of three failures. The adversary writes the observation (host-supplied labels, clock and free text; a key holder). The gate's partition of observations is coarser than the separation needs (semantic shuffling, the vocabulary toy; the repair is a finer partition, an allow-list with default deny). Or the observation is sampled at the wrong time or read by two readers (check-then-act, the in-flight case, the parse differential). The time-axis section and the exit-path defeat condition of this project's axiom paper [11] correspond to the third failure and to T6 respectively. Schneider [12] answers a different question: which properties a monitor can enforce at all.
 
 Limits: the statements are true by construction, the same class as the model-local enumerations discussed in [`model_local_proofs_travel_v1.md`](model_local_proofs_travel_v1.md); the defeat scenarios are defined as mimics, which makes T4 close to a tautology; the model has no probability, cost or adaptive adversary, and utility is only the positive control. Its value is classification, not discovery.
+
+## Appendix B. Per-finding record
+
+Each row is one finding with its pinned commit, the claim it is tested against, the control, and a script in [`public_admissibility_evaluators_v1/findings/`](public_admissibility_evaluators_v1/findings/) (run `node <file> <dir containing the pinned clones>`; the draft's `run_all.py` clones them). Scripts were re-run on 2026-10-03 at the pinned commits; each prints the control beside the finding.
+
+| # | Repository at pinned commit | Claim tested | Observed | Control | Script |
+|---|---|---|---|---|---|
+| B1 | harmonic-public 7fe1597 | contradiction between T0 claims and Tn observations is detected | eight other wordings of the same ending return stable, admissible, allow; so does an observation that contradicts a claim lacking a listed term | the listed word "revoked" is blocked | `i1_lexical.js` |
+| B2 | harmonic-public 7fe1597 | revoked or expired authority is not admissible | flags change only `runtime_continuity`; top level stays stable, admissible, allow; `guardedExecute` runs the effect | packet without the flags | `i2_authority_flags.js` |
+| B3 | harmonic-public 7fe1597 | revocation after evaluation is seen by the guard | effect ran with the registry inactive at effect time | revocation before evaluation is withheld | `i3_gap_and_receipt.js` (part a) |
+| B4 | harmonic-public 7fe1597 | receipt authenticity (`guard.js` line 1 states production verification belongs elsewhere) | hash recomputes from the receipt; a forged receipt executes | wrong `packet_id` and `public_release: false` are rejected | `i3_gap_and_receipt.js` (part b) |
+| B5 | harmonic-public 7fe1597 | required fields establish reality coupling and freshness | evidence `""` or `0` accepted; omitted or zero `stale_after_minutes` disables staleness | empty evidence array and `stale_after_minutes` of 1 | `i4_smaller.js` |
+| B6 | runtime-admissibility-core-public 9305b82 | status and timestamps establish current authority | status `terminated`, `expires_at` `"tomorrow"` and `last_verified_at` `"garbage"` are admissible | status `revoked` is inadmissible | `i4_smaller.js` (rows `rac:`) |
+| B7 | authority-continuity-primitive-public 95ee54d; consequence-boundary-public a6ee5f8 | `api/evaluate.js` decides | one returns ALLOW, VALID, RECOMPUTED for a revoked packet and an empty body; the other returns a constant for any input | none possible; whether these are intended placeholders is open | `i5_stubs_and_solaceframe.js` |
+| B8 | solaceframe-public c6bb260 | `computeAdmission` | one dimension at 60 of 100 is admitted (mean 95); 59 gives review; 0 gives rejected | all 100 | `i5_stubs_and_solaceframe.js` |
+| B9 | harmonic-public 7fe1597 | `V114_TEST.js` runs | exit 1, `Cannot find module '../api/secure-execution'`; its README discloses the private import | none | `cd evidence/examinations/v114-execution-boundary && node V114_TEST.js` in the clone |
+| B10 | frozen V114 text (harmonic-public 7fe1597) | six listed unauthorized paths | an independent toy blocks all six; replay in window, replay across executors, refusal after minting and a duplicate-key parse differential produce the consequence until a nonce, audience, revocation epoch and a shared strict parse are added | the toy's hardened variant | `b2_constituted_executor.js` |
+| B11 | harmonic-public 7fe1597 | wording-based contradiction check | rewording, perturbed word, translation, split word and role swap pass; mention, negation and future tense are blocked | listed word and the blocked forms | `semantic_shuffle_probes.js` |
+
+B1, B2, B5 and B11 are defeats of the public reference evaluator; B3 and B4 are about the example guard and are disclosed limits of it; B7 and B8 are questions about what the files are for, not defects asserted; B9 is a fact the repository discloses; B10 is a candidate extension to a frozen examination, not a retroactive falsifier of it.
+
+## Appendix C. Reader response
+
+A maintainer of the family replied on a public professional-network thread after reading the draft's findings and received them frozen against the pinned commits. The reply is paraphrased here, at screenshot tier (the screenshot is kept in the author's record, not in this repository). Its category-level reading of the findings:
+
+- Credible public-reference implementation defects: lexical contradiction handling, authority revocation and expiry not propagating into the top-level disposition, and some permissive input-validation behavior. By the author's mapping: B1, B2, B5, B6, and B11 as the wording-shuffle extension of B1. The reply does not itemise, so this mapping is the author's, not the maintainer's.
+- Already-disclosed limitations or non-failures: V114 public non-runnability, downstream enforcement races, and cryptographic receipt verification outside the demo adapter. Mapping: B9, B3, B4.
+- Successor properties rather than retroactive falsifiers: nonce, audience, revocation epoch, replay and parse-differential cases beyond the six frozen V114 paths. Mapping: B10. This paper already states the same limit (sections 3a and 5c): B10 extends the inventory the freeze text's own non-claim calls incomplete and does not falsify the six.
+- Not addressed in the reply as read: B7 and B8.
+- A claim-mapping dispute where the draft moves from breaking the simplified public demonstrator to broader conclusions about the frozen harness proposition or Temporal Standing. Response: the scope paragraph in section 7 was added to say that the conclusions stop at the public demonstrator. The reply states that the frozen harness proposition has not been falsified by this submission; this paper agrees that it did not test it, and the frozen harness is not public.
+
+The maintainer said the findings will be dispositioned individually and that any correction will be a successor version of the frozen result. Per-finding dispositions are not yet in; Appendix B will take them as they appear, recorded as given, with the date and the artifact read.
 
 ## References
 
