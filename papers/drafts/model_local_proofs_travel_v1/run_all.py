@@ -46,7 +46,7 @@ def check(cond, msg, fails):
 
 def main():
     os.makedirs(WORK, exist_ok=True)
-    paths = {n: clone(n) for n in ("no-direct-bind", "ndb-gate", "commit-gate-core", "stop-machine", "constraint-workshop")}
+    paths = {n: clone(n) for n in ("no-direct-bind", "ndb-gate", "commit-gate-core", "stop-machine", "constraint-workshop", "start-here")}
     fails = []
     # ndb-gate and the no-direct-bind witness
     for name, args in (("ndb-gate", [paths["ndb-gate"] + "/src"]),
@@ -113,6 +113,17 @@ def main():
     check(r["CW9_freshness"]["same_hash_across_timestamps"] and r["CW9_freshness"]["control_changed_field_changes_hash"], "constraint-workshop CW-9 decision hash has no freshness", fails)
     check(r["CW10_decision_hash_not_authentication"]["fabricated_ALLOW_hash_consistent_with_its_contents"] and r["CW10_decision_hash_not_authentication"]["real_verdict"] == "REFUSE", "constraint-workshop CW-10 fabricated hash is self-consistent", fails)
     check(r["MG1_MG2_mgtp"]["claimed_ADMIN"] == "APPROVED" and r["MG1_MG2_mgtp"]["control_USER"] == "REFUSED", "constraint-workshop MG-1 claimed authority approved", fails)
+    # start-here
+    r = run("attacks_start_here.py", paths["start-here"])
+    c = r["SH1_composition"]
+    check(c["commit_gate_callers_outside_tests"] == ["core/measured_mutation.py:267"] and not c["run_demo_imports_core"] and c["run_demo_imports_src_engine"], "start-here SH-1 commit_gate wired only in the measured-mutation fixture, not run_demo", fails)
+    g = r["SH2_golden_corpus_vs_Evaluator"]
+    check(g["cases"] == 15 and g["verdict_agree"] == 15 and g["strict_agree"] == 12, "start-here SH-2 corpus: 15/15 verdicts, 12/15 strict against the Evaluator", fails)
+    e = r["SH3_engine_vs_registry"]
+    check(e["engine_deploy"] == ["DENY", "unknown_action"] and e["engine_commit"] == ["DENY", "unknown_action"] and e["core_registry_deploy_known_mutating"] == [True, True] and e["engine_ignores_unknown_key_expired"] == "ALLOW", "start-here SH-3 engine denies deploy/commit the core registry knows; ignores an unknown key", fails)
+    d = r["SH4_fixture_commits"]
+    check(d["commits_touching_expected"] > 0 and d["commits_touching_expected"] == d["also_touching_engine_or_paradox"], "start-here SH-4 every fixture commit also touches the implementation", fails)
+    check(all(v["expected"] == "DENY" and v["flags"] for v in r["SH5_deploy_commit_scenarios"].values()) and len(r["SH5_deploy_commit_scenarios"]) == 2, "start-here SH-5 deploy/commit appear only in paradox scenarios", fails)
     print(f"\n{'ALL CHECKS PASS' if not fails else str(len(fails)) + ' CHECK(S) FAILED'}")
     sys.exit(1 if fails else 0)
 
