@@ -20,7 +20,8 @@ A family of eight public repositories presents "runtime admissibility" governanc
 6. A second evaluator treats status values outside a four-item list as admissible and treats unparseable expiry and verification timestamps as current. Two other repositories' `api/evaluate.js` files return constant responses (one returns ALLOW for any input, including a revoked-authority packet and an empty body). One scoring function admits an identity vector with one dimension at 60 of 100.
 7. The defeat conditions used here are achievable. A small counter-model that reads the standing from a registry it controls (the host supplies only a standing identifier and an action), signs its receipt, and runs the effect through a compare-and-swap on the registry revision holds all four defeat inputs that the public reference guard fails, and each of its checks fails when the corresponding mechanism is removed. It also has stated residuals (section 5a).
 8. A matrix of defeat form against timing over five guard variants shows where each defence helps (section 5b): a re-evaluation before the effect closes nothing the first evaluation did not, only the registry-bound variant holds every form before the effect starts, and no variant stops a defeat after the effect has started.
-9. The family also does several things carefully, credited in section 3: it states the public/production boundary, preserves failed predecessor examinations, and ships an example whose sink intentionally accepts the release after revocation.
+9. None of the defeat shapes used here is new, and neither is the counter-model's mechanism (section 3a). The family's own frozen executor examination lists six unauthorized paths, its landing-page schema is a relabelling of older ideas (dataset shift; time-of-check to time-of-use), and this project's own axiom paper published the same attack shapes before this run. What this paper adds is an executed run of them against the public reference artifacts, the authority-flag, self-declared-field, constant-endpoint and scoring-function findings, and the form-by-timing matrix.
+10. The family also does several things carefully, credited in section 3: it states the public/production boundary, preserves failed predecessor examinations, and ships an example whose sink intentionally accepts the release after revocation.
 
 ## 2. Objects and sources
 
@@ -48,6 +49,25 @@ The repositories' own checks pass at these commits (the reference repository's v
 
 These statements bound what a reader can conclude from the public files. The checks below stay inside them: they test the public evaluators, not the private runtime.
 
+### 3a. Prior art, and the defeat conditions already published
+
+**Citations in the repositories.** A text search of all eight repositories for citation markers (arXiv, DOI, "prior art", "related work", "references") and for named earlier work (time-of-check, Zanzibar, "new enemy", macaroons, Clark-Wilson, Lamport, Bell-LaPadula, Biba, linearizability) finds nothing in the reference repository and no reference or bibliography section in any repository. The example's README describes itself as inspired by earlier scenarios without naming them. The vocabulary (Temporal Standing, T₀ → ΔN → Tₙ, PERMITTED/CONSTRAINED/ESCALATED/REFUSED, the examination identifiers) is the family's own, and the lineage it credits is its collaborators, not literature.
+
+**The family's own published defeat conditions.** The frozen V114 examination lists six unauthorized paths that defeat its property: direct external execution with no receipt, a forged permit receipt, mutation of the payload after a valid receipt is minted, replay or use of an expired receipt, a governance refusal that still produces the consequence, and absence of persisted governance evidence that still produces the consequence (`evidence/examinations/v114-execution-boundary/V114_FREEZE.md`, lines 16 to 21). It names the implementation under test as a signed short-lived execution receipt with exact `execute_hash` binding and executor-side verification (same file, lines 41 to 44), and its scope note says a deployment-wide claim "requires an architecture-specific inventory of every effect-capable route" (line 37). The V113 record pairs a standing-preserving change (ΔN1) with a standing-defeating one (ΔN2) (`evidence/examinations/v113-complete-information-successor/V113_ADJUDICATION.md`, lines 23 and 38), and the BS-003 to BS-005 lineage preserves positive controls, a negative after one controlled transition, and precommitted falsifiers (`README.md`). A public screening protocol by the same author (read as a screenshot and its attached one-page PDF; no permalink; not in the repository; weak tier) adds paired changes in both orders, a frozen last point of unilateral reversibility, and a requirement that the same identified action be followed to the consequence boundary.
+
+**Overlap with this paper.**
+
+| This paper | The family's published condition |
+|---|---|
+| forged, tampered, expired and replayed receipts (section 4, 5a) | V114 paths 2, 3 and 4 (their constituted executor signs and verifies; the public reference guard does not, as its first line says) |
+| the registry-bound counter-model (5a) | the V114 implementation class: signed short-lived receipt, payload binding, executor-side verification. The counter-model re-derives the class from the published description; it is not offered as new |
+| a defeat between evaluation and effect (section 4, 5b) | the screening protocol's staleness between approval and execution; V114 covers it only as receipt expiry |
+| a defeat after the effect has started (5b) | the protocol's last point of unilateral reversibility |
+| a direct call to the effect function (5a residual) | V114 path 1, tested against an executor boundary that demands a receipt |
+| authority flag ignored at the top level, self-declared completeness, constant endpoints, the scoring function | not among the published conditions |
+
+**Older and external prior art for the same shapes.** The schema T₀ → ΔN → Tₙ relabels an older idea: a rule validated under the conditions of one time and applied under different conditions later. This project's axiom paper records that provenance (dataset shift [9][10]; time-of-check to time-of-use) and ran three attacks on its own toy (a divergent read path, cadence-throttled revalidation, and a time-of-check to time-of-use race with examiner-chosen timing) before this run [11]. The check-and-act race is the subject of Bishop and Dilger [6]; stale authorization after a removal is the "new enemy" problem Zanzibar addresses with a consistency token [7]; a monotonically increasing token that the effect side checks is the fencing-token pattern [8]. None of these is cited by the family, and whether its authors knew them is not shown.
+
 ## 4. The attacks
 
 Each attack has a control that must read clean. Predictions were written before the run; one missed (a vector miscalculated in the prediction, noted). The reference repository's own tests pass first; the preserved V114 test cannot run: it exits with `Cannot find module '../api/secure-execution'`, and that file is not in `api/`, as its README discloses.
@@ -65,7 +85,7 @@ Each attack has a control that must read clean. Predictions were written before 
 
 ## 5. The defeated-authority path
 
-The family poses a test: force a defeated-authority path to a covered consequence and see whether it still fires. The reference example does this and reports a pass; the check above reproduces its pass (a revoked NDA described as "revoked" is withheld). Two variants, within the example's own structure, do not pass. First, the defeat is read from wording: the same defeat stated in other words, or recorded only in the authority field the evaluator itself reads, fires. Second, the guard evaluates and then acts; a defeat that lands in between fires. The example's README names the second gap as one a downstream executor can create; the guard shipped beside it has the same gap between its evaluation and its effect. Neither variant is a claim about the private runtime.
+The reference repository's landing page says the evaluator assesses whether standing established at T₀ still survives a material change ΔN for the exact consequence at Tₙ (`index.html`, line 16), and its example turns that into a test: force a defeated-authority path to a covered consequence and see whether it still fires. The example reports a pass; the check above reproduces its pass (a revoked NDA described as "revoked" is withheld). Two variants, within the example's own structure, do not pass. First, the defeat is read from wording: the same defeat stated in other words, or recorded only in the authority field the evaluator itself reads, fires. Second, the guard evaluates and then acts; a defeat that lands in between fires. The example's README names the second gap as one a downstream executor can create; the guard shipped beside it has the same gap between its evaluation and its effect. Neither variant is a claim about the private runtime.
 
 ### 5a. Are the defeat conditions achievable? A registry-bound counter-model
 
@@ -73,7 +93,7 @@ A defeat condition that nothing could satisfy would be unfair. To test fairness,
 
 Results, each with a control: with the defeat recorded in the registry, the effect is withheld whatever the host text says; host text has no influence either way ("ended", "terminated", "has not been revoked" and even "revoked" with the registry active all allow, which is the design's cost: a host cannot report a defeat, it must be recorded in the registry); a host flag is not an input; a revocation after evaluation and before the effect gives zero effects, and so does revoke-then-restore (the receipt's revision is stale); forged, tampered, mis-bound, expired and replayed receipts are all rejected. The same four defeat inputs fire on the public reference guard. Mutation checks keep the attacks honest: with the compare-and-swap, the signature check or the nonce check removed, the corresponding attack fires. A first run of the mutation checks was vacuous because of a harness bug (flags passed in the wrong shape); it was fixed and rerun before the reported results.
 
-Residuals that still succeed, stated as limits of the design: a holder of the signing key mints an accepted receipt; a registry that says active while the world is revoked is trusted; a caller holding a reference to the effect function calls it directly with or without revocation (exclusivity is placement, not code); and a revocation after the effect has started is not stopped. The counter-model says the defeat conditions can be met by moving the decisive input out of the host's channel and placing the check at the effect; it says nothing about whether the private runtime does.
+Residuals that still succeed, stated as limits of the design: a holder of the signing key mints an accepted receipt; a registry that says active while the world is revoked is trusted; a caller holding a reference to the effect function calls it directly with or without revocation (exclusivity is placement, not code); and a revocation after the effect has started is not stopped. The counter-model says the defeat conditions can be met by moving the decisive input out of the host's channel and placing the check at the effect; it says nothing about whether the private runtime does. The mechanism is the class the family's frozen executor examination describes (section 3a), re-derived here from that description, and the compare-and-swap on a revision is the fencing-token pattern [8].
 
 ### 5b. Defeat form against timing against guard
 
@@ -98,6 +118,7 @@ The same classes as in [`pre_execution_gate_counter_models_v1.md`](pre_execution
 - Nothing here is a statement about the private runtime, about any production deployment, or about the repositories' authors' intent or competence. The public files describe themselves as reference and sanitized.
 - The preserved V114 examination (a constituted synthetic executor) was not run: it cannot be run from the public repository. Its recorded result is neither confirmed nor refuted here.
 - The Temporal Standing Test protocol page and the site were not examined; this paper does not assess them.
+- The defeat shapes and the counter-model's mechanism are not new (section 3a); the contribution is the executed run on the public reference artifacts. The screening protocol cited in section 3a was read at screenshot tier and is not in the repository.
 - The attack suite is same-source; a second reader is owed. A control scan of unrelated authorization libraries, to estimate how often these classes appear elsewhere, was not run.
 - Counts are about the pinned commits; later commits may change the behavior, which would be a fix, not a refutation.
 
@@ -115,7 +136,21 @@ The same classes as in [`pre_execution_gate_counter_models_v1.md`](pre_execution
 
 [4] The channel-collapse result: [`execution_gate_channel_collapse_v1.md`](../published/execution_gate_channel_collapse_v1.md).
 
-Sources are cited at the tier read: exact clones for repository files.
+[5] The family's frozen examination and lineage files cited in section 3a, at the pinned commit.
+
+[6] M. Bishop and M. Dilger. Checking for race conditions in file accesses. *Computing Systems* 9(2):131–152, 1996.
+
+[7] Pang et al. Zanzibar: Google's consistent, global authorization system. USENIX Annual Technical Conference, 2019.
+
+[8] M. Kleppmann. How to do distributed locking. Blog post, 2016 (fencing tokens).
+
+[9] J. G. Moreno-Torres, T. Raeder, R. Alaiz-Rodríguez, N. V. Chawla and F. Herrera. A unifying view on dataset shift in classification. *Pattern Recognition* 45:521–530, 2012.
+
+[10] H. Shimodaira. Improving predictive inference under covariate shift by weighting the log-likelihood function. *Journal of Statistical Planning and Inference* 90:227–244, 2000.
+
+[11] This project's axiom paper, section 12.1 (provenance of the notation) and section 12.5 (three attacks on its own toy): [`governance_binding_axiom_v2.md`](../published/governance_binding_axiom_v2.md).
+
+Sources are cited at the tier read: exact clones for repository files; for references [6] to [10], the bibliographic record found by search (the papers themselves were not read for this draft).
 
 ---
 
