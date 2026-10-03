@@ -138,6 +138,9 @@ def main():
     dp = subprocess.run(["node", os.path.join(hp, "probe_disposition.mjs"), hw], capture_output=True, text=True)
     Dd = json.loads(dp.stdout)
     check(Dd["control_allow"] == "ALLOW" and Dd["control_block"] == "BLOCK" and Dd["control_pass_only"] == "UNRESOLVED" and Dd["control_permit_not_admissible"] == "BLOCK" and Dd["control_block_and_allow"] == "BLOCK" and Dd["conflict_hold_vs_allowed"] == "ALLOW" and Dd["nested_governance_over_toplevel_block"] == "ALLOW", "Appendix D gate: controls behave as intended; conflicting fields and a nested object resolve toward execution", fails)
+    # live-probe runner: classifies and stops as designed against loopback stand-ins (no call leaves the machine)
+    lp = subprocess.run(["node", os.path.join(hp, "live", "selftest_live.mjs"), hw], capture_output=True, text=True)
+    check(lp.returncode == 0 and "all passed" in lp.stdout, "Appendix D live-probe runner: refusals, controls gate, abort and classification behave as preregistered against local stand-ins", fails)
     print(f"\n{'ALL CHECKS PASS' if not fails else str(len(fails)) + ' CHECK(S) FAILED'}")
     sys.exit(1 if fails else 0)
 
