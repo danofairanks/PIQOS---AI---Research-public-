@@ -1,0 +1,84 @@
+{
+ "G": {
+  "G1_first": [
+   "EXECUTE",
+   "OK"
+  ],
+  "G1_second": [
+   "BLOCK",
+   "ALREADY_CONSUMED"
+  ],
+  "G1_altered_payload": [
+   "BLOCK",
+   "ACTION_BINDING_MISMATCH"
+  ],
+  "G1_expired": [
+   "BLOCK",
+   "TOKEN_INVALID"
+  ],
+  "G1_bad_signature": [
+   "BLOCK",
+   "TOKEN_INVALID"
+  ],
+  "G2_store2s_token60s": {
+   "first": [
+    "EXECUTE",
+    "OK"
+   ],
+   "after_3s": [
+    "EXECUTE",
+    "OK"
+   ]
+  },
+  "G2_defaults_control": {
+   "first": [
+    "EXECUTE",
+    "OK"
+   ],
+   "after_3s": [
+    "BLOCK",
+    "ALREADY_CONSUMED"
+   ]
+  },
+  "G2_long_lived_token_verifies": {
+   "exp_minus_iat": 86400
+  },
+  "G3_binding_collision": true,
+  "G3_control_distinct": true,
+  "G4_first_with_sink_down": [
+   "BLOCK",
+   "EVIDENCE_CHAIN_UNAVAILABLE"
+  ],
+  "G4_retry_after_sink_up": [
+   "BLOCK",
+   "ALREADY_CONSUMED"
+  ],
+  "G5_jti_ne_rec_kid_garbage": [
+   "EXECUTE",
+   "OK"
+  ],
+  "C7_decimal_payload": [
+   "EXCEPTION",
+   "TypeError: Object of type 'Decimal' is not JSON serializable"
+  ],
+  "C7_intkey_payload": [
+   "EXCEPTION",
+   "AttributeError: 'int' object has no attribute 'encode'"
+  ],
+  "C7_exception_leaves_token_unconsumed": null,
+  "G6_account_...993": [
+   "EXECUTE",
+   "OK"
+  ],
+  "G6_control_...994": [
+   "BLOCK",
+   "ACTION_BINDING_MISMATCH"
+  ],
+  "G6_control_same": [
+   "EXECUTE",
+   "OK"
+  ],
+  "G6_seal_path": "SealCanonicalizationError: params.account_id: integer outside \u00b1(2**53-1)"
+ },
+ "G4b_note": "see below"
+}
