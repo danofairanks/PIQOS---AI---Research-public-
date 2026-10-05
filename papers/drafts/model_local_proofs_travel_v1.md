@@ -127,7 +127,7 @@ Scope: the routing-seal primitive (HMAC path; no KMS available) and the governor
 
 *Preregistration record.* Hit: redaction collapse, normalization collapse, verify scope, key-cue behaviour, revoke/consume order, forged-revoke. Missed: the sanitizer timing prediction (linear for all families) for the repeated-label family, and the magnitude of the end-to-end timing (5.7 s at 16 KB where more than 1 s was predicted; 22.6 s at 32 KB where 4 to 6 s was predicted). Several uncertain sanitizer-coverage items were resolved by the run.
 
-*Not covered.* The tri-state outcome and replay script, the STPA and FTRA paths, the actuator and shell-provider integrations, the HITL path, the later cryptographic hardening of the provider adapter, and KMS-signed seals under a real posture. A report of the pattern finding was drafted for the maintainers; whether and how it is filed is not part of this paper.
+*Not covered.* The tri-state outcome and replay script, the STPA and FTRA paths, the actuator and shell-provider integrations, the HITL path, the later cryptographic hardening of the provider adapter, and KMS-signed seals under a real posture. The pattern finding was reported to the maintainers as issue #405 on the repository (2026-10-05); no response is recorded here, and the issue's outcome would be a later commit, not a change to the pinned reading.
 
 ### 6c. The entry-point repository
 
