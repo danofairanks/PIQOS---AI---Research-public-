@@ -1,0 +1,75 @@
+{
+ "hmac": {
+  "B5_unindexed_refused": [
+   false,
+   "seal is not bound to a committed evidence record"
+  ],
+  "B5_indexed_first": [
+   true,
+   null
+  ],
+  "B5_indexed_second": [
+   false,
+   "replay attack detected \u2014 seal already consumed"
+  ],
+  "B1_revoke_true": true,
+  "B1_consume": [
+   false,
+   "seal revoked: op"
+  ],
+  "B2_consume": false,
+  "B2_revoke_after": false,
+  "B2_state": "revoked",
+  "B3_winners": 0,
+  "B3_reasons": [
+   "seal revoked: op"
+  ],
+  "B4_outcomes(consume_winners,revoke_winners,state)": {
+   "(0, 0, 'revoked')": 30
+  },
+  "B8_nonce_is_sha256_seal": true
+ },
+ "jwt": {
+  "B5_unindexed_refused": [
+   false,
+   "seal is not bound to a committed evidence record"
+  ],
+  "B5_indexed_first": [
+   true,
+   null
+  ],
+  "B5_indexed_second": [
+   false,
+   "replay attack detected \u2014 seal already consumed"
+  ],
+  "B1_revoke_true": true,
+  "B1_consume": [
+   false,
+   "seal revoked: op"
+  ],
+  "B2_consume": true,
+  "B2_revoke_after": false,
+  "B2_state": "consumed",
+  "B3_winners": 1,
+  "B3_reasons": [
+   "replay attack detected \u2014 seal already consumed"
+  ],
+  "B4_outcomes(consume_winners,revoke_winners,state)": {
+   "(0, 1, 'revoked')": 30
+  }
+ },
+ "jwt_forgery": {
+  "B6_forged_consume_refused": [
+   false,
+   "unknown kid: 'forged'"
+  ],
+  "B6_forged_revoke_returns": true,
+  "B6_genuine_state": "revoked",
+  "B6_genuine_consume": [
+   false,
+   "seal revoked: forged"
+  ],
+  "B7_ttl_of_nonce_key_s": 61,
+  "B7_genuine_exp_remaining_s": 30
+ }
+}

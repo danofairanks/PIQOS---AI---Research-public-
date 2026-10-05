@@ -1,0 +1,182 @@
+{
+ "C": {
+  "C1_nan": [
+   "raises",
+   "ValueError: Invalid JSON number: nan"
+  ],
+  "C1_inf": [
+   "raises",
+   "ValueError: Invalid JSON number: inf"
+  ],
+  "C1_control_finite": [
+   "ok",
+   "{\"a\":1.5}"
+  ],
+  "C2_bigints": {
+   "a": [
+    "ok",
+    "{\"a\":9007199254740992}"
+   ],
+   "b": [
+    "ok",
+    "{\"a\":9007199254740992}"
+   ],
+   "equal": true
+  },
+  "C3_1.0_vs_1": {
+   "a": [
+    "ok",
+    "{\"a\":1}"
+   ],
+   "b": [
+    "ok",
+    "{\"a\":1}"
+   ],
+   "equal": true
+  },
+  "C4_negzero_vs_0": {
+   "a": [
+    "ok",
+    "{\"a\":0}"
+   ],
+   "b": [
+    "ok",
+    "{\"a\":0}"
+   ],
+   "equal": true
+  },
+  "C5_nonstr_key": {
+   "int_key": [
+    "raises",
+    "AttributeError: 'int' object has no attribute 'encode'"
+   ],
+   "str_key": [
+    "ok",
+    "{\"1\":\"a\"}"
+   ],
+   "equal": false
+  },
+  "C6_Decimal": [
+   "raises",
+   "TypeError: Object of type 'Decimal' is not JSON serializable"
+  ],
+  "C6_datetime": [
+   "raises",
+   "TypeError: Object of type 'datetime' is not JSON serializable"
+  ],
+  "C6_set": [
+   "raises",
+   "TypeError: Object of type 'set' is not JSON serializable"
+  ],
+  "C6_bytes": [
+   "raises",
+   "TypeError: Object of type 'bytes' is not JSON serializable"
+  ],
+  "C6_object": [
+   "raises",
+   "TypeError: Object of type 'O' is not JSON serializable"
+  ],
+  "C6_tuple": [
+   "ok",
+   "{\"a\":[1,2]}"
+  ],
+  "C6_control_str_vs_dict": true,
+  "C8_nfc_vs_nfd_differ": true
+ },
+ "P1": {
+  "None": {
+   "unsigned_flag": "constructs",
+   "flag_off": "constructs",
+   "central_posture": "production",
+   "central_enforcing": true
+  },
+  "''": {
+   "unsigned_flag": "constructs",
+   "flag_off": "constructs",
+   "central_posture": "production",
+   "central_enforcing": true
+  },
+  "'production'": {
+   "unsigned_flag": "refused",
+   "flag_off": "constructs",
+   "central_posture": "production",
+   "central_enforcing": true
+  },
+  "'PROD'": {
+   "unsigned_flag": "refused",
+   "flag_off": "constructs",
+   "central_posture": "production",
+   "central_enforcing": true
+  },
+  "'prod'": {
+   "unsigned_flag": "refused",
+   "flag_off": "constructs",
+   "central_posture": "production",
+   "central_enforcing": true
+  },
+  "'Production'": {
+   "unsigned_flag": "refused",
+   "flag_off": "constructs",
+   "central_posture": "production",
+   "central_enforcing": true
+  },
+  "'production '": {
+   "unsigned_flag": "constructs",
+   "flag_off": "constructs",
+   "central_posture": "production",
+   "central_enforcing": true
+  },
+  "'staging'": {
+   "unsigned_flag": "constructs",
+   "flag_off": "constructs",
+   "central_posture": "staging",
+   "central_enforcing": true
+  },
+  "'stage'": {
+   "unsigned_flag": "constructs",
+   "flag_off": "constructs",
+   "central_posture": "staging",
+   "central_enforcing": true
+  },
+  "'uat'": {
+   "unsigned_flag": "constructs",
+   "flag_off": "constructs",
+   "central_posture": "staging",
+   "central_enforcing": true
+  },
+  "'preprod'": {
+   "unsigned_flag": "constructs",
+   "flag_off": "constructs",
+   "central_posture": "staging",
+   "central_enforcing": true
+  },
+  "'prd'": {
+   "unsigned_flag": "constructs",
+   "flag_off": "constructs",
+   "central_posture": "production",
+   "central_enforcing": true
+  },
+  "'live'": {
+   "unsigned_flag": "constructs",
+   "flag_off": "constructs",
+   "central_posture": "production",
+   "central_enforcing": true
+  },
+  "'development'": {
+   "unsigned_flag": "constructs",
+   "flag_off": "constructs",
+   "central_posture": "dev",
+   "central_enforcing": false
+  },
+  "'test'": {
+   "unsigned_flag": "constructs",
+   "flag_off": "constructs",
+   "central_posture": "test",
+   "central_enforcing": false
+  }
+ },
+ "P4": {
+  "http_url_accepted": true,
+  "default_jwks_url": "https://svc.example/.well-known/jwks.json"
+ }
+}
