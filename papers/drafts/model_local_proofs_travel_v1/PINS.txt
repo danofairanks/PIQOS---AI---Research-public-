@@ -7,3 +7,4 @@ https://github.com/LalaSkye/stop-machine          d744f8bf724edae93f823e398789b4
 https://github.com/google/cybernetic-agent-governance-engine  a11f0caa5198fbff4c2ef1443c25abc8a8f11ca7  2026-10-03   (attribution facts, the model check, and attacks on the routing-seal path and governor pipeline: cage_harness/)
 https://github.com/LalaSkye/no-direct-bind        7fe9ff99636798accd5e04136991e1d3d3079417  2026-06-03   (original version; the commit CAGE cites)
 https://github.com/LalaSkye/start-here             2b1723b96ac2d73c28d112e17b1c07ed9caa6b91  2026-09-27   (checks in section 6c)
+https://github.com/google/cybernetic-agent-governance-engine  7e07cbae5509683e4be87f68de2e5c3063dd73b2  2026-10-04   (follow-up pass 1, section 6b-ii: cage_harness/followup_2026-10-05/)

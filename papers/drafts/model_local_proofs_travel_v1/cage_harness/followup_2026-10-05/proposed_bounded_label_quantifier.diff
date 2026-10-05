@@ -1,0 +1,13 @@
+diff --git a/src/gateway/governance/pii_sanitizer.py b/src/gateway/governance/pii_sanitizer.py
+index a3312ed..c02745d 100644
+--- a/src/gateway/governance/pii_sanitizer.py
++++ b/src/gateway/governance/pii_sanitizer.py
+@@ -149,7 +149,7 @@ _BIC_END = r"(?![A-Za-z0-9_])"
+ # "BIC", "SWIFT", "SWIFT/BIC", "SWIFT code", "BIC no.", ... (case-insensitive),
+ # then ":", "=", "#" or whitespace, then an upper-case BIC.
+ _BIC_LABELLED = re.compile(
+-    r"(?P<label>(?i:\b(?:swift|bic)(?:[ \t/_-]*(?:swift|bic|code|address|id|number|no\.?))*)"
++    r"(?P<label>(?i:\b(?:swift|bic)(?:[ \t/_-]{0,3}(?:swift|bic|code|address|id|number|no\.?)){0,4})"
+     r"(?:[ \t]*[:=#][ \t]*|[ \t]+))"
+     rf"(?P<bic>{_BIC_SHAPE}){_BIC_END}"
+ )

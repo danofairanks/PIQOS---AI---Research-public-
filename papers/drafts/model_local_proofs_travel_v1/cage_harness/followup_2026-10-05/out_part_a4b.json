@@ -1,0 +1,23 @@
+{
+ "4096": {
+  "old_sanitizer@4b116e0": 0.0005,
+  "new_sanitizer@7e07cba": 0.0966,
+  "new_regex_only": 0.0912
+ },
+ "8192": {
+  "old_sanitizer@4b116e0": 0.0008,
+  "new_sanitizer@7e07cba": 0.3566,
+  "new_regex_only": 0.3501
+ },
+ "16384": {
+  "old_sanitizer@4b116e0": 0.0016,
+  "new_sanitizer@7e07cba": 1.3996,
+  "new_regex_only": 1.385
+ },
+ "shape:bic bic ": 0.7962,
+ "shape:swift/bic ": 0.4856,
+ "shape:swift code ": 0.2107,
+ "shape:swift:": 0.0005,
+ "shape:swift_": 0.0005,
+ "shape:single swift then spaces": 0.0012
+}
