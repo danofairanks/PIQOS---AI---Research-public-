@@ -21,3 +21,6 @@ Pinned commit `7e07cbae5509683e4be87f68de2e5c3063dd73b2`. Same venv as above plu
 ## Follow-up pass 2a (`followup_2026-10-05/`, files `*_2a_*`)
 Same commit and venv as pass 1 (`7e07cbae5509683e4be87f68de2e5c3063dd73b2`), `PYTHONPATH=.` from the repository root. `probe_2a_c_p.py <out.json>` (vendored JCS edge cases, provider_07 posture table, JWKS URL); `probe_2a_g.py <out.json>` (token, replay store and gateway; needs `redis-server --port 6391`; software Ed25519 signer; evidence sink stubbed); `probe_2a_p_runtime.py <out.json>` (provider_07 adapter against an httpx mock transport); `probe_2a_p5.py <out.json>` (JWKS refresh behaviour). The preregistration (`PREREG_cage_deep_probe_pass2a_2026-10-05.md`) has two amendments, each stating what it was written after; the P5 amendment records a discarded first run.
 
+## Follow-up pass 2b (`followup_2026-10-05/`, files `*_2b_*`)
+Same commit and venv as before, `PYTHONPATH=.` from the repository root. `probe_2b_s_o_g.py <out.json>` (STPA validator, OCSF ingestor, evidence best-effort in the gateway; needs `redis-server --port 6391`) and `probe_2b_a.py <out.json>` (the adapter against an httpx mock supervisor). Both import the repository's `contracts` module first because importing the STPA module first raises a circular `ImportError`. The preregistration has one amendment, written after the runs.
+
