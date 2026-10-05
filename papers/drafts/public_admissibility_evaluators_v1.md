@@ -163,6 +163,17 @@ The mechanisms are not unusual. A pilot over four widely used authorization libr
 - Scope of the conclusions. Every finding is about a public file at a pinned commit, read against that file's own statements and against the defeat conditions in the family's published V114 freeze text. None is a finding about the frozen harness proposition, about the private runtime, or about the Temporal Standing Test; where a sentence in this paper reads as reaching past the public demonstrator, the narrower reading is the intended one and the sentence is the error. The family's test harness is a separate public repository (pinned in `PINS.txt`; see Appendix D and the correction in C1). This paper did not call its hosted evaluator (which needs an issued key) and did not run the live example; Appendix D covers only what can be run or read without that.
 - Counts are about the pinned commits; later commits may change the behavior, which would be a fix, not a refutation.
 
+**Open questions.** None is resolved by this paper; each has a stated way to resolve it.
+
+1. *Per-finding dispositions* from the maintainer (B1 to B11): not received as of 2026-10-05. Appendix B takes them as given, with the date and the artifact read.
+2. *The live paired examination.* Whether the hosted evaluator permits a preserving ΔN and withholds a defeating ΔN, and what it does with the wording variants and the text-only and structure-only arms (D6), needs the maintainer's issued key and a stated scope. The runner and plan are ready and have run only against local stand-ins.
+3. *Wording against boundary.* Whether any public material outside the READMEs read here (the site, the protocol page, posts) uses "governance", "authority" or "consequence control" without the boundary beside it. Not examined.
+4. *The combined claim.* Which party owns the end-to-end property (a consequence occurs only when current standing holds), given a layered account in which each layer's defects belong to another layer. The book's redundancy condition and test list treat it as part of the framework's value; the layered replies treat it as three claims.
+5. *Independent world-state acquisition.* No public party has shown a source for the constituted state that the evaluated side does not control. The maintainer states this is outside the claim; the reality-mode runner (section 5e) tests it for any system that exposes a registry and an effect sink, and has run on nine known systems and none outside them.
+6. *The behavioural V114 test.* Described as living in the unpublished core; its result is neither confirmed nor refuted here.
+7. *B7 and B8*: not addressed in the maintainer's replies as read.
+8. *A second reader.* The attack suite and the runners are same-source. A reader outside this author's toolchain, running `run_all.py` and the live plan, is owed.
+
 **What would show this paper wrong.** The companion harness failing at the pinned commits; a quoted line that does not appear at the stated path and line; or a later commit that changes the stated behavior.
 
 **Reproduce.** `python3 run_all.py` in [`public_admissibility_evaluators_v1/`](public_admissibility_evaluators_v1/) clones the pinned commits into a work directory, runs the Node scripts and prints PASS or FAIL for 45 qualitative checks (about a minute, mostly observation windows in the runners' selftests; needs git, network, Node 22 or newer and Python 3.10 or newer).
@@ -220,6 +231,15 @@ A third reply from the maintainer, read at screenshot tier and paraphrased: the 
 
 The maintainer said the findings will be dispositioned individually and that any correction will be a successor version of the frozen result. Per-finding dispositions are not yet in; Appendix B will take them as they appear, recorded as given, with the date and the artifact read.
 
+A fourth exchange, on the same public thread (2026-10-05), between the maintainer and a third participant (name omitted), read at screenshot tier and paraphrased; two of the maintainer's replies are truncated in the screenshots and the earlier turns are not shown. The third participant argued that a permit returned over HTTP is only a response a local application decides whether to honor, asked for a mechanism establishing that externally constituted state is authoritative, current, complete and true before the evaluator runs, and concluded that what remains is a bounded standing evaluator whose larger claims about authority, governance or consequence control are not supported, so that the remaining disagreement is about wording. The maintainer replied that the evaluator's determination is conditional on a legitimately constituted upstream state; that it does not constitute authority, does not independently prove external truth and does not own downstream enforcement; and that the layers (constitution, standing determination, enforcement) are separate on purpose, so each challenge is a different claim, to be made against that layer, with the evaluator's ceiling being the bounded function it claims. The maintainer also pointed to the book of section C2 for the claim boundaries and falsifiers.
+
+This paper's reading, checked against files and not against the thread:
+
+- The limits both sides converge on are stated in the repositories before the exchange: the evidence record says it is "not a claim about downstream real-world execution enforcement" (`harmonic-public` README, line 13), and the harness README says a run does not establish non-bypassable downstream routes and that the harness is a client that does not duplicate the core (lines 20 to 28 and 97). A listing of those limits is therefore a confirmation of the published position, not a concession from it, and it does not move the findings of sections 4 and 5.
+- "The larger claims are gone" is a claim about wording elsewhere. The READMEs read for this paper do not make the larger claims. The site, the protocol page and the posts were not examined, so whether any public wording exceeds the boundary is open (item 3 below).
+- The layer separation is sound as a procedure. Two points it leaves: a combined claim (a consequence occurs only when current standing holds) is owned by no single layer, and the book's own redundancy condition lists payload-bound authority and causal enforcement before effect among the properties its value depends on (section C2). Second, the executor named as the place to challenge enforcement is the harness's synthetic sink in the maintainer's own public repository; Appendix D (D4) records what was found there, and those items are classed by the maintainer's definitions as successor or claim-boundary matters.
+- No argument in the exchange, on either side, tests anything new in the code. The exchange narrows what is claimed. It does not validate the system.
+
 ### C1. Verifiability of the frozen proposition
 
 This is a statement about how the proposition is published, not about its truth or anyone's intent.
@@ -234,6 +254,16 @@ What the repository shows:
 - A proposition scoped to a stated path can fail only on that path. If findings beyond it are classed as successor properties and never as falsifiers, no finding can count against the frozen result; whether that happens is read from the dispositions as they arrive.
 
 Of the three conditions listed in an earlier version of this subsection as what would settle the verifiability question, two are now met by the target file (the label definitions, and one pre-stated failing condition); the third (a public run of the behavioural test) is only partly met: the harness-side checks are public, the evaluator and the core test are key-gated or not published.
+
+### C2. The framework text
+
+The maintainer publishes the framework as a book, *Does It Still Stand? Temporal Standing and the Missing Rule for AI That Acts* (first edition, 2026; the maintainer's reply gives its address as `studio.moralclarity.ai/does-it-still-stand`). This paper read a 146-page PDF copy supplied to the author, not the page at that address; quotations are brief and the book is under its own copyright notice. Three passages bear on this paper and are cited so that the draft is read against the framework's own standard:
+
+- **A published redundancy condition** (chapter "The claim should be falsifiable"): if an existing system already provides, for a proposed AI-mediated consequence, current heterogeneous governing inputs, explicit scope, relevance-aware change handling, a preserved, defeated or unresolved determination, payload-bound authority and causal enforcement immediately before effect, then the framework "may add little more than vocabulary." Its section 8 states the same as a falsification standard: an existing architecture that reliably provides the same properties under a different name, in which case the book "should acknowledge it rather than relabel it."
+- **A stated knowledge limit** ("Unknown change and bounded knowledge"; "Unknown unknowns do not become known by governance language"): "ΔN is not omniscience"; a system can only reason over changes it is required to check or receives through authoritative signals. This is the same ceiling the maintainer states in the third reply (independent world-state acquisition not established) and the one the reality-mode runner of section 5e targets.
+- **A test list for enforcement** ("Governance should be tested like other critical system behavior"), including that payload mutation invalidates or requires a new permit, that revocation defeats queued actions, that a downstream executor rejects missing, expired or mismatched permits, that an authorized action still succeeds, and that a demonstration should "test the system from consequence backward" and ask whether other paths could still cause the effect.
+
+How the findings sit against these, without reaching past them: the sink route's canonicalization leaving a `__proto__` member outside the hash (D4) is a gap against the book's mismatched-permit and payload-mutation items, in a synthetic route. Receipt replay inside the validity window is not an instance of the book's Case 5 (retry after an ambiguous provider timeout) or of stale authority resurrected by a retry; the book does not state a replay rule for permits, so none is attributed to it. The registry-bound counter-model of section 5a is one candidate for the "existing architecture" the redundancy condition asks about, not a claim that it is one: it holds a stated defeat set at a stated scope, and its decisive input is a registry the counter-model controls (section 6). That the book names the condition under which it would be unnecessary is to its credit; whether any public system meets all the listed properties is not determined here.
 
 ## Appendix D. The public harness repository at d36722a
 
@@ -288,7 +318,9 @@ The `__proto__` result: the route's canonicalization copies keys with `out[key] 
 
 [12] F. B. Schneider. Enforceable security policies. *ACM Transactions on Information and System Security* 3(1):30–50, 2000.
 
-Sources are cited at the tier read: exact clones for repository files; for references [6] to [10] and [12], the bibliographic record found by search (the papers themselves were not read for this draft).
+[13] The family's maintainer. *Does It Still Stand? Temporal Standing and the Missing Rule for AI That Acts*, first edition, 2026. Read as a PDF copy supplied to the author (146 pages); cited in Appendix C, section C2.
+
+Sources are cited at the tier read: exact clones for repository files; for references [6] to [10] and [12], the bibliographic record found by search (the papers themselves were not read for this draft); for reference [13], the PDF text, read in full for the passages cited.
 
 ---
 
