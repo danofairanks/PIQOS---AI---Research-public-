@@ -1,0 +1,130 @@
+{
+ "T1": {
+  "A": {
+   "naive_equal_pairs": 33006,
+   "mismatched_pairs": 3600,
+   "classes": {
+    "2": 4,
+    "3": 7,
+    "4": 7,
+    "5": 7,
+    "6": 7
+   }
+  },
+  "B": {
+   "naive_equal_pairs": 32951,
+   "mismatched_pairs": 6954,
+   "classes": {
+    "2": 3,
+    "3": 3,
+    "4": 3,
+    "5": 3,
+    "6": 3
+   }
+  },
+  "C": {
+   "naive_equal_pairs": 32951,
+   "mismatched_pairs": 8008,
+   "classes": {
+    "2": 6,
+    "3": 9,
+    "4": 12,
+    "5": 15,
+    "6": 18
+   }
+  }
+ },
+ "T2": {
+  "0.1": {
+   "fc_all": 0.05,
+   "fc_hd_only": 0.505
+  },
+  "0.3": {
+   "fc_all": 0.147,
+   "fc_hd_only": 0.498
+  },
+  "0.5": {
+   "fc_all": 0.251,
+   "fc_hd_only": 0.502
+  },
+  "0.7": {
+   "fc_all": 0.351,
+   "fc_hd_only": 0.5
+  },
+  "1.0": {
+   "fc_all": 0.496,
+   "fc_hd_only": 0.496
+  },
+  "mined": {
+   "pairs": 10002,
+   "p_emergent": 0.197
+  }
+ },
+ "T3": {
+  "w1": [
+   1.9,
+   0.13,
+   1.81,
+   0.04,
+   0.2
+  ],
+  "w2": [
+   0.14,
+   1.68,
+   0.16,
+   1.74,
+   0.13
+  ],
+  "gen1_hold": {
+   "asd": 0.952,
+   "elapsed": 0.784
+  },
+  "gen2_with_w1": {
+   "asd": 0.791,
+   "elapsed": 0.805
+  },
+  "gen2_with_w2": {
+   "asd": 0.952,
+   "elapsed": 0.805
+  }
+ },
+ "T4": {
+  "honest_agent_reported": 0,
+  "masking_agent_reported": 300,
+  "independent_channel": 0,
+  "silent_default_pass": 300,
+  "silent_default_deny": 0,
+  "violating_steps": 300
+ },
+ "T5": {
+  "1": {
+   "unbound": 0.018,
+   "bound": 0,
+   "expected": 0.02
+  },
+  "5": {
+   "unbound": 0.095,
+   "bound": 0,
+   "expected": 0.096
+  },
+  "10": {
+   "unbound": 0.184,
+   "bound": 0,
+   "expected": 0.183
+  },
+  "20": {
+   "unbound": 0.338,
+   "bound": 0,
+   "expected": 0.332
+  },
+  "40": {
+   "unbound": 0.552,
+   "bound": 0,
+   "expected": 0.554
+  },
+  "false_denial": {
+   "strict_version_compare": 0.343,
+   "relevant_only_benign": 0.0
+  }
+ }
+}
