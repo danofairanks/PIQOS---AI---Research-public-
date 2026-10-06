@@ -90,7 +90,7 @@ A reader who supplies the benchmark's labels and finds they come from an indepen
 
 ## References
 
-Sources for the preprint's statistics (10,000 scenarios, 5,000 matched pairs, 51.1%, 0) and for its formulas: the preprint's own summary page, *Authorization State and Trajectory in Persistent AI Agents: Testing Final-State Sufficiency*, self-published October 2026 (screenshot and a summary note; full text not read; link available on request). Sources for the numbers in section 6, each from the paper's own abstract or text as read in part:
+Sources: for the preprint's statistics (10,000 scenarios, 5,000 matched pairs, 51.1%, 0) and for its formulas: the preprint's own summary page, *Authorization State and Trajectory in Persistent AI Agents: Testing Final-State Sufficiency*, self-published October 2026 (screenshot and a summary note; full text not read; link available on request). Sources for the numbers in section 6, each from the paper's own abstract or text as read in part:
 
 - arXiv:2609.08062v2, *ResidualAuth: What Authorization State Must Agent Systems Preserve under Revocable Delegation?* https://arxiv.org/abs/2609.08062
 - arXiv:2609.01836v1, *Agent Memory Is a Surface for Endogenous Authorization Laundering.* https://arxiv.org/abs/2609.01836
