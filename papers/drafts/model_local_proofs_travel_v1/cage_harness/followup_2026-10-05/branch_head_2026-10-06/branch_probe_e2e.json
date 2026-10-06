@@ -1,0 +1,17 @@
+{
+ "control_plain_16KB": {
+  "status": 200,
+  "elapsed_s": 0.011,
+  "max_tick_gap_s": 0.06
+ },
+ "swift_16KB": {
+  "status": 200,
+  "elapsed_s": 5.763,
+  "max_tick_gap_s": 5.814
+ },
+ "swift_32KB": {
+  "status": 200,
+  "elapsed_s": 23.844,
+  "max_tick_gap_s": 23.893
+ }
+}

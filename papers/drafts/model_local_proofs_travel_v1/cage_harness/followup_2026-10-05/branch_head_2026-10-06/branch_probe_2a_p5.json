@@ -1,0 +1,8 @@
+{
+ "warm_known": true,
+ "unknown_lookup_with_empty_manifest": true,
+ "known_after_empty_manifest_refresh": false,
+ "known_after_manifest_restored": true,
+ "outage_unknown_lookup": "raises HTTPStatusError",
+ "known_lookup_after_outage_during_warm_cache": true
+}

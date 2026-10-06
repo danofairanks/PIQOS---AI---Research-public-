@@ -1,0 +1,143 @@
+{
+ "J1_outcomes": [
+  "ALLOW",
+  "DENY",
+  "CLARIFY",
+  "HUMAN_APPROVAL_REQUIRED",
+  "DEGRADED_READ_ONLY",
+  "HALT",
+  "ESCALATE"
+ ],
+ "C1_policy_secret_default_in_force": true,
+ "C1_policy_signed_with_default_verifies": true,
+ "C1_forged_token_verifies": [
+  true,
+  "OK"
+ ],
+ "B1_before_shutdown_permitted": [
+  false,
+  "Denied by policy 1.0.0: system.shutdown not in allowlist"
+ ],
+ "B1_explicit_system_shutdown_true": "EXC PermissionError: ESCALATE: Policy mutation would weaken governance \u2014 action 'shutdown' was blocked, new policy permit",
+ "B1_wildcard_allow_all": "accepted",
+ "B1_after_shutdown_permitted": [
+  true,
+  "Permitted by policy probe-wild"
+ ],
+ "B1_after_delete_all_permitted": [
+  true,
+  "Permitted by policy probe-wild"
+ ],
+ "D0_no_flags_no_token": {
+  "result": "(False, 'CapabilityToken required for protected execution')",
+  "executor_ran": 0
+ },
+ "D1_requires_capability_token_false": {
+  "result": "(True, 'EXECUTED')",
+  "executor_ran": 1
+ },
+ "D2_is_mutating_action_false": {
+  "result": "(True, 'EXECUTED')",
+  "executor_ran": 1
+ },
+ "D3_text_not_action_transfer": {
+  "result": "(True, 'EXECUTED')",
+  "executor_ran": 1
+ },
+ "D3_control_harm_pattern": {
+  "result": "(False, 'High risk, non-benign intent')",
+  "executor_ran": 0
+ },
+ "E1_token_hash_over_context_without_token": {
+  "result": "EXC TypeError: Object of type CapabilityToken is not JSON serializable",
+  "executor_ran": 0
+ },
+ "E1_token_context_hash_empty": {
+  "result": "EXC TypeError: Object of type CapabilityToken is not JSON serializable",
+  "executor_ran": 0
+ },
+ "E1_token_as_dict": {
+  "result": "(False, \"CapabilityToken verification failed closed: 'dict' object has no attribute 'is_replayed'\")",
+  "executor_ran": 0
+ },
+ "X2_without_continuity_flag": {
+  "result": "(False, 'Invariant BLOCK: execution blocked')",
+  "executor_ran": 0
+ },
+ "X2_forged_flag_true_and_proof_forged_false": {
+  "result": "(True, 'EXECUTED')",
+  "executor_ran": 1
+ },
+ "E1_fixed_point_equal": false,
+ "F1_replay": {
+  "first": [
+   true,
+   "OK"
+  ],
+  "second_immediately": [
+   false,
+   "Token b99236f9db7e5427 already consumed (replay)"
+  ],
+  "after_10005_others": [
+   true,
+   "OK"
+  ],
+  "ttl_still_valid": true
+ },
+ "G1_empty_policy_hash_any_policy": [
+  true,
+  "OK"
+ ],
+ "G1_scope_empty_required_empty": [
+  true,
+  "OK"
+ ],
+ "G1_control_policy_hash_set_mismatch": [
+  false,
+  "Token policy hash mismatch (policy changed)"
+ ],
+ "G1_control_scope_mismatch": [
+  false,
+  "Token scope ['a'] does not cover ['b']"
+ ],
+ "H1_evaluator": {
+  "no_confirm": [
+   false,
+   "HUMAN_APPROVAL_REQUIRED"
+  ],
+  "self_attested_confirm": [
+   true,
+   "ALLOW"
+  ]
+ },
+ "H2_gate_high_impact_human_confirmed": {
+  "result": "(False, 'High-impact action requires human approval')",
+  "executor_ran": 0
+ },
+ "I3_allow_path": {
+  "result": "(True, 'EXECUTED')",
+  "bundles": 1,
+  "outcome": "ALLOW"
+ },
+ "I1_writer_raises": {
+  "result": "(True, 'EXECUTED')",
+  "executor_ran": 1,
+  "log_levels_for_failure": [
+   "DEBUG"
+  ]
+ },
+ "I2_executor_raises": {
+  "result": "EXC ValueError: executor failed",
+  "bundles_recorded": 0
+ },
+ "T1_plain_http_date_header": {
+  "outcome": "OK",
+  "recommendation": "ALLOW",
+  "tsa_available": true,
+  "token_hash_len": 16
+ },
+ "T1_spoofed_old_date": {
+  "outcome": "SKEW_DETECTED",
+  "recommendation": "HALT"
+ }
+}

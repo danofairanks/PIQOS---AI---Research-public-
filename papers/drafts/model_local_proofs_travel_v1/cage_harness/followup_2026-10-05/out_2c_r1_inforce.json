@@ -1,0 +1,9 @@
+{
+ "ceiling_before": 10000.0,
+ "edited_no_rehash": {
+  "registry_state": "unavailable",
+  "classification": "IRREVERSIBLE_TERMINAL",
+  "envelope": "None"
+ },
+ "ceiling_after_rehash_registry": 1000000000000.0
+}

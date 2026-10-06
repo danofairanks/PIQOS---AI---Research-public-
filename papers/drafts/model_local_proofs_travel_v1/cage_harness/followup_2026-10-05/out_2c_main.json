@@ -1,0 +1,173 @@
+{
+ "thresholds": {
+  "agent_confidence_threshold": 0.95,
+  "defer_floor": 0.7
+ },
+ "F": {
+  "F1_nan_confidence": true,
+  "F1_control_below_floor": true,
+  "F1_control_nan_magnitude": true,
+  "F1_control_unregistered": true,
+  "F1_control_good": true,
+  "F2_graph_nan": {
+   "verdict": "CLEAR",
+   "auto_cleared": [
+    "s1"
+   ]
+  },
+  "F2_graph_conf_0": {
+   "verdict": "BLOCKED",
+   "auto_cleared": []
+  },
+  "F2_graph_conf_0.99": {
+   "verdict": "CLEAR",
+   "auto_cleared": [
+    "s1"
+   ]
+  },
+  "F2_stage_nan": {
+   "requires_hitl": true,
+   "auto_cleared": false,
+   "codes": [
+    "FTRA_REGISTERED_IRREVERSIBLE"
+   ]
+  },
+  "F2_stage_0.99": {
+   "requires_hitl": false,
+   "auto_cleared": true,
+   "codes": []
+  },
+  "F2_reported_confidence_nan": 0.0,
+  "F3_safe_magnitude_10e400": [
+   "raises",
+   "OverflowError"
+  ],
+  "F3_stage_10e400": {
+   "requires_hitl": true,
+   "auto_cleared": false,
+   "codes": [
+    "FTRA_ERROR"
+   ]
+  },
+  "F3_graph_10e400": {
+   "verdict": "HITL_REQUIRED",
+   "auto_cleared": []
+  },
+  "F4_amount_9007199254740992": {
+   "verdict": "CLEAR",
+   "auto_cleared": [
+    "s1"
+   ]
+  },
+  "F4_amount_9007199254740993": {
+   "verdict": "CLEAR",
+   "auto_cleared": [
+    "s1"
+   ]
+  },
+  "F4_amount_9007199254740994": {
+   "verdict": "HITL_REQUIRED",
+   "auto_cleared": []
+  }
+ },
+ "R": {
+  "R1_baseline": {
+   "loads": true,
+   "envelope_ceiling": null
+  },
+  "R1_edited_no_rehash": {
+   "loads": false,
+   "err": "ValueError: FTRA terminal registry integrity check FAILED at /tmp/ftra2c_8vo513lx/r1.json. E"
+  },
+  "R1_edited_with_recomputed_digest": {
+   "loads": true,
+   "envelope_ceiling": null
+  },
+  "R1_rehash_registry_api_returns": "e19108ef9844b146",
+  "R1_after_rehash_api": {
+   "loads": true,
+   "envelope_ceiling": null
+  },
+  "R2_envelope_without_digest": {
+   "loads": false,
+   "err": "ValueError: FTRA terminal registry at /tmp/ftra2c_8vo513lx/r2a.json declares an 'autonomous_"
+  },
+  "R2_no_envelope_no_digest": {
+   "loads": true,
+   "envelope_ceiling": null
+  },
+  "R3_expired_loads": {
+   "loads": true,
+   "envelope_ceiling": null
+  },
+  "R3_classify_after_expiry": "IRREVERSIBLE_TERMINAL",
+  "R3_staleness_report_is_clean": true
+ },
+ "E": {
+  "None": {
+   "estate_stub": "refused",
+   "central_posture": "production",
+   "central_enforcing": true
+  },
+  "''": {
+   "estate_stub": "refused",
+   "central_posture": "production",
+   "central_enforcing": true
+  },
+  "'production'": {
+   "estate_stub": "refused",
+   "central_posture": "production",
+   "central_enforcing": true
+  },
+  "'staging'": {
+   "estate_stub": "refused",
+   "central_posture": "staging",
+   "central_enforcing": true
+  },
+  "'local'": {
+   "estate_stub": "refused",
+   "central_posture": "local",
+   "central_enforcing": true
+  },
+  "'testing'": {
+   "estate_stub": "refused",
+   "central_posture": "test",
+   "central_enforcing": false
+  },
+  "'continuous-integration'": {
+   "estate_stub": "refused",
+   "central_posture": "ci",
+   "central_enforcing": false
+  },
+  "'dev '": {
+   "estate_stub": "refused",
+   "central_posture": "production",
+   "central_enforcing": true
+  },
+  "'dev'": {
+   "estate_stub": "constructs",
+   "central_posture": "dev",
+   "central_enforcing": false
+  },
+  "'DEV'": {
+   "estate_stub": "constructs",
+   "central_posture": "dev",
+   "central_enforcing": false
+  },
+  "'development'": {
+   "estate_stub": "constructs",
+   "central_posture": "dev",
+   "central_enforcing": false
+  },
+  "'test'": {
+   "estate_stub": "constructs",
+   "central_posture": "test",
+   "central_enforcing": false
+  },
+  "'ci'": {
+   "estate_stub": "constructs",
+   "central_posture": "ci",
+   "central_enforcing": false
+  }
+ }
+}

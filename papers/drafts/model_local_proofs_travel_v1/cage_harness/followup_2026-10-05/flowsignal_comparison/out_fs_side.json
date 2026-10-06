@@ -1,0 +1,55 @@
+{
+ "C0_baseline": [
+  "ALLOW",
+  "AUTHORITY_ESTABLISHED"
+ ],
+ "T1_unknown_mandate_presented_limit": [
+  "ALLOW",
+  "AUTHORITY_ESTABLISHED"
+ ],
+ "T1_snapshot_records_presented_vs_authoritative": {
+  "presented_mandate_max_amount": 1000000000000,
+  "authoritative_mandate_max_amount": 1000000000000
+ },
+ "T1_known_mandate_presented_limit_ignored": [
+  "ESCALATE",
+  "ADDITIONAL_AUTHORITY_OR_EVIDENCE_REQUIRED"
+ ],
+ "T2_negative_amount": [
+  "ALLOW",
+  "AUTHORITY_ESTABLISHED"
+ ],
+ "T3_nan": [
+  "ESCALATE",
+  "ADDITIONAL_AUTHORITY_OR_EVIDENCE_REQUIRED"
+ ],
+ "T3_inf": [
+  "ESCALATE",
+  "ADDITIONAL_AUTHORITY_OR_EVIDENCE_REQUIRED"
+ ],
+ "T3_neg_inf": [
+  "ALLOW",
+  "AUTHORITY_ESTABLISHED"
+ ],
+ "T4_honest_late_clock_expired_mandate": [
+  "REFUSE",
+  "AUTHORITY_NOT_ESTABLISHED"
+ ],
+ "T4_backdated_clock_same_world": [
+  "ALLOW",
+  "AUTHORITY_ESTABLISHED"
+ ],
+ "T4_stale_evidence_via_forward_captured_at": [
+  "ALLOW",
+  "AUTHORITY_ESTABLISHED"
+ ],
+ "T5_float_receipt_int_attempt": "ACTION_BINDING_MISMATCH",
+ "T5_float_receipt_float_attempt": "BOUND_ALLOW_VALID",
+ "T6_after_state_advance": "AUTHORITY_STATE_STALE_REEVALUATION_REQUIRED",
+ "T7_gateway_issues_permit_each_call": [
+  "PERMITTED",
+  "PERMITTED"
+ ],
+ "T7_note": "single-use is a downstream consumption store, not the gateway; checked below",
+ "T8_decision_edit_without_key": "AUTHORITY_RECEIPT_INTEGRITY_INVALID"
+}

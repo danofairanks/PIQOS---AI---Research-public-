@@ -1,0 +1,4 @@
+# repository, pinned commit (full SHA), commit date (author)
+https://github.com/grahamb-ai/runtime-authority-reference-implementation  26893c293e579a4d31f6d5183ea52bec3efc7b95  2026-08-09   (code identical to ea36ac1a7a0497aa841a70e34e4f5b154df4a48f, the commit its evidence repository pins; README-only diff)
+https://github.com/grahamb-ai/runtime-authority-evidence                 fef435490e7170fcc3f55e7b562f2b56f170fb8a  2026-08-09   (claims and limitations quoted; not executed)
+https://github.com/IAmSoThirsty/Project-AI                               7650aa14dd8e3832e9dfd4d438000dd4e1f273d8  2026-09-13

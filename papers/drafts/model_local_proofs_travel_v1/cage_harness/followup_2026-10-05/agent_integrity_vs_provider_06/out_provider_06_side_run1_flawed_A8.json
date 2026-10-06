@@ -1,0 +1,95 @@
+{
+ "C_valid_cage_scheme": {
+  "error": null,
+  "seal": true
+ },
+ "C_tampered_body": {
+  "error": "Receipt digest verification failed",
+  "seal": false
+ },
+ "C_unknown_kid": {
+  "error": "Unknown key ID: k1",
+  "seal": false
+ },
+ "U0": {
+  "digest_ok": false,
+  "sig_ok": false,
+  "adapter_submit": {
+   "error": "Receipt digest verification failed",
+   "seal": false
+  },
+  "sig_value_len": 88,
+  "sig_value_charset_std_b64": true,
+  "upstream_digest_def_matches_genuine": true,
+  "cage_digest_def_matches_genuine": false,
+  "upstream_sig_def_verifies_with_jcs": true
+ },
+ "A1_envelope_digest_mismatch": {
+  "error": null,
+  "seal": true
+ },
+ "A2_signed_BLOCKED_receipt": {
+  "error": null,
+  "seal": true
+ },
+ "A3_wrong_issuer": {
+  "error": null,
+  "seal": true
+ },
+ "A3_wrong_audience": {
+  "error": null,
+  "seal": true
+ },
+ "A3_wrong_purpose": {
+  "error": null,
+  "seal": true
+ },
+ "A4_missing_expiresAt": {
+  "error": null,
+  "seal": true
+ },
+ "A4_malformed_expiresAt": {
+  "error": null,
+  "seal": true
+ },
+ "A5_created_1y_future": {
+  "error": null,
+  "seal": true
+ },
+ "A5_lifetime_10y": {
+  "error": null,
+  "seal": true
+ },
+ "A6_replay": [
+  {
+   "error": null,
+   "seal": true
+  },
+  {
+   "error": null,
+   "seal": true
+  }
+ ],
+ "A7_now_equals_expiresAt": {
+  "error": null,
+  "seal": true
+ },
+ "A7_one_second_after": {
+  "error": "Receipt expired at 2030-01-01T00:00:00+00:00",
+  "seal": false
+ },
+ "A8_sig_encodings": {
+  "url_nopad": true,
+  "std_pad": true,
+  "url_pad": true
+ },
+ "A8_digest_identical_across_encodings": false,
+ "A9_validate_fria_unsigned_PASS": {
+  "admitted": true,
+  "error": null
+ },
+ "A10_no_manifest_forged_receipt": {
+  "error": null,
+  "seal": true
+ }
+}

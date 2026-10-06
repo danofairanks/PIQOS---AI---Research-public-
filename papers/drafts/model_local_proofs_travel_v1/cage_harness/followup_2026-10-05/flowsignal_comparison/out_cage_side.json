@@ -1,0 +1,60 @@
+ConsequenceAuthorityStore: ALREADY_CONSUMED authority_record_id=c1 (replay or substitution attempt)
+[ConsequenceGateway] Consumption rejected: ALREADY_CONSUMED rec=c1
+[ConsequenceGateway] ACTION_BINDING_MISMATCH rec=c3
+[ConsequenceGateway] Token verification failed: Token expired: exp=1791294803, now=1791294804 (age=1s)
+{
+ "C1_first": [
+  "EXECUTE",
+  "OK"
+ ],
+ "C2_replay": [
+  "BLOCK",
+  "ALREADY_CONSUMED"
+ ],
+ "C3_tamper": [
+  "BLOCK",
+  "ACTION_BINDING_MISMATCH"
+ ],
+ "S1_evaluate_signature": "(token: 'str', action_payload: 'dict') -> 'ConsequenceEvaluation'",
+ "S1_gateway_source_mentions_ver_compare": false,
+ "S1_stale_ver_token_executes": [
+  "EXECUTE",
+  "OK"
+ ],
+ "S2": {
+  "first": [
+   "EXECUTE",
+   "OK"
+  ],
+  "after_marker_delete": [
+   "EXECUTE",
+   "OK"
+  ]
+ },
+ "S3_fabricated_rec": [
+  "EXECUTE",
+  "OK"
+ ],
+ "S4": {
+  "exp-1": [
+   "EXECUTE",
+   "OK"
+  ],
+  "exp": [
+   "EXECUTE",
+   "OK"
+  ],
+  "exp+1": [
+   "BLOCK",
+   "TOKEN_INVALID"
+  ]
+ },
+ "S5": {
+  "memo": true,
+  "amount": true,
+  "to": true,
+  "extra_flag": true
+ },
+ "S5_int_vs_float_equal": true,
+ "S5_big_int_collide": true
+}

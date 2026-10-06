@@ -1,0 +1,114 @@
+{
+ "S": {
+  "S1": {
+   "token_absent": [
+    "STPA_UCA_1"
+   ],
+   "token_None": [
+    "STPA_UCA_1"
+   ],
+   "token=''": [],
+   "token='garbage'": [],
+   "token=0": [],
+   "token=False": [],
+   "token={}": []
+  },
+  "S2": {
+   "write_db": [
+    "STPA_UCA_1"
+   ],
+   "write_db ": [],
+   "WRITE_DB": [],
+   "write-db": [],
+   "write_db\u200b": []
+  },
+  "S3": {
+   "core_with_colliding_contrib": [],
+   "rules_active": [
+    "UCA-1/other"
+   ],
+   "log_lines_ge_WARNING": [],
+   "lowercase_id_does_not_replace": [
+    "STPA_UCA_1"
+   ]
+  },
+  "S4": {
+   "predicate_raises": [
+    "STPA_UCA_X_1"
+   ],
+   "returns_0": [
+    "raises",
+    "TypeError: 'int' object is not iterable"
+   ],
+   "returns_empty_dict": [
+    "returns",
+    []
+   ],
+   "returns_dict": [
+    "returns",
+    [
+     "'a'"
+    ]
+   ],
+   "returns_tuple_of_str": [
+    "returns",
+    [
+     "'a'"
+    ]
+   ]
+  }
+ },
+ "O": {
+  "O1_nested_list": {
+   "a": [
+    [
+     {
+      "token": "s"
+     }
+    ]
+   ]
+  },
+  "O1_control_list_of_dict": {
+   "a": [
+    {
+     "token": "[REDACTED]"
+    }
+   ]
+  },
+  "O2": {
+   "Blocked": "AC-3",
+   "Denied": "AC-3",
+   "Dropped": "AC-3",
+   "Rejected": "AC-3",
+   "Block": "AU-2",
+   "Deny": "AU-2",
+   "Quarantined": "AU-2",
+   "Isolated": "AU-2",
+   "Unauthorized": "AU-2",
+   "Access Revoked": "AU-2",
+   "Error": "AU-2",
+   "Allowed": "AU-2"
+  },
+  "O3_arbitrary_digest": "not-a-digest",
+  "O3_1MB_metadata_accepted": 1000000,
+  "O4_bearer_in_value_after_ingestor": "curl -H 'Authorization: Bearer abc.def.ghi' https://x",
+  "O4_after_pii_sanitizer": "curl -H 'Authorization: Bearer abc.def.ghi' https://x",
+  "O5_sanitize_dict_16KB_metadata_s": 1.43,
+  "O5_control_plain_16KB_s": 0.0011
+ },
+ "G4b": {
+  "sink_redis_is_None": true,
+  "no_redis_sink": [
+   "EXECUTE",
+   "OK"
+  ],
+  "append_raises_RuntimeError": [
+   "EXECUTE",
+   "OK"
+  ],
+  "append_raises_EvidenceChainUnavailable": [
+   "BLOCK",
+   "EVIDENCE_CHAIN_UNAVAILABLE"
+  ]
+ }
+}

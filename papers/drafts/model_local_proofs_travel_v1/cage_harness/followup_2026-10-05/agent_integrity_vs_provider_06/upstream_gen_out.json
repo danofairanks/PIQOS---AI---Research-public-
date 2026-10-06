@@ -1,0 +1,102 @@
+{
+ "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAbggmqRYakE3Z5u70FQPk2iZnLK6yNbXSk72KftCRpbY=\n-----END PUBLIC KEY-----\n",
+ "keyId": "test-key-1",
+ "receipt": {
+  "protocolVersion": "1-alpha",
+  "receiptVersion": "2-alpha",
+  "engineVersion": "0.1.0-alpha.0",
+  "issuer": "test-issuer",
+  "audience": "test-audience",
+  "purpose": "response-release",
+  "nonce": "test-nonce-0001",
+  "runId": "genuine",
+  "createdAt": "2026-08-02T00:00:00.000Z",
+  "expiresAt": "2026-08-02T01:00:00.000Z",
+  "policyDigest": "0b5b226bc3dd6caf906cb7520df34f0383b4f224263ad62e340410719dc12989",
+  "envelopeDigest": "cd5113eade4671b04f1ee2ca338d639e189c3923ec00e758bca73c8ca19b5568",
+  "verification": {
+   "protocolVersion": "1-alpha",
+   "status": "PASS",
+   "findings": []
+  },
+  "signature": {
+   "algorithm": "Ed25519",
+   "keyId": "test-key-1",
+   "value": "Upel1afDb/vzt6U4uQ3mFW2C2yXBbvHl0Y08xpE6mx47/4VCY84HpjZYNdpremT1EpO+1wL5hPLVI0VuTHA6DQ=="
+  },
+  "receiptDigest": "ceb7eec9954847ab9585263a1882583979fd3ef45c50137c8a8bd3f02e282014"
+ },
+ "envelopeDigest": "cd5113eade4671b04f1ee2ca338d639e189c3923ec00e758bca73c8ca19b5568",
+ "U0_upstream_pass": [
+  "PASS",
+  []
+ ],
+ "A3_aud": [
+  "BLOCKED",
+  [
+   "receipt.wrong_audience"
+  ]
+ ],
+ "A3_iss": [
+  "BLOCKED",
+  [
+   "receipt.wrong_issuer"
+  ]
+ ],
+ "A3_pur": [
+  "BLOCKED",
+  [
+   "receipt.wrong_purpose"
+  ]
+ ],
+ "A6_first": [
+  "PASS",
+  []
+ ],
+ "A6_second": [
+  "BLOCKED",
+  [
+   "receipt.replayed"
+  ]
+ ],
+ "A7_at_expiry": [
+  "BLOCKED",
+  [
+   "receipt.expired"
+  ]
+ ],
+ "A7_one_ms_before": [
+  "PASS",
+  []
+ ],
+ "A5_future": [
+  "BLOCKED",
+  [
+   "receipt.future_issued"
+  ]
+ ],
+ "A1_subject_changed": [
+  "BLOCKED",
+  [
+   "receipt.live_check_failed",
+   "checker.failure",
+   "receipt.live_source_check_failed"
+  ]
+ ],
+ "A8_noncanonical_sig_encoding": [
+  "BLOCKED",
+  [
+   "receipt.mutated",
+   "receipt.invalid_signature_encoding"
+  ]
+ ],
+ "C_tampered_upstream": [
+  "BLOCKED",
+  [
+   "receipt.mutated",
+   "receipt.invalid_signature",
+   "receipt.lifetime_exceeded"
+  ]
+ ],
+ "A5_long_lifetime_creation": "refused: receipt lifetime exceeds configured maximum"
+}

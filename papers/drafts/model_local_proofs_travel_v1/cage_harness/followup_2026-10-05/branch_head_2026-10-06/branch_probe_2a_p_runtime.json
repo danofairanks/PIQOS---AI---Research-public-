@@ -1,0 +1,51 @@
+{
+ "P0_control_valid_signature": {
+  "admitted": true,
+  "codes": [
+   "INFERTHETA_ALLOW"
+  ],
+  "jwks_gets_delta": 1
+ },
+ "P0_control_tampered_field": {
+  "admitted": false,
+  "codes": [
+   "INFERTHETA_SIGNATURE_INVALID"
+  ],
+  "jwks_gets_delta": 0
+ },
+ "P0_control_unknown_kid": {
+  "admitted": false,
+  "codes": [
+   "INFERTHETA_UNKNOWN_KEY"
+  ],
+  "jwks_gets_delta": 1
+ },
+ "P2_flag_off_unsigned": {
+  "admitted": false,
+  "codes": [
+   "INFERTHETA_UNKNOWN_KEY"
+  ],
+  "jwks_gets_delta": 1
+ },
+ "P2_flag_on_unsigned_CAGE_ENV_unset": {
+  "admitted": true,
+  "codes": [
+   "INFERTHETA_ALLOW"
+  ],
+  "jwks_gets_delta": 0
+ },
+ "P2_flag_on_unsigned_CAGE_ENV_staging": {
+  "admitted": true,
+  "codes": [
+   "INFERTHETA_ALLOW"
+  ],
+  "jwks_gets_delta": 0
+ },
+ "P3": {
+  "fetch_on_warmup": 0,
+  "fetches_for_2_known_lookups": 0,
+  "fetches_for_20_unknown_sequential": 20,
+  "fetches_for_20_unknown_concurrent": 20
+ },
+ "P5_after_empty_manifest_known_kid_resolves": true
+}
