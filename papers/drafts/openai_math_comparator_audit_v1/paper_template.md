@@ -88,3 +88,12 @@ The companion folder `openai_math_comparator_audit_v1/` holds `PINS.txt`, `setup
 ## References
 
 Sources: the repository itself (https://github.com/openai/math, commit adc7f1241); the Lean Comparator (https://github.com/leanprover/comparator) and its README for the trust model; `lean4export` (https://github.com/leanprover/lean4export); Lean 4 (https://github.com/leanprover/lean4); Mathlib (https://github.com/leanprover-community/mathlib4); `landrun` (https://github.com/Zouuup/landrun). Related in this repository: [`model_local_proofs_travel_v1.md`](model_local_proofs_travel_v1.md) (a check that passes inside one harness does not carry to a different one).
+
+## Revision log
+
+- *2026-10-07, v1.* Eleven short-statement configs run and accepted; two negative controls rejected; static census of the release at commit `adc7f1241`. Statement readings by one same-family reader.
+- *Open for the next revision.* A full Mathlib build (multi-hour, several GB) to reach the 377 configs whose challenge files `import Mathlib`; an independent mathematician's read of the Lean statements, starting with the ones that define their objects from scratch (`FiniteCongruenceGraph`, `GrahamSpherical`); a run with a second kernel; a sandbox at the documented strength. New results are added here with their date; a changed verdict is a correction, not an edit in place.
+
+---
+
+*Living research. This draft is part of ongoing work and may be updated, corrected or withdrawn at any time; the repository history holds the current version and the earlier ones.*
