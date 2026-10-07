@@ -1,0 +1,20 @@
+Building ComparatorChallenges.GotsmanLinial
+⚠ [1640/1640] Built ComparatorChallenges.GotsmanLinial (2.2s)
+warning: ComparatorChallenges/GotsmanLinial.lean:49:8: declaration uses `sorry`
+Build completed successfully (1640 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, OAI.LeanBlast.GotsmanLinial.gotsmanLinialStatement, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from ComparatorChallenges.GotsmanLinial
+Building OAI.Combinatorics.GotsmanLinial.Main
+✔ [1911/1917] Built OAI.Combinatorics.GotsmanLinial.Model (2.8s)
+✔ [1912/1921] Built OAI.Combinatorics.GotsmanLinial.BinomialMoments (3.0s)
+✔ [1913/1921] Built OAI.Combinatorics.GotsmanLinial.HilbertSchmidt (3.6s)
+✔ [1914/1921] Built OAI.Combinatorics.GotsmanLinial.ScalarIncrements (4.0s)
+✔ [1915/1925] Built OAI.Combinatorics.GotsmanLinial.Statement (2.8s)
+✔ [1916/2053] Built OAI.Combinatorics.GotsmanLinial.FiniteCoupling (2.5s)
+✔ [2426/2437] Built Mathlib.Topology.Algebra.NonUnitalAlgebra (3.0s)
+✔ [2427/2437] Built Mathlib.Algebra.Central.Defs (1.7s)
+✔ [2429/2437] Built Mathlib.Analysis.Normed.Group.NullSubmodule (2.2s)
+✔ [2430/2441] Built Mathlib.Topology.Algebra.StarSubalgebra (5.6s)
+✔ [2431/2442] Built Mathlib.Topology.Algebra.Module.PerfectPairing (2.6s)
+✔ [2432/2446] Built Mathlib.Algebra.Central.Basic (1.6s)
+✔ [2433/2446] Built Mathlib.Algebra.Group.Submonoid.Support (2.4s)
+✔ [2434/2447] Built Mathlib.Topology.Algebra.NonUnitalStarAlgebra (4.7s)
