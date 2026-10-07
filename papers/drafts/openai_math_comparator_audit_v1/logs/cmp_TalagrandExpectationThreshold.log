@@ -1,0 +1,58 @@
+Building ComparatorChallenges.TalagrandExpectationThreshold
+⚠ [1010/1010] Built ComparatorChallenges.TalagrandExpectationThreshold (1.8s)
+warning: ComparatorChallenges/TalagrandExpectationThreshold.lean:52:8: declaration uses `sorry`
+Build completed successfully (1010 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, OAI.TalagrandThreshold.talagrand_expectation_threshold_equivalence, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from ComparatorChallenges.TalagrandExpectationThreshold
+Building OAI.Combinatorics.ExpectationThreshold.Main
+✔ [1062/1085] Built OAI.Combinatorics.ExpectationThreshold.RoundingColorProducts (1.0s)
+✔ [1063/1085] Built OAI.Combinatorics.ExpectationThreshold.SelectorTruncationDefinitions (1.9s)
+✔ [1064/1229] Built OAI.Combinatorics.ExpectationThreshold.Model (2.1s)
+✔ [1421/1452] Built OAI.Combinatorics.ExpectationThreshold.ProbabilityFinite (2.6s)
+✔ [1423/1452] Built OAI.Combinatorics.ExpectationThreshold.SelectorCountingWords (1.9s)
+✔ [1424/1452] Built OAI.Combinatorics.ExpectationThreshold.Basic (2.0s)
+✔ [1426/1452] Built OAI.Combinatorics.ExpectationThreshold.RoundingProbabilityContradiction (1.6s)
+✔ [1428/1452] Built OAI.Combinatorics.ExpectationThreshold.SelectorTruncationSlope (2.2s)
+✔ [1429/1452] Built OAI.Combinatorics.ExpectationThreshold.ProbabilityProduct (1.8s)
+✔ [1430/1452] Built OAI.Combinatorics.ExpectationThreshold.SelectorCountingWordsTransport (1.4s)
+✔ [1431/1452] Built OAI.Combinatorics.ExpectationThreshold.SelectorEntropyDyadic (1.5s)
+✔ [1432/1456] Built OAI.Combinatorics.ExpectationThreshold.RoundingMasses (2.0s)
+✔ [1433/1456] Built OAI.Combinatorics.ExpectationThreshold.ProbabilitySubsetProduct (1.9s)
+✔ [1435/1456] Built OAI.Combinatorics.ExpectationThreshold.ProbabilityColors (1.0s)
+✔ [1436/1456] Built OAI.Combinatorics.ExpectationThreshold.SelectorTruncationCompact (2.0s)
+✔ [1438/1458] Built OAI.Combinatorics.ExpectationThreshold.SelectorCountingEncodingRows (1.7s)
+✔ [1440/1463] Built OAI.Combinatorics.ExpectationThreshold.RoundingExpectation (2.0s)
+✔ [1441/1463] Built OAI.Combinatorics.ExpectationThreshold.SelectorDefinitions (1.9s)
+✔ [1446/1463] Built OAI.Combinatorics.ExpectationThreshold.ScaleBounds (2.3s)
+✔ [1447/1463] Built OAI.Combinatorics.ExpectationThreshold.SelectorTruncation (2.0s)
+✔ [1448/1463] Built OAI.Combinatorics.ExpectationThreshold.SelectorDelay (1.7s)
+✔ [1449/1464] Built OAI.Combinatorics.ExpectationThreshold.RoundingLowerBound (2.0s)
+✔ [1451/1464] Built OAI.Combinatorics.ExpectationThreshold.SelectorCountingEncoding (1.6s)
+✔ [1452/1465] Built OAI.Combinatorics.ExpectationThreshold.SelectorProfile (2.0s)
+✔ [1455/1469] Built OAI.Combinatorics.ExpectationThreshold.SelectorDefinitionsLemmas (1.5s)
+✔ [1458/1576] Built OAI.Combinatorics.ExpectationThreshold.ColorMean (1.9s)
+✔ [1564/1589] Built OAI.Combinatorics.ExpectationThreshold.SelectorDelayFeasibility (1.8s)
+✔ [1581/1590] Built OAI.Combinatorics.ExpectationThreshold.SelectorCountingEncodingBound (1.7s)
+✔ [1582/1590] Built OAI.Combinatorics.ExpectationThreshold.SelectorFeasibility (1.0s)
+✔ [1583/1597] Built OAI.Combinatorics.ExpectationThreshold.SelectorReconstruction (1.7s)
+✔ [1584/1597] Built OAI.Combinatorics.ExpectationThreshold.ProbabilityLikelihood (1.8s)
+✔ [1585/1597] Built OAI.Combinatorics.ExpectationThreshold.ColorArithmetic (1.7s)
+✔ [1586/1597] Built OAI.Combinatorics.ExpectationThreshold.SelectorCountingWordsProducts (2.2s)
+✔ [1588/1601] Built OAI.Combinatorics.ExpectationThreshold.SelectorEntropy (3.0s)
+✔ [1589/1601] Built OAI.Combinatorics.ExpectationThreshold.SelectorAverageColor (2.5s)
+✔ [1590/1601] Built OAI.Combinatorics.ExpectationThreshold.TupleCoefficients (2.9s)
+✔ [1591/1601] Built OAI.Combinatorics.ExpectationThreshold.ThresholdBounds (1.5s)
+✔ [1592/1601] Built OAI.Combinatorics.ExpectationThreshold.ThresholdCompactness (1.9s)
+✔ [1593/1601] Built OAI.Combinatorics.ExpectationThreshold.SelectorCommonWitness (2.1s)
+✔ [1594/1601] Built OAI.Combinatorics.ExpectationThreshold.TupleGeometric (2.1s)
+✔ [1595/1601] Built OAI.Combinatorics.ExpectationThreshold.ThresholdAttainment (1.8s)
+✔ [1596/1601] Built OAI.Combinatorics.ExpectationThreshold.SelectorGroupCost (2.1s)
+✔ [1597/1601] Built OAI.Combinatorics.ExpectationThreshold.SelectorGlobalCostProfiles (1.7s)
+✔ [1598/1601] Built OAI.Combinatorics.ExpectationThreshold.SelectorGlobalCost (1.7s)
+✔ [1599/1601] Built OAI.Combinatorics.ExpectationThreshold.SelectorMain (2.5s)
+✔ [1600/1601] Built OAI.Combinatorics.ExpectationThreshold.RoundingMain (2.3s)
+✔ [1601/1601] Built OAI.Combinatorics.ExpectationThreshold.Main (1.8s)
+Build completed successfully (1601 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, OAI.TalagrandThreshold.talagrand_expectation_threshold_equivalence, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from OAI.Combinatorics.ExpectationThreshold.Main
+Running Lean default kernel on solution.
+Lean default kernel accepts the solution
+Your solution is okay!

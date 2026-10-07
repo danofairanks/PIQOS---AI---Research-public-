@@ -1,0 +1,9 @@
+Building Controls.NegChallenge
+⚠ [690/690] Built Controls.NegChallenge (1.6s)
+warning: Controls/NegChallenge.lean:24:8: declaration uses `sorry`
+Build completed successfully (690 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, OAI.SeymourSecondNeighborhood.exists_goodVertex, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Controls.NegChallenge
+Building OAI.Combinatorics.SecondNeighborhood.Main
+Build completed successfully (1871 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, OAI.SeymourSecondNeighborhood.exists_goodVertex, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from OAI.Combinatorics.SecondNeighborhood.Main
+uncaught exception: Const does not match between challenge and target 'OAI.SeymourSecondNeighborhood.GoodVertex'

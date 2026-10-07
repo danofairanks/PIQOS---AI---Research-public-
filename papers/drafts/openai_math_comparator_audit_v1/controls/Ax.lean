@@ -1,0 +1,2 @@
+import OAI.Combinatorics.SecondNeighborhood.Main
+#print axioms OAI.SeymourSecondNeighborhood.exists_goodVertex

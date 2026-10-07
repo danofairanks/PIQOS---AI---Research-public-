@@ -1,0 +1,48 @@
+Building ComparatorChallenges.TalagrandDiscreteConvexity
+⚠ [912/912] Built ComparatorChallenges.TalagrandDiscreteConvexity (1.7s)
+warning: ComparatorChallenges/TalagrandDiscreteConvexity.lean:47:8: declaration uses `sorry`
+Build completed successfully (912 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, OAI.TalagrandDiscreteConvexity.talagrand_discrete_convexity, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from ComparatorChallenges.TalagrandDiscreteConvexity
+Building OAI.Combinatorics.DiscreteConvexity.Main
+✔ [1096/1107] Built OAI.Combinatorics.DiscreteConvexity.FiniteFibers (1.9s)
+✔ [1097/1107] Built OAI.Combinatorics.DiscreteConvexity.Model (1.0s)
+✔ [1098/1111] Built OAI.Combinatorics.DiscreteConvexity.CoveringBinomialBounds (2.1s)
+✔ [1100/1188] Built OAI.Combinatorics.DiscreteConvexity.BinNumerics (2.0s)
+✔ [1555/1572] Built OAI.Combinatorics.DiscreteConvexity.Basic (2.3s)
+✔ [1556/1572] Built Mathlib.Combinatorics.Enumerative.DoubleCounting (2.4s)
+✔ [1557/1572] Built OAI.Combinatorics.DiscreteConvexity.FiniteProbability (2.5s)
+✔ [1558/1574] Built OAI.Combinatorics.DiscreteConvexity.DyadicBins (1.9s)
+✔ [1559/1576] Built OAI.Combinatorics.DiscreteConvexity.CoveringBasic (2.1s)
+✔ [1560/1576] Built OAI.Combinatorics.DiscreteConvexity.CoveringNumericalBounds (3.3s)
+✔ [1561/1576] Built OAI.Combinatorics.DiscreteConvexity.Bernoulli (2.8s)
+✔ [1562/1576] Built OAI.Combinatorics.DiscreteConvexity.ProbabilisticExistence (1.4s)
+✔ [1563/1576] Built OAI.Combinatorics.DiscreteConvexity.Bins (2.4s)
+✔ [1564/1580] Built OAI.Combinatorics.DiscreteConvexity.CoveringResidualTuples (2.3s)
+✔ [1565/1580] Built OAI.Combinatorics.DiscreteConvexity.CoveringRegularization (2.1s)
+✔ [1566/1580] Built OAI.Combinatorics.DiscreteConvexity.CoveringSampledFamilies (2.3s)
+✔ [1567/1581] Built OAI.Combinatorics.DiscreteConvexity.CoveringResidualProbability (1.6s)
+✔ [1568/1581] Built OAI.Combinatorics.DiscreteConvexity.FiniteParseval (1.6s)
+✔ [1569/1581] Built OAI.Combinatorics.DiscreteConvexity.ColumnExpansion (1.5s)
+✔ [1570/1581] Built OAI.Combinatorics.DiscreteConvexity.FourierWeights (1.7s)
+✔ [1571/1583] Built OAI.Combinatorics.DiscreteConvexity.ExceptionalWeightBound (1.6s)
+✔ [1572/1583] Built OAI.Combinatorics.DiscreteConvexity.CoveringPairCost (1.9s)
+✔ [1573/1584] Built OAI.Combinatorics.DiscreteConvexity.DensityConstants (1.5s)
+✔ [1574/1584] Built OAI.Combinatorics.DiscreteConvexity.CoveringResidualCost (1.8s)
+✔ [1575/1587] Built OAI.Combinatorics.DiscreteConvexity.FourierProductKernel (2.0s)
+✔ [1576/1587] Built OAI.Combinatorics.DiscreteConvexity.SignedArrays (1.8s)
+✔ [1578/1590] Built OAI.Combinatorics.DiscreteConvexity.ProductProbability (2.0s)
+✔ [1580/1590] Built OAI.Combinatorics.DiscreteConvexity.UnionBound (1.8s)
+✔ [1582/1590] Built OAI.Combinatorics.DiscreteConvexity.FourierGlobalBound (1.6s)
+✔ [1583/1590] Built OAI.Combinatorics.DiscreteConvexity.ElementaryCovering (2.4s)
+✔ [1584/1590] Built OAI.Combinatorics.DiscreteConvexity.CoordinateObservations (1.7s)
+✔ [1585/1590] Built OAI.Combinatorics.DiscreteConvexity.UnionTuples (1.5s)
+✔ [1586/1590] Built OAI.Combinatorics.DiscreteConvexity.LabelCoupling (1.6s)
+✔ [1587/1590] Built OAI.Combinatorics.DiscreteConvexity.MandatoryCoupling (1.7s)
+✔ [1588/1590] Built OAI.Combinatorics.DiscreteConvexity.WeightedCover (2.1s)
+✔ [1589/1590] Built OAI.Combinatorics.DiscreteConvexity.HalfDensity (1.8s)
+✔ [1590/1590] Built OAI.Combinatorics.DiscreteConvexity.Main (2.2s)
+Build completed successfully (1590 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, OAI.TalagrandDiscreteConvexity.talagrand_discrete_convexity, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from OAI.Combinatorics.DiscreteConvexity.Main
+Running Lean default kernel on solution.
+Lean default kernel accepts the solution
+Your solution is okay!
