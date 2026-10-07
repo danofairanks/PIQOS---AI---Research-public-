@@ -1,0 +1,78 @@
+{
+ "T7": {
+  "complete_log": {
+   "fcr": 0.0,
+   "frr": 0.0
+  },
+  "missing_log_default_allow": {
+   "fcr": 0.232
+  },
+  "missing_log_default_deny": {
+   "fcr": 0.0,
+   "frr": 1.0
+  },
+  "agent_writable_q0.0": {
+   "fcr": 0.0
+  },
+  "agent_writable_q0.25": {
+   "fcr": 0.059
+  },
+  "agent_writable_q0.5": {
+   "fcr": 0.197
+  },
+  "agent_writable_q0.75": {
+   "fcr": 0.465
+  },
+  "agent_writable_q1.0": {
+   "fcr": 1.0
+  },
+  "two_logs_any_adverse_wins": {
+   "fcr": 0.0
+  },
+  "two_logs_agent_wins": {
+   "fcr": 1.0
+  }
+ },
+ "T8": {
+  "fcr_no_sequence_check": 0.003,
+  "fcr_sequence_check": 0.0
+ },
+ "T9": {
+  "batch_by_position": [
+   0.02,
+   0.113,
+   0.197,
+   0.275,
+   0.344,
+   0.405,
+   0.461,
+   0.512,
+   0.558,
+   0.6
+  ],
+  "batch_mean": 0.348,
+  "per_effect_nonatomic": 0.02,
+  "per_effect_atomic": 0
+ },
+ "T10": {
+  "augmented_state_pairs_differing_truth": 0,
+  "delegation_chain": {
+   "1": {
+    "unenforced": 0.097,
+    "enforced_monotone": 0.0
+   },
+   "3": {
+    "unenforced": 0.269,
+    "enforced_monotone": 0.0
+   },
+   "5": {
+    "unenforced": 0.411,
+    "enforced_monotone": 0.0
+   },
+   "10": {
+    "unenforced": 0.65,
+    "enforced_monotone": 0.0
+   }
+  }
+ }
+}

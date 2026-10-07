@@ -1,0 +1,182 @@
+{
+ "X1_unauthorized_roles_rules": [
+  [
+   "authorized_role",
+   "payment.release",
+   "intern",
+   "intern",
+   null
+  ]
+ ],
+ "X1_unauthorized_intern_decision": "ALLOW",
+ "X1_no_authorized_roles_rules": [
+  [
+   "authorized_role",
+   "payment.release",
+   "contractor",
+   "contractor",
+   null
+  ]
+ ],
+ "X1_no_authorized_contractor_decision": "ALLOW",
+ "X2_usd_prefix_rules": [
+  [
+   "authorized_role",
+   "payment.release",
+   "manager",
+   "manager",
+   null
+  ]
+ ],
+ "X2_manager_10M": "ALLOW",
+ "X2_control_dollar_sign": "ESCALATE",
+ "X3_amount_parsing": {
+  "$2 million": [
+   2.0
+  ],
+  "100k": [
+   100.0
+  ],
+  "5,000.50": [
+   5000.0
+  ],
+  "100.000": [
+   100.0
+  ],
+  "1,5": [
+   15.0
+  ],
+  "100,000": [
+   100000.0
+  ]
+ },
+ "X4_rules": [
+  [
+   "required_evidence",
+   "payment.release",
+   null,
+   [
+    "invoice"
+   ],
+   0.0
+  ]
+ ],
+ "X4_intern_with_invoice": "ALLOW",
+ "X4_empty_role": "ALLOW",
+ "X4_control_role_list_present": "REFUSE",
+ "X5_intern_10M_no_role_list": "ALLOW",
+ "X5_manager_over_limit_control": "ESCALATE",
+ "X6_first_wins_100k_then_10k": [
+  "ALLOW"
+ ],
+ "X6_10k_then_100k": [
+  "ESCALATE"
+ ],
+ "V1_amount_omitted_engine": "ALLOW",
+ "V2_engine_neg5": "ALLOW",
+ "V2_engine_true": "ALLOW",
+ "V2_engine_nan": "ESCALATE",
+ "V2_engine_inf": "ESCALATE",
+ "V2_engine_str": "EXC TypeError: '<=' not supported between instances of 'str' and 'float'",
+ "V3_case": "REFUSE",
+ "V3_space": "REFUSE",
+ "V4_delegation_huge": "ESCALATE",
+ "V4_nan": "ESCALATE",
+ "V4_negative": "ESCALATE",
+ "V7_boundary": [
+  "ALLOW",
+  "ESCALATE"
+ ],
+ "C_unknown_action": "REFUSE",
+ "C_role_not_listed": "REFUSE",
+ "C_short_circuit_no_admissibility_checks": [
+  "authority"
+ ],
+ "V0_upload_summary_keys": [
+  "admissibility_rules",
+  "authority_rules",
+  "rules",
+  "source_document",
+  "total_rules"
+ ],
+ "V0_total_rules": 3,
+ "X7_ignored_sentence_listed": false,
+ "X7_three_sentences_summary": {
+  "total_rules": 1,
+  "keys": [
+   "admissibility_rules",
+   "authority_rules",
+   "rules",
+   "source_document",
+   "total_rules"
+  ]
+ },
+ "V1_http_amount_omitted": [
+  200,
+  "ALLOW"
+ ],
+ "V1_http_omitted_with_delegation": [
+  200,
+  "ALLOW"
+ ],
+ "V2_http_str": "EXC TypeError",
+ "V2_http_true": [
+  200,
+  "ALLOW"
+ ],
+ "V2_http_neg5": [
+  200,
+  "ALLOW"
+ ],
+ "V2_http_none": [
+  200,
+  "ALLOW"
+ ],
+ "V2_http_list": "EXC TypeError",
+ "V2_http_big": [
+  200,
+  "ESCALATE"
+ ],
+ "V3_http_case": [
+  200,
+  "REFUSE"
+ ],
+ "V4_http_delegation_huge": [
+  200,
+  "ESCALATE"
+ ],
+ "V5_http_expired_delegation_ignored": [
+  200,
+  "ALLOW"
+ ],
+ "V7_http_boundary": [
+  [
+   200,
+   "ALLOW"
+  ],
+  [
+   200,
+   "ESCALATE"
+  ]
+ ],
+ "V8_http_currency_ignored": "ALLOW",
+ "V6_before_after": {
+  "manager_before": [
+   200,
+   "ALLOW"
+  ],
+  "manager_after": [
+   200,
+   "REFUSE"
+  ],
+  "attacker_after_unlimited": [
+   200,
+   "ALLOW"
+  ]
+ },
+ "V6_unparseable_upload_total_rules": 0,
+ "V6_after_empty_policy_manager": [
+  200,
+  "REFUSE"
+ ]
+}

@@ -1,0 +1,81 @@
+{
+ "C_no_header": 403,
+ "C_untrusted_identity": 403,
+ "C_two_headers": 403,
+ "P1_propose": [
+  200,
+  "staged"
+ ],
+ "P2_same_identity_approves": {
+  "status": 200,
+  "body_status": "applied",
+  "reload_calls": 1
+ },
+ "P6_record_fields": [
+  "control_id",
+  "proposal_id",
+  "rationale",
+  "reviewed_at",
+  "reviewer",
+  "source",
+  "staged_at",
+  "status",
+  "verdict"
+ ],
+ "P6_reviewer_value": "Jane Doe, Chief Risk Officer",
+ "P6_record_contains_caller_identity": false,
+ "P7_reload_call_args": [
+  "call()"
+ ],
+ "P3_reviewer_variants": {
+  "empty_string": [
+   200,
+   "applied",
+   "''"
+  ],
+  "own_service_account": [
+   200,
+   "applied",
+   "'cage-advisor-sa.governance-stack.serviceaccount.identity.linkerd.cluster.local'"
+  ],
+  "arbitrary": [
+   200,
+   "applied",
+   "'x'"
+  ]
+ },
+ "C_second_approve": 404,
+ "C_unknown_id": 404,
+ "C_reject": {
+  "body_status": "rejected",
+  "reload_calls": 0
+ },
+ "C_apply_only_stages": {
+  "status": "pending_approval",
+  "reload_calls": 0
+ },
+ "C_missing_rationale": 400,
+ "P4_two_identity_grid": {
+  "propose=cage-advisor-sa approve=cage-advisor-sa": [
+   200,
+   200,
+   "applied"
+  ],
+  "propose=cage-advisor-sa approve=risk-officer-sa": [
+   200,
+   200,
+   "applied"
+  ],
+  "propose=risk-officer-sa approve=cage-advisor-sa": [
+   200,
+   200,
+   "applied"
+  ],
+  "propose=risk-officer-sa approve=risk-officer-sa": [
+   200,
+   200,
+   "applied"
+  ]
+ },
+ "note_store_type": "dict"
+}
