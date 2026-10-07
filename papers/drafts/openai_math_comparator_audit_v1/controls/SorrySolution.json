@@ -1,0 +1,1 @@
+{"challenge_module":"ComparatorChallenges.SeymourSecondNeighborhood","solution_module":"Controls.SorrySolution","theorem_names":["OAI.SeymourSecondNeighborhood.exists_goodVertex"],"permitted_axioms":["propext","Quot.sound","Classical.choice"]}

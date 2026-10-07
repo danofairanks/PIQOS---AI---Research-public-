@@ -1,0 +1,1 @@
+{"challenge_module":"Controls.NegChallenge","solution_module":"OAI.Combinatorics.SecondNeighborhood.Main","theorem_names":["OAI.SeymourSecondNeighborhood.exists_goodVertex"],"permitted_axioms":["propext","Quot.sound","Classical.choice"]}

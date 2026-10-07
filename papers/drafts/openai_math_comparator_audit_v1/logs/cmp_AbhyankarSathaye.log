@@ -1,0 +1,29 @@
+Building ComparatorChallenges.AbhyankarSathaye
+✔ [1456/1457] Built Mathlib.Algebra.MvPolynomial.CommRing (2.4s)
+⚠ [1457/1457] Built ComparatorChallenges.AbhyankarSathaye (1.5s)
+warning: ComparatorChallenges/AbhyankarSathaye.lean:11:8: declaration uses `sorry`
+Build completed successfully (1457 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, OAI.AbhyankarSathaye.exists_noncoordinate_polynomial, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from ComparatorChallenges.AbhyankarSathaye
+Building OAI.AlgebraicGeometry.AbhyankarSathaye.Counterexample
+✔ [1602/1618] Built OAI.AlgebraicGeometry.AbhyankarSathaye.Identities (2.5s)
+✔ [1603/1618] Built Mathlib.Algebra.MvPolynomial.Derivation (2.9s)
+✔ [1604/1618] Built OAI.AlgebraicGeometry.AbhyankarSathaye.LiftingIdentities (2.3s)
+✔ [1605/1618] Built OAI.AlgebraicGeometry.AbhyankarSathaye.Quotient (2.5s)
+✔ [1606/1618] Built Mathlib.Algebra.MvPolynomial.PDeriv (4.0s)
+✔ [1607/1618] Built OAI.AlgebraicGeometry.AbhyankarSathaye.Reconstruction (2.4s)
+✔ [1608/1618] Built OAI.AlgebraicGeometry.AbhyankarSathaye.LinearElimination (3.3s)
+✔ [1609/1618] Built OAI.AlgebraicGeometry.AbhyankarSathaye.Plane (3.8s)
+✔ [1610/1618] Built OAI.AlgebraicGeometry.AbhyankarSathaye.CriticalPoint (2.4s)
+✔ [1611/1618] Built OAI.AlgebraicGeometry.AbhyankarSathaye.Lifting (3.5s)
+✔ [1612/1618] Built OAI.AlgebraicGeometry.AbhyankarSathaye.NonCoordinate (2.5s)
+✔ [1613/1618] Built OAI.AlgebraicGeometry.AbhyankarSathaye.Presentation (3.5s)
+✔ [1614/1618] Built OAI.AlgebraicGeometry.AbhyankarSathaye.LinearPresentation (4.0s)
+✔ [1615/1618] Built OAI.AlgebraicGeometry.AbhyankarSathaye.Fiber (1.7s)
+✔ [1616/1618] Built OAI.AlgebraicGeometry.AbhyankarSathaye.Stabilization (2.6s)
+✔ [1617/1618] Built OAI.AlgebraicGeometry.AbhyankarSathaye.FiberFormulas (3.1s)
+✔ [1618/1618] Built OAI.AlgebraicGeometry.AbhyankarSathaye.Counterexample (1.6s)
+Build completed successfully (1618 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, OAI.AbhyankarSathaye.exists_noncoordinate_polynomial, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from OAI.AlgebraicGeometry.AbhyankarSathaye.Counterexample
+Running Lean default kernel on solution.
+Lean default kernel accepts the solution
+Your solution is okay!

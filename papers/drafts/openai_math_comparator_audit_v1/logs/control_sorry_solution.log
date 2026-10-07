@@ -1,0 +1,11 @@
+Building ComparatorChallenges.SeymourSecondNeighborhood
+⚠ [690/690] Replayed ComparatorChallenges.SeymourSecondNeighborhood
+warning: ComparatorChallenges/SeymourSecondNeighborhood.lean:34:8: declaration uses `sorry`
+Build completed successfully (690 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, OAI.SeymourSecondNeighborhood.exists_goodVertex, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from ComparatorChallenges.SeymourSecondNeighborhood
+Building Controls.SorrySolution
+⚠ [690/690] Built Controls.SorrySolution (1.1s)
+warning: Controls/SorrySolution.lean:24:8: declaration uses `sorry`
+Build completed successfully (690 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, OAI.SeymourSecondNeighborhood.exists_goodVertex, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Controls.SorrySolution
+uncaught exception: Illegal axiom detected: 'sorryAx'
