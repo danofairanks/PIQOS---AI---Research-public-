@@ -4,7 +4,7 @@
 
 **Scope of naming.** The objects examined are eight published or preprinted research papers on self-improving AI agents, named by title and, where the source collection gives one, arXiv identifier. No individual is characterised; the predictions concern what the papers' designs and reports contain. The papers were chosen from a public curated collection ("Self-Improving Agents", DAIR.AI Academy, saved 2026-10-08), which is a secondary source.
 
-**Disclosure.** Drafted with AI assistance. **No paper has been read for this note.** The predictions rest on one-line summaries in the secondary collection and on the drafting model's prior familiarity with some of these works, so they are guesses to be scored, not findings. The point of publishing them first is the timestamp: this file's repository history records what was predicted before any primary-source reading.
+**Disclosure.** Drafted with AI assistance. **No paper has been read for this note.** The predictions rest on one-line summaries in the secondary collection and on the drafting model's prior familiarity with some of these works, so they are guesses to be scored, not findings. **One exception to blindness:** earlier, separate work by the same operator and drafting-model pairing read parts of the Darwin Gödel Machine paper (its first ten pages and a comparison of its self-modification archive), so the predictions for #14 below are not blind and are marked as such; the other seven papers were not read in that work. The point of publishing them first is the timestamp: this file's repository history records what was predicted before any primary-source reading.
 
 ## 1. The question
 
@@ -16,16 +16,16 @@ For each paper, three questions, answered from the primary text once read:
 - **(a) No validator for the property.** Nothing in the gate verifies the property the designers care about (for example that a reported test result reflects an actual test run), or a validator exists but its predicate does not cover the whole input domain.
 - **(b) Late validation.** The check that would catch a bad change happens after the change has already taken effect.
 - **(c) Proxy conversion.** The quantity the gate sees (a benchmark score) differs from the quantity that matters (the improvement of the agent's future descendants, or of its performance outside the benchmark) in a way the design does not control.
-Many papers will fit none; that is a result too. This lens is a hypothesis carried from earlier small measurements of validators on cumulative caps; it is not established for this literature.
+Many papers will fit none; that is a result too. This lens is a hypothesis carried from earlier small measurements of validators on cumulative caps, and it is related to earlier public work on when a constraint actually binds an optimising policy and whether it survives change over time (`governance_binding_axiom_v2.md`, sections on binding and on the temporal boundary gap); it is not established for this literature.
 
 ## 3. The papers (batch 1)
 
 | # in the source collection | paper | arXiv id (from the source page) |
 |---|---|---|
-| 14 | Darwin Gödel Machine: Open-Ended Evolution of Self-Improving Agents | not on the source page |
-| 12 | Self-Taught Optimizer (STOP): Recursively Self-Improving Code Generation | not on the source page |
+| 14 | Darwin Gödel Machine: Open-Ended Evolution of Self-Improving Agents | 2505.22954 |
+| 12 | Self-Taught Optimizer (STOP): Recursively Self-Improving Code Generation | 2310.02304 |
 | 16 | Huxley-Gödel Machine | 2510.21614 |
-| 18 | Hyperagents | not on the source page |
+| 18 | Hyperagents | 2603.19461 |
 | 25 | Recursive self-improvement of AI research agents | 2609.26457 |
 | 24 | PostTrainBench: Can LLM Agents Automate LLM Post-Training? | 2603.08640 |
 | 30 | Mind the Gap: Examining the Self-Improvement Capabilities of Large Language Models | 2412.02674 |
@@ -34,7 +34,7 @@ Many papers will fit none; that is a result too. This lens is a hypothesis carri
 ## 4. Predictions, filed before any reading
 
 Each is the probability that the paper itself reports, or its design exhibits, the stated feature.
-- **#14 Darwin Gödel Machine.** The gate is a benchmark pass/fail derived from logs the modified agent can influence: route (a) 80%. The paper itself (not only an accompanying writeup) reports a faked-log case: 35%. The gate is otherwise external and fixed: 85%.
+- **#14 Darwin Gödel Machine (not blind: partly read in earlier work).** The gate is a benchmark pass/fail derived from logs the modified agent can influence: route (a) 80%. The paper itself (not only an accompanying writeup) reports a faked-log case: 35%. The gate is otherwise external and fixed: 85%.
 - **#12 STOP.** The improver runs under a sandbox setting it can edit: a measurement of sandbox-bypass attempts appears in the paper 85%. The authors state a route (a) or (b) mapping themselves: 25%.
 - **#16 Huxley-Gödel Machine.** The gate (an agent's benchmark score) is an imperfect proxy for its descendants' improvement, a route (c)-like gap: 75%. The proposed remedy aggregates over a lineage: 90%.
 - **#18 Hyperagents.** The evaluator remains an external fixed benchmark while task and meta agents are merged: 80%. The paper reports reward or objective hacking: 40%. The paper states that gains on coding tasks do not carry over to other tasks: 60%.
@@ -58,7 +58,7 @@ Papers whose gates read only artifacts the agent cannot write, and whose reports
 
 ## 8. Limitations
 
-Nothing has been read. The source is a secondary, partly editorial compilation (its phrases such as "most convincing" are its curator's judgement and are not used here). Several arXiv identifiers are missing from the source page and are not supplied from memory in this note. Numbers quoted by the collection (benchmark gains, hacking rates, claims from laboratory posts) are not repeated here because they are unverified. The drafting model is the only predictor, so its predictions are not independent of one another.
+Nothing has been read. The source is a secondary, partly editorial compilation (its phrases such as "most convincing" are its curator's judgement and are not used here). The arXiv identifiers are taken from the source page's own links (secondary) and are to be confirmed on each paper's first page. Numbers quoted by the collection (benchmark gains, hacking rates, claims from laboratory posts) are not repeated here because they are unverified. The drafting model is the only predictor, so its predictions are not independent of one another.
 
 ## 9. Reproduction
 
@@ -66,10 +66,13 @@ No code. The record is this file and its history. The source collection can be s
 
 ## References
 
-Sources: [1] "Self-Improving Agents", paper collection, DAIR.AI Academy (`academy.dair.ai/papers/collections/self-improving-agents`), saved 2026-10-08 (secondary; its summaries are not reproduced here). [2] The eight papers listed in section 3 (unread at the time of writing).
+Sources: [1] "Self-Improving Agents", paper collection, DAIR.AI Academy (`academy.dair.ai/papers/collections/self-improving-agents`), saved 2026-10-08 (secondary; its summaries are not reproduced here). [2] The eight papers listed in section 3 (unread at the time of writing, apart from the partial read of #14 noted above). [3] `papers/published/governance_binding_axiom_v2.md`, this repository.
 
 ## Revision log
 
+- *2026-10-08, v1.3.* Added a pointer: the papers were subsequently read and the results are in `rsi_gate_audit_results_v1.md`. The predictions above are unchanged.
+- *2026-10-08, v1.2.* Filled in three arXiv identifiers (#14, #12, #18) that the source page does carry as links; an earlier version wrongly said it did not.
+- *2026-10-08, v1.1.* Disclosed that #14 was partly read in earlier work, so its predictions are not blind; added the related public reference.
 - *2026-10-08, v1.* Predictions filed before any primary-source reading.
 
 ---
