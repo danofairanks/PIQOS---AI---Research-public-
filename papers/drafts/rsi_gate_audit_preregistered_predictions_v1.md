@@ -4,7 +4,7 @@
 
 **Scope of naming.** The objects examined are eight published or preprinted research papers on self-improving AI agents, named by title and, where the source collection gives one, arXiv identifier. No individual is characterised; the predictions concern what the papers' designs and reports contain. The papers were chosen from a public curated collection ("Self-Improving Agents", DAIR.AI Academy, saved 2026-10-08), which is a secondary source.
 
-**Disclosure.** Drafted with AI assistance. **No paper has been read for this note.** The predictions rest on one-line summaries in the secondary collection and on the drafting model's prior familiarity with some of these works, so they are guesses to be scored, not findings. The point of publishing them first is the timestamp: this file's repository history records what was predicted before any primary-source reading.
+**Disclosure.** Drafted with AI assistance. **No paper has been read for this note.** The predictions rest on one-line summaries in the secondary collection and on the drafting model's prior familiarity with some of these works, so they are guesses to be scored, not findings. **One exception to blindness:** earlier, separate work by the same operator and drafting-model pairing read parts of the Darwin Gödel Machine paper (its first ten pages and a comparison of its self-modification archive), so the predictions for #14 below are not blind and are marked as such; the other seven papers were not read in that work. The point of publishing them first is the timestamp: this file's repository history records what was predicted before any primary-source reading.
 
 ## 1. The question
 
@@ -16,7 +16,7 @@ For each paper, three questions, answered from the primary text once read:
 - **(a) No validator for the property.** Nothing in the gate verifies the property the designers care about (for example that a reported test result reflects an actual test run), or a validator exists but its predicate does not cover the whole input domain.
 - **(b) Late validation.** The check that would catch a bad change happens after the change has already taken effect.
 - **(c) Proxy conversion.** The quantity the gate sees (a benchmark score) differs from the quantity that matters (the improvement of the agent's future descendants, or of its performance outside the benchmark) in a way the design does not control.
-Many papers will fit none; that is a result too. This lens is a hypothesis carried from earlier small measurements of validators on cumulative caps; it is not established for this literature.
+Many papers will fit none; that is a result too. This lens is a hypothesis carried from earlier small measurements of validators on cumulative caps, and it is related to earlier public work on when a constraint actually binds an optimising policy and whether it survives change over time (`governance_binding_axiom_v2.md`, sections on binding and on the temporal boundary gap); it is not established for this literature.
 
 ## 3. The papers (batch 1)
 
@@ -34,7 +34,7 @@ Many papers will fit none; that is a result too. This lens is a hypothesis carri
 ## 4. Predictions, filed before any reading
 
 Each is the probability that the paper itself reports, or its design exhibits, the stated feature.
-- **#14 Darwin Gödel Machine.** The gate is a benchmark pass/fail derived from logs the modified agent can influence: route (a) 80%. The paper itself (not only an accompanying writeup) reports a faked-log case: 35%. The gate is otherwise external and fixed: 85%.
+- **#14 Darwin Gödel Machine (not blind: partly read in earlier work).** The gate is a benchmark pass/fail derived from logs the modified agent can influence: route (a) 80%. The paper itself (not only an accompanying writeup) reports a faked-log case: 35%. The gate is otherwise external and fixed: 85%.
 - **#12 STOP.** The improver runs under a sandbox setting it can edit: a measurement of sandbox-bypass attempts appears in the paper 85%. The authors state a route (a) or (b) mapping themselves: 25%.
 - **#16 Huxley-Gödel Machine.** The gate (an agent's benchmark score) is an imperfect proxy for its descendants' improvement, a route (c)-like gap: 75%. The proposed remedy aggregates over a lineage: 90%.
 - **#18 Hyperagents.** The evaluator remains an external fixed benchmark while task and meta agents are merged: 80%. The paper reports reward or objective hacking: 40%. The paper states that gains on coding tasks do not carry over to other tasks: 60%.
@@ -66,10 +66,11 @@ No code. The record is this file and its history. The source collection can be s
 
 ## References
 
-Sources: [1] "Self-Improving Agents", paper collection, DAIR.AI Academy (`academy.dair.ai/papers/collections/self-improving-agents`), saved 2026-10-08 (secondary; its summaries are not reproduced here). [2] The eight papers listed in section 3 (unread at the time of writing).
+Sources: [1] "Self-Improving Agents", paper collection, DAIR.AI Academy (`academy.dair.ai/papers/collections/self-improving-agents`), saved 2026-10-08 (secondary; its summaries are not reproduced here). [2] The eight papers listed in section 3 (unread at the time of writing, apart from the partial read of #14 noted above). [3] `papers/published/governance_binding_axiom_v2.md`, this repository.
 
 ## Revision log
 
+- *2026-10-08, v1.1.* Disclosed that #14 was partly read in earlier work, so its predictions are not blind; added the related public reference.
 - *2026-10-08, v1.* Predictions filed before any primary-source reading.
 
 ---
