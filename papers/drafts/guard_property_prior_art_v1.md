@@ -16,7 +16,7 @@ The repository states a property of a 13-state model: `NoDirectBind == (phase = 
 |---|---|---|
 | Anderson et al., Computer Security Technology Planning Study, ESD-TR-73-51 (1972) | Source usually cited for the reference monitor concept | **Not read.** Existence, date and number confirmed by the bibliography of Saltzer and Schroeder [2] and by a collection index whose keyword list includes "reference monitor"; the attribution of the concept to "the Anderson panel" is confirmed by a 1976 report's introduction as quoted in that index |
 | Schell, Downey and Popek, Preliminary Notes on the Design of Secure Military Computer Systems, MCI-73-1 (1973) | Names the principles complete mediation, isolation, simplicity | Abstract as quoted in the collection index; paper not read |
-| Saltzer and Schroeder, The Protection of Information in Computer Systems (1975) | Complete mediation; fail-safe defaults | The design-principles passages read verbatim; the rest of the paper not read |
+| Saltzer and Schroeder, The Protection of Information in Computer Systems (1975) | Complete mediation; fail-safe defaults | The design principles read verbatim; the passages on identification, protection dynamics and authority to change access control lists read; the rest by keyword search only (read as a saved web version, v1.3). Remembered authority checks and revocation during use are addressed there (complete mediation; "problem of dynamics") |
 | Reference monitor article (encyclopedia) | Three requirements: always invoked, tamper-proof, evaluable | Read in full; secondary source |
 | Schneider, Enforceable Security Policies, ACM TISSEC 3(1):30–50 (2000) | Characterizes which policies monitoring can enforce | Abstract, introduction, section 2 and the pragmatics passage read; sections 3–5 skimmed |
 | HALO, arXiv 2607.27636v1 (30 July 2026; preprint) | Agent-era admission and dispatch protocol with a gate-boundary proposition | Main text and the proof statements and threats section of the supplement read; evaluation sections not read |
@@ -58,6 +58,7 @@ Sources: [1] the repository `github.com/LalaSkye/no-direct-bind` at commit `37af
 
 ## Revision log
 
+- *2026-10-08, v1.3.* Saltzer and Schroeder read beyond the design principles (identification, dynamics, authority to change access control lists); the row says which parts.
 - *2026-10-08, v1.2.* Read Lampson (1971) and Harrison, Ruzzo and Ullman as primaries; the row text above says which parts. A detailed mapping to a different draft is in section 3a of `public_admissibility_evaluators_v1.md`. Graham and Denning still not read.
 - *2026-10-08, v1.1.* Added the access-matrix lineage (Lampson 1969 and 1971; Graham-Denning; Harrison-Ruzzo-Ullman), marked not read.
 - *2026-10-07, v1.* First version. Rows marked "not read" are the next revision's work; the order is the 1972 report, then the 1973 notes, then the remaining sections of the 2000 paper.
