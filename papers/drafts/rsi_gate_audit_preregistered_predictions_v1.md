@@ -22,10 +22,10 @@ Many papers will fit none; that is a result too. This lens is a hypothesis carri
 
 | # in the source collection | paper | arXiv id (from the source page) |
 |---|---|---|
-| 14 | Darwin Gödel Machine: Open-Ended Evolution of Self-Improving Agents | not on the source page |
-| 12 | Self-Taught Optimizer (STOP): Recursively Self-Improving Code Generation | not on the source page |
+| 14 | Darwin Gödel Machine: Open-Ended Evolution of Self-Improving Agents | 2505.22954 |
+| 12 | Self-Taught Optimizer (STOP): Recursively Self-Improving Code Generation | 2310.02304 |
 | 16 | Huxley-Gödel Machine | 2510.21614 |
-| 18 | Hyperagents | not on the source page |
+| 18 | Hyperagents | 2603.19461 |
 | 25 | Recursive self-improvement of AI research agents | 2609.26457 |
 | 24 | PostTrainBench: Can LLM Agents Automate LLM Post-Training? | 2603.08640 |
 | 30 | Mind the Gap: Examining the Self-Improvement Capabilities of Large Language Models | 2412.02674 |
@@ -58,7 +58,7 @@ Papers whose gates read only artifacts the agent cannot write, and whose reports
 
 ## 8. Limitations
 
-Nothing has been read. The source is a secondary, partly editorial compilation (its phrases such as "most convincing" are its curator's judgement and are not used here). Several arXiv identifiers are missing from the source page and are not supplied from memory in this note. Numbers quoted by the collection (benchmark gains, hacking rates, claims from laboratory posts) are not repeated here because they are unverified. The drafting model is the only predictor, so its predictions are not independent of one another.
+Nothing has been read. The source is a secondary, partly editorial compilation (its phrases such as "most convincing" are its curator's judgement and are not used here). The arXiv identifiers are taken from the source page's own links (secondary) and are to be confirmed on each paper's first page. Numbers quoted by the collection (benchmark gains, hacking rates, claims from laboratory posts) are not repeated here because they are unverified. The drafting model is the only predictor, so its predictions are not independent of one another.
 
 ## 9. Reproduction
 
@@ -70,6 +70,7 @@ Sources: [1] "Self-Improving Agents", paper collection, DAIR.AI Academy (`academ
 
 ## Revision log
 
+- *2026-10-08, v1.2.* Filled in three arXiv identifiers (#14, #12, #18) that the source page does carry as links; an earlier version wrongly said it did not.
 - *2026-10-08, v1.1.* Disclosed that #14 was partly read in earlier work, so its predictions are not blind; added the related public reference.
 - *2026-10-08, v1.* Predictions filed before any primary-source reading.
 
