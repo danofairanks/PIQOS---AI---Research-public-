@@ -70,6 +70,7 @@ Sources: [1] "Self-Improving Agents", paper collection, DAIR.AI Academy (`academ
 
 ## Revision log
 
+- *2026-10-08, v1.3.* Added a pointer: the papers were subsequently read and the results are in `rsi_gate_audit_results_v1.md`. The predictions above are unchanged.
 - *2026-10-08, v1.2.* Filled in three arXiv identifiers (#14, #12, #18) that the source page does carry as links; an earlier version wrongly said it did not.
 - *2026-10-08, v1.1.* Disclosed that #14 was partly read in earlier work, so its predictions are not blind; added the related public reference.
 - *2026-10-08, v1.* Predictions filed before any primary-source reading.
