@@ -58,7 +58,7 @@ Sources: [1] the repository `github.com/LalaSkye/no-direct-bind` at commit `37af
 
 ## Revision log
 
-- *2026-10-08, v1.1.* Added the access-matrix lineage (Lampson 1969/1971; Graham-Denning; Harrison-Ruzzo-Ullman), marked not read.
+- *2026-10-08, v1.1.* Added the access-matrix lineage (Lampson 1969 and 1971; Graham-Denning; Harrison-Ruzzo-Ullman), marked not read.
 - *2026-10-07, v1.* First version. Rows marked "not read" are the next revision's work; the order is the 1972 report, then the 1973 notes, then the remaining sections of the 2000 paper.
 
 ---
