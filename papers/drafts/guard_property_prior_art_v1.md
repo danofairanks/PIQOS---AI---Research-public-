@@ -20,8 +20,8 @@ The repository states a property of a 13-state model: `NoDirectBind == (phase = 
 | Reference monitor article (encyclopedia) | Three requirements: always invoked, tamper-proof, evaluable | Read in full; secondary source |
 | Schneider, Enforceable Security Policies, ACM TISSEC 3(1):30–50 (2000) | Characterizes which policies monitoring can enforce | Abstract, introduction, section 2 and the pragmatics passage read; sections 3–5 skimmed |
 | HALO, arXiv 2607.27636v1 (30 July 2026; preprint) | Agent-era admission and dispatch protocol with a gate-boundary proposition | Main text and the proof statements and threats section of the supplement read; evaluation sections not read |
-| Lampson, Protection (1971; Princeton Symposium; reprinted ACM Operating Systems Review 1974) and Dynamic protection structures (1969) | Subjects, objects and the access matrix: access control formulated abstractly | **Not read.** Existence and dates from the bibliography of Saltzer and Schroeder [2]; the characterization ("the problem of access control is formulated very abstractly for the first time, using the concepts of subjects, object, and access matrix") is from a 1976 report's introduction as quoted in the collection index |
-| Graham and Denning, Protection: principles and practice (1972); Harrison, Ruzzo and Ullman, Protection in operating systems (1976) | Rules for changing an access matrix; safety of rights in a matrix model | **Not read**; named from memory only, not verified in this note |
+| Lampson, Protection (1971; Princeton Symposium; reprinted ACM Operating Systems Review 1974) and Dynamic protection structures (1969) | Subjects, objects and the access matrix: access control formulated abstractly | **Protection (1971) read** (PDF and the author's web version; pages 9–10 by keyword search only) as of v1.2; *Dynamic protection structures* (1969) not read. Dates were first taken from the bibliography of Saltzer and Schroeder [2]; the characterization ("the problem of access control is formulated very abstractly for the first time, using the concepts of subjects, object, and access matrix") is from a 1976 report's introduction as quoted in the collection index |
+| Graham and Denning, Protection: principles and practice (1972); Harrison, Ruzzo and Ullman, Protection in operating systems (1976) | Rules for changing an access matrix; safety of rights in a matrix model | Graham and Denning **not read**. Harrison, Ruzzo and Ullman read as an eleven-page conference-length PDF as of v1.2 (the CACM version was not read); named from memory only before that |
 | Alpern and Schneider, Defining Liveness (1985); Hardy, The Confused Deputy (1988); Strom and Yemini, Typestate (1986) | Safety properties; ambient authority; state-dependent operation validity | **Not read**; known from search results only |
 
 ## 3. What the lineage says
@@ -58,6 +58,7 @@ Sources: [1] the repository `github.com/LalaSkye/no-direct-bind` at commit `37af
 
 ## Revision log
 
+- *2026-10-08, v1.2.* Read Lampson (1971) and Harrison, Ruzzo and Ullman as primaries; the row text above says which parts. A detailed mapping to a different draft is in section 3a of `public_admissibility_evaluators_v1.md`. Graham and Denning still not read.
 - *2026-10-08, v1.1.* Added the access-matrix lineage (Lampson 1969 and 1971; Graham-Denning; Harrison-Ruzzo-Ullman), marked not read.
 - *2026-10-07, v1.* First version. Rows marked "not read" are the next revision's work; the order is the 1972 report, then the 1973 notes, then the remaining sections of the 2000 paper.
 
