@@ -1,0 +1,232 @@
+{
+ "('batch1', 'B01', 'B')": {
+  "chosen": "inclusive",
+  "named": [],
+  "note": "no"
+ },
+ "('batch1', 'B01', 'C')": {
+  "chosen": "inclusive",
+  "named": [
+   "exclusive",
+   "inclusive"
+  ],
+  "note": "yes: \"between 5 and 20\" could be exclusive of endpoints; read as inclusive, the standard convention for a stated range."
+ },
+ "('batch1', 'B01', 'D')": {
+  "chosen": "inclusive",
+  "named": [
+   "exclusive",
+   "inclusive"
+  ],
+  "note": "yes: 'between' may include or exclude the endpoints; chose inclusive"
+ },
+ "('batch1', 'B01', 'A')": {
+  "chosen": "exclusive",
+  "named": [],
+  "note": ""
+ },
+ "('batch1', 'B09', 'B')": {
+  "chosen": "x&(y|z)",
+  "named": [],
+  "note": "no"
+ },
+ "('batch1', 'B09', 'C')": {
+  "chosen": "(x&y)|z",
+  "named": [
+   "(x&y)|z",
+   "x&(y|z)"
+  ],
+  "note": "yes: \"x positive and y positive or z positive\" has no explicit grouping; read with and binding tighter than or, i.e. (x>0 and y>0) or z>0."
+ },
+ "('batch1', 'B09', 'D')": {
+  "chosen": "(x&y)|z",
+  "named": [
+   "(x&y)|z",
+   "x&(y|z)"
+  ],
+  "note": "yes: scope of and/or; chose (x>0 and y>0) or z>0 by standard precedence, rather than x>0 and (y>0 or z>0)"
+ },
+ "('batch1', 'B09', 'A')": {
+  "chosen": "(x&y)|z",
+  "named": [],
+  "note": ""
+ },
+ "('batch1', 'B11', 'B')": {
+  "chosen": "at most 1 positive",
+  "named": [],
+  "note": "no"
+ },
+ "('batch1', 'B11', 'C')": {
+  "chosen": "at most 2 positive",
+  "named": [],
+  "note": "no"
+ },
+ "('batch1', 'B11', 'D')": {
+  "chosen": "at most 2 positive",
+  "named": [],
+  "note": "no"
+ },
+ "('batch1', 'B11', 'A')": {
+  "chosen": "at most 2 positive",
+  "named": [],
+  "note": ""
+ },
+ "('batch1', 'B12', 'B')": {
+  "chosen": "any order",
+  "named": [],
+  "note": "yes: the statement does not specify an ordering; I interpret it as saying the three integers, in any order, form three consecutive integers."
+ },
+ "('batch1', 'B12', 'C')": {
+  "chosen": "ordered",
+  "named": [
+   "any order",
+   "ordered"
+  ],
+  "note": "yes: \"consecutive\" could permit descending order or any permutation; read as strictly ascending in the given order."
+ },
+ "('batch1', 'B12', 'D')": {
+  "chosen": "ordered",
+  "named": [
+   "any order",
+   "ordered"
+  ],
+  "note": "yes: may mean consecutive in the listed ascending order, or in any order; chose listed ascending order"
+ },
+ "('batch1', 'B12', 'A')": {
+  "chosen": "ordered",
+  "named": [],
+  "note": ""
+ },
+ "('batch1', 'B13', 'B')": {
+  "chosen": "x>y and diff<=3",
+  "named": [],
+  "note": "yes: \"greater than y by no more than 3\" is taken to require x > y and x-y <= 3."
+ },
+ "('batch1', 'B13', 'C')": {
+  "chosen": "x>y and diff<=3",
+  "named": [
+   "diff<=3 only",
+   "x>y and diff<=3"
+  ],
+  "note": "yes: unclear whether \"greater than y\" is asserted as a precondition or only bounds the excess; read as requiring x > y and x - y <= 3."
+ },
+ "('batch1', 'B13', 'D')": {
+  "chosen": "x>y and diff<=3",
+  "named": [
+   "diff<=3 only",
+   "x>y and diff<=3"
+  ],
+  "note": "yes: may assert x > y (0 < x-y <= 3) or only bound the difference (x-y <= 3); chose the former"
+ },
+ "('batch1', 'B13', 'A')": {
+  "chosen": "diff<=3 only",
+  "named": [],
+  "note": ""
+ },
+ "('batch2', 'E06', 'B')": {
+  "chosen": "other",
+  "named": [],
+  "note": "yes: pool and reserve are interpreted as exact values; epoch has only the stated upper bound, and stale is assumed nonnegative."
+ },
+ "('batch2', 'E06', 'C')": {
+  "chosen": "exact",
+  "named": [
+   "exact",
+   "upper bound"
+  ],
+  "note": "yes: bare 'pool 2' and 'reserve 1' read as exact values, because the same list marks upper bounds explicitly for the other two; under the 'Bounds' heading they could instead mean pool <= 2 and reserve <= 1"
+ },
+ "('batch2', 'E06', 'D')": {
+  "chosen": "upper bound",
+  "named": [
+   "exact",
+   "upper bound"
+  ],
+  "note": "yes: 'pool 2, reserve 1' could be exact values (pool = 2, reserve = 1) or upper bounds; chose upper bounds because of the 'Bounds:' heading"
+ },
+ "('batch2', 'E06', 'A')": {
+  "chosen": "upper bound",
+  "named": [],
+  "note": ""
+ },
+ "('batch2', 'E10', 'B')": {
+  "chosen": "other",
+  "named": [
+   "t>4"
+  ],
+  "note": "yes: paging is required only after more than 4 whole hours without acknowledgment; p is constrained to 0 or 1."
+ },
+ "('batch2', 'E10', 'C')": {
+  "chosen": "t>=4",
+  "named": [
+   "t>4",
+   "t>=4"
+  ],
+  "note": "yes: boundary at t = 4 read as triggering (4 whole hours elapsed with no acknowledgement); the alternative is t > 4"
+ },
+ "('batch2', 'E10', 'D')": {
+  "chosen": "t>=4",
+  "named": [
+   "t>4",
+   "t>=4"
+  ],
+  "note": "yes: the boundary t = 4 could or could not trigger paging (>= 4 vs > 4); chose >= 4. Read as one-way: paging before 4h is not forbidden"
+ },
+ "('batch2', 'E10', 'A')": {
+  "chosen": "t>4",
+  "named": [],
+  "note": ""
+ },
+ "('batch2', 'K1', 'B')": {
+  "chosen": "net_final",
+  "named": [],
+  "note": "yes: 'capacity consumed' is interpreted as the algebraic sum of the signed amounts, so negative amounts reduce the total."
+ },
+ "('batch2', 'K1', 'C')": {
+  "chosen": "net_prefix",
+  "named": [
+   "gross",
+   "net_final",
+   "net_prefix"
+  ],
+  "note": "yes: 'never' read as holding after each request in order (every prefix sum <= C), with negative amounts giving capacity back since nothing says otherwise; alternatives are the final sum only, or negatives restoring nothing as in K2/K3"
+ },
+ "('batch2', 'K1', 'D')": {
+  "chosen": "net_prefix",
+  "named": [
+   "gross",
+   "net_final",
+   "net_prefix"
+  ],
+  "note": "yes: 'never' could mean every running total or only the final total, and a negative amount could reduce consumed capacity or not; chose running totals in the given order with negative amounts reducing consumption, and did not require 0 <= C before the first request"
+ },
+ "('batch2', 'K1', 'A')": {
+  "chosen": "net_final",
+  "named": [],
+  "note": ""
+ },
+ "('batch2', 'K2', 'B')": {
+  "chosen": "net_prefix",
+  "named": [],
+  "note": "yes: 'consumed capacity is never given back' is interpreted as requiring every prefix sum to stay within the cap; negative amounts still reduce the prefix sum."
+ },
+ "('batch2', 'K2', 'C')": {
+  "chosen": "gross",
+  "named": [],
+  "note": "no"
+ },
+ "('batch2', 'K2', 'D')": {
+  "chosen": "gross",
+  "named": [
+   "gross",
+   "net_final",
+   "net_prefix"
+  ],
+  "note": "yes: 'never given back' could mean negative amounts contribute zero, or only that capacity is not released over time while negative amounts still net off; chose negative amounts contribute zero, so the final total bounds every running total"
+ },
+ "('batch2', 'K2', 'A')": {
+  "chosen": "gross",
+  "named": [],
+  "note": ""
+ }
+}

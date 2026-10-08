@@ -1,0 +1,14 @@
+# PREREG — boundary-statement divergence rate test (filed before any B/C output exists)
+Question: how often do independent formalisations of boundary/ambiguous statements diverge (checked by exact QF-LIA equivalence in z3), and is the cross-family rate higher than the same-family rate?
+Stimuli: 24 plain-English statements (stimuli.json): 18 "ambiguous" boundary/scope items (B01-B18) and 6 controls with explicit wording (C01-C06). All over Int arguments, no quantifiers => equivalence decided exactly (no inconclusive pairs expected). No ordering or cue words added (S3-style leading cue removed; B14 states only "together do not exceed the cap... amounts may be negative").
+Arms: A = Claude (me), claude_formalisations.json, committed BEFORE the brief is sent; NOT blind to the ambiguities (I wrote the stimuli). B = fresh ChatGPT session (cross-family). C = fresh Claude chat (blind same-family), if the operator runs it. Same BRIEF.md for B and C. Rates reported per pair on B-items and on controls. If C is absent, the same-family comparison is not made.
+Checker: check.py (sound; `unsat` proves, `sat` is a real countermodel). Divergence = any relation other than equivalent. Formats failing validation are recorded as invalid items, not divergences.
+Predictions (made before data):
+ - Controls C01-C06: <=1 divergence in every pair (95%); expected 0.
+ - A vs B on B01-B18: divergence rate 33% (6/18; 80% interval 3-10 of 18).
+ - A vs C (same family but A not blind): 22% (4/18; interval 1-8). B vs C about equal to A vs B. P(cross-family rate > same-family rate by >=2 items) = 50%.
+ - Items most likely to diverge (my probability): B01 between 55%, B10 either-or 55%, B14 cap total 55%, B09 and/or precedence 45%, B12 consecutive (ordered vs any order) 45%, B03 "up to" 40%, B05 "ranges from" 30%, B16 negated "between" 50% (propagates B01's choice), B08 closer-to-0 strict vs non 30%, B02 within 3 (<= vs <) 30%, B13 "greater than by no more than 3" (also lower bound x>y?) 40%.
+ - Of divergent items, share where neither translator reports ambiguity: 45%.
+ - Same-translator consistency check: B16 diverges from "not B01-reading-consistent" in at least one arm (i.e. an arm uses inclusive for B01 and exclusive for B16 or vice versa): 15%.
+Scoring after data: per-pair rate with exact counts (no confidence claim at n=18; report counts only), divergent list, self-report table, B01/B16 consistency, and which of my named top items diverged. Prediction accuracy reported item-wise.
+Limits fixed in advance: 18 items I wrote; boundary wording style is English-only; one session per arm; equivalence is over my SMT encodings (e.g. mod semantics for negatives); same-family arm A is not blind; two model families share most training data, so a low cross-family rate is not evidence the reading is correct.

@@ -1,0 +1,11 @@
+{
+ "L01": "no",
+ "L02": "yes: the slash in max_rate / time_period can be read as per (max_rate acquisitions per period) or as arithmetic division; read as per, so n <= max_rate within one period",
+ "L03": "yes: unclear whether the check accounts for prior consumption (used + cost <= limit) or compares cost alone against the limit (cost <= limit); chose used + cost <= limit, with exactly reaching the limit not counting as exceeding",
+ "L04": "no",
+ "L05": "no",
+ "L07": "no",
+ "L08": "no",
+ "L09": "yes: unclear whether the weighted count compared to the limit is the count before this call (existing <= limit) or after adding the requested amount (existing + amount <= limit); chose the post-acquisition count, since the pre-acquisition reading lets a single call overshoot the limit",
+ "L10": "no"
+}

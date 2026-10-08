@@ -1,0 +1,11 @@
+{
+ "L01": "no",
+ "L02": "yes: 'max_rate / time_period' can be read as an arithmetic quotient or as 'max_rate per time_period'; taken as the latter, so max_rate acquisitions are allowed within one period",
+ "L03": "no",
+ "L04": "no",
+ "L05": "no",
+ "L07": "no",
+ "L08": "no",
+ "L09": "yes: unclear whether the compared count is the one already recorded (existing <= limit) or the count after adding this request (existing + amount <= limit); taken as the latter",
+ "L10": "no"
+}

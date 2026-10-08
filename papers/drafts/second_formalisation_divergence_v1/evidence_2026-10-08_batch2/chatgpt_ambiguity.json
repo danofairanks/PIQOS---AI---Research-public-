@@ -1,0 +1,20 @@
+{
+ "E01": "yes: 'at least every 90 days' is interpreted as a maximum interval of 90 days; nonnegative intervals are assumed.",
+ "E02": "yes: verification is required only when the amount exceeds 1000 USD; v is constrained to 0 or 1.",
+ "E03": "yes: dp is assumed to be a nonnegative integer count of decimal places.",
+ "E04": "yes: patch deadlines are interpreted as upper bounds, with 7 days = 168 hours and 30 days = 720 hours; severities outside 1\u20133 are unconstrained.",
+ "E05": "yes: age, TTL, and future skew are assumed nonnegative; age must not exceed TTL, and skew must not exceed 5 seconds.",
+ "E06": "yes: pool and reserve are interpreted as exact values; epoch has only the stated upper bound, and stale is assumed nonnegative.",
+ "E07": "yes: commitment is required when latency strictly exceeds 200 ms; behavior at or below the threshold is unconstrained except that c must be 0 or 1.",
+ "E08": "yes: zero bypasses and recovery within 5 minutes are interpreted as unconditional requirements; recovery time is nonnegative.",
+ "E09": "yes: up to 5 retries means at most 6 total attempts including the initial try.",
+ "E10": "yes: paging is required only after more than 4 whole hours without acknowledgment; p is constrained to 0 or 1.",
+ "C11": "yes: the number of stale failovers is assumed nonnegative.",
+ "C12": "yes: skew is interpreted as a nonnegative count of seconds in the future.",
+ "K0": "no",
+ "K1": "yes: 'capacity consumed' is interpreted as the algebraic sum of the signed amounts, so negative amounts reduce the total.",
+ "K2": "yes: 'consumed capacity is never given back' is interpreted as requiring every prefix sum to stay within the cap; negative amounts still reduce the prefix sum.",
+ "K3": "yes: each negative amount restores no capacity and contributes zero; zero amounts also contribute zero.",
+ "K4": "no",
+ "K5": "no"
+}

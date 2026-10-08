@@ -1,0 +1,26 @@
+{
+ "S1": {
+  "smt": "(define-fun spec () Bool (exists ((c Int)) (forall ((n Int)) (<= (f n) (+ (g n) c)))))",
+  "ambiguity": "no"
+ },
+ "S2": {
+  "smt": "(define-fun spec () Bool (forall ((n Int)) (< (a n) (a (+ n 1)))))",
+  "ambiguity": "yes: \"increasing\" can mean strictly increasing or non-decreasing; interpreted here as strictly increasing"
+ },
+ "S3": {
+  "smt": "(define-fun spec ((C Int) (q1 Int) (q2 Int) (q3 Int)) Bool (and (<= q1 C) (<= (+ q1 q2) C) (<= (+ (+ q1 q2) q3) C)))",
+  "ambiguity": "yes: \"never exceeds\" together with the stated processing order can mean every cumulative prefix stays within the cap, rather than only the final total; interpreted here as every prefix"
+ },
+ "S4": {
+  "smt": "(define-fun spec () Bool (forall ((student Int)) (exists ((exam Int)) (passed student exam))))",
+  "ambiguity": "yes: no student or exam domain predicates are declared, so all integers are treated as possible students and exams"
+ },
+ "S5": {
+  "smt": "(define-fun spec ((x Int)) Bool (and (<= 1 x) (<= x 10)))",
+  "ambiguity": "no"
+ },
+ "S6": {
+  "smt": "(define-fun spec ((x Int)) Bool (and (> x 0) (= (mod x 2) 0)))",
+  "ambiguity": "no"
+ }
+}

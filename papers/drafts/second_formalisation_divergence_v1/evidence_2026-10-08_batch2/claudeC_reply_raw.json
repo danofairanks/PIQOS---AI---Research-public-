@@ -1,0 +1,20 @@
+{
+  "E01": {"smt": "(define-fun spec ((d Int)) Bool (<= d 90))", "ambiguity": "no"},
+  "E02": {"smt": "(define-fun spec ((amt Int) (v Int)) Bool (=> (> amt 1000) (= v 1)))", "ambiguity": "no"},
+  "E03": {"smt": "(define-fun spec ((dp Int)) Bool (<= dp 2))", "ambiguity": "no"},
+  "E04": {"smt": "(define-fun spec ((sev Int) (h Int)) Bool (and (=> (= sev 3) (<= h 24)) (=> (= sev 2) (<= h 168)) (=> (= sev 1) (<= h 720))))", "ambiguity": "no"},
+  "E05": {"smt": "(define-fun spec ((age Int) (ttl Int) (skew Int)) Bool (and (<= age ttl) (<= skew 5)))", "ambiguity": "yes: 'within the TTL' read as inclusive (age <= ttl); strict age < ttl is the other common TTL convention"},
+  "E06": {"smt": "(define-fun spec ((pool Int) (reserve Int) (epoch Int) (stale Int)) Bool (and (= pool 2) (= reserve 1) (<= epoch 4) (<= stale 1)))", "ambiguity": "yes: bare 'pool 2' and 'reserve 1' read as exact values, because the same list marks upper bounds explicitly for the other two; under the 'Bounds' heading they could instead mean pool <= 2 and reserve <= 1"},
+  "E07": {"smt": "(define-fun spec ((lat Int) (c Int)) Bool (=> (> lat 200) (= c 1)))", "ambiguity": "yes: 'if' read as one-way implication, not iff; formalised literally although committing on high latency looks inverted from the likely intent (abort)"},
+  "E08": {"smt": "(define-fun spec ((b Int) (r Int)) Bool (and (= b 0) (<= r 300)))", "ambiguity": "no"},
+  "E09": {"smt": "(define-fun spec ((attempts Int)) Bool (<= attempts 6))", "ambiguity": "yes: '5 retries' read as excluding the first try, so attempts <= 6; if it means 5 tries in total the bound is 5"},
+  "E10": {"smt": "(define-fun spec ((t Int) (p Int)) Bool (=> (>= t 4) (= p 1)))", "ambiguity": "yes: boundary at t = 4 read as triggering (4 whole hours elapsed with no acknowledgement); the alternative is t > 4"},
+  "C11": {"smt": "(define-fun spec ((n Int)) Bool (<= n 1))", "ambiguity": "no"},
+  "C12": {"smt": "(define-fun spec ((skew Int)) Bool (<= skew 5))", "ambiguity": "no"},
+  "K0": {"smt": "(define-fun spec ((C Int) (q1 Int) (q2 Int) (q3 Int)) Bool (<= (+ q1 q2 q3) C))", "ambiguity": "no"},
+  "K1": {"smt": "(define-fun spec ((C Int) (q1 Int) (q2 Int) (q3 Int)) Bool (and (<= q1 C) (<= (+ q1 q2) C) (<= (+ q1 q2 q3) C)))", "ambiguity": "yes: 'never' read as holding after each request in order (every prefix sum <= C), with negative amounts giving capacity back since nothing says otherwise; alternatives are the final sum only, or negatives restoring nothing as in K2/K3"},
+  "K2": {"smt": "(define-fun spec ((C Int) (q1 Int) (q2 Int) (q3 Int)) Bool (<= (+ (ite (> q1 0) q1 0) (ite (> q2 0) q2 0) (ite (> q3 0) q3 0)) C))", "ambiguity": "no"},
+  "K3": {"smt": "(define-fun spec ((C Int) (q1 Int) (q2 Int) (q3 Int)) Bool (<= (+ (ite (> q1 0) q1 0) (ite (> q2 0) q2 0) (ite (> q3 0) q3 0)) C))", "ambiguity": "no"},
+  "K4": {"smt": "(define-fun spec ((C Int) (q1 Int) (q2 Int) (q3 Int)) Bool (<= (+ q1 q2 q3) C))", "ambiguity": "no"},
+  "K5": {"smt": "(define-fun spec ((C Int) (q1 Int) (q2 Int) (q3 Int)) Bool (<= (+ (ite (> q1 0) q1 0) (ite (> q2 0) q2 0) (ite (> q3 0) q3 0)) C))", "ambiguity": "no"}
+}

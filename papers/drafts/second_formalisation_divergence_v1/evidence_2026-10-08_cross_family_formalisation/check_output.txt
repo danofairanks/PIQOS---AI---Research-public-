@@ -1,0 +1,6 @@
+S1 ('equivalent', 'unsat', 'unsat')
+S2 ('equivalent', 'unsat', 'unsat')
+S3 ('equivalent', 'unsat', 'unsat')
+S4 ('equivalent', 'unsat', 'unsat')
+S5 ('A stronger (A=>B only)', 'unsat', 'sat')
+S6 ('equivalent', 'unsat', 'unsat')
