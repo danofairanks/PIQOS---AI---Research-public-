@@ -1,0 +1,20 @@
+{
+ "E01": "no",
+ "E02": "no",
+ "E03": "no",
+ "E04": "no",
+ "E05": "yes: 'within the TTL' read as inclusive (age <= ttl); strict age < ttl is the other common TTL convention",
+ "E06": "yes: bare 'pool 2' and 'reserve 1' read as exact values, because the same list marks upper bounds explicitly for the other two; under the 'Bounds' heading they could instead mean pool <= 2 and reserve <= 1",
+ "E07": "yes: 'if' read as one-way implication, not iff; formalised literally although committing on high latency looks inverted from the likely intent (abort)",
+ "E08": "no",
+ "E09": "yes: '5 retries' read as excluding the first try, so attempts <= 6; if it means 5 tries in total the bound is 5",
+ "E10": "yes: boundary at t = 4 read as triggering (4 whole hours elapsed with no acknowledgement); the alternative is t > 4",
+ "C11": "no",
+ "C12": "no",
+ "K0": "no",
+ "K1": "yes: 'never' read as holding after each request in order (every prefix sum <= C), with negative amounts giving capacity back since nothing says otherwise; alternatives are the final sum only, or negatives restoring nothing as in K2/K3",
+ "K2": "no",
+ "K3": "no",
+ "K4": "no",
+ "K5": "no"
+}

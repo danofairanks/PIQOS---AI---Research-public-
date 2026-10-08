@@ -1,0 +1,20 @@
+{
+ "E01": "no",
+ "E02": "no",
+ "E03": "yes: the limit is scoped to fiat currencies but no currency-type argument exists; assumed the amount is fiat",
+ "E04": "no",
+ "E05": "yes: 'within the TTL' could be strict (age < ttl) or inclusive; chose inclusive",
+ "E06": "yes: 'pool 2, reserve 1' could be exact values (pool = 2, reserve = 1) or upper bounds; chose upper bounds because of the 'Bounds:' heading",
+ "E07": "yes: 'if' could be one-way or 'if and only if'; chose one-way. The statement also looks inverted (high latency would normally block a commit); formalised literally",
+ "E08": "no",
+ "E09": "yes: 'up to 5 retries' could mean 5 retries after the first try (6 attempts) or 5 attempts in total; chose 6 attempts",
+ "E10": "yes: the boundary t = 4 could or could not trigger paging (>= 4 vs > 4); chose >= 4. Read as one-way: paging before 4h is not forbidden",
+ "C11": "no",
+ "C12": "no",
+ "K0": "no",
+ "K1": "yes: 'never' could mean every running total or only the final total, and a negative amount could reduce consumed capacity or not; chose running totals in the given order with negative amounts reducing consumption, and did not require 0 <= C before the first request",
+ "K2": "yes: 'never given back' could mean negative amounts contribute zero, or only that capacity is not released over time while negative amounts still net off; chose negative amounts contribute zero, so the final total bounds every running total",
+ "K3": "no",
+ "K4": "no",
+ "K5": "no"
+}

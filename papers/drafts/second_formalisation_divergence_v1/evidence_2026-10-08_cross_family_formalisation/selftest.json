@@ -1,0 +1,8 @@
+{
+ "S1": "(define-fun spec () Bool (forall ((n Int)) (exists ((C Int)) (<= (f n) (+ (g n) C)))))",
+ "S2": "(define-fun spec () Bool (forall ((i Int)) (<= (a i) (a (+ i 1)))))",
+ "S3": "(define-fun spec ((C Int) (q1 Int) (q2 Int) (q3 Int)) Bool (<= (+ (ite (> q1 0) q1 0) (ite (> q2 0) q2 0) (ite (> q3 0) q3 0)) C))",
+ "S4": "(define-fun spec () Bool (exists ((e Int)) (forall ((s Int)) (passed s e))))",
+ "S5": "(define-fun spec ((x Int)) Bool (and (<= 1 x) (<= x 10)))",
+ "S6": "(define-fun spec ((x Int)) Bool (and (> x 0) (= (mod x 2) 0)))"
+}

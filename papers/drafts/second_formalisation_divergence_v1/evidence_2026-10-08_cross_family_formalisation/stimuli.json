@@ -1,0 +1,59 @@
+{
+ "S1": {
+  "text": "The function f is bounded above by g plus a constant, using a single constant that works for every n.",
+  "preamble": "(declare-fun f (Int) Int)\n(declare-fun g (Int) Int)",
+  "args": []
+ },
+ "S2": {
+  "text": "The sequence a is increasing.",
+  "preamble": "(declare-fun a (Int) Int)",
+  "args": []
+ },
+ "S3": {
+  "text": "The total amount consumed by the three accepted requests never exceeds the cap C. The requests have amounts q1, q2, q3 and are processed in that order; amounts are integers and may be negative.",
+  "preamble": "",
+  "args": [
+   [
+    "C",
+    "Int"
+   ],
+   [
+    "q1",
+    "Int"
+   ],
+   [
+    "q2",
+    "Int"
+   ],
+   [
+    "q3",
+    "Int"
+   ]
+  ]
+ },
+ "S4": {
+  "text": "Every student passed an exam.",
+  "preamble": "(declare-fun passed (Int Int) Bool)",
+  "args": []
+ },
+ "S5": {
+  "text": "The integer x is between 1 and 10.",
+  "preamble": "",
+  "args": [
+   [
+    "x",
+    "Int"
+   ]
+  ]
+ },
+ "S6": {
+  "text": "The integer x is a positive even number.",
+  "preamble": "",
+  "args": [
+   [
+    "x",
+    "Int"
+   ]
+  ]
+ }
+}

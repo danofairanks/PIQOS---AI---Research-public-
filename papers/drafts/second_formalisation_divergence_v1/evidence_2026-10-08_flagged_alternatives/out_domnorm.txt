@@ -1,0 +1,41 @@
+per (batch,item,arm): chosen | named
+('batch1', 'B01', 'B') inclusive | []
+('batch1', 'B01', 'C') inclusive | ['exclusive', 'inclusive']
+('batch1', 'B01', 'D') inclusive | ['exclusive', 'inclusive']
+('batch1', 'B09', 'B') x&(y|z) | []
+('batch1', 'B09', 'C') (x&y)|z | ['(x&y)|z', 'x&(y|z)']
+('batch1', 'B09', 'D') (x&y)|z | ['(x&y)|z', 'x&(y|z)']
+('batch1', 'B11', 'B') at most 1 positive | []
+('batch1', 'B11', 'C') at most 2 positive | []
+('batch1', 'B11', 'D') at most 2 positive | []
+('batch1', 'B12', 'B') any order | []
+('batch1', 'B12', 'C') ordered | ['any order', 'ordered']
+('batch1', 'B12', 'D') ordered | ['any order', 'ordered']
+('batch1', 'B13', 'B') x>y and diff<=3 | []
+('batch1', 'B13', 'C') x>y and diff<=3 | ['diff<=3 only', 'x>y and diff<=3']
+('batch1', 'B13', 'D') x>y and diff<=3 | ['diff<=3 only', 'x>y and diff<=3']
+('batch2', 'E06', 'B') exact | []
+('batch2', 'E06', 'C') exact | ['exact', 'upper bound']
+('batch2', 'E06', 'D') upper bound | ['exact', 'upper bound']
+('batch2', 'E10', 'B') t>4 | ['t>4']
+('batch2', 'E10', 'C') t>=4 | ['t>4', 't>=4']
+('batch2', 'E10', 'D') t>=4 | ['t>4', 't>=4']
+('batch2', 'K1', 'B') net_final | []
+('batch2', 'K1', 'C') net_prefix | ['gross', 'net_final', 'net_prefix']
+('batch2', 'K1', 'D') net_prefix | ['gross', 'net_final', 'net_prefix']
+('batch2', 'K2', 'B') net_prefix | []
+('batch2', 'K2', 'C') gross | []
+('batch2', 'K2', 'D') gross | ['gross', 'net_final', 'net_prefix']
+
+recall by arm and batch (other arm chose a different label; was that label named by this arm?)
+batch1 B 0/8
+batch1 C 4/4
+batch1 D 4/4
+batch2 B 0/9
+batch2 C 6/7
+batch2 D 7/7
+
+precision of named labels (named label chosen by some arm): {'C': '14/15', 'D': '16/18', 'B': '1/1'}
+
+K1 gross named by: ['C', 'D']
+B11 (error) named labels: {'B': [], 'C': [], 'D': []}

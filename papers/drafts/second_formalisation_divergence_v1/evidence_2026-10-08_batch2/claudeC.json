@@ -1,0 +1,20 @@
+{
+ "E01": "(define-fun spec ((d Int)) Bool (<= d 90))",
+ "E02": "(define-fun spec ((amt Int) (v Int)) Bool (=> (> amt 1000) (= v 1)))",
+ "E03": "(define-fun spec ((dp Int)) Bool (<= dp 2))",
+ "E04": "(define-fun spec ((sev Int) (h Int)) Bool (and (=> (= sev 3) (<= h 24)) (=> (= sev 2) (<= h 168)) (=> (= sev 1) (<= h 720))))",
+ "E05": "(define-fun spec ((age Int) (ttl Int) (skew Int)) Bool (and (<= age ttl) (<= skew 5)))",
+ "E06": "(define-fun spec ((pool Int) (reserve Int) (epoch Int) (stale Int)) Bool (and (= pool 2) (= reserve 1) (<= epoch 4) (<= stale 1)))",
+ "E07": "(define-fun spec ((lat Int) (c Int)) Bool (=> (> lat 200) (= c 1)))",
+ "E08": "(define-fun spec ((b Int) (r Int)) Bool (and (= b 0) (<= r 300)))",
+ "E09": "(define-fun spec ((attempts Int)) Bool (<= attempts 6))",
+ "E10": "(define-fun spec ((t Int) (p Int)) Bool (=> (>= t 4) (= p 1)))",
+ "C11": "(define-fun spec ((n Int)) Bool (<= n 1))",
+ "C12": "(define-fun spec ((skew Int)) Bool (<= skew 5))",
+ "K0": "(define-fun spec ((C Int) (q1 Int) (q2 Int) (q3 Int)) Bool (<= (+ q1 q2 q3) C))",
+ "K1": "(define-fun spec ((C Int) (q1 Int) (q2 Int) (q3 Int)) Bool (and (<= q1 C) (<= (+ q1 q2) C) (<= (+ q1 q2 q3) C)))",
+ "K2": "(define-fun spec ((C Int) (q1 Int) (q2 Int) (q3 Int)) Bool (<= (+ (ite (> q1 0) q1 0) (ite (> q2 0) q2 0) (ite (> q3 0) q3 0)) C))",
+ "K3": "(define-fun spec ((C Int) (q1 Int) (q2 Int) (q3 Int)) Bool (<= (+ (ite (> q1 0) q1 0) (ite (> q2 0) q2 0) (ite (> q3 0) q3 0)) C))",
+ "K4": "(define-fun spec ((C Int) (q1 Int) (q2 Int) (q3 Int)) Bool (<= (+ q1 q2 q3) C))",
+ "K5": "(define-fun spec ((C Int) (q1 Int) (q2 Int) (q3 Int)) Bool (<= (+ (ite (> q1 0) q1 0) (ite (> q2 0) q2 0) (ite (> q3 0) q3 0)) C))"
+}

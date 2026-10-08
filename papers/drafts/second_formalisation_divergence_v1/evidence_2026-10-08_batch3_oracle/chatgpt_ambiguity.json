@@ -1,0 +1,11 @@
+{
+ "L01": "no",
+ "L02": "yes: The phrase 'up to max_rate / time_period' could describe a rate or a count. Since n counts acquisitions within one time period, max_rate is interpreted as the maximum permitted count per period.",
+ "L03": "yes: The sentence does not explicitly constrain used and cost to be nonnegative. Nonnegativity is assumed because they represent amounts consumed and requested.",
+ "L04": "yes: The sentence does not explicitly specify nonnegative values, but token counts are assumed to be nonnegative.",
+ "L05": "yes: The sentence states a maximum number of invocations but does not explicitly specify behavior for negative counts or limits. Both are assumed nonnegative.",
+ "L07": "no",
+ "L08": "yes: The sentence does not explicitly specify behavior for negative counts or limits. Both are assumed nonnegative.",
+ "L09": "yes: The sentence does not specify whether negative counts or amounts are valid. They are assumed nonnegative, and the empty previous window contributes zero to the weighted count.",
+ "L10": "yes: The sentence does not explicitly specify behavior for negative token counts or capacity. Both are assumed nonnegative, and a freshly created bucket is assumed full."
+}

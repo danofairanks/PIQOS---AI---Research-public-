@@ -1,0 +1,330 @@
+{
+ "E01": {
+  "text": "SPIFFE trust bundles MUST rotate at least every 90 days.",
+  "context": "d is the number of days between two consecutive rotations of one bundle.",
+  "preamble": "",
+  "args": [
+   [
+    "d",
+    "Int"
+   ]
+  ],
+  "kind": "external"
+ },
+ "E02": {
+  "text": "verify the identity of the user for any transaction amount greater than 1000 USD.",
+  "context": "amt is the transaction amount in whole USD; v is 1 if the user's identity was verified for this transaction and 0 otherwise.",
+  "preamble": "",
+  "args": [
+   [
+    "amt",
+    "Int"
+   ],
+   [
+    "v",
+    "Int"
+   ]
+  ],
+  "kind": "external"
+ },
+ "E03": {
+  "text": "must be a valid decimal number with at most 2 decimal places for fiat currencies.",
+  "context": "dp is the number of digits after the decimal point of the amount.",
+  "preamble": "",
+  "args": [
+   [
+    "dp",
+    "Int"
+   ]
+  ],
+  "kind": "external"
+ },
+ "E04": {
+  "text": "Critical CVE → patch within 24h, High → 7 days, Medium → 30 days.",
+  "context": "sev is 3 for Critical, 2 for High and 1 for Medium; h is the time taken to patch, in hours.",
+  "preamble": "",
+  "args": [
+   [
+    "sev",
+    "Int"
+   ],
+   [
+    "h",
+    "Int"
+   ]
+  ],
+  "kind": "external"
+ },
+ "E05": {
+  "text": "age within the reconciler TTL, and at most 5 s of future skew.",
+  "context": "age and ttl are in seconds; skew is the number of seconds the timestamp lies in the future.",
+  "preamble": "",
+  "args": [
+   [
+    "age",
+    "Int"
+   ],
+   [
+    "ttl",
+    "Int"
+   ],
+   [
+    "skew",
+    "Int"
+   ]
+  ],
+  "kind": "external"
+ },
+ "E06": {
+  "text": "Bounds: pool 2, reserve 1, fence epoch ≤ 4, at most one stale failover.",
+  "context": "pool, reserve, epoch and stale are the observed values of those four quantities.",
+  "preamble": "",
+  "args": [
+   [
+    "pool",
+    "Int"
+   ],
+   [
+    "reserve",
+    "Int"
+   ],
+   [
+    "epoch",
+    "Int"
+   ],
+   [
+    "stale",
+    "Int"
+   ]
+  ],
+  "kind": "external"
+ },
+ "E07": {
+  "text": "commit a transaction if the reported latency exceeds 200ms.",
+  "context": "lat is the reported latency in milliseconds; c is 1 if the transaction is committed and 0 otherwise.",
+  "preamble": "",
+  "args": [
+   [
+    "lat",
+    "Int"
+   ],
+   [
+    "c",
+    "Int"
+   ]
+  ],
+  "kind": "external"
+ },
+ "E08": {
+  "text": "Zero governance bypasses during Redis outage; full recovery within 5 minutes.",
+  "context": "b is the number of governance bypasses during the outage; r is the recovery time in seconds.",
+  "preamble": "",
+  "args": [
+   [
+    "b",
+    "Int"
+   ],
+   [
+    "r",
+    "Int"
+   ]
+  ],
+  "kind": "external"
+ },
+ "E09": {
+  "text": "Uses WATCH/MULTI/EXEC optimistic locking with up to 5 retries for concurrent write safety.",
+  "context": "attempts is the total number of times the transaction was tried, including the first try.",
+  "preamble": "",
+  "args": [
+   [
+    "attempts",
+    "Int"
+   ]
+  ],
+  "kind": "external"
+ },
+ "E10": {
+  "text": "if Slack alert not acknowledged within 4h, page on-call via PagerDuty.",
+  "context": "t is the whole number of hours the alert has gone unacknowledged; p is 1 if on-call is paged and 0 otherwise.",
+  "preamble": "",
+  "args": [
+   [
+    "t",
+    "Int"
+   ],
+   [
+    "p",
+    "Int"
+   ]
+  ],
+  "kind": "external"
+ },
+ "C11": {
+  "text": "at most one stale failover.",
+  "context": "n is the number of stale failovers.",
+  "preamble": "",
+  "args": [
+   [
+    "n",
+    "Int"
+   ]
+  ],
+  "kind": "control"
+ },
+ "C12": {
+  "text": "at most 5 s of future skew.",
+  "context": "skew is the number of seconds the timestamp lies in the future.",
+  "preamble": "",
+  "args": [
+   [
+    "skew",
+    "Int"
+   ]
+  ],
+  "kind": "control"
+ },
+ "K0": {
+  "text": "The three accepted requests with amounts q1, q2 and q3 together do not exceed the cap C. Amounts are integers and may be negative.",
+  "context": "C is the cap; q1, q2 and q3 are the integer amounts of the three accepted requests, in that order.",
+  "preamble": "",
+  "args": [
+   [
+    "C",
+    "Int"
+   ],
+   [
+    "q1",
+    "Int"
+   ],
+   [
+    "q2",
+    "Int"
+   ],
+   [
+    "q3",
+    "Int"
+   ]
+  ],
+  "kind": "cap"
+ },
+ "K1": {
+  "text": "The capacity consumed by the three accepted requests with amounts q1, q2 and q3 never exceeds the cap C. Amounts are integers and may be negative.",
+  "context": "C is the cap; q1, q2 and q3 are the integer amounts of the three accepted requests, in that order.",
+  "preamble": "",
+  "args": [
+   [
+    "C",
+    "Int"
+   ],
+   [
+    "q1",
+    "Int"
+   ],
+   [
+    "q2",
+    "Int"
+   ],
+   [
+    "q3",
+    "Int"
+   ]
+  ],
+  "kind": "cap"
+ },
+ "K2": {
+  "text": "The capacity consumed by the three accepted requests with amounts q1, q2 and q3 never exceeds the cap C. Consumed capacity is never given back. Amounts are integers and may be negative.",
+  "context": "C is the cap; q1, q2 and q3 are the integer amounts of the three accepted requests, in that order.",
+  "preamble": "",
+  "args": [
+   [
+    "C",
+    "Int"
+   ],
+   [
+    "q1",
+    "Int"
+   ],
+   [
+    "q2",
+    "Int"
+   ],
+   [
+    "q3",
+    "Int"
+   ]
+  ],
+  "kind": "cap"
+ },
+ "K3": {
+  "text": "The capacity consumed by the three accepted requests with amounts q1, q2 and q3 never exceeds the cap C. A negative amount restores no capacity. Amounts are integers and may be negative.",
+  "context": "C is the cap; q1, q2 and q3 are the integer amounts of the three accepted requests, in that order.",
+  "preamble": "",
+  "args": [
+   [
+    "C",
+    "Int"
+   ],
+   [
+    "q1",
+    "Int"
+   ],
+   [
+    "q2",
+    "Int"
+   ],
+   [
+    "q3",
+    "Int"
+   ]
+  ],
+  "kind": "cap"
+ },
+ "K4": {
+  "text": "The sum of q1, q2 and q3 does not exceed the cap C. Amounts are integers and may be negative.",
+  "context": "C is the cap; q1, q2 and q3 are the integer amounts of the three accepted requests, in that order.",
+  "preamble": "",
+  "args": [
+   [
+    "C",
+    "Int"
+   ],
+   [
+    "q1",
+    "Int"
+   ],
+   [
+    "q2",
+    "Int"
+   ],
+   [
+    "q3",
+    "Int"
+   ]
+  ],
+  "kind": "cap"
+ },
+ "K5": {
+  "text": "The sum of the positive amounts among q1, q2 and q3 does not exceed the cap C. Amounts are integers and may be negative.",
+  "context": "C is the cap; q1, q2 and q3 are the integer amounts of the three accepted requests, in that order.",
+  "preamble": "",
+  "args": [
+   [
+    "C",
+    "Int"
+   ],
+   [
+    "q1",
+    "Int"
+   ],
+   [
+    "q2",
+    "Int"
+   ],
+   [
+    "q3",
+    "Int"
+   ]
+  ],
+  "kind": "cap"
+ }
+}

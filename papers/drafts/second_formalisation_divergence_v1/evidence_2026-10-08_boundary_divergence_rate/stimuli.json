@@ -1,0 +1,334 @@
+{
+ "B01": {
+  "text": "The integer x is between 5 and 20.",
+  "preamble": "",
+  "args": [
+   [
+    "x",
+    "Int"
+   ]
+  ],
+  "kind": "ambiguous"
+ },
+ "B02": {
+  "text": "The integers x and y are within 3 of each other.",
+  "preamble": "",
+  "args": [
+   [
+    "x",
+    "Int"
+   ],
+   [
+    "y",
+    "Int"
+   ]
+  ],
+  "kind": "ambiguous"
+ },
+ "B03": {
+  "text": "The integer x is up to 10.",
+  "preamble": "",
+  "args": [
+   [
+    "x",
+    "Int"
+   ]
+  ],
+  "kind": "ambiguous"
+ },
+ "B04": {
+  "text": "The integer x is over 65.",
+  "preamble": "",
+  "args": [
+   [
+    "x",
+    "Int"
+   ]
+  ],
+  "kind": "ambiguous"
+ },
+ "B05": {
+  "text": "The integer x ranges from 1 to 10.",
+  "preamble": "",
+  "args": [
+   [
+    "x",
+    "Int"
+   ]
+  ],
+  "kind": "ambiguous"
+ },
+ "B06": {
+  "text": "The integer x is more than twice the integer y.",
+  "preamble": "",
+  "args": [
+   [
+    "x",
+    "Int"
+   ],
+   [
+    "y",
+    "Int"
+   ]
+  ],
+  "kind": "ambiguous"
+ },
+ "B07": {
+  "text": "The integer x is less than half of the integer y.",
+  "preamble": "",
+  "args": [
+   [
+    "x",
+    "Int"
+   ],
+   [
+    "y",
+    "Int"
+   ]
+  ],
+  "kind": "ambiguous"
+ },
+ "B08": {
+  "text": "The integer x is closer to 0 than the integer y is.",
+  "preamble": "",
+  "args": [
+   [
+    "x",
+    "Int"
+   ],
+   [
+    "y",
+    "Int"
+   ]
+  ],
+  "kind": "ambiguous"
+ },
+ "B09": {
+  "text": "The integer x is positive and y is positive or z is positive.",
+  "preamble": "",
+  "args": [
+   [
+    "x",
+    "Int"
+   ],
+   [
+    "y",
+    "Int"
+   ],
+   [
+    "z",
+    "Int"
+   ]
+  ],
+  "kind": "ambiguous"
+ },
+ "B10": {
+  "text": "Either x or y is even.",
+  "preamble": "",
+  "args": [
+   [
+    "x",
+    "Int"
+   ],
+   [
+    "y",
+    "Int"
+   ]
+  ],
+  "kind": "ambiguous"
+ },
+ "B11": {
+  "text": "At most two of the integers a, b and c are positive.",
+  "preamble": "",
+  "args": [
+   [
+    "a",
+    "Int"
+   ],
+   [
+    "b",
+    "Int"
+   ],
+   [
+    "c",
+    "Int"
+   ]
+  ],
+  "kind": "ambiguous"
+ },
+ "B12": {
+  "text": "The integers a, b and c are consecutive.",
+  "preamble": "",
+  "args": [
+   [
+    "a",
+    "Int"
+   ],
+   [
+    "b",
+    "Int"
+   ],
+   [
+    "c",
+    "Int"
+   ]
+  ],
+  "kind": "ambiguous"
+ },
+ "B13": {
+  "text": "The integer x is greater than the integer y by no more than 3.",
+  "preamble": "",
+  "args": [
+   [
+    "x",
+    "Int"
+   ],
+   [
+    "y",
+    "Int"
+   ]
+  ],
+  "kind": "ambiguous"
+ },
+ "B14": {
+  "text": "The accepted requests with amounts q1, q2 and q3 together do not exceed the cap C. Amounts are integers and may be negative.",
+  "preamble": "",
+  "args": [
+   [
+    "C",
+    "Int"
+   ],
+   [
+    "q1",
+    "Int"
+   ],
+   [
+    "q2",
+    "Int"
+   ],
+   [
+    "q3",
+    "Int"
+   ]
+  ],
+  "kind": "ambiguous"
+ },
+ "B15": {
+  "text": "The integer x is below 0 or above 10.",
+  "preamble": "",
+  "args": [
+   [
+    "x",
+    "Int"
+   ]
+  ],
+  "kind": "ambiguous"
+ },
+ "B16": {
+  "text": "The integer x is not between 1 and 10.",
+  "preamble": "",
+  "args": [
+   [
+    "x",
+    "Int"
+   ]
+  ],
+  "kind": "ambiguous"
+ },
+ "B17": {
+  "text": "The integer x is a multiple of 3 between 1 and 20.",
+  "preamble": "",
+  "args": [
+   [
+    "x",
+    "Int"
+   ]
+  ],
+  "kind": "ambiguous"
+ },
+ "B18": {
+  "text": "The integer x exceeds the integer y by at least 2.",
+  "preamble": "",
+  "args": [
+   [
+    "x",
+    "Int"
+   ],
+   [
+    "y",
+    "Int"
+   ]
+  ],
+  "kind": "ambiguous"
+ },
+ "C01": {
+  "text": "The integer x equals 7.",
+  "preamble": "",
+  "args": [
+   [
+    "x",
+    "Int"
+   ]
+  ],
+  "kind": "control"
+ },
+ "C02": {
+  "text": "The integer x is odd.",
+  "preamble": "",
+  "args": [
+   [
+    "x",
+    "Int"
+   ]
+  ],
+  "kind": "control"
+ },
+ "C03": {
+  "text": "The integer x is at least 5 and at most 10.",
+  "preamble": "",
+  "args": [
+   [
+    "x",
+    "Int"
+   ]
+  ],
+  "kind": "control"
+ },
+ "C04": {
+  "text": "The integer x is greater than 3 and less than 8.",
+  "preamble": "",
+  "args": [
+   [
+    "x",
+    "Int"
+   ]
+  ],
+  "kind": "control"
+ },
+ "C05": {
+  "text": "Neither x nor y exceeds 10.",
+  "preamble": "",
+  "args": [
+   [
+    "x",
+    "Int"
+   ],
+   [
+    "y",
+    "Int"
+   ]
+  ],
+  "kind": "control"
+ },
+ "C06": {
+  "text": "The integer x is not less than 5 and not more than 8.",
+  "preamble": "",
+  "args": [
+   [
+    "x",
+    "Int"
+   ]
+  ],
+  "kind": "control"
+ }
+}

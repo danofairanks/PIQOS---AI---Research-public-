@@ -1,0 +1,11 @@
+{
+ "L01": "(define-fun spec ((amount Int) (max_rate Int)) Bool (and (<= 0 amount) (<= amount max_rate)))",
+ "L02": "(define-fun spec ((n Int) (max_rate Int)) Bool (and (<= 0 n) (<= n max_rate)))",
+ "L03": "(define-fun spec ((limit Int) (used Int) (cost Int)) Bool (and (<= 0 used) (<= 0 cost) (<= (+ used cost) limit)))",
+ "L04": "(define-fun spec ((requested Int) (available Int)) Bool (and (<= 0 requested) (<= 0 available) (<= requested available)))",
+ "L05": "(define-fun spec ((k Int) (calls Int)) Bool (and (<= 0 k) (<= k calls)))",
+ "L07": "(define-fun spec ((weight Int) (limit Int)) Bool (and (<= 0 limit) (> weight limit)))",
+ "L08": "(define-fun spec ((n Int) (limit Int)) Bool (and (<= 0 n) (<= n limit)))",
+ "L09": "(define-fun spec ((existing Int) (amount Int) (limit Int)) Bool (and (<= 0 existing) (<= 0 amount) (<= (+ existing amount) limit)))",
+ "L10": "(define-fun spec ((n Int) (capacity Int)) Bool (and (<= 0 n) (<= n capacity) (<= 0 capacity)))"
+}
