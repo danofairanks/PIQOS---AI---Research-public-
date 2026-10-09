@@ -58,6 +58,7 @@ Sources: [1] the repository `github.com/LalaSkye/no-direct-bind` at commit `37af
 
 ## Revision log
 
+- *2026-10-09, v1.4.* Clark and Wilson (1987) read in part as a reprint (NIST SP 500-160, Appendix A1, rules pages); relevant for certification versus enforcement, total input validation, and separating the certifier from execution. Mapped in section 3a of `public_admissibility_evaluators_v1.md`. Bell-LaPadula and Biba still not read.
 - *2026-10-08, v1.3.* Saltzer and Schroeder read beyond the design principles (identification, dynamics, authority to change access control lists); the row says which parts.
 - *2026-10-08, v1.2.* Read Lampson (1971) and Harrison, Ruzzo and Ullman as primaries; the row text above says which parts. A detailed mapping to a different draft is in section 3a of `public_admissibility_evaluators_v1.md`. Graham and Denning still not read.
 - *2026-10-08, v1.1.* Added the access-matrix lineage (Lampson 1969 and 1971; Graham-Denning; Harrison-Ruzzo-Ullman), marked not read.
