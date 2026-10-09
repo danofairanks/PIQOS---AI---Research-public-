@@ -58,6 +58,7 @@ Sources: [1] the repository `github.com/LalaSkye/no-direct-bind` at commit `37af
 
 ## Revision log
 
+- *2026-10-09, v1.5.* Biba (MITRE MTR-3153, 1975 edition) and Bell and La Padula (MTR-2997 Rev. 1, 1976) read in part from scans: the threat taxonomy and the statement that dynamic access control does not address internal threats (Biba); the star property, trusted subjects and the section on indirect communication paths (Bell and La Padula). Mapped in section 5a of `rsi_gate_audit_results_v1.md`.
 - *2026-10-09, v1.4.* Clark and Wilson (1987) read in part as a reprint (NIST SP 500-160, Appendix A1, rules pages); relevant for certification versus enforcement, total input validation, and separating the certifier from execution. Mapped in section 3a of `public_admissibility_evaluators_v1.md`. Bell-LaPadula and Biba still not read.
 - *2026-10-08, v1.3.* Saltzer and Schroeder read beyond the design principles (identification, dynamics, authority to change access control lists); the row says which parts.
 - *2026-10-08, v1.2.* Read Lampson (1971) and Harrison, Ruzzo and Ullman as primaries; the row text above says which parts. A detailed mapping to a different draft is in section 3a of `public_admissibility_evaluators_v1.md`. Graham and Denning still not read.

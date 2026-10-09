@@ -55,6 +55,16 @@ Page numbers are PDF pages of the versions named in section 3.
 
 Reference lists show a chain in which each later paper cites every earlier one: STOP, then Gödel Agent, Darwin Gödel Machine and SICA, then Huxley-Gödel Machine, then Group-Evolving Agents and Hyperagents, then AIDE2. The Red Queen Gödel Machine cites twelve earlier members; AIDE2 cites it. The root, through STOP and ADAS, is Schmidhuber's Gödel machine (2003). AlphaEvolve is cited by at least eight of the other papers read and links the harness chain to evaluator-gated search. The weights-updating papers (L5) form a separate lineage; they connect to the chain mainly through Misevolve, Group-Evolving Agents and the survey. Weights are frozen in every harness-level loop that states it (Darwin Gödel Machine, Hyperagents, STOP); SICA's authors tie scaffold-only operation to lower expected risk and say that updating weights too would be expected to raise it, which is an expectation, not a measurement. Citation matrices come from title matching on reference lists, with manual correction in two rows, and citation is not dependence.
 
+## 5a. Older frames for these failure classes (added after the audit)
+
+None of the papers above cites the classical protection literature, and the failures in findings 1 to 4 and 6 have older names there. This section records what a reading of those sources says; it is not part of the audit and the mapping is the author's. Scanned reports were read after OCR; page numbers are the printed ones.
+- Biba's 1975 MITRE report [B1] sorts integrity threats by source and type and gives "internal direct: self-modifying code" and "internal indirect: inadvertent self-modifying code" as the internal cases (pp10 to 11). It then states: "We find that internal threats, in general, cannot be addressed by dynamic access control mechanism" and that their prevention "is more the province of program verification" (p14). The self-editing improvers of findings 1 and 4 are the internal case; the sandbox flag and the time limit in findings 1 are dynamic controls placed inside the code the threat comes from.
+- Biba's strict-integrity axioms bar a subject from observing lower-integrity objects and from modifying higher-integrity ones (axioms A3.6 and A3.7, p29), and the property is stated to hold "only to the extent that integrity levels are properly assigned" (p28). A gate that reads agent-written logs or flags (finding 4, the removed marker tokens) is a high-integrity reader observing a low-integrity object.
+- On enforcement timing, Biba notes that static verification of a program text is invalidated by renaming files, so "the frequency and granularity of access enforcement" must match "the frequency and granularity of the binding of program names to objects" (p14). Finding 2, validation after the effect, is this point.
+- Bell and LaPadula's model [B2] enforces a simple-security and a star property on direct access; the star property "does not apply to trusted subjects" (p18). Their section on communication paths defines indirect disclosure, "as opposed to the direct disclosure of information which is addressed by the security properties of the model" (p67), and, of the search for non-synchronous paths, that "Within the model, however, there is no guidance for this enumerative exercise" (p68). The score-query leak of finding 3 is an indirect path of this kind, and the older model states it is outside its scope.
+- Clark and Wilson [B3] (reprinted in a 1989 workshop report) separate what a system can enforce from certification of the procedures: the system "cannot ensure that the TP performs a well-formed transformation" (Appendix A1, p12), and a user who "can create and run a new TP without having it certified" defeats the scheme (p14).
+These sources predate the papers audited here by decades; they were read in full only for the passages cited, and the claim that they anticipate the audited failures is a reading, not a finding.
+
 ## 6. Scoring the predictions
 
 The pre-filed predictions were scored per paper (hit, miss, partial) with page references in working notes. Summary of the cross-paper ones:
@@ -82,10 +92,11 @@ No code. Retrieve each paper by the identifier in section 3 and look up the page
 
 ## References
 
-Sources: the items in section 3 and the survey 2609.11873; collection page: "Self-Improving Agents", DAIR.AI Academy, saved 2026-10-08 (secondary). Related in this repository: `rsi_gate_audit_preregistered_predictions_v1.md`, `guard_property_prior_art_v1.md`, `papers/published/governance_binding_axiom_v2.md`.
+Sources: the items in section 3 and the survey 2609.11873; collection page: "Self-Improving Agents", DAIR.AI Academy, saved 2026-10-08 (secondary). Prior-art sources read for section 5a: [B1] K. J. Biba, Integrity Considerations for Secure Computer Systems, MITRE MTR-3153, 30 June 1975 (an earlier edition than ESD-TR-76-372, 1977; scanned copy); [B2] D. E. Bell and L. J. La Padula, Secure Computer System: Unified Exposition and Multics Interpretation, MITRE MTR-2997 Rev. 1, March 1976 (scanned copy); [B3] D. D. Clark and D. R. Wilson, A comparison of commercial and military computer security policies, 1987, read as Appendix A1 of NIST Special Publication 500-160. Related in this repository: `rsi_gate_audit_preregistered_predictions_v1.md`, `guard_property_prior_art_v1.md`, `papers/published/governance_binding_axiom_v2.md`.
 
 ## Revision log
 
+- *2026-10-09, v1.1.* Added section 5a (older frames: Biba, Bell and LaPadula, Clark and Wilson), read after the audit.
 - *2026-10-08, v1.* First version after reading 28 sources in three batches.
 
 ---
