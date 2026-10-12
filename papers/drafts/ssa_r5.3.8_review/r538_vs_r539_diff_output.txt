@@ -1,0 +1,17 @@
+delete [-1 +0] OLD: R5.3.x | NEW: 
+delete [-5 +0] OLD: PROVENANCE SUCCESSOR TO FROZEN R5.3.x | NEW: 
+insert [-0 +6] OLD:  | NEW: PROVENANCE SUCCESSOR TO FROZEN R5.3.x R5.3.x
+replace [-1 +2] OLD: publication/provenance | NEW: controlled semantic-hardening
+replace [-2 +1] OLD: carries forward | NEW: preserves
+replace [-3 +12] OLD: kernel, as hardened | NEW: kernel and architectural object set while introducing a bounded normative delta earned
+replace [-2 +59] OLD: R5.3.x, without | NEW: source-bound adversarial review and regression testing. No new constitutional status, constitutive specification member, recursive object cl
+replace [-4 +9] OLD: redesign or kernel change. | NEW: surfaces remain unchanged. Canonical release date: 25 September 2026
+replace [-4 +22] OLD: adds public review provenance | NEW: introduces three bounded semantic clarifications concerning obligation-level fatal-defeater priority under otherwise sufficient SatCond sati
+replace [-22 +15] OLD: corrects release custody only. The omitted-obligation negative-resolution route remains substantively unchanged. The central delta is: OBLIG | NEW: resolution of materially contrary specification-adequacy warranting bases, including the standing required for any selecting, subordinating,
+replace [-8 +2] OLD: U does not by itself entail σ(𝔇)=E, F, | NEW: displacing rule
+replace [-118 +1] OLD: U. Determination-level force is assigned only through the independently warranted constitutive resolution structure applicable to 𝔇. A const | NEW: warrant.
+delete [-1 +0] OLD: R5.3.x | NEW: 
+insert [-0 +115] OLD:  | NEW: 3. DECLARED CONSTITUTIVE SPECIFICATION - CONTINUATION R5.3.x normative continuation of §3.4 and §3.5; all surrounding text remains unchanged
+insert [-0 +54] OLD:  | NEW: 6. CONSTITUTIVE RESOLUTION - CONTINUATION R5.3.x normative continuation immediately following RESOLUTION-SPACE WARRANT. Where the warranted 
+insert [-0 +130] OLD:  | NEW: 18. CANONICAL SSA CONFORMANCE TEST - CONTINUATION R5.3.x normative conformance mirrors for the semantic-hardening delta. Where the independe
+words in R5.3.8 (masked) 9547, R5.3.9 (masked) 9804; removed 171, added 428; share of R5.3.8 words unchanged 0.982
