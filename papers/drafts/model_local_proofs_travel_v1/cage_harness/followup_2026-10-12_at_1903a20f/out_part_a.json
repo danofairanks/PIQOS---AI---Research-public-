@@ -1,0 +1,139 @@
+{
+ "A1": {
+  "card": true,
+  "ssn": true,
+  "bic_labelled": true,
+  "email": true,
+  "control_plain": true
+ },
+ "A2": {
+  "decimal_vs_str": true,
+  "datetime_vs_str": true,
+  "tuple_vs_list": true,
+  "obj_str_vs_str": true,
+  "control_int_vs_str_differ": true,
+  "float1_vs_int1": true
+ },
+ "A3": {
+  "std_card": {
+   "in": "4111 1111 1111 1111",
+   "out": "[REDACTED_CC]",
+   "redacted": true
+  },
+  "std_card_dash": {
+   "in": "4111-1111-1111-1111",
+   "out": "[REDACTED_CC]",
+   "redacted": true
+  },
+  "std_ssn": {
+   "in": "123-45-6789",
+   "out": "[REDACTED_SSN]",
+   "redacted": true
+  },
+  "std_iban": {
+   "in": "GB82WEST12345698765432",
+   "out": "[REDACTED_IBAN]",
+   "redacted": true
+  },
+  "std_email": {
+   "in": "x@example.com",
+   "out": "[REDACTED_EMAIL]",
+   "redacted": true
+  },
+  "std_bic_labelled": {
+   "in": "BIC: DEUTDEFF",
+   "out": "BIC: [REDACTED_SWIFT]",
+   "redacted": true
+  },
+  "fullwidth_card": {
+   "in": "\uff14\uff11\uff11\uff11 \uff11\uff11\uff11\uff11 \uff11\uff11\uff11\uff11 \uff11\uff11\uff11\uff11",
+   "out": "\uff14\uff11\uff11\uff11 \uff11\uff11\uff11\uff11 \uff11\uff11\uff11\uff11 \uff11\uff11\uff11\uff11",
+   "redacted": false
+  },
+  "zws_card": {
+   "in": "4111\u200b1111\u200b1111\u200b1111",
+   "out": "4111\u200b1111\u200b1111\u200b1111",
+   "redacted": false
+  },
+  "dot_card": {
+   "in": "4111.1111.1111.1111",
+   "out": "4111.1111.1111.1111",
+   "redacted": false
+  },
+  "spaced_iban": {
+   "in": "GB82 WEST 1234 5698 7654 32",
+   "out": "GB82 WEST 1234 5698 7654 32",
+   "redacted": false
+  },
+  "lower_iban": {
+   "in": "gb82west12345698765432",
+   "out": "gb82west12345698765432",
+   "redacted": false
+  },
+  "bic_unlabelled": {
+   "in": "route via DEUTDEFF",
+   "out": "route via DEUTDEFF",
+   "redacted": false
+  },
+  "ssn_space": {
+   "in": "123 45 6789",
+   "out": "[REDACTED_SSN]",
+   "redacted": true
+  },
+  "ssn_unicode_dash": {
+   "in": "123\u201345\u20136789",
+   "out": "123\u201345\u20136789",
+   "redacted": false
+  },
+  "email_at_word": {
+   "in": "x at example dot com",
+   "out": "x at example dot com",
+   "redacted": false
+  },
+  "email_fullwidth_at": {
+   "in": "x\uff20example.com",
+   "out": "x\uff20example.com",
+   "redacted": false
+  },
+  "split_list_card": {
+   "out": {
+    "parts": [
+     "4111 1111",
+     "1111 1111"
+    ]
+   },
+   "redacted": false
+  }
+ },
+ "A5": {
+  "no_linkage_arg_other_step": true,
+  "right_linkage": true,
+  "wrong_linkage": false,
+  "callerIdentity_altered": true,
+  "state_mutated": false,
+  "linkage_wire_altered_digest_kept": true
+ },
+ "A6": {
+  "bic_key": {
+   "bic": "[REDACTED_SWIFT]"
+  },
+  "swift_code_key": {
+   "swiftCode": "[REDACTED_SWIFT]"
+  },
+  "bank_key": {
+   "bank": "DEUTDEFF"
+  },
+  "dict_in_list_under_bic_key": {
+   "bic": [
+    {
+     "v": "DEUTDEFF"
+    }
+   ]
+  },
+  "list_under_bic_key": {
+   "bic": [
+    "[REDACTED_SWIFT]"
+   ]
+  }
+ }
+}
