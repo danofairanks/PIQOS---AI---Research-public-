@@ -18,8 +18,8 @@ Two verification procedures that are each closed (each checks only against artif
 their shared specification supplied) are increasingly paired so that their joint verdict is offered as
 evidence. This note asks when that pairing adds independence. We state four conditions, show with a small
 runnable toy that a pair built from one flawed specification agrees on everything the specification talks
-about and is jointly wrong exactly where it does not, and outline four anonymized public-record cases
-(one largely positive) against the conditions. The contribution is a way to ask the question, not a measured
+about and is jointly wrong exactly where it does not, and outline five anonymized public-record cases
+(two largely positive) against the conditions. The contribution is a way to ask the question, not a measured
 rate in the wild.
 
 ## 1. Definitions
@@ -79,11 +79,12 @@ this demonstrates a mechanism, it is not a discovery):
 | B | A vendor demonstration where the verifier is authored by the same system that produced the artifact | public blog post and prompts; pins held privately | 1 and 2 unmet |
 | C | A self-published validation script presented as the authority for a threshold claim | public repositories and papers; pins held privately | 2 and 4 unmet: no null, no pass/fail rule |
 | D | A practitioner recommendation to use an AI system to find and troubleshoot problems with AI systems, with trust in the orchestrating model | public post; screenshot held privately | 1 and 2 untested |
+| E | A public technical report documenting a multi-stage model post-training recipe, with stated limits and disclosed discrepancies between its own tables | public report; pin held privately | 3 largely met; 1, 2 and 4 met in some stages and only partly in others (one stage trains and evaluates with different judges and external benchmarks; another uses a reward model that is also used to monitor the benchmark it is reported on). The paper's second largely positive example. |
 
 Editorial rules for this section: (i) no adverse empirical claim about the counterpart or maker in any
 case is published unless it has been verified, pinned and the operator has decided on contact; (ii) the
 paper's evidence for what mutual audits cannot show rests on the toy, not on the cases; (iii) credit what
-each case does well (Case A is chosen because it is a good example).
+each case does well (Cases A and E are chosen because they are good examples).
 
 ## 5. Counter-models: when a closed-path pair is fine
 
@@ -109,5 +110,5 @@ to be read at primary level before citing.
 
 - The toy is constructed; the numbers describe its stated mix and rules.
 - A framework paper: it offers conditions and a demonstration, not a measured effect in deployed systems.
-- Four cases, anonymized, unverified at the claim level.
+- Five cases, anonymized, unverified at the claim level.
 - This note does not claim any prevalence of the pattern in deployed systems, and does not establish that any specific author, company or repository is affected.
