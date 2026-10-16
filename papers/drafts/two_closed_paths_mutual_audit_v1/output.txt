@@ -1,0 +1,23 @@
+seed=20261016  MAX=100.0  referent draws=20000
+
+Table 1: spec-derived conformance suite (200 draws) on A and B
+  pass rate A=1.000  B=1.000  over 500 repeated suites
+  P1: PASS  (both pass 100% of suites, by construction)
+
+Table 2: referent distribution
+  pair (A,B)  : joint false-allow=0.1365  disagreement=0.0602  disagreement classes=['nan']
+  P2: PASS  (joint false-allow 0.13+-0.02; disagreement 0.06+-0.01; all NaN)
+  pair (A,B2) : joint false-allow=0.0209  disagreement=0.1156  disagreement classes=['neg_inf', 'negative']
+  P3: PASS  (joint false-allow 0.02+-0.01; disagreement 0.11+-0.015)
+
+Table 3: detecting the common-mode class (zero, negative, -inf), n=20 draws
+  referent sampler=0.936   spec-derived sampler=0.000
+  P4: PASS  (referent >= 0.90; spec-derived exactly 0)
+
+Table 4: mutants of A
+  M1 (also allows huge): spec-suite detect=0.000  disagreement-audit (n=200) detect=1.000  joint false-allow 0.1318 -> 0.1318 (conjunction masks the bug)
+  M2 (denies 0<d<1)    : spec-suite detect=0.820
+  P5: PASS  (spec-suite 0; joint unchanged; disagreement audit >= 0.95)
+  P6: PASS  (spec-suite detects M2 with probability in [0.70, 0.95])
+
+SUMMARY: 6/6 preregistered checks PASS
