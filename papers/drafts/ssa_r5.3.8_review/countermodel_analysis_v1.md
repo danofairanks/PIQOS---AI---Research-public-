@@ -475,6 +475,8 @@ by itself satisfy either condition — only a demonstrated inertness
 against ordinary practice (D1) or a binding failure against a named
 independent channel (D2) would.
 
+*Update (2026-10-17).* The author's later paper, *The Descendant Standing Problem* v1.2, mentions neither this analysis nor SSA R5.3.x (0 mentions), so it is not a reply and neither confirms nor falsifies the prediction above. The prediction remains untested.
+
 ### 7.3 A completed D1 trial, run outside the SSA corpus to validate the protocol itself
 
 Section 3 above establishes that every worked case inside SSA R5.3.8
@@ -1201,6 +1203,8 @@ demonstrated instance of internal correction somewhere in the eleven
 entries — would narrow this paper's reading of the corpus and is
 therefore recorded as a live, unresolved possibility rather than
 foreclosed by omission.
+
+*Update (2026-10-17).* A later paper by the same author, *The Descendant Standing Problem* v1.2, narrows several of the gaps this analysis names (outside references, an operationalized independence test, a stated novelty ceiling; see [`descendant_standing_v1_2_note_v1.md`](descendant_standing_v1_2_note_v1.md) §1) but does not cite or acknowledge the earlier works or this analysis. It is therefore relevant to this open item and does not resolve it: a change of method without a documented correction is not an instance of internal correction in the sense tested here, and the paper is not one of the eleven Appendix B entries.
 
 One further caveat is recorded here in hedged form, deliberately not
 as an asserted finding. It is possible in principle that a credited
