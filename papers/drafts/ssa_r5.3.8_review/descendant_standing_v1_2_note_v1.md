@@ -86,7 +86,7 @@ Theorem 1 says: if the support story is correctly audited in this formal sense, 
 
 ## 6. What is credibly useful
 
-"An independent evaluator is not an independent evidentiary basis": a fresh evaluator can still rely on lineage-shaped evidence through selection, observability, labels, thresholds or calibration. The selective-labels literature holds the same point; the paper's contribution is drawing the consequence for remediation claims (claim-relative closure). That is an idea worth keeping independent of the framework.
+Our paraphrase of the paper's point: an independent evaluator is not an independent evidentiary basis: a fresh evaluator can still rely on lineage-shaped evidence through selection, observability, labels, thresholds or calibration. The selective-labels literature holds the same point; the paper's contribution is drawing the consequence for remediation claims (claim-relative closure). That is an idea worth keeping independent of the framework.
 
 ## 7. Limits
 
