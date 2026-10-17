@@ -1,0 +1,36 @@
+PREREG sha256: c6592171bde069f2b601bbe44c0204007e0b990d38e97a1964b5e31d8fd5bcf2
+variant: route=A factive=False semvalid=False
+reading A  seed 20261017  N 400000  skipped(cap) 15
+
+Class table (worlds classified by which premises hold, evaluated directly)
+class                 n     PASS     FAIL    UNRES  CE_PASS  CE_FAIL
+ALL_HOLD         214827    24623    62994   127210        0        0
+ONLY_i            19273     1537     5130    12606        0        0
+ONLY_ii           46407     2240    15647    28520        0        0
+ONLY_iii          10608      565     2398     7645        0        0
+ONLY_ivNO         18606     4688     4345     9573     2640        0
+ONLY_ivYES        31923     1301    14240    16382        0     5874
+ONLY_vroute        4179      854      849     2476        0        0
+ONLY_vwit          3774        0     3149      625        0     3149
+MULTI             50388     4524    17172    28692     1871     5220
+
+PASS-and-FAIL overlap (Def 13 predicates both true): 0
+Premise roles from isolated classes (n<200: empty/analytic under this reading; n>=200 & CE=0: idle; CE>0: load-bearing):
+  i       n= 19273 CE=     0 -> idle
+  ii      n= 46407 CE=     0 -> idle
+  iii     n= 10608 CE=     0 -> idle
+  ivNO    n= 18606 CE=  2640 -> load-bearing
+  ivYES   n= 31923 CE=  5874 -> load-bearing
+  vroute  n=  4179 CE=     0 -> idle
+  vwit    n=  3774 CE=  3149 -> load-bearing
+
+Premise violated (any other premises may also be violated)
+violates i       n=  45689  CE_PASS=   563  CE_FAIL=  1321
+violates ii      n=  68977  CE_PASS=   589  CE_FAIL=  2849
+violates iii     n=  31060  CE_PASS=   912  CE_FAIL=   468
+violates ivNO    n=  31039  CE_PASS=  3966  CE_FAIL=   609
+violates ivYES   n=  47854  CE_PASS=   247  CE_FAIL=  8353
+violates vroute  n=  13746  CE_PASS=   810  CE_FAIL=   310
+violates vwit    n=   8479  CE_PASS=     0  CE_FAIL=  6802
+
+Non-vacuity in ALL_HOLD: PASS 11.5%  FAIL 29.3%  UNRESOLVED 59.2%; SemInd under UNRESOLVED: {False: 56967, True: 70243}

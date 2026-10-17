@@ -1,0 +1,36 @@
+PREREG sha256: c6592171bde069f2b601bbe44c0204007e0b990d38e97a1964b5e31d8fd5bcf2
+variant: route=C factive=False semvalid=True
+reading C  seed 20261017  N 400000  skipped(cap) 19
+
+Class table (worlds classified by which premises hold, evaluated directly)
+class                 n     PASS     FAIL    UNRES  CE_PASS  CE_FAIL
+ALL_HOLD         223074    21413    63656   138005        0        0
+ONLY_i            22507     2005     5581    14921        0        0
+ONLY_ii           49554     1949    15970    31635        0        0
+ONLY_iii          12019     1246     2561     8212      652        0
+ONLY_ivNO         19014     4017     4346    10651     2215        0
+ONLY_ivYES        33236     1151    13704    18381        0     5120
+ONLY_vroute           0        0        0        0        0        0   (n=0)
+ONLY_vwit             0        0        0        0        0        0   (n=0)
+MULTI             40577     3514    12061    25002     1763     1353
+
+PASS-and-FAIL overlap (Def 13 predicates both true): 0
+Premise roles from isolated classes (n<200: empty/analytic under this reading; n>=200 & CE=0: idle; CE>0: load-bearing):
+  i       n= 22507 CE=     0 -> idle
+  ii      n= 49554 CE=     0 -> idle
+  iii     n= 12019 CE=   652 -> load-bearing
+  ivNO    n= 19014 CE=  2215 -> load-bearing
+  ivYES   n= 33236 CE=  5120 -> load-bearing
+  vroute  n=     0 CE=     0 -> empty/analytic
+  vwit    n=     0 CE=     0 -> empty/analytic
+
+Premise violated (any other premises may also be violated)
+violates i       n=  45704  CE_PASS=   890  CE_FAIL=   581
+violates ii      n=  69231  CE_PASS=   554  CE_FAIL=   515
+violates iii     n=  30721  CE_PASS=  1631  CE_FAIL=   233
+violates ivNO    n=  30907  CE_PASS=  3383  CE_FAIL=   262
+violates ivYES   n=  47546  CE_PASS=   254  CE_FAIL=  6473
+violates vroute  n=      0  CE_PASS=     0  CE_FAIL=     0
+violates vwit    n=      0  CE_PASS=     0  CE_FAIL=     0
+
+Non-vacuity in ALL_HOLD: PASS 9.6%  FAIL 28.5%  UNRESOLVED 61.9%; SemInd under UNRESOLVED: {True: 80034, False: 57971}

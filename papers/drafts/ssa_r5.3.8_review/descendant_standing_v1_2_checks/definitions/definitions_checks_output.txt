@@ -1,0 +1,31 @@
+PREREG sha256: c6592171bde069f2b601bbe44c0204007e0b990d38e97a1964b5e31d8fd5bcf2
+paper text not supplied: quote check skipped
+
+== QUOTES
+
+== D5 partitions
+  Def14: 120 configs, 1&0 overlaps=0; bot is residual by definition (exhaustive by 'otherwise')
+  Def16: 438 states, ESTABLISHED&DEFEATED overlaps=0; UNRESOLVED = complement by construction
+  Def17: DEFEATED overlaps with CARRIED/REESTABLISHED conditions=0 (the 'ordered' cases are then not needed for exclusivity)
+  Def13: PASS&FAIL exclusivity depends on NO-labelled active leaves being inside the seed set; tested in theorem1_variants.py (overlap counter), not here.
+
+== D4 Def15 GateInd as printed
+  resolved configs with GateInd=UNRESOLVED under reading X (alternative = same gate): 28
+    [(0, 'surv'), (0, 'fail')]
+    [(0, 'fail'), (0, 'surv')]
+    [(1, 'surv'), (1, 'fail')]
+    [(1, 'fail'), (1, 'surv')]
+    [(0, 'surv'), (0, 'surv'), (0, 'fail')]
+    [(0, 'surv'), (0, 'fail'), (0, 'surv')]
+  of which single-gate (fail+surv on the SAME gate; arguably 'alternative basis' => FAIL not warranted): 16
+  multi-gate gaps (failing gate A, surviving gate B, bases fully resolved, GateInd printed = UNRESOLVED): 12
+    [(0, 'surv'), (0, 'fail'), (1, 'surv')]
+    [(0, 'fail'), (0, 'surv'), (1, 'surv')]
+    [(0, 'surv'), (1, 'surv'), (0, 'fail')]
+    [(0, 'fail'), (1, 'surv'), (0, 'surv')]
+  Under reading Y (any surviving relied-upon basis blocks FAIL) the gap count is 56
+
+== D6 SrcFam
+  trials=100000 contraction violations=0 monotonicity violations=0
+  micro-example: Δ={D1} -> NO ; Δ={D1,D2} -> YES
+  empty-Δ always NO for nonempty family: True

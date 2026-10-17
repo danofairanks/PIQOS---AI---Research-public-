@@ -1,5 +1,7 @@
 # Notational Consistency Without External Binding: A Countermodel Analysis of the Škrinjar Structural Architecture (R5.3.8)
 
+**Follow-up (2026-10-17).** A later paper by the same author, *The Descendant Standing Problem* v1.2 (13 October 2026), is covered in a separate companion note, [`descendant_standing_v1_2_note_v1.md`](descendant_standing_v1_2_note_v1.md): Theorem 1 executed on random finite worlds (nine of nine preregistered predictions held), the paper's definitions pinned and re-run under alternative readings, and one gap in its Definition 15. Nothing in the analysis below is changed by it.
+
 **Corrections and updates (2026-10-12).** (1) Appendix B of R5.3.8 (and R5.3.9) lists eleven entries, ten solo-authored papers and one joint paper, not twelve works with eleven solo papers as this draft previously stated; every count in the text has been corrected in place, and Appendix A below (eleven rows) was already right. (2) R5.3.9 removed R5.3.8's §1 adversarial mandate; sentences about that invitation now say which version they describe. (3) The Note in §9 records a word-level comparison of R5.3.8 and R5.3.9.
 
 ## Abstract

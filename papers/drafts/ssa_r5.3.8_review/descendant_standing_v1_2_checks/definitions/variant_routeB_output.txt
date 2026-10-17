@@ -1,0 +1,36 @@
+PREREG sha256: c6592171bde069f2b601bbe44c0204007e0b990d38e97a1964b5e31d8fd5bcf2
+variant: route=B factive=False semvalid=False
+reading B  seed 20261017  N 400000  skipped(cap) 24
+
+Class table (worlds classified by which premises hold, evaluated directly)
+class                 n     PASS     FAIL    UNRES  CE_PASS  CE_FAIL
+ALL_HOLD         219662    26532    64148   128982        0        0
+ONLY_i            22177     2943     5728    13506        0        0
+ONLY_ii           47196     2456    15730    29010        0        0
+ONLY_iii          10883      645     2478     7760        0        0
+ONLY_ivNO         18744     5002     4378     9364     2779        0
+ONLY_ivYES        32551     1407    14644    16500        0     6169
+ONLY_vroute           0        0        0        0        0        0   (n=0)
+ONLY_vwit          3610        0     3131      479        0     3131
+MULTI             45153     4326    16414    24413     1981     5324
+
+PASS-and-FAIL overlap (Def 13 predicates both true): 0
+Premise roles from isolated classes (n<200: empty/analytic under this reading; n>=200 & CE=0: idle; CE>0: load-bearing):
+  i       n= 22177 CE=     0 -> idle
+  ii      n= 47196 CE=     0 -> idle
+  iii     n= 10883 CE=     0 -> idle
+  ivNO    n= 18744 CE=  2779 -> load-bearing
+  ivYES   n= 32551 CE=  6169 -> load-bearing
+  vroute  n=     0 CE=     0 -> empty/analytic
+  vwit    n=  3610 CE=  3131 -> load-bearing
+
+Premise violated (any other premises may also be violated)
+violates i       n=  46038  CE_PASS=   717  CE_FAIL=  1564
+violates ii      n=  68628  CE_PASS=   615  CE_FAIL=  2857
+violates iii     n=  30937  CE_PASS=   966  CE_FAIL=   485
+violates ivNO    n=  30705  CE_PASS=  4261  CE_FAIL=   624
+violates ivYES   n=  47723  CE_PASS=   277  CE_FAIL=  8773
+violates vroute  n=   3049  CE_PASS=   617  CE_FAIL=    22
+violates vwit    n=   7685  CE_PASS=     0  CE_FAIL=  6686
+
+Non-vacuity in ALL_HOLD: PASS 12.1%  FAIL 29.2%  UNRESOLVED 58.7%; SemInd under UNRESOLVED: {False: 57777, True: 71205}
