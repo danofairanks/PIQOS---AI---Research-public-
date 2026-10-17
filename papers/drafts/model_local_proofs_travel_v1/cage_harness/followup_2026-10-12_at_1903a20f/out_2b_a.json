@@ -1,0 +1,121 @@
+{
+ "A": {
+  "A1a_valid": {
+   "accepted": true,
+   "verification": "VERIFIED",
+   "outcome": "ACCEPTED",
+   "codes": [],
+   "request_sent": true
+  },
+  "A1b_stripped_nonstrict": {
+   "accepted": true,
+   "verification": "UNVERIFIED",
+   "outcome": "ACCEPTED",
+   "codes": [],
+   "request_sent": true
+  },
+  "A1b_stripped_strict": {
+   "accepted": false,
+   "verification": "UNVERIFIED",
+   "outcome": "UNKNOWN",
+   "codes": [
+    "SIGNED_RECEIPT_REQUIRED"
+   ],
+   "request_sent": true
+  },
+  "A1c_status_changed": {
+   "accepted": false,
+   "verification": "INVALID",
+   "outcome": "UNKNOWN",
+   "codes": [
+    "RECEIPT_SIGNATURE_INVALID"
+   ],
+   "request_sent": true
+  },
+  "A1d_other_digest": {
+   "accepted": false,
+   "verification": "INVALID",
+   "outcome": "UNKNOWN",
+   "codes": [
+    "RECEIPT_ENVELOPE_MISMATCH"
+   ],
+   "request_sent": true
+  },
+  "A1e_no_digest": {
+   "accepted": false,
+   "verification": "INVALID",
+   "outcome": "UNKNOWN",
+   "codes": [
+    "RECEIPT_ENVELOPE_MISMATCH"
+   ],
+   "request_sent": true
+  },
+  "A1_no_resolver_stripped": {
+   "accepted": true,
+   "verification": "UNVERIFIED",
+   "outcome": "ACCEPTED",
+   "codes": [],
+   "request_sent": true
+  },
+  "A2_manifest_down_nonstrict": {
+   "accepted": true,
+   "verification": "UNVERIFIED",
+   "outcome": "ACCEPTED",
+   "codes": [
+    "RECEIPT_KEY_MANIFEST_UNAVAILABLE"
+   ],
+   "request_sent": true
+  },
+  "A2_manifest_down_strict": {
+   "accepted": false,
+   "verification": "UNVERIFIED",
+   "outcome": "UNKNOWN",
+   "codes": [
+    "RECEIPT_KEY_MANIFEST_UNAVAILABLE",
+    "SIGNED_RECEIPT_REQUIRED"
+   ],
+   "request_sent": true
+  },
+  "A3_executor_actuator_01_default": {
+   "accepted": true,
+   "verification": "VERIFIED",
+   "outcome": "ACCEPTED",
+   "codes": [],
+   "request_sent": true
+  },
+  "A3_executor_cage_finance_broker": {
+   "accepted": false,
+   "verification": "UNVERIFIED",
+   "outcome": "REJECTED",
+   "codes": [
+    "EXECUTOR_ID_MISMATCH"
+   ],
+   "request_sent": false
+  },
+  "A3_executor_ACTUATOR_02": {
+   "accepted": false,
+   "verification": "UNVERIFIED",
+   "outcome": "REJECTED",
+   "codes": [
+    "EXECUTOR_ID_MISMATCH"
+   ],
+   "request_sent": false
+  },
+  "A3_dataclass_default_executor_id": "actuator_01",
+  "A4_outgoing_headers_containing_EVIL": {
+   "x_cage_routing_seal": "EVIL3",
+   "x-cage_routing-seal": "EVIL4"
+  },
+  "A4_seal_header_value_is_the_clearance_seal": "aaa.bbb.ccc",
+  "A5_junk_seal_old_issued_at_no_approvals_quorum5": {
+   "accepted": true,
+   "verification": "VERIFIED",
+   "outcome": "ACCEPTED",
+   "codes": [],
+   "request_sent": true
+  },
+  "A6_http_endpoint_accepted": true,
+  "A7_digest_equal": true,
+  "A7_assertion_equal": true
+ }
+}

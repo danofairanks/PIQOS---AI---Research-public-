@@ -1,0 +1,47 @@
+PREREG sha256: b0ea0b83acbe72b6db64b66d98dc08fcc483511eac445ed1bfddbf94b0d201d7
+reading C  seed 20261017  N 400000  skipped(cap) 22
+
+Class table (worlds classified by which premises hold, evaluated directly)
+class                 n     PASS     FAIL    UNRES  CE_PASS  CE_FAIL
+ALL_HOLD         204984    20196    60815   123973        0        0
+ONLY_i            19954     1911     5233    12810        0        0
+ONLY_ii           44025     1832    14909    27284        0        0
+ONLY_iii          10590     1191     2334     7065      613        0
+ONLY_ivNO         17529     3799     4126     9604     2077        0
+ONLY_ivYES        30063     1073    12740    16250        0     4748
+ONLY_vroute       13375     2317     3227     7831        0        0
+ONLY_vwit          4710        0     3094     1616        0     3094
+MULTI             54748     5370    18667    30711     2457     5672
+
+Premise violated (any other premises may also be violated)
+violates i       n=  45982  CE_PASS=  1050  CE_FAIL=  1393
+violates ii      n=  68671  CE_PASS=   598  CE_FAIL=  2823
+violates iii     n=  31001  CE_PASS=  2016  CE_FAIL=   468
+violates ivNO    n=  31002  CE_PASS=  3617  CE_FAIL=   615
+violates ivYES   n=  47523  CE_PASS=   285  CE_FAIL=  7523
+violates vroute  n=  26712  CE_PASS=   835  CE_FAIL=   682
+violates vwit    n=  10392  CE_PASS=     0  CE_FAIL=  7129
+
+Non-vacuity in ALL_HOLD: PASS 9.9%  FAIL 29.7%  UNRESOLVED 60.5%; SemInd under UNRESOLVED: {True: 69879, False: 54094}
+
+Smallest counterexample per class (nodes, kind):
+-- MULTI: size 4, CE_FAIL
+   true rules: [((0, 1), 2), ((0, 1), 2), ((1,), 2), ((0, 1, 2), 3), ((0, 1, 2), 3), ((0, 2), 3)]  rep rules (body,head,faithful,complete): [((0, 1), 2, True, True), ((1,), 2, True, True), ((0, 1, 2), 3, True, True), ((0, 1, 2), 3, True, True), ((0, 2), 3, True, True)]
+   cur: {0: True, 1: True}  wd: {0: True, 1: True}  status: {0: 'FAILED', 1: 'FAILED'}  labels: {}
+   derivations of q (leaves, rules, comp, closed): [([0, 1], [0, 2], True, True), ([0, 1], [1, 3], True, False), ([0, 1], [1, 2], True, True), ([0, 1], [1, 4], True, False), ([0, 1], [0, 4], True, True), ([0, 1], [0, 3], True, True)]  wcomp: False  wclosed: True
+-- ONLY_iii: size 4, CE_PASS
+   true rules: [((0, 1), 2), ((0, 1), 2), ((2,), 3)]  rep rules (body,head,faithful,complete): [((0, 1), 2, True, True), ((0, 1), 2, True, True), ((2,), 3, True, True), ((1,), 2, False, True)]
+   cur: {0: False, 1: True}  wd: {0: False, 1: True}  status: {0: 'FAILED', 1: 'ACTIVE'}  labels: {1: 'NO'}
+   derivations of q (leaves, rules, comp, closed): [([0, 1], [1, 2], True, False), ([0, 1], [0, 2], True, True), ([1], [2, 3], True, True)]  wcomp: True  wclosed: True
+-- ONLY_ivNO: size 4, CE_PASS
+   true rules: [((1,), 2), ((0, 1), 2), ((0, 1), 2), ((0, 1), 3), ((0, 1, 2), 3)]  rep rules (body,head,faithful,complete): [((1,), 2, True, True), ((0, 1), 2, True, True), ((0, 1), 2, True, True), ((0, 1), 3, True, False), ((0, 1, 2), 3, True, True)]
+   cur: {0: True, 1: True}  wd: {0: True, 1: False}  status: {0: 'ACTIVE', 1: 'ACTIVE'}  labels: {0: 'NO', 1: 'NO'}
+   derivations of q (leaves, rules, comp, closed): [([0, 1], [1, 4], True, True), ([0, 1], [3], False, False), ([0, 1], [0, 4], True, True), ([0, 1], [2, 4], True, True)]  wcomp: True  wclosed: True
+-- ONLY_ivYES: size 4, CE_FAIL
+   true rules: [((0, 1), 2), ((1,), 2), ((0, 2), 3)]  rep rules (body,head,faithful,complete): [((0, 1), 2, True, True), ((1,), 2, True, True), ((0, 2), 3, True, True)]
+   cur: {0: True, 1: True}  wd: {0: True, 1: True}  status: {0: 'ACTIVE', 1: 'ACTIVE'}  labels: {0: 'YES', 1: 'NO'}
+   derivations of q (leaves, rules, comp, closed): [([0, 1], [1, 2], True, True), ([0, 1], [0, 2], True, False)]  wcomp: True  wclosed: True
+-- ONLY_vwit: size 4, CE_FAIL
+   true rules: [((0,), 2), ((0, 1), 2), ((0, 1), 2), ((0,), 3)]  rep rules (body,head,faithful,complete): [((0,), 2, True, True), ((0, 1), 2, True, False), ((0, 1), 2, True, True)]
+   cur: {0: True, 1: True}  wd: {0: True, 1: True}  status: {0: 'ACTIVE', 1: 'ACTIVE'}  labels: {0: 'UNRESOLVED', 1: 'UNRESOLVED'}
+   derivations of q (leaves, rules, comp, closed): []  wcomp: False  wclosed: True

@@ -13,3 +13,4 @@ https://github.com/google/cybernetic-agent-governance-engine  b4bb9ef7cefa82ba27
 https://github.com/google/cybernetic-agent-governance-engine  0c657b4c06c2121ba816cf98e389708b221d3d73  2026-10-06   (main after #409; lineage checks, section 6b-iii; consequence code tree-identical to b4bb9ef7)
 https://github.com/grahamb-ai/flowsignal-agentic-payments  471d8af596044d61f86f774f70cd8c6ff2efc31c  2026-08-31   (public reference harness compared in section 6b-iii)
 (vendored) third_party/agent-integrity 0.1.0-alpha.0 inside the 0c657b4 tree  (upstream repository github.com/SimranPabla/agent-integrity; compared in section 6b-iii)
+https://github.com/google/cybernetic-agent-governance-engine  1903a20f84f8f42af52c8fa3a6f46307fe38df59  2026-10-12   (main after #467; re-run of passes 1 to 2c, section 6b-iv: cage_harness/followup_2026-10-12_at_1903a20f/)

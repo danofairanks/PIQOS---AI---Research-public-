@@ -1,0 +1,36 @@
+PREREG sha256: c6592171bde069f2b601bbe44c0204007e0b990d38e97a1964b5e31d8fd5bcf2
+variant: route=B factive=True semvalid=True
+reading B  seed 20261017  N 400000  skipped(cap) 15
+
+Class table (worlds classified by which premises hold, evaluated directly)
+class                 n     PASS     FAIL    UNRES  CE_PASS  CE_FAIL
+ALL_HOLD         335547    42457    96338   196752        0        0
+ONLY_i            33150     4687     8406    20057        0        0
+ONLY_ii               0        0        0        0        0        0   (n=0)
+ONLY_iii          18606     1138     3992    13476        0        0
+ONLY_ivNO             0        0        0        0        0        0   (n=0)
+ONLY_ivYES            0        0        0        0        0        0   (n=0)
+ONLY_vroute           0        0        0        0        0        0   (n=0)
+ONLY_vwit             0        0        0        0        0        0   (n=0)
+MULTI             12682      943     2739     9000        0        0
+
+PASS-and-FAIL overlap (Def 13 predicates both true): 0
+Premise roles from isolated classes (n<200: empty/analytic under this reading; n>=200 & CE=0: idle; CE>0: load-bearing):
+  i       n= 33150 CE=     0 -> idle
+  ii      n=     0 CE=     0 -> empty/analytic
+  iii     n= 18606 CE=     0 -> idle
+  ivNO    n=     0 CE=     0 -> empty/analytic
+  ivYES   n=     0 CE=     0 -> empty/analytic
+  vroute  n=     0 CE=     0 -> empty/analytic
+  vwit    n=     0 CE=     0 -> empty/analytic
+
+Premise violated (any other premises may also be violated)
+violates i       n=  45832  CE_PASS=     0  CE_FAIL=     0
+violates ii      n=      0  CE_PASS=     0  CE_FAIL=     0
+violates iii     n=  31288  CE_PASS=     0  CE_FAIL=     0
+violates ivNO    n=      0  CE_PASS=     0  CE_FAIL=     0
+violates ivYES   n=      0  CE_PASS=     0  CE_FAIL=     0
+violates vroute  n=      0  CE_PASS=     0  CE_FAIL=     0
+violates vwit    n=      0  CE_PASS=     0  CE_FAIL=     0
+
+Non-vacuity in ALL_HOLD: PASS 12.7%  FAIL 28.7%  UNRESOLVED 58.6%; SemInd under UNRESOLVED: {True: 111300, False: 85452}

@@ -1,0 +1,36 @@
+PREREG sha256: c6592171bde069f2b601bbe44c0204007e0b990d38e97a1964b5e31d8fd5bcf2
+variant: route=C factive=True semvalid=False
+reading C  seed 20261017  N 400000  skipped(cap) 14
+
+Class table (worlds classified by which premises hold, evaluated directly)
+class                 n     PASS     FAIL    UNRES  CE_PASS  CE_FAIL
+ALL_HOLD         307536    31536    91154   184846        0        0
+ONLY_i            29592     2908     7764    18920        0        0
+ONLY_ii               0        0        0        0        0        0   (n=0)
+ONLY_iii          16301     1830     3656    10815      940        0
+ONLY_ivNO             0        0        0        0        0        0   (n=0)
+ONLY_ivYES            0        0        0        0        0        0   (n=0)
+ONLY_vroute       20485     3647     4855    11983        0        0
+ONLY_vwit          7174        0     4667     2507        0     4667
+MULTI             18898     2798     4444    11656     1118      791
+
+PASS-and-FAIL overlap (Def 13 predicates both true): 0
+Premise roles from isolated classes (n<200: empty/analytic under this reading; n>=200 & CE=0: idle; CE>0: load-bearing):
+  i       n= 29592 CE=     0 -> idle
+  ii      n=     0 CE=     0 -> empty/analytic
+  iii     n= 16301 CE=   940 -> load-bearing
+  ivNO    n=     0 CE=     0 -> empty/analytic
+  ivYES   n=     0 CE=     0 -> empty/analytic
+  vroute  n= 20485 CE=     0 -> idle
+  vwit    n=  7174 CE=  4667 -> load-bearing
+
+Premise violated (any other premises may also be violated)
+violates i       n=  45865  CE_PASS=   808  CE_FAIL=   619
+violates ii      n=      0  CE_PASS=     0  CE_FAIL=     0
+violates iii     n=  30915  CE_PASS=  2058  CE_FAIL=   146
+violates ivNO    n=      0  CE_PASS=     0  CE_FAIL=     0
+violates ivYES   n=      0  CE_PASS=     0  CE_FAIL=     0
+violates vroute  n=  26946  CE_PASS=   513  CE_FAIL=   123
+violates vwit    n=   9099  CE_PASS=     0  CE_FAIL=  5458
+
+Non-vacuity in ALL_HOLD: PASS 10.3%  FAIL 29.6%  UNRESOLVED 60.1%; SemInd under UNRESOLVED: {True: 105480, False: 79366}

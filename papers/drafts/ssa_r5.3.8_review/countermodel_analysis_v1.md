@@ -1,5 +1,9 @@
 # Notational Consistency Without External Binding: A Countermodel Analysis of the Škrinjar Structural Architecture (R5.3.8)
 
+**Follow-up (2026-10-17).** A later paper by the same author, *The Descendant Standing Problem* v1.2 (13 October 2026), is covered in a separate companion note, [`descendant_standing_v1_2_note_v1.md`](descendant_standing_v1_2_note_v1.md): Theorem 1 executed on random finite worlds (nine of nine preregistered predictions held), the paper's definitions pinned and re-run under alternative readings, and one gap in its Definition 15. Nothing in the analysis below is changed by it.
+
+**Corrections and updates (2026-10-12).** (1) Appendix B of R5.3.8 (and R5.3.9) lists eleven entries, ten solo-authored papers and one joint paper, not twelve works with eleven solo papers as this draft previously stated; every count in the text has been corrected in place, and Appendix A below (eleven rows) was already right. (2) R5.3.9 removed R5.3.8's §1 adversarial mandate; sentences about that invitation now say which version they describe. (3) The Note in §9 records a word-level comparison of R5.3.8 and R5.3.9.
+
 ## Abstract
 
 The Škrinjar Structural Architecture (SSA), version R5.3.8, "A Recursive
@@ -9,9 +13,9 @@ Researcher; canonical frozen-review date 24 September 2026), is a
 specification K^v, a three-valued status logic {E, F, U}, six
 structural non-entailment propositions (T1–T6) with witness
 constructions, five countermodels, an eighteen-item conformance test,
-and a corpus of eleven prior solo-authored papers plus one joint paper
-with a named technical reviewer. The document explicitly invites
-adversarial attack in its own §1 and explicitly disclaims novelty for
+and a source record (its Appendix B) of eleven entries: ten solo-authored papers plus one joint paper
+with a named technical reviewer. The R5.3.8 document explicitly invites
+adversarial attack in its own §1 (the invitation is absent from the successor R5.3.9; see the Note in §9 and the correction block above) and explicitly disclaims novelty for
 its constituent ideas in its own §16–§17, claiming contribution only in
 "particular architectural organization." This paper takes up that
 invitation directly. We show that every worked instantiation and every
@@ -41,10 +45,10 @@ This project's standing policy redacts private individuals from its
 published work unless the specimen is a public figure, an institution,
 or an already-public-record event (`laundered_vocabulary_v1.md`'s "Law"
 entry). Sandra Škrinjar publishes a sustained, dated, multi-release body
-of work under her own verified identity — twelve DOI-registered
-publications across SSRN and Zenodo, cited by name in her own work's
+of work under her own verified identity — eleven DOI-registered
+entries across SSRN and Zenodo, cited by name in her own work's
 provenance table — and SSA R5.3.8 itself, in its own §1, issues a
-direct, unqualified invitation: "Adversarial mandate. Attack the
+direct, unqualified invitation (removed in the successor R5.3.9): "Adversarial mandate. Attack the
 architecture rather than restyling it... Return the smallest
 countermodel and classify kernel/specification/application/no change."
 This is a stronger and more explicit basis for naming than the
@@ -63,6 +67,8 @@ stated grounds, and this paper's naming decision applies to SSA R5.3.8
 specifically — the document that itself invites the scrutiny this paper
 conducts — not retroactively to material examined elsewhere under a
 different rationale.
+
+*Scope after R5.3.9 (added 2026-10-12).* The grounds stated above for naming rest on two facts: the R5.3.8 invitation to adversarial scrutiny and the author's DOI-registered publication record. The successor R5.3.9 does not contain the invitation (see the Note in §9). The decision stays scoped to R5.3.8, the frozen object this paper examines, where the invitation was published and dated; whether the naming rationale still holds for later versions is not decided by this paper.
 
 No claim of deceptive intent, coordination, or AI assistance is made
 about either named individual anywhere in this paper. The object under
@@ -123,8 +129,8 @@ apparatus as the proposition claims. Five further countermodels (§15)
 follow the identical form: hold one condition fixed, stipulate a change
 in another, and show the resulting statuses diverge as claimed.
 
-Appendix B lists twelve source works under the heading "Canonical
-Source Record and Provenance": eleven solo-authored papers by Škrinjar,
+Appendix B lists eleven source works under the heading "Canonical
+Source Record and Provenance": ten solo-authored papers by Škrinjar,
 deposited on SSRN and Zenodo between an initial 2026 filing and the
 present release, and one paper co-authored with Ricky Jones, "Governed
 Handoffs from Trace to Consequence," for which Appendix B records
@@ -196,7 +202,7 @@ time, in the order the document presents them, does not.
 
 ## 4. The credited adversarial review as an empirical instance
 
-Section 1's invitation to attack the architecture was, by the
+R5.3.8 §1's invitation to attack the architecture (removed in R5.3.9) was, by the
 document's own account, already accepted once. The Acknowledgment
 section states in full what Ricky Jones's credited "Technical
 Reviewer — Engineering and Adversarial Review" contribution produced:
@@ -263,12 +269,12 @@ across these already-named distinctions, not a new binding mechanism
 that reaches further than any one of them does individually.
 
 The document's own corpus performs the same reduction at scale. Section
-21's "Canonical Synthesis" maps all eleven prior solo papers, plus the
+19's "Canonical Synthesis" maps the eleven Appendix B entries, plus the
 document itself, onto one six-symbol vocabulary: "Škrinjar Structural
 Architecture → 𝔇, K, Adeq, CP, Γ, σ, material recursive governance,
 bounded constitutive reuse." Section 19's wider-corpus mapping extends
-this to the author's full publication list beyond the twelve formally
-cited works. This is not, on its own, evidence of anything beyond what
+this to the author's full publication list beyond the eleven formally
+cited works. (The document's own caveat: the synthesis "identifies a common generative architecture across the corpus without claiming that every earlier source explicitly formulated the present minimal kernel.") This is not, on its own, evidence of anything beyond what
 §16 already states about the underlying ideas' priority — but it is
 notable that the reduction to a small, fixed symbol set applies as
 uniformly across fourteen years' worth of stated conceptual development
@@ -279,7 +285,7 @@ as it does within one twenty-six-page document.
 ## 6. Provenance without external contact
 
 Appendix B lists real, resolvable identifiers: SSRN registration
-numbers and Zenodo DOIs for all twelve works cited as the document's own
+numbers and Zenodo DOIs for all eleven entries cited as the document's own
 canonical source record. Depositing a document with either platform
 assigns a permanent identifier and a citable record; neither platform
 operates independent peer review as a condition of deposit. A DOI from
@@ -290,7 +296,7 @@ document's claims were independently checked before or after deposit.
 Read against this distinction, Appendix B's escalation structure is
 worth stating precisely: R5.3.8 is explicitly "the publication/
 provenance successor to frozen R5.3.7," itself built on "the R5.3.6
-constitutive-resolution kernel," citing eleven prior solo papers in
+constitutive-resolution kernel," citing ten prior solo papers in
 the same vocabulary family plus the one joint paper with Jones, whose
 credited review — per §4 above — hardened wording without forcing a
 kernel change. Each step in this sequence is independently DOI'd,
@@ -300,7 +306,7 @@ checked from Appendix B's own provenance table, required contact with
 a fact, system, or evaluator outside the same author's own corpus and
 one collaborator's credited, wording-level review.
 
-This paper did not independently verify the eleven prior solo papers
+This paper did not independently verify the ten prior solo papers
 against the same standard applied to R5.3.8 itself — that check remains
 open, and is stated as an open item in §9 below rather than assumed.
 One specific, checkable citation gap is already established: a prior
@@ -317,7 +323,7 @@ disclosed a full publication cycle earlier, in the omitted paper.
 
 ## 7. A formal countermodel protocol: axiomatized defeat conditions
 
-Section 1's own invitation — "attack the architecture rather than
+R5.3.8 §1's own invitation (removed in R5.3.9) — "attack the architecture rather than
 restyling it" — is, read precisely, an invitation to falsification, not
 to further formal commentary. We state what a countermodel against SSA
 would need to satisfy as five pre-registered defeat conditions, in the
@@ -410,14 +416,14 @@ satisfied, the invariance principle itself fails.
 
 Two further protocol constraints apply across D1–D4. First, because the
 underlying claim under test — that SSA constitutively governs
-determinations, in the strong sense §1's mandate invites scrutiny of —
+determinations, in the strong sense R5.3.8 §1's mandate invites scrutiny of —
 is universal over the space of possible 𝔇, a single pre-registered
 success of D1 or D2 is sufficient to defeat the stronger reading; this
 is not a cumulative-evidence exercise. Second, any reply that only
 refines a SatCond expression, a jurisdiction boundary, or a snapshot
 definition should be classified as non-responsive to a D1 or D2
 challenge rather than as a partial answer to it — the classification
-the document's own §1 invites ("kernel/specification/application/no
+the document's own R5.3.8 §1 invites ("kernel/specification/application/no
 change") already supplies the vocabulary for this distinction; a
 wording refinement is, on the document's own terms, an
 application-level or specification-level change, not a kernel-level
@@ -428,7 +434,7 @@ never installed D0–D4 before engaging. It operated entirely inside the
 family of refinements the architecture's own non-entailment apparatus
 is designed to accommodate, and produced exactly the outcome that
 family permits. Under this framing, that outcome is not adversarial
-success against SSA's own stated mandate. It is non-responsiveness to
+success against R5.3.8's own stated mandate. It is non-responsiveness to
 a challenge that was never posed in falsifiable form.
 
 ### 7.2 A predicted engagement pattern for this analysis itself, stated as prediction rather than finding
@@ -454,7 +460,7 @@ domain-native warrant; conceding a peripheral point while praising the
 rigor of the attack; and stopping there, without installing D0–D4,
 without naming an independent channel, and without running inertness or
 binding failure. A public reply citing "adversarial engagement" without
-a smallest countermodel classified under SSA's own §1 mandate would
+a smallest countermodel classified under R5.3.8's own §1 mandate would
 complete the pattern.
 
 This is `topology_with_no_exit_v1.md`'s own typology applied reflexively
@@ -638,7 +644,7 @@ against an external channel or against the apparatus's own stated
 equivalence rules. The document does not claim that kind of artifact
 was produced, and none is included in its public record. Building one
 here, from nothing, is not recorded as a complaint about the labor
-involved. It is recorded because §1's own mandate invites exactly this
+involved. It is recorded because R5.3.8 §1's own mandate invites exactly this
 kind of attack, and because the credit already on the public record
 describes an outcome, not a process — this section supplies the
 process, and its absence from the credited review's own stated scope
@@ -1175,11 +1181,11 @@ of any part of the document or of any work in its cited corpus, a
 question this paper's methods cannot address and does not attempt to.
 
 Two items remain explicitly open rather than resolved here. First, the
-eleven prior solo papers cited in Appendix B have not been individually
+ten prior solo papers cited in Appendix B have not been individually
 checked against the standard applied to R5.3.8 itself; whether each
 independently earns the same reading, or is itself already an instance
 of the pattern found here, is unverified. Second, and more specifically:
-whether this twelve-work corpus contains any instance of a later paper
+whether this eleven-entry corpus contains any instance of a later paper
 correcting, revising, or negating an earlier one — as distinct from
 only ever extending or formalizing it further — has not been tested.
 This is a narrower, more cheaply executed question than the first, and
@@ -1191,8 +1197,8 @@ Methodology) is an escalation relative to what came before it, never a
 correction — a pattern that supports, without establishing, an
 expectation that the negation test would return no instances if run
 against the full corpus. A positive result on that test — a
-demonstrated instance of internal correction somewhere in the twelve
-works — would narrow this paper's reading of the corpus and is
+demonstrated instance of internal correction somewhere in the eleven
+entries — would narrow this paper's reading of the corpus and is
 therefore recorded as a live, unresolved possibility rather than
 foreclosed by omission.
 
@@ -1214,17 +1220,7 @@ baseline: if such a bias exists, an already-shallow result could be
 shallower than an equivalent review conducted without it, not merely
 equally shallow.
 
-**Note (2026-09-25) — SSA R5.3.9.** A successor release, R5.3.9, was
-published after this paper's initial draft and has been read in full
-against this paper's findings. R5.3.9's own release note describes it
-as bounded semantic hardening; on direct comparison, that
-self-description holds. The added content is three narrow additions —
-an obligation-level fatal-defeater-priority rule, a resolution rule
-for materially contrary adequacy bases, and an empty-resolution-space
-non-conferment rule — layered onto an apparatus that is otherwise
-unchanged, including every structural non-entailment proposition and
-worked instantiation this paper examines in §3. Nothing in R5.3.9
-alters any finding above.
+**Note (2026-09-25; updated 2026-10-12) — SSA R5.3.9.** A successor release, R5.3.9 (canonical release date 25 September 2026, 29 pages against 26), was published after this paper's initial draft. At the first writing it was read and judged to be bounded semantic hardening that did not alter any finding above. On 2026-10-12 both PDFs were compared word by word with page headers and version labels masked: 98.2% of R5.3.8's words are unchanged (171 words removed, 428 added; script [`r538_vs_r539_diff.py`](r538_vs_r539_diff.py), output [`r538_vs_r539_diff_output.txt`](r538_vs_r539_diff_output.txt)), and the complete set of differences is (a) a rewritten release note; (b) three added continuation pages (§3.4/§3.5, §6, §18) carrying an obligation-level fatal-defeater-priority rule, a resolution rule for materially contrary adequacy bases (a selecting, subordinating or displacing rule must itself be identified and independently warranted for that use, else Adeq=U), and an Empty Resolution-Space Non-Conferment rule, mirrored as conformance clauses §18.3, §18.7 and §18.9; and (c) removal from the front matter of the sentences "Adversarial review remains invited against this publication object", "A further kernel change requires a concrete contradiction, countermodel, undefined case, semantics-preserving collapse, or application class that the present architecture cannot represent without a new primitive, status, or semantic exception", the whole "Adversarial mandate" paragraph ("Attack the architecture rather than restyling it ... Return the smallest countermodel and classify kernel/specification/application/no change"), and the "Canonical frozen-review date" line. Appendix B, §3.7, §15, §20 and the technical-reviewer acknowledgement are word-for-word identical in both versions. Consequences for this paper: the findings about the apparatus (§3, §4, §7.3 to §7.4) stand unchanged for both versions; every statement that the document invites attack in its own §1 (the abstract, §1, §3, §7.1, §7.2, §7.5, §7.6 and §10) and the arguments in §7.5 and §7.6 that rely on that invitation or on its "kernel/specification/application/no change" classification describe R5.3.8 and not R5.3.9; and R5.3.9's release note credits "source-bound adversarial review and regression testing" for its delta while the document contains no regression case, test list or result (the word "regression" occurs once, in that release note) and names no reviewer beyond the unchanged acknowledgement. No claim is made about why the invitation was removed. The diff statistics above are reproducible by running that script on the two published PDFs.
 
 ---
 
@@ -1241,8 +1237,8 @@ paper's reading does not find, anywhere in twenty-six pages or in the
 one credited instance of adversarial engagement the document's public
 record contains, is any point at which the architecture's own
 apparatus was required to bind to a fact it did not itself supply. The
-document invites the reader to attack the architecture rather than
-restyle it. Sections 3, 4, and 7 above take up that invitation
+R5.3.8 document invites the reader to attack the architecture rather than
+restyle it (the R5.3.9 text no longer contains that invitation). Sections 3, 4, and 7 above take up that invitation
 directly and report what the primary source itself already concedes,
 assembled into one argument rather than left distributed across five
 disclaimer boxes a linear reading encounters one at a time. Section 7.3
@@ -1253,7 +1249,7 @@ foundation.
 
 ---
 
-## Appendix A: Source record, reproduced from SSA R5.3.8 Appendix B
+## Appendix A: Source record, reproduced from SSA R5.3.8 Appendix B (word-for-word identical in R5.3.9)
 
 | Source | Authorship | Identifier |
 |---|---|---|
