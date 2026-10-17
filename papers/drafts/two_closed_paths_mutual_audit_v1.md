@@ -2,13 +2,10 @@
 
 *Status: DRAFT OUTLINE. Filed 2026-10-16. Authors: operator + Claude (Sonnet 5.5). Sections 1-3 and the toy
 are written; sections 4-6 are scaffolds with evidence still to be pinned and verified. All cases are
-anonymized (Case A-D); no person, company or repository is named, and no identifying pin is published in
+anonymized (Cases A-G); no person, company or repository is named, and no identifying pin is published in
 this draft. Numbers in §3 come from `two_closed_paths_mutual_audit_v1/toy_mutual_audit.py` (seeded,
 stdlib only, output in `output.txt`, predictions in `PREREG.md` written before the first run).
-Same-source caveat: one model-assisted reader and author. Tool run 2026-10-16: `paper_rigor` ok (0 gaps);
-`verification_lint` ok (0 gaps; a repetition-count false positive was rewritten to cite the script's
-constants); `attractor_scan` one weak `goal_post_movement` flag on "not yet" in plain-English uses, read in
-context and benign.*
+Same-source caveat: one model-assisted reader and author. Tool run 2026-10-17 (after Case G was added): `paper_rigor` ok (0 gaps); `verification_lint` ok (0 gaps); `attractor_scan` one weak `goal_post_movement` flag on "not yet" in plain-English uses, read in context and benign.*
 
 ---
 
@@ -18,8 +15,8 @@ Two verification procedures that are each closed (each checks only against artif
 their shared specification supplied) are increasingly paired so that their joint verdict is offered as
 evidence. This note asks when that pairing adds independence. We state four conditions, show with a small
 runnable toy that a pair built from one flawed specification agrees on everything the specification talks
-about and is jointly wrong exactly where it does not, and outline six anonymized public-record cases
-(two largely positive, one mixed) against the conditions. The contribution is a way to ask the question, not a measured
+about and is jointly wrong exactly where it does not, and outline seven anonymized public-record cases
+(two largely positive, two mixed) against the conditions. The contribution is a way to ask the question, not a measured
 rate in the wild.
 
 ## 1. Definitions
@@ -81,11 +78,12 @@ this demonstrates a mechanism, it is not a discovery):
 | D | A practitioner recommendation to use an AI system to find and troubleshoot problems with AI systems, with trust in the orchestrating model | public post; screenshot held privately | 1 and 2 untested |
 | E | A public technical report documenting a multi-stage model post-training recipe, with stated limits and disclosed discrepancies between its own tables | public report; pin held privately | 3 largely met; 1, 2 and 4 met in some stages and only partly in others (one stage trains and evaluates with different judges and external benchmarks; another uses a reward model that is also used to monitor the benchmark it is reported on). The paper's second largely positive example. |
 | F | A public paper and code repository describing a self-improving agent harness in which a language model edits the harness and selects among candidate outputs, with no verifier inside the improvement loop | public paper and repository; pins held privately | 2 and 3 largely met (grading rubric and scores isolated from the improver by a guard; limits stated; a best-of-k control using the same selector); 1 only partly met (the grader is the improver's model or family) and unmeasured. Mixed example. |
+| G | A public paper describing a self-improving agent harness for streams of tasks, in which several language-model roles rewrite the harness each cycle and a language-model verifier gates changes before they go live; outcome labels reach the improver only after each task resolves, and the scored outcomes come from external resolutions and benchmark criteria | public paper; pin held privately | 2 and 3 largely met (external, delayed outcome labels; limitations stated, including that its loss terms are not estimated); 1 only partly met (improver, solver, router and in-loop verifier are one model family) and unmeasured; 4 met for the negative results it reports, while the headline comparisons rest on one run per cell, so the check's resolving power against run-to-run spread is unmeasured. Mixed example. |
 
 Editorial rules for this section: (i) no adverse empirical claim about the counterpart or maker in any
 case is published unless it has been verified, pinned and the operator has decided on contact; (ii) the
 paper's evidence for what mutual audits cannot show rests on the toy, not on the cases; (iii) credit what
-each case does well (Cases A and E are chosen because they are good examples; Case F is chosen for its isolation controls).
+each case does well (Cases A and E are chosen because they are good examples; Cases F and G are chosen for their isolation controls and stated limitations).
 
 ## 5. Counter-models: when a closed-path pair is fine
 
@@ -111,5 +109,5 @@ to be read at primary level before citing.
 
 - The toy is constructed; the numbers describe its stated mix and rules.
 - A framework paper: it offers conditions and a demonstration, not a measured effect in deployed systems.
-- Six cases, anonymized, unverified at the claim level.
+- Seven cases, anonymized, unverified at the claim level.
 - This note does not claim any prevalence of the pattern in deployed systems, and does not establish that any specific author, company or repository is affected.
