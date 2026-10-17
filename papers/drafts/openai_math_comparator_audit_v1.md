@@ -89,6 +89,16 @@ Across the accepted configs the statements are short, the definitions are local,
 
 **Where "harnessmaxxing" could still live.** In the unformalized majority, in statement fidelity for the formalized ones, and in selection: a release in which the machine-checked part is the part that is easy to check will show a clean pass rate on exactly the subset where a clean pass rate is cheap. None of these is excluded by this audit.
 
+### 6.1 A popular reading, checked against the census (added 2026-10-17)
+
+A commentary published on 16 October 2026 argues that the release shows a "91% failure rate": per its text, 372 successes out of roughly 4,000 attempts, produced by brute-forcing proofs "until the code compiles in a proof assistant like Lean". Two parts of that reading can be set against this audit's counts; the rest cannot be checked here.
+
+*The ratio.* The 4,000 attempts is the commentary's figure, and it cites no source; the census in section 2 records 722 manuscripts in 372 result families and no attempt count, so the denominator is not something this audit can confirm. A ratio of successes to attempts is a hit rate on a list of open problems, not an error rate, and "unsolved" is not "wrong". The quantity that bears on quality is the error rate among results the release claims, which this audit does not measure. The commentary reports that three manuscripts were withdrawn after a sign error; that is unverified here and, if it means three of 722, is under half of one percent of the manuscripts.
+
+*The mechanism.* "Compiles in Lean" can describe only the formalized subset: 162 of 722 manuscripts (22%) and 127 of 372 families (34%), per section 2. For the rest the catalogue's own review field reads `unchecked`, and that is where the risk described in section 6 sits. For the formalized subset, the 11 accepted configs and the two rejected controls (sections 4 and 5) show a derivation checked by the kernel, whatever search produced it. Whether that search deserves to be called reasoning is not tested here (section 6), and the commentary gives no operational test either: "cannot invent a new concept" and "fails 100% of the time" on problems needing a novel framework have no stated way to be wrong. The release includes explicit counterexamples to long-standing conjectures (for example `AbhyankarSathaye` and `ProjectionCounterexample`, section 5); this audit does not claim they show originality, only that an account of the release as interpolation has to say what they are.
+
+*What the audit supports.* The commentary's institutional point, that the difficulty is volume and verification rather than a demonstration of machine intellect, is consistent with route 4: most of the release is unchecked, and the checked part is the part that is cheap to check. Its claims about training data, about named researchers, and about the labour market are outside this audit and are not repeated.
+
 ## 7. Limitations
 
 11 accepted configs out of 405, none rejected, so the harness's discriminating power rests on the two controls alone; configs chosen for build feasibility; one reader; a weaker sandbox; a single kernel; the Lean proofs themselves were not read beyond the top-level structure of one of them; the manuscripts were not read; the controls were run on one config; nothing here is independent of the model family that drafted the paper.
@@ -103,6 +113,7 @@ Sources: the repository itself (https://github.com/openai/math, commit adc7f1241
 
 ## Revision log
 
+- *2026-10-17.* Added section 6.1 (a popular reading checked against the census). No result, count or verdict above it changed.
 - *2026-10-07, v1.* Eleven short-statement configs run and accepted; two negative controls rejected; static census of the release at commit `adc7f1241`. Statement readings by one same-family reader.
 - *Open for the next revision.* A full Mathlib build (multi-hour, several GB) to reach the 377 configs whose challenge files `import Mathlib`; an independent mathematician's read of the Lean statements, starting with the ones that define their objects from scratch (`FiniteCongruenceGraph`, `GrahamSpherical`); a run with a second kernel; a sandbox at the documented strength. New results are added here with their date; a changed verdict is a correction, not an edit in place.
 
