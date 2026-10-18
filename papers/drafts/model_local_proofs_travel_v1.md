@@ -6,7 +6,7 @@
 Internal evidence exists and is available to serious inquiries at proof time.
 Not a warning about any specific party; it reports patterns.
 
-**Corrections and additions.** Section 3 (TLA+ attribution wording) was corrected on 2026-10-03; the correction is marked in place. Section 6b-iv (status of the section 6b findings at a later commit) was added on 2026-10-12; sections 6b and 6b-ii are unchanged and still describe the earlier pinned commits.
+**Corrections and additions.** Section 3 (TLA+ attribution wording) was corrected on 2026-10-03; the correction is marked in place. Section 6b-iv (status of the section 6b findings at a later commit) was added on 2026-10-12; sections 6b and 6b-ii are unchanged and still describe the earlier pinned commits. Section 6b-v (static status at CAGE `73510b8` and what the vendor's package inside CAGE contains) was added on 2026-10-18.
 
 **Disclosure.** Drafted with AI assistance. The attack scripts and their predictions were written by the same model that drafted this paper, so the results are a same-source check, not independent verification. Findings are reproducible: the companion harness clones the pinned commits and checks every result (section 8).
 
@@ -216,6 +216,16 @@ Not a model-check repository: a text search of its history for "theorem" and for
 | fixtures | all three commits that touch `expected/` also change the demo engine or its contradiction module (49 commits in total): the expected files were not authored separately from the code they check, so "matches the fixture" and "is correct" are not shown to be the same claim. No case was found where an output looks wrong on inspection |
 
 Read fairly, the history looks like a migration: the demo engine and demo were finished in one day (2026-03-25) and not touched since; the core began that day and is under active development, and version comments inside `core/` state the upgrade relationship. What the README, claim-boundary file and changelog (one entry, 2026-05-11) do not say is which implementation the entry point runs. The entry point's referent also changed three times in 17 days (2026-08-30, 2026-09-02, 2026-09-16), then froze; its `SUPERSEDED.md` now says no repository is designated, which differs from the earlier redirect.
+
+### 6b-v. Status at a later CAGE commit, and what the vendor's package contains (2026-10-18; static reads, nothing executed)
+
+*CAGE.* `main` fetched on 2026-10-18 is `73510b8` (committed 2026-10-14, #481), later than the `1903a20f` of section 6b-iv. At `73510b8`, `src/gateway/governance/consequence_gateway.py:253` passes `claims.ver` to the consumption store as `state_version`, and the string `authority_state_version` does not occur in that file, so nothing in it compares the version with a current authority state; `src/integrations/provider_01/README.md:77` reads "`authority_state_version` — nullable, does not block." The S1 contrast of section 6b-iii therefore reads the same at this commit. This is a static read: the controlled probe of 6b-iii was not re-run.
+
+*FlowSignal's repositories.* `git ls-remote` on 2026-10-18: `flowsignal-agentic-payments` is still at `471d8af`, the pin of this paper. A separate repository of the same account, `flowsignal-runtime-authority-verification`, is not one of this paper's pins; it is discussed in the companion note [`gate_library_class_replication_v1.md`](gate_library_class_replication_v1.md) (section 2) and was not probed here.
+
+*The vendor's package inside CAGE.* CAGE's tree carries `docs/partners/provider_01/FlowSignal-CAGE-Phase3-v0.2-Candidate.zip` (421,908 bytes per `git cat-file -s`, 290 entries; opened read-only at `73510b8`). Section 6b-iii says the vendor file CAGE's plan cites is not public; the plan names it as the vendor's `adapter/consequence_gateway.py` (`docs/partners/provider_01/flowsignal_integration_implementation_plan.md:438`). The package contains no path with `consequence_gateway` and no `adapter/` directory, so that statement stands for this package as well.
+
+*The input-trust items of section 6b-iii in the package.* In the package's `harness/app/engines/financial_runtime.py`, lines 40 to 42 take the request's own `mandate_max_amount` as the limit when the mandate is not in the authoritative table (T1); line 43 takes the clock from `sealed_at` or the request's `requested_execution_time`, and line 47 clamps a future-dated screening time to age 0 (T4); line 64 compares `req.amount <= authoritative_limit`, and nothing in `evaluate_financial` checks the sign or finiteness of `amount` (T2). These are the paths read in 6b-iii in the public reference harness (`471d8af`); here they are present in the code the vendor delivered to CAGE, read statically. Whether they are reachable in the vendor's staging service, and what a later qualified commit changed, was not read; nothing was run.
 
 ## 7. Reading across the chain
 

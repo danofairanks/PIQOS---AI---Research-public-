@@ -6,9 +6,13 @@
 Internal evidence exists and is available to serious inquiries at proof time.
 Not a warning about any specific party; it reports patterns.
 
+**Corrections and additions (2026-10-18).** Sections 4 to 6 are unchanged. Added: the naming note below, the status of the pinned repositories and of a later repository from the same account (end of section 2), two limits (section 7), and a sentence in section 8.
+
+**Naming, updated.** The first repository below is hosted on the GitHub account `grahamb-ai`, which also hosts `flowsignal-agentic-payments` (FlowSignal's reference harness, compared in [`model_local_proofs_travel_v1.md`](model_local_proofs_travel_v1.md) section 6b-iii) and `flowsignal-runtime-authority-verification`, whose README says "FlowSignal built this reference implementation" (`README.md:11` at `321a01a`). FlowSignal is therefore named here as the organisation whose public repositories these are. Individuals remain unnamed, no intent is attributed, and the link stated is the account, not any statement about how the first repository was produced.
+
 **Disclosure.** Drafted with AI assistance. The predictions, probes and this text were produced by the same model, so the results are a same-source check, not independent verification. Every result is reproducible from the companion folder (section 9), including the harness errors made along the way.
 
-**Companion to.** [`model_local_proofs_travel_v1.md`](model_local_proofs_travel_v1.md) (a chain of repositories in which a narrow proof travelled) and [`pre_execution_gate_counter_models_v1.md`](pre_execution_gate_counter_models_v1.md) (what each pre-execution gate argument needs). Neither repository here is part of that chain: nothing travels between them and it. They are read because they state pre-execution gates in public code, which lets the counter-models' item 9 ("runs against systems the author did not write, with an examiner-chosen read path and a preserved, hashed trace") be met twice.
+**Companion to.** [`model_local_proofs_travel_v1.md`](model_local_proofs_travel_v1.md) (a chain of repositories in which a narrow proof travelled) and [`pre_execution_gate_counter_models_v1.md`](pre_execution_gate_counter_models_v1.md) (what each pre-execution gate argument needs). Neither repository here is part of that chain's pinned repositories, and nothing here shows code travelling between them and it; but the first repository's account is the account of the vendor whose reference harness that chain's adapting repository says it ported from, so the two are connected through the vendor, not through code. They are read because they state pre-execution gates in public code, which lets the counter-models' item 9 ("runs against systems the author did not write, with an examiner-chosen read path and a preserved, hashed trace") be met twice.
 
 ## 1. Summary
 
@@ -36,6 +40,9 @@ Full hashes are in the companion `PINS.txt`. Claims are quoted with path and lin
 - `runtime-authority-evidence/docs/limitations_and_next_steps.md:13` "It silently produces nothing for a sentence it doesn't recognize, no error."; `:42` "Currency isn't checked".
 - `Project-AI/docs/architecture/GOVERNANCE_CONTRACT.md:74` capability tokens are "short-lived (TTL ≤ 300s), one-time-use, and bound to: action type, scope list, context hash, and policy hash"; `:56` and `:60` every outcome "produces an evidence bundle" with "no silent success"; "If evidence bundle write fails, the failure is logged at CRITICAL severity"; `:83` "Stale policy hash bindings are rejected"; `:128` "Expected: **186 passed, 0 failed.**"
 - `Project-AI/README_HONEST.md:11` "Many components are experimental or aspirational. This is a research project, not production software."
+
+
+**Status of the pinned repositories and of a later repository from the same account (`git ls-remote`, 2026-10-18; nothing cloned, nothing run).** The reference implementation's `main` is still `26893c2` and the evidence repository's `main` is still `fef4354`: no commit has been added to either since the pins above, so there is no later commit on `main` against which section 4 could be re-read. The reference implementation's repository also carries 19 other branches (`asvh-harden-001` to `asvh-harden-011` in several variants, `asvh-whole-stack-hostile-review`, `asvh-consolidated-evidence-redteam`, and one fix branch) that these probes did not examine. A separate repository of the same account, `github.com/grahamb-ai/flowsignal-runtime-authority-verification`, was first read at `main` `321a01a` (2026-09-29); its `main` is now `1cfeffa`, and it now lists 21 `challenge/` branches, 7 `remediation/` branches and six pull requests. Its README at `321a01a` describes itself as "a frozen public verification candidate", says the baseline was produced by the vendor's own verification ("not independent third-party validation", `README.md:11`), invites reviewers "to try to falsify the bounded claims below with a reproducible case" (`README.md:15`), and lists what it does not claim (`README.md:136` onward), among them "universal route closure" and "global closure of every possible runtime-authority failure mode". None of this note's probes was run against that repository, and its declared properties (provenance of the final bind, single-use of a grant, regression families) are about a payment-execution harness, not about extracting authority from policy text; the classification used in section 4 (outside-declared) is relative to the documents of the repository examined here and says nothing about that one.
 
 ## 3. Method
 
@@ -120,13 +127,15 @@ Two differences from the chain's repositories are worth stating. First, both rep
 - Whether a context flag is a weakness depends on who builds the context; this note reports what the code does, not what a deployment does.
 - The reference implementation's HTTP layer was exercised only through a test client against SQLite; the Project-AI examination is limited to the core gate path under default configuration, with the sovereign runtime stage satisfied by installing its dependency.
 - The Project-AI repository describes a much larger system (several languages, many components); nothing outside the examined path is claimed.
+- Nothing here was re-run at a later commit of either pinned repository because `main` has not moved (above); the other branches of the reference implementation, and the later repository of the same account, are not covered.
+- The later repository's own documents state non-claims (above) and an invitation to report failures through its issue process; this note has filed nothing there, and its findings should not be read as findings about that repository.
 - No issue has been filed on either repository from this work.
 
 **What would show this note wrong.** The companion harness failing at the pinned commits; a quoted line that does not appear at the stated path and line; or a later commit that changes the stated behaviour (a fix, not a refutation of the pinned reading).
 
 ## 8. Disclosure of how the repositories were found
 
-The reference implementation was found while checking a vendor lineage cited by the adapting repository in the companion chain paper; Project-AI was found from a paper that names its components. Neither is connected to the chain of the companion paper.
+The reference implementation was found while checking a vendor lineage cited by the adapting repository in the companion chain paper; Project-AI was found from a paper that names its components. The vendor lineage in question is FlowSignal's: the adapting repository's plan says its gateway was ported from the vendor's reference sequence (companion paper, section 6b-iii). Neither repository is part of the chain of the companion paper.
 
 ## 9. Reproduce
 
