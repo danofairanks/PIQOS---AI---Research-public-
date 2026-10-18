@@ -6,7 +6,7 @@
 
 **Disclosure.** Drafted with AI assistance. The tests and the reading of the source were done by one model in a scratch copy, so the results are a same-source check, not independent verification. Section 5 says which prior-art statements are recalled rather than looked up.
 
-**Companion to.** [`gate_library_class_replication_v1.md`](gate_library_class_replication_v1.md) (where the same repository family is compared at the class level) and [`pre_execution_gate_counter_models_v1.md`](pre_execution_gate_counter_models_v1.md) (the claim forms and defeat conditions for pre-execution gates in general). This note is narrower: it records, for three specific submitted cases, what would show each case to be wrong, before the maintainer has classified them.
+**Companion to.** [`gate_library_class_replication_v1.md`](gate_library_class_replication_v1.md) (where the same repository family is compared at the class level) and [`pre_execution_gate_counter_models_v1.md`](pre_execution_gate_counter_models_v1.md) (the claim forms and defeat conditions for pre-execution gates in general). [`governance_packets_levels_depth_twenty_tests_v1.md`](governance_packets_levels_depth_twenty_tests_v1.md) (the levels, layers and termination test applied in section 4a; that paper is pattern-level and names no case, and nothing here changes it). This note is narrower: it records, for three specific submitted cases, what would show each case to be wrong, before the maintainer has classified them.
 
 ## 1. What was submitted
 
@@ -63,6 +63,18 @@ Each condition names an outcome that would make a case a non-finding or reduce i
 - A reply that classifies a case as out of scope confirms that the observation is outside the stated claims. It does not remove the observation. The two statements are kept separate.
 - This note makes no claim about the repository as a whole, about any production system, or about the company.
 
+## 4a. Level and layer, in the governance-packets paper's scheme
+
+Applying the categories of [`governance_packets_levels_depth_twenty_tests_v1.md`](governance_packets_levels_depth_twenty_tests_v1.md) (sections 2, 3 and 7). This is a reading from the repository's README, not a measurement, and it covers only what the README says.
+
+- **Level.** Level 2, technical boundary: a gate between an AI system and an effect (the README's own phrasing is "protected consequence" and a final bind before it). The README makes no organizational (Level 1) or model-level (Level 3) claim, and says the harness is a reference implementation. I saw no level equivocation in the README. I did not read other material from the company.
+- **Layer.** L4, harness or operating system: checks outside the model, with signed or bound records. Per that paper, this is the only place a hard wall can exist, and only if the checker sits outside the control of what it governs. It says nothing about what any model has learned.
+- **Trust domain, which the paper's section 4 makes the deciding question.** In the shipped harness, the checker and the caller are in one process and one repository, and the time of the bind and the amount are values the caller writes (the three cases turn on this). That is the condition the paper calls a convention rather than a wall. The README places a production clock and deployment outside its boundary, so this is a statement about the reference harness, not about a deployed system.
+- **Termination test (the paper's section 7).** The README states that the company performed the verification that produced its baseline and that this is not independent third-party validation. Under the paper's test that is not yet a valid end of the chain of checking. The public challenge is an attempt at a valid end: an executed outcome that someone else can run. The three cases are such runs. Their classification by the maintainer, who wrote the harness, is again inside the same circle, which is why section 3 asks for independent reproduction first (D-all-1).
+- **Bounded versus universal.** The README's claims are bounded ("within the tested reference-harness boundary") and listed, which the paper's section 4a treats as confirmable by trial. The three cases do not contradict a bounded claim that is outside the cases' scope; they test the edges of the bound (see section 2).
+
+What this does not do: it does not rank the repository against others, and it does not say the checks are weak. It says which of the paper's questions the repository's own documents answer and which they leave to the reader.
+
 ## 5. Prior art for the properties involved
 
 The repository describes itself as a reference implementation of known ideas, so the following maps each property to established concepts. **The first six rows are recalled from background knowledge and were not looked up; verify each before relying on it. The last four rows were read as primary sources for earlier drafts in this repository (named in the row); they were not re-read for this note.** The mapping is a reading, not a derivation.
@@ -95,3 +107,4 @@ What this does and does not establish. The properties are not novel in kind, and
 Maintainer responses will be recorded here with their date, including classification, any fix commit, and whether any defeat condition above was met. A condition is marked met only if the response names it or shows the outcome directly.
 
 - *2026-10-18, v1.1.* Added the four access-matrix and integrity rows to section 5 (Lampson, Saltzer and Schroeder, Clark and Wilson), taken from earlier drafts that read them as primaries.
+- *2026-10-18, v1.2.* Added section 4a (level, layer, trust domain and termination test, per the governance-packets paper) and the companion link. Forecasts and defeat conditions unchanged.
