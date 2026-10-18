@@ -100,6 +100,7 @@ What this does and does not establish. The properties are not novel in kind, and
 - The tests run in a scratch copy with caller-supplied times; production clock sources, persistence and distributed coordination are outside the repository's stated boundary and outside this note.
 - The first six rows of the prior-art table are recalled, not verified; the last four were read as primaries for earlier drafts and not re-read here (section 5).
 - The maintainer may have changed `main` since `1cfeffa`; the note is about that commit only.
+- Unpublished or later-filed material (for example a patent application) is unknown to this note. The note works only from public artifacts and does not assume access to hidden ones, nor does it ask the maintainer for anything beyond a public reproduction and a classification. Such material, if it exists, would not change the observations in section 1 and could bear only on the prior-art statements in section 5, which make no novelty claim. A published document of this kind would be added to section 5 as a related document, not treated as a defeat condition.
 - Defeat conditions were written by the same model that wrote the tests. They are a checklist for a reviewer, not an independent list.
 
 ## 7. Updates
@@ -108,6 +109,7 @@ Maintainer responses will be recorded here with their date, including classifica
 
 - *2026-10-18, v1.1.* Added the four access-matrix and integrity rows to section 5 (Lampson, Saltzer and Schroeder, Clark and Wilson), taken from earlier drafts that read them as primaries.
 - *2026-10-18, v1.2.* Added section 4a (level, layer, trust domain and termination test, per the governance-packets paper) and the companion link. Forecasts and defeat conditions unchanged.
+- *2026-10-18, v1.3.* Added a limits line on unpublished or later-filed material (section 6). Forecasts and defeat conditions unchanged.
 
 ---
 *Living research. This draft is part of ongoing work and may be updated, corrected or withdrawn at any time; the repository history holds the current version and the earlier ones.*
