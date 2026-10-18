@@ -65,7 +65,7 @@ Each condition names an outcome that would make a case a non-finding or reduce i
 
 ## 5. Prior art for the properties involved
 
-The repository describes itself as a reference implementation of known ideas, so the following maps each property to established concepts. **These are recalled from background knowledge. None was looked up or re-read in this session; verify each before relying on it.** The mapping is a reading, not a derivation.
+The repository describes itself as a reference implementation of known ideas, so the following maps each property to established concepts. **The first six rows are recalled from background knowledge and were not looked up; verify each before relying on it. The last four rows were read as primary sources for earlier drafts in this repository (named in the row); they were not re-read for this note.** The mapping is a reading, not a derivation.
 
 | Property in the repository | Established concept | Reference as recalled |
 |---|---|---|
@@ -75,6 +75,10 @@ The repository describes itself as a reference implementation of known ideas, so
 | The action in the grant matches the action executed (WHAT, MATCH) | Fine-grained authorisation requests bound to the specific action | OAuth 2.0 Rich Authorization Requests (RFC 9396) |
 | Reserve capacity, then confirm or cancel | Reservation with rollback; Try-Confirm-Cancel; sagas | Garcia-Molina and Salem, "Sagas" (1987) for the pattern |
 | Amounts must be non-negative where the domain requires it | Numeric range check without a lower bound | Common weakness enumeration "numeric range comparison without minimum check" (identifier recalled as CWE-839) |
+| Access is an element of a matrix of domains and objects, consulted by a handler when the access is attempted (WHO, WHAT, NOW) | Lampson, Protection (1971) | read as primary in [`public_admissibility_evaluators_v1.md`](public_admissibility_evaluators_v1.md) section 3a and [`guard_property_prior_art_v1.md`](guard_property_prior_art_v1.md) |
+| A guard whose decision depends on state across calls, as an aggregate cap does | Lampson, Protection (1971), the exercise of a grading program that allows a student program a fixed number of tries (p4) | same two drafts |
+| Remembered results of an authority check must be updated when authority changes; check authority to change authority (NOW) | Saltzer and Schroeder (1975) | read in part for the first draft above (principles and protection-dynamics passages in full, the rest by keyword) |
+| Input of any value must be validated or refused before it changes state; well-formed transformations only (#8, #9) | Clark and Wilson (1987) | read as the NIST SP 500-160 reprint, scanned with OCR errors, per the first draft above |
 
 What this does and does not establish. The properties are not novel in kind, and the repository does not claim that they are. The three cases fall into three of the oldest failure shapes in the table: a check performed at one time and not at the point of use (#7), a missing range check on an input (#8), and a reservation not released when a later step fails (#9). The recurrence of these shapes in a reference implementation is an observation about the checklist, not about the authors.
 
@@ -82,10 +86,12 @@ What this does and does not establish. The properties are not novel in kind, and
 
 - Three cases, one commit, one tester. No claim about frequency.
 - The tests run in a scratch copy with caller-supplied times; production clock sources, persistence and distributed coordination are outside the repository's stated boundary and outside this note.
-- The prior-art table is recalled, not verified (section 5).
+- The first six rows of the prior-art table are recalled, not verified; the last four were read as primaries for earlier drafts and not re-read here (section 5).
 - The maintainer may have changed `main` since `1cfeffa`; the note is about that commit only.
 - Defeat conditions were written by the same model that wrote the tests. They are a checklist for a reviewer, not an independent list.
 
 ## 7. Updates
 
 Maintainer responses will be recorded here with their date, including classification, any fix commit, and whether any defeat condition above was met. A condition is marked met only if the response names it or shows the outcome directly.
+
+- *2026-10-18, v1.1.* Added the four access-matrix and integrity rows to section 5 (Lampson, Saltzer and Schroeder, Clark and Wilson), taken from earlier drafts that read them as primaries.
