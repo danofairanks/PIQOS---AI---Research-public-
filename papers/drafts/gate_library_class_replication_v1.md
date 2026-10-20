@@ -6,7 +6,7 @@
 Internal evidence exists and is available to serious inquiries at proof time.
 Not a warning about any specific party; it reports patterns.
 
-**Corrections and additions (2026-10-18).** Sections 4 to 6 are unchanged. Added: the naming note below, the status of the pinned repositories and of a later repository from the same account (end of section 2), two limits (section 7), and a sentence in section 8.
+**Corrections and additions (2026-10-18).** Sections 4 to 6 are unchanged. Added: the naming note below, the status of the pinned repositories and of a later repository from the same account (end of section 2), two limits (section 7), and a sentence in section 8. Pointer added 2026-10-20 to section 7b of [`model_local_proofs_travel_v1.md`](model_local_proofs_travel_v1.md) (borrowed assurance: a detector and prior art for components that cite an upstream test result); no other change.
 
 **Naming, updated.** The first repository below is hosted on the GitHub account `grahamb-ai`, which also hosts `flowsignal-agentic-payments` (FlowSignal's reference harness, compared in [`model_local_proofs_travel_v1.md`](model_local_proofs_travel_v1.md) section 6b-iii) and `flowsignal-runtime-authority-verification`, whose README says "FlowSignal built this reference implementation" (`README.md:11` at `321a01a`). FlowSignal is therefore named here as the organisation whose public repositories these are. Individuals remain unnamed, no intent is attributed, and the link stated is the account, not any statement about how the first repository was produced.
 

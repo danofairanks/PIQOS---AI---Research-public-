@@ -44,6 +44,8 @@ The enumeration over 13 states checks a model whose only edge into the effect st
 - The primary wording of the 1972 report and of the 1973 notes, which would settle the attribution dispute noted in the encyclopedia article (one oral history credits a 1972 conference paper by other authors).
 - Sections 3–5 of the 2000 paper, the 1985, 1986 and 1988 papers, HALO's evaluation, and the access-matrix papers of 1969–1976.
 
+- Prior art for a different question, how an assurance claim is inherited across components (assume-guarantee reasoning, defeaters, vacuity and mutation checks, inherited controls), is not covered here; it is in section 7b of [`model_local_proofs_travel_v1.md`](model_local_proofs_travel_v1.md), read at search-summary level only.
+
 ## 6. Limitations
 
 One model searched and read; the sandbox blocked the primary hosts for the 1972 and 1973 reports; the 1972 and 1973 rows rest on indexes and quotations; the 2026 paper is a preprint and was read only in part; the search covered a few queries and found no source using the repository's exact name, which is weak evidence that none exists; the comparison to HALO is of stated propositions, not of behaviour; nothing here tests the repository's code.
@@ -58,6 +60,7 @@ Sources: [1] the repository `github.com/LalaSkye/no-direct-bind` at commit `37af
 
 ## Revision log
 
+- *2026-10-20, v1.6.* Pointer added (section 5) to the composition and assurance-inheritance prior art in section 7b of `model_local_proofs_travel_v1.md`. No change to the lineage, rows or readings in this note.
 - *2026-10-09, v1.5.* Biba (MITRE MTR-3153, 1975 edition) and Bell and La Padula (MTR-2997 Rev. 1, 1976) read in part from scans: the threat taxonomy and the statement that dynamic access control does not address internal threats (Biba); the star property, trusted subjects and the section on indirect communication paths (Bell and La Padula). Mapped in section 5a of `rsi_gate_audit_results_v1.md`.
 - *2026-10-09, v1.4.* Clark and Wilson (1987) read in part as a reprint (NIST SP 500-160, Appendix A1, rules pages); relevant for certification versus enforcement, total input validation, and separating the certifier from execution. Mapped in section 3a of `public_admissibility_evaluators_v1.md`. Bell-LaPadula and Biba still not read.
 - *2026-10-08, v1.3.* Saltzer and Schroeder read beyond the design principles (identification, dynamics, authority to change access control lists); the row says which parts.

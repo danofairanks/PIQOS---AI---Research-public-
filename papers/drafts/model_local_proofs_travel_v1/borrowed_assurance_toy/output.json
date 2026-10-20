@@ -1,0 +1,143 @@
+{
+  "components": {
+    "A": {
+      "control_F_alwaysfalse": "BLOCK",
+      "control_F_real": "EXECUTE",
+      "detector_S": {
+        "in_suite": true,
+        "label": "DEPENDENT",
+        "real": "BLOCK",
+        "stub": "EXECUTE"
+      },
+      "detector_SE": {
+        "in_suite": true,
+        "label": "DEPENDENT",
+        "real": "BLOCK",
+        "stub": "EXECUTE"
+      },
+      "inherited_status": "GREEN (inherits U suite)",
+      "own_suite_pass": true,
+      "own_suite_results": {
+        "F": "EXECUTE",
+        "S": "BLOCK",
+        "SE": "BLOCK",
+        "T": "BLOCK"
+      },
+      "probe_S_outside_suite": "BLOCK",
+      "verdict": "DEPENDENT"
+    },
+    "A2": {
+      "control_F_alwaysfalse": "BLOCK",
+      "control_F_real": "EXECUTE",
+      "detector_S": {
+        "in_suite": true,
+        "label": "DEPENDENT",
+        "real": "BLOCK",
+        "stub": "EXECUTE"
+      },
+      "detector_SE": {
+        "in_suite": true,
+        "label": "DEPENDENT",
+        "real": "BLOCK",
+        "stub": "EXECUTE"
+      },
+      "inherited_status": "GREEN (inherits U suite)",
+      "own_suite_pass": true,
+      "own_suite_results": {
+        "F": "EXECUTE",
+        "S": "BLOCK",
+        "SE": "BLOCK",
+        "T": "BLOCK"
+      },
+      "probe_S_outside_suite": "BLOCK",
+      "verdict": "DEPENDENT"
+    },
+    "B": {
+      "control_F_alwaysfalse": "EXECUTE",
+      "control_F_real": "EXECUTE",
+      "detector_S": {
+        "in_suite": true,
+        "label": "BORROWED",
+        "real": "EXECUTE",
+        "stub": "EXECUTE"
+      },
+      "detector_SE": {
+        "in_suite": true,
+        "label": "BORROWED",
+        "real": "EXECUTE",
+        "stub": "EXECUTE"
+      },
+      "inherited_status": "GREEN (inherits U suite)",
+      "own_suite_pass": false,
+      "own_suite_results": {
+        "F": "EXECUTE",
+        "S": "EXECUTE",
+        "SE": "EXECUTE",
+        "T": "BLOCK"
+      },
+      "probe_S_outside_suite": "EXECUTE",
+      "verdict": "BORROWED"
+    },
+    "C": {
+      "control_F_alwaysfalse": "EXECUTE",
+      "control_F_real": "EXECUTE",
+      "detector_S": {
+        "in_suite": true,
+        "label": "BORROWED",
+        "real": "EXECUTE",
+        "stub": "EXECUTE"
+      },
+      "detector_SE": {
+        "in_suite": true,
+        "label": "OTHER-REASON",
+        "real": "BLOCK",
+        "stub": "BLOCK"
+      },
+      "inherited_status": "GREEN (inherits U suite)",
+      "own_suite_pass": false,
+      "own_suite_results": {
+        "F": "EXECUTE",
+        "S": "EXECUTE",
+        "SE": "BLOCK",
+        "T": "BLOCK"
+      },
+      "probe_S_outside_suite": "EXECUTE",
+      "verdict": "BORROWED"
+    },
+    "D": {
+      "control_F_alwaysfalse": "EXECUTE",
+      "control_F_real": "EXECUTE",
+      "detector_S": {
+        "in_suite": false,
+        "label": "BORROWED",
+        "real": "EXECUTE",
+        "stub": "EXECUTE"
+      },
+      "detector_SE": {
+        "in_suite": false,
+        "label": "BORROWED",
+        "real": "EXECUTE",
+        "stub": "EXECUTE"
+      },
+      "inherited_status": "GREEN (inherits U suite)",
+      "own_suite_pass": true,
+      "own_suite_results": {
+        "F": "EXECUTE",
+        "T": "BLOCK"
+      },
+      "probe_S_outside_suite": "EXECUTE",
+      "verdict": "UNREACHED"
+    }
+  },
+  "prediction_checks": {
+    "A": true,
+    "A2": true,
+    "B": true,
+    "C": true,
+    "C_SE_other_reason": true,
+    "D": true,
+    "control_flips_A_A2": true,
+    "control_no_flip_B_C_D": true
+  },
+  "u_suite": "GREEN"
+}
