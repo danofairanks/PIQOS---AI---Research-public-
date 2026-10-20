@@ -110,6 +110,7 @@ Maintainer responses will be recorded here with their date, including classifica
 - *2026-10-18, v1.1.* Added the four access-matrix and integrity rows to section 5 (Lampson, Saltzer and Schroeder, Clark and Wilson), taken from earlier drafts that read them as primaries.
 - *2026-10-18, v1.2.* Added section 4a (level, layer, trust domain and termination test, per the governance-packets paper) and the companion link. Forecasts and defeat conditions unchanged.
 - *2026-10-18, v1.3.* Added a limits line on unpublished or later-filed material (section 6). Forecasts and defeat conditions unchanged.
+- *2026-10-20, v1.4.* Pointer only: where a claim about an integrated system cites a bounded test of one component, section 7b of [`model_local_proofs_travel_v1.md`](model_local_proofs_travel_v1.md) names the pattern (borrowed assurance) and gives a stub-substitution check with its prior art. Forecasts and defeat conditions unchanged.
 
 ---
 *Living research. This draft is part of ongoing work and may be updated, corrected or withdrawn at any time; the repository history holds the current version and the earlier ones.*

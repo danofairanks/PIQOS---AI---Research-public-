@@ -1,0 +1,8 @@
+{
+  "component": "E (inlined copy of U's comparison)",
+  "S_real": "BLOCK",
+  "S_stub": "BLOCK",
+  "detector_label": "OTHER-REASON",
+  "truth": "enforces the version rule itself",
+  "reading": "OTHER-REASON: blocked with and without U, so the claim holds but is not attributable to U; this is the correct reading for an inlined copy. Stub-substitution tests dependence on U, not on the property."
+}
