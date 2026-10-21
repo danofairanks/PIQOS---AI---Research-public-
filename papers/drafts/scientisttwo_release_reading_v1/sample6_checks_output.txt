@@ -1,0 +1,34 @@
+== p1 UNI-XDLM ==
+ L=512 rank by OWT valid     [('RADD', 437.33), ('UNI-XDLM', 469.54), ('XDLM', 489.94), ('UDLM', 514.03)] ... worst: SEDD 705.63 ; UNI-XDLM rank 2 of 7
+ L=512 rank by zero-shot avg [('RADD', 1092.1), ('XDLM', 1182.22), ('UNI-XDLM', 1192.91), ('UDLM', 1202.48)] ... worst: SEDD 1666.69 ; UNI-XDLM rank 3 of 7
+ L=512 zero-shot: UNI-XDLM minus XDLM = +10.69 (positive = worse)
+ zero-shot vs MDLM (L=128): UNI better on 4/7 datasets; PTB accounts for 69% of the summed PPL difference (123.6 of 179.8)
+ in-domain valid PPL (lower better): MDLM 136.93 < UNI-XDLM 146.39 < XDLM 155.35; GIDD 113.45
+ 8B CPT: GSM8K base 40.8 -> UNI-XDLM 34.2 (-6.6 pts, -16% rel.); MDLM CPT 37.5
+== p3 ALOT-DRO ==
+ Table 3 coverage vs target 0.90: [('UCI type-1', 0.841, 'below'), ('UCI type-2', 0.88, 'below'), ('S&P k=3', 0.904, 'ok'), ('S&P k=10', 0.861, 'below')] -> below target on 3 of 4
+ Table 3 loss, ALOT vs OT-DRO (lower better): UCI t1 0.4670 vs 0.4767 (ALOT better); t2 0.6277 vs 0.5118 (ALOT worse 23%); S&P k3 3.758 vs 3.541 (worse 6%); k10 1.798 vs 1.782 (worse 1%)
+ Table 2 portfolio k=3 CVaR (lower better): ALOT -0.025 vs DiffDRO -0.071, OT-DRO -0.068, PtC -0.019
+ time ratio 551.4/4.08 = 135x ; coupling-ablation dist ratio 112.26/0.44 = 255x (the abstract's ~880x not found in any table)
+== p4 ScaleMode-NeuralSurv (Table 1: [base mean, base sd, SM mean, SM sd]) ==
+  COLON     dC +0.030  max(sd) 0.092  delta<max sd: True
+  METABRIC  dC +0.065  max(sd) 0.092  delta<max sd: True
+  GBSG      dC +0.034  max(sd) 0.092  delta<max sd: True
+  NWTCO     dC +0.084  max(sd) 0.145  delta<max sd: True
+  WHAS      dC +0.028  max(sd) 0.147  delta<max sd: True
+  SUPPORT   dC +0.120  max(sd) 0.084  delta<max sd: False
+  VLC       dC +0.020  max(sd) 0.083  delta<max sd: True
+  SAC3      dC +0.042  max(sd) 0.063  delta<max sd: True
+ datasets where the C-index gain is smaller than the larger fold-sd: 7 of 8
+ PICP km (target 0.95) decreased on ['METABRIC', 'GBSG', 'NWTCO'] ; aggregate 0.539 -> 0.605 (still 0.34 below 0.95)
+ D-calp aggregate 0.543 -> 0.545 (+0.002); decreased on ['METABRIC', 'GBSG', 'SAC3'] ; IBS worse on SAC3 (0.209 -> 0.240)
+ Table 3 "aggregate" = mean over 3 datasets (COLON, METABRIC, GBSG): ScaleMode C 0.648, NeuralSurv 0.605; abstract calls 0.648 the identical-splits aggregate
+ Table 2: ScaleMode COLON C-index 0.639 < literature NeuralSurv 0.671 (literature = full-data training vs ScaleMode N=125)
+== p5 Overdamped DAVE (Table 2, ViT-B/16 | DeiT-III GridPG, EPG) ==
+ vanilla N=1 GridPG 48.56 | 56.22 vs vanilla N=100 41.23 | 47.15 at the same 6.76 ms vs 629.75 ms: vanilla N=1 already beats vanilla N=100 on GridPG
+ overdamped N=1 minus vanilla N=100: GridPG +22.99 | +37.85 ; EPG -23.26 | -0.85
+ Table 3 identical Faith 0.7227: power-law(eta=.25) GridPG 62.95 EPG 86.09; Exponential(lambda=4) GridPG 73.96 EPG 90.15 (better on both, same faithfulness)
+== p6 DRO-ROCP ==
+ COVID base matrix realized loss at alpha .001/.01/.05: DRO-ROCP [3.383, 3.213, 2.715] RAC [3.379, 3.192, 2.667]  -> RAC lower at all three (all 7 alphas in Table 4)
+ Table 2 (alpha .05, base matrix) COVID->No-Action failure: standard ROCP 10.59%, shipped DRO-ROCP 11.28%, full 9.45%; 10x matrix: all 0.00%
+ BDD100K alpha=0.001 empirical miscoverage: DRO-ROCP 0.0020, ROCP 0.0012, target 0.001; realized loss 4.370 vs 4.906

@@ -1,0 +1,47 @@
+== C1 cell count: feasible (subgroup,Ns) with Ns<=n
+total 43 minority(AA,Hisp,Oth) 9 rest 34 | full grid 50
+== C2 Table 6 consistency
+race n sum 3258 events 265
+sex n sum 3366 events 278
+age n sum 3366 events 279
+overall n 3366 events 280; prevalence 0.0832
+expected events in a draw of 40 from AA: 0.72 ; from Age<50: 1.0
+== C3 Brier >= ECE^2 using Table 1 columns 2 and 3 read as printed (ECE col=2nd value)
+Cauc ECE 0.829 ECE^2 0.687 Brier 0.062 violates
+AA ECE 0.889 ECE^2 0.79 Brier 0.036 violates
+Hisp ECE 0.839 ECE^2 0.704 Brier 0.044 violates
+Oth ECE 0.744 ECE^2 0.554 Brier 0.128 violates
+M ECE 0.832 ECE^2 0.692 Brier 0.062 violates
+F ECE 0.829 ECE^2 0.687 Brier 0.062 violates
+<50 ECE 0.931 ECE^2 0.867 Brier 0.024 violates
+50-65 ECE 0.875 ECE^2 0.766 Brier 0.052 violates
+65-80 ECE 0.805 ECE^2 0.648 Brier 0.07 violates
+80+ ECE 0.712 ECE^2 0.507 Brier 0.106 violates
+== C4 Eq.8 Hermite envelope, fixed delta
+value just below / at u+d: 0.300000001 0.35 (continuity)
+max |H'|  20001.0 min H'  -1.0 non-monotone: True
+== C5 Prop A.1 / Eq.9 Bayes-equivalence, K=3 random cost matrices
+K 2 disagreement rate 0.0
+K 3 disagreement rate 0.1333
+K 5 disagreement rate 0.33485
+== C6 Eq.5 vs Monte-Carlo MSE-optimal lambda, B=0, f=0 (no shift; m correct; w = 1+independent noise, mean 1 -> EIF unbiased)
+Eq.5 value 1.0
+MC optimum, EIF with w==0 (EIF=mean m): 1.001
+MC optimum, EIF with noisy w as in Eq.3: -0.028
+== C7 Table 3 reductions recomputed
+Cauc40 [52.4, 52.4, 52.4]
+Cauc160 [49.5, 50.0, 50.0]
+Cauc640 [49.4, 51.8, 51.8]
+AA40 [-97.4, -100.6, 6.0]
+AA160 [-376.7, -386.1, 0.8]
+AA320 [-2580.9, -2631.9, 0.0]
+AA320 fraction of subgroup sampled f= 0.964 ; AA40 f= 0.12
+== C8 Table 4: LOO means and rank stats (10 subgroups, values from Table 1)
+mean|adapt-hard| 0.0369 (paper 0.0369/0.0370)
+Spearman adapt vs hard 0.454 (paper 0.479)
+pairwise inversions 13 of 45 (paper 13)
+Spearman hard vs prevalence 0.006 | adapt vs prevalence -0.778
+mean|soft-hard| 0.0003 max 0.0010000000000000009
+== C9 Table 2 arithmetic
+34/43 79.1 6/43 14.0 bias ratio 8.21
+== C10 N* implied by RMSE ~ N^-1/2 from Table 3 Cauc640 (0.0083) to eps=0.008: 689
