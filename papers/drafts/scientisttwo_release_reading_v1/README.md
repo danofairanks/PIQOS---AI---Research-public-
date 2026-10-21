@@ -4,3 +4,4 @@ Scripts and outputs for `scientisttwo_release_reading_v1.md`. Tables were transc
 - `select_sample.py`: the hash rule for the six-paper sample.
 - `sample6_checks.py` / `_output.txt`: arithmetic on the six sampled papers' tables.
 - `specimen_checks.py` / `_output.txt`: arithmetic on the operator-chosen specimen's tables.
+- `dr_schervish_checks.py` / `_output.txt`: equation and table checks for the single paper read in full (section 6c).

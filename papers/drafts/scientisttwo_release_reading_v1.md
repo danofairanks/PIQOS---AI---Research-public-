@@ -101,6 +101,23 @@ Ten of the 12 are statements contradicted by a table (type (a)); two are a diffe
 
 The recurring shape (E3): a statement that is true for one quantity is stated for another. The comparison set is narrowed in the abstract; a table is aggregated differently from how the abstract describes it; a gain is credited to the new component when a baseline setting shows it too; or a measured regression is left out of the abstract. In the cases that could be re-derived, the table arithmetic is internally consistent (BAM-Val throughout; the composite scores in FCD-Engram; the preprint's own Table 3 weighted means). The four checks the release describes for its integrity audit (score reproduction, specification compliance, references, and agreement between the written method and the code) do not include comparing a paper's abstract claims with its own tables; the mismatches above sit in that gap (E3).
 
+### 6c. One paper read in full (G)
+
+One further paper, chosen by the same hash rule (smallest sha256 of the file name among the 49 not yet read): *Doubly Robust Semi-Parametric Schervish Score* (general ML, 15 pages). Nine predictions were written from the abstract and the first introduction paragraph before the body was read; the table and equation checks are in `dr_schervish_checks.py`. It is not pooled into the rates above (it was read at a different depth); it would make 13 of 31.
+
+Predictions: six held, three partial, none missed. The conclusion's "up to 63% small-sample RMSE reduction" is the average on a second cohort (63.0%; that cohort's maximum is 78.9%), so it is a counted mismatch of type (c). The abstract's "provable non-inferiority across all 43 cells" is by construction: the rule sets the shrinkage to zero whenever the estimated error would exceed the plug-in's, and "powered" means the 34 non-minority-race cells by label. The 47% average over those cells becomes 38.7% over all 43 (arithmetic on its Table 2).
+
+Errors in the printed mathematics and tables, re-derived:
+
+- The smoothing envelope (Eq. 8) is described as strictly monotone and C²; as written it jumps at the join (0.30 to 0.35 with u = 0.3, δ = 0.05) and has slope −1 somewhere.
+- Proposition A.1 (the multi-class rule equals the Bayes-optimal rule) holds at K = 2 and disagrees with it on 13% of random cost matrices at K = 3 and 33% at K = 5. The "closes 100% of the cost gap" result rests on it.
+- The shrinkage formula (Eq. 5) is the optimum for shrinking toward the outcome-model mean (weights zero); in a toy with an unbiased weighted estimator the optimum was about 0, the formula 1.0.
+- In Table 1 the column the text reads as calibration error has values (0.829 to 0.931) that violate Brier ≥ ECE² in all ten rows; Table 6 does not partition the cohort (race n sums to 3,258 of 3,366; event counts 265, 278, 279 against 280).
+- The adaptive-bound score correlates −0.78 with subgroup prevalence across the ten subgroups (the unadapted score, 0.01); the paper shows it re-ranks subgroups and does not show the new ranking is more correct. One value is 1.015 and the score's range is not stated.
+- One headline cell samples 320 of 332 patients (96%), so the "−2566.6%" regression is a ratio on a near-exact baseline. On the powered cells the method equals plain doubly robust estimation (47.4% vs 47.5%); on the others it returns the sample mean.
+
+Other items: the break-even size N* ≈ 1000 is about 689 by its own Table 3; a baseline is attributed to a reference that does not name it; the paper is in a 2025 conference template and cites a March 2026 preprint; no code or data is given. As with the other papers, one reader, and the tables were read from text.
+
 ## 7. What held up
 
 - The preprint runs a held-out reviewer, reports that the in-loop reviewer is in-distribution, and shows the human comparison on all three venues. The site states that spotlight-level quality is out of reach.
@@ -136,6 +153,7 @@ This note does not establish any of the following.
 
 - It gives a rate with a wide interval, not a measurement of a population. Of 36 hash-selected papers, 17 (47%, 95% interval 0.32 to 0.63) have a counted mismatch; in the 30-paper tranche 12 (40%, 0.25 to 0.58), 9 (30%) without the minor items. The rule is one of many, and a different rule would give different papers.
 - It does not show the generated papers are wrong in substance. The mismatches are between statements and tables, read from text; some may have explanations in appendices not read.
+- The single-paper reading (section 6c) is one reader on one paper, with predictions written after the abstract was seen; it is an example of the method, not a rate.
 - It does not show that human-written papers do better. The same check was not run on the 107 human source papers, so there is no baseline for how often an abstract in this literature says more than its tables.
 - It does not test performance. The 86 / 107 success rate, the 25.2% average gain and the review scores cannot be reproduced from the release.
 - It does not test intent or process, and nothing in it concerns individuals.
@@ -156,10 +174,11 @@ Everything in `scientisttwo_release_reading_v1/`: `select_sample.py` (the hash r
 
 ## References
 
-Sources: the preprint arXiv 2609.19644v1 ("ScientistTwo: Pioneering the Human Knowledge Frontier with Autonomous AI", dated 2026-09-18); the project site `https://scientist-two.github.io/` and the public repository `https://github.com/scientist-two/scientist-two.github.io` (commit aaf25a7, 2026-09-17), read read-only; and the 86 PDFs in its `generated-papers/` directory, of which 37 are read in sections 6 and 6b. The two automated reviewers named are those the preprint names (ScholarPeer and the Stanford Agentic Reviewer). The statistics in sections 5 and 6 are the release's own table values or arithmetic on them (`host_table_checks.py`, `sample6_checks.py`, `specimen_checks.py`); each carries a table reference where it appears.
+Sources: the preprint arXiv 2609.19644v1 ("ScientistTwo: Pioneering the Human Knowledge Frontier with Autonomous AI", dated 2026-09-18); the project site `https://scientist-two.github.io/` and the public repository `https://github.com/scientist-two/scientist-two.github.io` (commit aaf25a7, 2026-09-17), read read-only; and the 86 PDFs in its `generated-papers/` directory, of which 38 are read in sections 6, 6b and 6c. The two automated reviewers named are those the preprint names (ScholarPeer and the Stanford Agentic Reviewer). The statistics in sections 5 and 6 are the release's own table values or arithmetic on them (`host_table_checks.py`, `sample6_checks.py`, `specimen_checks.py`); each carries a table reference where it appears.
 
 ## Revision log
 
+- *2026-10-21, v1.2.* Added section 6c: one hash-selected paper read in full (predictions scored, equation and table checks). Not pooled into the rates.
 - *2026-10-21, v1.1.* Ran the preregistered 30-paper extension (section 6b): 12 of 30 with a counted mismatch, below the preregistered 60%; combined 17 of 36. Section 10 now lists what remains (human reference class, second reader). Coding conventions stated in section 4.
 - *2026-10-21, v1.* First version: preprint, site, repository listing, 86-PDF keyword scan, one specimen, six hash-selected papers.
 
