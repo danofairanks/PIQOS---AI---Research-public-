@@ -1,0 +1,12 @@
+n human 107 n AI 86 (AI papers are the successful subset of the same 107 problems)
+ScholarPeer mean       human(weighted) 6.647   AI(weighted) 7.457   AI-human +0.810
+ScholarPeer accept %   human(weighted) 73.843   AI(weighted) 91.881   AI-human +18.038
+Stanford mean          human(weighted) 5.845   AI(weighted) 5.648   AI-human -0.197
+Stanford accept %      human(weighted) 87.860   AI(weighted) 72.116   AI-human -15.744
+Per venue, held-out reviewer (Stanford), AI minus human mean / accept-rate:
+  ICLR2026     mean +0.2   accept +15.0 pts   (AI n=4, human n=5)
+  NeurIPS2025  mean +0.1   accept -0.5 pts   (AI n=33, human n=38)
+  ICML2026sp   mean -0.4   accept -27.5 pts   (AI n=49, human n=64)
+Success rate 86/107 = 80.4%; failures 21 (excluded from the AI review averages)
+Table 5 (ICML49): Stanford accept by review round: 49.0 -> 73.5 -> 69.4 (round 2 lower than round 1); ScholarPeer 46.9 -> 79.6 -> 93.9
+Table 7 integrity audit denominators: 49-50 papers (the ICML 49-task set), headline success count is 86

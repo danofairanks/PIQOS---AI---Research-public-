@@ -1,0 +1,27 @@
+Overall vs harmonic mean of (Mem,Util,Priv); EM and FQ do not enter:
+  Gold Retain90                  reported 0.998  HM 0.998  diff -0.000
+  GradDiff                       reported 0.227  HM 0.227  diff +0.000
+  RMU                            reported 0.757  HM 0.757  diff -0.000
+  IDK-DPO                        reported 0.889  HM 0.889  diff -0.000
+  NPO                            reported 0.944  HM 0.944  diff -0.000
+  SimNPO                         reported 0.945  HM 0.946  diff +0.001
+  AltPO                          reported 0.955  HM 0.955  diff -0.000
+  Task Arithmetic                reported 0.584  HM 0.584  diff -0.000
+  RECE                           reported 0.420  HM 0.420  diff -0.000
+  LEACE-style                    reported 0.438  HM 0.439  diff +0.001
+  Engram Plain (human baseline)  reported 0.705  HM 0.705  diff +0.000
+  ZeroUnlearn                    reported 0.767  HM 0.767  diff -0.000
+  Engram Adaptive                reported 0.860  HM 0.860  diff -0.000
+  UCE                            reported 0.851  HM 0.851  diff +0.000
+  FCD-Engram                     reported 0.916  HM 0.916  diff +0.000
+Lowest EM among evaluated methods (excluding Gold): [(0.004, 'Engram Plain (human baseline)'), (0.044, 'ZeroUnlearn'), (0.071, 'FCD-Engram'), (0.095, 'AltPO')]
+FCD EM / Engram Plain EM = 17.7x worse (lower is better)
+Overall gain of FCD over human baseline Engram Plain: +0.211 (29.9%); over Engram Adaptive: +0.056 (6.5%)
+Table 11 decomposition of +0.211: adaptive scaling alone +0.155 (73% of gain); damping on top of adaptive scaling +0.056 (27%); damping alone on plain -0.069
+Table 5 vs Table 9: "Channel damping only (gamma=0.5, lambda=0)" 0.880 and "Baseline (no ridge, gamma=0)" 0.860 at alpha=1.1;
+  Table 9 "Unregularized pinv (lambda=0, eps=0)" at its BEST alpha (1.2) = 0.761 < both; a config at its best alpha cannot score below the same config at alpha=1.1 unless settings differ (unreported).
+WMDP (Table 3b): fraction of base->chance forgetting achieved on Avg (base 0.598, chance 0.250):
+  Engram (cov.)  97.7%
+  UCE            95.4%
+  FCD            91.4%
+Table 2 units: 74.4P with P=1.24e9 -> 9.226e+10 (table says 9.2e16); 2.5P -> 3.100e+09 (table says 3.1e15); factor 1e6 unstated
