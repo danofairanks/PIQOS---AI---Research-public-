@@ -1,8 +1,8 @@
 # Reading a Verification Claim Against Its Own Tables: A Public Release of 86 Machine-Written Papers
 
-**Draft v1 for review. Not peer reviewed; may be revised or withdrawn.**
+**Draft v1.1 for review. Not peer reviewed; may be revised or withdrawn.**
 
-**Scope of naming.** The objects examined are one public preprint, "ScientistTwo: Pioneering the Human Knowledge Frontier with Autonomous AI" (arXiv 2609.19644v1, dated 2026-09-18, affiliation line "Google Cloud AI Research / University of Waterloo"), the project site and public repository that accompany it (`scientist-two.github.io`, GitHub organisation `scientist-two`), and seven of the 86 machine-written papers the site hosts. The organisation is named as the release names itself. No individual is named, no intent is attributed, and nothing here is a statement about how the release was produced beyond what it says. The seven generated papers are anonymous and are identified by the method name in their titles.
+**Scope of naming.** The objects examined are one public preprint, "ScientistTwo: Pioneering the Human Knowledge Frontier with Autonomous AI" (arXiv 2609.19644v1, dated 2026-09-18, affiliation line "Google Cloud AI Research / University of Waterloo"), the project site and public repository that accompany it (`scientist-two.github.io`, GitHub organisation `scientist-two`), and 37 of the 86 machine-written papers the site hosts. The organisation is named as the release names itself. No individual is named, no intent is attributed, and nothing here is a statement about how the release was produced beyond what it says. The seven generated papers are anonymous and are identified by the method name in their titles.
 
 **Disclosure.** Drafted with AI assistance, which also did the reading. One reader coded every finding; no second reader checked them. Predictions about each stage were written down before that stage was read (section 4). The reader did not run any of the release's code, because the release contains none (section 5). The comparison sets, tables and page references below were transcribed from PDFs by hand; the arithmetic is in the scripts next to this file.
 
@@ -31,15 +31,21 @@ Facts read from the release (E1: executed or counted; E2: read):
 | D | Specimen: "Fisher Channel-Damped Engram" (FCD-Engram) | Chosen by hand from the site by the project's operator; **not a random draw**, and it is also the paper the preprint uses for its own case study (Table 6) | Full read, tables checked |
 | E | Six papers: UNI-XDLM (deep learning), BAM-Val (general ML), ALOT-DRO (optimization), ScaleMode-NeuralSurv (probabilistic), Overdamped DAVE (social aspects), DRO-ROCP (theory) | One per domain by the hash rule in section 4, fixed before it was run | Abstract, main tables, ablations and limitations; appendices only where a table was needed |
 
-Domains not sampled: applications (specimen D is from it), reinforcement learning.
+| F | Thirty more papers: the 30 with the smallest `sha256(basename)` among the 79 not already read (list in `ext30_selection.txt`; deep learning 10, social aspects 7, applications 5, general ML 4, probabilistic 2, reinforcement learning 2) | Rule and predictions committed before any of the 30 was read | Abstract, conclusion and main tables; appendices only where a main-text claim pointed to one |
+
+All eight domains appear in E and F; optimization and theory appear only in E (one paper each).
 
 ## 4. Method
 
-**Predictions first.** For A and D the predictions were written from the abstract (A) or from the preprint's own summary table (D) before the text was read. For E the sampling rule and the predictions were written before the rule was run. Scoring (section 8) uses the predictions as written; misses are recorded as misses.
+**Predictions first.** For A and D the predictions were written from the abstract (A) or from the preprint's own summary table (D) before the text was read. For E and F the sampling rule and the predictions were written before the rule was run. Scoring (section 8) uses the predictions as written; misses are recorded as misses.
 
 **Selection rule for E.** For each of six domains, take the paper whose `sha256(filename)` is smallest (`select_sample.py`). The rule is not chosen by suspicion. A different rule would give different papers.
 
 **What counts as a mismatch.** A quantitative or comparative statement in a paper's abstract or conclusion that the same paper's tables (a) contradict, (b) cannot support because the comparison needed is absent, or (c) report for a different set, aggregate, training size or metric than the statement names. Other things are recorded in a separate column and are not counted as mismatches: a measured regression the abstract leaves out, an internal inconsistency between two tables, a gain that is smaller than the reported spread, and a method choice that looks tuned on the outcome. A statement is counted once.
+
+**Selection rule for F.** Among the 79 papers not already read, take the 30 whose `sha256(basename including .pdf)` is smallest. It was written into the first version of this draft (section 10) before it was run.
+
+**Coding conventions used in F (not all fixed beforehand).** A statement counts as supported when a table or the paper's own text gives the number; counts of many items stated only in text are coded as matching and recorded under *other issues*. A mismatch is counted per underlying table discrepancy, not per sentence. Three counted items are flagged minor or arguable (a 0.0001 difference; a grid presented as the approximation; a 0.07-point difference inside a stated error). The conventions were written down while coding the second tranche; they were not stated when the first six were coded, and the counts for those six were not revisited under them.
 
 **Evidence classes.** E1 executed or counted (arithmetic on transcribed tables; keyword counts), E2 read, E3 interpretation. "Not found" means not found by search; it is not "absent".
 
@@ -70,6 +76,29 @@ Seven papers. The *Mismatches* column counts statements in the abstract or concl
 
 Five of the six hash-selected papers have at least one counted mismatch (the sixth has none, only other issues); with six papers that count says little about a rate (a 95% Wilson interval for 5 of 6 is 0.44 to 0.97).
 
+### 6b. Thirty more hash-selected papers (F)
+
+Result, under the section 4 definition and the conventions above: **12 of the 30 papers (40%) have at least one counted mismatch**; 95% Wilson interval 0.25 to 0.58. Eighteen have none. Nine of the 12 are clear and three are minor or arguable; excluding the three gives 9 of 30 (30%, 0.17 to 0.48). With the six papers of E (five with a counted mismatch) the figure is 17 of 36 (47%, 0.32 to 0.63); 16 of 36 (44%) if the weakest count of E (Overdamped DAVE) is dropped. `ext30_summary.py` recomputes these from `ext30_coding.jsonl`.
+
+The twelve (`ext30_table.md` lists all 30):
+
+| Paper (domain) | Statement against the paper's own tables |
+|---|---|
+| COFM-SIB (probabilistic) | "Matches or outperforms state-of-the-art baselines": a published and a reproduced baseline row in its Table 1 are above it on two benchmarks |
+| PhySense-AdjointFlow (deep learning), minor | Conclusion "never regresses" on the saturated benchmark; its error is higher than the control at three of four budgets by 0.0001 |
+| CS-HLA (deep learning) | The abstract's gate "guarantees zero clean accuracy loss"; its Table 1 shows −0.7 and −0.2 on one model |
+| NEM-SPKN (general ML) | "Maintains HSP-GKN training speed": its time is 1.5× to 2.4× on all 12 datasets |
+| Exact-CPWL CVaR (reinforcement learning), arguable | "Matches grid baselines exactly"; the grid gap column is up to 0.118 (the paper presents the grid as the approximation) |
+| TabHarmony (deep learning) | "Zero-loss guarantees"; its Table 1 shows 1, 4 and 5 losses at the noise threshold |
+| TPH-Lock (deep learning) | "+2.50 points on average over 16 cells" is the N = 100 figure (sum of the deltas 40 / 16); at full scale the same cells average +0.37 with two significant losses, while the abstract says the full-scale tests "confirm that the gains are statistically significant" |
+| PG-CDIG (applications) | "Outperforms existing baselines across 10/10 settings": the 10/10 is against its Cartesian predecessor only; in its Table 1 another baseline is higher in most columns |
+| InfoOptim (deep learning), minor | "Zero zero-shot accuracy loss": 31.21% against 31.28% average, inside the stated error |
+| BTV-RDRO (probabilistic) | Significance against entropic-OT baselines and forward-LV: one baseline has the lower loss on one panel and no test is shown against them; forward-LV is better on the real portfolio task |
+| SAVVY-Vortex (applications) | "New state of the art" at 57.6; the table's paper-reported baseline row is 58.0 |
+| Flex-Dot (social aspects) | "100% faithfulness"/"exact by construction"; its Table 2 faithfulness gaps are non-zero (0.034 to 0.30 on three datasets) |
+
+Ten of the 12 are statements contradicted by a table (type (a)); two are a different set or aggregate (type (c)). All 30 papers have at least one *other issue* (an omitted regression, a gain smaller than the reported spread, a baseline that looks weak). About ten of the 30 contain a table-against-table or text-against-table inconsistency (for example, a table whose listed averages do not equal the mean of its own rows; an ablation whose default configuration scores differently from the main table). Those are not counted in the rate.
+
 The recurring shape (E3): a statement that is true for one quantity is stated for another. The comparison set is narrowed in the abstract; a table is aggregated differently from how the abstract describes it; a gain is credited to the new component when a baseline setting shows it too; or a measured regression is left out of the abstract. In the cases that could be re-derived, the table arithmetic is internally consistent (BAM-Val throughout; the composite scores in FCD-Engram; the preprint's own Table 3 weighted means). The four checks the release describes for its integrity audit (score reproduction, specification compliance, references, and agreement between the written method and the code) do not include comparing a paper's abstract claims with its own tables; the mismatches above sit in that gap (E3).
 
 ## 7. What held up
@@ -79,6 +108,7 @@ The recurring shape (E3): a statement that is true for one quantity is stated fo
 - A human evaluation exists and does not favour the system on method soundness. The limitations paragraph states the cost per task.
 - The preprint reports the measured reward-hacking case instead of omitting it.
 - Where tables could be re-derived they were consistent, and every generated paper in the keyword scan has a reference list; 91% mention limitations, 77% report some variability measure (±, standard deviation, confidence interval), 74% mention seeds (presence only; E1).
+- In the second tranche, 18 of 30 papers have no counted mismatch, and several state their own limits plainly in the text (for example a non-significant gain flagged in a table caption, or a regime reported as having negative headroom).
 - The site discloses that the 86 papers are "autonomously generated". The PDFs do not say so (0 of 86).
 
 ## 8. Predictions scored
@@ -96,38 +126,41 @@ The recurring shape (E3): a statement that is true for one quantity is stated fo
 | E | ≥3 of 6 have a mismatch; ≥1 has none | Held (5 of 6, under the stricter counting of section 4; BAM-Val has none) |
 | E | ≥4 of 6 single-run or unspecified | Missed (one clearly single-run) |
 | E | ≥2 of 6 tune a "best" per row without a stated held-out split | Not determined |
+| F (30 papers) | At least 60% have a counted mismatch | Missed: 12 of 30 (40%; 95% interval 0.25 to 0.58) |
+| F | Type (a) contradictions are a minority of counted mismatches | Missed: ten of the twelve are type (a) |
+| F | At least 3 papers with no counted mismatch | Held: 18 |
 
 ## 9. Limitations: what this does and does not establish
 
 This note does not establish any of the following.
 
-- It does not show a rate. Seven papers, six by a stated rule, are too few, and the rule is one of many.
+- It gives a rate with a wide interval, not a measurement of a population. Of 36 hash-selected papers, 17 (47%, 95% interval 0.32 to 0.63) have a counted mismatch; in the 30-paper tranche 12 (40%, 0.25 to 0.58), 9 (30%) without the minor items. The rule is one of many, and a different rule would give different papers.
 - It does not show the generated papers are wrong in substance. The mismatches are between statements and tables, read from text; some may have explanations in appendices not read.
 - It does not show that human-written papers do better. The same check was not run on the 107 human source papers, so there is no baseline for how often an abstract in this literature says more than its tables.
 - It does not test performance. The 86 / 107 success rate, the 25.2% average gain and the review scores cannot be reproduced from the release.
 - It does not test intent or process, and nothing in it concerns individuals.
-- One reader coded everything. The definition in section 4 leaves room for disagreement at the edges (for example, whether an omitted regression is a mismatch), and the counts above would move with it.
+- One reader coded everything. The definition in section 4 leaves room for disagreement at the edges: omitted regressions and text-only counts were not counted, and a reader who counts them would find a higher rate; a reader who requires a larger gap than 0.0001 would find a lower one. Some conventions were written down while coding (section 4).
 
-## 10. Planned extension (preregistered here; not run)
+## 10. The extension (run) and what remains
 
-The six-paper sample cannot support a rate. A rate with a stated uncertainty needs a larger sample and a reference class.
+The first version of this draft preregistered a 30-paper extension with the prediction that at least 60% would have a counted mismatch. It was run (section 6b); the prediction was missed (40%). What remains, preregistered here and not run:
 
-1. **Sample.** For each of the 79 papers not yet read, compute `sha256(filename)`, sort ascending, and take the first 30 (a different rule would be a different study; this one is fixed now). Prediction: at least 60% have one or more mismatches under the section 4 definition; the 95% Wilson half-width at n = 30 is about ±0.15 (n ≈ 62 would give ±0.10).
-2. **Definition and coding.** The section 4 definition is used unchanged. Each paper is coded from its abstract, conclusion, main tables and ablations, with the page and table for every counted mismatch. Papers in which no abstract number can be located in a table are reported separately rather than counted.
-3. **Reference class.** To make a rate interpretable, apply the same rubric to 30 human-authored papers drawn by the same rule from the 107 source papers (they are public; the PDFs are needed). Prediction: the human rate is lower but not zero. If it is similar, the mismatch rate says more about the genre than about the system.
-4. **What would change the reading.** A human rate near the generated rate; a second reader disagreeing on more than a fifth of coded mismatches; an appendix explaining a counted mismatch (the paper is moved to "explained" and reported).
-5. **Not comparable to the release's success rate.** The release's 80.4% is a rate of beating a baseline; a mismatch rate is a different quantity, and the two are not to be set against each other.
+1. **Reference class.** Apply the same rubric to 30 human-authored papers drawn by the same hash rule from the 107 source papers (they are public; the PDFs are needed). Prediction: the human rate is lower but not zero. If it is similar, the mismatch rate says more about the genre than about the system. Without this, no figure above can be read as a difference between generated and human text.
+2. **Second reader.** At least a second coder on the 36 papers; the rubric, a subset coded blind. A second reader disagreeing on more than a fifth of coded mismatches would change the reading.
+3. **Explained mismatches.** Any counted mismatch explained in an appendix not read is moved to "explained" and reported.
+4. **Not comparable to the release's success rate.** The release's 80.4% is a rate of beating a baseline; a mismatch rate is a different quantity, and the two are not to be set against each other.
 
 ## 11. Reproduction
 
-Everything in `scientisttwo_release_reading_v1/`: `select_sample.py` (the hash rule), `pdf_keyword_scan.py` and its output, `host_table_checks.py`, `sample6_checks.py`, `specimen_checks.py` and their outputs. To repeat: clone the release's public repository, run the selection rule on `generated-papers/`, open each PDF, and transcribe the cited tables. The preprint is arXiv 2609.19644v1.
+Everything in `scientisttwo_release_reading_v1/`: `select_sample.py` (the hash rule for E), `ext30_selection.txt` (the 30 of F), `ext30_coding.jsonl` (per-paper claims checked, counted mismatch, other issues), `ext30_table.md`, `ext30_summary.py`, `pdf_keyword_scan.py` and its output, `host_table_checks.py`, `sample6_checks.py`, `specimen_checks.py` and their outputs. To repeat: clone the release's public repository, run the selection rule on `generated-papers/`, open each PDF, and transcribe the cited tables. The preprint is arXiv 2609.19644v1.
 
 ## References
 
-Sources: the preprint arXiv 2609.19644v1 ("ScientistTwo: Pioneering the Human Knowledge Frontier with Autonomous AI", dated 2026-09-18); the project site `https://scientist-two.github.io/` and the public repository `https://github.com/scientist-two/scientist-two.github.io` (commit aaf25a7, 2026-09-17), read read-only; and the 86 PDFs in its `generated-papers/` directory, of which seven are read in section 6. The two automated reviewers named are those the preprint names (ScholarPeer and the Stanford Agentic Reviewer). The statistics in sections 5 and 6 are the release's own table values or arithmetic on them (`host_table_checks.py`, `sample6_checks.py`, `specimen_checks.py`); each carries a table reference where it appears.
+Sources: the preprint arXiv 2609.19644v1 ("ScientistTwo: Pioneering the Human Knowledge Frontier with Autonomous AI", dated 2026-09-18); the project site `https://scientist-two.github.io/` and the public repository `https://github.com/scientist-two/scientist-two.github.io` (commit aaf25a7, 2026-09-17), read read-only; and the 86 PDFs in its `generated-papers/` directory, of which 37 are read in sections 6 and 6b. The two automated reviewers named are those the preprint names (ScholarPeer and the Stanford Agentic Reviewer). The statistics in sections 5 and 6 are the release's own table values or arithmetic on them (`host_table_checks.py`, `sample6_checks.py`, `specimen_checks.py`); each carries a table reference where it appears.
 
 ## Revision log
 
+- *2026-10-21, v1.1.* Ran the preregistered 30-paper extension (section 6b): 12 of 30 with a counted mismatch, below the preregistered 60%; combined 17 of 36. Section 10 now lists what remains (human reference class, second reader). Coding conventions stated in section 4.
 - *2026-10-21, v1.* First version: preprint, site, repository listing, 86-PDF keyword scan, one specimen, six hash-selected papers.
 
 ---
