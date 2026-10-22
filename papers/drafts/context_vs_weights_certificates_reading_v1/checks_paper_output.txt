@@ -1,0 +1,13 @@
+== C1 Theorem 2 (exact law), Corollary 3 and Proposition 6(iii) on random discrete joints
+max |E[gain] - (I + KL0 - dec)| over 2000 random joints: 2.22e-15
+Cor 3(i) violations: 0; Prop 6(iii) violations: 0  (both are consequences of the identity, expected 0)
+== C1b the identity needs the TRUE posterior P*; with an estimated P (model's own), it is an accounting identity w.r.t. whatever distribution is called 'true'
+   (not a numerical test: the identity holds for any joint, so it cannot fail; the paper's tests are of Assumption 1, the estimators and the certificates' preconditions)
+== C4 printed counts
+GPT-2 Table 13 rows: 7 rows x 8000 + 5948 = 61948 calls (abstract 61,948); +4 wrong +2048 undecided = 64000 (64,000 = 32 x 2000 = 64000 )
+decided share: 96.8 % ; wrong among decided: 0.0065 %
+Table 14 sums: window 12 / 38 capacity 24 / 58 ; issued 36 of 96 ; checks 86
+Table 10 means vs text: phoneme TabPFN 0.611 (text 0.61) XGB 0.806 (0.81); spambase TabPFN 0.332 (0.33) XGB 0.557 (0.56); airfoil surrogate 2.341 (2.34) in-context 3.649 (3.65)
+Table 12 Wilson upper bounds (10,000 streams): {'sym 3.25%': 3.62, 'skew 2.87%': 3.22, 'chg var 3.31%': 3.68, 'tie 0%': 0.04, 'adv .005 1.21%': 1.44} (printed 3.62, 3.22, 3.68, 0.04, 1.44)
+== C4 AUROC saturation: clipped gap bound 0.95-1e-12 -> 37.58 bits? (paper: 37.58); share of scores within 0.1 bit of it: Qwen 47.0%, GPT-4.1-mini 51.5%
+   d2(0.95 || 1e-12) = 37.58

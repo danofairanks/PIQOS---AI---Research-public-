@@ -1,0 +1,26 @@
+== CM1 certificates with an estimated answer law (V=16, C=0, 64 episodes, prompt code length sd 0.3 bits, z=1.96)
+ law exact  delta=0.05: false-issue rate   0.7%
+ law exact  delta=0.10: false-issue rate   0.3%
+ law n=50   delta=0.05: false-issue rate  13.4%
+ law n=50   delta=0.10: false-issue rate   6.5%
+ law n=500  delta=0.05: false-issue rate   1.4%
+ law n=500  delta=0.10: false-issue rate   0.5%
+ law n=5000 delta=0.05: false-issue rate   0.8%
+ law n=5000 delta=0.10: false-issue rate   0.4%
+ CM1a exact<=2.5% at 0.05: True | CM1b n=50 >=20% at 0.05: False | CM1c n=5000 <=5% at 0.05: True | CM1d n=50 >=10% at 0.10: False
+== CM2 betting test on an ordered stream (T=2000, c=4, overall mean 0): first 300 queries mean +0.5, then -0.0882
+ ordered stream false-call rate 100.0% (A 100.0%, B 0.0%); same values randomly reordered 2.35%
+ CM2c stream mean +0.1 (deployment -0.1): A called in 91.6% of streams, B in 0.0%, none 8.3%
+ CM2a >=15%: True | CM2b <=5%: True | CM2c >=95%: False
+== CM3 leakage of held-out answers into channel A's context (clean Delta=-0.1 favours B; leaked Delta=+1.85; noise sd 0.5; 2000 streams x 2000 queries)
+ f= 0.0%: A called   0.0%  B called 100.0%  none   0.0%
+ f= 2.0%: A called   0.0%  B called  95.2%  none   4.9%
+ f= 3.0%: A called   0.0%  B called  53.5%  none  46.5%
+ f= 4.0%: A called   0.2%  B called  11.2%  none  88.6%
+ f= 5.0%: A called   1.1%  B called   2.1%  none  96.8%
+ f= 6.0%: A called   5.6%  B called   0.4%  none  94.0%
+ f= 8.0%: A called  74.1%  B called   0.0%  none  25.9%
+ f=10.0%: A called  99.5%  B called   0.0%  none   0.5%
+ CM3a first f where A is called more than B: 6.0% (arithmetic crossing of the mean at f=0.1/1.95=5.13%)
+ CM3b f=10% A>=95%: True | f=0: B>=95% True, A<=2.5% True
+elapsed 10s
