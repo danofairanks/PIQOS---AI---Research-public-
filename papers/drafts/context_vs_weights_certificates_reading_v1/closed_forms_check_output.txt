@@ -1,0 +1,24 @@
+== A: printed number check: adapter ceiling 1/2 log2((1+rho)/(1+(1-k/d)rho)) at rho=4, k=d/4 vs cache ceiling 1/2 log2(1+rho)
+ adapter 0.1610 bits, ceiling 1.1610 bits, ratio 13.9% (paper: 14%)
+== B: Eq.26 (one linear-attention layer, exact at finite N,d) vs Monte Carlo minimum over a scalar step
+ d= 10 N=  10: MC min excess risk 2.3160  Eq.26 2.2979
+ d= 10 N=  40: MC min excess risk 1.0132  Eq.26 1.0093
+ d= 20 N=  30: MC min excess risk 1.8524  Eq.26 1.8571
+ d= 20 N= 100: MC min excess risk 0.8233  Eq.26 0.8254
+== C: Eq.24-25 ideal cache in (near) the proportional limit: simulated mean gain vs 1/2 log2((s2+sw2)/(s2+E_B)), E_B = s2*alpha*m_alpha(lambda), lambda = alpha/rho
+ d=100 N=200 alpha=0.50: simulated 0.7721 bits, closed form 0.7775 bits (E_B=0.7016)
+ d=100 N=400 alpha=0.25: simulated 0.9660 bits, closed form 0.9713 bits (E_B=0.3007)
+ d=100 N=800 alpha=0.12: simulated 1.0505 bits, closed form 1.0682 bits (E_B=0.1373)
+ d=200 N=400 alpha=0.50: simulated 0.7636 bits, closed form 0.7775 bits (E_B=0.7016)
+== D: ordering at rho=4: E_B (limit) <= E_LA (exact finite) over n/d = 0.1..10
+ n/d= 0.10: E_B 3.6854 <= E_LA 3.7059: True
+ n/d= 0.25: E_B 3.2361 <= E_LA 3.3377: True
+ n/d= 0.50: E_B 2.5616 <= E_LA 2.8636: True
+ n/d= 1.00: E_B 1.5616 <= E_LA 2.2301: True
+ n/d= 2.00: E_B 0.7016 <= E_LA 1.5460: True
+ n/d= 4.00: E_B 0.3007 <= E_LA 0.9582: True
+ n/d=10.00: E_B 0.1078 <= E_LA 0.4476: True
+ ordering holds on all points: True
+== E: Monte Carlo spread of the Eq.24-25 check (d=200, N=400; 5 independent runs of 300 repeats, 64 query points each)
+ runs: [np.float64(0.7904), np.float64(0.7774), np.float64(0.7772), np.float64(0.7706), np.float64(0.7758)] mean 0.7783 sd of a run 0.0073 closed form 0.7775
+ mean of 5 runs minus closed form: 0.0007 bits (the paper reports a largest gap of 0.005 bits at d=200 over 300 repeats)
