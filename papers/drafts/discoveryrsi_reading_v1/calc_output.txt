@@ -1,0 +1,28 @@
+1. rates with 95% Wilson intervals
+   DiscoveryRSI-27B   74/ 1176 =  6.3%  [ 5.0,  7.8]
+   DeepSeek           14/  257 =  5.4%  [ 3.3,  8.9]
+   GLM                 1/   36 =  2.8%  [ 0.5, 14.2]
+   GPT                59/ 2341 =  2.5%  [ 2.0,  3.2]
+   Claude              3/  131 =  2.3%  [ 0.8,  6.5]
+2. naive Fisher exact p, DiscoveryRSI-27B vs each group
+   vs DeepSeek  p = 0.670
+   vs GLM       p = 0.721
+   vs GPT       p = 0.000
+   vs Claude    p = 0.076
+3. conditional on passing the retrieval gate (Appendix F.4: Claude 15/131, DiscoveryRSI 355/1,176)
+   gate pass rates: Claude 11.5%, DiscoveryRSI 30.2%
+   positives among gate-passers: Claude 3/15 = 20.0%, DiscoveryRSI 74/355 = 20.8%; Fisher p = 1.000
+4. DiscoveryRSI-27B by domain (Table 6): positives / generated
+   sums: 74 1176
+   Clinical and population health      13/ 557 =  2.3%  [ 1.4,  4.0]
+   Therapeutic target prioritization   30/ 178 = 16.9%  [12.1, 23.0]
+   Disease mechanisms                  17/ 251 =  6.8%  [ 4.3, 10.6]
+   Population multi-omics              14/ 190 =  7.4%  [ 4.4, 12.0]
+   without therapeutic targets: 44/998 = 4.4% (therapeutic targets: 15.1% of versions, 40.5% of positives)
+   NOTE: the other groups' domain counts are not printed, so a like-for-like pooled comparison cannot be made.
+5. the quality composite (Appendix D.1 weights; Section 7.1 / Figure 6 axis means, round 0 and round 2)
+   composite from axis means: 4.862 -> 5.385 (paper: 4.86 -> 5.39), change 0.523
+   contribution to the change: value axes (importance, novelty, grounding, actionability) -0.085 ; testability axes (falsifiability, data resolvability, feasibility, alternatives) +0.608
+   per axis change: importance -0.44, novelty -0.29, grounding +0.32, falsifiability +2.20, data resolvability +1.26, feasibility +1.08, alternatives +1.54, actionability +0.27
+   importance + novelty alone, weighted: -0.146
+6. gain per round (Section 7.1): 0.32 then 0.21

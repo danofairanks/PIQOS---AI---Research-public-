@@ -1,0 +1,68 @@
+sha256 f9df65e4c75059e879b7384725d8e4f6942f9335c577a94fe00cd88ea82a1bb0
+OK   1 correlated AI perspectives, not three independent expert opinions
+OK   1 The current panel uses separate prompts to the same model family
+OK   1 it remains pending
+OK   1 Prompt-role agreement alone does not establish validity
+OK   1 descriptive percentages without significance tests
+OK   1 they do not identify internal model knowledge cutoffs
+OK   1 a retrospective maximum over final-snapshot scores is monotone by construction and cannot demonstrate learning
+OK   1 frozen internal protocol conventions, not empirically established optimal weights
+OK   1 The hypothesis profile uses eight dimensions: importance, novelty, grounding, falsifiability, data resolvabili
+OK   1 largely outperform GPT-6 with 2.5% and Claude Opus 5 with 2.3%
+OK   1 Preliminary human assessments show
+OK   1 Empirical evidence for learning from scientific research
+OK   1 Expert-supervised assessment shows greater human-rated improvement along research paths
+OK   1 The overall numerator and denominator are 74/1,176
+OK   1 DeepSeek (14/257), GLM (1/36), GPT (59/2,341), and Claude (3/131)
+OK   1 Only 15 of its 131 proposals pass the retrieval gate (11.5%), compared with 355 of 1,176 for DiscoveryRSI27B (
+OK   1 the positive-judgment fractions are similar: 20.0% and 20.8%
+OK   1 Claude's median proposal length is 41,134 characters, while retrieval uses the first 6,000 characters and the 
+OK   1 GPT-6 Luna supplied the semantic judgments, with 145 successful judgments from 149 sampled records
+OK   1 propagated to 903 registered hypothesis versions
+OK   1 The resulting labels are correlated automated assessments rather than independent expert reviews
+OK   1 from 1 April 2025 through 14 October 2026
+OK   1 Qwen (April 2025, a provisional family proxy), Claude Opus 5 (May 2026)
+OK   1 Prospective tracking is needed to determine whether researchers adopt these hypotheses
+OK   1 The assessment involved 27 medical doctors, medical students and bioscience PhD students
+OK   1 The review cohort contains 292 proposals from six dataset groups
+OK   3 under three senior supervisors
+OK   1 Falsifiability rises from 4.00 to 6.20, consideration of alternative explanations from 4.44 to 5.98, data reso
+OK   1 importance declines from 6.48 to 6.04 and novelty from 4.87 to 4.58
+OK   1 The observed improvement therefore concerns investigation design more strongly than the perceived significance
+OK   1 The additional gain decreases from 0.32 in the first round to 0.21 in the second
+OK   1 4.86 for the base model to 5.18 after the first research round and 5.39 after the second
+OK   1 We train for one epoch
+OK   1 accept on dev set
+OK   1 41% of revisions improve the mean human score, 47% leave it unchanged, and 12% reduce it
+OK   1 The corresponding proportions are 31%, 37%, and 32% for GPT-5.6 Sol, and 25%, 44%, and 31% for GPT-6 Luna
+OK   1 DiscoveryRSI-27B scores higher than GPT-6 Luna on importance (3.10 versus 2.94) and plausible, evidence-bounde
+OK   1 Both receive 2.31 for advance over known work, while GPT-6 Luna scores higher on data fit, alternative explana
+OK   1 Clinical and population health 13 557 2.3% Therapeutic target prioritization 30 178 16.9% Disease mechanisms 1
+OK   1 Clinical & population health 2.3% 5.2% 5.9% 2.3% 4.4%
+OK   1 DiscoveryRSI 27B DeepSeek GLM GPT Claude
+OK   1 Group sizes and domain composition differ, and some strata are small
+OK   1 Automated quality evaluation covers 241 research questions across the four domains using GPT-5.6 Sol as the ju
+OK   1 Behavioral analysis examines six campaigns of 20 episodes per evaluated model variant
+OK   1 substantive progress on 214 of 366 transitions
+OK   1 Reviewer bias, scientific uncertainty, and dependence between repeated critiques are not fully represented
+OK   1 2,397 agent trajectories
+OK   1 Improvements concentrate on the specification of testable investigations
+OK   1 fresh questions for rediscovery
+OK   1 Definition 1 (Valuable and testable research hypothesis)
+OK   1 a research hypothesis is represented as H = ( 𝑐, 𝜋, 𝑑, 𝑎)
+OK   1 using Qwen3.8-27B as initialization
+OK   1 Group sizes and domain composition differ, and some strata are small
+OK   1 from 4.86 for the base model to 5.39 after two rounds of self-improvement
+OK   1 a 6.3% rate of hypothesis correspondence with research published after the model cutoff
+OK   1 Absolute quality ratings show a mixed profile
+OK   1 DeepSeek V4.1 (September 2026, a release-month proxy), and GLM-5.3 (August 2026, a releasemonth proxy)
+OK   1 DFM-Bench evaluates five objects: individual hypotheses, revisions, development paths, research runs, and scie
+MISSES: 0 of 58
+absent-check 'inter-rater' 0
+absent-check 'kappa' 0
+absent-check 'Krippendorff' 0
+absent-check 'Cohen' 0
+absent-check 'self-preference' 0
+absent-check 'seed' 0
+absent-check 'disjoint' 0
+absent-check 'Limitations section' 0
