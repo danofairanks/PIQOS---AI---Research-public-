@@ -63,7 +63,8 @@ Not built: leakage in real models; manipulated evidence against the adjudicator;
 ## 7. What could not be done
 
 - **The real-model experiments** (GPT-2, TabPFN against XGBoost, the occupancy and stereo networks, the kriging learner, the adjudicator) need models, datasets and APIs; they are not reproduced here. Only the stored certificate table is recomputable from the repository.
-- **The supplementary scripts.** Appendix F describes a supplementary package of scripts and saved results. It could not be found: the repository is unchanged (one commit, no `scripts/` directory), the PDF has no code link or embedded files, none of the authors' public repositories is named for this paper, arXiv was unreachable from the evaluation environment, and a web search found nothing. Whoever wants to run the scripts needs to ask the authors for the package.
+- **The supplementary scripts.** Appendix F describes a supplementary package of scripts and saved results. It still could not be found. *First attempt (2026-10-22):* the repository was unchanged (one commit, no `scripts/` directory), the PDF had no code link or embedded files, none of the authors' public repositories was named for this paper, arXiv was unreachable from the evaluation environment, and a web search found nothing. *Second attempt (2026-10-23, arXiv now reachable):* the abstract page lists v1 only, with no ancillary files and no code link; the arXiv source package (`main.tex`, `main.bbl`, a style file and 11 figure PDFs; no scripts, data or results files) has no URL, DOI or repository name in Appendix F and no code-related comments; the repository's HEAD is still cf81a50; the PyPI name `bitsy` belongs to an unrelated package and `shippable` does not exist; three guessed repository names under the authors' account returned no repository (GitHub answers a credentials prompt for both missing and private repositories). Appendix F names its package `shippable`, while the public repository's package is `bitsy`; the repository matched the paper's definitions (section 3), so a rename is the simple reading, which I did not verify. The 23 file and directory names Appendix F promises are in `promised_supplement_list_from_appendix_F.txt`. Whoever wants to run the scripts needs to ask the authors for the package.
+- **What stays at E2 because of that.** The paper's real-model results that depend on the saved results (the trained-transformer certificates, the GPT-2 counts and the null-error rows on real streams) are read and their arithmetic recomputed, not re-executed. What was executed stands as filed: the certificate-table replay, the closed forms of Appendix A.10 and the toys.
 
 ## 8. What this does and does not establish
 
@@ -75,7 +76,7 @@ Not built: leakage in real models; manipulated evidence against the adjudicator;
 
 ## 9. Reproduction
 
-Everything is in `context_vs_weights_certificates_reading_v1/`: `predictions_fixed_2026-10-20.md`; `checks_paper.py` and its output; `closed_forms_check.py` and its output; `toys_preregistration_2026-10-22.md`, `toys.py` and its output. `toys.py` needs a checkout of the repository at commit cf81a50 (`BITSY_PATH=/path/to/bitsy python3 -I toys.py`). The paper is arXiv:2610.29419v1; its numbers were transcribed by hand from the PDF.
+Everything is in `context_vs_weights_certificates_reading_v1/`: `predictions_fixed_2026-10-20.md`; `checks_paper.py` and its output; `closed_forms_check.py` and its output; `toys_preregistration_2026-10-22.md`, `toys.py` and its output. `toys.py` needs a checkout of the repository at commit cf81a50 (`BITSY_PATH=/path/to/bitsy python3 -I toys.py`). The paper is arXiv:2610.29419v1; its numbers were transcribed by hand from the PDF. `code_check_2026-10-23.md` records the second search for the supplementary package, and `promised_supplement_list_from_appendix_F.txt` lists what Appendix F promises.
 
 ## References
 
@@ -84,6 +85,7 @@ Sources: the preprint arXiv:2610.29419v1 ("When Thoughts Become Memory: Unifying
 ## Revision log
 
 - *2026-10-22, v1.* First version.
+- *2026-10-23, v1.1.* Section 7: the note that arXiv was unreachable is superseded by a second search of the supplementary package (arXiv, its source package, the repository, package registries); the result is unchanged (not found). Added the E2 consequence, `code_check_2026-10-23.md` and the list of promised files. No finding in sections 3 to 6 changed.
 
 ---
 
