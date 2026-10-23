@@ -1,0 +1,19 @@
+records: 100
+status: {'listed_record': 11, 'improves_registry': 89}
+category: {'autocorrelation': 1, 'vehicle-routing': 1, 'circular-quadrant': 46, 'octagon': 1, 'semicircle': 5, 'four-dimensional-balls': 36, 'pentagons': 9, 'zhang-zagier': 1}
+geometric packing records (paper: 97 of 100): 97
+non-packing: ['autocorrelation', 'vehicle-routing', 'zhang-zagier']
+records with a numeric previous_comparison: 100 of 100
+relative gain: min 1.48e-06  median 2.12e-05  p90 2.60e-04  max 1.94e-03
+  gains <= 1.0e-04: 83 of 100
+  gains <= 2.8e-04: 90 of 100
+  gains <= 1.0e-03: 99 of 100
+  gains <= 1.0e-02: 100 of 100
+largest five:
+   1.937e-03  penintri_n38  (pentagons, listed_record)
+   6.810e-04  penintri_n37  (pentagons, listed_record)
+   6.509e-04  penintri_n39  (pentagons, listed_record)
+   5.272e-04  arena_third_autocorrelation_inequality  (autocorrelation, listed_record)
+   5.270e-04  penintri_n30  (pentagons, listed_record)
+improves_registry: n=89  median 1.77e-05  max 2.84e-04
+listed_record: n=11  median 4.92e-04  max 1.94e-03

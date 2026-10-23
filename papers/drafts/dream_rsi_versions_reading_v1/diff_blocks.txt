@@ -1,0 +1,352 @@
+--- block 1  replace  v1[369:383] (14 words) -> v2[348:349] (1 words)
+v1: 2026a), with these discoveries increasingly feeding into the development of more capable AI systems.
+v2: 2026a).
+
+--- block 2  replace  v1[512:513] (1 words) -> v2[467:504] (37 words)
+v1: doing
+v2: this faces two fundamental bottlenecks. First, meta-level feedback is delayed and expensive. Unlike evaluating a single candidate, assessing an exploration policy requires observing how it shapes discovery over many proposal–evaluation cycles. Second, the meta-policy space is vast,
+
+--- block 3  replace  v1[525:538] (13 words) -> v2[526:527] (1 words)
+v1: Update Policy Exploration policy ❸ Dreaming-based Policy Improvement ❷ Construct Replay Simulator ❶
+v2: 1
+
+--- block 4  delete  v1[539:564] (25 words) -> v2[528:528] (0 words)
+v1: Explore Update Interact Store … … Simulator Pool Simulator … Discovery Tree Zoom in All previous History Propose Evaluate Store to History Feedback Simulator Pool
+v2: 
+
+--- block 5  delete  v1[626:645] (19 words) -> v2[587:587] (0 words)
+v1: Improvement, where the agent "dreams" up a massive pool of alternative policies in its mind. It then feeds these
+v2: 
+
+--- block 6  delete  v1[679:735] (56 words) -> v2[615:615] (0 words)
+v1: two fundamental bottlenecks. First, feedback is delayed and expensive at the meta level: unlike evaluating an individual candidate, assessing an exploration policy requires observing how it shapes the subsequent discovery process over many proposal–evaluation cycles. Second, the meta-policy space is vast: a newly proposed policy may perform poorly, so many alternatives may need to be tried.
+v2: 
+
+--- block 7  replace  v1[1117:1130] (13 words) -> v2[934:938] (4 words)
+v1: spanning three distinct domains: algorithm engineering, mathematical optimization, and GPU kernel engineering. In
+v2: across four domains. On
+
+--- block 8  replace  v1[1145:1146] (1 words) -> v2[950:1046] (96 words)
+v1: reducing
+v2: 1We use replay simulator and world interchangeably. Figure 2 | Discovery history as a replay simulator. A deployed policy first explores online, recording its execution traces as a discovery tree where each node is one attempt plus its full observation. This tree then acts as a simulator: a large number of candidate policies can be tested inside it, varying which branches to search, in what order, with how much concurrency, and when to stop. Because every node's outcome is already stored, one expensive online run can yield a large number of fast, low-cost off-policy evaluations. The
+
+--- block 9  replace  v1[1147:1149] (2 words) -> v2[1047:1065] (18 words)
+v1: calls by
+v2: can therefore "dream" over many alternative exploration strategies via historical replay, and redeploy only the improved policy. using
+
+--- block 10  replace  v1[1172:1184] (12 words) -> v2[1087:1093] (6 words)
+v1: within 1k generations, yielding over 50× budget savings compared to SimpleTES. In
+v2: on two of three tasks. On
+
+--- block 11  replace  v1[1207:1214] (7 words) -> v2[1114:1133] (19 words)
+v1: identical budget constraints. In summary, our main
+v2: a comparable budget. On harness optimization, it improves the seed harness by over 8 points on Terminal-Bench 2.1. Our
+
+--- block 12  replace  v1[1265:1280] (15 words) -> v2[1183:1184] (1 words)
+v1: simulators from history to refine meta-exploration strategies via dreaming, and redeploys the upgraded policy online;
+v2: simulator.
+
+--- block 13  replace  v1[1348:1363] (15 words) -> v2[1244:1245] (1 words)
+v1: the resulting map supports planning without requiring the agent to physically revisit every location. A
+v2: a
+
+--- block 14  replace  v1[1499:1552] (53 words) -> v2[1369:1373] (4 words)
+v1: All previous History Selected Policy Online Explore Replay Feedback (Quality ↑; Cost ↓; Latency ↓) Exploration Policy Distribution Alternative Policy 1 (Replay) Score (Alternative Policy 1) Alternative Policy 2 (Replay) Score (Alternative Policy 2) … … Discovery History (Simulator) Figure 2 | Discovery history as a replay simulator. A deployed policy first explores
+v2: to stop. Running it
+
+--- block 15  replace  v1[1557:1598] (41 words) -> v2[1378:1386] (8 words)
+v1: discovery tree containing historical execution traces (each node denote an attempt with its full observation). Thousands of candidate policies can then be tested within this simulator—evaluating alternative choices of search branches, exploration orders, concurrency levels, and stopping rules. Since all node
+v2: history — branches explored, decisions made, costs incurred,
+
+--- block 16  replace  v1[1599:1657] (58 words) -> v2[1387:1388] (1 words)
+v1: are pre-stored, a single costly online run enables thousands of rapid, zero-execution-cost off-policy evaluations. This enables policy improvement through historical replay: the agent can "dream" over many alternative exploration strategies before redeploying the improved policy online. to terminate. Executing the policy online produces a structured discovery history containing the explored branches, decision points, computational costs, and realized outcomes.
+v2: observed.
+
+--- block 17  replace  v1[1711:1723] (12 words) -> v2[1440:1441] (1 words)
+v1: branches, prioritize them in a different order, issue different requests in parallel,
+v2: parallelism,
+
+--- block 18  replace  v1[1803:1805] (2 words) -> v2[1520:1541] (21 words)
+v1: agent, while
+v2: agent to generate a tree-structure discovery trace, where each node in the tree is an discovery attempt and is scored by
+
+--- block 19  replace  v1[2033:2035] (2 words) -> v2[1759:1774] (15 words)
+v1: where leaves
+v2: which contains the root and all leave node in the current tree. We assume there
+
+--- block 20  replace  v1[2106:2118] (12 words) -> v2[1836:1837] (1 words)
+v1: Each selected node specifies the starting point of one attempt, so the
+v2: The
+
+--- block 21  replace  v1[2273:2274] (1 words) -> v2[1990:2022] (32 words)
+v1: node
+v2: 𝑣 ∈ 𝐶𝑡𝑘 to a worker, which resumes 𝑣's workspace, generates a candidate, and evaluates it. These attempts run in parallel and each adds one child to its selected parent. Thus, every
+
+--- block 22  replace  v1[2281:2326] (45 words) -> v2[2029:2031] (2 words)
+v1: worker. The discovery agent uses 𝑣's saved workspace and available context to produce a new candidate, and the evaluator assesses the result. These attempts run in parallel, each producing one new child of its selected parent. Attaching the completed children to the current tree yields
+v2: child, giving
+
+--- block 23  replace  v1[2493:2494] (1 words) -> v2[2173:2196] (23 words)
+v1: before
+v2: under budget-control parameters 𝜌 ∈ R := {0, 0.25, 0.5, 0.75, 1}, where 𝜌 controls the policy's budget preference. The resulting feedback drives
+
+--- block 24  replace  v1[2631:2649] (18 words) -> v2[2314:2317] (3 words)
+v1: After the exploration policy takes a nonempty batch 𝐶 𝑖𝑚,𝑘 , the next observed tree is T𝑖 𝑚,𝑘+1
+v2: Thus, Ð T𝑖,𝜌𝑚,𝑘+1
+
+--- block 25  replace  v1[2914:2915] (1 words) -> v2[2538:2584] (46 words)
+v1: parallelism.
+v2: generation cost across budget preferences while also favoring parallel execution. For each replay world T𝑖 used for evaluation, define 𝐵𝑖 := |T𝑖 | − 1 > 0 and 𝑆𝑖 := max𝑣 ∈ T𝑖 \{ 𝑟 } 𝑠𝑣 > 0, the total number of evaluated non-root nodes
+
+--- block 26  replace  v1[2917:2922] (5 words) -> v2[2586:2602] (16 words)
+v1: Let 𝑁𝑖𝑚 = |T𝑖 𝑖
+v2: and the best recorded score, respectively. For each 𝜌 ∈ R, let 𝑛𝑚 := |T𝑖,𝜌 𝑖,𝜌
+
+--- block 27  replace  v1[2929:2946] (17 words) -> v2[2611:2613] (2 words)
+v1: revealed non-root nodes. Although replay itself does not execute new discovery attempts, 𝑁𝑖𝑚 counts the generation–evaluation requests
+v2: discovery-agent calls
+
+--- block 28  replace  v1[2948:2954] (6 words) -> v2[2615:2667] (52 words)
+v1: its trajectory. For fixed coefficients 𝛽1
+v2: the replay. Let 𝑠𝑖,𝜌 be the best score among the revealed 𝑚 𝑚 non-root nodes, i.e., 𝑠𝑖,𝜌 := max 𝑚,𝑘𝑚,★ 𝑠𝑣 when 𝑛𝑚 > 0, and set 𝑠𝑖,𝜌 := 0 otherwise. We normalize 𝑖,𝜌 𝑖,𝜌 𝑣 ∈ T𝑖,𝜌 \{ 𝑟 } 𝑚 the attained quality as 𝑎𝑚 := clip( 𝑠 / 𝑆
+
+--- block 29  insert  v1[2959:2959] (0 words) -> v2[2675:2742] (67 words)
+v1: 
+v2: quality–cost points 𝑖,𝜌 𝑖,𝜌 𝑖 𝑚 𝑚 {( 𝑛𝑖,𝜌 , 𝑎𝑖,𝜌 ) : 𝜌 ∈ R}. A point is dominated if another point uses no more calls and attains no lower 𝐿𝑚 quality, with at least one strict improvement. Let (¯ 𝑛𝑚 ,𝑎 ¯𝑚 ) 𝑖 be the distinct nondominated points 𝑖, 𝑗 𝑖, 𝑗 𝑗=1 ordered by increasing call count, and set 𝑎¯𝑚 := 0. The
+
+--- block 30  replace  v1[2963:2966] (3 words) -> v2[2748:2760] (12 words)
+v1: = max𝑚,★ 𝑠𝑣
+v2: := 𝑖 1 ∑︁ 𝐵𝑖 | 𝑚,★ 𝑎 ¯𝑚 ¯𝑚 𝑖, 𝑗
+
+--- block 31  replace  v1[2967:2971] (4 words) -> v2[2761:2784] (23 words)
+v1: 𝛽1 𝑁𝑖𝑚 𝑚,𝑘 𝑣
+v2: 𝑎 𝑖, 𝑗 −1  𝐵𝑖 − 𝑛 ¯𝑚 𝑖, 𝑗  𝑗=1 {z normalized hypervolume 1 ∑︁ 𝑘𝑖,𝜌 −𝜆 . |R| 𝜌
+
+--- block 32  delete  v1[2977:2994] (17 words) -> v2[2796:2796] (0 words)
+v1: discovery quality |{z} execution cost + 𝛽2 𝑁𝑖𝑚 } max{1, 𝑘𝑚,★ 𝑖 | {z } . (1)
+v2: 
+
+--- block 33  replace  v1[3001:3003] (2 words) -> v2[2812:2825] (13 words)
+v1: best solution
+v2: normalized area dominated by the quality–cost Pareto frontier, rewarding policies that attain higher
+
+--- block 34  replace  v1[3009:3022] (13 words) -> v2[2832:2834] (2 words)
+v1: penalizes the number of attempted generations. For a nonempty replay, the third rewards
+v2: term measures
+
+--- block 35  replace  v1[3040:3042] (2 words) -> v2[2852:2865] (13 words)
+v1: them sequentially.
+v2: more calls in parallel; replays with zero calls contribute zero to this term.
+
+--- block 36  replace  v1[3140:3155] (15 words) -> v2[2958:2959] (1 words)
+v1: Replay feedback is available to the development agent between revisions. ★ After 𝑀 revisions, the
+v2: The
+
+--- block 37  delete  v1[3222:3243] (21 words) -> v2[3018:3018] (0 words)
+v1: The selected policy is then deployed online to collect T𝑡+1 , expanding the history available for the next offline improvement phase.
+v2: 
+
+--- block 38  replace  v1[3260:3262] (2 words) -> v2[3033:3070] (37 words)
+v1: Our primary
+v2: We primarily use Gemini-3.1-Pro for scientific discovery experiments, with additional Lasso experiments using Gemini-3.7-Flash to assess applicability across backbones. For harness optimization, we use Claude Opus 4.8 with Claude Code. On the scientific discovery tasks, our main
+
+--- block 39  replace  v1[3267:3270] (3 words) -> v2[3075:3088] (13 words)
+v1: Exploration, which uses
+v2: Exploration. Both methods use identical discovery agents, evaluators, initialization, per-round budget limits, and
+
+--- block 40  replace  v1[3272:3273] (1 words) -> v2[3090:3114] (24 words)
+v1: underlying
+v2: hand-designed starting policy. From the second round onward, Recursive Fixed Exploration keeps its policy fixed, while Dream-RSI updates it through replay-based dreaming over accumulated
+
+--- block 41  replace  v1[3276:3279] (3 words) -> v2[3125:3290] (165 words)
+v1: initialization but keeps
+v2: omit the fixed-policy comparison due to its substantial cost: an additional full search is estimated to cost over $100,000. We measure discovery cost as the cumulative number of discovery-agent calls. 4.1. Kernel Engineering The goal of kernel engineering is to discover high-performance kernel implementations while preserving numerical correctness. We use four representative KernelBench tasks (Ouyang et al., 2025): VGG16, LayerNorm, ConvDiv, and ConvMax. Candidates are scored by execution performance, measured as inverse runtime (1/ms), subject to correctness checks against the reference implementation. With Gemini-3.1 Pro as the coding agent, we compare Dream-RSI against Recursive Fixed Exp
+
+--- block 42  replace  v1[3285:3297] (12 words) -> v2[3295:3466] (171 words)
+v1: discovery rounds. We additionally compare against task-specific domain baselines. Across all tasks,
+v2: rounds thus improves both the efficiency and the effectiveness of long-horizon discovery, and Dream-RSI surpasses PACEvolve in kernel performance (Detailed PACEvolve scaling curves are provided in Appendix C.). Appendix E.2 gives the discovered ConvDiv kernel. Rather than optimizing convolution in isolation, it restructures the operator chain around downstream pooling and reduction. Adjacent convolution outputs are max-pooled immediately, while width pooling and subsequent reductions run directly on register-resident values, avoiding materialization of convolution and pooled feature maps. Linear operations, such as scaling, averaging, and bias accumulation, are deferred to a lightweight fina
+
+--- block 43  replace  v1[3304:3305] (1 words) -> v2[3476:3507] (31 words)
+v1: same
+v2: number of generations. On VGG16 and LayerNorm, Dream-RSI reaches comparable performance with 2.43× and 1.79× fewer generations, respectively. On ConvDiv and ConvMax, it achieves 2.09× and 1.44× higher performance under comparable
+
+--- block 44  replace  v1[3306:3309] (3 words) -> v2[3508:3530] (22 words)
+v1: agent, evaluator, initialization,
+v2: budgets. Higher is better for all tasks. Table 1 | Performance comparison on mathematical discovery tasks. Higher is better for Sum Diff
+
+--- block 45  replace  v1[3310:3337] (27 words) -> v2[3531:3544] (13 words)
+v1: resource constraints. Both methods start from the same manually designed exploration policy. This exploration policy follows a simple parallel refining strategy: it launches multiple independent exploration workspaces
+v2: Circle Packing, while lower is better for Auto Correlation. Best results are shown
+
+--- block 46  replace  v1[3338:3380] (42 words) -> v2[3545:3581] (36 words)
+v1: parallel, with each workspace maintaining its own local discovery trajectory and repeatedly refining its current candidate based on the history accumulated within that workspace. The two methods therefore follow the same exploration policy in the first discovery round. In subsequent rounds, while
+v2: bold. Method LLM AlphaEvolve AlphaEvolveV2 OpenEvolve CodeEvolve ShinkaEvolve TTS-Discovery ThetaEvolve EvoX SimpleTES Gemini-2.0 Pro + Flash – Gemini-2.0 Pro + Flash 1.121936 – – Mixed – Qwen3-8B – Distilled-Qwen3-8B – Gemini-3.0-Pro – GPT-OSS-120B 1.143975 Our System
+
+--- block 47  replace  v1[3389:3391] (2 words) -> v2[3586:3640] (54 words)
+v1: progressively refines
+v2: Gemini-3.1-Pro Sum Diff (↑) Auto Correlation (↓) Circle Packing (↑) 1.144047 1.145427 1.455700 – 1.460000 – 1.457800 – 1.493000 1.458900 1.453675 2.635862 2.635983 2.635980 2.635982 2.635983 2.635983 2.635900 2.635983 1.456001 1.456375 2.635983 2.635983 4.2. Mathematics Optimization We further evaluate Dream-RSI on three mathematical discovery tasks spanning discrete combinatorial optimization, geometric optimization, and functional optimization:
+
+--- block 48  replace  v1[3392:3396] (4 words) -> v2[3641:3704] (63 words)
+v1: policy by dreaming over
+v2: Sum–Difference Problem, Circle Packing, and Autocorrelation Inequalities. Formal definitions of the three tasks are provided in Appendix B.3. We use Gemini-3.1 Pro via the Gemini CLI as the discovery agent for both methods for 10 rounds. For each task, the agent iteratively proposes and evaluates candidate constructions or optimization procedures according to the task-specific objective. Results. Table 1 summarizes the results. Dream-RSI achieves
+
+--- block 49  replace  v1[3397:3400] (3 words) -> v2[3705:3890] (185 words)
+v1: replay simulator conditioned
+v2: Sum–Difference score of 1.145427, outperforming SimpleTES and Recursive Fixed Exploration. On Circle Packing, it reaches 2.635983, matching the strongest reported result among the compared methods. For Autocorrelation, Dream7 Method Model Previous solvers sklearn glmnet SimpleTES SimpleTES † Our System Recursive Fixed Exploration Dream-RSI Non-biological Compute Biological Avg. Gisette RCV1 DNA Leukemia Colon Duke Breast – – gpt-oss-120b gpt-oss-120b – – 51,200 51,200 11275.2 9063.6 3141.9 8651.0 252881.7 73072.8 19625.6 41143.1 93.8 351.9 15.9 37.6 227.2 45.0 15.5 28.2 229.8 24.2 11.6 19.5 374.0 47.7 18.1 31.1 44180.3 13767.5 3804.8 8318.4 Gemini-3.1-Pro Gemini-3.7-Flash Gemini-3.1-Pro Gemi
+
+--- block 50  delete  v1[3408:3422] (14 words) -> v2[3900:3900] (0 words)
+v1: updated policy in each new round. The discovery cost is quantified by the total
+v2: 
+
+--- block 51  replace  v1[3442:3458] (16 words) -> v2[3922:3939] (17 words)
+v1: CLI 2 . Under Recursive Fixed Exploration, each round for Gemini-3.1 Pro executes 10 parallel workspaces
+v2: 3.1-Pro/3.7-Flash; marker labels give the round. † denotes results reproduced by us. RSI obtains 1.456375, remaining competitive
+
+--- block 52  replace  v1[3459:3524] (65 words) -> v2[3940:3944] (4 words)
+v1: up to 11 refinement steps (10 × 11 = 110 discovery-agent calls), whereas Gemini-3.7-Flash operates 32 parallel workspaces with up to 20 refinement steps (32 × 20 = 640 calls). Dream-RSI maintains identical per-round budgets, aligning with the baseline in Round 1 while progressively updating its policy in subsequent rounds. Further details on recursive rounds, task setups, resource budgets, and evaluation protocols follow below. 4.1.
+v2: existing discovery systems. 4.3.
+
+--- block 53  insert  v1[3767:3767] (0 words) -> v2[4161:4233] (72 words)
+v1: 
+v2: 0.8 0.78 0.76 0.74 0.72 0.7247 → 0.8090 Seed: 0.7247 Number of Generations (a) Discovery Process TB2.1 Score TB2.1 Score 0.82 0.78 0.74 0.7 0.79 0.81 0.75 0.72 CC TK MH Dream-RSI Method (b) Detailed Comparison Figure 5 | Harness optimization results of Dream-RSI. (a) Best-so-far TerminalBench2.1 score over the discovery process, improving the seed harness from 0.7247 to 0.8090. (b) Full-suite comparison against Claude Code (CC), Terminus-Kira (TK), and Meta-Harness (MH).
+
+--- block 54  delete  v1[3784:3986] (202 words) -> v2[4250:4250] (0 words)
+v1: 2 https://geminicli.com/ Method Model Previous solvers sklearn glmnet SimpleTES SimpleTES † Our System Recursive Fixed Exploration Dream-RSI Non-biological Compute Biological Avg. Gisette RCV1 DNA Leukemia Colon Duke Breast – – gpt-oss-120b gpt-oss-120b – – 51,200 51,200 11275.2 9063.6 3141.9 8651.0 252881.7 73072.8 19625.6 41143.1 93.8 351.9 15.9 37.6 227.2 45.0 15.5 28.2 229.8 24.2 11.6 19.5 374.0 47.7 18.1 31.1 44180.3 13767.5 3804.8 8318.4 Gemini-3.1-Pro Gemini-3.7-Flash Gemini-3.1-Pro Gemini-3.7-Flash 550 3200 317 1879 1861.8 1133.1 2841.0 1091.9 19550.1 13873.0 14616.0 12923.4 41.5 29.8 49.9 31.4 26.1 24.1 30.2 21.0 14.5 15.7 16.4 12.2 28.4 24.4 32.5 23.6 3587.1 2516.7 2931.0 2350.6 (a
+v2: 
+
+--- block 55  replace  v1[4009:4011] (2 words) -> v2[4272:4287] (15 words)
+v1: Dream-RSI achieves
+v2: our Pro and Flash runs use approximately 162× and 27× fewer discovery-agent calls, respectively, with
+
+--- block 56  insert  v1[4014:4014] (0 words) -> v2[4290:4322] (32 words)
+v1: 
+v2: runtime, although these comparisons use different model backbones. For 3.1 Pro, the average improvement over fixed exploration is driven by RCV1, despite slower runtimes on the other five datasets. For 3.7 Flash,
+
+--- block 57  replace  v1[4026:4055] (29 words) -> v2[4328:4330] (2 words)
+v1: program discovered by Gemini-3.1-Pro appears particularly well suited to large-scale matrices such as RCV1. In contrast, Gemini-3.7-Flash discovers a more general-purpose program that performs consistently across different problem scales.
+v2: six datasets.
+
+--- block 58  replace  v1[4123:4201] (78 words) -> v2[4391:4397] (6 words)
+v1: performance while requiring substantially lower cumulative compute across both Gemini-3.1-Pro and Gemini-3.7-Flash. Table 1 | Performance comparison on mathematical discovery tasks. Higher is better for Sum Diff and Circle Packing, while lower is better for Auto Correlation. Best results are shown in bold. Method LLM AlphaEvolve AlphaEvolveV2 OpenEvolve CodeEvolve ShinkaEvolve TTS-Discovery ThetaEvolve EvoX SimpleTES Gemini-2.0 Pro + Flash – Gemini-2.0 Pro + Flash 1.121936 – – Mixed – Qwen3-8B – Distilled-Qwen3-8B – Gemini-3.0-Pro – GPT-OSS-120B 1.143975 Our System
+v2: runtime with fewer discovery-agent calls than
+
+--- block 59  replace  v1[4204:4242] (38 words) -> v2[4400:4403] (3 words)
+v1: Gemini-3.1-Pro Dream-RSI Gemini-3.1-Pro Sum Diff (↑) Auto Correlation (↓) Circle Packing (↑) 1.144047 1.145427 1.455700 – 1.460000 – 1.457800 – 1.493000 1.458900 1.453675 2.635862 2.635983 2.635980 2.635982 2.635983 2.635983 2.635900 2.635983 1.456001 1.456375 2.635983 2.635983 Discovered Solver Analysis.
+v2: on both backbones.
+
+--- block 60  replace  v1[4308:4329] (21 words) -> v2[4459:4463] (4 words)
+v1: becomes ineffective. This adaptive verification scheme is further integrated with efficient active-set bookkeeping, lazy Gram-matrix construction, and hardware-aware implementation. 4.2. Mathematics
+v2: loses effectiveness. 4.4. Harness
+
+--- block 61  delete  v1[4335:4348] (13 words) -> v2[4469:4469] (0 words)
+v1: three mathematical discovery tasks spanning discrete combinatorial optimization, geometric optimization, and functional optimization:
+v2: 
+
+--- block 62  replace  v1[4349:4409] (60 words) -> v2[4470:4472] (2 words)
+v1: Sum–Difference Problem, Circle Packing, and Autocorrelation Inequalities. The goal of these problems is to discover high-quality solutions that optimize task-specific mathematical objectives under their respective constraints. Formal definitions of the three tasks are provided in Appendix. We use Gemini-3.1 Pro via the Gemini CLI as the discovery agent for both Recursive Fixed Exploration and Dream-RSI for 10 rounds. For each
+v2: harness optimization
+
+--- block 63  delete  v1[4410:4703] (293 words) -> v2[4473:4473] (0 words)
+v1: the agent iteratively proposes and evaluates candidate constructions or optimization procedures according to the task-specific objective. We compare against a broad set of existing automated discovery systems, including AlphaEvolve (Novikov et al., 2025), AlphaEvolveV2 (Georgiev et al., 2025), OpenEvolve (Sharma, 2025), CodeEvolve (Assumpção et al., 2025), ShinkaEvolve (Lange et al., 2026), TTS-Discovery (Yuksekgonul et al., 2026), ThetaEvolve (Wang et al., 2025), EvoX (Liu et al., 2026a), and SimpleTES (Ye et al., 2026). Results. Table 1 summarizes the results across the three mathematical discovery tasks. Dream-RSI achieves a Sum–Difference score of 1.145427, outperforming SimpleTES and Re
+v2: 
+
+--- block 64  replace  v1[4708:4712] (4 words) -> v2[4478:4501] (23 words)
+v1: automatically discover high-performance implementations
+v2: improve the program surrounding a fixed language model, including how information is stored, retrieved, and presented during agent execution. We follow the setting
+
+--- block 65  replace  v1[4713:4758] (45 words) -> v2[4502:4504] (2 words)
+v1: kernels while preserving numerical correctness. Unlike mathematical discovery, kernel engineering requires reasoning jointly about algorithmic structure, memory access, parallelization, and hardware-specific optimizations, providing a substantially different testbed for evaluating whether our Dream-RSI generalizes across discovery domains. We consider four representative kernel-engineering tasks from KernelBench (Ouyang
+v2: Meta-Harness (Lee
+
+--- block 66  replace  v1[4765:4769] (4 words) -> v2[4508:4521] (13 words)
+v1: ConvMax. Candidate implementations are
+v2: initialize the discovery from Terminus-Kira as the seed harness. Each discovered harness is
+
+--- block 67  replace  v1[4770:4784] (14 words) -> v2[4522:4523] (1 words)
+v1: by their execution performance, measured as inverse runtime (1/ms), subject to correctness checks against
+v2: on
+
+--- block 68  replace  v1[4785:4787] (2 words) -> v2[4524:4541] (17 words)
+v1: reference implementation.
+v2: full Terminal-Bench 2.1 (Merrill et al., 2026) suite of 89 tasks, with two independent runs per task.
+
+--- block 69  replace  v1[4796:4797] (1 words) -> v2[4555:4589] (34 words)
+v1: compare
+v2: the policydevelopment agent, while harness evaluation is also performed with Claude Opus 4.8. We reproduce Meta-Harness following its original search protocol, using Opus 4.8 for both search and evaluation. Results. Figure 5 shows that
+
+--- block 70  replace  v1[4798:4802] (4 words) -> v2[4590:4616] (26 words)
+v1: with Recursive Fixed Exploration
+v2: improves the harness throughout the discovery process, increasing the full-suite score from 0.7247 to 0.8090. The discovered harness also outperforms Claude Code (0.75) and Meta-Harness (0.79)
+
+--- block 71  replace  v1[4806:4874] (68 words) -> v2[4620:4621] (1 words)
+v1: protocol and initialization. Results. Figure 4 shows the discovery trajectories as the number of generations increases. On VGG16 and LayerNorm, Dream-RSI reaches comparable final performance using 2.43× and 1.79× fewer generations, respectively. On ConvDiv and ConvMax, under comparable discovery budgets, Dream-RSI achieves 2.09× and 1.44× higher performance, respectively. These results show that adapting the exploration policy across recursive rounds can improve the efficiency and effectiveness of long-horizon discovery.
+v2: setting.
+
+--- block 72  replace  v1[4880:4886] (6 words) -> v2[4628:4657] (29 words)
+v1: Historical Inductive Biases in Long-Horizon Discovery
+v2: Replay World Accumulation We Table 2 | Effect of accumulated discovery history study the effect of accumulating replay worlds on ConvDiv. across recursive rounds. Table 2 shows that Method
+
+--- block 73  replace  v1[4887:4892] (5 words) -> v2[4658:4673] (15 words)
+v1: (1/ms) We further investigate how
+v2: ↑ Compute ↓ Dream-RSI achieves a performance of 1.90 Dream-RSI (All History) 1.90 786 using
+
+--- block 74  replace  v1[4893:4895] (2 words) -> v2[4674:4690] (16 words)
+v1: nature of
+v2: full discovery history, compared with Current History Only 1.59 430 1.59 when replay is restricted to
+
+--- block 75  replace  v1[4896:4902] (6 words) -> v2[4691:4717] (26 words)
+v1: historical inductive bias affects long-horizon disDream-RSI
+v2: current round. Accumulating replay worlds may help learn a more general exploration policy and avoid overly conservative exploration associated with fitting to a single world. Dream-RSI
+
+--- block 76  delete  v1[4910:5043] (133 words) -> v2[4725:4725] (0 words)
+v1: covery. A natural alternative for utilizing history is to abstract prior trajectories into high-level directional insights, which are directly injected 1.6 into the prompt as explicit semantic guidance 1.2 for subsequent rounds. To evaluate the effi0.8 cacy of this prompt-level semantic guidance, we 0.4 apply it to both Recursive Fixed Exploration 250 500 750 1,000 and Dream-RSI. As illustrated in Figure 5, Number of Generations explicit directional guidance consistently underperforms its unguided counterpart across Figure 5 | Discovery performance on ConvDiv. Usboth paradigms under equivalent discovery bud- ing history as an interactive replay simulator outgets. These results suggest that i
+v2: 
+
+--- block 77  insert  v1[5046:5046] (0 words) -> v2[4728:4754] (26 words)
+v1: 
+v2: 1.5 0.5 1.403 1.488 1.499 0.427 E0 0.625 E1 1.770 1.880 1.898 0.855 E2 E3 E4 E5 E6 E7 E8 E6 E7 E8 (a) Round-best performance
+
+--- block 78  replace  v1[5110:5111] (1 words) -> v2[4820:4833] (13 words)
+v1: Evolution
+v2: Historical Inductive Biases in Long-Horizon Discovery We further investi1.6 gate how the nature
+
+--- block 79  insert  v1[5112:5112] (0 words) -> v2[4834:4910] (76 words)
+v1: 
+v2: the historical inductive 1.2 bias affects long-horizon discovery. A natural al0.8 ternative for utilizing history is to abstract prior 0.4 trajectories into high-level directional insights, 250 500 750 1,000 which are directly injected into the prompt as exNumber of Generations plicit semantic guidance for subsequent rounds. Figure 6 | ConvDiv discovery results. Replaying To evaluate the efficacy of this prompt-level sehistory beats simply using it as guidance. mantic guidance, we apply it to both Recursive Fixed
+
+--- block 80  replace  v1[5113:5138] (25 words) -> v2[4911:4924] (13 words)
+v1: Behavior 1.770 1.403 1.488 1.880 1.898 E7 E8 E7 E8 1.499 1.5 0.855 0.625 0.427 0.5 E0 E1 E2 E3 E4 E5 E6 (a) Round-best
+v2: and Dream-RSI. As illustrated in Figure 6, explicit directional guidance yields lower final
+
+--- block 81  insert  v1[5139:5139] (0 words) -> v2[4925:4938] (13 words)
+v1: 
+v2: for both methods on ConvDiv. This suggests that such guidance may constrain exploration.
+
+--- block 82  insert  v1[6291:6291] (0 words) -> v2[6081:6188] (107 words)
+v1: 
+v2: Z. Li, H. Du, C. Huang, X. Wu, L. Yu, Y. He, J. Xie, X. Wu, Z. Liu, J. Zhang, et al. Mm-zero: Self-evolving multi-model vision language models from zero data. arXiv preprint arXiv:2603.09206, 2026a. Z. Li, Z. Li, Y. Shi, R. Wang, J. Yang, Z. Liu, X. Wu, A. Li, Y. Yu, N. Liu, et al. Long-horizon-terminalbench: Testing the limits of agents on long-horizon terminal tasks with dense reward-based grading. arXiv preprint arXiv:2607.08964, 2026b. Z. Li, Y. Shi, Z. Li, R. Wang, A. Li, Z. Huang, J. Yang, L. Ke, N. Liu, H. Mi, et al. Recursive synthesis for long-horizon terminal tasks. arXiv preprint arXiv:2608.05466, 2026c.
+
+--- block 83  insert  v1[6457:6457] (0 words) -> v2[6354:6399] (45 words)
+v1: 
+v2: M. Merrill, A. Shaw, N. Carlini, B. Li, H. Raj, I. Bercovich, L. Shi, J. Shin, T. Walshe, E. K. Buchanan, et al. Terminal-bench: Benchmarking agents on hard, realistic tasks in command line interfaces. In International Conference on Learning Representations, volume 2026, pages 40903–40986, 2026.
+
+--- block 84  insert  v1[7262:7262] (0 words) -> v2[7204:7579] (375 words)
+v1: 
+v2: AI Use Statement In this work, we used generative AI tools as the API in the experiments, as described in the paper: we use Gemini 3.1 Pro in the Section 4.1,4.2,4.3, Gemini 3.7 Flash in Section 4.3 and Claude Opus 4.8 with Claude Code in the Section4.4. Additionally, we used Gemini 3.8 Flash for writing and grammar correction. We have reviewed all AI-assisted work. We take responsibility for the final content of this work, including text, claims or artifacts produced with the aid of generative AI. B. Detailed Experimental Settings B.1. Evaluation Environments Lasso regularization-path discovery. We evaluate candidate solvers in a KVM virtual machine with an AMD EPYC 7B12 processor, 8 vCPUs,
+
+--- block 85  replace  v1[7853:7854] (1 words) -> v2[8170:8887] (717 words)
+v1: B.
+v2: Problem 5 (VGG16) The VGG16 task asks for an efficient implementation of the forward pass of a VGG16 network. The input is 𝑥 ∈ ℝ10×3×224×224 , and the network consists of five convolutional blocks. Each convolution uses a 3 × 3 kernel with stride 1 and padding 1, followed by a ReLU activation. The channel configurations of the five blocks are (64, 64) , (128, 128) , (256, 256, 256) , (512, 512, 512) , (512, 512, 512) , with a 2 × 2 max-pooling operation of stride 2 after each block. After the final pooling layer, the resulting 512 × 7 × 7 feature map is flattened and passed through three fully connected layers, 512 · 7 · 7 → 4096 → 4096 → 1000, with ReLU activations after the first two layer
+
+--- block 86  delete  v1[14173:14186] (13 words) -> v2[15209:15209] (0 words)
+v1: 633 634 635 636 637 638 639 640 641 642 643 644 645
+v2: 
+
+--- block 87  insert  v1[14227:14227] (0 words) -> v2[15250:15263] (13 words)
+v1: 
+v2: 633 634 635 636 637 638 639 640 641 642 643 644 645
+
+--- block 88  insert  v1[15323:15323] (0 words) -> v2[16359:17385] (1026 words)
+v1: 
+v2: E.2. ConvDiv Listing 4 | Complete ConvDiv Kernel discovered by Dream-RSI. # EVOLVE-BLOCK-START import torch 3 import torch.nn as nn 4 import triton 5 import triton.language as tl 6 import importlib.util 7 import os 8 import sys def generate_kernel_code(): code = """ 12 import triton 13 import triton.language as tl @triton.jit def fused_conv_pool_kernel_optimized( X_ptr, W_ptr, Out_ptr, B: tl.constexpr 19 ): pid_h = tl.program_id(0) pid_w = tl.program_id(1) pid_b = tl.program_id(2) h_conv_0 = 2 * pid_h w_start = pid_w * 32 w_out_idx = w_start + tl.arange(0, 32) # W is physically 64, but kernel is 3, so valid output is 62. mask_w = (w_out_idx < 62)[None, :] # 99.6% of the execution takes the s
+

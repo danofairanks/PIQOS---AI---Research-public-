@@ -1,0 +1,42 @@
+site sha256 f963e34edf7775acbf60349b2fa97900ef4a19bfaa698368c163be25ff3db1c9 bytes 81902
+-- site
+site      1   | 1.7×
+site      0   | 1.7x
+site      2   | 162×
+site      0   | 162x
+site      1   | Three discovery domains
+site      1   | Eight discovery tasks
+site      0   | 8%20across%203%20domains
+site      1   | arXiv:XXXX.XXXXX
+site      0   | Terminal
+site      0   | harness
+site      0   | Opus
+site      0   | Being prepared
+site      0   | In progress
+site      0   | coming%20soon
+site      0   | 4 of 4
+-- README
+README    0   | 1.7×
+README    0   | 1.7x
+README    0   | 162×
+README    1   | 162x
+README    0   | Three discovery domains
+README    0   | Eight discovery tasks
+README    1   | 8%20across%203%20domains
+README    0   | arXiv:XXXX.XXXXX
+README    0   | Terminal
+README    0   | harness
+README    0   | Opus
+README    3   | Being prepared
+README    1   | In progress
+README    1   | coming%20soon
+README    1   | 4 of 4
+site sentence: In the paper this cuts discovery-agent calls by 1.7× against fixed exploration and up to 162× against SimpleTES. Numbers on the ca
+README sentence: -light.svg" alt="Algorithm engineering: 1.22x faster downstream runtime, 1.74x less discovery compute, 162x fewer calls than SimpleTES. Mathematical optimization: 2 of 3 tasks at o
+-- refs
+4149ea9181ab1db80f85717ffda2c9f0f130e85b	HEAD
+4149ea9181ab1db80f85717ffda2c9f0f130e85b	refs/heads/main
+5e35303306c2e7053c43ffabf6df3b954bdc90ef	refs/pull/2/head
+a1e17de4cc2ba016909223b6d783b6200131a19d	refs/pull/2/merge
+ab50c3c33b0d6400bef235e642df192cf450fb4b	refs/pull/5/head
+5eadc86f71cacf8980f273feba20cd0741bfb964	refs/pull/5/merge

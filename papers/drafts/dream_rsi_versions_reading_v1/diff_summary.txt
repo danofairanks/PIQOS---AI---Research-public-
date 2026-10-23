@@ -1,0 +1,7 @@
+sha256 v1 b2d13d5944d052c2b63d40e65dce116ebcc606e3b756f6acfc938afe21fe2db9
+sha256 v2 9d632678c6c71da926ce2276e3c9d31697a5397d368bbdc4f221bd966d2e3476
+words v1 15323 v2 17385
+similarity ratio 0.7434
+changed blocks 695 ; words in v2 not matched 5228 ; words in v1 not matched 3166
+blocks with >=12 words on either side: 88
+blocks written to diff_blocks.txt

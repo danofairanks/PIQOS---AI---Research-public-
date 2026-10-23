@@ -1,0 +1,28 @@
+200 README.md DiscoveryRSI
+    OK   achieves the highest actionable-reference rate at 6.3%**, followed by DeepSeek (**5.4%**), GLM (**2.8%**), GPT (**2.5%**
+    OK   DiscoveryRSI can produce plausible but unsupported claims, omit relevant evidence, misread sources, or propose infeasibl
+200 LICENSE DiscoveryRSI
+    OK   Apache License
+200 EVALUATION.md DFM-Bench
+    OK   This is an **internal AI-reviewed preview**; human calibration is pending, and the scores do not establish scientific tr
+    OK   A maximum score increasing over episodes does not prove learning
+200 PROTOCOL-V1.json DFM-Bench
+    OK   "weight_status": "locked_internal_pilot_convention_not_validated"
+    OK   "forbidden_claims": [ "expert_calibrated", "online_as_of_progress", "confirmed_discovery", "system_superiority" ]
+    OK   "release_claim": "Implementation and internal pilot release; no claim of completed human calibration, system superiority
+    OK   "expert_calibration_status": "pending"
+    OK   "time_mode": "retrospective_final_snapshot"
+    OK   Scientific proposal merit conditional on supplied evidence, not truth or verified novelty
+200 FIVE-LEVEL-PROTOCOL.md DFM-Bench
+    OK   Historical archive (2026-09-27)
+    OK   canonical five objects: hypothesis, transition, trajectory, campaign and discovery
+    OK   no new absolute hypothesis scale is invented
+    OK   (child wins + 0.5 ties) / assessable pairs
+    OK   Only DeepSeek V4 Flash is authorized for this pilot
+    OK   142 EHR and 367 battery edge comparisons
+404 LICENSE DFM-Bench root
+404 LICENSE.md DFM-Bench root
+404 LICENSE.txt DFM-Bench root
+404 COPYING DFM-Bench root
+DFM-Bench pyproject.toml: status 200 ; occurrences of "license": 0
+DiscoveryRSI README occurrences of gate/cutoff/window/retriev: [0, 0, 0, 0]

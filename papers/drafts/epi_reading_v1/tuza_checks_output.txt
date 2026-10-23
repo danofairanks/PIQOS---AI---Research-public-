@@ -1,0 +1,10 @@
+keys ['profiles'] profiles 560 box keys ['lo', 'hi', 'cover', 'packing']
+own checker: boxes 18444 all ok True cells covered per profile 29^3 each -> True
+baseline: accepted
+drop a cover edge       -> rejected: uncovered triangle
+duplicate a packing tri -> rejected: invalid/shared packing edge
+drop a box              -> rejected(incomplete)
+flip a mask bit         -> rejected: profile identity/duplicate
+drop a profile          -> rejected(incomplete)
+shrink packing below |F|/2 -> rejected: Tuza inequality
+boxes with |F|==2|P| exactly: 1866 of 18444

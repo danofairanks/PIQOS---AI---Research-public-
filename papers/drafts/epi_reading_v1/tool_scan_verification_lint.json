@@ -1,0 +1,133 @@
+{
+  "path": "papers/drafts/epi_reading_v1.md",
+  "ok": true,
+  "gap_count": 16,
+  "severe_gap_count": 0,
+  "unattributed_quotes": [
+    {
+      "quote": "approximately 84-fold narrower interval for the n-queens constant",
+      "start": 685,
+      "end": 752,
+      "context": "tions) describes an agent that runs investigations across model sessions, with persistent history, hierarchical memory, branching and independent review, and a fixed verifier that checks outputs. The abstract reports \"120 record-setting results\", an \"approximately 84-fold narrower interval for the n-queens constant\", a \"computer-assisted proof of Tuza's conjecture\" for a restricted family of split graphs, and a configuration, \u00c9pi-turbo, that \"achieves a 5.4% higher total benchmark score than Codex at 64% of its model cost\". A results repository (`github.com/Bak"
+    }
+  ],
+  "uncited_statistics": [
+    {
+      "kind": "decimal_percent",
+      "value": "5.4%",
+      "start": 893,
+      "end": 897,
+      "context": "constant\", a \"computer-assisted proof of Tuza's conjecture\" for a restricted family of split graphs, and a configuration, \u00c9pi-turbo, that \"achieves a 5.4% higher total benchmark score than Codex at 64% of its model cost\". A results repository (`github.com/BakeLab/Epi-results`, commit 97fa6a4) releases t"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "1,024",
+      "start": 3162,
+      "end": 3167,
+      "context": "r conventions assumed). The nine pentagon records match their claimed enclosing-triangle side within 7.1e-15. The Ramsey-multiplicity construction (a 1,024-vertex graph) evaluates, with my own graph decoder and clique counter, to exactly 4427841832181/2^49 as claimed (rational equality), and the exact ma"
+    },
+    {
+      "kind": "fraction_count",
+      "value": "4427841832181/2",
+      "start": 3250,
+      "end": 3265,
+      "context": " side within 7.1e-15. The Ramsey-multiplicity construction (a 1,024-vertex graph) evaluates, with my own graph decoder and clique counter, to exactly 4427841832181/2^49 as claimed (rational equality), and the exact match also confirms the loop convention (without loops the value would be 0.0074735). The Tuza certi"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "18,444",
+      "start": 3495,
+      "end": 3501,
+      "context": "onvention (without loops the value would be 0.0074735). The Tuza certificate passes the repository's checker (872 classified profiles, 560 certified, 18,444 boxes), and an independent re-implementation agrees on all 18,444 boxes.\n- **The checker is not vacuous (E1).** Six mutations of the certificate (dro"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "18,444",
+      "start": 3561,
+      "end": 3567,
+      "context": "ertificate passes the repository's checker (872 classified profiles, 560 certified, 18,444 boxes), and an independent re-implementation agrees on all 18,444 boxes.\n- **The checker is not vacuous (E1).** Six mutations of the certificate (drop a cover edge, duplicate a packing triangle, drop a box, flip a m"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "1.918%",
+      "start": 4038,
+      "end": 4044,
+      "context": "layer has discrepancy exactly 5 over all 256 sign vectors (224 of 256 vectors give 5, 32 give 7); the Cohn\u2013Elkies separations recompute to 0.352% and 1.918% (printed: 0.35% and 1.92%); the interval ratios are 83.8 and 3.66 million (printed: about 84 and more than 3.6 million); the Tuza profile count is 87"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "0.35%",
+      "start": 4055,
+      "end": 4060,
+      "context": "ancy exactly 5 over all 256 sign vectors (224 of 256 vectors give 5, 32 give 7); the Cohn\u2013Elkies separations recompute to 0.352% and 1.918% (printed: 0.35% and 1.92%); the interval ratios are 83.8 and 3.66 million (printed: about 84 and more than 3.6 million); the Tuza profile count is 872 with 35 nested"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "1.92%",
+      "start": 4065,
+      "end": 4070,
+      "context": "ly 5 over all 256 sign vectors (224 of 256 vectors give 5, 32 give 7); the Cohn\u2013Elkies separations recompute to 0.352% and 1.918% (printed: 0.35% and 1.92%); the interval ratios are 83.8 and 3.66 million (printed: about 84 and more than 3.6 million); the Tuza profile count is 872 with 35 nested, as print"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "0.002%",
+      "start": 6645,
+      "end": 6651,
+      "context": ".** `data/records.json` holds the 100 construction records. Relative gain over each record's earlier comparison value: minimum 1.5e-6, median 2.1e-5 (0.002%), 99 of 100 at or below 0.1%, maximum 0.19%. For the 89 records with status `improves_registry` the maximum is 2.8e-4 (0.028%).\n2. **Two statuses und"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "0.1%",
+      "start": 6676,
+      "end": 6680,
+      "context": "he 100 construction records. Relative gain over each record's earlier comparison value: minimum 1.5e-6, median 2.1e-5 (0.002%), 99 of 100 at or below 0.1%, maximum 0.19%. For the 89 records with status `improves_registry` the maximum is 2.8e-4 (0.028%).\n2. **Two statuses under one headline.** The 100 re"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "0.19%",
+      "start": 6690,
+      "end": 6695,
+      "context": "ction records. Relative gain over each record's earlier comparison value: minimum 1.5e-6, median 2.1e-5 (0.002%), 99 of 100 at or below 0.1%, maximum 0.19%. For the 89 records with status `improves_registry` the maximum is 2.8e-4 (0.028%).\n2. **Two statuses under one headline.** The 100 records are 89 `i"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "0.028%",
+      "start": 6771,
+      "end": 6777,
+      "context": " 1.5e-6, median 2.1e-5 (0.002%), 99 of 100 at or below 0.1%, maximum 0.19%. For the 89 records with status `improves_registry` the maximum is 2.8e-4 (0.028%).\n2. **Two statuses under one headline.** The 100 records are 89 `improves_registry` and 11 `listed_record`. The paper says why: \"Some evolving regis"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "0.002%",
+      "start": 9401,
+      "end": 9407,
+      "context": "20 independent results, and the abstract's single figure does not say so.\n2. **The margins are small and relative to a snapshot.** Median improvement 0.002%; every comparison is against a reference \"as of September 16, 2026\". The impressive numbers (the 84-fold and 3.6-million-fold interval reductions; th"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "5.4%",
+      "start": 10668,
+      "end": 10672,
+      "context": "gainst 0. The report says the commercial-solver references are sometimes weak, which is why it adds the direct comparison. The reader should hold the 5.4% and the instance counts together; the report prints both. Review and extra validation were off in these runs.\n4. **\"Self-improving\" is accumulated me"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "18,444",
+      "start": 11829,
+      "end": 11835,
+      "context": "iles; 35 nested (a cited threshold-graph theorem); 277 satisfying a maximum-cut criterion from the cited preprint; 560 covered by exact certificates (18,444 integer boxes); and a multiplicity-truncation step, attributed to the same preprint, that extends the finite checks to arbitrary multiplicities. The "
+    }
+  ],
+  "disclaimer": {
+    "present": true,
+    "applicable": true,
+    "word_count": 2295,
+    "min_word_count": 400,
+    "gap": false
+  },
+  "sourcing": {
+    "has_sources_statement": true,
+    "has_framework_citation": false,
+    "has_end_sourcing": true
+  }
+}
