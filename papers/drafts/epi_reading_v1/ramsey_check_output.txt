@@ -1,0 +1,11 @@
+/tmp/tmpihxa9ml5/cliq.c: In function ‘main’:
+/tmp/tmpihxa9ml5/cliq.c:19:24: warning: ignoring return value of ‘fgets’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+   19 |   for(int i=0;i<N;i++){fgets(line,sizeof line,f);for(int j=0;j<N;j++){int a=line[j]=='1'; if(comp)a=(i!=j)&&!a; if(a)adj[i][j/64]|=1ULL<<(j%64);}}
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+n = 1024  edges = 226297
+G cliques K1..K5: [1024, 226297, 12790464, 87640113, 19577871]
+complement cliques K1..K5: [1024, 297479, 34160916, 1817171578, 52171550048]
+objective = 4427841832181/562949953421312 = 0.007865427122377255
+equals 4427841832181/2^49: True
+published comparison 2129191/2^28 = 0.007931854575872421 ; improved: True
+injective-only variant (no loops) would give 0.0074735146274633735

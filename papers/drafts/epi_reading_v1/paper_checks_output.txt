@@ -1,0 +1,67 @@
+sha256 0ddaa6e7f1f2729204f3ee6a5ad291b44593191a3219771ce63cf2a4b865480b
+== A. quotes and counts present in the paper text ==
+OK   1 Épi produced 120 record-setting results, comprising 20 numerical bound records across 12 families an
+OK   1 We count one final result per distinct instance or parameter setting
+OK   1 Multiple parameter settings within a family count separately; repeated improvements to the same sett
+OK   1 All record comparisons are based on literature and registry references available as of September 16,
+OK   1 Some evolving registries already list the new results. Our tables retain the earlier values used for
+OK   1 Of the 100 construction records, 97 concern geometric packing
+OK   1 a fixed verifier evaluates their outputs
+OK   1 We use a different model for an independent review and record the reviewer's identity
+OK   1 research on reward hacking further motivates checking whether a score increase reflects the intended
+OK   1 Independent review and extra validation are optional in Épi-turbo. On short tasks, their cost was la
+OK   1 The baseline is Codex (OpenAI, 2026), a widely used coding agent, with GPT-6-Astra as its model. Épi
+OK   1 We selected 30 tasks that were new to both systems. We took them in the official hardness order of t
+OK   1 We did one run for each task and system, so we do not report statistical significance
+OK   1 The reference values come from a commercial solver, and some of them are weak
+OK   1 Thus we also compare the two systems on each instance directly, with their objective values only
+OK   1 It counts only when the solution is within 1% of the reference value
+OK   1 Épi-turbo gets the higher total score, 53.96 against 51.21. It has the higher score on 18 tasks, and
+OK   1 On the 18 tasks where Épi-turbo is higher, the total gain is 4.54. On the other 12 tasks, the total 
+OK   1 The higher score comes mainly from the speed term
+OK   1 Mean quality term 1.030 1.032 Mean speed term 0.784 0.675
+OK   1 Instances with the better solution (119 comparable, 40 ties) 18 61
+OK   1 Instances more than 1% worse than the other system 29 10
+OK   1 Infeasible solutions (120 held-out runs) 1 0
+OK   1 On the 13 tasks of the hard split, Épi-turbo has the higher score on 9 tasks, and its total score is
+OK   1 Codex used more than 30 minutes on 17 of the 120 held-out runs, in 7 tasks
+OK   1 Zeng (2026) proved the conjecture for |C | = 8 and at most two types
+OK   1 Zeng's multiplicity-truncation lemma (Zeng, 2026) preserves both
+OK   1 Another 277 satisfy Zeng's maximum-cut criterion
+OK   1 The remaining 560 profiles are covered by exact certificates containing 18,444 integer boxes
+OK   1 We ran Épi over a few days using OpenAI frontier models (GPT-5.6 Sol and GPT-6-Astra)
+OK   1 The interval width decreases from 3.30 × 10−7 to approximately 3.94 × 10−9 , a factor of approximate
+OK   1 The relative separations, Ld /Ud − 1, are approximately 0.35% and 1.92%
+OK   1 discrepancy exactly 5
+MISSES: 0 of 33
+absent-check 'ablat' 0
+absent-check 'human review' 0
+absent-check 'human expert' 0
+absent-check 'domain expert' 0
+absent-check 'Limitations' 0
+absent-check 'confidence interval' 0
+absent-check 'seed' 0
+
+== B. arithmetic on printed numbers ==
+B1 matrix read from the text layer:
+   [-1, -1, -1, -1, -1, -1, -1, 0]
+   [-1, -1, -1, 1, 1, 1, 1, 0]
+   [-1, -1, 1, -1, 1, 1, -1, 0]
+   [-1, -1, 1, 1, -1, -1, 1, 0]
+   [-1, 1, -1, -1, 1, -1, 1, 0]
+   [-1, 1, -1, 1, -1, 1, -1, 0]
+   [-1, 1, 1, -1, -1, 1, 1, 0]
+   [-1, 1, 1, 1, 1, -1, -1, 0]
+   row-maximum norm over all 256 sign vectors: {5: 224, 7: 32}  minimum = 5
+B2 Cohn-Elkies: L/U - 1
+   d=10: 0.352%
+   d=11: 1.918%
+B3 n-queens: widths 3.30e-7 -> 3.94e-9, ratio 83.8 ; from endpoints in eq. (4): new width 3.937e-09
+   quartic dimension: 7.80e-3 -> 2.13e-9, ratio 3.662e+06 (paper: more than 3.6 million)
+B4 Table 3 (30 tasks)
+   total gap 2.75 (5.37%); gains - losses = 4.54 - 1.79 = 2.75
+   cost ratio 7.30/11.35 = 0.643 ; instance counts 18 + 61 + 40 ties = 119 (paper: 119 comparable instances of 120 held-out runs; one infeasible)
+   Codex: quality+speed = 1.707 ; total/30 = 1.7070 ; difference x30 = +0.00 points ; rounding allows at most +-0.03
+   Epi-turbo: quality+speed = 1.814 ; total/30 = 1.7987 ; difference x30 = +0.46 points ; rounding allows at most +-0.03
+B5 Tuza: three distinct neighbourhood types over an 8-clique, each of size >= 2, up to clique relabelling and type permutation
+   profiles: 872 ; nested: 35 (paper: 872 and 35)

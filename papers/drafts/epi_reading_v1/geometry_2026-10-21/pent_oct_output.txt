@@ -1,0 +1,13 @@
+PENTAGONS
+penintri_n30   n=30 min pair gap -5.08e-13  implied side 12.382402480455 claimed 12.382402480455 diff +7.11e-15  listed 12.38240+
+penintri_n32   n=32 min pair gap -5.10e-13  implied side 12.704927909970 claimed 12.704927909970 diff +3.55e-15  listed 12.70492+
+penintri_n33   n=33 min pair gap -5.16e-13  implied side 12.859850017642 claimed 12.859850017642 diff +3.55e-15  listed 12.85985+
+penintri_n34   n=34 min pair gap +6.08e-10  implied side 12.975637358035 claimed 12.975637358035 diff +1.78e-15  listed 12.97563+
+penintri_n36   n=36 min pair gap -5.13e-13  implied side 13.178411901367 claimed 13.178411901367 diff +7.11e-15  listed 13.17841+
+penintri_n37   n=37 min pair gap +0.00e+00  implied side 13.634303491280 claimed 13.634303491280 diff +1.78e-15  listed 13.63430+
+penintri_n38   n=38 min pair gap -5.06e-13  implied side 13.823132023719 claimed 13.823132023719 diff +7.11e-15  listed 13.82313+
+penintri_n39   n=39 min pair gap +1.00e-10  implied side 13.975213205316 claimed 13.975213205316 diff +3.55e-15  listed 13.97521+
+penintri_n40   n=40 min pair gap +4.80e-14  implied side 14.136745327141 claimed 14.136745327141 diff +3.55e-15  listed 14.13674+
+OCTAGON
+vertices on axes   boundary clearance 0.083313068206636 pair r 0.147297380424841 implied r 0.083313068206636 claimed 0.147297380424841
+flats on axes      boundary clearance 0.147297380424841 pair r 0.147297380424841 implied r 0.147297380424841 claimed 0.147297380424841
