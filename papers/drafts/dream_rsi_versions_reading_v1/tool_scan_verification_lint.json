@@ -1,0 +1,56 @@
+{
+  "path": "papers/drafts/dream_rsi_versions_reading_v1.md",
+  "ok": true,
+  "gap_count": 5,
+  "severe_gap_count": 0,
+  "unattributed_quotes": [],
+  "uncited_statistics": [
+    {
+      "kind": "dollar_amount",
+      "value": "$100,000",
+      "start": 6323,
+      "end": 6331,
+      "context": "focus on end-to-end performance and omit the fixed-policy comparison due to its substantial cost: an additional full search is estimated to cost over $100,000.\" The paper's own causal comparator, the one that isolates the effect of dreaming, is therefore absent from \u00a74.4; the comparison there is with Claude"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "100,000",
+      "start": 6324,
+      "end": 6331,
+      "context": "ocus on end-to-end performance and omit the fixed-policy comparison due to its substantial cost: an additional full search is estimated to cost over $100,000.\" The paper's own causal comparator, the one that isolates the effect of dreaming, is therefore absent from \u00a74.4; the comparison there is with Claude"
+    },
+    {
+      "kind": "dollar_amount",
+      "value": "$100,000",
+      "start": 6522,
+      "end": 6530,
+      "context": " one that isolates the effect of dreaming, is therefore absent from \u00a74.4; the comparison there is with Claude Code and a reproduced Meta-Harness. The $100,000 estimate is the authors'; it is not checked here.\n3. **The margins in the new domain are a few trials.** 0.7247 and 0.8090 equal 129 and 144 passes o"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "100,000",
+      "start": 6523,
+      "end": 6530,
+      "context": "one that isolates the effect of dreaming, is therefore absent from \u00a74.4; the comparison there is with Claude Code and a reproduced Meta-Harness. The $100,000 estimate is the authors'; it is not checked here.\n3. **The margins in the new domain are a few trials.** 0.7247 and 0.8090 equal 129 and 144 passes o"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "51,200",
+      "start": 8034,
+      "end": 8040,
+      "context": "-agent calls, respectively \u2026 although these comparisons use different model backbones\" (\u00a74.3; the comparison is against a different system's reported 51,200 generations). v1's \"leaving the underlying coding agent unchanged\" became \"base agent\".\n5. **The policy-improvement objective was redefined.** v1 sco"
+    }
+  ],
+  "disclaimer": {
+    "present": true,
+    "applicable": true,
+    "word_count": 2070,
+    "min_word_count": 400,
+    "gap": false
+  },
+  "sourcing": {
+    "has_sources_statement": true,
+    "has_framework_citation": false,
+    "has_end_sourcing": true
+  }
+}
