@@ -63,9 +63,7 @@ LLMs" (LeCun/AMI Labs) and "neurosymbolic AI will supplant/outperform pure
 LLMs" (Marcus). The test is symmetric by design — both sides of a stated
 rivalry are checked the same way, per this project's own standing
 discipline against holding one party in a dispute to a rigor standard not
-applied to the other (already used for the Padget/Dillon C. and
-Padget/Selassie material logged elsewhere in this project's private
-companion repository).
+applied to the other.
 
 ## 2. AMI Labs, checked
 

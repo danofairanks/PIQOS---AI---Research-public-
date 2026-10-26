@@ -129,79 +129,55 @@ fires.
    Not a general solution to distinguishing assertion from description
    — just the specific shape two real false positives had.
 
-## A real finding validated locally against a known-bad specimen
+## A structural tell worth catching
 
-Validated (not committed — see below) against
-`PIQOS-IsoAxiomV8-/papers/contamination/rem_capture.md`, a paper this
-project's own private-repo `core/living_research_policy.md` already
-documents as containing **fabricated quotes attributed to named public
-figures**, discovered by a prior human verification pass. This tool
-cannot detect that failure mode — confirming a quote's authenticity
-needs reading a primary source, exactly the boundary the external-
-verification worklist names rather than pretends to close. What it
-*does* catch, correctly, is the paper's own structural tell: a
-References section reading `[References would include citations to
-LeCun papers, ...]` instead of containing any — flagged as an
-`unlabeled_marker` placeholder gap (`structural_gap_count = 1`), the
-"would include citations" phrasing added specifically from this real
-example. Pinned as a skip-if-unavailable test in `tests/test_scan.py`
-so the check runs whenever the private repo is checked out alongside
-this one, without requiring it.
+A paper was found whose References section read `[References would
+include citations to ..., ...]` instead of containing any. The scanner
+cannot detect fabricated quotes (that needs a primary source, exactly
+the boundary the external-verification worklist names). It does catch
+this structural tell: an `unlabeled_marker` placeholder gap
+(`structural_gap_count = 1`), with the "would include citations" phrasing
+added from that example and pinned by a synthetic test in
+`tests/test_scan.py`.
 
-## A genuinely blind test, and the check it produced
+## A blind test, and the check it produced
 
-After shipping, this tool was run — with no prior reading of the
-document by the person running it — against a real, previously-unseen
-private-repo specimen from `temp/papers/mimicry_instance_corpus/`: an
-~86KB / ~12,000-word document (`the_transmission_of_humanity_topological_resonance.md`)
-built as a raw page-scan dump (`## Page 1` … `## Page 47`, no real
-section structure), invoking real physics terms (Prigogine, Hamiltonian
-dynamics) inside an invented formal apparatus ("Constitutional
-Hamiltonian (γ = 1/3)," "Substrate Equivalence Principle") and closing
-with `[ SEALED WITH THE 30-CROSSING KNOT ] [ DRIFT TOLERANCE: 0.00% ]`.
+After shipping, this tool was run, with no prior reading of the document
+by the person running it, against a previously unseen ~12,000-word
+document built as a raw page-scan dump (no real section structure) that
+invented its own formal apparatus and status labels.
 
 The first pass came back almost entirely quiet: `structural_gap_count
 = 1` (missing limitations section only), zero placeholder gaps, zero
 falsifiability gaps, empty worklist. Not because the paper is
-rigorous — because its confident tone doesn't use ordinary academic
-certainty phrases ("conclusively demonstrates," "well known that").
-It invents its *own* register of confidence (status labels, a
-"Custodian," a "Ratified / Sovereign Protocol") that no phrase list
-built around academic hedge-language would catch.
+rigorous, but because its confident tone doesn't use ordinary academic
+certainty phrases ("conclusively demonstrates," "well known that"). It
+invents its *own* register of confidence that no phrase list built around
+academic hedge-language would catch.
 
 Reading the document (after running the scan, not before) surfaced one
-genuinely catchable thing the first pass missed: the paper explicitly
-claims its own rigor — "the reference to base papers on Zenodo under
-Stephen Hope's authorship indicate the framework's grounding in
-documented, citable research" — while containing **zero actual
+catchable thing the first pass missed: the paper claimed its own
+grounding in documented, citable research while containing **zero actual
 references anywhere**. `citations.check_citability_claim` closes that
 specific gap: a long document (`min_word_count` threshold, same
 judgment call as the limitations check) that asserts its own grounding
 in "citable"/"documented"/"extensively cited" research while its own
 parsed reference list is empty is a self-contradiction fully resolvable
-from the text alone — no external lookup needed to know the claim and
-the bibliography disagree, whether or not the claim is otherwise true.
+from the text alone, with no external lookup needed.
 
 Designing the phrase list surfaced its own near-miss: a bare
-"peer-reviewed" match would have false-positived on
-`mirror_test_v1.md`'s table row `"Sparks of AGI" (Bubeck et al.) |
-Peer-reviewed totalization` — labeling a *third party's* paper, not
-this document's own grounding. The phrase set was kept deliberately
-narrower and self-referential ("citable research," "grounded in …
-research," "extensively cited") specifically to avoid that collision;
-pinned in `tests/test_citations.py`.
+"peer-reviewed" match would have false-positived on a table row labeling
+a *third party's* paper as peer-reviewed, not this document's own
+grounding. The phrase set was kept deliberately narrower and
+self-referential ("citable research," "grounded in … research,"
+"extensively cited"); pinned in `tests/test_citations.py`.
 
-**What this still does not catch, named plainly:** invented
-terminology presented with total confidence and zero citations is not,
-in general, detectable by a text heuristic — only the specific
-self-contradiction of *claiming* citability while having none is. A
-paper that invents "Constitutional Hamiltonian (γ = 1/3)" and never
-claims it's citable at all would still pass this check clean. The
-document's most interesting tell — a literal aside addressed to future
-AI collaborators ("KIMI, DEEPEST IF DIVES, ADD YOUR OWN REFINEMENTS TO
-THE ACCRETION IN THIS DOC") — is outside anything this package checks
-for at all. Pinned as a skip-if-unavailable test in
-`tests/test_scan.py`.
+**What this still does not catch, named plainly:** invented terminology
+presented with total confidence and zero citations is not, in general,
+detectable by a text heuristic; only the specific self-contradiction of
+*claiming* citability while having none is. A paper that invents formal
+terms and never claims it's citable would still pass this check clean.
+Pinned by a synthetic test in `tests/test_scan.py`.
 
 ## A second blind test, and a harness instead of another patch
 
