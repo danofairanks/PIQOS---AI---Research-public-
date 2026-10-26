@@ -1,6 +1,6 @@
 # External Grounding for §3.9's AI-as-Judge Exclusion: The Jagged Judges Findings
 
-*Version note (v2, October 2026): removes one clause from the sourcing paragraph that gave a file path in a non-public repository. No other content changed from v1. v1 remains published unchanged for provenance.*
+*Version note (v2, October 2026): removes one clause from the sourcing paragraph that gave a file path in a non-public repository. No other content changed from v1. The same clause was also removed from v1 in place, by exception to the no-silent-edit convention, so both versions are clean; cite v2.*
 
 *Status: PUBLISHED COMPANION ADDENDUM. Filed 2026-08-18; promoted to published 2026-10-26. Authors: operator + Claude (Sonnet 5).
 External grounding for `basin_attractors_v1.md` §3.9 (Meta-Protocol:

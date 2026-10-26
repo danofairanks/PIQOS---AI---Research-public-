@@ -153,7 +153,7 @@ independently dated. `basin_attractors_v2.md`–`v6.md` cite
 Long-Horizon-Terminal-Bench (Tencent Hunyuan, arXiv:2607.08964),
 Weighted Memory Tree (arXiv:2608.20631), and the Jagged Judges findings
 (a live, non-toy instance of an AI-as-judge failure outside AI-claim
-adjudication, per `jagged_judges_meta_protocol_grounding_v1.md`).
+adjudication, per `jagged_judges_meta_protocol_grounding_v2.md`).
 `governance_binding_axiom_v1.md`/`v2.md` ground their taxonomy in named,
 dated, primary-source incidents — an AISI cybersecurity evaluation, a
 Frontier Red Team collusion experiment, and the Alignment Faking result

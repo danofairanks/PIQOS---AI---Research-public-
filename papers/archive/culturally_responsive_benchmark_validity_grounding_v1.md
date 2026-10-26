@@ -35,7 +35,7 @@ replacement for the contamination argument, a complement to it.
 
 **Sourcing note.** Read in full (all 37 pages, across four sequential reads
 covering pages 1–37) from a supplied PDF — this project's strongest sourcing
-tier, the same standard `jagged_judges_meta_protocol_grounding_v1.md` applies
+tier, the same standard `jagged_judges_meta_protocol_grounding_v2.md` applies
 to its own primary citation.
 
 **Citation.** Zahra, F. T., Sk., M. S. I., & Chung, R. (2026). *Whose Facts

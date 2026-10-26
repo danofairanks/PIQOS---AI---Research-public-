@@ -563,7 +563,7 @@ zero-resistance depth-building the other two models already showed on their
 first turn? This paper does not test that question — every ChatGPT trial
 reported here is a single exchange, with no follow-up pressure applied. It
 is not, however, a speculative question with no relevant evidence at all: it
-is close in shape to what `jagged_judges_meta_protocol_grounding_v1.md`
+is close in shape to what `jagged_judges_meta_protocol_grounding_v2.md`
 already measures directly, on a different task (LLM-as-judge, not
 formalization). That paper's Wiggle Framework finds judge verdicts flip
 25–71% under static single-turn pushback and 62–91% under ten-turn adaptive
@@ -1013,7 +1013,7 @@ kernel-checked packages this project has not examined.
 precedent, from which §1's naming decision explicitly departs and states its
 reasoning), `mirror_test_v1.md` §3.1 (the local-coherence spiral / basin-
 formation mechanism §6 reads this paper's single-turn results against), and
-`jagged_judges_meta_protocol_grounding_v1.md` (the closest existing
+`jagged_judges_meta_protocol_grounding_v2.md` (the closest existing
 empirical instrument for §6's open resistance-erosion hypothesis, on a
 distinct task). §7's affective-vs-epistemic distinction is grounded against
 Sharma et al. (Anthropic, ICLR 2024, "Towards Understanding Sycophancy in
