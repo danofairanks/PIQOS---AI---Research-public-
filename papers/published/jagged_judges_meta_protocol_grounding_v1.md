@@ -1,11 +1,19 @@
 # External Grounding for §3.9's AI-as-Judge Exclusion: The Jagged Judges Findings
 
-*Status: DRAFT ADDENDUM. Filed 2026-08-18. Authors: operator + Claude (Sonnet 5).
-Proposes external grounding for `basin_attractors_v1.md` §3.9 (Meta-Protocol:
-Substrate Independence) — not yet merged there, per this project's own
-convention that published papers take a new version suffix rather than a
-silent edit. Not yet run through `paper_rigor`, `verification_lint`, or
-`attractor_scan` at time of writing.*
+*Status: PUBLISHED COMPANION ADDENDUM. Filed 2026-08-18; promoted to published 2026-10-26. Authors: operator + Claude (Sonnet 5).
+External grounding for `basin_attractors_v1.md` §3.9 (Meta-Protocol:
+Substrate Independence). `basin_attractors_v2.md` and later carry a short
+footnote to it and describe it as the "companion draft"; this is that
+paper, now published. The published versions of `basin_attractors` are
+unchanged, per this project's convention that published papers take a new
+version suffix rather than a silent edit. Sourcing tiers are stated where
+each claim sits: the Jagged Judges findings are read from the full PDF;
+the CoDaS and court-citation addenda are WebSearch-tier, flagged as such
+in-text, and still await a direct read. Tool run at promotion
+(2026-10-26): `paper_rigor` ok (0 structural gaps); `verification_lint` ok
+(0 gaps); `attractor_scan` weak lexical flags only (goal_post_movement on
+"not yet", equivocation on "intelligence"/"safety", two laundering cases on
+"reasoning"/"safety"), each read in context as descriptive use.*
 
 ---
 

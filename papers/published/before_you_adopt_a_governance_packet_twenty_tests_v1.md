@@ -1,6 +1,6 @@
 # Before You Adopt a Governance Packet: Twenty Tests
 
-**Draft v1 for review. Not peer reviewed; may be revised or withdrawn.** Companion handout to the paper "Governance Packets: Levels, Depth, and Twenty Tests for Adopters."
+**v1 — filed 2026-10-03; promoted to published 2026-10-26. Not peer reviewed.** Companion handout to the paper "Governance Packets: Levels, Depth, and Twenty Tests for Adopters."
 
 **Purpose.** A checklist an adopter can run on *any* governance packet or
 policy-admission pipeline (decision records, gates, receipts, reference

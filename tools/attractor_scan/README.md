@@ -233,7 +233,7 @@ names.
 
 A distinct, two-document check, unlike every other scanner in this
 package (which classify one piece of text alone). Motivated by
-[`closed_path_confirmation_v1.md`](../../papers/drafts/closed_path_confirmation_v1.md):
+[`closed_path_confirmation_v1.md`](../../papers/published/closed_path_confirmation_v1.md):
 does a source document's own stated scope limitations ("does not
 claim," "not yet validated," "provisional," ...) show any lexical
 trace in a separate piece of text that cites or references that

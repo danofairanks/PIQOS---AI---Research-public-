@@ -6,7 +6,7 @@
 
 **Disclosure.** Drafted with AI assistance. The tests and the reading of the source were done by one model in a scratch copy, so the results are a same-source check, not independent verification. Section 5 says which prior-art statements are recalled rather than looked up.
 
-**Companion to.** [`gate_library_class_replication_v1.md`](gate_library_class_replication_v1.md) (where the same repository family is compared at the class level) and [`pre_execution_gate_counter_models_v1.md`](pre_execution_gate_counter_models_v1.md) (the claim forms and defeat conditions for pre-execution gates in general). [`governance_packets_levels_depth_twenty_tests_v1.md`](governance_packets_levels_depth_twenty_tests_v1.md) (the levels, layers and termination test applied in section 4a; that paper is pattern-level and names no case, and nothing here changes it). This note is narrower: it records, for three specific submitted cases, what would show each case to be wrong, before the maintainer has classified them.
+**Companion to.** [`gate_library_class_replication_v1.md`](gate_library_class_replication_v1.md) (where the same repository family is compared at the class level) and [`pre_execution_gate_counter_models_v1.md`](pre_execution_gate_counter_models_v1.md) (the claim forms and defeat conditions for pre-execution gates in general). [`governance_packets_levels_depth_twenty_tests_v1.md`](../published/governance_packets_levels_depth_twenty_tests_v1.md) (the levels, layers and termination test applied in section 4a; that paper is pattern-level and names no case, and nothing here changes it). This note is narrower: it records, for three specific submitted cases, what would show each case to be wrong, before the maintainer has classified them.
 
 ## 1. What was submitted
 
@@ -65,7 +65,7 @@ Each condition names an outcome that would make a case a non-finding or reduce i
 
 ## 4a. Level and layer, in the governance-packets paper's scheme
 
-Applying the categories of [`governance_packets_levels_depth_twenty_tests_v1.md`](governance_packets_levels_depth_twenty_tests_v1.md) (sections 2, 3 and 7). This is a reading from the repository's README, not a measurement, and it covers only what the README says.
+Applying the categories of [`governance_packets_levels_depth_twenty_tests_v1.md`](../published/governance_packets_levels_depth_twenty_tests_v1.md) (sections 2, 3 and 7). This is a reading from the repository's README, not a measurement, and it covers only what the README says.
 
 - **Level.** Level 2, technical boundary: a gate between an AI system and an effect (the README's own phrasing is "protected consequence" and a final bind before it). The README makes no organizational (Level 1) or model-level (Level 3) claim, and says the harness is a reference implementation. I saw no level equivocation in the README. I did not read other material from the company.
 - **Layer.** L4, harness or operating system: checks outside the model, with signed or bound records. Per that paper, this is the only place a hard wall can exist, and only if the checker sits outside the control of what it governs. It says nothing about what any model has learned.

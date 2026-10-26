@@ -1,6 +1,6 @@
 # Validation That Can Fail: A Practical Checklist for Quantitative Claims in Self-Published Work
 
-*Status: DRAFT. Filed 2026-10-15. Authors: operator + Claude (Sonnet 5.5).
+*Status: PUBLISHED v1. Filed 2026-10-15; promoted to published 2026-10-26. Authors: operator + Claude (Sonnet 5.5).
 Written as guidance, not as a critique of any person or work. It names no
 one, links no repository, and uses a constructed illustrative claim (§3).
 Every number in §3 comes from `validation_that_can_fail_v1/check_threshold_claim.py`

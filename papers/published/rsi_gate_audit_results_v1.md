@@ -1,6 +1,6 @@
 # Where the Gate Sits: What 30 Self-Improvement Sources Report About the Check That Accepts a Change
 
-**Draft v1 for review. Not peer reviewed; may be revised or withdrawn.**
+**v1 — filed 2026-10-08, last updated 2026-10-09; promoted to published 2026-10-26 (two pointers to an unpublished working note were removed at promotion). Not peer reviewed.**
 
 **Scope of naming.** The objects examined are 29 published or preprinted research papers (including one survey) and one laboratory blog post on self-improving AI agents and related loops, named by title and arXiv identifier (the blog by title and publisher). No individual is characterised; the note concerns what the papers' designs and reports contain. The papers come from a public curated collection ("Self-Improving Agents", DAIR.AI Academy, saved 2026-10-08) plus two sources the collection's survey item cites. The collection is a secondary source and its summaries are not reproduced.
 
@@ -12,7 +12,7 @@ A self-improving system changes some lasting part of itself and keeps the change
 
 ## 2. The lens
 
-Carried over from small earlier measurements of validators on cumulative caps (see `guard_property_prior_art_v1.md`). A defect appears when a checker verifies something about the artifacts it is handed but not the property they stand for, in one of three ways:
+Carried over from small earlier measurements of validators on cumulative caps (unpublished working notes, not cited here). A defect appears when a checker verifies something about the artifacts it is handed but not the property they stand for, in one of three ways:
 - **(a) No validator for the property**, or a validator whose predicate does not cover the input domain.
 - **(b) Late validation:** the check that would catch a bad change runs after the change has taken effect.
 - **(c) Proxy conversion:** the quantity the gate sees differs from the quantity that matters, in a way the design does not control.
@@ -92,7 +92,7 @@ No code. Retrieve each paper by the identifier in section 3 and look up the page
 
 ## References
 
-Sources: the items in section 3 and the survey 2609.11873; collection page: "Self-Improving Agents", DAIR.AI Academy, saved 2026-10-08 (secondary). Prior-art sources read for section 5a: [B1] K. J. Biba, Integrity Considerations for Secure Computer Systems, MITRE MTR-3153, 30 June 1975 (an earlier edition than ESD-TR-76-372, 1977; scanned copy); [B2] D. E. Bell and L. J. La Padula, Secure Computer System: Unified Exposition and Multics Interpretation, MITRE MTR-2997 Rev. 1, March 1976 (scanned copy); [B3] D. D. Clark and D. R. Wilson, A comparison of commercial and military computer security policies, 1987, read as Appendix A1 of NIST Special Publication 500-160. Related in this repository: `rsi_gate_audit_preregistered_predictions_v1.md`, `guard_property_prior_art_v1.md`, `papers/published/governance_binding_axiom_v2.md`.
+Sources: the items in section 3 and the survey 2609.11873; collection page: "Self-Improving Agents", DAIR.AI Academy, saved 2026-10-08 (secondary). Prior-art sources read for section 5a: [B1] K. J. Biba, Integrity Considerations for Secure Computer Systems, MITRE MTR-3153, 30 June 1975 (an earlier edition than ESD-TR-76-372, 1977; scanned copy); [B2] D. E. Bell and L. J. La Padula, Secure Computer System: Unified Exposition and Multics Interpretation, MITRE MTR-2997 Rev. 1, March 1976 (scanned copy); [B3] D. D. Clark and D. R. Wilson, A comparison of commercial and military computer security policies, 1987, read as Appendix A1 of NIST Special Publication 500-160. Related in this repository: `rsi_gate_audit_preregistered_predictions_v1.md`, `papers/published/governance_binding_axiom_v2.md`.
 
 ## Revision log
 

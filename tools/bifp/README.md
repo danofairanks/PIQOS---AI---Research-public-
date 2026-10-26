@@ -130,7 +130,7 @@ round-trip test suite's own first draft caught.
 
 A separate, generic tool inside this package, distinct from the BIFP
 audit above: operationalizes the defeat condition in
-[`closed_path_confirmation_v1.md`](../../papers/drafts/closed_path_confirmation_v1.md)
+[`closed_path_confirmation_v1.md`](../../papers/published/closed_path_confirmation_v1.md)
 §2 for the specific case of a governance artifact whose only offered
 evidence is its own author-authored test suite. A green suite
 establishes only an *existential* claim over paths the author controls

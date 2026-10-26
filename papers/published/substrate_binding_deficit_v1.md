@@ -1,6 +1,6 @@
 # Substrate Binding Deficit: A Five-Question Instrument for Whether a Formalism Touches Its Named Mechanism
 
-*v1 — filed 2026-09-20. Authors: operator + Claude (Sonnet 5).*
+*v1 — filed 2026-09-20; promoted to published 2026-10-26. Authors: operator + Claude (Sonnet 5).*
 
 ---
 

@@ -2,7 +2,7 @@
 in a source document travel to the point where that source is cited or
 referenced elsewhere, or is it left behind at publication?
 
-Motivated by papers/drafts/closed_path_confirmation_v1.md's distinction
+Motivated by papers/published/closed_path_confirmation_v1.md's distinction
 between an artifact's own stated limitations (real, often genuinely
 present) and whether a reader encountering only the citation -- not the
 original document -- ever sees them. A two-document comparison, unlike

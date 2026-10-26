@@ -90,7 +90,7 @@ app = MCPServer(
         "fixture, whether a governance artifact's evidence is closed-path "
         "(expected outcome asserted as a literal matching the artifact's "
         "own output) or open-path (expected outcome derived from an "
-        "independent specification) -- papers/drafts/closed_path_"
+        "independent specification) -- papers/published/closed_path_"
         "confirmation_v1.md §2's defeat condition, operationalized; "
         "bifp_scan_closed_path_language and bifp_scan_hardcoded_assertion_"
         "style are standalone lexical leads over prose/code for the same "

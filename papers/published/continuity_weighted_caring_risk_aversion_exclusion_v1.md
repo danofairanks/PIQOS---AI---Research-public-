@@ -1,6 +1,6 @@
 # The Risk-Aversion Exclusion: A Defeat-Condition Check on a Continuity-Weighted Utility for Everettian Branches
 
-*v1 — filed 2026-09-21. Authors: operator + Claude (Sonnet 5).*
+*v1 — filed 2026-09-21; promoted to published 2026-10-26. Authors: operator + Claude (Sonnet 5).*
 
 ---
 
