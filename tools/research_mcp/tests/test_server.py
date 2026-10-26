@@ -11,6 +11,8 @@ from __future__ import annotations
 
 import asyncio
 
+import pytest
+
 from tests.conftest import _live_session
 
 
@@ -327,3 +329,24 @@ def test_hedge_dogwhistle_scan_corpus_over_the_wire(call_tool):
     })
     assert result["n_documents"] == 2
     assert result["has_paralipsis_count"] == 1
+
+
+_TEXT_SCANNERS = [
+    "bifp_scan_text", "bifp_scan_closed_path_language",
+    "bifp_scan_hardcoded_assertion_style", "attractor_scan_text",
+    "debasinizer_scan_text", "paper_rigor_scan",
+    "rigor_cosplay_scan_text", "hedge_dogwhistle_scan_text",
+]
+
+
+@pytest.mark.parametrize("tool", _TEXT_SCANNERS)
+@pytest.mark.parametrize("text", ["", "   \n\t "])
+def test_text_scanners_reject_empty_input_with_error_payload(call_tool, tool, text):
+    # Empty input must not return a zero-findings result that is
+    # indistinguishable from a scan of clean text.
+    assert "error" in call_tool(tool, {"text": text})
+
+
+@pytest.mark.parametrize("tool", _TEXT_SCANNERS)
+def test_text_scanners_still_accept_nonempty_input(call_tool, tool):
+    assert "error" not in call_tool(tool, {"text": "The committee met on Tuesday."})
