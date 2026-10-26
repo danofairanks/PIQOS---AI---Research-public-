@@ -1,4 +1,4 @@
-> **Archived 2026-10-26.** Verified core folded into published/basin_attractors_v7.md §2.2. Not carried over: references to non-public material. One wording correction: 25.9% is a share of global internet users, not of English speakers. Moved from `drafts/`; content below is unchanged.
+> **Archived 2026-10-26.** Scrubbed 2026-10-26: references to non-public material removed; nothing else changed. Verified core folded into published/basin_attractors_v7.md §2.2. Not carried over: references to non-public material. One wording correction: 25.9% is a share of global internet users, not of English speakers. Moved from `drafts/`; content below is unchanged.
 
 # External Grounding for §2.2's Benchmark Attractor: The "Whose Facts Count?" Findings
 
@@ -127,8 +127,7 @@ Anthropic 2026 system card) and "GPT-5.6-Terra" (cited to OpenAI) — are used
 for inter-method reliability coding and are **not verifiable against any
 model release this project can confirm exists**. This is flagged here at the
 same "unconfirmed, not asserted real or fake" tier this project holds every
-AI-involvement claim to (see `dillon_c_capability_claims_watchlist/`'s
-standing discipline in the private companion repo) — it does not
+AI-involvement claim to (a standing practice of this project) — it does not
 independently undermine the paper's core empirical audit (the D1–D6 scoring
 of SimpleQA and the Arena sample, and the Rasch validation of the rubric
 itself, do not depend on those two citations), but it is a real, unresolved
@@ -156,12 +155,10 @@ pattern §2.2's own two existing counter-evidence paragraphs already show
 (contamination studies and harness-variance studies are also two
 independent mechanisms converging on the same defeat), extended by a third.
 
-INV-AVERAGE-IS-NOT-ANCHOR (PIQOS-IsoAxiomV8-'s private companion project;
-not part of this repository, named only for the parallel) states that
-"average consensus at scale produces a better approximation of the
-statistical center of the training distribution — not convergence toward a
-fixed coherent anchor." This specimen's Arena-language finding (per Zahra
-et al., 2026: 76.3% vs. 25.9%, +50.4pp) is a direct, independently-sourced
+A general point applies here: average consensus at scale approximates the
+statistical center of the sampled distribution, not a population-neutral
+truth. This specimen's Arena-language finding (per Zahra
+et al., 2026: 76.3% vs. 25.9%, +50.4pp) is an independently-sourced
 empirical instance of
 that same structural point applied to *evaluation* rather than *training*:
 an "average preference" signal built from one linguistic population is
