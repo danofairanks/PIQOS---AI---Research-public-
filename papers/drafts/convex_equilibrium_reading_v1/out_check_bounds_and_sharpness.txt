@@ -1,0 +1,6 @@
+Lemma4.1 max S*gamma: 0.6910334766429815 (claim <=1)
+Thm4.2 max ||H||/C2 over random draws: 0.3847715960419573 (claim <=1)
+eps=0.2: z*=1.609438 vs -log eps=1.609438 | u''=3.42936 closed=3.42936 eps^2u''=0.13717 | u''' (fd)=4.44429 eps^3u'''=0.03555 paper-closed eps^3u'''=0.03556
+eps=0.05: z*=2.995732 vs -log eps=2.995732 | u''=51.2483 closed=51.2483 eps^2u''=0.12812 | u''' (fd)=256.73 eps^3u'''=0.03209 paper-closed eps^3u'''=0.03209
+eps=0.01: z*=4.605170 vs -log eps=4.605170 | u''=1256.25 closed=1256.25 eps^2u''=0.12562 | u''' (fd)=31408.2 eps^3u'''=0.03141 paper-closed eps^3u'''=0.03141
+eps=0.002: z*=6.214608 vs -log eps=6.214608 | u''=31281.2 closed=31281.2 eps^2u''=0.12512 | u''' (fd)=3.91016e+06 eps^3u'''=0.03128 paper-closed eps^3u'''=0.03128

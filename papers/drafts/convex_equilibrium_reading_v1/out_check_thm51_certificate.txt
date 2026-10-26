@@ -1,0 +1,1 @@
+max error/bound ratios over 3000 perturbed cases (claim <=1): {'z': np.float64(0.8626368141224949), 'J': np.float64(0.8825459947478442), 'K': np.float64(0.8955351102683758), 'H': np.float64(0.7433001113878184), 'det': np.float64(0.28528627492939973)}

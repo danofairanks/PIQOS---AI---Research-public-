@@ -1,0 +1,49 @@
+{
+  "path": "papers/drafts/agent4sci_hill_climbing_reading_v1.md",
+  "ok": true,
+  "gap_count": 4,
+  "severe_gap_count": 0,
+  "unattributed_quotes": [],
+  "uncited_statistics": [
+    {
+      "kind": "decimal_percent",
+      "value": "10.4%",
+      "start": 1727,
+      "end": 1732,
+      "context": "gains come from \"a bag of ML-engineering tricks rather than research-level insight\", and that three plug-in skills raise Opus's mean improvement from 10.4% to 20.1% and Codex's from 4.4% to 8.1%. The question here is which of these statements the paper's own tables carry.\n\n## 2. What was read, and how\n\n-"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "20.1%",
+      "start": 1736,
+      "end": 1741,
+      "context": "e from \"a bag of ML-engineering tricks rather than research-level insight\", and that three plug-in skills raise Opus's mean improvement from 10.4% to 20.1% and Codex's from 4.4% to 8.1%. The question here is which of these statements the paper's own tables carry.\n\n## 2. What was read, and how\n\n- **Read:*"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "4.4%",
+      "start": 1759,
+      "end": 1763,
+      "context": "ineering tricks rather than research-level insight\", and that three plug-in skills raise Opus's mean improvement from 10.4% to 20.1% and Codex's from 4.4% to 8.1%. The question here is which of these statements the paper's own tables carry.\n\n## 2. What was read, and how\n\n- **Read:** the 10-page body, th"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "8.1%",
+      "start": 1767,
+      "end": 1771,
+      "context": " tricks rather than research-level insight\", and that three plug-in skills raise Opus's mean improvement from 10.4% to 20.1% and Codex's from 4.4% to 8.1%. The question here is which of these statements the paper's own tables carry.\n\n## 2. What was read, and how\n\n- **Read:** the 10-page body, the limita"
+    }
+  ],
+  "disclaimer": {
+    "present": true,
+    "applicable": true,
+    "word_count": 1311,
+    "min_word_count": 400,
+    "gap": false
+  },
+  "sourcing": {
+    "has_sources_statement": true,
+    "has_framework_citation": false,
+    "has_end_sourcing": true
+  }
+}

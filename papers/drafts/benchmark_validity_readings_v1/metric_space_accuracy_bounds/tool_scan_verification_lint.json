@@ -1,0 +1,63 @@
+{
+  "path": "papers/drafts/benchmark_validity_readings_v1/metric_space_accuracy_bounds/README.md",
+  "ok": true,
+  "gap_count": 6,
+  "severe_gap_count": 0,
+  "unattributed_quotes": [],
+  "uncited_statistics": [
+    {
+      "kind": "fraction_count",
+      "value": "1/2",
+      "start": 1280,
+      "end": 1283,
+      "context": "gets of samples within tau_X (input) OR tau_Y (target). Average kernel size K = mean pairwise target distance within each feasible set. Theorem 2.9: (1/2)K <= best empirical error <= K on D_M' (regression); Corollary 2.11: accuracy in [1-K, 1-K/2]. Lower bound is the triangle inequality on several dist"
+    },
+    {
+      "kind": "fraction_count",
+      "value": "1/2",
+      "start": 1644,
+      "end": 1647,
+      "context": "bility trade-off (small error at separated ambiguous targets forces a large local Lipschitz constant). Distributional analogue: Bayes squared risk = (1/2) K^2.\n\n## Flags (ranked; post-hoc)\n1. **Bound is on the constructed dataset, not the data.** Transfer to D_M needs Proposition 2.13 (Lipschitz regres"
+    },
+    {
+      "kind": "fraction_count",
+      "value": "1/2",
+      "start": 3263,
+      "end": 3266,
+      "context": "ata checks it, and the paper states the constructed frequencies carry no probabilistic meaning.\n5. **Theory largely standard.** Bayes squared risk = (1/2) E||Y - Y'||^2 for conditionally i.i.d. Y, Y' is the textbook variance identity; Proposition 2.18 (positive gap when training error is below the Baye"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "14.4%",
+      "start": 4941,
+      "end": 4946,
+      "context": "ection to an earlier informal evaluation (2026-10-25)\nThe earlier informal evaluation put K at 8-16% of accuracy on CIFAR-10; the intervals imply K = 14.4% (train) and 16.2% (test), with K/2 = 7.2-8.1%. The earlier informal evaluation also called the synthetic floor \"about 0.009\" and suggested the lower "
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "16.2%",
+      "start": 4959,
+      "end": 4964,
+      "context": "er informal evaluation (2026-10-25)\nThe earlier informal evaluation put K at 8-16% of accuracy on CIFAR-10; the intervals imply K = 14.4% (train) and 16.2% (test), with K/2 = 7.2-8.1%. The earlier informal evaluation also called the synthetic floor \"about 0.009\" and suggested the lower end may exceed it;"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "8.1%",
+      "start": 4988,
+      "end": 4992,
+      "context": "10-25)\nThe earlier informal evaluation put K at 8-16% of accuracy on CIFAR-10; the intervals imply K = 14.4% (train) and 16.2% (test), with K/2 = 7.2-8.1%. The earlier informal evaluation also called the synthetic floor \"about 0.009\" and suggested the lower end may exceed it; the stated noise supports o"
+    }
+  ],
+  "disclaimer": {
+    "present": true,
+    "applicable": true,
+    "word_count": 1190,
+    "min_word_count": 400,
+    "gap": false
+  },
+  "sourcing": {
+    "has_sources_statement": true,
+    "has_framework_citation": false,
+    "has_end_sourcing": true
+  }
+}

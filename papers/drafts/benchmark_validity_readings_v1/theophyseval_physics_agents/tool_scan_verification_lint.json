@@ -1,0 +1,91 @@
+{
+  "path": "papers/drafts/benchmark_validity_readings_v1/theophyseval_physics_agents/README.md",
+  "ok": true,
+  "gap_count": 10,
+  "severe_gap_count": 0,
+  "unattributed_quotes": [],
+  "uncited_statistics": [
+    {
+      "kind": "fraction_count",
+      "value": "49/46",
+      "start": 4566,
+      "end": 4571,
+      "context": "ed tables (`checks_output.txt`; scorecard against the predictions)\n| | Prediction | Result |\n|---|---|---|\n| C1 | parse equals printed totals | held: 49/46, 46/46, 34/31, 27/25, 21/26 |\n| C2 | Astra-R lower CI < 0.90; Astra/Opus CIs overlap | held: Astra-R 49/50, Wilson [0.895, 0.996]; Opus-R [0.812, 0.9"
+    },
+    {
+      "kind": "fraction_count",
+      "value": "46/46",
+      "start": 4573,
+      "end": 4578,
+      "context": "es (`checks_output.txt`; scorecard against the predictions)\n| | Prediction | Result |\n|---|---|---|\n| C1 | parse equals printed totals | held: 49/46, 46/46, 34/31, 27/25, 21/26 |\n| C2 | Astra-R lower CI < 0.90; Astra/Opus CIs overlap | held: Astra-R 49/50, Wilson [0.895, 0.996]; Opus-R [0.812, 0.968] |\n|"
+    },
+    {
+      "kind": "fraction_count",
+      "value": "34/31",
+      "start": 4580,
+      "end": 4585,
+      "context": "ecks_output.txt`; scorecard against the predictions)\n| | Prediction | Result |\n|---|---|---|\n| C1 | parse equals printed totals | held: 49/46, 46/46, 34/31, 27/25, 21/26 |\n| C2 | Astra-R lower CI < 0.90; Astra/Opus CIs overlap | held: Astra-R 49/50, Wilson [0.895, 0.996]; Opus-R [0.812, 0.968] |\n| C3 | n"
+    },
+    {
+      "kind": "fraction_count",
+      "value": "49/50",
+      "start": 5901,
+      "end": 5906,
+      "context": "1b spend smallest | held: 0.082M tokens (R) vs 4.9\u201313.0M for the others |\n\n## Findings\n1. **The headline sits at the ceiling of a single run.** Astra 49/50 has a 95% Wilson interval of [89.5%, 99.6%], overlapping Opus (46/50). On the realistic track Astra and Opus differ on exactly three problems, Astra-"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "89.5%",
+      "start": 5937,
+      "end": 5942,
+      "context": "ens (R) vs 4.9\u201313.0M for the others |\n\n## Findings\n1. **The headline sits at the ceiling of a single run.** Astra 49/50 has a 95% Wilson interval of [89.5%, 99.6%], overlapping Opus (46/50). On the realistic track Astra and Opus differ on exactly three problems, Astra-only: \u00a71c (inertial-particle attract"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "99.6%",
+      "start": 5944,
+      "end": 5949,
+      "context": " vs 4.9\u201313.0M for the others |\n\n## Findings\n1. **The headline sits at the ceiling of a single run.** Astra 49/50 has a 95% Wilson interval of [89.5%, 99.6%], overlapping Opus (46/50). On the realistic track Astra and Opus differ on exactly three problems, Astra-only: \u00a71c (inertial-particle attractors), \u00a7"
+    },
+    {
+      "kind": "fraction_count",
+      "value": "46/50",
+      "start": 5970,
+      "end": 5975,
+      "context": "rs |\n\n## Findings\n1. **The headline sits at the ceiling of a single run.** Astra 49/50 has a 95% Wilson interval of [89.5%, 99.6%], overlapping Opus (46/50). On the realistic track Astra and Opus differ on exactly three problems, Astra-only: \u00a71c (inertial-particle attractors), \u00a77a (Chern\u2013Simons beta func"
+    },
+    {
+      "kind": "fraction_count",
+      "value": "1/5",
+      "start": 7708,
+      "end": 7711,
+      "context": "ntial equation where no derivative is of order greater than 1\"; the answer key is a fractional-delay equation (Riemann\u2013Liouville derivatives of order 1/5 and 1/3 plus a delay term). The authors concede it might appear unfair, say the answer is not unique, and grade it by visual fit, unlike the other 49"
+    },
+    {
+      "kind": "fraction_count",
+      "value": "1/3",
+      "start": 7716,
+      "end": 7719,
+      "context": "uation where no derivative is of order greater than 1\"; the answer key is a fractional-delay equation (Riemann\u2013Liouville derivatives of order 1/5 and 1/3 plus a delay term). The authors concede it might appear unfair, say the answer is not unique, and grade it by visual fit, unlike the other 49 numeric"
+    },
+    {
+      "kind": "fraction_count",
+      "value": "49/49",
+      "start": 8297,
+      "end": 8302,
+      "context": "produce the displayed curve, \"0\" is the correct answer to the question as literally posed, and Astra's \"98%\" is then 100% on the ordinary reading and 49/49 with the item removed. The reader did not see the figure's data and did not test this; it is a reading question the authors themselves flag.\n6. ***Me"
+    }
+  ],
+  "disclaimer": {
+    "present": true,
+    "applicable": true,
+    "word_count": 2623,
+    "min_word_count": 400,
+    "gap": false
+  },
+  "sourcing": {
+    "has_sources_statement": true,
+    "has_framework_citation": false,
+    "has_end_sourcing": true
+  }
+}

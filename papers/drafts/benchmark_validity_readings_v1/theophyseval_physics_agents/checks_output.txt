@@ -1,0 +1,107 @@
+PREREG sha256: 480a7667cf8fff50eb08b8723a29e78d20b0983ed41daa3937ccc86c49cf46cd
+rows parsed: 50
+
+== C1 parse vs printed totals
+  Astra     R=49 I=46 printed=(49, 46) OK
+  Opus      R=46 I=46 printed=(46, 46) OK
+  Gemini    R=34 I=31 printed=(34, 31) OK
+  DeepSeek  R=27 I=25 printed=(27, 25) OK
+  GLM       R=21 I=26 printed=(21, 26) OK
+  all match: True
+
+== C2 Wilson 95% CIs
+  Astra     R: 49/50 = 0.98  CI [0.895, 0.996]
+  Astra     I: 46/50 = 0.92  CI [0.812, 0.968]
+  Opus      R: 46/50 = 0.92  CI [0.812, 0.968]
+  Opus      I: 46/50 = 0.92  CI [0.812, 0.968]
+  Gemini    R: 34/50 = 0.68  CI [0.542, 0.792]
+  Gemini    I: 31/50 = 0.62  CI [0.482, 0.741]
+  DeepSeek  R: 27/50 = 0.54  CI [0.404, 0.670]
+  DeepSeek  I: 25/50 = 0.50  CI [0.366, 0.634]
+  GLM       R: 21/50 = 0.42  CI [0.294, 0.558]
+  GLM       I: 26/50 = 0.52  CI [0.385, 0.652]
+
+== C3 paired R vs I per agent (exact McNemar)
+  Astra     R-only=3 I-only=0 net(R-I)=+3 discordant=3 p=0.250
+  Opus      R-only=2 I-only=2 net(R-I)=+0 discordant=4 p=1.000
+  Gemini    R-only=5 I-only=2 net(R-I)=+3 discordant=7 p=0.453
+  DeepSeek  R-only=6 I-only=4 net(R-I)=+2 discordant=10 p=0.754
+  GLM       R-only=6 I-only=11 net(R-I)=-5 discordant=17 p=0.332
+
+== C4 pooled: R-only=22 I-only=19 net=+3 discordant=41 exact p=0.755
+   (treats agent-problem pairs as independent; they are not, so this p is optimistic)
+
+== C5 subset claim
+  problems unsolved by every agent on R: ['Autonomous equation (§1b)']
+  Astra    R subset of Astra-R: True  (|set|=49)
+  Astra    I subset of Astra-R: True  (|set|=46)
+  Opus     R subset of Astra-R: True  (|set|=46)
+  Opus     I subset of Astra-R: True  (|set|=46)
+  Gemini   R subset of Astra-R: True  (|set|=34)
+  Gemini   I subset of Astra-R: True  (|set|=31)
+  DeepSeek R subset of Astra-R: True  (|set|=27)
+  DeepSeek I subset of Astra-R: True  (|set|=25)
+  GLM      R subset of Astra-R: True  (|set|=21)
+  GLM      I subset of Astra-R: True  (|set|=26)
+  Problems outside Astra-R: ['Autonomous equation (§1b)'] -> the claim can only fail on these.
+
+== C6 saturation
+  solved by all 5 (R)=14  (I)=18; solved by Astra and Opus (R)=46
+  Astra-R only: ['Inertial-particle attractors (§1c)', 'Chern–Simons beta function (§7a)', 'Pi dispersion series (§9a)']
+  Opus-R only:  []
+
+== C7 nestedness (R)
+  Opus passes also Astra passes: 1.000
+  Gemini passes also Opus passes: 1.000
+  DeepSeek passes also Gemini passes: 0.852
+  GLM passes also Gemini passes: 0.857
+
+== C8 linked sets (exploratory)
+  §6 a-d electronic structure: 4 problems ['All-electron atomic solver (§6a)', 'Norm-conserving potentials (§6b)', 'Pseudopotential ghost states (§6c)', 'Magnesium diboride SCF (§6d)']
+    Astra    R: [1, 1, 1, 1]
+    Astra    I: [1, 1, 1, 1]
+    Opus     R: [1, 1, 1, 1]
+    Opus     I: [1, 1, 1, 1]
+    Gemini   R: [1, 1, 1, 0]
+    Gemini   I: [1, 1, 1, 0]
+    DeepSeek R: [1, 1, 1, 0]
+    DeepSeek I: [1, 1, 1, 0]
+    GLM      R: [0, 0, 0, 0]
+    GLM      I: [1, 1, 1, 1]
+  §5 c-e maple-leaf: 3 problems ['Maple-leaf Dirac nodes (§5c)', 'Maple-leaf Chern number (§5d)', 'Maple-leaf cluster spectrum (§5e)']
+    Astra    R: [1, 1, 1]
+    Astra    I: [1, 1, 1]
+    Opus     R: [1, 1, 1]
+    Opus     I: [1, 1, 1]
+    Gemini   R: [1, 1, 1]
+    Gemini   I: [1, 1, 1]
+    DeepSeek R: [1, 1, 1]
+    DeepSeek I: [1, 1, 0]
+    GLM      R: [1, 1, 1]
+    GLM      I: [1, 1, 1]
+  R/I same-outcome rate, linked: 30/35 = 0.857
+  R/I same-outcome rate, rest: 179/215 = 0.833
+  net R-I passes inside linked sets: -3; outside: +6
+  GLM net R-I inside linked sets: -4; GLM net overall: -5
+
+== C9 costs (Table X)
+  rows parsed: 50
+   col0: sum=116.28 printed=116.28
+   col1: sum=95.17 printed=95.20
+   col2: sum=240.44 printed=240.43
+   col3: sum=275.43 printed=275.46
+   col4: sum=95.02 printed=95.01
+   col5: sum=90.47 printed=90.48
+   col6: sum=37.44 printed=37.42
+   col7: sum=36.23 printed=36.23
+   col8: sum=311.70 printed=311.71
+   col9: sum=371.43 printed=371.46
+  Astra realistic mean per problem = 2.33 USD (claim: under 3)
+  Opus mean R=4.81; Gemini R=1.90; DeepSeek R=0.75
+
+== C10 section 1b spend (tokens in millions: total)
+  Astra     R total=0.082  I total=0.072
+  Opus      R total=12.240  I total=10.801
+  Gemini    R total=12.973  I total=2.585
+  DeepSeek  R total=5.036  I total=7.202
+  GLM       R total=4.851  I total=9.094

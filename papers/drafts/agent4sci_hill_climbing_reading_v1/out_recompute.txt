@@ -1,0 +1,8 @@
+opus          mean  10.43  median   5.60  negative benchmarks 2
+opus+skills   mean  20.06  median   8.45  negative benchmarks 1
+codex         mean   4.37  median   3.75  negative benchmarks 4
+codex+skills  mean   8.05  median   5.45  negative benchmarks 5
+opus: skills better on 18/20, two-sided sign p = 0.0004025; mean diff 9.63, median diff 4.80, sd 10.8
+codex: skills better on 12/20, two-sided sign p = 0.5034; mean diff 3.69, median diff 0.90, sd 11.9
+opus excl PFDelta+Mars-Bench: 5.43 -> 13.82
+codex skill effect excl Mars-Bench, MOTIVE, CarbonGlobe (mean of diffs): -0.06

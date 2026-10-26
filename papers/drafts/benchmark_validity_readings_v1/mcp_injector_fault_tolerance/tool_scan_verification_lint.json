@@ -1,0 +1,140 @@
+{
+  "path": "papers/drafts/benchmark_validity_readings_v1/mcp_injector_fault_tolerance/README.md",
+  "ok": true,
+  "gap_count": 17,
+  "severe_gap_count": 0,
+  "unattributed_quotes": [],
+  "uncited_statistics": [
+    {
+      "kind": "large_comma_count",
+      "value": "57,240",
+      "start": 1760,
+      "end": 1766,
+      "context": "ators (minor mistake, incorrect output, invalid output, explicit error, delay, silent drop) and three persistence regimes, seeded. Profile mined from 57,240 threads across 1,774 MCP repositories (GPT-4o classifier at temperature 0; 117 threads double-annotated, kappa 0.93 mode, 0.80 persistence). Experime"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "1,774",
+      "start": 1782,
+      "end": 1787,
+      "context": "incorrect output, invalid output, explicit error, delay, silent drop) and three persistence regimes, seeded. Profile mined from 57,240 threads across 1,774 MCP repositories (GPT-4o classifier at temperature 0; 117 threads double-annotated, kappa 0.93 mode, 0.80 persistence). Experiment: gpt-oss-20B and -"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "1,350",
+      "start": 2042,
+      "end": 2047,
+      "context": "0 persistence). Experiment: gpt-oss-20B and -120B x three agent stacks x {proxy off, null operator OP0, calibrated faults OPP} x 25 tasks x 3 seeds = 1,350 cells; judge gpt-4o-mini, five repeats, median.\n\n## Checks (E1; `checks.py`)\nTable 2 recomputes exactly: N = 13,824; permanent 91.26%, intermittent 7"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "13,824",
+      "start": 2157,
+      "end": 2163,
+      "context": "faults OPP} x 25 tasks x 3 seeds = 1,350 cells; judge gpt-4o-mini, five repeats, median.\n\n## Checks (E1; `checks.py`)\nTable 2 recomputes exactly: N = 13,824; permanent 91.26%, intermittent 7.99%, transient 0.75%; explicit-error/permanent 65.65%; all explicit errors 71.19%; silent content modes 19.10%; tim"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "91.26%",
+      "start": 2175,
+      "end": 2181,
+      "context": "asks x 3 seeds = 1,350 cells; judge gpt-4o-mini, five repeats, median.\n\n## Checks (E1; `checks.py`)\nTable 2 recomputes exactly: N = 13,824; permanent 91.26%, intermittent 7.99%, transient 0.75%; explicit-error/permanent 65.65%; all explicit errors 71.19%; silent content modes 19.10%; timing modes 9.71%; c"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "7.99%",
+      "start": 2196,
+      "end": 2201,
+      "context": "0 cells; judge gpt-4o-mini, five repeats, median.\n\n## Checks (E1; `checks.py`)\nTable 2 recomputes exactly: N = 13,824; permanent 91.26%, intermittent 7.99%, transient 0.75%; explicit-error/permanent 65.65%; all explicit errors 71.19%; silent content modes 19.10%; timing modes 9.71%; cells = 1,350; 8.08 -"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "0.75%",
+      "start": 2213,
+      "end": 2218,
+      "context": "t-4o-mini, five repeats, median.\n\n## Checks (E1; `checks.py`)\nTable 2 recomputes exactly: N = 13,824; permanent 91.26%, intermittent 7.99%, transient 0.75%; explicit-error/permanent 65.65%; all explicit errors 71.19%; silent content modes 19.10%; timing modes 9.71%; cells = 1,350; 8.08 -> 3.23 = -60.0%. "
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "65.65%",
+      "start": 2245,
+      "end": 2251,
+      "context": "\n\n## Checks (E1; `checks.py`)\nTable 2 recomputes exactly: N = 13,824; permanent 91.26%, intermittent 7.99%, transient 0.75%; explicit-error/permanent 65.65%; all explicit errors 71.19%; silent content modes 19.10%; timing modes 9.71%; cells = 1,350; 8.08 -> 3.23 = -60.0%. One rounding difference (pooled c"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "71.19%",
+      "start": 2273,
+      "end": 2279,
+      "context": ")\nTable 2 recomputes exactly: N = 13,824; permanent 91.26%, intermittent 7.99%, transient 0.75%; explicit-error/permanent 65.65%; all explicit errors 71.19%; silent content modes 19.10%; timing modes 9.71%; cells = 1,350; 8.08 -> 3.23 = -60.0%. One rounding difference (pooled completion gap computes as 4."
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "19.10%",
+      "start": 2302,
+      "end": 2308,
+      "context": " N = 13,824; permanent 91.26%, intermittent 7.99%, transient 0.75%; explicit-error/permanent 65.65%; all explicit errors 71.19%; silent content modes 19.10%; timing modes 9.71%; cells = 1,350; 8.08 -> 3.23 = -60.0%. One rounding difference (pooled completion gap computes as 4.5 from printed 95.6 and 91.1;"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "9.71%",
+      "start": 2323,
+      "end": 2328,
+      "context": "t 91.26%, intermittent 7.99%, transient 0.75%; explicit-error/permanent 65.65%; all explicit errors 71.19%; silent content modes 19.10%; timing modes 9.71%; cells = 1,350; 8.08 -> 3.23 = -60.0%. One rounding difference (pooled completion gap computes as 4.5 from printed 95.6 and 91.1; paper 4.4).\n\n## Fla"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "1,350",
+      "start": 2338,
+      "end": 2343,
+      "context": "mittent 7.99%, transient 0.75%; explicit-error/permanent 65.65%; all explicit errors 71.19%; silent content modes 19.10%; timing modes 9.71%; cells = 1,350; 8.08 -> 3.23 = -60.0%. One rounding difference (pooled completion gap computes as 4.5 from printed 95.6 and 91.1; paper 4.4).\n\n## Flags (ranked; pos"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "60.0%",
+      "start": 2361,
+      "end": 2366,
+      "context": "t 0.75%; explicit-error/permanent 65.65%; all explicit errors 71.19%; silent content modes 19.10%; timing modes 9.71%; cells = 1,350; 8.08 -> 3.23 = -60.0%. One rounding difference (pooled completion gap computes as 4.5 from printed 95.6 and 91.1; paper 4.4).\n\n## Flags (ranked; post-hoc)\n1. **Title stron"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "3,000",
+      "start": 2664,
+      "end": 2669,
+      "context": "onger than the evidence.** Two models from one family (a mixture-of-experts pair), one serving setup (LM Studio, consumer Apple Silicon, 16k context, 3,000 s timeout), one benchmark. The size coefficient's CI is [-0.39, 0.37] (p = 0.96); the paper says it \"cannot exclude a modest effect in either directi"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "96.9%",
+      "start": 3199,
+      "end": 3204,
+      "context": "a null on a pair indistinguishable at baseline says little about scale (the reader's inference). Fault-free completion is already lower for the 120B (96.9% vs 99.1%), which the paper decomposes.\n3. **\"60% degradation\" belongs to a stress profile.** Permanent-heavy by construction and calibrated to report"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "99.1%",
+      "start": 3208,
+      "end": 3213,
+      "context": " a pair indistinguishable at baseline says little about scale (the reader's inference). Fault-free completion is already lower for the 120B (96.9% vs 99.1%), which the paper decomposes.\n3. **\"60% degradation\" belongs to a stress profile.** Permanent-heavy by construction and calibrated to reported failur"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "13,824",
+      "start": 3693,
+      "end": 3699,
+      "context": " (55 of 450) raises the drop from 60% to 67%.\n4. **Calibration rests on one classifier and a small validation sample.** Transient failures are 104 of 13,824; several parameters are hand-set (delay 0.3 and 30 s, perturbation intensities, transient activation 1), and the paper labels them.\n5. **\"Framework-l"
+    }
+  ],
+  "disclaimer": {
+    "present": true,
+    "applicable": true,
+    "word_count": 1122,
+    "min_word_count": 400,
+    "gap": false
+  },
+  "sourcing": {
+    "has_sources_statement": true,
+    "has_framework_citation": false,
+    "has_end_sourcing": true
+  }
+}

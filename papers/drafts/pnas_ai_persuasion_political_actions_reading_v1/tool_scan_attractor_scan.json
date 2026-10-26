@@ -1,0 +1,126 @@
+{
+  "maneuvers": {
+    "goal_post_movement": {
+      "category": "goal_post_movement",
+      "source": "\u00a74.1 (immune repertoire); seed terms \u00a73.2",
+      "flagged": false,
+      "confidence": "none",
+      "matches": []
+    },
+    "provisionalization": {
+      "category": "provisionalization",
+      "source": "\u00a74.1 (immune repertoire); seed terms \u00a73.2",
+      "flagged": false,
+      "confidence": "none",
+      "matches": []
+    },
+    "status_dismissal": {
+      "category": "status_dismissal",
+      "source": "\u00a74.1 (immune repertoire); seed terms \u00a73.2",
+      "flagged": false,
+      "confidence": "none",
+      "matches": []
+    },
+    "burden_shifting": {
+      "category": "burden_shifting",
+      "source": "\u00a74.1 (immune repertoire); seed terms \u00a73.2",
+      "flagged": false,
+      "confidence": "none",
+      "matches": []
+    },
+    "equivocation": {
+      "category": "equivocation",
+      "source": "\u00a74.1 (immune repertoire); seed terms \u00a73.2",
+      "flagged": true,
+      "confidence": "weak",
+      "matches": [
+        {
+          "pattern": "intelligence",
+          "text": "intelligence",
+          "start": 459,
+          "end": 471
+        },
+        {
+          "pattern": "reasoning",
+          "text": "reasoning",
+          "start": 5339,
+          "end": 5348
+        }
+      ]
+    },
+    "volume_velocity": {
+      "category": "volume_velocity",
+      "source": "\u00a74.1 (immune repertoire); seed terms \u00a73.2",
+      "flagged": false,
+      "confidence": "none",
+      "matches": []
+    },
+    "appeal_to_future": {
+      "category": "appeal_to_future",
+      "source": "\u00a74.1 (immune repertoire); seed terms \u00a73.2",
+      "flagged": false,
+      "confidence": "none",
+      "matches": []
+    }
+  },
+  "laundering": {
+    "case1": {
+      "case": "case1",
+      "name": "Pattern Recognition vs. Pattern Matching",
+      "source": "\u00a72.8 Case 1",
+      "flagged": false,
+      "confidence": "none",
+      "explanation": "No unqualified pattern-recognition usage matched.",
+      "matches": []
+    },
+    "case2": {
+      "case": "case2",
+      "name": "\"Understanding\" and \"Reasoning\"",
+      "source": "\u00a72.8 Case 2",
+      "flagged": false,
+      "confidence": "none",
+      "explanation": "No unqualified understanding/reasoning usage matched near an AI subject.",
+      "matches": []
+    },
+    "case3": {
+      "case": "case3",
+      "name": "\"Emergence\"",
+      "source": "\u00a72.8 Case 3",
+      "flagged": false,
+      "confidence": "none",
+      "explanation": "No unqualified emergence usage matched.",
+      "matches": []
+    },
+    "case4": {
+      "case": "case4",
+      "name": "\"Alignment\" and \"Safety\"",
+      "source": "\u00a72.8 Case 4",
+      "flagged": false,
+      "confidence": "none",
+      "explanation": "Alignment/safety usage was accompanied by a sub-problem qualifier, or absent.",
+      "matches": []
+    },
+    "case5": {
+      "case": "case5",
+      "name": "Bidirectional Drift (AGI down / Agentic up)",
+      "source": "\u00a72.8 Case 5",
+      "flagged": false,
+      "confidence": "none",
+      "explanation": "No bidirectional-drift pattern matched.",
+      "matches": []
+    }
+  },
+  "unglossed_formal_object": {
+    "source": "not in basin_attractors_v1.md's six \u00a72.8 cases -- see module docstring",
+    "flagged": false,
+    "confidence": "none",
+    "explanation": "No unglossed private-variable equation matched, or the law-naming and self-attribution language required alongside it don't both co-occur -- all three conditions are required; see module docstring for why any one or two alone are not flagged.",
+    "unglossed_spans": [],
+    "self_titling_present": false
+  },
+  "flagged_maneuvers": [
+    "equivocation"
+  ],
+  "flagged_laundering_cases": [],
+  "density": 0.08333333333333333
+}

@@ -1,0 +1,3 @@
+pdf sha256 1b895a68b4d09fcc249104a71b94d531ee63cd3e8a0bccef19e3e0d956bdaee4
+3/4 quoted strings found in the PDF text layer
+  NOT FOUND: Convex Equilibrium Potentials for Monge-Ampere

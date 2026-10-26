@@ -1,0 +1,3 @@
+injection-profile total 13824; EXPLICIT_ERROR 71.19%, INCORRECT_OUTPUT 13.66%, INVALID_OUTPUT 4.04%, MINOR_MISTAKE 1.39%, DELAYED_RESPONSE 1.51%, SILENT_DROP 8.20%
+preregistered mapping, transport-level faults (F5a/F6a): naive 3.71%   envelope 0.00%
+same, scanner-level faults (F5b/F6b): naive 3.71%   envelope 3.71%

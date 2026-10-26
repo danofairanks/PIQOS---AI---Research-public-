@@ -1,0 +1,28 @@
+{
+  "path": "papers/drafts/benchmark_validity_readings_v1/harmbench_psychometric_audit/README.md",
+  "ok": true,
+  "gap_count": 1,
+  "severe_gap_count": 0,
+  "unattributed_quotes": [],
+  "uncited_statistics": [
+    {
+      "kind": "fraction_count",
+      "value": "80/20",
+      "start": 4258,
+      "end": 4263,
+      "context": "ingle measurable attribute in HELM Safety generalizes from 1 of 4.\n2. **Extra dimensions are not shown to be constructs** (pp.5-7). Splits are random 80/20 holdouts of individual responses, so near-twin models from one lineage are in training; extra dimensions can encode lineage or capability-tier cluste"
+    }
+  ],
+  "disclaimer": {
+    "present": true,
+    "applicable": true,
+    "word_count": 1456,
+    "min_word_count": 400,
+    "gap": false
+  },
+  "sourcing": {
+    "has_sources_statement": true,
+    "has_framework_citation": false,
+    "has_end_sourcing": true
+  }
+}

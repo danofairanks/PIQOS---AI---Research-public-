@@ -1,0 +1,39 @@
+{
+  "path": "papers/drafts/benchmark_validity_readings_v1/latent_cot_taxonomy/README.md",
+  "ok": true,
+  "gap_count": 3,
+  "severe_gap_count": 0,
+  "unattributed_quotes": [
+    {
+      "quote": " is largely tautological.** The placeholder leaf is defined by ",
+      "start": 1649,
+      "end": 1714,
+      "context": "g-answer movement, mid-chain edits. Output: a six-leaf taxonomy (carrier, empty, bare placeholder, laid-out placeholder, assembling, unstructured) with unclassified cells left out.\n\n## Flags (ranked; post-hoc)\n1. **\"Predictive rather than descriptive\" is largely tautological.** The placeholder leaf is defined by \"no replacement moves an answer\"; the prediction that placeholders stay immune to a different-answer donor at twice natural norm repeats part of the definition, since donor replacement is one of the three defining tests. Carriers are defined by deleti"
+    },
+    {
+      "quote": "; the prediction that placeholders stay immune to a different-answer donor at twice natural norm repeats part of the definition, since donor replacement is one of the three defining tests. Carriers are defined by deletion changing <= 3 answers, so ",
+      "start": 1744,
+      "end": 1994,
+      "context": "er, laid-out placeholder, assembling, unstructured) with unclassified cells left out.\n\n## Flags (ranked; post-hoc)\n1. **\"Predictive rather than descriptive\" is largely tautological.** The placeholder leaf is defined by \"no replacement moves an answer\"; the prediction that placeholders stay immune to a different-answer donor at twice natural norm repeats part of the definition, since donor replacement is one of the three defining tests. Carriers are defined by deletion changing <= 3 answers, so \"unaffected by corruption\" restates it. \"the only chain helped by donor thoughts is classified as assembling\" is one cell. A cell where use and profile disagree \"would name no leaf\", so the claim that the two readings agree wherever both resolve is pr"
+    },
+    {
+      "quote": "the only chain helped by donor thoughts is classified as assembling",
+      "start": 2033,
+      "end": 2102,
+      "context": "y immune to a different-answer donor at twice natural norm repeats part of the definition, since donor replacement is one of the three defining tests. Carriers are defined by deletion changing <= 3 answers, so \"unaffected by corruption\" restates it. \"the only chain helped by donor thoughts is classified as assembling\" is one cell. A cell where use and profile disagree \"would name no leaf\", so the claim that the two readings agree wherever both resolve is protected by the rule that leaves disagreeing cells unclassified.\n2. **Reconciliation of prior work is by assi"
+    }
+  ],
+  "uncited_statistics": [],
+  "disclaimer": {
+    "present": true,
+    "applicable": true,
+    "word_count": 1262,
+    "min_word_count": 400,
+    "gap": false
+  },
+  "sourcing": {
+    "has_sources_statement": true,
+    "has_framework_citation": false,
+    "has_end_sourcing": true
+  }
+}

@@ -1,0 +1,19 @@
+tools in sim: ['bifp_scan_text', 'bifp_scan_hardcoded_assertion_style', 'attractor_scan_text', 'rigor_cosplay_scan_text', 'hedge_dogwhistle_scan_text', 'paper_rigor_scan']
+{}
+fault                   naive      env
+F1_protocol_error       0.000    0.000
+F2_payload_error        0.000    0.000
+F3_empty_object         1.000    0.000
+F4_empty_text           0.000    0.000
+F5a_key_drift_post      0.833    0.000
+F5b_key_drift_pre       0.833    0.833
+F6a_zeroed_post         1.000    0.000
+F6b_zeroed_pre          1.000    1.000
+F7_char_corrupt         0.004    0.000
+F8_word_subst           0.000    0.000
+F9_silent_drop          0.000    0.000
+F10_truncated           0.000    0.000
+CONTROL_nofault       flagged  flagged
+profile-weighted false-clean naive 0.1752
+profile-weighted false-clean env 0.0000
+{'bifp_scan_text': 3, 'bifp_scan_hardcoded_assertion_style': 2, 'attractor_scan_text': 6, 'rigor_cosplay_scan_text': 5, 'hedge_dogwhistle_scan_text': 4, 'paper_rigor_scan': 13}

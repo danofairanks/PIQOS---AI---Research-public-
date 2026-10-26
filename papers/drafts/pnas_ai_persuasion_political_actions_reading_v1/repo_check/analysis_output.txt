@@ -1,0 +1,69 @@
+== R1 replication (processed analytic samples)
+S1 N 8000 control  25.2% (n=1684, 95% [23.2,27.4]) treated  37.8% (n=6316, 95% [36.6,39.0]) diff 12.6
+S2 N 9950 control  21.1% (n=1956, 95% [19.3,22.9]) treated  40.4% (n=7994, 95% [39.3,41.5]) diff 19.3
+== R2 direct ask (S2 raw, merged by participant id)
+processed S2 ids found in raw: 9950 of 9950
+  anticipated-regret         ask rate  81.8% (n=1015)
+  commitment-escalation      ask rate  80.2% (n=997)
+  control-antibiotics        ask rate   0.2% (n=503)
+  control-fluoridation       ask rate   0.0% (n=502)
+  control-recycling          ask rate   0.0% (n=450)
+  control-sweeteners         ask rate   0.2% (n=501)
+  emotional-activation       ask rate  91.5% (n=1008)
+  identity-labeling          ask rate  80.7% (n=984)
+  implementation-intentions  ask rate  92.7% (n=1070)
+  info-impact-efficacy       ask rate  92.4% (n=958)
+  info-issue                 ask rate  61.5% (n=950)
+  mega                       ask rate  92.7% (n=1012)
+  control overall 0.1 % ; treated overall 84.4 %
+== R3 signing by ask among treated (S2; observational, NOT randomized)
+ ask      43.6% (n=6745, 95% [42.4,44.8])
+ no ask   22.9% (n=1249, 95% [20.7,25.3])
+ control  21.1% (n=1956, 95% [19.3,22.9])
+ by n_ask_messages (treated):
+   n_ask = -1  45.3% (n=86, 95% [35.3,55.8])
+   n_ask = 0  21.2% (n=1163, 95% [19.0,23.7])
+   n_ask = 1  35.5% (n=1043, 95% [32.6,38.4])
+   n_ask = 2  46.1% (n=1989, 95% [43.9,48.2])
+   n_ask = 3  49.0% (n=2059, 95% [46.8,51.2])
+   n_ask = 4+  39.1% (n=1654, 95% [36.8,41.5])
+== R4 treatment effect on signing by prior petition support (pre agreement)
+S1
+  pre <=2  control   1.5% (n=136) treated   4.0% (n=480) diff   2.5 pp
+  pre 3    control   0.9% (n=110) treated   6.2% (n=468) diff   5.3 pp
+  pre 4    control   5.2% (n=211) treated  15.1% (n=807) diff   9.9 pp
+  pre >=5  control  33.5% (n=1227) treated  48.7% (n=4561) diff  15.2 pp
+  pre <=4  control   3.1% (n=457) treated   9.7% (n=1755) diff   6.6 pp
+  pre <=3  control   1.2% (n=246) treated   5.1% (n=948) diff   3.8 pp
+S2
+  pre <=2  control   0.7% (n=138) treated   5.8% (n=601) diff   5.1 pp
+  pre 3    control   0.0% (n=130) treated  11.3% (n=504) diff  11.3 pp
+  pre 4    control   4.7% (n=234) treated  18.4% (n=1051) diff  13.7 pp
+  pre >=5  control  27.5% (n=1454) treated  50.4% (n=5838) diff  22.9 pp
+  pre <=4  control   2.4% (n=502) treated  13.2% (n=2156) diff  10.8 pp
+  pre <=3  control   0.4% (n=268) treated   8.3% (n=1105) diff   8.0 pp
+== R5 funnel: wants_to_sign and conversion to signed
+ S1 control: wants  34.3% ; signed|wants  73.5% (n=578) ; signed overall  25.2%
+ S1 treated: wants  48.1% ; signed|wants  78.7% (n=3035) ; signed overall  37.8%
+ S2 control: wants  30.1% ; signed|wants  69.9% (n=589) ; signed overall  21.1%
+ S2 treated: wants  53.7% ; signed|wants  75.2% (n=4292) ; signed overall  40.4%
+== R6 perceived bias (ratings.biased, 0-100) among treated
+ S1: biased signers  49.2 non-signers  60.6 | opponents(<=3)  69.5 supporters(>=5)  52.8
+ S2: biased signers  59.6 non-signers  70.1 | opponents(<=3)  75.6 supporters(>=5)  63.4
+== R7 conversation length (turns) among treated, by signing
+ S1: signers 9.71 non-signers 9.73
+ S2: signers 9.62 non-signers 10.00
+== R8 signing among treated opponents (pre<=3)
+ S1:   5.1% (n=948, 95% [ 3.8, 6.6])
+ S2:   8.3% (n=1105, 95% [ 6.8,10.1])
+== R9 (added after the preregistered set; post-hoc) composition and decomposition of the headline effect
+ S1: prior supporters 72.4% of sample, others 27.7%; effect among supporters 15.2 pp, others 6.6 pp; contribution to headline: supporters 11.0 pp, others 1.8 pp (sum 12.8)
+ S2: prior supporters 73.3% of sample, others 26.7%; effect among supporters 22.9 pp, others 10.8 pp; contribution to headline: supporters 16.8 pp, others 2.9 pp (sum 19.7)
+== R10 (post-hoc) S2 treated: signing by direct ask within prior-support groups (observational)
+ opponents (<=3)    ask  10.7% (n=832, 95% [ 8.8,13.0]) | no ask   1.1% (n=273, 95% [ 0.4, 3.2]) | control   0.4% (n=268, 95% [ 0.1, 2.1])
+ neutral (4)        ask  20.0% (n=856, 95% [17.4,22.8]) | no ask  11.3% (n=195, 95% [ 7.6,16.5]) | control   4.7% (n=234, 95% [ 2.6, 8.2])
+ supporters (>=5)   ask  53.0% (n=5057, 95% [51.7,54.4]) | no ask  33.4% (n=781, 95% [30.2,36.8]) | control  27.5% (n=1454, 95% [25.3,29.9])
+== R11 (post-hoc) S2 treated: share with no ask by prior-support group (does the model ask less of opponents?)
+ opponents (<=3)    no-ask share  24.7% (n=1105); mean n_ask 2.23
+ neutral (4)        no-ask share  18.6% (n=1051); mean n_ask 2.46
+ supporters (>=5)   no-ask share  13.4% (n=5838); mean n_ask 2.47

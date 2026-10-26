@@ -1,0 +1,140 @@
+{
+  "path": "papers/drafts/research_mcp_failure_semantics_probe_v1.md",
+  "ok": true,
+  "gap_count": 17,
+  "severe_gap_count": 0,
+  "unattributed_quotes": [],
+  "uncited_statistics": [
+    {
+      "kind": "decimal_percent",
+      "value": "0.4%",
+      "start": 4454,
+      "end": 4458,
+      "context": "g\" are the same response. |\n| B1 | Under F7, F8, F10 (plus F1, F9) the naive client is falsely clean at most 5% of the time | **Held** (largest value 0.4%, under F7). |\n| B2 | Under shape-preserving faults F3, F4, F5, F6 the naive client is falsely clean at least 80% of the time | **Failed as stated.** "
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "3.71%",
+      "start": 4914,
+      "end": 4919,
+      "context": "ll text cannot read as clean. Counted as failed, not as an edited rule. |\n| B3 | Profile-weighted naive false-clean rate between 2% and 25% | **Held: 3.71%** under the preregistered mapping (section 5), carried by one mode (invalid output, 4.04% of the profile). |\n| B4 | The envelope cuts false-clean on "
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "4.04%",
+      "start": 5004,
+      "end": 5009,
+      "context": "eighted naive false-clean rate between 2% and 25% | **Held: 3.71%** under the preregistered mapping (section 5), carried by one mode (invalid output, 4.04% of the profile). |\n| B4 | The envelope cuts false-clean on F3, F4, F5 to at most 10% and leaves F6 within 30 points | **Failed as stated.** F3, F4 an"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "13,824",
+      "start": 7703,
+      "end": 7709,
+      "context": "count.\n\n**Profile weighting (B3).** The six failure modes in Table 2 of the paper are weighted by their counts over the injected persistence classes (13,824 failure threads; \"uncertain\" excluded): explicit error 71.19%, incorrect output 13.66%, invalid output 4.04%, delayed response 1.51%, silent drop 8.2"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "71.19%",
+      "start": 7765,
+      "end": 7771,
+      "context": "able 2 of the paper are weighted by their counts over the injected persistence classes (13,824 failure threads; \"uncertain\" excluded): explicit error 71.19%, incorrect output 13.66%, invalid output 4.04%, delayed response 1.51%, silent drop 8.20%, minor mistake 1.39%. These reproduce the paper's printed s"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "13.66%",
+      "start": 7790,
+      "end": 7796,
+      "context": "eighted by their counts over the injected persistence classes (13,824 failure threads; \"uncertain\" excluded): explicit error 71.19%, incorrect output 13.66%, invalid output 4.04%, delayed response 1.51%, silent drop 8.20%, minor mistake 1.39%. These reproduce the paper's printed shares (65.6% explicit-err"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "4.04%",
+      "start": 7813,
+      "end": 7818,
+      "context": " over the injected persistence classes (13,824 failure threads; \"uncertain\" excluded): explicit error 71.19%, incorrect output 13.66%, invalid output 4.04%, delayed response 1.51%, silent drop 8.20%, minor mistake 1.39%. These reproduce the paper's printed shares (65.6% explicit-error/permanent alone, 71"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "1.51%",
+      "start": 7837,
+      "end": 7842,
+      "context": "stence classes (13,824 failure threads; \"uncertain\" excluded): explicit error 71.19%, incorrect output 13.66%, invalid output 4.04%, delayed response 1.51%, silent drop 8.20%, minor mistake 1.39%. These reproduce the paper's printed shares (65.6% explicit-error/permanent alone, 71.2% all explicit errors,"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "8.20%",
+      "start": 7856,
+      "end": 7861,
+      "context": "824 failure threads; \"uncertain\" excluded): explicit error 71.19%, incorrect output 13.66%, invalid output 4.04%, delayed response 1.51%, silent drop 8.20%, minor mistake 1.39%. These reproduce the paper's printed shares (65.6% explicit-error/permanent alone, 71.2% all explicit errors, 19.1% silent conte"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "1.39%",
+      "start": 7877,
+      "end": 7882,
+      "context": "\"uncertain\" excluded): explicit error 71.19%, incorrect output 13.66%, invalid output 4.04%, delayed response 1.51%, silent drop 8.20%, minor mistake 1.39%. These reproduce the paper's printed shares (65.6% explicit-error/permanent alone, 71.2% all explicit errors, 19.1% silent content modes, 9.7% timing"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "65.6%",
+      "start": 7928,
+      "end": 7933,
+      "context": "rect output 13.66%, invalid output 4.04%, delayed response 1.51%, silent drop 8.20%, minor mistake 1.39%. These reproduce the paper's printed shares (65.6% explicit-error/permanent alone, 71.2% all explicit errors, 19.1% silent content modes, 9.7% timing modes). The preregistered mapping is explicit erro"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "71.2%",
+      "start": 7966,
+      "end": 7971,
+      "context": "4%, delayed response 1.51%, silent drop 8.20%, minor mistake 1.39%. These reproduce the paper's printed shares (65.6% explicit-error/permanent alone, 71.2% all explicit errors, 19.1% silent content modes, 9.7% timing modes). The preregistered mapping is explicit error to F1/F2, minor mistake to F7, incor"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "19.1%",
+      "start": 7993,
+      "end": 7998,
+      "context": " silent drop 8.20%, minor mistake 1.39%. These reproduce the paper's printed shares (65.6% explicit-error/permanent alone, 71.2% all explicit errors, 19.1% silent content modes, 9.7% timing modes). The preregistered mapping is explicit error to F1/F2, minor mistake to F7, incorrect output to F8, timing t"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "9.7%",
+      "start": 8021,
+      "end": 8025,
+      "context": "stake 1.39%. These reproduce the paper's printed shares (65.6% explicit-error/permanent alone, 71.2% all explicit errors, 19.1% silent content modes, 9.7% timing modes). The preregistered mapping is explicit error to F1/F2, minor mistake to F7, incorrect output to F8, timing to F9, invalid output to F5/"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "3.71%",
+      "start": 8189,
+      "end": 8194,
+      "context": ". The preregistered mapping is explicit error to F1/F2, minor mistake to F7, incorrect output to F8, timing to F9, invalid output to F5/F6. Result: **3.71%** naive false-clean (`profile_weights.py`); with the envelope, 0.00% for transport-level faults and still 3.71% for scanner-level faults.\n\n## 6. The "
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "0.00%",
+      "start": 8258,
+      "end": 8263,
+      "context": " to F7, incorrect output to F8, timing to F9, invalid output to F5/F6. Result: **3.71%** naive false-clean (`profile_weights.py`); with the envelope, 0.00% for transport-level faults and still 3.71% for scanner-level faults.\n\n## 6. The fix, and what it does and does not do\n\n- **What merged.** The cheapes"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "3.71%",
+      "start": 8301,
+      "end": 8306,
+      "context": "9, invalid output to F5/F6. Result: **3.71%** naive false-clean (`profile_weights.py`); with the envelope, 0.00% for transport-level faults and still 3.71% for scanner-level faults.\n\n## 6. The fix, and what it does and does not do\n\n- **What merged.** The cheapest piece, a server-side guard that returns t"
+    }
+  ],
+  "disclaimer": {
+    "present": true,
+    "applicable": true,
+    "word_count": 1902,
+    "min_word_count": 400,
+    "gap": false
+  },
+  "sourcing": {
+    "has_sources_statement": true,
+    "has_framework_citation": false,
+    "has_end_sourcing": true
+  }
+}

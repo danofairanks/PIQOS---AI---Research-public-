@@ -1,0 +1,7 @@
+pdf sha256 d329c1a5dfd6ff3a6820f083ee39196f1caf84be4111af46c1cd0e4e5dbd57ba MATCH
+Part A: 20/20 Table 2 rows match the transcription
+Part B: 25/25 quoted strings and printed counts found
+Part C: re-audit of half of each agent's runs = 40 trajectories -> 80 main runs; 4 agents x 20 benchmarks = 80: consistent
+Part C: 3 auditors x 40 trajectories = 120 audit reports
+Part D: keyword counts for terms the draft says are absent: {'placebo': 0, 'per-skill': 0, 'skill ablation': 0, 'held-out benchmark': 0, 'expert rat': 0, 'human rat': 0, 'inter-rater': 0, 'Cohen': 0}
+Part D: 'ablat' occurs 2 times (the HPO-only ablation, Table 6); 'word cloud' occurs 1 time(s)
