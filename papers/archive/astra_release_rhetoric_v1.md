@@ -1,3 +1,5 @@
+> **Archived 2026-10-26.** Held since filing; no primary source was reached, so nothing in it could be checked. Moved from `drafts/`; content below is unchanged.
+
 # Astra Release Rhetoric: A Held Draft Pending Primary-Source Access
 
 **Status: HELD.** A lower-commitment tier than most entries in this

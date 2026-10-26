@@ -1,3 +1,5 @@
+> **Archived 2026-10-26.** A candidate mechanism never built; stale as a staged draft. Moved from `drafts/`; content below is unchanged.
+
 # Bundled-Stakes Portfolio Defense: A Candidate Mechanism, Not Yet Built
 
 *Status: CANDIDATE. Filed 2026-08-19, extended same day. Authors: operator
