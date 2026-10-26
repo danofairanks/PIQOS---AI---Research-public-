@@ -1,6 +1,6 @@
 # Where Does the Gate Sit? Preregistered Predictions for a Gate Audit of Eight Self-Improvement Papers
 
-**Draft v1 for review. Not peer reviewed; may be revised or withdrawn.**
+**v1 — filed 2026-10-08; promoted to published 2026-10-26. Not peer reviewed.**
 
 **Scope of naming.** The objects examined are eight published or preprinted research papers on self-improving AI agents, named by title and, where the source collection gives one, arXiv identifier. No individual is characterised; the predictions concern what the papers' designs and reports contain. The papers were chosen from a public curated collection ("Self-Improving Agents", DAIR.AI Academy, saved 2026-10-08), which is a secondary source.
 
