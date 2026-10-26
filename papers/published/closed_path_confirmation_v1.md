@@ -1,6 +1,6 @@
 # Closed-Path Confirmation: When a Governance Artifact's Own Test Suite Is Not Evidence of Binding
 
-*v1 — filed 2026-08-31. Authors: operator + Claude (Sonnet 5).*
+*v1 — filed 2026-08-31; promoted to published 2026-10-26. Authors: operator + Claude (Sonnet 5).*
 
 ---
 

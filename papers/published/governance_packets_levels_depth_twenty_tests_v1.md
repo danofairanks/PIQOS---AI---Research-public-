@@ -1,6 +1,6 @@
 # Governance Packets: Levels, Depth, and Twenty Tests for Adopters
 
-**Draft v1 for review. Not peer reviewed; may be revised or withdrawn.**
+**v1 — filed 2026-10-03; promoted to published 2026-10-26. Not peer reviewed.**
 
 **Scope of naming.** Pattern-level. No case, specimen, repository or product that is the subject of a pattern is identified, and no party that is small, recent (under about a year old) or without a public amplified position is named. Published works and established organizations are cited by name.
 Internal evidence exists and is available to serious inquiries at proof time.

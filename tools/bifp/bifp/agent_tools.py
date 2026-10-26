@@ -163,7 +163,7 @@ def bifp_generate_report(audit_path: str) -> dict:
 
 
 # --- Closed-path / open-path evidence ledger ------------------------------
-# Operationalizes papers/drafts/closed_path_confirmation_v1.md §2's
+# Operationalizes papers/published/closed_path_confirmation_v1.md §2's
 # defeat condition. See closed_path.py's module docstring. Generic by
 # construction -- `artifact_label` is caller-supplied free text; this
 # module never inspects or stores anything beyond what's explicitly
