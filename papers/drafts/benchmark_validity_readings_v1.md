@@ -47,7 +47,7 @@ The number of flags in a reading is not a severity ranking. `raw_rag_agentic_mem
 
 ## 7. Related, and one reading not included
 
-Related public drafts: `validation_that_can_fail_v1.md` (published), `two_closed_paths_mutual_audit_v1.md`, `scientisttwo_release_reading_v1.md`, `jagged_judges_meta_protocol_grounding_v1.md` (published). `research_mcp_failure_semantics_probe_v1.md` follows up one finding of `mcp_injector_fault_tolerance/` on this repository's own server.
+Related public drafts: `validation_that_can_fail_v1.md` (published), `two_closed_paths_mutual_audit_v1.md`, `scientisttwo_release_reading_v1.md`, `jagged_judges_meta_protocol_grounding_v2.md` (published). `research_mcp_failure_semantics_probe_v1.md` follows up one finding of `mcp_injector_fault_tolerance/` on this repository's own server.
 
 A reading of a working paper that compares AI and human peer reviews is held back: the copy read has no stable public address, and its supplementary appendix, which several findings depend on, was not in that copy. A reading nobody can check against the source does not meet this series' own bar.
 

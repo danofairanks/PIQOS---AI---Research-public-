@@ -1,5 +1,7 @@
 # External Grounding for §3.9's AI-as-Judge Exclusion: The Jagged Judges Findings
 
+*Edited in place 2026-10-26, by exception to this project's no-silent-edit convention: one clause removed from the sourcing paragraph (a file path in a non-public repository). Nothing else changed. v2 carries the same text and is the version to cite.*
+
 *Status: PUBLISHED COMPANION ADDENDUM. Filed 2026-08-18; promoted to published 2026-10-26. Authors: operator + Claude (Sonnet 5).
 External grounding for `basin_attractors_v1.md` §3.9 (Meta-Protocol:
 Substrate Independence). `basin_attractors_v2.md` and later carry a short
@@ -367,8 +369,7 @@ representative sample spanning the abstract, full contents, introduction,
 proof overview, and the opening definitions/lemmas of the preliminaries
 section). This is the actual document `formalization.yaml`'s review
 notes reference ("the proof strategy outlined in the blueprint underwent
-multiple revisions"), filed to `papers/inbox/bounded_gaps_between_
-primes_lean_blueprint_axiommath_2026.pdf` in the private companion repo.
+multiple revisions").
 
 **The specimen.** PrimeGapsLib (`github.com/AxiomMath/PrimeGapsLib`),
 maintained by Axiom Math — a Lean 4 formal-verification library proving

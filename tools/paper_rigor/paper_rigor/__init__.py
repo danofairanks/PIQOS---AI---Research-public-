@@ -2,7 +2,7 @@
 falsifiability, self-citation ratio, formal-vs-informal citation mix,
 uncited empirical-certainty claims, credential-substituted-for-evidence
 claims, unsupported consensus claims, and a missing limitations
-section -- none of it tied to this project's own Law 0 vocabulary,
+section -- none of it tied to this project's own vocabulary,
 unlike `bifp` (bound to basin_attractors_v1.md's BIFP protocol) and
 `attractor_scan` (bound to that paper's named maneuver/laundering
 taxonomy). Applies to any paper.

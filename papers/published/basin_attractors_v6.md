@@ -5,7 +5,7 @@
 *Version note: v2 adds one citation to §3.9 (external grounding for the
 "no AI-as-judge for claims about AI" Meta-Protocol clause, plus a live
 non-toy instance of the mechanism outside AI-claim adjudication — full
-detail in the companion draft `jagged_judges_meta_protocol_grounding_v1.md`).
+detail in the companion draft `jagged_judges_meta_protocol_grounding_v2.md`).
 v3 adds one dated counter-evidence paragraph each to §2.1 (Attractor 1) and
 §2.3 (Attractor 3), citing Long-Horizon-Terminal-Bench (Tencent Hunyuan,
 arXiv:2607.08964, July 2026) — a primary-source, quantified benchmark of 17
@@ -578,7 +578,7 @@ which candidate findings survive to human review via an LLM Critic/Defender
 exchange "mimicking expert peer review" — the same class of mechanism, in a
 real scientific pipeline, with its own verdict-stability under sustained
 pressure untested by that paper. Full detail:
-`jagged_judges_meta_protocol_grounding_v1.md`.
+`jagged_judges_meta_protocol_grounding_v2.md`.
 
 ### 3.10 Semantic Hygiene Amendment
 
