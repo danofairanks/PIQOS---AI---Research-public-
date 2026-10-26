@@ -1,0 +1,315 @@
+{
+  "path": "papers/drafts/pnas_ai_persuasion_political_actions_reading_v1.md",
+  "ok": true,
+  "gap_count": 42,
+  "severe_gap_count": 0,
+  "unattributed_quotes": [],
+  "uncited_statistics": [
+    {
+      "kind": "large_comma_count",
+      "value": "8,000",
+      "start": 1357,
+      "end": 1362,
+      "context": "e; section 2 states exactly what could and could not be re-checked.\n\n## 1. The question\n\nTwo preregistered experiments on an online panel (UK adults; 8,000 and 9,950 analysed) had chatbots try to persuade people to sign a real petition and give money to its sponsoring charity, against a control chat abou"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "9,950",
+      "start": 1367,
+      "end": 1372,
+      "context": " 2 states exactly what could and could not be re-checked.\n\n## 1. The question\n\nTwo preregistered experiments on an online panel (UK adults; 8,000 and 9,950 analysed) had chatbots try to persuade people to sign a real petition and give money to its sponsoring charity, against a control chat about a neutra"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "8,412",
+      "start": 2487,
+      "end": 2492,
+      "context": "was fetched on 2026-10-26 and its text layer searched (`paper_checks.py`). Everything the preprint shares with the article is E1 today: sample flows (8,412 - 339 - 73 = 8,000; 10,317 - 301 - 66 = 9,950), the two headline effects, the printed condition-level correlations and their p-values, the Wald test,"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "8,000",
+      "start": 2506,
+      "end": 2511,
+      "context": "-10-26 and its text layer searched (`paper_checks.py`). Everything the preprint shares with the article is E1 today: sample flows (8,412 - 339 - 73 = 8,000; 10,317 - 301 - 66 = 9,950), the two headline effects, the printed condition-level correlations and their p-values, the Wald test, the preregistratio"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "10,317",
+      "start": 2513,
+      "end": 2519,
+      "context": "and its text layer searched (`paper_checks.py`). Everything the preprint shares with the article is E1 today: sample flows (8,412 - 339 - 73 = 8,000; 10,317 - 301 - 66 = 9,950), the two headline effects, the printed condition-level correlations and their p-values, the Wald test, the preregistration statem"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "9,950",
+      "start": 2533,
+      "end": 2538,
+      "context": "earched (`paper_checks.py`). Everything the preprint shares with the article is E1 today: sample flows (8,412 - 339 - 73 = 8,000; 10,317 - 301 - 66 = 9,950), the two headline effects, the printed condition-level correlations and their p-values, the Wald test, the preregistration statement, and the quoted"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "37.8%",
+      "start": 3511,
+      "end": 3516,
+      "context": " article** (these strings are not in the preprint and could not be re-checked): the control signing rates of 25.2% and 21.1% and the treated rates of 37.8% and 40.4% as printed in the article (the public data give the same figures, section 6); the information strategy's standardised effects of +0.19 SD o"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "40.4%",
+      "start": 3521,
+      "end": 3526,
+      "context": " (these strings are not in the preprint and could not be re-checked): the control signing rates of 25.2% and 21.1% and the treated rates of 37.8% and 40.4% as printed in the article (the public data give the same figures, section 6); the information strategy's standardised effects of +0.19 SD on attitude"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "61.5%",
+      "start": 3971,
+      "end": 3976,
+      "context": "ion strategy asked least; the sentence on limited scalability outside a paid survey; and the article's \"62 to 94%\" range for ask rates (the data give 61.5% to 92.7%). Findings 3 and 5, and the information-strategy part of finding 1, depend on them.\n- Evidence classes: **E1** executed (`checks.py` on numb"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "92.7%",
+      "start": 3980,
+      "end": 3985,
+      "context": "egy asked least; the sentence on limited scalability outside a paid survey; and the article's \"62 to 94%\" range for ask rates (the data give 61.5% to 92.7%). Findings 3 and 5, and the information-strategy part of finding 1, depend on them.\n- Evidence classes: **E1** executed (`checks.py` on numbers print"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "17,950",
+      "start": 6026,
+      "end": 6032,
+      "context": "Held.** Paid-survey attention, \"relatively low\" cost behaviours, money from an endowed bonus. |\n| P6 | Repeat participation handled | **Not scored.** 17,950 responses from 14,779 people (3,171 implied repeats); the main text does not say how the two studies were de-duplicated or clustered. |\n| P7 | Opt-in"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "14,779",
+      "start": 6048,
+      "end": 6054,
+      "context": "tention, \"relatively low\" cost behaviours, money from an endowed bonus. |\n| P6 | Repeat participation handled | **Not scored.** 17,950 responses from 14,779 people (3,171 implied repeats); the main text does not say how the two studies were de-duplicated or clustered. |\n| P7 | Opt-in panel, in-session beh"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "3,171",
+      "start": 6063,
+      "end": 6068,
+      "context": "ively low\" cost behaviours, money from an endowed bonus. |\n| P6 | Repeat participation handled | **Not scored.** 17,950 responses from 14,779 people (3,171 implied repeats); the main text does not say how the two studies were de-duplicated or clustered. |\n| P7 | Opt-in panel, in-session behaviour | **Hel"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "0.1%",
+      "start": 8409,
+      "end": 8413,
+      "context": "ver asks; the treatment almost always does (U).** In the public data (section 6, R2) the control conversations contain an explicit request to sign in 0.1% of cases and treated conversations in 84.4%, from 61.5% to 92.7% by strategy. The article is read as saying that \"the act of being asked\" drives beha"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "84.4%",
+      "start": 8452,
+      "end": 8457,
+      "context": "(U).** In the public data (section 6, R2) the control conversations contain an explicit request to sign in 0.1% of cases and treated conversations in 84.4%, from 61.5% to 92.7% by strategy. The article is read as saying that \"the act of being asked\" drives behaviour more than message framing, and that th"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "61.5%",
+      "start": 8464,
+      "end": 8469,
+      "context": "e public data (section 6, R2) the control conversations contain an explicit request to sign in 0.1% of cases and treated conversations in 84.4%, from 61.5% to 92.7% by strategy. The article is read as saying that \"the act of being asked\" drives behaviour more than message framing, and that the informatio"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "92.7%",
+      "start": 8473,
+      "end": 8478,
+      "context": "data (section 6, R2) the control conversations contain an explicit request to sign in 0.1% of cases and treated conversations in 84.4%, from 61.5% to 92.7% by strategy. The article is read as saying that \"the act of being asked\" drives behaviour more than message framing, and that the information strateg"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "25.2%",
+      "start": 9684,
+      "end": 9689,
+      "context": "atively narrow range\".\n5. **The baseline is high and the setting is a paid survey (E1 from the data; U for the paper's wording).** Control signing is 25.2% and 21.1% (public data, R1), inside a paid study. The article is read as noting limited scalability outside a paid survey and as comparing with canva"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "21.1%",
+      "start": 9694,
+      "end": 9699,
+      "context": "rrow range\".\n5. **The baseline is high and the setting is a paid survey (E1 from the data; U for the paper's wording).** Control signing is 25.2% and 21.1% (public data, R1), inside a paid study. The article is read as noting limited scalability outside a paid survey and as comparing with canvassing and "
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "4.03%",
+      "start": 10244,
+      "end": 10249,
+      "context": " is +12.8. Both are stated in the body. Disclosed; not counted as a mismatch.\n7. **Arithmetic that holds (E1; V).** Sample flows reconcile (attrition 4.03% and 2.92%); the printed p-values for the correlations recompute (for example r = 0.05, n = 15, p = 0.86 against 0.85; r = 0.18, n = 8, p = 0.67 again"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "2.92%",
+      "start": 10254,
+      "end": 10259,
+      "context": " Both are stated in the body. Disclosed; not counted as a mismatch.\n7. **Arithmetic that holds (E1; V).** Sample flows reconcile (attrition 4.03% and 2.92%); the printed p-values for the correlations recompute (for example r = 0.05, n = 15, p = 0.86 against 0.85; r = 0.18, n = 8, p = 0.67 against 0.68); "
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "25.2%",
+      "start": 11470,
+      "end": 11475,
+      "context": "he model was instructed to persuade. Nothing here bears on other populations or intents.\n- **R1 to R8: 7 held, 1 partial, 0 missed.** Replication (S1 25.2% against 37.8%, diff 12.6; S2 21.1% against 40.4%, diff 19.3). Control ask rate 0.1%, treated 84.4%, 61.5% (information-issue, lowest) to 92.7% (Mega,"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "37.8%",
+      "start": 11484,
+      "end": 11489,
+      "context": "nstructed to persuade. Nothing here bears on other populations or intents.\n- **R1 to R8: 7 held, 1 partial, 0 missed.** Replication (S1 25.2% against 37.8%, diff 12.6; S2 21.1% against 40.4%, diff 19.3). Control ask rate 0.1%, treated 84.4%, 61.5% (information-issue, lowest) to 92.7% (Mega, implementatio"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "21.1%",
+      "start": 11505,
+      "end": 11510,
+      "context": ". Nothing here bears on other populations or intents.\n- **R1 to R8: 7 held, 1 partial, 0 missed.** Replication (S1 25.2% against 37.8%, diff 12.6; S2 21.1% against 40.4%, diff 19.3). Control ask rate 0.1%, treated 84.4%, 61.5% (information-issue, lowest) to 92.7% (Mega, implementation intentions); the ar"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "40.4%",
+      "start": 11519,
+      "end": 11524,
+      "context": " bears on other populations or intents.\n- **R1 to R8: 7 held, 1 partial, 0 missed.** Replication (S1 25.2% against 37.8%, diff 12.6; S2 21.1% against 40.4%, diff 19.3). Control ask rate 0.1%, treated 84.4%, 61.5% (information-issue, lowest) to 92.7% (Mega, implementation intentions); the article says 62 "
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "0.1%",
+      "start": 11555,
+      "end": 11559,
+      "context": "ts.\n- **R1 to R8: 7 held, 1 partial, 0 missed.** Replication (S1 25.2% against 37.8%, diff 12.6; S2 21.1% against 40.4%, diff 19.3). Control ask rate 0.1%, treated 84.4%, 61.5% (information-issue, lowest) to 92.7% (Mega, implementation intentions); the article says 62 to 94%. Among treated in Study 2, a"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "84.4%",
+      "start": 11569,
+      "end": 11574,
+      "context": "R8: 7 held, 1 partial, 0 missed.** Replication (S1 25.2% against 37.8%, diff 12.6; S2 21.1% against 40.4%, diff 19.3). Control ask rate 0.1%, treated 84.4%, 61.5% (information-issue, lowest) to 92.7% (Mega, implementation intentions); the article says 62 to 94%. Among treated in Study 2, ask against no a"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "61.5%",
+      "start": 11576,
+      "end": 11581,
+      "context": "eld, 1 partial, 0 missed.** Replication (S1 25.2% against 37.8%, diff 12.6; S2 21.1% against 40.4%, diff 19.3). Control ask rate 0.1%, treated 84.4%, 61.5% (information-issue, lowest) to 92.7% (Mega, implementation intentions); the article says 62 to 94%. Among treated in Study 2, ask against no ask: 43."
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "92.7%",
+      "start": 11613,
+      "end": 11618,
+      "context": "on (S1 25.2% against 37.8%, diff 12.6; S2 21.1% against 40.4%, diff 19.3). Control ask rate 0.1%, treated 84.4%, 61.5% (information-issue, lowest) to 92.7% (Mega, implementation intentions); the article says 62 to 94%. Among treated in Study 2, ask against no ask: 43.6% against 22.9%, but the no-ask trea"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "43.6%",
+      "start": 11728,
+      "end": 11733,
+      "context": ".5% (information-issue, lowest) to 92.7% (Mega, implementation intentions); the article says 62 to 94%. Among treated in Study 2, ask against no ask: 43.6% against 22.9%, but the no-ask treated were **not** above control (22.9% [20.7, 25.3] against 21.1% [19.3, 22.9]), the one preregistered miss inside R"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "22.9%",
+      "start": 11742,
+      "end": 11747,
+      "context": "on-issue, lowest) to 92.7% (Mega, implementation intentions); the article says 62 to 94%. Among treated in Study 2, ask against no ask: 43.6% against 22.9%, but the no-ask treated were **not** above control (22.9% [20.7, 25.3] against 21.1% [19.3, 22.9]), the one preregistered miss inside R3. By number o"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "22.9%",
+      "start": 11800,
+      "end": 11805,
+      "context": "s); the article says 62 to 94%. Among treated in Study 2, ask against no ask: 43.6% against 22.9%, but the no-ask treated were **not** above control (22.9% [20.7, 25.3] against 21.1% [19.3, 22.9]), the one preregistered miss inside R3. By number of asks: 0: 21.2%, 1: 35.5%, 2: 46.1%, 3: 49.0%, 4 or more:"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "21.1%",
+      "start": 11827,
+      "end": 11832,
+      "context": "94%. Among treated in Study 2, ask against no ask: 43.6% against 22.9%, but the no-ask treated were **not** above control (22.9% [20.7, 25.3] against 21.1% [19.3, 22.9]), the one preregistered miss inside R3. By number of asks: 0: 21.2%, 1: 35.5%, 2: 46.1%, 3: 49.0%, 4 or more: 39.1%. Effect among prior "
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "21.2%",
+      "start": 11908,
+      "end": 11913,
+      "context": "o-ask treated were **not** above control (22.9% [20.7, 25.3] against 21.1% [19.3, 22.9]), the one preregistered miss inside R3. By number of asks: 0: 21.2%, 1: 35.5%, 2: 46.1%, 3: 49.0%, 4 or more: 39.1%. Effect among prior supporters against others: 15.2 against 6.6 pp (S1), 22.9 against 10.8 (S2); stro"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "35.5%",
+      "start": 11918,
+      "end": 11923,
+      "context": "ted were **not** above control (22.9% [20.7, 25.3] against 21.1% [19.3, 22.9]), the one preregistered miss inside R3. By number of asks: 0: 21.2%, 1: 35.5%, 2: 46.1%, 3: 49.0%, 4 or more: 39.1%. Effect among prior supporters against others: 15.2 against 6.6 pp (S1), 22.9 against 10.8 (S2); strong opponen"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "46.1%",
+      "start": 11928,
+      "end": 11933,
+      "context": "*not** above control (22.9% [20.7, 25.3] against 21.1% [19.3, 22.9]), the one preregistered miss inside R3. By number of asks: 0: 21.2%, 1: 35.5%, 2: 46.1%, 3: 49.0%, 4 or more: 39.1%. Effect among prior supporters against others: 15.2 against 6.6 pp (S1), 22.9 against 10.8 (S2); strong opponents 2.5 and"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "49.0%",
+      "start": 11938,
+      "end": 11943,
+      "context": "ve control (22.9% [20.7, 25.3] against 21.1% [19.3, 22.9]), the one preregistered miss inside R3. By number of asks: 0: 21.2%, 1: 35.5%, 2: 46.1%, 3: 49.0%, 4 or more: 39.1%. Effect among prior supporters against others: 15.2 against 6.6 pp (S1), 22.9 against 10.8 (S2); strong opponents 2.5 and 5.1. Sign"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "39.1%",
+      "start": 11956,
+      "end": 11961,
+      "context": "[20.7, 25.3] against 21.1% [19.3, 22.9]), the one preregistered miss inside R3. By number of asks: 0: 21.2%, 1: 35.5%, 2: 46.1%, 3: 49.0%, 4 or more: 39.1%. Effect among prior supporters against others: 15.2 against 6.6 pp (S1), 22.9 against 10.8 (S2); strong opponents 2.5 and 5.1. Signed given wants-to-"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "72.4%",
+      "start": 12324,
+      "end": 12329,
+      "context": "75.2); the effect sits in \"wants to sign\". Perceived bias is higher among non-signers and opponents.\n- **Post hoc (R9 to R11).** Prior supporters are 72.4% and 73.3% of the sample and contribute 11.0 of 12.8 pp (86%) and 16.8 of 19.7 pp (85%). Without an ask the uplift over control is about zero for oppo"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "73.3%",
+      "start": 12334,
+      "end": 12339,
+      "context": " effect sits in \"wants to sign\". Perceived bias is higher among non-signers and opponents.\n- **Post hoc (R9 to R11).** Prior supporters are 72.4% and 73.3% of the sample and contribute 11.0 of 12.8 pp (86%) and 16.8 of 19.7 pp (85%). Without an ask the uplift over control is about zero for opponents and "
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "24.7%",
+      "start": 12572,
+      "end": 12577,
+      "context": "out an ask the uplift over control is about zero for opponents and 6 to 7 pp for neutral and supporters. The model asked opponents less (no-ask share 24.7% against 13.4% for supporters), so whether an ask occurs is partly a function of the user's stance, not randomised.\n\n**Reading (E3).** About 85% of th"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "13.4%",
+      "start": 12586,
+      "end": 12591,
+      "context": " uplift over control is about zero for opponents and 6 to 7 pp for neutral and supporters. The model asked opponents less (no-ask share 24.7% against 13.4% for supporters), so whether an ask occurs is partly a function of the user's stance, not randomised.\n\n**Reading (E3).** About 85% of the headline com"
+    }
+  ],
+  "disclaimer": {
+    "present": true,
+    "applicable": true,
+    "word_count": 2462,
+    "min_word_count": 400,
+    "gap": false
+  },
+  "sourcing": {
+    "has_sources_statement": true,
+    "has_framework_citation": false,
+    "has_end_sourcing": true
+  }
+}

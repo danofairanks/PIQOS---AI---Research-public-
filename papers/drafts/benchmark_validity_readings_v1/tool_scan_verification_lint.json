@@ -1,0 +1,28 @@
+{
+  "path": "papers/drafts/benchmark_validity_readings_v1.md",
+  "ok": true,
+  "gap_count": 1,
+  "severe_gap_count": 0,
+  "unattributed_quotes": [],
+  "uncited_statistics": [
+    {
+      "kind": "decimal_percent",
+      "value": "91.9%",
+      "start": 4003,
+      "end": 4008,
+      "context": "uracy/error intervals) | Interval holds on a constructed dataset set by a chosen metric and quantile threshold, not on the data; CIFAR-10 upper limit 91.9% is a metric artifact; admissible-set assumption untestable; theory is standard identities; interval width is 2x by construction |\n| [`pairwise_differ"
+    }
+  ],
+  "disclaimer": {
+    "present": true,
+    "applicable": true,
+    "word_count": 1574,
+    "min_word_count": 400,
+    "gap": false
+  },
+  "sourcing": {
+    "has_sources_statement": true,
+    "has_framework_citation": false,
+    "has_end_sourcing": true
+  }
+}

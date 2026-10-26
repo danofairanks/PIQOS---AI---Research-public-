@@ -1,0 +1,19 @@
+C1 parameter counts (Table 1)
+  1D 2PL  : 2*398+81 = 877 (reported 877)
+  conf 3D : 2*398+3*81 = 1039 (reported 1,039)
+  conf 7D : 2*398+7*81 = 1363 (reported 1,363)
+  expl d=2: 2*877 = 1754 (reported 1,754); d=10: 10*877 = 8770 (reported 8,770)
+C2 held-out log-loss gaps (mean across 5 splits; SDs 0.003-0.007)
+  1D 3PL - conf 3D = 0.064 (reported 0.064)
+  1D 3PL - expl 2D = 0.035; 1D 2PL - expl 2D = 0.183
+  1D 2PL is worse than 1D 1PL by 0.140 although it has more parameters (877 vs 479):
+    the '1 -> 2 dimensions improves sharply' headline in the text uses the poorly fitting 1D 2PL; the paper's own comparator is the 1D 3PL
+C3 pool composition (Section 3.2, Table 4)
+  OpenAI+Anthropic = 21+11 = 32 of 81 models (40%); closed+open = 48+33 = 81
+  raw means: OpenAI .866, Anthropic .889 vs pool pass rate .67 -> both DIF groups sit at the top
+  expected failures per model at those means: 53 (OpenAI), 44 (Anthropic) of 398 items
+  closed .776 vs open .507, yet 0 DIF flags in every scope
+C4 DIF flag counts (Table 2): single score 13 (MH) / 17 (logit) of 398; 3D scopes 1 / 2; 7D scopes 2+0.. / cyber 2 MH 4 logit
+  13/398 = 3.3%, 17/398 = 4.3% (family-wise cutoff from a fitted 1D no-DIF simulation)
+C5 follow-up without copyright (Section 4): 2D vs 1D 2PL log-loss .278 vs .293, paired reduction .0149 (SD .0043) over 295-298 items
+  reduction / SD = 3.5 (5 splits; splits share models, so the SD is not an independent-sample error)

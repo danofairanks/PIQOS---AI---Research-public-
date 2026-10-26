@@ -1,0 +1,13 @@
+responses 28x6090: 170520 | pipeline sum: 170520 | score sum: 170520
+rules+human: 132940 (printed 132,940)
+Table 3 rows sum: 132940
+incorrect rows (score 0) in rule+human: 73940 | hallucinated share of those: 43.5 % (paper headline: 24.19% of ALL rule+human responses)
+EM share of all: 16.45 % (printed 16.45) | EM share of correct: 53.1 % => misses 46.9 % (printed ~47%)
+accuracy printed-denominator (scored only): 31.51 %
+accuracy bound if the 1.78% unscored were all wrong / all right: 30.95 to 32.73
+translation: +10.3pp of gap (69-22.1) = 22.0 % (printed 'about a fifth')
+hardest-group community Buginese (IDN): writers=1, evaluators=1
+hardest-group community Lumasaba (UGA): writers=1, evaluators=1
+hardest-group community Mongondow (IDN): writers=1, evaluators=1
+hardest-group community Luganda (UGA): writers=1, evaluators=1
+printed totals: 167 writers, 109 evaluators; 19 communities have a second annotator (H2) out of 57 human-evaluated

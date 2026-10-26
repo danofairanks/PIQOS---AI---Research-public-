@@ -1,0 +1,60 @@
+preprint sha256 4d97c742e00de679e641cd1e712d5dc87be02a1a4a6908e8464a2b57c519b17d
+
+[sample flows (finding 7)]
+  FOUND      '8,412'  (x1)
+  FOUND      '339'  (x1)
+  FOUND      '73 failed the attention check'  (x1)
+  FOUND      '10,317'  (x1)
+  FOUND      '301'  (x1)
+  FOUND      '66 failed the attention check'  (x1)
+  FOUND      '14,779'  (x2)
+  FOUND      '17,950'  (x2)
+  FOUND      '8,000'  (x3)
+  FOUND      '9,950'  (x2)
+
+[headline effects (findings 4, 6)]
+  FOUND      '12.8'  (x1)
+  FOUND      '+19.7 percentage points on petition signing'  (x1)
+  FOUND      '16.2 to +23.7'  (x1)
+  FOUND      '7.5pp range'  (x1)
+
+[condition-level correlations (findings 1, 2)]
+  FOUND      'r = 0.05, p = 0.85'  (x2)
+  FOUND      'r = 0.18, p = 0.68'  (x2)
+  FOUND      'r = 0.87'  (x2)
+  FOUND      'r = −0.15, p = 0.59'  (x2)
+  FOUND      'r = −0.16, p = 0.70'  (x2)
+  FOUND      'r = 0.44, p = 0.10'  (x1)
+  FOUND      'r = 0.63, p = 0.10'  (x1)
+  FOUND      'Study 1 (15 conditions)'  (x2)
+  FOUND      '(8 strategies)'  (x2)
+
+[wording the draft quotes (findings 1, 4)]
+  FOUND      'we observed no evidence of a correlation'  (x1)
+  FOUND      'AI persuasion effects on attitudes and behaviour are uncorrelated'  (x1)
+  FOUND      'effects on petition support spanned an order of magnitude'  (x1)
+  FOUND      'relatively narrow range'  (x1)
+  FOUND      'Wald χ2 (7) = 22.42, p = .002'  (x1)
+  FOUND      'relatively low'  (x1)
+
+[design and reporting (findings 5, 7)]
+  FOUND      'Study 1 was preregistered on AsPredicted; Study 2 on the Open Science Framework'  (x1)
+  FOUND      'Benjamini–Hochberg'  (x1)
+  FOUND      'fluoride, recycling, antibiotics, or artificial sweeteners'  (x1)
+  FOUND      '£12'  (x1)
+  FOUND      'Stop Rising Child Poverty'  (x2)
+
+[expected absent from the preprint (published-version or SI content)]
+  NOT FOUND  '+0.19'
+  NOT FOUND  '−0.04'
+  NOT FOUND  '25.2'
+  NOT FOUND  '21.1'
+  NOT FOUND  '37.8'
+  NOT FOUND  '40.4'
+  NOT FOUND  '39.2'
+  NOT FOUND  '33.4'
+  NOT FOUND  '0.1%'
+  NOT FOUND  '62 to 94'
+  NOT FOUND  'act of being asked'
+  NOT FOUND  'scalab'
+  NOT FOUND  'demand effect'

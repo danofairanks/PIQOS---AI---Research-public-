@@ -1,0 +1,27 @@
+Tool 'attractor_scan_corpus' rejected arguments: ['documents.0', 'documents.1']
+Tool 'hedge_dogwhistle_scan_corpus' rejected arguments: ['documents.0']
+Tool 'rigor_cosplay_scan_corpus' rejected arguments: ['documents.0']
+Tool 'attractor_scan_text' rejected arguments: ['text']
+Tool 'attractor_scan_text' rejected arguments: ['text']
+Tool 'attractor_scan_text' rejected arguments: ['text']
+Tool 'no_such_tool' failed: 'Unknown tool: no_such_tool'
+paper_rigor_scan flagged dict {'path': '<text>', 'ok': False, 'structural_gap_count': 1, 'total_gap_count': 3}
+paper_rigor_scan clean dict {'path': '<text>', 'ok': True, 'structural_gap_count': 0, 'total_gap_count': 0}
+paper_rigor_scan empty dict {'path': '<text>', 'ok': True, 'structural_gap_count': 0, 'total_gap_count': 0}
+debasinizer flagged {'register_flagged': False, 'self_coherence_flagged': False, 'any_flagged': False}
+debasinizer clean {'register_flagged': False, 'self_coherence_flagged': False, 'any_flagged': False}
+--- other shapes
+bifp_list_phases dict {"core_axiom": "A claim is not evaluated by the coherence of the story that can still be told around it. It is evaluated by whether a pre-registered, externally anchored reference has been met or viol
+attractor_scan_corpus PROTOCOL_ERROR "[TextContent(type='text', text=\"Error executing tool attractor_scan_corpus: 2 validation errors for attractor_scan_corpusArguments\\ndocuments.0\\n  Input should "
+debasinizer_scan_corpus dict {"n_documents": 0, "register_flagged_count": 0, "register_flagged_frequency": 0.0, "self_coherence_flagged_count": 0, "self_coherence_flagged_frequency": 0.0, "resonance_category_document_counts": {}}
+hedge_dogwhistle_scan_corpus PROTOCOL_ERROR "[TextContent(type='text', text=\"Error executing tool hedge_dogwhistle_scan_corpus: 1 validation error for hedge_dogwhistle_scan_corpusArguments\\ndocuments.0\\n  "
+rigor_cosplay_scan_corpus PROTOCOL_ERROR "[TextContent(type='text', text=\"Error executing tool rigor_cosplay_scan_corpus: 1 validation error for rigor_cosplay_scan_corpusArguments\\ndocuments.0\\n  Input "
+--- error probes
+attractor_scan_text {} PROTOCOL_ERROR "[TextContent(type='text', text='Error executing tool attractor_scan_text: 1 validation error for attractor_scan_textArguments\\ntext\\n  Field required [type=miss"
+attractor_scan_text {'text': 123} PROTOCOL_ERROR "[TextContent(type='text', text='Error executing tool attractor_scan_text: 1 validation error for attractor_scan_textArguments\\ntext\\n  Input should be a valid s"
+attractor_scan_text {'text': None} PROTOCOL_ERROR "[TextContent(type='text', text='Error executing tool attractor_scan_text: 1 validation error for attractor_scan_textArguments\\ntext\\n  Input should be a valid s"
+bifp_get_status {'audit_path': '/nonexistent/x.json'} dict {"error": "[Errno 2] No such file or directory: '/nonexistent/x.json'"}
+basin_depth_run ... dict {"error": "unknown backend 'nope'; expected 'termfreq' or 'embeddings'"}
+bifp_judge_rebuttal {'claim_text': 'c', 'rebuttal_text': 'r'} dict {"error": "GROQ_API_KEY not set. This module reads it from the environment only -- it is never hardcoded or read from a repo file."}
+paper_rigor_triage_worklist {'worklist': []} dict {"source": "ai_advisory", "name": "worklist_triage", "items": [], "high_priority_count": 0, "model": "openai/gpt-oss-120b", "disclaimer": "AI-generated triage read (Groq, see 'model' field). Does not verify any item and has no web
+no_such_tool {} PROTOCOL_ERROR "[TextContent(type='text', text='Unknown tool: no_such_tool', annotations=None, meta=None)]"

@@ -1,0 +1,25 @@
+identities (tol 0.1)
+ ClaudeCode(Opus)   nov +0.00 qual +0.02 overall +0.00
+ IS-Base(Opus)      nov +0.03 qual -0.05 overall +0.05
+ Codex(GPT5.4)      nov -0.00 qual -0.05 overall +0.05
+ IS-Base(GPT5.4)    nov +0.00 qual +0.02 overall +0.00
+ DeepScientist(Q)   nov -0.03 qual +0.00 overall +0.05
+ AI-Researcher(Q)   nov +0.00 qual -0.03 overall +0.05
+ IS-Base(Q)         nov -0.03 qual +0.03 overall -0.05
+ IS-Trained(Q)      nov +0.03 qual -0.03 overall +0.00
+Overall excluding In-domain term: (mean(All,Cutoff)+QualAvg)/2
+ ClaudeCode(Opus)   full 68.7  exID 77.4
+ IS-Base(Opus)      full 77.7  exID 81.5
+ Codex(GPT5.4)      full 69.5  exID 78.2
+ IS-Base(GPT5.4)    full 71.9  exID 75.2
+ DeepScientist(Q)   full 60.6  exID 67.8
+ AI-Researcher(Q)   full 59.4  exID 65.5
+ IS-Base(Q)         full 73.5  exID 73.3
+ IS-Trained(Q)      full 74.6  exID 74.1
+Trained - ClaudeCode(Opus): overall +5.9; In-domain share of overall gap 9.0; exID gap -3.3
+Trained - Codex(GPT5.4): overall +5.1; In-domain share of overall gap 8.5; exID gap -4.2
+Trained - DeepScientist(Q): overall +14.0; In-domain share of overall gap 9.3; exID gap +6.3
+Trained - AI-Researcher(Q): overall +15.2; In-domain share of overall gap 8.6; exID gap +8.6
+Trained-Base overall +1.1, qual +0.4, nov +1.9; Base-DeepScientist overall +12.9
+Base vs Codex on GPT-5.4: All -4.6000000000000085 Cutoff -4.299999999999997 QAvg -1.6000000000000085
+In-domain share of Base-DeepScientist novelty-Avg gap: 0.7546897546897549

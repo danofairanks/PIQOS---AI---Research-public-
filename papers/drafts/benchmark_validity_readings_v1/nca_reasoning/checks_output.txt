@@ -1,0 +1,10 @@
+C1 ARC-AGI-1: NCA FLOPs relative to LoopViT (pass@2 rows); accuracy 48.8 / 51.3 vs 60.1 / 63.8 / 65.8
+  NCA ARC pass@2 (K=3264): x30.0 (s)  x18.1 (m)  x10.9 (l)
+  NCA E ARC pass@2 (K=9792): x88.6 (s)  x53.5 (m)  x32.2 (l)
+C2 Maze-OOD 201x201: DeepThink 521.7T vs NCA 11.8T  -> 44.2 x fewer FLOPs; accuracy 74.0 vs 100.0
+   Maze-OOD 59x59: 24.1T vs 163.4B -> 147.5 x
+   Maze-OOD size ratio by area: 201^2/9^2 = 498.8
+C3 Maze-Hard K=128 (NCA, A*): 89.2 vs PTRM mode@K=100 86.7; FLOPs 191.1 x fewer; K=1: 86.6 vs 83.8 (A*), FLOPs 3.8T/15.3B = 248.0 x; depth D=200 vs 16 = 12.5 x steps
+C4 Sudoku-OOD: K=1 66.1 vs 51.7 (+14.4); conf@K 98.5 vs 89.5 (+9.0); FLOPs 97.3T/23.9T = 4.1x fewer
+C5 Sudoku-Extreme: K=1 75.6 vs 87.3 (-11.7); conf@K 92.7 vs 98.8 (-6.1); FLOPs 190.1T vs 164.0T
+C6 binomial SE on a 400-task ARC public eval set at p=0.49 (approx): 2.5 pp; reported NCA-TRM gap 4.2

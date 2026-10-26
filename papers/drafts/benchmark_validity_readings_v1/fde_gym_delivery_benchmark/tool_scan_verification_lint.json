@@ -1,0 +1,28 @@
+{
+  "path": "papers/drafts/benchmark_validity_readings_v1/fde_gym_delivery_benchmark/README.md",
+  "ok": true,
+  "gap_count": 1,
+  "severe_gap_count": 0,
+  "unattributed_quotes": [],
+  "uncited_statistics": [
+    {
+      "kind": "fraction_count",
+      "value": "14/95",
+      "start": 1589,
+      "end": 1594,
+      "context": "r anchors: reference >= 0.95, do-nothing = 0, literal compliance <= 0.2, shortcuts <= 0.8 (270 strategies tested). Headline: best configuration 0.56, 14/95 resolved (S >= 0.8, no incident).\n\n## Cluster-lens findings (ranked; post-hoc, from reading)\n1. **Finding 2 conflates three changes.** L0 also states"
+    }
+  ],
+  "disclaimer": {
+    "present": true,
+    "applicable": true,
+    "word_count": 1349,
+    "min_word_count": 400,
+    "gap": false
+  },
+  "sourcing": {
+    "has_sources_statement": true,
+    "has_framework_citation": false,
+    "has_end_sourcing": true
+  }
+}

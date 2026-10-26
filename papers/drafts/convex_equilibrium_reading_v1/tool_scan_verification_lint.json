@@ -1,0 +1,56 @@
+{
+  "path": "papers/drafts/convex_equilibrium_reading_v1.md",
+  "ok": true,
+  "gap_count": 5,
+  "severe_gap_count": 0,
+  "unattributed_quotes": [],
+  "uncited_statistics": [
+    {
+      "kind": "large_comma_count",
+      "value": "1,200",
+      "start": 2868,
+      "end": 2873,
+      "context": "\u0302)v\u0302 \u2212 r), Corollary 5.2 (cofactor / nuclear norm), Proposition 6.3 (barrier b(x) = \u221aR(\u2016x\u2016\u00b2\u22121)/2). No error found.\n- `check_bounds_and_sharpness.py`: 1,200 random networks (q \u2208 {0.5, 0.9, 0.99}, m \u2264 8, n = 2): max S\u03b3 = 0.691 (\u2264 1), max \u2016H\u2016\u2082/C\u2082 = 0.385 (\u2264 1). One-neuron family at \u03b5 \u2208 {0.2, 0.05, 0.01, 0.0"
+    },
+    {
+      "kind": "fraction_count",
+      "value": "1/32",
+      "start": 3185,
+      "end": 3189,
+      "context": "= \u2212log \u03b5; u\u2033 matches (1\u2212\u03b5)/(\u03b5\u00b2(2\u2212\u03b5)\u00b3) to printed precision; \u03b5\u00b2u\u2033 \u2192 0.1251; u\u2034 by finite difference matches (1\u2212\u03b5)(1\u2212\u03b5+\u03b5\u00b2)/(\u03b5\u00b3(2\u2212\u03b5)\u2075); \u03b5\u00b3u\u2034 \u2192 0.0313 (\u2248 1/32).\n- `check_thm51_certificate.py`: 3,000 perturbed approximate states (random W, A, b, w, q \u2208 {0.3, 0.7, 0.9, 0.97}): max error/bound ratios 0.863 (st"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "3,000",
+      "start": 3224,
+      "end": 3229,
+      "context": "o printed precision; \u03b5\u00b2u\u2033 \u2192 0.1251; u\u2034 by finite difference matches (1\u2212\u03b5)(1\u2212\u03b5+\u03b5\u00b2)/(\u03b5\u00b3(2\u2212\u03b5)\u2075); \u03b5\u00b3u\u2034 \u2192 0.0313 (\u2248 1/32).\n- `check_thm51_certificate.py`: 3,000 perturbed approximate states (random W, A, b, w, q \u2208 {0.3, 0.7, 0.9, 0.97}): max error/bound ratios 0.863 (state), 0.883 (J), 0.896 (K), 0.743 (H), 0"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "1,200",
+      "start": 6418,
+      "end": 6423,
+      "context": "oes not establish\n\n- It supports the paper's central inequalities in the regimes executed (no error found in the proofs read; no counterexample among 1,200 and 3,000 random cases), and it shows where the headline wording (\"certified\", the speedup, \"fully nonlinear PDEs\") is broader than the evidence exec"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "3,000",
+      "start": 6428,
+      "end": 6433,
+      "context": "tablish\n\n- It supports the paper's central inequalities in the regimes executed (no error found in the proofs read; no counterexample among 1,200 and 3,000 random cases), and it shows where the headline wording (\"certified\", the speedup, \"fully nonlinear PDEs\") is broader than the evidence executed.\n- It"
+    }
+  ],
+  "disclaimer": {
+    "present": true,
+    "applicable": true,
+    "word_count": 1170,
+    "min_word_count": 400,
+    "gap": false
+  },
+  "sourcing": {
+    "has_sources_statement": true,
+    "has_framework_citation": false,
+    "has_end_sourcing": true
+  }
+}

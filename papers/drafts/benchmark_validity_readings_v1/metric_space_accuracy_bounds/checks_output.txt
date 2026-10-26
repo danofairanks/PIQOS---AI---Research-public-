@@ -1,0 +1,13 @@
+C1 reported classification intervals are [1-K, 1-K/2] (Cor 2.11): implied K and recomputed upper end
+  CIFAR-10 train  K=0.1439  1-K/2=92.81 reported 92.81
+  CIFAR-10 test   K=0.1624  1-K/2=91.88 reported 91.88
+  RESISC45 train  K=0.1615  1-K/2=91.92 reported 91.93
+  RESISC45 test   K=0.1764  1-K/2=91.18 reported 91.18
+  EUROSAT train   K=0.0222  1-K/2=98.89 reported 98.89
+  EUROSAT test    K=0.0311  1-K/2=98.45 reported 98.44
+C2 reported regression intervals are [K/2, K]: ratio hi/lo
+  synthetic train  ratio 1.99
+  synthetic test   ratio 1.99
+C3 synthetic example: floor bracket from the paper's stated noise (f's exact form not recovered; Lipschitz 0.9 from text)
+  target-noise std 0.00866; input-effect upper bound 0.00735; floor in [0.0087, 0.0114]
+  reported lower interval ends: train 0.0102, test 0.0113 -> inside the bracket: inconclusive

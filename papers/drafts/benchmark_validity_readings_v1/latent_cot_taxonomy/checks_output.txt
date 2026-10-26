@@ -1,0 +1,10 @@
+C1 donor vs deletion on the eight content-used cells (paper: five worse, one milder, two undetermined)
+  GPT2 COCONUT GSM8k     deletion -0.230 donor -0.307 diff -0.077
+  GPT2 CODI GSM8k        deletion -0.167 donor -0.380 diff -0.213
+  GPT2 SIMCOT GSM8k      deletion -0.280 donor -0.333 diff -0.053
+  GPT2 SIMCOT ProsQA     deletion -0.193 donor -0.077 diff +0.116
+  GPT2 SIMCOT PrOntoQA   deletion -0.173 donor -0.507 diff -0.334
+  Llama COCONUT GSM8k    deletion -0.117 donor -0.080 diff +0.037
+  Llama CODI GSM8k       deletion -0.193 donor -0.373 diff -0.180
+  Llama SIMCOT GSM8k     deletion -0.083 donor -0.087 diff -0.004
+C2 leaf census from Table 16 (hand-tallied), total = 21 ; per leaf: {'carrier': 5, 'empty': 2, 'bare placeholder': 1, 'laid-out placeholder': 1, 'assembling': 2, 'unstructured': 6, 'inert unprofiled': 2, 'unclassified (unresolved)': 2}

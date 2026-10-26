@@ -1,0 +1,32 @@
+== C1 p-values for the printed condition-level correlations
+r= 0.05 n=15 p_recomputed=0.860 printed 0.85
+r= 0.18 n= 8 p_recomputed=0.670 printed 0.68
+r= 0.87 n=15 p_recomputed=0.000 printed <.01
+r=-0.15 n=15 p_recomputed=0.594 printed 0.59
+r= 0.85 n= 8 p_recomputed=0.008 printed <.01
+r=-0.16 n= 8 p_recomputed=0.705 printed 0.7
+r= 0.44 n=15 p_recomputed=0.101 printed 0.1
+r= 0.63 n= 8 p_recomputed=0.094 printed 0.1
+r= 0.93 n=15 p_recomputed=0.000 printed <.01
+r= 0.89 n= 8 p_recomputed=0.003 printed <.01
+== C2 95% CIs for r (Fisher z) and minimal detectable |r| at 80% power, alpha .05
+r= 0.05 n=15 CI [-0.47, 0.55]
+r= 0.18 n= 8 CI [-0.60, 0.79]
+r=-0.15 n=15 CI [-0.62, 0.39]
+r=-0.16 n= 8 CI [-0.78, 0.61]
+r= 0.44 n=15 CI [-0.09, 0.78]
+r= 0.63 n= 8 CI [-0.13, 0.92]
+n=15: minimal detectable r at 80% power = 0.67
+n=8: minimal detectable r at 80% power = 0.85
+== C3 sample arithmetic
+S1: 8000 4.03 % attrition; S2: 9950 2.92 %; total responses 17950 ; overlap implied (17950-14779) = 3171
+== C4 observed vs adjusted effects
+S1 signing observed 12.6 vs adjusted 12.8; S2 signing observed 19.3 vs adjusted 19.7; S2 charity observed 5.8 vs adjusted 6.1
+== C5 spread comparison in a common unit (assumption: SD of a binary outcome at p~0.36, treatment ~80% of sample)
+signing ATE range 7.5pp =  0.156 SD (binary SD 0.481 )
+attitude ATE range printed 0.02..0.25 SD =  0.23 SD; ratio of ranges attitude/behavior = 1.47
+ratio of extremes: attitude 0.25/0.02 = 12.5  behavior 23.7/16.2 = 1.46
+== C6 sampling noise of condition-level ATEs (binomial, rough)
+S1 per-condition SE of signing ATE ~2.6pp (assumes 6400/15 treated per condition vs pooled control); S2 per-strategy SE ~1.8pp
+S2 observed SD of 8 signing ATEs ~2.6pp; implied reliability ~0.53; expected observed r = r_true*sqrt(rel_x*rel_y) with rel_y~0.8 -> factor ~0.65
+== C7 info-prompt contrast in S2: 7 other strategies' mean must be 20.0 (printed); known three 23.7,21.2,20.6 -> remaining four avg = 18.6

@@ -1,0 +1,49 @@
+{
+  "path": "papers/drafts/benchmark_validity_readings_v1/memoprobench_proactive_memory/README.md",
+  "ok": true,
+  "gap_count": 4,
+  "severe_gap_count": 0,
+  "unattributed_quotes": [],
+  "uncited_statistics": [
+    {
+      "kind": "large_comma_count",
+      "value": "1,804",
+      "start": 1317,
+      "end": 1322,
+      "context": "em sees an egocentric stream plus a ~618K-token year-long synthetic memory and must fire once, inside a trigger window, with LLM-judged Good content. 1,804 human-verified pairs (904 train / dev / 800 test; 150 negatives). Metric Perfect = exactly one fire, in window (+2 s), Good content. 2x2 study (oracl"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "15.3%",
+      "start": 2005,
+      "end": 2010,
+      "context": "mory fails by repeated firing (77.3 -> 26.0, 96.0 -> 38.0). The retrieved-memory, timing-given setting injects noisy retrieval only in-window, so its 15.3% mostly measures retrieval noise. n = 150, two models, no CIs, no interaction test. Supports \"gating matters\"; supports the claim that timing is a sep"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "0.19%",
+      "start": 3046,
+      "end": 3051,
+      "context": "ne for train and test.** LLM proposes the target evidence from localised frames; persona, timeline and distractors are generated around it; target is 0.19% of the stream. Train (904) and test (800) share the generator; \"generalisation\" is 100 EPIC-Kitchens clips through the same pipeline. Stylistic separ"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "87.7%",
+      "start": 3773,
+      "end": 3778,
+      "context": "lidated against humans in the text read** (Appendix H is referenced; no agreement statistic found). Human verification (32 annotators, majority vote, 87.7% of samples triple-reviewed) covers sample construction, not the judge.\n7. **Table 1 related-work columns are authored so only the row for this work i"
+    }
+  ],
+  "disclaimer": {
+    "present": true,
+    "applicable": true,
+    "word_count": 1016,
+    "min_word_count": 400,
+    "gap": false
+  },
+  "sourcing": {
+    "has_sources_statement": true,
+    "has_framework_citation": false,
+    "has_end_sourcing": true
+  }
+}

@@ -1,0 +1,29 @@
+C1 MEME per-task: RAW-RAG minus best of {MemMachine, EMem, Memora} (lower bound on the best baseline; other baselines omitted)
+  4omini  ER  RAW  97.00 best MemMachine  98.00 diff  -1.00
+  4omini  Agg RAW  19.00 best EMem        36.00 diff -17.00
+  4omini  Tr  RAW  78.00 best MemMachine  73.00 diff  +5.00
+  4omini  Del RAW  26.00 best EMem        37.00 diff -11.00
+  4omini  Cas RAW   4.27 best EMem         6.71 diff  -2.44
+  4omini  Abs RAW  11.54 best EMem        12.31 diff  -0.77
+  DSV4f   ER  RAW 100.00 best MemMachine 100.00 diff  +0.00
+  DSV4f   Agg RAW  21.00 best EMem        36.00 diff -15.00
+  DSV4f   Tr  RAW  87.00 best EMem        87.00 diff  +0.00
+  DSV4f   Del RAW  29.00 best MemMachine  48.00 diff -19.00
+  DSV4f   Cas RAW   3.66 best Memora       9.15 diff  -5.49
+  DSV4f   Abs RAW  18.46 best Memora      20.00 diff  -1.54
+C2 MemoryAgentBench: RAW-RAG minus Memora by capability (AR, TTL, LRU, CR); share of overall lead from CR
+  4omini  [-0.93, -0.09, 4.92, 14.0] mean 4.47 (reported 4.48); CR share 78%
+  DSV4f   [0.73, -0.33, 1.72, 20.0] mean 5.53 (reported 5.53); CR share 90%
+C3 LoCoMo / LongMemEval: main-table (mixed settings) vs matched-setting leads
+  Table 3: 4o-mini 0.95 (vs MemMachine); 4.1-mini 0.65 (vs EverMemOS, Qwen3-setting published score)
+  Table 10 (text-emb, matched): 4o-mini vs MemMachine 0.95 ; 4.1-mini vs MemMachine 2.01
+  Table 11 (Qwen3, matched): 4o-mini vs EverMemOS 2.37 ; 4.1-mini vs EverMemOS 1.5
+  LongMemEval: Table 15 vs Memora (policy retriever, published) 0.13 ; Table 16 (Qwen3) vs EverMemOS 6.93
+  LongMemEval non-abstention (Table 17): vs EMem/EMem-G textemb 4.8 2.9 ; Qwen3 7.57 5.67
+  Unchanged-context rerun variability on LoCoMo (A.4.4): +0.281 points; main-table lead 0.65-0.95; matched leads 0.95-2.37
+C4 Independent LoCoMo reproduction (second-hand, README via fetch): 88.68 / 93.48 -> deltas vs paper -0.39 -0.22 ; leads over best compared 0.56 0.43
+C5 Short-answer LoCoMo (Table 12) RAW-RAG(minimal) minus Nemori
+  GPT-4.1-mini: J 11.47 F1 -3.83 B1 -4.25
+  GPT-4o-mini : J 11.38 F1 3.08 B1 6.0
+C6 Mem0 published LoCoMo, category-weighted (841/282/321/96): 62.14 vs published aggregate 66.88
+C7 PersonaMem-v2 gaps vs RAW-RAG 49.62: EverMemOS 3.63 MemOS 1.1 ; binomial SE at n=5000, p=0.5: 0.71 pp each

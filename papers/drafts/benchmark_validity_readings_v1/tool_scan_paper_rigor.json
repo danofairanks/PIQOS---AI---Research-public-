@@ -1,0 +1,45 @@
+{
+  "path": "papers/drafts/benchmark_validity_readings_v1.md",
+  "ok": true,
+  "structural_gap_count": 0,
+  "total_gap_count": 0,
+  "placeholder_gaps": [],
+  "labeled_placeholders": [],
+  "falsifiability": {
+    "has_testable_markers": false,
+    "certainty_claims": [],
+    "gap": false
+  },
+  "n_references": 1,
+  "self_citation": {
+    "ratio": null,
+    "n_references": 1,
+    "n_self_cited": 0,
+    "self_cited_entries": []
+  },
+  "venue_mix": {
+    "n_formal": 1,
+    "n_informal": 0,
+    "n_unknown": 0,
+    "n_total": 1,
+    "informal_ratio": 0.0
+  },
+  "external_verification_worklist": [],
+  "limitations": {
+    "present": true,
+    "applicable": true,
+    "word_count": 1574,
+    "min_word_count": 400,
+    "has_inline_phrase": true,
+    "has_heading_section": true,
+    "gap": false
+  },
+  "citability_claim": {
+    "claims_citability": false,
+    "matched_phrases": [],
+    "n_references": 1,
+    "word_count": 1574,
+    "applicable": true,
+    "gap": false
+  }
+}

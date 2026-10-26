@@ -1,0 +1,20 @@
+{
+  "path": "papers/drafts/benchmark_validity_readings_v1/pairwise_difference_uq/README.md",
+  "ok": true,
+  "gap_count": 0,
+  "severe_gap_count": 0,
+  "unattributed_quotes": [],
+  "uncited_statistics": [],
+  "disclaimer": {
+    "present": true,
+    "applicable": true,
+    "word_count": 1169,
+    "min_word_count": 400,
+    "gap": false
+  },
+  "sourcing": {
+    "has_sources_statement": true,
+    "has_framework_citation": false,
+    "has_end_sourcing": true
+  }
+}

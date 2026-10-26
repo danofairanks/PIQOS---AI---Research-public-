@@ -1,0 +1,175 @@
+{
+  "path": "papers/drafts/benchmark_validity_readings_v1/nca_reasoning/README.md",
+  "ok": true,
+  "gap_count": 22,
+  "severe_gap_count": 0,
+  "unattributed_quotes": [],
+  "uncited_statistics": [
+    {
+      "kind": "decimal_percent",
+      "value": "74.0%",
+      "start": 2083,
+      "end": 2088,
+      "context": "d Diversity Pruning.\n\n## Holds\n- Maze-OOD: 100% from 13x13 to 201x201, trained on 9x9 (about 3 minutes on a TPU); 201x201 at 11.8T FLOPs vs DeepThink 74.0% at 521.7T (44x) (C2). \"500x larger\" is by area (C2).\n- Sudoku-OOD: K=1 66.1% vs AKOrN 51.7% with 160K vs 3M parameters; confidence-selected 98.5% vs "
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "66.1%",
+      "start": 2160,
+      "end": 2165,
+      "context": "d on 9x9 (about 3 minutes on a TPU); 201x201 at 11.8T FLOPs vs DeepThink 74.0% at 521.7T (44x) (C2). \"500x larger\" is by area (C2).\n- Sudoku-OOD: K=1 66.1% vs AKOrN 51.7% with 160K vs 3M parameters; confidence-selected 98.5% vs 89.5% at 23.9T vs 97.3T (C4).\n- Maze-Hard: 86.6% vs PTRM 83.8% on A* at K=1 ("
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "51.7%",
+      "start": 2175,
+      "end": 2180,
+      "context": " 3 minutes on a TPU); 201x201 at 11.8T FLOPs vs DeepThink 74.0% at 521.7T (44x) (C2). \"500x larger\" is by area (C2).\n- Sudoku-OOD: K=1 66.1% vs AKOrN 51.7% with 160K vs 3M parameters; confidence-selected 98.5% vs 89.5% at 23.9T vs 97.3T (C4).\n- Maze-Hard: 86.6% vs PTRM 83.8% on A* at K=1 (about 250x fewe"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "98.5%",
+      "start": 2229,
+      "end": 2234,
+      "context": "ink 74.0% at 521.7T (44x) (C2). \"500x larger\" is by area (C2).\n- Sudoku-OOD: K=1 66.1% vs AKOrN 51.7% with 160K vs 3M parameters; confidence-selected 98.5% vs 89.5% at 23.9T vs 97.3T (C4).\n- Maze-Hard: 86.6% vs PTRM 83.8% on A* at K=1 (about 250x fewer FLOPs, 12.5x more steps); 89.2% vs 86.7% at larger K"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "89.5%",
+      "start": 2238,
+      "end": 2243,
+      "context": " at 521.7T (44x) (C2). \"500x larger\" is by area (C2).\n- Sudoku-OOD: K=1 66.1% vs AKOrN 51.7% with 160K vs 3M parameters; confidence-selected 98.5% vs 89.5% at 23.9T vs 97.3T (C4).\n- Maze-Hard: 86.6% vs PTRM 83.8% on A* at K=1 (about 250x fewer FLOPs, 12.5x more steps); 89.2% vs 86.7% at larger K (C3).\n- "
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "86.6%",
+      "start": 2281,
+      "end": 2286,
+      "context": "area (C2).\n- Sudoku-OOD: K=1 66.1% vs AKOrN 51.7% with 160K vs 3M parameters; confidence-selected 98.5% vs 89.5% at 23.9T vs 97.3T (C4).\n- Maze-Hard: 86.6% vs PTRM 83.8% on A* at K=1 (about 250x fewer FLOPs, 12.5x more steps); 89.2% vs 86.7% at larger K (C3).\n- Ablations over 3 training seeds: perturbati"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "83.8%",
+      "start": 2295,
+      "end": 2300,
+      "context": "udoku-OOD: K=1 66.1% vs AKOrN 51.7% with 160K vs 3M parameters; confidence-selected 98.5% vs 89.5% at 23.9T vs 97.3T (C4).\n- Maze-Hard: 86.6% vs PTRM 83.8% on A* at K=1 (about 250x fewer FLOPs, 12.5x more steps); 89.2% vs 86.7% at larger K (C3).\n- Ablations over 3 training seeds: perturbations plus sampl"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "89.2%",
+      "start": 2358,
+      "end": 2363,
+      "context": " confidence-selected 98.5% vs 89.5% at 23.9T vs 97.3T (C4).\n- Maze-Hard: 86.6% vs PTRM 83.8% on A* at K=1 (about 250x fewer FLOPs, 12.5x more steps); 89.2% vs 86.7% at larger K (C3).\n- Ablations over 3 training seeds: perturbations plus sample replay matter for out-of-distribution generalization; asynchr"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "86.7%",
+      "start": 2367,
+      "end": 2372,
+      "context": "ce-selected 98.5% vs 89.5% at 23.9T vs 97.3T (C4).\n- Maze-Hard: 86.6% vs PTRM 83.8% on A* at K=1 (about 250x fewer FLOPs, 12.5x more steps); 89.2% vs 86.7% at larger K (C3).\n- Ablations over 3 training seeds: perturbations plus sample replay matter for out-of-distribution generalization; asynchronous upd"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "66.1%",
+      "start": 3187,
+      "end": 3192,
+      "context": "gmentations, backpropagation over demonstration pairs) and a global task embedding at the start. The fully local figures are the K=1 rows (Sudoku-OOD 66.1%, Sudoku-Extreme 75.6%).\n2. **ARC-AGI-1 trails LoopViT at higher cost.** NCA 48.8% pass@2 (K=3264, 2.4P FLOPs), NCA ensemble 51.3% (7.1P), against Loo"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "75.6%",
+      "start": 3209,
+      "end": 3214,
+      "context": "gation over demonstration pairs) and a global task embedding at the start. The fully local figures are the K=1 rows (Sudoku-OOD 66.1%, Sudoku-Extreme 75.6%).\n2. **ARC-AGI-1 trails LoopViT at higher cost.** NCA 48.8% pass@2 (K=3264, 2.4P FLOPs), NCA ensemble 51.3% (7.1P), against LoopViT-s/m/l 60.1/63.8/6"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "48.8%",
+      "start": 3269,
+      "end": 3274,
+      "context": " at the start. The fully local figures are the K=1 rows (Sudoku-OOD 66.1%, Sudoku-Extreme 75.6%).\n2. **ARC-AGI-1 trails LoopViT at higher cost.** NCA 48.8% pass@2 (K=3264, 2.4P FLOPs), NCA ensemble 51.3% (7.1P), against LoopViT-s/m/l 60.1/63.8/65.8% (80.1T/132.7T/220.5T): the single NCA uses about 11-30x"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "51.3%",
+      "start": 3317,
+      "end": 3322,
+      "context": "=1 rows (Sudoku-OOD 66.1%, Sudoku-Extreme 75.6%).\n2. **ARC-AGI-1 trails LoopViT at higher cost.** NCA 48.8% pass@2 (K=3264, 2.4P FLOPs), NCA ensemble 51.3% (7.1P), against LoopViT-s/m/l 60.1/63.8/65.8% (80.1T/132.7T/220.5T): the single NCA uses about 11-30x the FLOPs for lower accuracy and the ensemble a"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "65.8%",
+      "start": 3363,
+      "end": 3368,
+      "context": "%).\n2. **ARC-AGI-1 trails LoopViT at higher cost.** NCA 48.8% pass@2 (K=3264, 2.4P FLOPs), NCA ensemble 51.3% (7.1P), against LoopViT-s/m/l 60.1/63.8/65.8% (80.1T/132.7T/220.5T): the single NCA uses about 11-30x the FLOPs for lower accuracy and the ensemble about 32-89x (C1). It beats TRM (44.6%, K=1000,"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "44.6%",
+      "start": 3504,
+      "end": 3509,
+      "context": "0.1/63.8/65.8% (80.1T/132.7T/220.5T): the single NCA uses about 11-30x the FLOPs for lower accuracy and the ensemble about 32-89x (C1). It beats TRM (44.6%, K=1000, 3.8P). The 60.3% pass@64 is not comparable with ARC's pass@2 scoring.\n3. **Sudoku-Extreme is behind PTRM** at K=1 (75.6 vs 87.3) and at conf"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "60.3%",
+      "start": 3530,
+      "end": 3535,
+      "context": "7T/220.5T): the single NCA uses about 11-30x the FLOPs for lower accuracy and the ensemble about 32-89x (C1). It beats TRM (44.6%, K=1000, 3.8P). The 60.3% pass@64 is not comparable with ARC's pass@2 scoring.\n3. **Sudoku-Extreme is behind PTRM** at K=1 (75.6 vs 87.3) and at confidence-selected scale (92."
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "13,000",
+      "start": 3886,
+      "end": 3892,
+      "context": " stand in for unmeasured energy and hardware gains.** The decentralised-hardware framing is aspirational; counts ignore latency (201x201 mazes need D=13,000 sequential steps vs 2,000) and memory behaviour (the paper notes the limits).\n5. **Maze-Hard accuracy depends on the reference solver:** 86.6% agains"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "2,000",
+      "start": 3913,
+      "end": 3918,
+      "context": "ergy and hardware gains.** The decentralised-hardware framing is aspirational; counts ignore latency (201x201 mazes need D=13,000 sequential steps vs 2,000) and memory behaviour (the paper notes the limits).\n5. **Maze-Hard accuracy depends on the reference solver:** 86.6% against A* targets, 94.7% agains"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "86.6%",
+      "start": 4030,
+      "end": 4035,
+      "context": "eed D=13,000 sequential steps vs 2,000) and memory behaviour (the paper notes the limits).\n5. **Maze-Hard accuracy depends on the reference solver:** 86.6% against A* targets, 94.7% against BFS; only the A* row is like-for-like with PTRM.\n6. **Interpretability evidence is qualitative** (backtracking, \"tr"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "94.7%",
+      "start": 4056,
+      "end": 4061,
+      "context": "eps vs 2,000) and memory behaviour (the paper notes the limits).\n5. **Maze-Hard accuracy depends on the reference solver:** 86.6% against A* targets, 94.7% against BFS; only the A* row is like-for-like with PTRM.\n6. **Interpretability evidence is qualitative** (backtracking, \"trial-and-error\", \"spatial c"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "87.8%",
+      "start": 4711,
+      "end": 4716,
+      "context": " 30% fewer cell updates, damage recovery) is shown on Maze-OOD 201x201 only. No intervals.\n8. **Abstract's pixel-space claim is milder in the text:** 87.8% easy (in-distribution), 18.9% hard (out-of-distribution), described as a \"proof-of-concept\".\n9. **Table 1 has no intervals.** About 400 ARC tasks giv"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "18.9%",
+      "start": 4741,
+      "end": 4746,
+      "context": "e recovery) is shown on Maze-OOD 201x201 only. No intervals.\n8. **Abstract's pixel-space claim is milder in the text:** 87.8% easy (in-distribution), 18.9% hard (out-of-distribution), described as a \"proof-of-concept\".\n9. **Table 1 has no intervals.** About 400 ARC tasks gives a standard error near 2.5 p"
+    }
+  ],
+  "disclaimer": {
+    "present": true,
+    "applicable": true,
+    "word_count": 1146,
+    "min_word_count": 400,
+    "gap": false
+  },
+  "sourcing": {
+    "has_sources_statement": true,
+    "has_framework_citation": false,
+    "has_end_sourcing": true
+  }
+}

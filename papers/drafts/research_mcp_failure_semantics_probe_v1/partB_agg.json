@@ -1,0 +1,54 @@
+{
+ "F1_protocol_error": {
+  "naive": 0.0,
+  "env": 0.0
+ },
+ "F2_payload_error": {
+  "naive": 0.0,
+  "env": 0.0
+ },
+ "F3_empty_object": {
+  "naive": 1.0,
+  "env": 0.0
+ },
+ "F4_empty_text": {
+  "naive": 0.0,
+  "env": 0.0
+ },
+ "F5a_key_drift_post": {
+  "naive": 0.8333333333333334,
+  "env": 0.0
+ },
+ "F5b_key_drift_pre": {
+  "naive": 0.8333333333333334,
+  "env": 0.8333333333333334
+ },
+ "F6a_zeroed_post": {
+  "naive": 1.0,
+  "env": 0.0
+ },
+ "F6b_zeroed_pre": {
+  "naive": 1.0,
+  "env": 1.0
+ },
+ "F7_char_corrupt": {
+  "naive": 0.004166666666666667,
+  "env": 0.0
+ },
+ "F8_word_subst": {
+  "naive": 0.0,
+  "env": 0.0
+ },
+ "F9_silent_drop": {
+  "naive": 0.0,
+  "env": 0.0
+ },
+ "F10_truncated": {
+  "naive": 0.0,
+  "env": 0.0
+ },
+ "CONTROL_nofault": {
+  "naive": "flagged",
+  "env": "flagged"
+ }
+}

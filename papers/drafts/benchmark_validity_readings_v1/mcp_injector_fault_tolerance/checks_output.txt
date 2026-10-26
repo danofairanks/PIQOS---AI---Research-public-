@@ -1,0 +1,9 @@
+N included (six modes, three persistences): 13824 (paper: 13,824)
+permanent 91.26 / intermittent 7.99 / transient 0.75  (paper 91.3 / 8.0 / 0.75)
+EXPLICIT_ERROR/PERMANENT 65.65 (paper 65.6); all explicit errors 71.19 (paper 71.2)
+silent content modes 19.10 (paper 19.1); timing modes 9.71 (paper 9.7)
+cells 2x3x3x3x25 = 1350
+task-completion drop 8.08 -> 3.23: 60.0%
+pooled completion gap 95.6 - 91.1 = 4.5 (paper 4.4; rounding of printed rates)
+fault-attributable drop difference 5.8 - 3.6 = 2.2 (paper 2.2)
+zero-dose OPP cells 55 of 450 = 12.2% (paper 12.2%)

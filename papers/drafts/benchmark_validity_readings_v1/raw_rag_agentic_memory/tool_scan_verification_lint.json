@@ -1,0 +1,77 @@
+{
+  "path": "papers/drafts/benchmark_validity_readings_v1/raw_rag_agentic_memory/README.md",
+  "ok": true,
+  "gap_count": 8,
+  "severe_gap_count": 0,
+  "unattributed_quotes": [],
+  "uncited_statistics": [
+    {
+      "kind": "large_comma_count",
+      "value": "5,000",
+      "start": 4526,
+      "end": 4531,
+      "context": "e count omits PersonaMem-v2.** Appendix A.3: RAW-RAG 49.62, third of seven (EverMemOS 53.25 with profile, MemOS 50.72); significance untested; at n = 5,000 the EverMemOS gap (3.63) is well outside the ~0.7 pp standard error, MemOS's (1.1) borderline (C7).\n6. **Winning among weak systems on dynamic MEME t"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "4.27%",
+      "start": 4717,
+      "end": 4722,
+      "context": "tside the ~0.7 pp standard error, MemOS's (1.1) borderline (C7).\n6. **Winning among weak systems on dynamic MEME tasks.** RAW-RAG GPT-4o-mini cascade 4.27%, aggregation 19%, deletion 26%. Reader dependence is large (phase-visible oracle overall 50.50 / 70.25 / 85.48 for GPT-4o-mini / Qwen3.5 / DeepSeek);"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "4.39%",
+      "start": 4975,
+      "end": 4980,
+      "context": " / 85.48 for GPT-4o-mini / Qwen3.5 / DeepSeek); the paper states this.\n7. **Single-system diagnostics generalised.** The mutation audit is Mem0 only (4.39% of 33,902 and 2.46% of 428,858 write decisions; effective 1.90% and 1.34%; ADD/NONE-only +2.06 on LoCoMo) and uses Mem0 1.0.11 while the main evaluat"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "33,902",
+      "start": 4984,
+      "end": 4990,
+      "context": "for GPT-4o-mini / Qwen3.5 / DeepSeek); the paper states this.\n7. **Single-system diagnostics generalised.** The mutation audit is Mem0 only (4.39% of 33,902 and 2.46% of 428,858 write decisions; effective 1.90% and 1.34%; ADD/NONE-only +2.06 on LoCoMo) and uses Mem0 1.0.11 while the main evaluation uses 2"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "2.46%",
+      "start": 4995,
+      "end": 5000,
+      "context": "mini / Qwen3.5 / DeepSeek); the paper states this.\n7. **Single-system diagnostics generalised.** The mutation audit is Mem0 only (4.39% of 33,902 and 2.46% of 428,858 write decisions; effective 1.90% and 1.34%; ADD/NONE-only +2.06 on LoCoMo) and uses Mem0 1.0.11 while the main evaluation uses 2.0.11; whe"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "428,858",
+      "start": 5004,
+      "end": 5011,
+      "context": "en3.5 / DeepSeek); the paper states this.\n7. **Single-system diagnostics generalised.** The mutation audit is Mem0 only (4.39% of 33,902 and 2.46% of 428,858 write decisions; effective 1.90% and 1.34%; ADD/NONE-only +2.06 on LoCoMo) and uses Mem0 1.0.11 while the main evaluation uses 2.0.11; whether 2.0.x "
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "1.90%",
+      "start": 5039,
+      "end": 5044,
+      "context": " this.\n7. **Single-system diagnostics generalised.** The mutation audit is Mem0 only (4.39% of 33,902 and 2.46% of 428,858 write decisions; effective 1.90% and 1.34%; ADD/NONE-only +2.06 on LoCoMo) and uses Mem0 1.0.11 while the main evaluation uses 2.0.11; whether 2.0.x keeps the same operations is not "
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "1.34%",
+      "start": 5049,
+      "end": 5054,
+      "context": "**Single-system diagnostics generalised.** The mutation audit is Mem0 only (4.39% of 33,902 and 2.46% of 428,858 write decisions; effective 1.90% and 1.34%; ADD/NONE-only +2.06 on LoCoMo) and uses Mem0 1.0.11 while the main evaluation uses 2.0.11; whether 2.0.x keeps the same operations is not stated.\n8."
+    }
+  ],
+  "disclaimer": {
+    "present": true,
+    "applicable": true,
+    "word_count": 1377,
+    "min_word_count": 400,
+    "gap": false
+  },
+  "sourcing": {
+    "has_sources_statement": true,
+    "has_framework_citation": false,
+    "has_end_sourcing": true
+  }
+}
