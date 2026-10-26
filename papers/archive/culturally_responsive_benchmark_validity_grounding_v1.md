@@ -1,3 +1,5 @@
+> **Archived 2026-10-26.** Verified core folded into published/basin_attractors_v7.md §2.2. Not carried over: references to non-public material. One wording correction: 25.9% is a share of global internet users, not of English speakers. Moved from `drafts/`; content below is unchanged.
+
 # External Grounding for §2.2's Benchmark Attractor: The "Whose Facts Count?" Findings
 
 *Status: DRAFT ADDENDUM. Filed 2026-09-22. Authors: operator + Claude (Sonnet 5).

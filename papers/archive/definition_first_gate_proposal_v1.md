@@ -1,3 +1,5 @@
+> **Archived 2026-10-26.** A proposal never built; stale as a staged draft. Moved from `drafts/`; content below is unchanged.
+
 # A Definition-First Gate: Proposal, Not Yet Built
 
 *Status: PROPOSAL. Filed 2026-08-18. Authors: operator + Claude (Sonnet 5).

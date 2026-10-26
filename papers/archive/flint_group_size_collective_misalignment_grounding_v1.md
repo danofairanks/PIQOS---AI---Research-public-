@@ -1,3 +1,5 @@
+> **Archived 2026-10-26.** Verified core folded into published/basin_attractors_v7.md §2.12. Not carried over: addenda built on social-media comments by a named individual that were not checked against a primary source, and references to non-public material. One correction to this draft: for Llama on {old, young}, one fixed point is unstable and the other marginal (only {less, more} has both unstable). Moved from `drafts/`; content below is unchanged.
+
 # Stronger Grounding for §2.12: A Peer-Reviewed Mean-Field Theory of Isolation-vs-Field Divergence in LLM Populations
 
 *Status: DRAFT ADDENDUM. Filed 2026-08-20. Authors: operator + Claude
