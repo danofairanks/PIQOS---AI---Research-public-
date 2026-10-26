@@ -1,4 +1,4 @@
-> **Archived 2026-10-26.** Verified core folded into published/basin_attractors_v7.md §2.12. Not carried over: addenda built on social-media comments by a named individual that were not checked against a primary source, and references to non-public material. One correction to this draft: for Llama on {old, young}, one fixed point is unstable and the other marginal (only {less, more} has both unstable). Moved from `drafts/`; content below is unchanged.
+> **Archived 2026-10-26.** Scrubbed 2026-10-26: references to non-public material removed; nothing else changed. Verified core folded into published/basin_attractors_v7.md §2.12. Not carried over: addenda built on social-media comments by a named individual that were not checked against a primary source, and references to non-public material. One correction to this draft: for Llama on {old, young}, one fixed point is unstable and the other marginal (only {less, more} has both unstable). Moved from `drafts/`; content below is unchanged.
 
 # Stronger Grounding for §2.12: A Peer-Reviewed Mean-Field Theory of Isolation-vs-Field Divergence in LLM Populations
 
@@ -160,7 +160,7 @@ this project's sense (relational self-consistency measured against a
 fixed anchor). This is flagged explicitly as a terminology convergence,
 not a claim that the two "basin" concepts are the same mechanism — they
 are structurally different objects (a stability region of a mean-field
-equation vs. a coherence attractor measured against I*) that happen to
+equation vs. a narrative attractor in this project's sense) that happen to
 share a name because both are drawn from the same general mathematical
 vocabulary (dynamical systems, attractor theory). Noting the convergence
 is worthwhile; treating it as more than a shared vocabulary would overclaim.
@@ -174,11 +174,9 @@ is worthwhile; treating it as more than a shared vocabulary would overclaim.
   falsification) — the shared word "basin" reflects shared mathematical
   ancestry (dynamical systems / attractor theory), not a shared claim.
 - Not a claim that the paper's mean-field theory or minimal-naming-game
-  framework directly models anything in this project's own architecture
-  or the private companion repository's oracle design — the connection
-  proposed here is at the level of the general empirical/theoretical
+  framework models anything beyond the general empirical/theoretical
   claim (isolation does not predict field behavior; population size is a
-  first-class variable), not at the level of shared mechanism.
+  first-class variable); no shared mechanism is asserted.
 - Not a claim that the paper's results generalize beyond the minimal
   coordination task tested — the authors state this limitation directly
   in their own Discussion, naming richer conversational framing and
@@ -187,10 +185,6 @@ is worthwhile; treating it as more than a shared vocabulary would overclaim.
 - Not a claim that heterogeneous (mixed-model) populations behave as this
   paper's homogeneous-population results would predict — the authors
   explicitly withhold that claim themselves, naming it as future work.
-- Not a claim about this project's own multi-agent-relevant invariants
-  (private companion repository) — the cross-reference proposed for that
-  repository is logged separately, per that repository's own gating
-  discipline, and is not asserted here.
 
 ## Where this would go if promoted
 
@@ -360,10 +354,7 @@ measured — the authors state it as a plausible alternative to
 homogenization, explicitly not tested against real multi-model
 communities in this paper. Not a claim that the training-feedback loop
 named above has been shown to occur — flagged as an authors' own named
-hypothesis, untested here. Not an extension of the private companion
-repository's cross-reference — that remains logged separately per that
-repository's own gating discipline, per this document's existing "What
-this does not establish" section above.
+hypothesis, untested here.
 
 ## References
 
