@@ -22,6 +22,8 @@ a real in-memory client-server round trip, not a mock)::
 
 from __future__ import annotations
 
+import functools
+
 try:
     # The name this project actually shipped against and tested (mcp
     # 2.0.0). Import compatibility fallback below covers the older
@@ -119,7 +121,11 @@ app = MCPServer(
         "judge whether the disclaimed content's association survives "
         "without the hedge (established elsewhere, unhedged) or depended "
         "on it. Every tool "
-        "here is a heuristic lead generator, not a verdict -- see each "
+        "here is a heuristic lead generator, not a verdict. A scan_* tool "
+        "given empty or whitespace-only text returns an \"error\" payload; "
+        "an empty findings list from any other input means no pattern "
+        "matched in the text sent, not that anything beyond it was checked "
+        "-- see each "
         "source package's own README for exactly what it does and does "
         "not detect."
     ),
@@ -158,8 +164,34 @@ _TOOLS = [
     hedge_dogwhistle_scan_corpus,
 ]
 
+# Single-`text` scanners whose success shape for "" is indistinguishable
+# from a scan of clean text. Only these get the guard below.
+_TEXT_SCANNERS = frozenset({
+    "bifp_scan_text", "bifp_scan_closed_path_language",
+    "bifp_scan_hardcoded_assertion_style", "attractor_scan_text",
+    "debasinizer_scan_text", "paper_rigor_scan",
+    "rigor_cosplay_scan_text", "hedge_dogwhistle_scan_text",
+})
+
+
+def _reject_empty_text(fn):
+    """Return the recoverable `{"error": ...}` payload (the same channel
+    every agent_tools.py function already uses) for empty or
+    whitespace-only `text`, instead of a zero-findings result that reads
+    as a scan of clean text. functools.wraps keeps name, docstring and
+    signature, so the tool description and JSON input schema are
+    unchanged; the wrapped function's own output is untouched."""
+    @functools.wraps(fn)
+    def guarded(text: str, *args, **kwargs):
+        if not text.strip():
+            return {"error": f"{fn.__name__}: empty input -- nothing was scanned. "
+                             "Pass non-empty text; an empty result is not a clean result."}
+        return fn(text, *args, **kwargs)
+    return guarded
+
+
 for _fn in _TOOLS:
-    app.tool()(_fn)
+    app.tool()(_reject_empty_text(_fn) if _fn.__name__ in _TEXT_SCANNERS else _fn)
 
 
 def main() -> None:
