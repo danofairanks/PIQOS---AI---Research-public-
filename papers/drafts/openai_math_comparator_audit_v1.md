@@ -32,7 +32,7 @@ Lean 4.34.1; Mathlib at the repository's own pin, built from source (the cache h
 
 Only 23 of the 405 configs have a challenge file and a solution closure that avoid a full `import Mathlib` and external packages (eleven of those 23 were run); 377 challenge files import all of Mathlib, which on this 4-core host would have been a multi-hour build. The configs run were therefore chosen by build feasibility, then by short statements, not by significance, and they are not a sample of the 405.
 
-**Deviations from the Comparator's documented setup, all in the weaker direction.** `landrun` could apply only a partial Landlock sandbox (kernel ABI v7; it ran with the `--best-effort` flag the Comparator passes); the systemd-run guard was not used; the builds ran as an unprivileged user with no network and a stripped environment instead; the Lean default kernel was the only kernel (no external kernel); `landrun` was v0.1.17 from `go install`, not a build of `main`.
+**Deviations from the Comparator's documented setup, all in the weaker direction** (for the eleven configs of this section's table; the later run of section 5.1 differs in further ways listed there, notably a prebuilt Mathlib cache). `landrun` could apply only a partial Landlock sandbox (kernel ABI v7; it ran with the `--best-effort` flag the Comparator passes); the systemd-run guard was not used; the builds ran as an unprivileged user with no network and a stripped environment instead; the Lean default kernel was the only kernel (no external kernel); `landrun` was v0.1.17 from `go install`, not a build of `main`.
 
 ## 4. Controls
 
@@ -76,6 +76,197 @@ Eleven configs were attempted; 11 accepted, 0 rejected, 0 did not finish when th
 
 Across the accepted configs the statements are short, the definitions are local, no config needed more than the three standard axioms, and the solutions range from 469 to 6753 lines.
 
+### 5.1 A later run, on a result released after the pin (added 2026-10-27)
+
+The release was updated on 26 October 2026 (repository head `7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a`, committer date 2026-10-26; its `history.md` lists two new manuscripts with Lean formalizations). One of them, "Local smoothing for the Euclidean wave equation" (59 pages, dated 25 October, credited only to the organization), claims Sogge's local smoothing conjecture for the wave equation in every spatial dimension of at least two, with consequences for Bochner–Riesz means, Fourier restriction, Kakeya maximal estimates and the Hausdorff dimension of Kakeya sets. Its Lean counterpart is the config `ComparatorChallenges/LocalSmoothing.json`: six theorems, permitted axioms `propext`, `Quot.sound`, `Classical.choice`, solution module `OAI.Analysis.Fourier.LocalSmoothing.Comparator`. It was run once, on 2026-10-27. The pin of section 2 (6 October) cannot contain it.
+
+| Config | Main theorem | Challenge lines | Solution modules | Solution lines | Comparator result |
+|---|---|---|---|---|---|
+| `LocalSmoothing` | `euclidean_local_smoothing` | 143 | 2261 | 190467 | accepted |
+
+**Outcome.** The Comparator exited 0 (`Lean default kernel accepts the solution. Your solution is okay!`) after 1 hour 48 minutes 50 seconds (build about 70 minutes; the Comparator's single-threaded kernel check 39 minutes with no output). All 2,261 modules of the solution's closure were built from source inside the sandbox; the log carries `declaration uses sorry` only for the six challenge theorems, by design. `#print axioms`, run afterwards on each of the six theorems as an unprivileged user with no network (`localsmoothing_run/AxiomCheck.lean`, `logs/axioms_LocalSmoothing.log`), reports exactly `[propext, Classical.choice, Quot.sound]` for every one. Challenge and solution files were used unmodified (the challenge file's sha256 is `58dd1d878cd08f8d32850b1142e451a5efd4b0cdcf538ba80efbd01ea83cd9fd`).
+
+**How this run differs from the setup of section 3.**
+
+- **Mathlib came from the public cache, not a source build.** `lake update` ran Mathlib's post-update hook, which fetched 8,908 prebuilt artifact files from `cache.mathlib.org` (the host was reachable this time; the run of section 3 recorded it as unreachable). Mathlib and its dependencies, at the repository's pin `d13f23b723b8`, were therefore not rebuilt on this host. The Comparator README allows the cache if it is trusted. The challenge file's statements are written in Mathlib's vocabulary, so a tampered cache would alter challenge and solution alike and the Comparator would not see it; this run carries that assumption. Everything under `OAI.` was built from source.
+- **Regenerable build files were deleted during the run.** About 40 minutes in, free disk fell from 9.9 GB to 4.1 GB: each built module leaves a `*.setup.json` of about 5.6 MB (1,373 files, 7.1 GB at that point), listing its full import list. A background script (`localsmoothing_run/prune_ir.sh`, log `localsmoothing_run/prune_ir.log`) removed those of modules finished more than two minutes earlier until the run ended. Lake regenerates them on demand and the `.olean` files the Comparator reads were not touched; the run printed a normal build and acceptance. It is nonetheless a modification of the build environment during a verification run.
+- **Same weaker settings as section 3:** `landrun` v0.1.17 (here installed at the pinned version, not `@latest`), partial Landlock sandbox, no `systemd-run`, unprivileged user and no network, the Lean default kernel only. Lean 4.34.1 (commit `5045d00`); Comparator `d03acab` and `lean4export` `076e8e5` with the same two toolchain edits. The project used a minimal `lakefile.lean` (`localsmoothing_run/lakefile.lean`) holding only the closure.
+- **One extra check after the verdict:** the `#print axioms` run, which imports the built solution; it is outside the Comparator's protocol and was done only after it finished.
+
+**The challenge file, verbatim.** This is the trusted reference of the run: the definitions and the six statements, with `sorry` in place of the proofs. Source: `lean/ComparatorChallenges/LocalSmoothing.lean` at commit `7ef5c0cc5ca4`, from the repository's Apache-2.0 licensed material, reproduced for audit.
+
+```lean
+import Mathlib
+
+/-!
+# Euclidean local smoothing and its consequences
+
+Standalone Comparator reference: six independent targets, no definition holes.
+Fourier transforms use angular frequency; all dimensions satisfy `2 ≤ n`.
+-/
+
+open MeasureTheory
+open scoped RealInnerProductSpace ENNReal
+
+noncomputable section
+
+namespace OAI.Analysis.Fourier.LocalSmoothing.Comparator
+
+abbrev Space (n : ℕ) := EuclideanSpace ℝ (Fin n)
+
+def angularFourier {n : ℕ} (f : Space n → ℂ) (ξ : Space n) : ℂ :=
+  ∫ x, Complex.exp (-Complex.I * ((inner ℝ x ξ : ℝ) : ℂ)) * f x
+
+def angularInverse {n : ℕ} (g : Space n → ℂ) (x : Space n) : ℂ :=
+  (((2 * Real.pi) ^ n)⁻¹ : ℝ) •
+    ∫ ξ, Complex.exp (Complex.I * ((inner ℝ x ξ : ℝ) : ℂ)) * g ξ
+
+def halfWaveIntegral {n : ℕ} (t : ℝ) (f : Space n → ℂ) : Space n → ℂ :=
+  angularInverse (fun ξ ↦ Complex.exp (-Complex.I * (t * ‖ξ‖ : ℝ)) *
+    angularFourier f ξ)
+
+def besselPotential {n : ℕ} (s : ℝ) (f : Space n → ℂ) : Space n → ℂ :=
+  angularInverse (fun ξ ↦ ((1 + ‖ξ‖ ^ 2) ^ (s / 2) : ℝ) • angularFourier f ξ)
+
+def observationMeasure (n : ℕ) : Measure (Space n × ℝ) :=
+  volume.prod (volume.restrict (Set.Icc 1 2))
+
+namespace Implications
+
+/-- Surface measure on the unit sphere, viewed as a measure on ambient space. -/
+def sphereMeasure (n : ℕ) : Measure (Space n) :=
+  (volume : Measure (Space n)).toSphere.map Subtype.val
+
+def sphericalExtension {n : ℕ} (g : Space n → ℂ) (x : Space n) : ℂ :=
+  ∫ ω, Complex.exp (Complex.I * ((inner ℝ x ω : ℝ) : ℂ)) * g ω ∂sphereMeasure n
+
+def conjugateExponent (a : ℝ≥0∞) : ℝ :=
+  if a = ∞ then 1 else a.toReal / (a.toReal - 1)
+
+def bochnerRieszSymbol {n : ℕ} (δ R : ℝ) (ξ : Space n) : ℝ :=
+  (max (1 - (‖ξ‖ / R) ^ 2) 0) ^ δ
+
+def bochnerRiesz {n : ℕ} (δ R : ℝ) (f : Space n → ℂ) : Space n → ℂ :=
+  angularInverse (fun ξ ↦ bochnerRieszSymbol δ R ξ • angularFourier f ξ)
+
+def unitSegment {n : ℕ} (ω x : Space n) : Set (Space n) :=
+  {y | ∃ t ∈ Set.Icc (- (1 / 2 : ℝ)) (1 / 2), y = x + t • ω}
+
+/-- Open radius-`δ` neighbourhood of the unit segment in direction `ω`. -/
+def tube {n : ℕ} (δ : ℝ) (ω x : Space n) : Set (Space n) :=
+  ⋃ t ∈ Set.Icc (- (1 / 2 : ℝ)) (1 / 2), Metric.ball (x + t • ω) δ
+
+def kakeyaMaximal {n : ℕ} (δ : ℝ) (f : Space n → ℂ) (ω : Space n) : ℝ≥0∞ :=
+  ⨆ x : Space n,
+    (∫⁻ y in tube δ ω x, ‖f y‖ₑ) / volume (tube δ ω x)
+
+def IsKakeyaSet {n : ℕ} (F : Set (Space n)) : Prop :=
+  ∀ ω : Space n, ‖ω‖ = 1 → ∃ x, unitSegment ω x ⊆ F
+
+end Implications
+
+namespace Stein
+
+/-- The square function with the actual radius derivative `r ∂ᵣ Bᵅᵣ f`. -/
+def literalSteinSquareFunction {n : ℕ} (α : ℝ) (f : Space n → ℂ)
+    (x : Space n) : ℝ≥0∞ :=
+  (∫⁻ r in Set.Ioi (0 : ℝ),
+    ‖r • deriv (fun s => Implications.bochnerRiesz α s f x) r‖ₑ ^ 2 /
+      ENNReal.ofReal r) ^ (1 / 2 : ℝ)
+
+end Stein
+
+open OAI.Analysis.Fourier.LocalSmoothing.Comparator.Implications
+
+/-- Local smoothing for every finite `p ≥ 2`, including zero loss at `p = 2`. -/
+theorem euclidean_local_smoothing :
+    ∀ n : ℕ, 2 ≤ n → ∀ p ε : ℝ, 2 ≤ p → (0 < ε ∨ (p = 2 ∧ ε = 0)) →
+      ∃ C : ℝ, 0 < C ∧ ∀ f : SchwartzMap (Space n) ℂ,
+        MemLp (besselPotential (max 0 (((n : ℝ) - 1) / 2 - n / p) + ε) f)
+          (ENNReal.ofReal p) ∧
+        MemLp (fun z : Space n × ℝ ↦ halfWaveIntegral z.2 f z.1)
+          (ENNReal.ofReal p) (observationMeasure n) ∧
+        eLpNorm (fun z : Space n × ℝ ↦ halfWaveIntegral z.2 f z.1)
+          (ENNReal.ofReal p) (observationMeasure n) ≤
+        ENNReal.ofReal C *
+          eLpNorm (besselPotential (max 0 (((n : ℝ) - 1) / 2 - n / p) + ε) f)
+            (ENNReal.ofReal p) volume := by
+  sorry
+
+/-- Uniform Bochner–Riesz bounds in the full strict range, including `p = ∞`. -/
+theorem bochner_riesz :
+    ∀ n : ℕ, 2 ≤ n → ∀ p : ℝ≥0∞, 1 ≤ p → ∀ δ : ℝ,
+      max ((n : ℝ) * |(p⁻¹).toReal - 1 / 2| - 1 / 2) 0 < δ →
+      ∃ C : ℝ, 0 < C ∧ ∀ R : ℝ, 0 < R → ∀ f : SchwartzMap (Space n) ℂ,
+        MemLp (bochnerRiesz δ R f) p ∧
+        eLpNorm (bochnerRiesz δ R f) p volume ≤
+          ENNReal.ofReal C * eLpNorm f p volume := by
+  sorry
+
+/-- Spherical restriction in extension form, throughout the strict mixed range. -/
+theorem spherical_restriction :
+    ∀ n : ℕ, 2 ≤ n → ∀ a : ℝ≥0∞, 1 < a → ∀ b : ℝ,
+      2 * (n : ℝ) / (n - 1) < b →
+      ((n : ℝ) + 1) / ((n : ℝ) - 1) * conjugateExponent a < b →
+      ∃ C : ℝ, 0 < C ∧ ∀ g : Space n → ℂ, MemLp g a (sphereMeasure n) →
+        MemLp (sphericalExtension g) (ENNReal.ofReal b) ∧
+        eLpNorm (sphericalExtension g) (ENNReal.ofReal b) volume ≤
+          ENNReal.ofReal C * eLpNorm g a (sphereMeasure n) := by
+  sorry
+
+/-- Kakeya maximal bounds with every positive epsilon loss, uniformly in scale. -/
+theorem kakeya_maximal :
+    ∀ n : ℕ, 2 ≤ n → ∀ ε : ℝ, 0 < ε → ∃ C : ℝ, 0 < C ∧
+      ∀ δ : ℝ, 0 < δ → δ ≤ 1 → ∀ f : Space n → ℂ, MemLp f n →
+        MemLp (kakeyaMaximal δ f) n (sphereMeasure n) ∧
+        eLpNorm (kakeyaMaximal δ f) n (sphereMeasure n) ≤
+          ENNReal.ofReal (C * δ ^ (-ε)) * eLpNorm f n volume := by
+  sorry
+
+/-- Every Kakeya set has full Hausdorff dimension; no measurability is assumed. -/
+theorem kakeya :
+    ∀ n : ℕ, 2 ≤ n → ∀ F : Set (Space n), IsKakeyaSet F → dimH F = n := by
+  sorry
+
+/-- Stein's square-function estimate throughout the conjectured strict range. -/
+theorem stein_square :
+    ∀ n : ℕ, 2 ≤ n → ∀ p α : ℝ, 2 ≤ p →
+      max (1 / 2) ((n : ℝ) * (1 / 2 - 1 / p)) < α →
+      ∃ C : ℝ, 0 < C ∧ ∀ f : SchwartzMap (Space n) ℂ,
+        MemLp (Stein.literalSteinSquareFunction α f) (ENNReal.ofReal p) volume ∧
+        eLpNorm (Stein.literalSteinSquareFunction α f) (ENNReal.ofReal p) volume ≤
+          ENNReal.ofReal C * eLpNorm f (ENNReal.ofReal p) volume := by
+  sorry
+
+end OAI.Analysis.Fourier.LocalSmoothing.Comparator
+```
+
+**Readings of the definitions and statements (one reader, same model family as the draft; not a mathematician's review).** Conventions are checked against the paper's Theorem 1.1 and its listed consequences, and against the statement of the local smoothing conjecture in Beltran, Hickman and Sogge (arXiv:1812.11616, Conjecture 2.4), whose sign convention was garbled in text extraction; the threshold was derived from its prose ("a gain relative to the fixed-time estimates").
+
+| Object | Lean definition | Reading |
+|---|---|---|
+| Fourier transform and inverse | `angularFourier f ξ = ∫ exp(-i⟨x,ξ⟩) f(x) dx`; `angularInverse g x = (2π)^(-n) ∫ exp(i⟨x,ξ⟩) g(ξ) dξ` | angular-frequency convention, matching the paper's `f̂(ξ) = ∫ e^{-iX·ξ} f(X) dX` with inverse factor `(2π)^-n` |
+| Half-wave propagator | `halfWaveIntegral t f` = inverse of `exp(-i t ‖ξ‖)` times the transform | `U(T) = e^{-iT\|D\|}` |
+| Bessel potential | `besselPotential s f` = inverse of `(1+‖ξ‖²)^(s/2)` times the transform | `J^s = (1-Δ)^{s/2}` |
+| Space-time measure | Lebesgue measure on `ℝⁿ` times Lebesgue measure restricted to `[1,2]` | `L^p(ℝⁿ × I)` with `I = [1,2]` |
+| Bochner–Riesz means | `bochnerRiesz δ R f` = inverse of `max(1-(‖ξ‖/R)²,0)^δ` times the transform | `(1-\|ξ\|²/R²)_+^δ` |
+| Sphere measure and extension | surface measure on the unit sphere from Mathlib's `toSphere`; `sphericalExtension g x = ∫ e^{i⟨x,ω⟩} g(ω) dσ(ω)` | normalization differs from the unit measure by a constant, which does not affect boundedness |
+| Kakeya objects | `tube δ ω x` = union of radius-`δ` balls along a unit segment; `kakeyaMaximal` = supremum over centers of the average of `\|f\|` over the tube; `IsKakeyaSet F` = for each unit direction a unit segment inside `F` | standard |
+| Stein square function | `(∫₀^∞ \|r ∂ᵣ B^α_r f(x)\|² dr/r)^{1/2}` with `deriv` | equals `(∫ \|∂ᵣ B^α_r f\|² r dr)^{1/2}`; Lean's `deriv` returns 0 where the radial derivative does not exist, which should not arise for these `α` but is a property a specialist should confirm |
+
+| Statement | Reading |
+|---|---|
+| `euclidean_local_smoothing` | for `n ≥ 2`, real `p ≥ 2`, `ε > 0` (or `p = 2` and `ε = 0`): a constant `C > 0` such that for every complex Schwartz `f`, the half-wave is in `L^p(ℝⁿ × [1,2])` with norm at most `C` times the `L^p` norm of `J^{s₊(p)+ε} f`, `s₊(p) = max(0,(n-1)/2 - n/p)`. This is the paper's Theorem 1.1, and the sharp threshold of Conjecture 2.4 in 1812.11616 (fixed-time order `(n-1)(1/2-1/p)` minus the gain `1/p` for `p ≥ 2n/(n-1)`, and `0` below). |
+| `bochner_riesz` | `1 ≤ p ≤ ∞` and `δ > max(n\|1/p-1/2\| - 1/2, 0)`: bounds uniform in the radius, for Schwartz data. The conjectured range. |
+| `spherical_restriction` | extension `L^a(S^{n-1}) → L^b(ℝⁿ)` for `a > 1` and both `b > 2n/(n-1)` and `b > ((n+1)/(n-1)) a'`. Strict inequalities: the interior of the conjectured range, not its boundary. |
+| `kakeya_maximal` | `‖K_δ f‖_{L^n(S^{n-1})} ≤ C δ^{-ε} ‖f‖_{L^n(ℝⁿ)}` for every `ε > 0` and `0 < δ ≤ 1`. |
+| `kakeya` | every set containing a unit segment in each direction has Hausdorff dimension `n`, no measurability assumed. |
+| `stein_square` | `G^α` is bounded on `L^p` for `p ≥ 2` and `α > max(1/2, n(1/2-1/p))`, for Schwartz data; this equals the paper's `α > 1/2 + s₊(p)`. |
+
+What the readings find is a match between the Lean statements and the paper's stated theorems, with the restriction result limited to the strict range. The release's announcement of 26 October says the results "resolve the Kakeya conjecture and Stein's restriction conjecture in all dimensions"; the paper's abstract, the repository's `history.md` entry and the Lean statement all say restriction holds "throughout the interior of the conjectured range", so the Lean verdict covers the weaker form. Several items in the paper's abstract have no Lean statement in this config or in its scope note: maximal Bochner–Riesz estimates, the Nikodym maximal estimate, compact paraboloid and truncated cone restriction, and local smoothing for the Schrödinger equation.
+
+**What this run establishes and does not.** Established, given the stated trust assumptions: Lean's kernel has checked proofs of exactly these six statements, with the three standard axioms. Not established: that the paper's own argument is correct (sections 2 to 7 and the appendices were not read); that the definitions above are the intended mathematical objects beyond one reader's check; anything about the items without a Lean statement; and it is not independent of the model family that drafted this paper. The run supports route 1 of section 1 (the proof is accepted by the kernel with only standard axioms) for this config and leaves route 2 (the statement is the claim) to a specialist; the readings above are an aid, not a substitute.
+
 ## 6. What a pass does and does not establish
 
 **Established, for each accepted config.** A kernel-checked derivation of the Lean statement, from the three standard axioms, with the statement the challenge file exports. A model, a human or a script could have written it; the verdict does not depend on which. The controls show the harness rejects both a changed statement and a `sorry`.
@@ -105,7 +296,7 @@ A commentary published on 16 October 2026 argues that the release shows a "91% f
 
 ## 8. Reproduction
 
-The companion folder `openai_math_comparator_audit_v1/` holds `PINS.txt`, `setup.sh` (the steps used), `run_cmp.sh`, `census.py`, `make_table.py`, `build_paper.py`, the controls (`controls/`), and every Comparator log (`logs/`). Counts in section 2 come from `python3 -I census.py <clone>`; the results table from `make_table.py` over the logs. Builds need several GB of disk and tens of minutes per config the first time (Mathlib compiles incrementally across configs).
+The companion folder `openai_math_comparator_audit_v1/` holds `PINS.txt`, `setup.sh` (the steps used), `run_cmp.sh`, `census.py`, `make_table.py`, `build_paper.py`, the controls (`controls/`), every Comparator log (`logs/`), and for the later run of section 5.1 its project file, closure list, axiom check and pruning script and log (`localsmoothing_run/`). Counts in section 2 come from `python3 -I census.py <clone>`; the results table from `make_table.py` over the logs. Builds need several GB of disk and tens of minutes per config the first time (Mathlib compiles incrementally across configs).
 
 ## References
 
@@ -115,7 +306,8 @@ Sources: the repository itself (https://github.com/openai/math, commit adc7f1241
 
 - *2026-10-17.* Added section 6.1 (a popular reading checked against the census). No result, count or verdict above it changed.
 - *2026-10-07, v1.* Eleven short-statement configs run and accepted; two negative controls rejected; static census of the release at commit `adc7f1241`. Statement readings by one same-family reader.
-- *Open for the next revision.* A full Mathlib build (multi-hour, several GB) to reach the 377 configs whose challenge files `import Mathlib`; an independent mathematician's read of the Lean statements, starting with the ones that define their objects from scratch (`FiniteCongruenceGraph`, `GrahamSpherical`); a run with a second kernel; a sandbox at the documented strength. New results are added here with their date; a changed verdict is a correction, not an edit in place.
+- *2026-10-27, v1.1.* Section 5.1 added: one config of the 26 October update (`LocalSmoothing`, 2,261 solution modules) run against the repository head `7ef5c0cc5ca4`, accepted, axioms checked separately, challenge file and definitions reproduced and read. Differences from the earlier setup: Mathlib from the public prebuilt cache instead of a source build, regenerable per-module setup files deleted during the run for disk space. The eleven-config results above are unchanged.
+- *Open for the next revision.* A full Mathlib build (multi-hour, several GB) to reach the 377 configs whose challenge files `import Mathlib`; an independent mathematician's read of the Lean statements, starting with the ones that define their objects from scratch (`FiniteCongruenceGraph`, `GrahamSpherical`); a run with a second kernel; a sandbox at the documented strength; for the 27 October run, a source rebuild of Mathlib in place of the cache. New results are added here with their date; a changed verdict is a correction, not an edit in place.
 
 ---
 

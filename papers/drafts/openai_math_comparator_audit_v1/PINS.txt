@@ -8,3 +8,18 @@ landrun           github.com/zouuup/landrun v0.1.17 via `go install ...@latest` 
 Host              Linux 6.18.44, Landlock ABI v7 (landrun wanted a newer ABI; Comparator passes --best-effort), 4 cores, 15 GB RAM, no network for builds (unshare -n)
 Run as            uid 65534 (nobody), env -i, PATH restricted; the Comparator README asks for an unprivileged user and systemd-run (not used here)
 Kernels           Lean default kernel only; no external kernel (nanoda_bin not built)
+
+Run 2 (2026-10-27), config LocalSmoothing only
+Target            github.com/openai/math @ 7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a (committer date 2026-10-26T14:18:03-07:00, "Merge pull request #3 from openai/codex/update-10-26"); sparse partial clone limited to lean/, narrowed to the 2,261 OAI modules of the solution's import closure plus the challenge files; closure manifest sha256 e1f0911030fc68b651f46ff38a18e212c719cd6b483d1e62984ae3c935c57c77 (sha256 of the per-file sha256 list in closure order, localsmoothing_run/closure_modules.txt)
+Challenge file    ComparatorChallenges/LocalSmoothing.lean sha256 58dd1d878cd08f8d32850b1142e451a5efd4b0cdcf538ba80efbd01ea83cd9fd
+Lean              v4.34.1, commit 5045d0056413266e57c625dcd7c365b10e377c52 (release tarball)
+Mathlib           d13f23b723b8a846827a245b89c10fc7d3f11612 (the repo's lake-manifest pin); PREBUILT artifacts from the public cache (cache.mathlib.org, 8,908 files) fetched by Mathlib's post-update hook in `lake update`; NOT built from source in this run
+Mathlib deps      plausible 118aa17ee8, LeanSearchClient ddf04cf394, importGraph e928b72544, proofwidgets 106ff4fafc, aesop 355695d523, Qq 6a489d9af5, batteries f2effa3d80, Cli e92c9f15fd (equal to the repo's manifest)
+Comparator        github.com/leanprover/comparator @ d03acab, lean-toolchain edited to v4.34.1, lakefile.toml dependency on lean4export changed to a local path, lake-manifest.json removed and regenerated (as in run 1)
+lean4export       github.com/leanprover/lean4export @ 076e8e5, lean-toolchain edited to v4.34.1 (as in run 1)
+landrun           github.com/zouuup/landrun v0.1.17 via `go install ...@v0.1.17` (go1.24.7)
+Host              Linux 6.18.44, 4 cores, 15 GB RAM, about 22 GB free disk at start
+Run as            uid 65534 (nobody), env -i, `unshare -n`, run_cmp.sh as in run 1; Lean default kernel only; no systemd-run
+Project           localsmoothing_run/lakefile.lean (package OAI, mathlib require at the pin; libraries for the one solution module and the challenge)
+Disk              regenerable per-module *.setup.json deleted during the run by localsmoothing_run/prune_ir.sh (log: prune_ir.log); see section 5.1 of the paper
+Start / verdict   21:44:20Z / 23:33:10Z (1 h 48 min 50 s); exit 0, "Your solution is okay!"
