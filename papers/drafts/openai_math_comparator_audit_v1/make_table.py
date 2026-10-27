@@ -1,5 +1,5 @@
 import json,os,re,glob,sys
-M="/tmp/claude-0/-home-user/94b10564-62ee-5779-8d97-f5ce11793cb8/scratchpad/oaimath/math/lean/"
+M=os.environ["OAI_LEAN"]  # path to the lean/ directory of a clone of github.com/openai/math, with a trailing slash
 names=sys.argv[1:]
 imp_re=re.compile(r'^\s*import\s+(\S+)',re.M)
 def path(m): return m.replace('.','/')+'.lean'
@@ -12,7 +12,7 @@ for n in names:
     d=json.load(open(M+f"ComparatorChallenges/{n}.json")); s=set(); closure(d['solution_module'],s)
     sol=sum(len(open(M+path(m)).read().splitlines()) for m in s)
     chl=len(open(M+f"ComparatorChallenges/{n}.lean").read().splitlines())
-    lg=f"/srv/lean/cmp_{n}.log"
+    lg=os.environ.get("CMP_LOG_DIR",os.path.join(os.path.dirname(os.path.abspath(__file__)),"logs"))+f"/cmp_{n}.log"
     t=open(lg).read() if os.path.exists(lg) else ""
     if "Your solution is okay!" in t: res="accepted"
     elif "uncaught exception" in t: res="rejected: "+t.strip().splitlines()[-1][:80]

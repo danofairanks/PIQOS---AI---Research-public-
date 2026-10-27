@@ -14,3 +14,11 @@ curl -sSL -o lean.tar.zst https://github.com/leanprover/lean4/releases/download/
 #    the OAI/ modules in the import closure of each solution module, copied unmodified, and ComparatorChallenges/<Name>.{lean,json} unmodified.
 # 5. `lake update`, then kill it when it starts `cache get` (the cache host is unreachable); `lake build ProofWidgets` once with network (needs node/npm).
 # 6. Run each config with run_cmp.sh (unprivileged user, no network).
+
+# --- Run 2 (2026-10-27, LocalSmoothing): differences from the steps above ---
+# Step 5 was NOT followed: `lake update` was allowed to finish, and Mathlib's post-update hook ran `lake exe cache get`
+# (the cache host was reachable), downloading prebuilt Mathlib and dependency artifacts instead of building them.
+# The project file used is localsmoothing_run/lakefile.lean. The closure of OAI.Analysis.Fourier.LocalSmoothing.Comparator
+# (2,261 modules, localsmoothing_run/closure_modules.txt) was copied unmodified. landrun was installed at v0.1.17.
+# During the Comparator's solution build, free disk fell low and regenerable *.setup.json files of finished modules were deleted
+# by localsmoothing_run/prune_ir.sh until the run ended. After the verdict, localsmoothing_run/AxiomCheck.lean was run as nobody with no network.
