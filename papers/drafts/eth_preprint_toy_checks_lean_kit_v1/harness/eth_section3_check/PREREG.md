@@ -1,0 +1,11 @@
+# Prereg: Section 3's common routine (ETH preprint): Definition 3.1, Lemmas 3.2-3.3, Proposition 3.4, (3.14)-(3.16)
+Written 2026-10-28 before the dedicated check. What was already exercised: my Section 2 implementation (bounded-occurrence base case) used a *different* evaluation of the decoupled sums (solving linear systems for lambda coefficients, eq. (2.5)) and the Taylor/inclusion-exclusion/Hermite pipeline; it passed 81/81. The general routine in Section 3 instead uses *representatives* x_bar_h with C_h x_bar_h = y_h and the invariance of A_g under ker C_h, over an arbitrary commutative (Q-)algebra A, with degree hypothesis (3.2) and q = floor(d_H/Q).
+Claims under test: Lemma 3.2 (Z_E = sum over measurement tuples of prod_g Sigma_g(y), Sigma_g(y) = sum_{x_g in X_{g,E}(y_g)} A_g(x_g + sum_{h != g} x_bar_h), cost <= 2(2D+1)^c sum_g 2^{|S_g|} Boolean vectors, one A_g evaluation per vector); Lemma 3.3 (sum_x p_x(x) = sum_{|E| <= q} sum_{U subset E} (-1)^{|E|-|U|} sum_{x: x_i = 1, i in E} p_x(1_U) for p_x of degree <= q); Proposition 3.4 (<= 2 Q r C_q (2D+1)^{2 tau n} 2^{2n/r} Boolean vectors, C_q = sum_{s <= min(q,n)} 2^s binom(n,s), Hermite uniqueness QJ > d_H); (3.15) eta^q C_q <= (1+2 eta)^n; (3.16) log C_q <= q log(Q/R) + n log(1+2R/Q).
+Predictions:
+- S3-1: all steps re-derive on paper.
+- S3-2: on the real Section 2.7 design (r,Q,R) in {(2,3,2),(2,3,3)}, n = 4..5, the representative-based Z_{t,E,U} equals both brute force and my lambda-based Z for every (t,E,U) tested, and the Hermite recovery from it returns exact #F on all tested formulas.
+- S3-3: Lemma 3.2 holds for arbitrary invariant A_g in non-domain rings (Z/12, Q[V]/(V^2)) with random C_g (row abs-sum <= D), and the number of Boolean vectors examined never exceeds 2(2D+1)^c sum_g 2^{|S_g|}.
+- S3-4: Lemma 3.3 holds standalone for random polynomials p_x of degree <= q over Q and Z/12, n <= 6.
+- S3-5: (3.15) and (3.16) hold exactly over n <= 200, q <= n, eta in a grid; Prop 3.4's vector count is exceeded by no run.
+- S3-6: no gap; the E-restriction remark (representatives may violate x_i = 1, harmless) resolves.
+Method: re-derive, implement the paper's representative-based routine (reusing the Section 2 design), run, log.

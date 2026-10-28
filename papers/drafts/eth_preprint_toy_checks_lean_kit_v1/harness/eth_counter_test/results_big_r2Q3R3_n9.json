@@ -1,0 +1,56 @@
+[
+ {
+  "n": 9,
+  "m": 13,
+  "seed": 1000,
+  "truth": 8,
+  "q": 27,
+  "J": 28,
+  "h": 3,
+  "meas_rows": 3,
+  "H(0)==#F": true,
+  "deg_H": 29,
+  "deg_H<=occ*(R-1)": true,
+  "L2_hermite_from_brute_ok": true,
+  "Q*J>3nR": true,
+  "design_violations(2.5)": 0,
+  "L3_decoupled_matches_brute_taylor": true,
+  "L4_count": 8,
+  "L4_count_correct": true,
+  "counters": {
+   "assign_evals": 628992,
+   "poly_mults": 13471776,
+   "triples": 59049
+  },
+  "2^n": 512,
+  "assign_evals_over_2^n": 1228.5,
+  "seconds": 116.7
+ },
+ {
+  "n": 9,
+  "m": 13,
+  "seed": 1001,
+  "truth": 0,
+  "q": 27,
+  "J": 28,
+  "h": 2,
+  "meas_rows": 2,
+  "H(0)==#F": true,
+  "deg_H": 26,
+  "deg_H<=occ*(R-1)": true,
+  "L2_hermite_from_brute_ok": true,
+  "Q*J>3nR": true,
+  "design_violations(2.5)": 0,
+  "L3_decoupled_matches_brute_taylor": true,
+  "L4_count": 0,
+  "L4_count_correct": true,
+  "counters": {
+   "assign_evals": 605952,
+   "poly_mults": 11725578,
+   "triples": 59049
+  },
+  "2^n": 512,
+  "assign_evals_over_2^n": 1183.5,
+  "seconds": 106.2
+ }
+]

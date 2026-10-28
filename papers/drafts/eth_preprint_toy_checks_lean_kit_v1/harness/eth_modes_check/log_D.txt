@@ -1,0 +1,2 @@
+D {'a': 2, 'p': 3, 'node_trials': 48, 'failures': 0, 'tuples_example': 8}
+D {'a': 2, 'p': 5, 'node_trials': 48, 'failures': 0, 'tuples_example': 38}

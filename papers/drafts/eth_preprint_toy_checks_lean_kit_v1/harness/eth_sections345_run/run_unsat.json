@@ -1,0 +1,29 @@
+[
+ {
+  "name": "unsat",
+  "n": 4,
+  "m_test": 2,
+  "k": 1,
+  "l": 5,
+  "N": 0,
+  "d": 10,
+  "d_H": 20,
+  "q": 6,
+  "J": 7,
+  "degT_H": 0,
+  "deg_ok": true,
+  "S_bruteforce": 0,
+  "S_bound_bits": 15,
+  "prime_bits": 127,
+  "bound_ok": true,
+  "S_pipeline": 0,
+  "S_equal": true,
+  "per_V_coef_equal": true,
+  "N_pipeline": 0,
+  "N_correct": true,
+  "taylor_equals_bruteforce": true,
+  "hermite_ok": true,
+  "vectors_examined": 11340,
+  "seconds": 0.1
+ }
+]

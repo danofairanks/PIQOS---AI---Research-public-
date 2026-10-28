@@ -1,0 +1,11 @@
+# Deviations and notes (eth_counter_test)
+- D-1 Schedules a_v, d_e are random (seeded), not the derandomized Lemma 4.5 choice. Group-size bound |S_{t,g}| <= 2n/r and label multiplicity h <= 2M/D are not enforced; h is whatever the draw gives (1-3). Correctness of the decoupling does not depend on them; cost does.
+- D-2 Parameters (r,Q,R) in {(2,3,2),(2,3,3),(3,2,2)} (D=64..81) are far outside the paper's regime (2.19): conditions (2.17), the binomial tail bound and c <= D tau/(3r) are not met (e.g. c=10 of D=64). The measurement count is therefore large; the tests check exactness of the construction, not its efficiency.
+- D-3 Arithmetic is exact modulo the prime 2^61-1 (every true quantity is a small integer < p; counts are read back as integers). Not rational arithmetic with Fractions.
+- D-4 With these n, q = floor(3nR/Q) >= n, so E ranges over ALL subsets with U subset E: the number of (E,U) pairs is 3^n; the Taylor-truncation saving never operates.
+- D-5 Interval I of R consecutive integers near Qp chosen by rounding and clipping to [0,Q]; the paper defers this to Step 5.
+- D-6 Only the bounded-occurrence base case is implemented (Sections 2.1-2.7). Sparsification (2.8), parity tests and sparse-polynomial-zero counting (2.9, Sections 5-6) and the tensor-contraction speedup (Appendix D) are NOT implemented. Section 4 and later were not needed and not read for this implementation.
+- D-7 Dummy clauses (variables with no real occurrence) are included in the scopes, schedules, labels and measurements as in 2.1; they contribute 1 to the product.
+- D-8 Mutation checks (no_phi, drop_row, no_C) were added after the first successful L3/L4 run to test the harness's sensitivity; not in the prereg.
+- D-9 The first background sweep launch used sh and failed on a bash-only substitution before running anything; it was relaunched under bash. No results were produced or discarded by the failure.
+- D-10 Tested formula sizes are n <= 9 (prereg C-4 said n <= 16). Larger n was not run: cost grows as ~3^n pairs times tuple enumeration (n=9: ~110 s per case).

@@ -1,0 +1,1 @@
+D5 {'sum_q_gt_M_2L_minus_1': True, 'margins': {'8hD+8M(a+1)': 'fail 0/396', '6hD+4M(a+1)': 'fail 0/396', '0hD+0M(a+1)': 'fail 396/396'}}

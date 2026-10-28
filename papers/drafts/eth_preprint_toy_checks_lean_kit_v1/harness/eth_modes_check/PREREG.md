@@ -1,0 +1,13 @@
+# Prereg: Appendix D, D.4.5-D.4.7 (modes, child networks, time/space) of the ETH preprint
+Written 2026-10-28 before the dedicated re-derivation and numerics (D.4.5-D.4.7 were read once while modeling the exponent). Claims under test:
+- D.4.5: at an active node t (i = v2(t) < u), group vertices by their symbol in coordinate i; W(t) is local; for a crossing pair (row slot x, column slot y = y0 + 2^{i+1} j with equal i-th bits) v2(t - y0 + x) <= i; the geometric expansion (D.12) W_xy(T) = sum_{b>=0, b+1<p_t} [C(T)/(C'(0)(T-y0+x))] (2^{i+1}/(T-y0+x))^b j^b (mod 2^{p_t}); modes Z (packet, tile, b) of weight b+1, L_Z(X) = sum_{y in tile} j^b X_y; coefficients of modes divisible by 2^{weight}; at most (3M/L) 2^{i+1} = 6M/D_t variables of each weight; number of exponent tuples with sum w_Z beta_Z < p_t is <= exp(theta p_t + (6M/D) sum_j -ln(1-e^{-theta j})) = exp(O(sqrt(M p_t/D))) with theta = sqrt(M/(D p_t)).
+- D.4.6: for each tuple beta and group g a child network (group-g vertices on one side, one vertex per packet on the other, packet tensor = coefficient extraction of the group's row-factor product times the powers of source-mode forms); identity (D.16) F(t + alpha zeta) = sum_beta prod_g Z_{g,beta} (mod 2^{p_t}); child has <= 6M/r = 3M/32 < M/8 edges, old degrees unchanged, packet vertex degree <= 2L <= Delta.
+- D.4.7: number of children of a depth-d call <= s^{O(1)} exp(O_C((s/sqrt(lambda))(sqrt2/8)^d)); total calls exp(O(s/sqrt lambda)); leaf cost 2^H poly; space poly.
+Predictions:
+- DM-1: valuation claim v2(t - y0 + x) <= i holds for every equal-bit pair, all a <= 5, all t with v2(t) < a.
+- DM-2: the truncated geometric expansion equals the exact W_xy(t + alpha zeta) mod 2^p for p in 1..20 for all tested (a, t, x, y, zeta); each term's valuation is >= b+1.
+- DM-3: exact tuple counts (DP over variables of weights 1.. with multiplicity N = 6M/D per weight) are <= the stated bound for the stated theta, for all tested (N, p).
+- DM-4: on a tiny packet network (a = 2, L = 4, r = 2, tensors random, p_t replaced by a small working precision p), the mode expansion (D.16) reproduces the directly computed F(t + alpha zeta) mod 2^p for every t in S\{0} with i < a and random zeta, both groupings (i = 0 and i = 1).
+- DM-5: arithmetic claims (child edges 6M/r < M/8 for r = 64; degree 2L <= Delta; call-count exponent geometric with ratio 2^{-5/2}) re-derive.
+- DM-6: no gap found. Subtle points to inspect: the diagonal (x = y) entries are crossing pairs; mode weights exceeding p_t are irrelevant; the powers j^b with j = 0 (0^0 = 1, 0^b = 0).
+Method: re-derive, implement the tiny network and the counting DP, log deviations.

@@ -1,0 +1,10 @@
+# Prereg: Sections 6.1-6.2 existence arguments of the ETH preprint
+Written 2026-10-28 before the re-derivation and numerics (the text of 6.1-6.2 was read once already while modeling the sparsification step; this entry is the dedicated check). Claims under test: Lemma 6.1 (deterministic construction of A(0): <= 3n rows, row weight <= D0, every nonzero z with A(0)z = 0 has |supp z| >= m/P; parameters mu = floor(log2 m)+1, P = 20000 B^2 mu^2, D0 = 320000 B^2 mu^3) and Lemma 6.2 (3n greedy rows of list length P give N(A) = #F, using the average argument over (2m)^P lists).
+Predictions:
+- E-1: every inequality in the proof of Lemma 6.1 re-derives: (i) union bound 2 q_G exp(-eps^2 d_G/2) = 2 q_G exp(-4 mu) < 1; (ii) local-code count (h+1)(2 d_G)^h <= (2 d_G)^{2h} < 2^{d_G/(25B)} and c_G >= d_G/(8B); (iii) mixing estimate with eigenvalues <= eps d_G; (iv) distance chain h' >= delta (delta - eps) q_G d_G = q_G d_G/P >= m/P; (v) row count 2 q_G c_G <= 3n.
+- E-2: the small-m edge case (q_G = 1, d_G = m) and the case c_G = floor(d_G/(8B)) = 0 are handled correctly (or are harmless).
+- E-3: numeric check with exact binomial sums over B in {1,2,5,20}, mu in 1..60 shows the local-code union bound holds with large slack (> 10 bits of slack at d_G = D0).
+- E-4: Lemma 6.2's 1/4 rejection probability holds exactly: P(h.v = 1) = (1/2)(1 - (1 - s/m)^P) >= 0.316 for every support size s >= m/P (grid over m, P).
+- E-5: exact greedy runs on tiny formulas (n in 4..6, k = 3, m = P = 4, empty A(0), all (2m)^P candidates) reduce the number D of passing nonsatisfying assignments by a factor <= 3/4 each round and reach 0 within 3n rounds, on every random formula.
+- E-6: no gap found; a caveat to record is the cost: the shift search takes exp(O(d_G log m)) with d_G = D0 ~ 3e5 B^2 mu^3, i.e. exp((log n)^{O(1)}) only, "polynomial" only after the statement's absorption into the subexponential factor.
+Method: re-derive by hand, run the parameter checks and exact small-case tests in eth_section6_check/section6_check.py.

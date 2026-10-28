@@ -1,0 +1,74 @@
+{
+ "r2_Q3_R2": {
+  "M0_eigen_action_on_basis_sample": true,
+  "M0_fixes_kerC": true,
+  "max_|E_uw|_over_nonzero_M0": 1,
+  "sparsity_ok(<=R-1)": true,
+  "nonzero_M0_entries": 136,
+  "c_rows": 10,
+  "D": 64,
+  "I": [
+   0,
+   1
+  ],
+  "seconds": 0.0
+ },
+ "r2_Q3_R3": {
+  "M0_eigen_action_on_basis_sample": true,
+  "M0_fixes_kerC": true,
+  "max_|E_uw|_over_nonzero_M0": 2,
+  "sparsity_ok(<=R-1)": true,
+  "nonzero_M0_entries": 112,
+  "c_rows": 1,
+  "D": 64,
+  "I": [
+   0,
+   1,
+   2
+  ],
+  "seconds": 0.0
+ },
+ "r3_Q2_R2": {
+  "M0_eigen_action_on_basis_sample": true,
+  "M0_fixes_kerC": true,
+  "max_|E_uw|_over_nonzero_M0": 1,
+  "sparsity_ok(<=R-1)": true,
+  "nonzero_M0_entries": 153,
+  "c_rows": 9,
+  "D": 81,
+  "I": [
+   0,
+   1
+  ],
+  "seconds": 0.0
+ },
+ "r2_Q4_R3": {
+  "M0_eigen_action_on_basis_sample": true,
+  "M0_fixes_kerC": true,
+  "max_|E_uw|_over_nonzero_M0": 2,
+  "sparsity_ok(<=R-1)": true,
+  "nonzero_M0_entries": 800,
+  "c_rows": 13,
+  "D": 256,
+  "I": [
+   0,
+   1,
+   2
+  ],
+  "seconds": 0.7
+ },
+ "r2_Q4_R2": {
+  "M0_eigen_action_on_basis_sample": true,
+  "M0_fixes_kerC": true,
+  "max_|E_uw|_over_nonzero_M0": 1,
+  "sparsity_ok(<=R-1)": true,
+  "nonzero_M0_entries": 704,
+  "c_rows": 67,
+  "D": 256,
+  "I": [
+   0,
+   1
+  ],
+  "seconds": 0.6
+ }
+}

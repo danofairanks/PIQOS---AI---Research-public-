@@ -1,0 +1,24 @@
+Building ComparatorChallenges.EthKit
+⚠ [8924/8924] Replayed ComparatorChallenges.EthKit
+warning: ComparatorChallenges/EthKit.lean:27:8: declaration uses `sorry`
+warning: ComparatorChallenges/EthKit.lean:37:8: declaration uses `sorry`
+warning: ComparatorChallenges/EthKit.lean:44:8: declaration uses `sorry`
+warning: ComparatorChallenges/EthKit.lean:52:8: declaration uses `sorry`
+warning: ComparatorChallenges/EthKit.lean:56:8: declaration uses `sorry`
+warning: ComparatorChallenges/EthKit.lean:62:8: declaration uses `sorry`
+Build completed successfully (8924 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, OAI.EthKit.Comparator.branch_partition, OAI.EthKit.Comparator.hermite_unique, OAI.EthKit.Comparator.degree_control, OAI.EthKit.Comparator.exists_le_average, OAI.EthKit.Comparator.greedy_contracts, OAI.EthKit.Comparator.contract_correct, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from ComparatorChallenges.EthKit
+Building OAI.EthKit.Comparator
+⚠ [8924/8924] Replayed OAI.EthKit.Comparator
+warning: OAI/EthKit/Comparator.lean:109:58: This simp argument is unused:
+  mul_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Polynomial.natDegree_pow, hn, Finset.sum_const]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Build completed successfully (8924 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, OAI.EthKit.Comparator.branch_partition, OAI.EthKit.Comparator.hermite_unique, OAI.EthKit.Comparator.degree_control, OAI.EthKit.Comparator.exists_le_average, OAI.EthKit.Comparator.greedy_contracts, OAI.EthKit.Comparator.contract_correct, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from OAI.EthKit.Comparator
+Running Lean default kernel on solution.
+Lean default kernel accepts the solution
+Your solution is okay!

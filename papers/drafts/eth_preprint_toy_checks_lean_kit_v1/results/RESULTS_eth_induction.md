@@ -1,0 +1,34 @@
+# Results: Theorem D.1's global induction (ETH preprint, D.4.7 proof and its invariants)
+Scored against eth_induction_check/PREREG.md (fe1a819). Read: the statement of Theorem D.1, the proof "Proof of Theorem D.1" in D.4.7 (the induction), and the invariants it consumes ((D.4)-(D.6), Lemma D.3's hypotheses, Lemma D.5's, (D.11), the interpolation-point count in D.4.4). Code `induction_check.py`, raw `induction_results.json`. The numerics evaluate the numerical invariants in the log2 domain at every active depth (C in {12, 144}); no end-to-end run of the recursion was possible (see GI-3).
+
+## The induction as I read it (made explicit)
+Statement P(call): given a bipartite Boolean tensor network N with tensors in A (entries as integer coordinates, each tagged with its creation precision, implicit descriptions), a call precision p, and invariants I: M <= C s 8^{-d}; max degree <= Delta = ceil(s^{9/10}); vertices <= poly(s); entry cost <= (s+L)^b 2^{A s^{9/10}} and space (s+L)^b; p within the (D.11) bound, return the contraction of the lifted tensors modulo 2^p.
+- Base: M <= H = ceil(s/floor(sqrt lambda)): enumerate all 2^M assignments (2^H poly).
+- Step (M > H, depth d): packing by Lemma D.3 (hypotheses (D.6) follow from I and (D.5)); define W (D.7) and F(T) (D.8): F(0) = contraction of the lifted tensors since W(0) = I; deg F <= M(2L-1); F(t+alpha z) in A[z] for t in S (Lemma D.4). Lemma D.5 recovers F(0) mod 2^p from the first q_t Taylor coefficients of F(t+alpha z) mod 2^{p_t}, t with q_t > 0. Obtain F(t+alpha z) mod 2^{p_t} by evaluating at M(2L-1)+1 distinct residue-field lifts zeta (pairwise unit differences; fewer than s^4 points; F_{2^e}, e = 4 lambda, has enough elements) and Lagrange interpolation over A_{p_t}. Each evaluation F(t+alpha zeta) = sum over beta with sum w beta < p_t of prod_g Z_{g,beta} by (D.16), each Z_{g,beta} the contraction of a child network satisfying I with (M', d+1, p_t): M' <= 3M/r = 3M/32 < M/8, degrees unchanged or <= 2L <= Delta, vertices polynomial, entries (retained: from immutable descriptions at creation precision then canonically lifted; packet tensors: exp(O(L log s)) <= 2^{A s^{9/10}}). The induction hypothesis returns Z_{g,beta} mod 2^{p_t}.
+- Termination: M strictly drops by a factor > 8, so depth <= log8(C sqrt lambda) = log2(lambda)/6 + O_C(1).
+- Cost: calls = prod over depths of (poly * N_d * r) with N_d = exp(O((s/sqrt lambda)(sqrt 2/8)^d)): total exp(O(s/sqrt lambda) + O(lambda log lambda)); leaf 2^H poly; space depth-first with O(log lambda) frames of polynomial size.
+- Canonical lifting: each call computes the contraction of the lifted tensors (not of "true" tensors) modulo its own precision, which is precisely what (D.16) and Lemma D.5 act on; at the root the lifts are the integer representatives of residues mod 2^{P0}, so the root output equals the true contraction mod 2^{P0}. Because tensor entries created at precision p_c are reused at higher precision p_t by fixed integer representatives, no result at a deeper level is ever interpreted at a precision above what its tensors determine except through these representatives, and the recovery at each level only needs the identity modulo that level's precision.
+- I find the induction logically consistent: each call's correctness uses only (i) the identity (D.16) for that call's lifted tensors, (ii) Lemma D.5 on that call's polynomial F, (iii) the hypothesis for strictly smaller networks.
+
+## Numerics (invariants at every active depth, worst case M just above H)
+- Invariants checked: (D.6): H >= 2 D_arr^2 Delta, H >= L D_arr, 2L <= Delta; L, D_arr <= s^{1/1000}; a <= 4 eps lambda; 1 <= u and 2u <= a; M >= u; interpolation points C s 2^{a} < 2^{4 lambda}.
+- All hold at every depth from lambda_2 = 2.10e6 (C = 12; five active depths) and 8.39e6 (C = 144; seven depths); no failures in 3,000 samples above. Below lambda_2 the only failure is u_d < 1 at the last depth (e.g. u_4 = floor(eps lambda/16) >= 1 needs lambda >= 2^21), i.e. the schedule u_d = floor(eps lambda/2^d) degenerates; none of the (D.6) inequalities binds.
+- These thresholds are below the D.11 threshold (2.9e7 / 6.7e7) and far below Lemma 4.8's (1.1e10-1.4e11); the literal reading u >= lambda^{4/5} (needs 2^546+) is not satisfied at lambda_2 and not needed.
+- **Honest toy recursion (GI-3):** at Lemma D.5's own precision the number of beta tuples is already astronomical for the smallest sensible toy: M = 8, L = 4, u = 1, p = 4 gives p_t = 964 and about 10^108 tuples (12 mode variables per weight); M = 64, L = 8 gives p_t = 14,340 and about 10^876. A full recursive run is therefore not possible at toy scale; the earlier tests (identity (D.16) at working precision 3-5; Lemma D.5 recovery with its margins; Lemma D.3; D.4) are the strongest feasible substitutes.
+
+## Prereg scoring
+| id | result | note |
+|---|---|---|
+| GI-1 | Held | induction consistent as read; children stay in the theorem's class. |
+| GI-2 | Held in direction, lower in size | all numerical invariants hold from lambda_2 = 2.1e6-8.4e6 (predicted ~1e7); bound by u_d >= 1 at the last depth, not by the D.11 threshold (which is higher: 2.9e7-6.7e7). |
+| GI-3 | Held | 10^108 and 10^876 tuples at toy parameters. |
+| GI-4 | Held | the induction runs on a generalized statement (A_p entries with creation-precision tags, implicit descriptions) not isolated as a lemma. A reader must reconstruct it; mathematically consistent. |
+
+## Reading
+1. Theorem D.1's global induction is sound as written. Together with the piece-by-piece checks (D.3, D.4, D.5, D.4.5-D.4.7, D.11), I found no gap in Appendix D's contraction proof at the level of exact lemmas and numerical hypotheses.
+2. The only presentational weakness: the induction hypothesis is a strengthening of the theorem's stated hypothesis and is never written as a self-contained lemma; its invariants (precision tags, immutable descriptions, canonical representatives) are scattered across D.4.1, D.4.2, D.4.6 and D.4.7. Formalizing the paper would start by writing that lemma.
+3. Binding thresholds across the thread, smallest to largest: invariants of the induction (2e6-8e6), D.11 precision (3e7-7e7), Lemma 4.8 / Section 5 route (1e10-1.4e11), cost crossovers (1e13-1e17). So Theorem D.1 itself is valid far earlier than the algorithm is faster than brute force.
+4. What I did not and cannot check by running: the recursion end to end (infeasible at toy scale), and the correctness of Lemmas I assumed from reading only (Lemma D.3's use inside the recursion at r = 64 and a > 2 was tested at a <= 2, r <= 3).
+
+## Not established
+Independent review of the whole preprint; Lean formalization (none exists in the repo for this claim); the algorithm run at any nontrivial scale; the paper's proofs of Sections 3 (common routine, Proposition 3.4) beyond their use in my Section 2 implementation (bounded-occurrence case).
