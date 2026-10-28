@@ -1,0 +1,47 @@
+[
+ {
+  "n": 4,
+  "m": 4,
+  "seed": 1000,
+  "truth": 4,
+  "q": 8,
+  "J": 9,
+  "h": 2,
+  "meas_rows": 20,
+  "H(0)==#F": true,
+  "deg_H": 0,
+  "deg_H<=occ*(R-1)": true,
+  "L2_hermite_from_brute_ok": true,
+  "Q*J>3nR": true
+ },
+ {
+  "n": 4,
+  "m": 4,
+  "seed": 1001,
+  "truth": 2,
+  "q": 8,
+  "J": 9,
+  "h": 1,
+  "meas_rows": 10,
+  "H(0)==#F": true,
+  "deg_H": 2,
+  "deg_H<=occ*(R-1)": true,
+  "L2_hermite_from_brute_ok": true,
+  "Q*J>3nR": true
+ },
+ {
+  "n": 4,
+  "m": 4,
+  "seed": 1002,
+  "truth": 6,
+  "q": 8,
+  "J": 9,
+  "h": 1,
+  "meas_rows": 10,
+  "H(0)==#F": true,
+  "deg_H": 4,
+  "deg_H<=occ*(R-1)": true,
+  "L2_hermite_from_brute_ok": true,
+  "Q*J>3nR": true
+ }
+]

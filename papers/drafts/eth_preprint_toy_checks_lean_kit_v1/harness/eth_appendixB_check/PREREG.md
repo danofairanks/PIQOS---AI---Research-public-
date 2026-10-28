@@ -1,0 +1,10 @@
+# Prereg: Appendix B (exact arithmetic, bit sizes) and Lemma 4.6 of the ETH preprint
+Written 2026-10-28 before reading Appendix B (lines ~2690-2910 of the extraction) or Lemma 4.6 (~1861). Known beforehand: Prop 5.3's proof says rows have common denominator d_den = (R-1)! Q!, lifted factors have denominator dividing Delta^(...) = d_den^k etc., "exponentially many summands can be accumulated over one denominator", bit length of sums B_sum = poly(n, m_test, l, k, Q, log(D+2), log(S+2)) (5.6); Lemma B.1 bounds the coefficients of e_j (Lemma 5.1, Beigel-Tarui modulus-amplifying polynomial) with poly(l) bits; interpolation and final residue have polynomial bit cost.
+Predictions:
+- B-1: every intermediate quantity is bounded by a polynomial in the stated parameters; no bound of the form 2^{poly} bits appears.
+- B-2: the key subtlety is the Hermite/Lagrange interpolation over Q with 2^{O(...)}-magnitude coefficients (binomials, factorials, powers of t, Hermite multiplicities up to q); the paper bounds it by polynomial BIT LENGTH, not polynomial value.
+- B-3: the e_j coefficients of Lemma 5.1 (division of p_l by h = Y^2 - Y) have bit length O(l) (binomial(l+j-1,j) ~ 2^l), consistent with "poly(l) bits".
+- B-4: there is no gap between the claim (5.6) and the proof: each bound is stated with an explicit expression I can re-evaluate numerically.
+- B-5: my own implementation's exact quantities agree with the stated denominators: (R-1)! Q! * P_u(T) has integer coefficients for the construction of Section 2.7, with entries bounded as the appendix says. (Test with Fractions on the small parameter sets used before.)
+- B-6: the sum-of-absolute-values-of-coefficients bound (row sum <= D) for measurement rows is satisfied by the construction (rows over {0,+-1} with D entries -> row sum <= D = r^{2Q}).
+Method: read the appendix, list every bound, evaluate Lemma B.1 numerically (compute p_l, e_j for l <= 40, check congruence mod 2^l and coefficient bit lengths), and test the denominator claim on the construction with exact rational arithmetic. If a bound cannot be evaluated from the text, record as a gap.

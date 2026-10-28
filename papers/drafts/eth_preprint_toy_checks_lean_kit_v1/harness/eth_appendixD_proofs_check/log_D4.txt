@@ -1,0 +1,4 @@
+D4 {'a': 1, 'L': 2, 'v2_Cprime_const': True, 'W0_is_I': True, 'deg_2L_1': True, 'coeffs_checked': 64, 'nonintegral': 0, 'not_div_by_2_when_y_minus_x_ne_t': 0}
+D4 {'a': 2, 'L': 4, 'v2_Cprime_const': True, 'W0_is_I': True, 'deg_2L_1': True, 'coeffs_checked': 1024, 'nonintegral': 0, 'not_div_by_2_when_y_minus_x_ne_t': 0}
+D4 {'a': 3, 'L': 8, 'v2_Cprime_const': True, 'W0_is_I': True, 'deg_2L_1': True, 'coeffs_checked': 16384, 'nonintegral': 0, 'not_div_by_2_when_y_minus_x_ne_t': 0}
+D4 {'a': 4, 'L': 16, 'v2_Cprime_const': True, 'W0_is_I': True, 'deg_2L_1': True, 'coeffs_checked': 262144, 'nonintegral': 0, 'not_div_by_2_when_y_minus_x_ne_t': 0}

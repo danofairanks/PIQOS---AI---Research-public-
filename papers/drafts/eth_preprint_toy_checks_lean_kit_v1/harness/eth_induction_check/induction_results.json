@@ -1,0 +1,32 @@
+{
+ "C12": {
+  "lambda_2": 2097152,
+  "failures_above": 0,
+  "failing_below": "u<1 at depth 4"
+ },
+ "C144": {
+  "lambda_2": 8388608,
+  "failures_above": 0,
+  "failing_below": "u<1 at depth 6"
+ },
+ "toy": {
+  "M": 8,
+  "L": 4,
+  "u": 1,
+  "p": 4,
+  "h": 24,
+  "p_t": 964,
+  "vars_per_weight": 12,
+  "log10_tuples": 108.3
+ },
+ "toy2": {
+  "M": 64,
+  "L": 8,
+  "u": 1,
+  "p": 4,
+  "h": 192,
+  "p_t": 14340,
+  "vars_per_weight": 48,
+  "log10_tuples": 875.8
+ }
+}

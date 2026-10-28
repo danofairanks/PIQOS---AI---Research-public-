@@ -1,0 +1,131 @@
+{
+ "lemma32": {
+  "trials": 120,
+  "value_mismatches": 0,
+  "examined_over_bound": 0
+ },
+ "lemma33": {
+  "trials": 120,
+  "failures": 0
+ },
+ "eq315": {
+  "cases": 312,
+  "failures": [],
+  "n_fail": 0
+ },
+ "prop34": {
+  "Z_rep_vs_lambda_mismatches": 0,
+  "Z_rep_vs_lambda_tested": 144,
+  "taylor_vs_brute_failures": 0,
+  "end_to_end": [
+   {
+    "r": 2,
+    "Q": 3,
+    "R": 2,
+    "n": 4,
+    "truth": 0,
+    "recovered": 0,
+    "correct": true
+   },
+   {
+    "r": 2,
+    "Q": 3,
+    "R": 2,
+    "n": 4,
+    "truth": 0,
+    "recovered": 0,
+    "correct": true
+   },
+   {
+    "r": 2,
+    "Q": 3,
+    "R": 2,
+    "n": 4,
+    "truth": 3,
+    "recovered": 3,
+    "correct": true
+   },
+   {
+    "r": 2,
+    "Q": 3,
+    "R": 2,
+    "n": 5,
+    "truth": 0,
+    "recovered": 0,
+    "correct": true
+   },
+   {
+    "r": 2,
+    "Q": 3,
+    "R": 2,
+    "n": 5,
+    "truth": 2,
+    "recovered": 2,
+    "correct": true
+   },
+   {
+    "r": 2,
+    "Q": 3,
+    "R": 2,
+    "n": 5,
+    "truth": 4,
+    "recovered": 4,
+    "correct": true
+   },
+   {
+    "r": 2,
+    "Q": 3,
+    "R": 3,
+    "n": 4,
+    "truth": 0,
+    "recovered": 0,
+    "correct": true
+   },
+   {
+    "r": 2,
+    "Q": 3,
+    "R": 3,
+    "n": 4,
+    "truth": 0,
+    "recovered": 0,
+    "correct": true
+   },
+   {
+    "r": 2,
+    "Q": 3,
+    "R": 3,
+    "n": 4,
+    "truth": 3,
+    "recovered": 3,
+    "correct": true
+   },
+   {
+    "r": 2,
+    "Q": 3,
+    "R": 3,
+    "n": 5,
+    "truth": 0,
+    "recovered": 0,
+    "correct": true
+   },
+   {
+    "r": 2,
+    "Q": 3,
+    "R": 3,
+    "n": 5,
+    "truth": 2,
+    "recovered": 2,
+    "correct": true
+   },
+   {
+    "r": 2,
+    "Q": 3,
+    "R": 3,
+    "n": 5,
+    "truth": 4,
+    "recovered": 4,
+    "correct": true
+   }
+  ]
+ }
+}

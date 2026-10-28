@@ -1,0 +1,6 @@
+# Deviations (kit)
+1. Environment incident (also in PREREG.md): `lake env` as root deleted and re-cloned three package directories after git "dubious ownership"; Mathlib oleans were lost and restored via the public cache (`lake exe cache get`) at the same pinned revision (d13f23b7). Cost: ~10 min; no result files affected.
+2. Comparator re-run needed the package tree owned by the unprivileged user (same as the earlier LocalSmoothing run); I `chown`ed `/srv/lean/proj/.lake` and added a `safe.directory` env override to `run_cmp.sh` (copied here). No source or toolchain change.
+3. Statements S7 (Lemma 3.3), S8 (Lemma 5.1), S9 (Lemma 5.2 congruence), S10 (Lemma 4.6) were NOT written. Reason: stating them faithfully needs the paper's exact definitions (A, V-adic lifts, the Section 2.7 rows) re-transcribed into Lean; I judged an unreviewed transcription worse than none. This misses the prereg prediction "S7-S9 stated (sorry)".
+4. `prop_core` is an extra helper lemma in the solution only (permitted; not in the theorem list). `satCount` is defined in the challenge but no theorem in this kit mentions it (see REVIEW_KIT, fidelity).
+5. `branch_partition` was restructured twice after heartbeat timeouts (tauto replaced by an explicit propositional lemma); statement unchanged.

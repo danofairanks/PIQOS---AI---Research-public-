@@ -1,0 +1,458 @@
+{
+ "T1": [
+  {
+   "l": 1,
+   "identity": true,
+   "congruence": true,
+   "max_coef_bits": 1,
+   "log2_norm_p": 1.0,
+   "bound_3l": 3,
+   "eliminations": 0,
+   "log2_maxnorm": 1.0
+  },
+  {
+   "l": 2,
+   "identity": true,
+   "congruence": true,
+   "max_coef_bits": 2,
+   "log2_norm_p": 2.6,
+   "bound_3l": 6,
+   "eliminations": 2,
+   "log2_maxnorm": 2.3
+  },
+  {
+   "l": 3,
+   "identity": true,
+   "congruence": true,
+   "max_coef_bits": 3,
+   "log2_norm_p": 5.0,
+   "bound_3l": 9,
+   "eliminations": 6,
+   "log2_maxnorm": 4.2
+  },
+  {
+   "l": 4,
+   "identity": true,
+   "congruence": true,
+   "max_coef_bits": 5,
+   "log2_norm_p": 7.7,
+   "bound_3l": 12,
+   "eliminations": 12,
+   "log2_maxnorm": 6.8
+  },
+  {
+   "l": 5,
+   "identity": true,
+   "congruence": true,
+   "max_coef_bits": 7,
+   "log2_norm_p": 10.5,
+   "bound_3l": 15,
+   "eliminations": 20,
+   "log2_maxnorm": 9.5
+  },
+  {
+   "l": 6,
+   "identity": true,
+   "congruence": true,
+   "max_coef_bits": 8,
+   "log2_norm_p": 13.4,
+   "bound_3l": 18,
+   "eliminations": 30,
+   "log2_maxnorm": 12.4
+  },
+  {
+   "l": 7,
+   "identity": true,
+   "congruence": true,
+   "max_coef_bits": 10,
+   "log2_norm_p": 16.3,
+   "bound_3l": 21,
+   "eliminations": 42,
+   "log2_maxnorm": 15.3
+  },
+  {
+   "l": 8,
+   "identity": true,
+   "congruence": true,
+   "max_coef_bits": 12,
+   "log2_norm_p": 19.1,
+   "bound_3l": 24,
+   "eliminations": 56,
+   "log2_maxnorm": 18.1
+  },
+  {
+   "l": 9,
+   "identity": true,
+   "congruence": true,
+   "max_coef_bits": 14,
+   "log2_norm_p": 22.1,
+   "bound_3l": 27,
+   "eliminations": 72,
+   "log2_maxnorm": 21.1
+  },
+  {
+   "l": 10,
+   "identity": true,
+   "congruence": true,
+   "max_coef_bits": 16,
+   "log2_norm_p": 25.0,
+   "bound_3l": 30,
+   "eliminations": 90,
+   "log2_maxnorm": 24.0
+  },
+  {
+   "l": 11,
+   "identity": true,
+   "congruence": true,
+   "max_coef_bits": 18,
+   "log2_norm_p": 27.9,
+   "bound_3l": 33,
+   "eliminations": 110,
+   "log2_maxnorm": 26.9
+  },
+  {
+   "l": 12,
+   "identity": true,
+   "congruence": true,
+   "max_coef_bits": 20,
+   "log2_norm_p": 30.8,
+   "bound_3l": 36,
+   "eliminations": 132,
+   "log2_maxnorm": 29.8
+  },
+  {
+   "l": 13,
+   "identity": true,
+   "congruence": true,
+   "max_coef_bits": 22,
+   "log2_norm_p": 33.8,
+   "bound_3l": 39,
+   "eliminations": 156,
+   "log2_maxnorm": 32.8
+  },
+  {
+   "l": 14,
+   "identity": true,
+   "congruence": true,
+   "max_coef_bits": 24,
+   "log2_norm_p": 36.7,
+   "bound_3l": 42,
+   "eliminations": 182,
+   "log2_maxnorm": 35.7
+  },
+  {
+   "l": 15,
+   "identity": true,
+   "congruence": true,
+   "max_coef_bits": 26,
+   "log2_norm_p": 39.7,
+   "bound_3l": 45,
+   "eliminations": 210,
+   "log2_maxnorm": 38.7
+  },
+  {
+   "l": 16,
+   "identity": true,
+   "congruence": true,
+   "max_coef_bits": 28,
+   "log2_norm_p": 42.6,
+   "bound_3l": 48,
+   "eliminations": 240,
+   "log2_maxnorm": 41.6
+  },
+  {
+   "l": 17,
+   "identity": true,
+   "congruence": true,
+   "max_coef_bits": 30,
+   "log2_norm_p": 45.6,
+   "bound_3l": 51,
+   "eliminations": 272,
+   "log2_maxnorm": 44.6
+  },
+  {
+   "l": 18,
+   "identity": true,
+   "congruence": true,
+   "max_coef_bits": 32,
+   "log2_norm_p": 48.5,
+   "bound_3l": 54,
+   "eliminations": 306,
+   "log2_maxnorm": 47.5
+  },
+  {
+   "l": 19,
+   "identity": true,
+   "congruence": true,
+   "max_coef_bits": 34,
+   "log2_norm_p": 51.5,
+   "bound_3l": 57,
+   "eliminations": 342,
+   "log2_maxnorm": 50.5
+  },
+  {
+   "l": 20,
+   "identity": true,
+   "congruence": true,
+   "max_coef_bits": 36,
+   "log2_norm_p": 54.5,
+   "bound_3l": 60,
+   "eliminations": 380,
+   "log2_maxnorm": 53.5
+  },
+  {
+   "l": 21,
+   "identity": true,
+   "congruence": true,
+   "max_coef_bits": 38,
+   "log2_norm_p": 57.4,
+   "bound_3l": 63,
+   "eliminations": 420,
+   "log2_maxnorm": 56.4
+  },
+  {
+   "l": 22,
+   "identity": true,
+   "congruence": true,
+   "max_coef_bits": 39,
+   "log2_norm_p": 60.4,
+   "bound_3l": 66,
+   "eliminations": 462,
+   "log2_maxnorm": 59.4
+  },
+  {
+   "l": 23,
+   "identity": true,
+   "congruence": true,
+   "max_coef_bits": 41,
+   "log2_norm_p": 63.3,
+   "bound_3l": 69,
+   "eliminations": 506,
+   "log2_maxnorm": 62.3
+  },
+  {
+   "l": 24,
+   "identity": true,
+   "congruence": true,
+   "max_coef_bits": 43,
+   "log2_norm_p": 66.3,
+   "bound_3l": 72,
+   "eliminations": 552,
+   "log2_maxnorm": 65.3
+  },
+  {
+   "l": 25,
+   "identity": true,
+   "congruence": true,
+   "max_coef_bits": 45,
+   "log2_norm_p": 69.3,
+   "bound_3l": 75,
+   "eliminations": 600,
+   "log2_maxnorm": 68.3
+  },
+  {
+   "l": 26,
+   "identity": true,
+   "congruence": true,
+   "max_coef_bits": 47,
+   "log2_norm_p": 72.3,
+   "bound_3l": 78,
+   "eliminations": 650,
+   "log2_maxnorm": 71.3
+  },
+  {
+   "l": 27,
+   "identity": true,
+   "congruence": true,
+   "max_coef_bits": 49,
+   "log2_norm_p": 75.2,
+   "bound_3l": 81,
+   "eliminations": 702,
+   "log2_maxnorm": 74.2
+  },
+  {
+   "l": 28,
+   "identity": true,
+   "congruence": true,
+   "max_coef_bits": 51,
+   "log2_norm_p": 78.2,
+   "bound_3l": 84,
+   "eliminations": 756,
+   "log2_maxnorm": 77.2
+  },
+  {
+   "l": 29,
+   "identity": true,
+   "congruence": true,
+   "max_coef_bits": 53,
+   "log2_norm_p": 81.2,
+   "bound_3l": 87,
+   "eliminations": 812,
+   "log2_maxnorm": 80.2
+  },
+  {
+   "l": 30,
+   "identity": true,
+   "congruence": true,
+   "max_coef_bits": 55,
+   "log2_norm_p": 84.2,
+   "bound_3l": 90,
+   "eliminations": 870,
+   "log2_maxnorm": 83.2
+  },
+  {
+   "l": 31,
+   "identity": true,
+   "congruence": true,
+   "max_coef_bits": 57,
+   "log2_norm_p": 87.1,
+   "bound_3l": 93,
+   "eliminations": 930,
+   "log2_maxnorm": 86.1
+  },
+  {
+   "l": 32,
+   "identity": true,
+   "congruence": true,
+   "max_coef_bits": 59,
+   "log2_norm_p": 90.1,
+   "bound_3l": 96,
+   "eliminations": 992,
+   "log2_maxnorm": 89.1
+  },
+  {
+   "l": 33,
+   "identity": true,
+   "congruence": true,
+   "max_coef_bits": 61,
+   "log2_norm_p": 93.1,
+   "bound_3l": 99,
+   "eliminations": 1056,
+   "log2_maxnorm": 92.1
+  },
+  {
+   "l": 34,
+   "identity": true,
+   "congruence": true,
+   "max_coef_bits": 63,
+   "log2_norm_p": 96.1,
+   "bound_3l": 102,
+   "eliminations": 1122,
+   "log2_maxnorm": 95.1
+  },
+  {
+   "l": 35,
+   "identity": true,
+   "congruence": true,
+   "max_coef_bits": 65,
+   "log2_norm_p": 99.0,
+   "bound_3l": 105,
+   "eliminations": 1190,
+   "log2_maxnorm": 98.0
+  },
+  {
+   "l": 36,
+   "identity": true,
+   "congruence": true,
+   "max_coef_bits": 67,
+   "log2_norm_p": 102.0,
+   "bound_3l": 108,
+   "eliminations": 1260,
+   "log2_maxnorm": 101.0
+  },
+  {
+   "l": 37,
+   "identity": true,
+   "congruence": true,
+   "max_coef_bits": 69,
+   "log2_norm_p": 105.0,
+   "bound_3l": 111,
+   "eliminations": 1332,
+   "log2_maxnorm": 104.0
+  },
+  {
+   "l": 38,
+   "identity": true,
+   "congruence": true,
+   "max_coef_bits": 71,
+   "log2_norm_p": 108.0,
+   "bound_3l": 114,
+   "eliminations": 1406,
+   "log2_maxnorm": 107.0
+  },
+  {
+   "l": 39,
+   "identity": true,
+   "congruence": true,
+   "max_coef_bits": 73,
+   "log2_norm_p": 111.0,
+   "bound_3l": 117,
+   "eliminations": 1482,
+   "log2_maxnorm": 110.0
+  },
+  {
+   "l": 40,
+   "identity": true,
+   "congruence": true,
+   "max_coef_bits": 75,
+   "log2_norm_p": 113.9,
+   "bound_3l": 120,
+   "eliminations": 1560,
+   "log2_maxnorm": 112.9
+  }
+ ],
+ "T2": {
+  "trials": 300,
+  "failures": 0
+ },
+ "T3": [
+  {
+   "r": 2,
+   "Q": 3,
+   "R": 2,
+   "D": 64,
+   "dden": 6,
+   "nonintegral_coefficients": 0,
+   "max_den_M0": 1,
+   "max_abs_dden_P": 6,
+   "log2_max_abs": 2.58,
+   "Q_log2Q_plus_log2D": 10.75
+  },
+  {
+   "r": 2,
+   "Q": 3,
+   "R": 3,
+   "D": 64,
+   "dden": 12,
+   "nonintegral_coefficients": 0,
+   "max_den_M0": 1,
+   "max_abs_dden_P": 18,
+   "log2_max_abs": 4.17,
+   "Q_log2Q_plus_log2D": 10.75
+  },
+  {
+   "r": 3,
+   "Q": 2,
+   "R": 2,
+   "D": 81,
+   "dden": 2,
+   "nonintegral_coefficients": 0,
+   "max_den_M0": 1,
+   "max_abs_dden_P": 2,
+   "log2_max_abs": 1.0,
+   "Q_log2Q_plus_log2D": 8.34
+  },
+  {
+   "r": 2,
+   "Q": 4,
+   "R": 3,
+   "D": 256,
+   "dden": 48,
+   "nonintegral_coefficients": 0,
+   "max_den_M0": 1,
+   "max_abs_dden_P": 96,
+   "log2_max_abs": 6.58,
+   "Q_log2Q_plus_log2D": 16.0
+  }
+ ]
+}

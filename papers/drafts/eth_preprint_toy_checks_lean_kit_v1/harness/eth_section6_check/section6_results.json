@@ -1,0 +1,30 @@
+{
+ "A_failures": [],
+ "A_cases": 635,
+ "B": {
+  "min_prob": 0.3160602885144475,
+  "at_P_m_s": [
+   10000000,
+   100000000,
+   10
+  ],
+  "threshold": 0.25,
+  "ok": true
+ },
+ "C": {
+  "trials": 300,
+  "max_avg_over_D": 0.6582,
+  "max_min_over_D": 0.3333,
+  "max_rounds": 3,
+  "bound_rounds_3n_max": 18,
+  "not_cleared": 0,
+  "avg_le_3_4": true
+ },
+ "D": {
+  "q": 64,
+  "d": 40,
+  "measured_eps": 0.4,
+  "trials": 2000,
+  "violations": 0
+ }
+}

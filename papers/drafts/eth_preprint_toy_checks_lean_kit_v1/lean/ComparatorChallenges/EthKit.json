@@ -1,0 +1,17 @@
+{
+  "challenge_module": "ComparatorChallenges.EthKit",
+  "solution_module": "OAI.EthKit.Comparator",
+  "theorem_names": [
+    "OAI.EthKit.Comparator.branch_partition",
+    "OAI.EthKit.Comparator.hermite_unique",
+    "OAI.EthKit.Comparator.degree_control",
+    "OAI.EthKit.Comparator.exists_le_average",
+    "OAI.EthKit.Comparator.greedy_contracts",
+    "OAI.EthKit.Comparator.contract_correct"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}

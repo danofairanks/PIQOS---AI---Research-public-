@@ -1,0 +1,1 @@
+AB {'crossing_pairs': 36084, 'evaluations': 108252, 'valuation_violations': 0, 'expansion_violations': 0, 'term_valuation_violations': 0}

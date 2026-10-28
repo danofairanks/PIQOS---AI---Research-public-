@@ -1,0 +1,29 @@
+[
+ {
+  "name": "A",
+  "n": 4,
+  "m_test": 2,
+  "k": 2,
+  "l": 5,
+  "N": 4,
+  "d": 20,
+  "d_H": 40,
+  "q": 13,
+  "J": 14,
+  "degT_H": 10,
+  "deg_ok": true,
+  "S_bruteforce": 309060,
+  "S_bound_bits": 33,
+  "prime_bits": 127,
+  "bound_ok": true,
+  "S_pipeline": 309060,
+  "S_equal": true,
+  "per_V_coef_equal": true,
+  "N_pipeline": 4,
+  "N_correct": true,
+  "taylor_equals_bruteforce": true,
+  "hermite_ok": true,
+  "vectors_examined": 19440,
+  "seconds": 0.3
+ }
+]

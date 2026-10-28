@@ -1,0 +1,56 @@
+[
+ {
+  "n": 3,
+  "m": 3,
+  "seed": 1000,
+  "truth": 0,
+  "q": 6,
+  "J": 7,
+  "h": 2,
+  "meas_rows": 20,
+  "H(0)==#F": true,
+  "deg_H": 1,
+  "deg_H<=occ*(R-1)": true,
+  "L2_hermite_from_brute_ok": true,
+  "Q*J>3nR": true,
+  "design_violations(2.5)": 0,
+  "L3_decoupled_matches_brute_taylor": true,
+  "L4_count": 0,
+  "L4_count_correct": true,
+  "counters": {
+   "assign_evals": 384,
+   "poly_mults": 1920,
+   "triples": 81
+  },
+  "2^n": 8,
+  "assign_evals_over_2^n": 48.0,
+  "seconds": 0.0
+ },
+ {
+  "n": 3,
+  "m": 3,
+  "seed": 1001,
+  "truth": 1,
+  "q": 6,
+  "J": 7,
+  "h": 1,
+  "meas_rows": 10,
+  "H(0)==#F": true,
+  "deg_H": 1,
+  "deg_H<=occ*(R-1)": true,
+  "L2_hermite_from_brute_ok": true,
+  "Q*J>3nR": true,
+  "design_violations(2.5)": 0,
+  "L3_decoupled_matches_brute_taylor": true,
+  "L4_count": 1,
+  "L4_count_correct": true,
+  "counters": {
+   "assign_evals": 336,
+   "poly_mults": 1376,
+   "triples": 81
+  },
+  "2^n": 8,
+  "assign_evals_over_2^n": 42.0,
+  "seconds": 0.0
+ }
+]
