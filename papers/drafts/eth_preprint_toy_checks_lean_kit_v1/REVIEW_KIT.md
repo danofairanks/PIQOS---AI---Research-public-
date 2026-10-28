@@ -5,7 +5,7 @@ Everything below is my own work product; none of it has been externally reviewed
 `INDUCTION_LEMMA.md` lists O1-O10 (what the induction needs), each marked R (read), T (tested at toy scale), M (cost-modeled). O10 (canonical lifting consistency) is R only. The induction itself was never run (toy tuple counts exceed 10^108).
 
 ## 2. Harnesses and results (folders in `harness/`)
-eth_counter_test, eth_cost_model, eth_sparsification_model, eth_appendixD_model, eth_appendixA_check, eth_appendixB_check, eth_lemma45_check, eth_lemma46_check, eth_lemma48_check, eth_lemma52_check, eth_section3_check, eth_section6_check, eth_appendixD_proofs_check, eth_modes_check, eth_D11_check, eth_induction_check, eth_sections345_run; each has a `RESULTS_eth_*.md` in `results/`. Bounded Sections 3-5 end-to-end run: 85/85 exact (`results/RESULTS_eth_sections345_run.md`). No gap found at toy scale.
+eth_counter_test, eth_cost_model, eth_sparsification_model, eth_appendixD_model, eth_appendixA_check, eth_appendixB_check, eth_lemma45_check, eth_lemma46_check, eth_lemma48_check, eth_lemma52_check, eth_section3_check, eth_section6_check, eth_appendixD_proofs_check, eth_modes_check, eth_D11_check, eth_induction_check, eth_sections345_run; each has a `RESULTS_eth_*.md` in `results/`. Bounded Sections 3-5 end-to-end run: 85/85 exact (source: `results/RESULTS_eth_sections345_run.md`). No gap found at toy scale.
 
 ## 3. Lean (this kit)
 `lean/ComparatorChallenges/EthKit.{lean,json}` (challenge, `sorry`) and `lean/OAI/EthKit/Comparator.lean` (solution); log in `lean/comparator_EthKit.log`.

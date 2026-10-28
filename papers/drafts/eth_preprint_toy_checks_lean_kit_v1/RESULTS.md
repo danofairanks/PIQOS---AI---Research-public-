@@ -7,7 +7,7 @@ Comparator (`lean/comparator_EthKit.log`): "Lean default kernel accepts the solu
 | S2 | Lemma A.1 branch partition (`branch_partition`) | 0.85 | proved, Comparator OK |
 | S3 | Hermite uniqueness over Q (`hermite_unique`) | 0.8 | proved, Comparator OK |
 | S4 | Lemma 5.2 degree control (`degree_control`) | 0.7 | proved, Comparator OK |
-| S5 | Lemma 6.2 averaging + the (27/32)^n contraction (preprint Lemma 6.2) (`exists_le_average`, `greedy_contracts`) | 0.8 | proved, Comparator OK |
+| S5 | Lemma 6.2 averaging + the geometric-contraction conclusion (preprint Lemma 6.2) (`exists_le_average`, `greedy_contracts`) | 0.8 | proved, Comparator OK |
 | S6 | Abstract induction shell (`contract_correct`) | 0.9 | proved, Comparator OK |
 | S7-S10 | Lemma 3.3, 5.1, 5.2 congruence, 4.6 | 0.2-0.4 | not written (DEVIATIONS 3) |
 
