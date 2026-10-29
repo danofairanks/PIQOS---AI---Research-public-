@@ -32,5 +32,8 @@ All compile (`lean/Witnesses.lean`): `branch_partition` (two concrete instances,
 - Comparator certifies proof against statement, not that the statement is non-trivial or faithful.
 - None of this is an assertion about the preprint's algorithm.
 
+## Limitations
+Toy sizes only (n <= 5 for the counter runs). The decoys are my constructions; a different decoy or probe could give different detection results. The Lean witnesses were written by the same model as the statements. Nothing here has been reviewed by anyone else.
+
 ## Sources
 Every figure above is produced by the scripts and committed output in this folder (`run_controls.py` and `controls_D1_results.json`; `run_sections_controls.py` and `controls_sections_results.json`; Comparator logs in `logs/`). The preprint itself is the only external source.
