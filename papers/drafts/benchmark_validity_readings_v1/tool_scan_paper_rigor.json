@@ -28,7 +28,7 @@
   "limitations": {
     "present": true,
     "applicable": true,
-    "word_count": 1574,
+    "word_count": 1699,
     "min_word_count": 400,
     "has_inline_phrase": true,
     "has_heading_section": true,
@@ -38,7 +38,7 @@
     "claims_citability": false,
     "matched_phrases": [],
     "n_references": 1,
-    "word_count": 1574,
+    "word_count": 1699,
     "applicable": true,
     "gap": false
   }

@@ -1,0 +1,84 @@
+{
+  "path": "papers/drafts/benchmark_validity_readings_v1/continual_self_evolving_agents/README.md",
+  "ok": true,
+  "gap_count": 9,
+  "severe_gap_count": 0,
+  "unattributed_quotes": [],
+  "uncited_statistics": [
+    {
+      "kind": "decimal_percent",
+      "value": "40.2%",
+      "start": 5250,
+      "end": 5255,
+      "context": "Holds\nThe mechanism evidence for the strongest cases is concrete and checkable in the text: GEPA's prompt composition by block (BIRD-F1 share 100% to 40.2% on topic drift; seven BIRD sections of 3,386 characters condensed to one of 1,034 on compound drift) and behaviour counts (clarification asks on BFCL"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "3,386",
+      "start": 5295,
+      "end": 5300,
+      "context": "t cases is concrete and checkable in the text: GEPA's prompt composition by block (BIRD-F1 share 100% to 40.2% on topic drift; seven BIRD sections of 3,386 characters condensed to one of 1,034 on compound drift) and behaviour counts (clarification asks on BFCL-Miss 29.8% (119/400) after the Miss block, 1"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "1,034",
+      "start": 5332,
+      "end": 5337,
+      "context": "the text: GEPA's prompt composition by block (BIRD-F1 share 100% to 40.2% on topic drift; seven BIRD sections of 3,386 characters condensed to one of 1,034 on compound drift) and behaviour counts (clarification asks on BFCL-Miss 29.8% (119/400) after the Miss block, 11.2% (45/400) after the Base block; M"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "29.8%",
+      "start": 5411,
+      "end": 5416,
+      "context": "pic drift; seven BIRD sections of 3,386 characters condensed to one of 1,034 on compound drift) and behaviour counts (clarification asks on BFCL-Miss 29.8% (119/400) after the Miss block, 11.2% (45/400) after the Base block; Meta-Harness 60.8% to 8.5%). That a single shared instruction surface is overwri"
+    },
+    {
+      "kind": "fraction_count",
+      "value": "119/400",
+      "start": 5418,
+      "end": 5425,
+      "context": "ft; seven BIRD sections of 3,386 characters condensed to one of 1,034 on compound drift) and behaviour counts (clarification asks on BFCL-Miss 29.8% (119/400) after the Miss block, 11.2% (45/400) after the Base block; Meta-Harness 60.8% to 8.5%). That a single shared instruction surface is overwritten when"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "11.2%",
+      "start": 5449,
+      "end": 5454,
+      "context": "6 characters condensed to one of 1,034 on compound drift) and behaviour counts (clarification asks on BFCL-Miss 29.8% (119/400) after the Miss block, 11.2% (45/400) after the Base block; Meta-Harness 60.8% to 8.5%). That a single shared instruction surface is overwritten when consecutive blocks need oppo"
+    },
+    {
+      "kind": "fraction_count",
+      "value": "45/400",
+      "start": 5456,
+      "end": 5462,
+      "context": "cters condensed to one of 1,034 on compound drift) and behaviour counts (clarification asks on BFCL-Miss 29.8% (119/400) after the Miss block, 11.2% (45/400) after the Base block; Meta-Harness 60.8% to 8.5%). That a single shared instruction surface is overwritten when consecutive blocks need opposite wor"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "60.8%",
+      "start": 5499,
+      "end": 5504,
+      "context": " drift) and behaviour counts (clarification asks on BFCL-Miss 29.8% (119/400) after the Miss block, 11.2% (45/400) after the Base block; Meta-Harness 60.8% to 8.5%). That a single shared instruction surface is overwritten when consecutive blocks need opposite workflows is well supported on the workflow a"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "8.5%",
+      "start": 5508,
+      "end": 5512,
+      "context": "nd behaviour counts (clarification asks on BFCL-Miss 29.8% (119/400) after the Miss block, 11.2% (45/400) after the Base block; Meta-Harness 60.8% to 8.5%). That a single shared instruction surface is overwritten when consecutive blocks need opposite workflows is well supported on the workflow and compo"
+    }
+  ],
+  "disclaimer": {
+    "present": true,
+    "applicable": true,
+    "word_count": 1211,
+    "min_word_count": 400,
+    "gap": false
+  },
+  "sourcing": {
+    "has_sources_statement": true,
+    "has_framework_citation": false,
+    "has_end_sourcing": true
+  }
+}

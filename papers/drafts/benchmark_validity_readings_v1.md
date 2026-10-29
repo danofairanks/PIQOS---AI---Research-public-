@@ -1,14 +1,14 @@
-# Benchmark-Validity Readings: Eleven Papers Read for Whether the Score Supports the Inference Drawn From It
+# Benchmark-Validity Readings: Twelve Papers Read for Whether the Score Supports the Inference Drawn From It
 
 *AI-assisted. Living research: staged, not peer reviewed, may be revised or withdrawn.*
 
-**Scope of naming.** Eleven papers (ten posted in October 2026 and one in late September 2026) are each read in their own folder, `benchmark_validity_readings_v1/<name>/README.md`. Authors are called "the authors" and are not named; organisations are named only as each paper names them. No intent is attributed to anyone. A twelfth reading, of a working paper with no stable public copy, is not included (section 7).
+**Scope of naming.** Twelve papers (eleven posted in October 2026 and one in late September 2026) are each read in their own folder, `benchmark_validity_readings_v1/<name>/README.md`. Authors are called "the authors" and are not named; organisations are named only as each paper names them. No intent is attributed to anyone. A thirteenth reading, of a working paper with no stable public copy, is not included (section 7).
 
 **Disclosure.** Drafted with AI assistance. One reader, an AI system, wrote every reading, and the reader is an Anthropic model; where a paper evaluates Anthropic models or has Anthropic-affiliated authors, the individual reading says so. Readings are post hoc unless the folder holds a predictions file.
 
 ## 1. What this series is
 
-Papers about whether a benchmark score supports the inference drawn from it: construct validity, dimensionality, differential functioning, saturation, scorer and judge independence, aggregation, contamination. It does not cover studies of how a harness changes scores, and it does not cover vendor capability posts.
+Papers about whether a benchmark score supports the inference drawn from it: construct validity, dimensionality, differential functioning, saturation, scorer and judge independence, aggregation, contamination. It does not cover studies of how a harness changes scores (one entry, `continual_self_evolving_agents/`, reads such a paper only for whether its metrics support its claim), and it does not cover vendor capability posts.
 
 ## 2. Entries
 
@@ -23,6 +23,7 @@ Papers about whether a benchmark score supports the inference drawn from it: con
 | [`pairwise_difference_uq/`](benchmark_validity_readings_v1/pairwise_difference_uq/README.md) | arXiv 2610.21554v1 (PDL classifier; uncertainty quantification) | UQ headline is a 'gamma' defined as C/(C+D) (cannot be negative, contradicts reported negatives), compared median vs mean; EU scored against a proxy; t-tests over non-independent CV runs; 'unique contribution' is an oracle max over test scores |
 | [`latent_cot_taxonomy/`](benchmark_validity_readings_v1/latent_cot_taxonomy/README.md) | arXiv 2610.21182v1 (latent CoT taxonomy; Coconut / CODI / SIM-CoT on GPT-2, Llama-1B) | Readability and use dissociate (well supported); 'predictive' taxonomy is largely definitional and cannot be contradicted by cells it leaves unclassified; main supervision comparison has a control on one cell; sample size enlarged after a near-threshold read; backbone effect has n = 2 |
 | [`raw_rag_agentic_memory/`](benchmark_validity_readings_v1/raw_rag_agentic_memory/README.md) | arXiv 2610.30755v1 (RAW-RAG vs 12 memory systems) | Overall-rank claim holds on LoCoMo / LongMemEval in matched settings (0.95-6.93); on MEME RAW-RAG trails the best compared system on aggregation, deletion, cascade, invalidation; MemoryAgentBench lead is 78-90% Conflict Resolution under a benchmark-adapted configuration; main table mixes retrieval stacks; PersonaMem-v2 omitted from the 'six of seven' count |
+| [`continual_self_evolving_agents/`](benchmark_validity_readings_v1/continual_self_evolving_agents/README.md) | arXiv 2610.25858v1 (Mila / Google DeepMind; three self-evolving methods, four drifting streams) | Plasticity-stability trade-off is partly an identity of the metrics (forgetting measured from the block-end peak, `S <= -(P - Term)`); no noise floor (null simulation about -0.9 to -1.6 pp vs several reported values); r = -0.72 reproduces over non-independent points; the shared-prompt overwriting mechanism is well documented; 'retrieval cannot prevent' heading rests on top-1, no threshold, one embedder |
 | [`nca_reasoning/`](benchmark_validity_readings_v1/nca_reasoning/README.md) (contrast case) | arXiv 2609.36126v1 (neural cellular automata for mazes, Sudoku, ARC-AGI-1) | Honest, scoped; strongest on Maze-OOD (100% to 201x201, 44x fewer FLOPs) and Sudoku-OOD; 'strictly local' holds for the update rule, not the K-rollout selection, voting, pruning or ARC test-time fine-tuning; trails LoopViT on ARC at 11-30x the FLOPs and PTRM on Sudoku-Extreme; efficiency measured in FLOPs, not energy |
 | [`mcp_injector_fault_tolerance/`](benchmark_validity_readings_v1/mcp_injector_fault_tolerance/README.md) (contrast case) | arXiv 2610.32555v1 (MCP-Injector; gpt-oss-20B vs -120B under calibrated faults) | Careful, well-controlled; title ('scale does not purchase fault tolerance') stronger than the abstract's two-model, one-setup scope with a wide CI and models indistinguishable at baseline; '60% degradation' belongs to a permanent-heavy stress profile; stack effect is suggestive (p = 0.048 / 0.074, no multiplicity correction) |
 
@@ -40,8 +41,8 @@ The number of flags in a reading is not a severity ranking. `raw_rag_agentic_mem
 
 ## 6. Verification, and what is not claimed
 
-- **Quoted strings.** `quote_checks.py` tests every double-quoted string in each reading against the text layer of the paper's PDF (three extraction orders, normalised quotes and dashes). Eleven of eleven readings pass after correction; before correction, many phrases that had been put in quotation marks were close paraphrases, and those were either restored to the paper's wording or unquoted. The result of the final run is in each folder as `quote_checks_output.txt`. A pass is a lexical test: it does not show the reading's interpretation is right.
-- **Source files.** Ten of the eleven arXiv PDFs re-fetched on 2026-10-26 are byte-identical to the copies read; the eleventh (`nca_reasoning`) differs in bytes but is word-for-word identical in text.
+- **Quoted strings.** `quote_checks.py` tests every double-quoted string in each reading against the text layer of the paper's PDF (three extraction orders, normalised quotes and dashes). Twelve of twelve readings pass after correction; before correction, many phrases that had been put in quotation marks were close paraphrases, and those were either restored to the paper's wording or unquoted. The result of the final run is in each folder as `quote_checks_output.txt`. A pass is a lexical test: it does not show the reading's interpretation is right.
+- **Source files.** Eleven of the twelve arXiv PDFs re-fetched (ten on 2026-10-26, `continual_self_evolving_agents` on 2026-10-29) are byte-identical to the copies read; the twelfth (`nca_reasoning`) differs in bytes but is word-for-word identical in text.
 - **Scripts.** Every `checks*.py` re-ran in this layout and reproduced its committed output.
 - **Not done.** No paper's code or data was run unless a reading says so; figures were mostly read as extracted text; the flags are leads for a deeper pass, not verdicts.
 
@@ -53,7 +54,7 @@ A reading of a working paper that compares AI and human peer reviews is held bac
 
 ## 8. Limitations: what this does and does not establish
 
-- Eleven papers chosen by what reached the reader, not sampled; nothing here is a rate.
+- Twelve papers chosen by what reached the reader, not sampled; nothing here is a rate.
 - One reader per paper; the same model family wrote the readings and, in some cases, is the subject.
 - The series is a set of reading notes with scripts; it is not a literature review. An open item is a literature table for AI-judging-AI and benchmark-validity work, with inclusion criteria preregistered first.
 
@@ -63,11 +64,12 @@ A reading of a working paper that compares AI and human peer reviews is held bac
 
 ## References
 
-Sources: the eleven papers named in the scope lines of the readings (arXiv identifiers and PDF hashes are in each folder's README).
+Sources: the twelve papers named in the scope lines of the readings (arXiv identifiers and PDF hashes are in each folder's README).
 
 ## Revision log
 
 - *2026-10-26, v1.* First public version, from the reader's working notes of 2026-10-17 to 2026-10-26.
+- *2026-10-29, v1.1.* Added `continual_self_evolving_agents/` (twelfth reading); counts in the scope line, section 6 and section 8 updated; one scope note in section 1. The earlier eleven readings are unchanged.
 
 ---
 

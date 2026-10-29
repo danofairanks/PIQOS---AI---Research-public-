@@ -8,15 +8,15 @@
     {
       "kind": "decimal_percent",
       "value": "91.9%",
-      "start": 4003,
-      "end": 4008,
+      "start": 4123,
+      "end": 4128,
       "context": "uracy/error intervals) | Interval holds on a constructed dataset set by a chosen metric and quantile threshold, not on the data; CIFAR-10 upper limit 91.9% is a metric artifact; admissible-set assumption untestable; theory is standard identities; interval width is 2x by construction |\n| [`pairwise_differ"
     }
   ],
   "disclaimer": {
     "present": true,
     "applicable": true,
-    "word_count": 1574,
+    "word_count": 1699,
     "min_word_count": 400,
     "gap": false
   },
