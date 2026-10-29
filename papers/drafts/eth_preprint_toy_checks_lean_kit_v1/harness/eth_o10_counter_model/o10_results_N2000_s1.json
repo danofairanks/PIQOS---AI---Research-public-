@@ -1,0 +1,41 @@
+{
+ "N": 2000,
+ "seed0": 1,
+ "stats": {
+  "O10a": {
+   "trials": 2000,
+   "applicable": 2000,
+   "fail": 0,
+   "kappa_viol": 0
+  },
+  "O10b": {
+   "trials": 2000,
+   "applicable": 2000,
+   "fail": 0,
+   "kappa_viol": 0
+  },
+  "M1": {
+   "trials": 1661,
+   "applicable": 1661,
+   "fail": 1653,
+   "kappa_viol": 0
+  },
+  "M2": {
+   "trials": 1661,
+   "applicable": 1661,
+   "fail": 1305,
+   "kappa_viol": 0
+  },
+  "M3": {
+   "trials": 1934,
+   "applicable": 1934,
+   "fail": 1921,
+   "kappa_viol": 0
+  },
+  "impl_disagree": 0
+ },
+ "schedule": {
+  "grid_points": 5058,
+  "violations": 0
+ }
+}

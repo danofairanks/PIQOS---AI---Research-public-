@@ -1,0 +1,5662 @@
+{
+ "real": [
+  {
+   "cls": "real",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1000,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 0,
+   "L4_count": 0,
+   "self_reported": {
+    "assign_evals": 1344,
+    "poly_mults": 11136,
+    "triples": 243
+   },
+   "seconds": 0.06,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 243
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "real",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1001,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 2,
+   "L4_count": 2,
+   "self_reported": {
+    "assign_evals": 1344,
+    "poly_mults": 10752,
+    "triples": 243
+   },
+   "seconds": 0.06,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 243
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "real",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1002,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 1536,
+    "poly_mults": 14592,
+    "triples": 243
+   },
+   "seconds": 0.09,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 243
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "real",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1003,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 1536,
+    "poly_mults": 13824,
+    "triples": 243
+   },
+   "seconds": 0.08,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 243
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "real",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1004,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 0,
+   "L4_count": 0,
+   "self_reported": {
+    "assign_evals": 1344,
+    "poly_mults": 10048,
+    "triples": 243
+   },
+   "seconds": 0.06,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 243
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "real",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1005,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 1,
+   "L4_count": 1,
+   "self_reported": {
+    "assign_evals": 1536,
+    "poly_mults": 13824,
+    "triples": 243
+   },
+   "seconds": 0.08,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 243
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "real",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1006,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 6,
+   "L4_count": 6,
+   "self_reported": {
+    "assign_evals": 1536,
+    "poly_mults": 14592,
+    "triples": 243
+   },
+   "seconds": 0.11,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 243
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "real",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1007,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 1536,
+    "poly_mults": 13824,
+    "triples": 243
+   },
+   "seconds": 0.08,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 243
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "real",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1008,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 1036,
+    "poly_mults": 9132,
+    "triples": 243
+   },
+   "seconds": 0.06,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 243
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "real",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1009,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 2,
+   "L4_count": 2,
+   "self_reported": {
+    "assign_evals": 1184,
+    "poly_mults": 8416,
+    "triples": 243
+   },
+   "seconds": 0.05,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 243
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "real",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1010,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 5,
+   "L4_count": 5,
+   "self_reported": {
+    "assign_evals": 1536,
+    "poly_mults": 14592,
+    "triples": 243
+   },
+   "seconds": 0.08,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 243
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "real",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1011,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 2,
+   "L4_count": 2,
+   "self_reported": {
+    "assign_evals": 1344,
+    "poly_mults": 11904,
+    "triples": 243
+   },
+   "seconds": 0.07,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 243
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "real",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1000,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 0,
+   "L4_count": 0,
+   "self_reported": {
+    "assign_evals": 1008,
+    "poly_mults": 7368,
+    "triples": 243
+   },
+   "seconds": 0.05,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 243
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "real",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1001,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 2,
+   "L4_count": 2,
+   "self_reported": {
+    "assign_evals": 1008,
+    "poly_mults": 7848,
+    "triples": 243
+   },
+   "seconds": 0.06,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 243
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "real",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1002,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 1008,
+    "poly_mults": 9336,
+    "triples": 243
+   },
+   "seconds": 0.07,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 243
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "real",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1003,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 1036,
+    "poly_mults": 8344,
+    "triples": 243
+   },
+   "seconds": 0.07,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 243
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "real",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1004,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 0,
+   "L4_count": 0,
+   "self_reported": {
+    "assign_evals": 1064,
+    "poly_mults": 7984,
+    "triples": 243
+   },
+   "seconds": 0.06,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 243
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "real",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1005,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 1,
+   "L4_count": 1,
+   "self_reported": {
+    "assign_evals": 1159,
+    "poly_mults": 10534,
+    "triples": 243
+   },
+   "seconds": 0.07,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 243
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "real",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1006,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 6,
+   "L4_count": 6,
+   "self_reported": {
+    "assign_evals": 1011,
+    "poly_mults": 9692,
+    "triples": 243
+   },
+   "seconds": 0.07,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 243
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "real",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1007,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 1036,
+    "poly_mults": 9280,
+    "triples": 243
+   },
+   "seconds": 0.07,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 243
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "real",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1008,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 925,
+    "poly_mults": 8001,
+    "triples": 243
+   },
+   "seconds": 0.07,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 243
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "real",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1009,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 2,
+   "L4_count": 2,
+   "self_reported": {
+    "assign_evals": 1064,
+    "poly_mults": 7720,
+    "triples": 243
+   },
+   "seconds": 0.05,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 243
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "real",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1010,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 5,
+   "L4_count": 5,
+   "self_reported": {
+    "assign_evals": 1008,
+    "poly_mults": 9192,
+    "triples": 243
+   },
+   "seconds": 0.07,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 243
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "real",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1011,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 2,
+   "L4_count": 2,
+   "self_reported": {
+    "assign_evals": 1008,
+    "poly_mults": 8376,
+    "triples": 243
+   },
+   "seconds": 0.06,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 243
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "real",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1000,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 0,
+   "L4_count": 0,
+   "self_reported": {
+    "assign_evals": 1088,
+    "poly_mults": 6352,
+    "triples": 162
+   },
+   "seconds": 0.05,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 162
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "real",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1001,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 2,
+   "L4_count": 2,
+   "self_reported": {
+    "assign_evals": 1280,
+    "poly_mults": 7168,
+    "triples": 162
+   },
+   "seconds": 0.05,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 162
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "real",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1002,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 1280,
+    "poly_mults": 8832,
+    "triples": 162
+   },
+   "seconds": 0.06,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 162
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "real",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1003,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 916,
+    "poly_mults": 6928,
+    "triples": 162
+   },
+   "seconds": 0.06,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 162
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "real",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1004,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 0,
+   "L4_count": 0,
+   "self_reported": {
+    "assign_evals": 1280,
+    "poly_mults": 6848,
+    "triples": 162
+   },
+   "seconds": 0.05,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 162
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "real",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1005,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 1,
+   "L4_count": 1,
+   "self_reported": {
+    "assign_evals": 1536,
+    "poly_mults": 9728,
+    "triples": 162
+   },
+   "seconds": 0.07,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 162
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "real",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1006,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 6,
+   "L4_count": 6,
+   "self_reported": {
+    "assign_evals": 1536,
+    "poly_mults": 10240,
+    "triples": 162
+   },
+   "seconds": 0.07,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 162
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "real",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1007,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 1280,
+    "poly_mults": 8320,
+    "triples": 162
+   },
+   "seconds": 0.06,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 162
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "real",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1008,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 1536,
+    "poly_mults": 9216,
+    "triples": 162
+   },
+   "seconds": 0.06,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 162
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "real",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1009,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 2,
+   "L4_count": 2,
+   "self_reported": {
+    "assign_evals": 876,
+    "poly_mults": 4512,
+    "triples": 162
+   },
+   "seconds": 0.04,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 162
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "real",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1010,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 5,
+   "L4_count": 5,
+   "self_reported": {
+    "assign_evals": 1280,
+    "poly_mults": 8768,
+    "triples": 162
+   },
+   "seconds": 0.07,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 162
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "real",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1011,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 2,
+   "L4_count": 2,
+   "self_reported": {
+    "assign_evals": 1280,
+    "poly_mults": 7616,
+    "triples": 162
+   },
+   "seconds": 0.06,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 162
+   },
+   "d4_flag": false,
+   "correct": true
+  }
+ ],
+ "D1": [
+  {
+   "cls": "D1",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1000,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 0,
+   "L4_count": 0,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 105,
+    "triples": 3
+   },
+   "seconds": 0.0,
+   "probe": {
+    "brute_H_callers": [
+     "run_case",
+     "taylor_decoupled"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": true,
+   "correct": true
+  },
+  {
+   "cls": "D1",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1001,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 2,
+   "L4_count": 2,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 105,
+    "triples": 3
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case",
+     "taylor_decoupled"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": true,
+   "correct": true
+  },
+  {
+   "cls": "D1",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1002,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 105,
+    "triples": 3
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case",
+     "taylor_decoupled"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": true,
+   "correct": true
+  },
+  {
+   "cls": "D1",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1003,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 105,
+    "triples": 3
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case",
+     "taylor_decoupled"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": true,
+   "correct": true
+  },
+  {
+   "cls": "D1",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1004,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 0,
+   "L4_count": 0,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 105,
+    "triples": 3
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case",
+     "taylor_decoupled"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": true,
+   "correct": true
+  },
+  {
+   "cls": "D1",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1005,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 1,
+   "L4_count": 1,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 105,
+    "triples": 3
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case",
+     "taylor_decoupled"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": true,
+   "correct": true
+  },
+  {
+   "cls": "D1",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1006,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 6,
+   "L4_count": 6,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 105,
+    "triples": 3
+   },
+   "seconds": 0.0,
+   "probe": {
+    "brute_H_callers": [
+     "run_case",
+     "taylor_decoupled"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": true,
+   "correct": true
+  },
+  {
+   "cls": "D1",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1007,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 105,
+    "triples": 3
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case",
+     "taylor_decoupled"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": true,
+   "correct": true
+  },
+  {
+   "cls": "D1",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1008,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 105,
+    "triples": 3
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case",
+     "taylor_decoupled"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": true,
+   "correct": true
+  },
+  {
+   "cls": "D1",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1009,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 2,
+   "L4_count": 2,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 105,
+    "triples": 3
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case",
+     "taylor_decoupled"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": true,
+   "correct": true
+  },
+  {
+   "cls": "D1",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1010,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 5,
+   "L4_count": 5,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 105,
+    "triples": 3
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case",
+     "taylor_decoupled"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": true,
+   "correct": true
+  },
+  {
+   "cls": "D1",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1011,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 2,
+   "L4_count": 2,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 105,
+    "triples": 3
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case",
+     "taylor_decoupled"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": true,
+   "correct": true
+  },
+  {
+   "cls": "D1",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1000,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 0,
+   "L4_count": 0,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 105,
+    "triples": 3
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case",
+     "taylor_decoupled"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": true,
+   "correct": true
+  },
+  {
+   "cls": "D1",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1001,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 2,
+   "L4_count": 2,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 105,
+    "triples": 3
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case",
+     "taylor_decoupled"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": true,
+   "correct": true
+  },
+  {
+   "cls": "D1",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1002,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 105,
+    "triples": 3
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case",
+     "taylor_decoupled"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": true,
+   "correct": true
+  },
+  {
+   "cls": "D1",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1003,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 105,
+    "triples": 3
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case",
+     "taylor_decoupled"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": true,
+   "correct": true
+  },
+  {
+   "cls": "D1",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1004,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 0,
+   "L4_count": 0,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 105,
+    "triples": 3
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case",
+     "taylor_decoupled"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": true,
+   "correct": true
+  },
+  {
+   "cls": "D1",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1005,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 1,
+   "L4_count": 1,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 105,
+    "triples": 3
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case",
+     "taylor_decoupled"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": true,
+   "correct": true
+  },
+  {
+   "cls": "D1",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1006,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 6,
+   "L4_count": 6,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 105,
+    "triples": 3
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case",
+     "taylor_decoupled"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": true,
+   "correct": true
+  },
+  {
+   "cls": "D1",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1007,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 105,
+    "triples": 3
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case",
+     "taylor_decoupled"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": true,
+   "correct": true
+  },
+  {
+   "cls": "D1",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1008,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 105,
+    "triples": 3
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case",
+     "taylor_decoupled"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": true,
+   "correct": true
+  },
+  {
+   "cls": "D1",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1009,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 2,
+   "L4_count": 2,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 105,
+    "triples": 3
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case",
+     "taylor_decoupled"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": true,
+   "correct": true
+  },
+  {
+   "cls": "D1",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1010,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 5,
+   "L4_count": 5,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 105,
+    "triples": 3
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case",
+     "taylor_decoupled"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": true,
+   "correct": true
+  },
+  {
+   "cls": "D1",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1011,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 2,
+   "L4_count": 2,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 105,
+    "triples": 3
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case",
+     "taylor_decoupled"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": true,
+   "correct": true
+  },
+  {
+   "cls": "D1",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1000,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 0,
+   "L4_count": 0,
+   "self_reported": {
+    "assign_evals": 8,
+    "poly_mults": 70,
+    "triples": 2
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case",
+     "taylor_decoupled"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": true,
+   "correct": true
+  },
+  {
+   "cls": "D1",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1001,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 2,
+   "L4_count": 2,
+   "self_reported": {
+    "assign_evals": 8,
+    "poly_mults": 70,
+    "triples": 2
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case",
+     "taylor_decoupled"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": true,
+   "correct": true
+  },
+  {
+   "cls": "D1",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1002,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 8,
+    "poly_mults": 70,
+    "triples": 2
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case",
+     "taylor_decoupled"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": true,
+   "correct": true
+  },
+  {
+   "cls": "D1",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1003,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 8,
+    "poly_mults": 70,
+    "triples": 2
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case",
+     "taylor_decoupled"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": true,
+   "correct": true
+  },
+  {
+   "cls": "D1",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1004,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 0,
+   "L4_count": 0,
+   "self_reported": {
+    "assign_evals": 8,
+    "poly_mults": 70,
+    "triples": 2
+   },
+   "seconds": 0.0,
+   "probe": {
+    "brute_H_callers": [
+     "run_case",
+     "taylor_decoupled"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": true,
+   "correct": true
+  },
+  {
+   "cls": "D1",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1005,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 1,
+   "L4_count": 1,
+   "self_reported": {
+    "assign_evals": 8,
+    "poly_mults": 70,
+    "triples": 2
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case",
+     "taylor_decoupled"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": true,
+   "correct": true
+  },
+  {
+   "cls": "D1",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1006,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 6,
+   "L4_count": 6,
+   "self_reported": {
+    "assign_evals": 8,
+    "poly_mults": 70,
+    "triples": 2
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case",
+     "taylor_decoupled"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": true,
+   "correct": true
+  },
+  {
+   "cls": "D1",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1007,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 8,
+    "poly_mults": 70,
+    "triples": 2
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case",
+     "taylor_decoupled"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": true,
+   "correct": true
+  },
+  {
+   "cls": "D1",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1008,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 8,
+    "poly_mults": 70,
+    "triples": 2
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case",
+     "taylor_decoupled"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": true,
+   "correct": true
+  },
+  {
+   "cls": "D1",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1009,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 2,
+   "L4_count": 2,
+   "self_reported": {
+    "assign_evals": 8,
+    "poly_mults": 70,
+    "triples": 2
+   },
+   "seconds": 0.0,
+   "probe": {
+    "brute_H_callers": [
+     "run_case",
+     "taylor_decoupled"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": true,
+   "correct": true
+  },
+  {
+   "cls": "D1",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1010,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 5,
+   "L4_count": 5,
+   "self_reported": {
+    "assign_evals": 8,
+    "poly_mults": 70,
+    "triples": 2
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case",
+     "taylor_decoupled"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": true,
+   "correct": true
+  },
+  {
+   "cls": "D1",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1011,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 2,
+   "L4_count": 2,
+   "self_reported": {
+    "assign_evals": 8,
+    "poly_mults": 70,
+    "triples": 2
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case",
+     "taylor_decoupled"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": true,
+   "correct": true
+  }
+ ],
+ "D1b": [
+  {
+   "cls": "D1b",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1000,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 0,
+   "L4_count": 0,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.0,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1b",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1001,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 2,
+   "L4_count": 2,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1b",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1002,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1b",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1003,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1b",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1004,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 0,
+   "L4_count": 0,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1b",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1005,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 1,
+   "L4_count": 1,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1b",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1006,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 6,
+   "L4_count": 6,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.0,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1b",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1007,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1b",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1008,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1b",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1009,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 2,
+   "L4_count": 2,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1b",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1010,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 5,
+   "L4_count": 5,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1b",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1011,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 2,
+   "L4_count": 2,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1b",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1000,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 0,
+   "L4_count": 0,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1b",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1001,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 2,
+   "L4_count": 2,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1b",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1002,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1b",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1003,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1b",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1004,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 0,
+   "L4_count": 0,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1b",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1005,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 1,
+   "L4_count": 1,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1b",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1006,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 6,
+   "L4_count": 6,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1b",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1007,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1b",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1008,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1b",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1009,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 2,
+   "L4_count": 2,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1b",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1010,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 5,
+   "L4_count": 5,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1b",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1011,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 2,
+   "L4_count": 2,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1b",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1000,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 0,
+   "L4_count": 0,
+   "self_reported": {
+    "assign_evals": 8,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1b",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1001,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 2,
+   "L4_count": 2,
+   "self_reported": {
+    "assign_evals": 8,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1b",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1002,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 8,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1b",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1003,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 8,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1b",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1004,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 0,
+   "L4_count": 0,
+   "self_reported": {
+    "assign_evals": 8,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.0,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1b",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1005,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 1,
+   "L4_count": 1,
+   "self_reported": {
+    "assign_evals": 8,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1b",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1006,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 6,
+   "L4_count": 6,
+   "self_reported": {
+    "assign_evals": 8,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1b",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1007,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 8,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1b",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1008,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 8,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1b",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1009,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 2,
+   "L4_count": 2,
+   "self_reported": {
+    "assign_evals": 8,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.0,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1b",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1010,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 5,
+   "L4_count": 5,
+   "self_reported": {
+    "assign_evals": 8,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1b",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1011,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 2,
+   "L4_count": 2,
+   "self_reported": {
+    "assign_evals": 8,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.0,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 0
+   },
+   "d4_flag": false,
+   "correct": true
+  }
+ ],
+ "D1c_posthoc": [
+  {
+   "cls": "D1c_posthoc",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1000,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 0,
+   "L4_count": 0,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.0,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 1
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1c_posthoc",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1001,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 2,
+   "L4_count": 2,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 1
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1c_posthoc",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1002,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 1
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1c_posthoc",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1003,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 1
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1c_posthoc",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1004,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 0,
+   "L4_count": 0,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 1
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1c_posthoc",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1005,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 1,
+   "L4_count": 1,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 1
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1c_posthoc",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1006,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 6,
+   "L4_count": 6,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.0,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 1
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1c_posthoc",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1007,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 1
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1c_posthoc",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1008,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 1
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1c_posthoc",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1009,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 2,
+   "L4_count": 2,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 1
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1c_posthoc",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1010,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 5,
+   "L4_count": 5,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 1
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1c_posthoc",
+   "cfg": [
+    2,
+    3,
+    2,
+    4,
+    5
+   ],
+   "seed": 1011,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 2,
+   "L4_count": 2,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 1
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1c_posthoc",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1000,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 0,
+   "L4_count": 0,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 1
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1c_posthoc",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1001,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 2,
+   "L4_count": 2,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 1
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1c_posthoc",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1002,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 1
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1c_posthoc",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1003,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 1
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1c_posthoc",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1004,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 0,
+   "L4_count": 0,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 1
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1c_posthoc",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1005,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 1,
+   "L4_count": 1,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 1
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1c_posthoc",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1006,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 6,
+   "L4_count": 6,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 1
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1c_posthoc",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1007,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 1
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1c_posthoc",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1008,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 1
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1c_posthoc",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1009,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 2,
+   "L4_count": 2,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 1
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1c_posthoc",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1010,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 5,
+   "L4_count": 5,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 1
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1c_posthoc",
+   "cfg": [
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "seed": 1011,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 2,
+   "L4_count": 2,
+   "self_reported": {
+    "assign_evals": 6,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 1
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1c_posthoc",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1000,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 0,
+   "L4_count": 0,
+   "self_reported": {
+    "assign_evals": 8,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 1
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1c_posthoc",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1001,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 2,
+   "L4_count": 2,
+   "self_reported": {
+    "assign_evals": 8,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 1
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1c_posthoc",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1002,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 8,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 1
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1c_posthoc",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1003,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 8,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 1
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1c_posthoc",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1004,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 0,
+   "L4_count": 0,
+   "self_reported": {
+    "assign_evals": 8,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.0,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 1
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1c_posthoc",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1005,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 1,
+   "L4_count": 1,
+   "self_reported": {
+    "assign_evals": 8,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 1
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1c_posthoc",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1006,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 6,
+   "L4_count": 6,
+   "self_reported": {
+    "assign_evals": 8,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 1
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1c_posthoc",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1007,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 8,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 1
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1c_posthoc",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1008,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 3,
+   "L4_count": 3,
+   "self_reported": {
+    "assign_evals": 8,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 1
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1c_posthoc",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1009,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 2,
+   "L4_count": 2,
+   "self_reported": {
+    "assign_evals": 8,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.0,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 1
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1c_posthoc",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1010,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 5,
+   "L4_count": 5,
+   "self_reported": {
+    "assign_evals": 8,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 1
+   },
+   "d4_flag": false,
+   "correct": true
+  },
+  {
+   "cls": "D1c_posthoc",
+   "cfg": [
+    3,
+    2,
+    2,
+    4,
+    5
+   ],
+   "seed": 1011,
+   "fields": {
+    "H(0)==#F": true,
+    "deg_H<=occ*(R-1)": true,
+    "L2_hermite_from_brute_ok": true,
+    "Q*J>3nR": true,
+    "L3_decoupled_matches_brute_taylor": true,
+    "L4_count_correct": true,
+    "design_violations(2.5)": 0
+   },
+   "truth": 2,
+   "L4_count": 2,
+   "self_reported": {
+    "assign_evals": 8,
+    "poly_mults": 0,
+    "triples": 0
+   },
+   "seconds": 0.01,
+   "probe": {
+    "brute_H_callers": [
+     "run_case"
+    ],
+    "count_sat_callers": [
+     "run_case"
+    ],
+    "Z_calls": 1
+   },
+   "d4_flag": false,
+   "correct": true
+  }
+ ]
+}

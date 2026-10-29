@@ -1,0 +1,210 @@
+{
+ "real": [
+  {
+   "N": 0,
+   "N_pipeline": 0,
+   "N_correct": true,
+   "S_equal": true,
+   "per_V_coef_equal": true,
+   "taylor_equals_bruteforce": true,
+   "hermite_ok": true,
+   "deg_ok": true,
+   "bound_ok": true,
+   "name": "unsat",
+   "vectors_examined": 11340,
+   "probe": {
+    "Z_rep_ring": 243,
+    "brute_H_ring": 1
+   }
+  },
+  {
+   "N": 4,
+   "N_pipeline": 4,
+   "N_correct": true,
+   "S_equal": true,
+   "per_V_coef_equal": true,
+   "taylor_equals_bruteforce": true,
+   "hermite_ok": true,
+   "deg_ok": true,
+   "bound_ok": true,
+   "name": "A",
+   "vectors_examined": 22680,
+   "probe": {
+    "Z_rep_ring": 243,
+    "brute_H_ring": 1
+   }
+  },
+  {
+   "N": 5,
+   "N_pipeline": 5,
+   "N_correct": true,
+   "S_equal": true,
+   "per_V_coef_equal": true,
+   "taylor_equals_bruteforce": true,
+   "hermite_ok": true,
+   "deg_ok": true,
+   "bound_ok": true,
+   "name": "B",
+   "vectors_examined": 19440,
+   "probe": {
+    "Z_rep_ring": 243,
+    "brute_H_ring": 1
+   }
+  },
+  {
+   "N": 2,
+   "N_pipeline": 2,
+   "N_correct": true,
+   "S_equal": true,
+   "per_V_coef_equal": true,
+   "taylor_equals_bruteforce": true,
+   "hermite_ok": true,
+   "deg_ok": true,
+   "bound_ok": true,
+   "name": "C",
+   "vectors_examined": 16848,
+   "probe": {
+    "Z_rep_ring": 243,
+    "brute_H_ring": 1
+   }
+  },
+  {
+   "N": 3,
+   "N_pipeline": 3,
+   "N_correct": true,
+   "S_equal": true,
+   "per_V_coef_equal": true,
+   "taylor_equals_bruteforce": true,
+   "hermite_ok": true,
+   "deg_ok": true,
+   "bound_ok": true,
+   "name": "D",
+   "vectors_examined": 8424,
+   "probe": {
+    "Z_rep_ring": 243,
+    "brute_H_ring": 1
+   }
+  },
+  {
+   "N": 6,
+   "N_pipeline": 6,
+   "N_correct": true,
+   "S_equal": true,
+   "per_V_coef_equal": true,
+   "taylor_equals_bruteforce": true,
+   "hermite_ok": true,
+   "deg_ok": true,
+   "bound_ok": true,
+   "name": "E",
+   "vectors_examined": 4536,
+   "probe": {
+    "Z_rep_ring": 243,
+    "brute_H_ring": 1
+   }
+  }
+ ],
+ "decoy": [
+  {
+   "N": 0,
+   "N_pipeline": 0,
+   "N_correct": true,
+   "S_equal": true,
+   "per_V_coef_equal": true,
+   "taylor_equals_bruteforce": true,
+   "hermite_ok": true,
+   "deg_ok": true,
+   "bound_ok": true,
+   "name": "unsat",
+   "vectors_examined": 0,
+   "probe": {
+    "Z_rep_ring": 0,
+    "brute_H_ring": 1
+   }
+  },
+  {
+   "N": 4,
+   "N_pipeline": 4,
+   "N_correct": true,
+   "S_equal": true,
+   "per_V_coef_equal": true,
+   "taylor_equals_bruteforce": true,
+   "hermite_ok": true,
+   "deg_ok": true,
+   "bound_ok": true,
+   "name": "A",
+   "vectors_examined": 0,
+   "probe": {
+    "Z_rep_ring": 0,
+    "brute_H_ring": 1
+   }
+  },
+  {
+   "N": 5,
+   "N_pipeline": 5,
+   "N_correct": true,
+   "S_equal": true,
+   "per_V_coef_equal": true,
+   "taylor_equals_bruteforce": true,
+   "hermite_ok": true,
+   "deg_ok": true,
+   "bound_ok": true,
+   "name": "B",
+   "vectors_examined": 0,
+   "probe": {
+    "Z_rep_ring": 0,
+    "brute_H_ring": 1
+   }
+  },
+  {
+   "N": 2,
+   "N_pipeline": 2,
+   "N_correct": true,
+   "S_equal": true,
+   "per_V_coef_equal": true,
+   "taylor_equals_bruteforce": true,
+   "hermite_ok": true,
+   "deg_ok": true,
+   "bound_ok": true,
+   "name": "C",
+   "vectors_examined": 0,
+   "probe": {
+    "Z_rep_ring": 0,
+    "brute_H_ring": 1
+   }
+  },
+  {
+   "N": 3,
+   "N_pipeline": 3,
+   "N_correct": true,
+   "S_equal": true,
+   "per_V_coef_equal": true,
+   "taylor_equals_bruteforce": true,
+   "hermite_ok": true,
+   "deg_ok": true,
+   "bound_ok": true,
+   "name": "D",
+   "vectors_examined": 0,
+   "probe": {
+    "Z_rep_ring": 0,
+    "brute_H_ring": 1
+   }
+  },
+  {
+   "N": 6,
+   "N_pipeline": 6,
+   "N_correct": true,
+   "S_equal": true,
+   "per_V_coef_equal": true,
+   "taylor_equals_bruteforce": true,
+   "hermite_ok": true,
+   "deg_ok": true,
+   "bound_ok": true,
+   "name": "E",
+   "vectors_examined": 0,
+   "probe": {
+    "Z_rep_ring": 0,
+    "brute_H_ring": 1
+   }
+  }
+ ]
+}
