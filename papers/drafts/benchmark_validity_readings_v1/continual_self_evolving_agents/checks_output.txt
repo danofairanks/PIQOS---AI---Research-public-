@@ -1,0 +1,12 @@
+pooled r (n=12) -0.72 t -3.29
+within-scenario r -0.775 t -3.24 (df=7)
+within-method r -0.643
+RB P 3.3 Term 2.5 bound S <= -0.8 observed S -1.9
+GEPA P 6.2 Term 3.7 bound S <= -2.5 observed S -4.3
+MH P 2.2 Term 1.4 bound S <= -0.8 observed S -2.1
+sigma_e 1.5 null-floor S: topic -1.14 workflow -0.85 domain -1.14 compound -1.27
+sigma_e 1.9 null-floor S: topic -1.45 workflow -1.08 domain -1.45 compound -1.61
+sigma_e 2.5 null-floor S: topic -1.91 workflow -1.42 domain -1.91 compound -2.12
+v 0.1 SD single eval (pp) 1.58 SD paired diff 2.24
+v 0.15 SD single eval (pp) 1.94 SD paired diff 2.74
+v 0.2 SD single eval (pp) 2.24 SD paired diff 3.16
