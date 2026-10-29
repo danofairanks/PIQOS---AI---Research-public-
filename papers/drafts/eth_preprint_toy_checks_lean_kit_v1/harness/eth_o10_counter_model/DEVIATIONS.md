@@ -1,0 +1,5 @@
+# Deviations: O10 counter-model search
+1. Smoke run before scoring: `o10_check.py 20 7` (seed0 = 7, N = 20) was run to check that the code executes. Its output (O10a/O10b no failures; M1 17/17, M2 9/17, M3 19/19; 57 schedule "violations") is not scored. The scored run is seed0 = 1, N = 2000.
+2. Harness bug found in the smoke run, fixed before scoring: the schedule grid used M = max(1, M_d/8, ...), which exceeds M_d when M_d < 1, violating (A1) M <= M_d, and produced all 57 "violations". The grid now skips points with M_d < 1 and M < 1. The fix is to the grid's precondition, not to the paper's formulas; nothing was changed to make a violation disappear other than that precondition.
+3. Rings and parameter ranges as preregistered. Implementation (ii) is a matrix representation (left multiplication by Kronecker products of the companion matrix of f and the nilpotent shift of V), not sympy polynomial arithmetic as listed in section 2 of the prereg; chosen for speed, still independent of implementation (i).
+4. Scored run: `python3 -I o10_check.py 2000 1`, output `o10_results_N2000_s1.json`.

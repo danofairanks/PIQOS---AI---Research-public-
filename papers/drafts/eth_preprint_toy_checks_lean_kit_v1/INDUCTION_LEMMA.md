@@ -57,7 +57,7 @@ Status: **my reconstruction** of the statement that the proof of Theorem D.1 (Op
 | O7 | interpolation points and unit differences | D.4.1, D.4.4 | R |
 | O8 | complexity recurrence | D.4.7 | R, M |
 | O9 | tuple counting bound | (D.15) | R, T |
-| O10 | canonical lifting consistency | D.4.1 | R only |
+| O10 | canonical lifting consistency | D.4.1 | R; T on an abstract bookkeeping model (added 2026-10-29, `harness/eth_o10_counter_model/`) |
 
 ## 5. The quantifier "for all sufficiently large s" made numerical (not a proof; log-domain evaluation with worst-case M)
 - (P1)-(P5) hold at every active depth from lambda_2 = 2.10e6 (C = 12) / 8.39e6 (C = 144), bound by u_d >= 1 at the last depth (u_{d*-1} = floor(eps lambda/2^{d*-1}) >= 1).
@@ -72,4 +72,4 @@ Status: **my reconstruction** of the statement that the proof of Theorem D.1 (Op
 5. Complexity uses (P6), correctness does not; so the induction is valid for all lambda satisfying (P1)-(P5) even if the running time is not controlled there.
 
 ## 7. Not covered
-Lemma D.3-D.5, (D.12)-(D.16) were tested only at tiny L, p (a <= 4, p <= 5); the induction itself was never *run* (the tuple count at toy parameters exceeds 10^108). O10 (canonical lifting) is read, not tested. This reconstruction has not been reviewed by anyone else, and a Lean or independent formalization would be the way to settle it.
+Lemma D.3-D.5, (D.12)-(D.16) were tested only at tiny L, p (a <= 4, p <= 5); the induction itself was never *run* (the tuple count at toy parameters exceeds 10^108). O10 (canonical lifting) was read, and since tested only on an abstract bookkeeping model (see `harness/eth_o10_counter_model/`). This reconstruction has not been reviewed by anyone else, and a Lean or independent formalization would be the way to settle it.

@@ -1,0 +1,12 @@
+{
+  "challenge_module": "ComparatorChallenges.EthDecoyB",
+  "solution_module": "OAI.EthKit.DecoyB",
+  "theorem_names": [
+    "OAI.EthKit.Decoy.decoy_vacuous"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}
