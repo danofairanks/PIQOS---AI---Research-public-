@@ -1,0 +1,4 @@
+T1 max|u-u'| per sim: {'dot': np.float64(1.7763568394002505e-14), 'cos': np.float64(8.881784197001252e-16), 'rbf': 0} argmax agreement: {'dot': 1.0, 'cos': 1.0, 'rbf': 1.0}
+T1 D1 (defeated at scope iff all <1e-9 and agreement==1): True
+T2 max|h_eff - h_eff'|: 1.0658141036401503e-14
+T2 D2 (defeated at scope iff <1e-12): True

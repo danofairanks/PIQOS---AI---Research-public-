@@ -1,0 +1,8 @@
+T4 tuned HRL {'mode': 'hrl', 'eta0': 0.2, 'eps': 0.05} tuning-mean 79.631
+T4 tuned MEM-A {'mode': 'mem', 'eta0': 0.1, 'kappa': 4, 'emin': 0.02, 'emax': 0.3} tuning-mean 42.57
+T4 tuned HRL-sched {'mode': 'sched', 'eta0': 0.1, 'kappa': 4, 'emin': 0.02, 'emax': 0.3} tuning-mean 38.663
+T4 HRL: mean AUC cost 76.6087 se 2.1134
+T4 MEM-A: mean AUC cost 41.9170 se 1.2357
+T4 HRL-sched: mean AUC cost 38.1937 se 1.0452
+T4 P4a MEM-A better than HRL by 34.6917 (se 2.4482, 14.17 SE) -> holds
+T4 P4b HRL-sched minus MEM-A = -3.7233 (se 1.6184, 2.30 SE) -> gap closed (<=1 SE): False; HRL-sched worse by >2SE: False

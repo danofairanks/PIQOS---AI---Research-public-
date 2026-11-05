@@ -1,0 +1,3 @@
+T3 agent (a) recharge freq windows pre/disc/restore1/restore2 = [0.343, 0.0, 0.38, 0.354]  change_on_disconnect=-0.343  recovery_gap=+0.011  PASS_6.3=True  eta-|A| corr=n/a
+T3 agent (b) recharge freq windows pre/disc/restore1/restore2 = [0.34, 0.0, 0.378, 0.353]  change_on_disconnect=-0.340  recovery_gap=+0.014  PASS_6.3=True  eta-|A| corr=1.0
+T3 agent (c) recharge freq windows pre/disc/restore1/restore2 = [0.625, 0.625, 0.625, 0.625]  change_on_disconnect=+0.000  recovery_gap=+0.000  PASS_6.3=False  eta-|A| corr=n/a

@@ -1,0 +1,3 @@
+T5 cell means (00,10,01,11): [110.2677, 110.2677, 123.808, 123.808]
+T5 interaction raw scale +0.0000 CI [-14.7183,+14.9760] excludes0=False
+T5 interaction log scale +0.0000 CI [-0.1275,+0.1321] excludes0=False
