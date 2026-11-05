@@ -1,0 +1,8 @@
+E recomputed: [4.65, 4.33, 4.66, 3.75, 4.04, 4.36, 4.41, 4.08, 4.39, 5.14, 3.31, 4.24, 4.52, 5.04, 4.67, 4.8]
+max |E - printed|: 0.0
+K equal for the two theories on 11 of 16 criteria: ['P1', 'P3', 'P4', 'A1', 'A2', 'A3', 'A4', 'S1', 'S2', 'S3', 'B1']
+mean K MEM 4.298 GNWT 4.227; mean M 5.562 5.062
+equal weights: mean K MEM 4.363 GNWT 4.275 diff +0.088
+items 1-12 only: mean K MEM 4.506 GNWT 4.564 diff -0.058
+items 13-25 only: mean K MEM 4.076 GNWT 3.872 diff +0.203
+if M = 6 for both theories, K difference: 0.0
