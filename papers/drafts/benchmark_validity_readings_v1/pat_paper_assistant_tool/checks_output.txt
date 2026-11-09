@@ -1,0 +1,31 @@
+== C1 SPOT subset (Table 2): 26 papers, 29 errors
+  PAT 26/29 = 89.7% ; zero-shot 16/29 = 55.2% (stated 89.7 and 55.2)
+  Wilson 95%: PAT 73.6-96.4% ; zero-shot 37.5-71.6%
+  gain 34.5 points ('34%' in the text); relative gain 62% ; extra errors found 10
+  unpaired Fisher exact p = 0.0070 (paired outcomes are not reported, so McNemar cannot be computed)
+  original SPOT best 21.1% would be 6.1 of 29 errors (6/29 = 20.7%, 7/29 = 24.1%)
+== C2 Table 1 submission counts
+  2020: 17051
+  2021: 17649 ; year on year +3.51%
+  2022: 19463 ; year on year +10.28%
+  2023: 23838 ; year on year +22.48%
+  2024: 32628 ; year on year +36.87%
+  2025: 45354 ; year on year +39.00%
+  2026: 73883 ; year on year +62.90%
+  NeurIPS 2026 estimate = 21575 x (21575/15671) = 29703 (table 29,703); share of the 2026 combined total that is extrapolated: 40.2%
+== C3 NeurIPS 2021 consistency experiment
+  random-selection inconsistency at acceptance 0.227: 2p(1-p) = 0.351 (text: 35%)
+== C4 survey percentages against the stated cohort sizes (STOC n = 124, ICML n = 733); entries reported as integers (97%, 31%) are not tested
+  STOC improved clarity                     85.1% -> not attainable at n = 124; fits 103/121
+  STOC education value                      75.2% -> not attainable at n = 124; fits 91/121
+  STOC very/mostly helpful                  92.7% -> 115/124
+  STOC mostly/all grounded                  55.8% -> not attainable at n = 124; fits 67/120
+  STOC substantive theory gaps              11.6% -> not attainable at n = 124; fits 14/121
+  ICML would use again                      92.1% -> 675/733
+  ICML improved clarity                     87.0% -> 638/733
+  ICML education value                      83.9% -> 615/733
+  ICML very/mostly helpful                  90.7% -> 665/733
+  ICML mostly/all grounded                  64.8% -> 475/733
+  ICML substantive theory gaps              35.4% -> not attainable at n = 733; fits 259/732
+  respondents 124 + 733 = 857; against 'over 4,700 submissions' at most 18.2% (units differ)
+  not mostly/all grounded: STOC 44.2% ; ICML 35.2%
