@@ -4,7 +4,7 @@
 
 **Scope of naming.** Four arXiv preprints by the same two authors, read together: 2609.23828 (submitted 20 September 2026; the main proposal), 2609.20437 (17 September; the formal model), 2609.38495 (29 September; a comparison with Global Neuronal Workspace Theory) and 2610.04057 (2 October; a comparison with Recurrent Processing Theory). The authors are called "the authors" and are not named; the architecture is named as the papers name it (the Motivated Emotional Mind, "MEM"). No intent is attributed. The authors have not been contacted for this version.
 
-**Disclosure.** Read and drafted with AI assistance; the reader is an Anthropic model. Predictions were written before reading (a generic list, then a topic list after the abstract of the main paper) and before each toy was run; the preregistrations and their amendments are in `mem_proposal_reading_v1/counter_models/`. The papers make no claim about any Anthropic system. One reader, no independent blind pass yet.
+**Disclosure.** Read and drafted AI-assisted (Claude, working under this project's own non-default standard; direction, selection and release decisions are the operator's); single reader. Predictions were written before reading (a generic list, then a topic list after the abstract of the main paper) and before each toy was run; the preregistrations and their amendments are in `mem_proposal_reading_v1/counter_models/`. The papers make no claim about any Anthropic system. One reader, no independent blind pass yet.
 
 ## 1. What the papers are
 
@@ -79,7 +79,7 @@ The toys attack contrasts the papers draw, at the scope stated, and several of t
 ## 10. Limitations
 
 - Four papers chosen because one is circulating; nothing here is a rate.
-- One reader, the same model family as the drafting assistant; no author contact; no independent reproduction of the toys.
+- One reader (the drafting assistant, under this project's non-default standard); no author contact; no independent reproduction of the toys.
 - Prior-art relevance rests on titles and abstracts of the works named.
 - The post hoc observation in the interaction toy (sub-additivity, sign) is not preregistered and is not offered as a finding about the architecture.
 

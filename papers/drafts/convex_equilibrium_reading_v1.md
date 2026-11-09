@@ -4,7 +4,7 @@
 
 **Scope of naming.** The object examined is one preprint, "Convex Equilibrium Potentials for Monge-Ampère: Curvature Bounds and A Posteriori Evaluation" (arXiv:2610.31386v1, 22 October 2026, 26 pages). The authors are called "the authors"; the organisations the paper names are CINVESTAV and IBM Research. The authors' repository is named by its path, `github.com/EdisonVazquezG/monge-ampere-equilibrium`; it was not fetched or run. No intent is attributed to anyone.
 
-**Disclosure.** Drafted with AI assistance; one reader, an AI system. The paper's AI-use statement names Claude among the tools used, and the reader is also an Anthropic model, so this is a same-developer reading and the usual same-source caveat applies. **No predictions were preregistered**: this is a same-session evaluation, and the checks below were designed after reading the paper.
+**Disclosure.** AI-assisted (Claude, working under this project's own non-default standard; direction, selection and release decisions are the operator's); single reader. The paper's AI-use statement names Claude among the tools used, and the assisting model is from the same developer, so the usual caveat on independence applies, with that framework context. **No predictions were preregistered**: this is a same-session evaluation, and the checks below were designed after reading the paper.
 
 ## 1. What was read, and how
 
