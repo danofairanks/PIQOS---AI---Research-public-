@@ -1,12 +1,12 @@
 {
-  "path": "../benchmark_validity_readings_v1.md",
+  "path": "benchmark_validity_readings_v1.md",
   "ok": true,
   "structural_gap_count": 0,
   "total_gap_count": 0,
   "placeholder_gaps": [],
   "labeled_placeholders": [],
   "falsifiability": {
-    "has_testable_markers": false,
+    "has_testable_markers": true,
     "certainty_claims": [],
     "gap": false
   },
@@ -28,7 +28,7 @@
   "limitations": {
     "present": true,
     "applicable": true,
-    "word_count": 2344,
+    "word_count": 2623,
     "min_word_count": 400,
     "has_inline_phrase": true,
     "has_heading_section": true,
@@ -38,7 +38,7 @@
     "claims_citability": false,
     "matched_phrases": [],
     "n_references": 1,
-    "word_count": 2344,
+    "word_count": 2623,
     "applicable": true,
     "gap": false
   }

@@ -1,0 +1,91 @@
+{
+  "path": "README.md",
+  "ok": true,
+  "gap_count": 10,
+  "severe_gap_count": 0,
+  "unattributed_quotes": [],
+  "uncited_statistics": [
+    {
+      "kind": "dollar_amount",
+      "value": "$16.43",
+      "start": 2455,
+      "end": 2461,
+      "context": "ss Scaling, an external controller revising the harness between attempts), 1.442 (frozen harness), 1.281 (offline Harness Evolution); mean model cost $16.43, $12.98, $23.22, $24.56; \"Speedup/$\" 0.4886, 0.2872, 0.2142, 0.1243. The abstract says the method achieves \"more efficient use of task time and model"
+    },
+    {
+      "kind": "dollar_amount",
+      "value": "$12.98",
+      "start": 2463,
+      "end": 2469,
+      "context": "ng, an external controller revising the harness between attempts), 1.442 (frozen harness), 1.281 (offline Harness Evolution); mean model cost $16.43, $12.98, $23.22, $24.56; \"Speedup/$\" 0.4886, 0.2872, 0.2142, 0.1243. The abstract says the method achieves \"more efficient use of task time and model cost\".\n"
+    },
+    {
+      "kind": "dollar_amount",
+      "value": "$23.22",
+      "start": 2471,
+      "end": 2477,
+      "context": "xternal controller revising the harness between attempts), 1.442 (frozen harness), 1.281 (offline Harness Evolution); mean model cost $16.43, $12.98, $23.22, $24.56; \"Speedup/$\" 0.4886, 0.2872, 0.2142, 0.1243. The abstract says the method achieves \"more efficient use of task time and model cost\".\n\n## Flag"
+    },
+    {
+      "kind": "dollar_amount",
+      "value": "$24.56",
+      "start": 2479,
+      "end": 2485,
+      "context": "controller revising the harness between attempts), 1.442 (frozen harness), 1.281 (offline Harness Evolution); mean model cost $16.43, $12.98, $23.22, $24.56; \"Speedup/$\" 0.4886, 0.2872, 0.2142, 0.1243. The abstract says the method achieves \"more efficient use of task time and model cost\".\n\n## Flags (ranke"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "5.0%",
+      "start": 4744,
+      "end": 4748,
+      "context": "ompleted review\", so at most eight fit in four hours (median observed five); the compared variant reviews every 30 minutes. The speedup difference is 5.0% (1.584 against 1.508). Against Harness Scaling, BoxBox differs in two ways at once: the agent decides when to review, and context is preserved where "
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "103,475",
+      "start": 7156,
+      "end": 7163,
+      "context": "at runs the agent and the review also judged \"optimization potential\" and \"evaluable process\" for the candidate pool that became the test set (239 of 103,475 reached human curation; 93,992 failed on stars alone). One model, one initial harness, one VM type. The word \"contamination\" does not occur; the test"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "93,992",
+      "start": 7188,
+      "end": 7194,
+      "context": " also judged \"optimization potential\" and \"evaluable process\" for the candidate pool that became the test set (239 of 103,475 reached human curation; 93,992 failed on stars alone). One model, one initial harness, one VM type. The word \"contamination\" does not occur; the test projects are public repositori"
+    },
+    {
+      "kind": "dollar_amount",
+      "value": "$0",
+      "start": 7611,
+      "end": 7613,
+      "context": "tasks with no stated reason; Table 3 lists GPT-5.6-Terra rates and no use of it appears in the text read; Figure 1 cost labels differ from Table 1 by $0.01-0.02; the paper says there are \"1,983 boundaries\" where 2,132 attempts minus 150 runs is 1,982. None changes a conclusion. (E1/E2)\n\n## What holds\n"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "1,983",
+      "start": 7649,
+      "end": 7654,
+      "context": "ists GPT-5.6-Terra rates and no use of it appears in the text read; Figure 1 cost labels differ from Table 1 by $0.01-0.02; the paper says there are \"1,983 boundaries\" where 2,132 attempts minus 150 runs is 1,982. None changes a conclusion. (E1/E2)\n\n## What holds\nThe negative result for the offline basel"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "2,132",
+      "start": 7673,
+      "end": 7678,
+      "context": " and no use of it appears in the text read; Figure 1 cost labels differ from Table 1 by $0.01-0.02; the paper says there are \"1,983 boundaries\" where 2,132 attempts minus 150 runs is 1,982. None changes a conclusion. (E1/E2)\n\n## What holds\nThe negative result for the offline baseline is reported with its"
+    }
+  ],
+  "disclaimer": {
+    "present": true,
+    "applicable": true,
+    "word_count": 1702,
+    "min_word_count": 400,
+    "gap": false
+  },
+  "sourcing": {
+    "has_sources_statement": true,
+    "has_framework_citation": false,
+    "has_end_sourcing": true
+  }
+}

@@ -1,8 +1,8 @@
-# Benchmark-Validity Readings: Fourteen Papers Read for Whether the Score Supports the Inference Drawn From It
+# Benchmark-Validity Readings: Fifteen Papers Read for Whether the Score Supports the Inference Drawn From It
 
 *AI-assisted. Living research: staged, not peer reviewed, may be revised or withdrawn.*
 
-**Scope of naming.** Fourteen papers (eleven posted in October 2026, one in late September 2026, and two added on 2026-11-09, one posted in June 2026 and one in November 2026) are each read in their own folder, `benchmark_validity_readings_v1/<name>/README.md`. Authors are called "the authors" and are not named; organisations are named only as each paper names them. No intent is attributed to anyone. A thirteenth reading, of a working paper with no stable public copy, is not included (section 7).
+**Scope of naming.** Fifteen papers (eleven posted in October 2026, one in late September 2026, and three added on 2026-11-09, one posted in June 2026 and two in November 2026) are each read in their own folder, `benchmark_validity_readings_v1/<name>/README.md`. Authors are called "the authors" and are not named; organisations are named only as each paper names them. No intent is attributed to anyone. A thirteenth reading, of a working paper with no stable public copy, is not included (section 7).
 
 **Disclosure.** AI-assisted (Claude, working under this project's own non-default standard: the operator's instructions, preregistration and primary-source checking discipline; not a vanilla configuration). Object selection, method, redaction and release decisions are the operator's. A single reader carried out every reading; no second reader. Where a paper evaluates models from the assisting model's developer or has authors affiliated with it, the individual reading says so, with that framework context. Readings are post hoc unless the folder holds a predictions file.
 
@@ -28,6 +28,7 @@ Papers about whether a benchmark score supports the inference drawn from it: con
 | [`mcp_injector_fault_tolerance/`](benchmark_validity_readings_v1/mcp_injector_fault_tolerance/README.md) (contrast case) | arXiv 2610.32555v1 (MCP-Injector; gpt-oss-20B vs -120B under calibrated faults) | Careful, well-controlled; title ('scale does not purchase fault tolerance') stronger than the abstract's two-model, one-setup scope with a wide CI and models indistinguishable at baseline; '60% degradation' belongs to a permanent-heavy stress profile; stack effect is suggestive (p = 0.048 / 0.074, no multiplicity correction) |
 | [`pat_paper_assistant_tool/`](benchmark_validity_readings_v1/pat_paper_assistant_tool/README.md) | arXiv 2606.28277v1 (Paper Assistant Tool; SPOT subset of 29 errors; STOC and ICML pilots) | Recall alone on 29 errors (the '34%' is 34.5 points), no false-positive rate, no compute-matched baseline; grader, subset and audit are the authors'; pilot surveys are opt-in with unreported denominators; a 'would have caught' extrapolation from documented errors |
 | [`triage_path_dependence_chatbots/`](benchmark_validity_readings_v1/triage_path_dependence_chatbots/README.md) | arXiv 2611.09647v1 (path-dependent triage; 13 chatbots, 112 cases, simulated user) | The sequence-versus-format contrast removes filler and the chatbot's questions as well as ordering; 'anchoring' is confounded by input overlap; a single-sided emergency metric whose best endpoints over-triage most; scorer reliability is replicate agreement only |
+| [`boxbox_harness_self_revision/`](benchmark_validity_readings_v1/boxbox_harness_self_revision/README.md) | arXiv 2611.09218v1 (BoxBox and PerfRace; 50 test tasks, 3 runs each; one agent model) | The per-dollar column is a mean of per-task ratios: the 1.70x lead over the strongest baseline becomes 0.87x on the ratio of the table's own means and 1.03x on gain per dollar; run-level intervals only; the agent-triggering ablation is 14 tasks, no intervals, with a cadence close to the compared variant; the score is a running maximum over noisy timings; 'recursive' is not tested as recursion |
 
 ## 3. Reading lens (applied during reading, not preregistered)
 
@@ -41,19 +42,21 @@ Every reading ends with two lines. **Tier** states what it rests on: E1 executed
 
 The number of flags in a reading is not a severity ranking. `raw_rag_agentic_memory/`, `nca_reasoning/` and `mcp_injector_fault_tolerance/` are the contrast cases. The RAW-RAG reading carries as many flags as the readings of papers whose claims outran their tables, but they are mostly scope and reporting detail on a paper that states its own limits (an inherited baseline inconsistency, untested significance, reader dependence). Read a reading by what its flags bear on (the headline claim, or the method's own reporting), not by how many there are.
 
-### 5.1 Patterns that recur (added 2026-11-09; post hoc; fourteen papers and one earlier public reading, not a rate)
+### 5.1 Patterns that recur (added 2026-11-09; post hoc; fifteen papers and one earlier public reading, not a rate)
 Each pattern is listed only where a public reading in this series shows it. Patterns seen once so far are candidates, not findings.
-1. **A lead inside the noise, with no intervals.** `pat_paper_assistant_tool/` (26 against 16 of 29 errors), `triage_path_dependence_chatbots/` (a headline exact test on pairs that repeat 28 cases across 13 chatbots), `fde_gym_delivery_benchmark/` (12 of 13 adjacent configuration pairs overlap), `theophyseval_physics_agents/` (a headline resting on a single run).
+1. **A lead inside the noise, with no intervals.** `pat_paper_assistant_tool/` (26 against 16 of 29 errors), `triage_path_dependence_chatbots/` (a headline exact test on pairs that repeat 28 cases across 13 chatbots), `fde_gym_delivery_benchmark/` (12 of 13 adjacent configuration pairs overlap), `theophyseval_physics_agents/` (a headline resting on a single run), `boxbox_harness_self_revision/` (intervals that resample runs over fixed tasks; a 10.6% lead with no task-level test).
 2. **A headline carried by one component or one choice.** `ideascientist_ideation_agent/` (the margin comes from an in-domain novelty term), `fde_gym_delivery_benchmark/` (resolved counts dominated by the contact cost), `pairwise_difference_uq/` (a headline quantity defined so that it cannot be negative). Readings of composite indexes whose rank changes with the weights are not in the series yet.
-3. **Comparisons run under different conditions.** `raw_rag_agentic_memory/` (the rank claim holds in matched settings and not on one benchmark), `fde_gym_delivery_benchmark/` (budget truncation read as capability), `pat_paper_assistant_tool/` (compute confounded with method), `triage_path_dependence_chatbots/` (sequence confounded with format).
-4. **The evaluator belongs to the builders' loop, or shares a family with the compared systems.** `harmbench_psychometric_audit/` (judge-family confound not discussed), `pat_paper_assistant_tool/` (engine, baseline, grader and audit from one organisation), `triage_path_dependence_chatbots/` (simulator, checklist writer, rewriter and scorer from one developer family, three targets from it too), and the public reading `scientisttwo_release_reading_v1.md` (a headline that holds under the in-loop reviewer and not under the held-out one).
-5. **A headline number the paper's own tables or definitions do not reproduce.** `pairwise_difference_uq/` (a quantity that cannot be negative against reported negatives), `pat_paper_assistant_tool/` (a "34%" that is 34.5 points, and survey percentages that do not fit the stated cohort sizes).
+3. **Comparisons run under different conditions.** `raw_rag_agentic_memory/` (the rank claim holds in matched settings and not on one benchmark), `fde_gym_delivery_benchmark/` (budget truncation read as capability), `pat_paper_assistant_tool/` (compute confounded with method), `triage_path_dependence_chatbots/` (sequence confounded with format), `boxbox_harness_self_revision/` (agent control confounded with context preservation, and the compared variant's review cadence close to the method's own).
+4. **The evaluator belongs to the builders' loop, or shares a family with the compared systems.** `harmbench_psychometric_audit/` (judge-family confound not discussed), `pat_paper_assistant_tool/` (engine, baseline, grader and audit from one organisation), `triage_path_dependence_chatbots/` (simulator, checklist writer, rewriter and scorer from one developer family, three targets from it too), `boxbox_harness_self_revision/` (benchmark, method, baselines and task filter from one group, the filter model also the agent), and the public reading `scientisttwo_release_reading_v1.md` (a headline that holds under the in-loop reviewer and not under the held-out one).
+5. **A headline number the paper's own tables or definitions do not reproduce.** `pairwise_difference_uq/` (a quantity that cannot be negative against reported negatives), `pat_paper_assistant_tool/` (a "34%" that is 34.5 points, and survey percentages that do not fit the stated cohort sizes), `boxbox_harness_self_revision/` (a per-dollar column 2.4 to 4.7 times above the ratio of the table's own means, reversing the lead).
 6. **A single-sided metric with a cheap extreme solution.** `triage_path_dependence_chatbots/`: emergency under-triage can be met by escalating everything, and the best endpoints on it over-triage most. Seen once so far.
 7. **Recall without precision.** `pat_paper_assistant_tool/`: no false-positive rate against a compute-matched baseline. Seen once so far.
+8. **A per-cost or per-unit metric built as a mean of per-item ratios.** `boxbox_harness_self_revision/`: cheap items dominate, a no-op earns the baseline value, and the ranking reverses on the ratio of means. Seen once so far.
+9. **A running maximum over noisy measurements as the score.** `boxbox_harness_self_revision/`: best-so-far speedup with timing variation up to 10% and no re-measurement of the winning snapshot. Seen once so far.
 
 ## 6. Verification, and what is not claimed
 
-- **Quoted strings.** `quote_checks.py` tests every double-quoted string in each reading against the text layer of the paper's PDF (three extraction orders, normalised quotes and dashes). Fourteen of fourteen readings pass after correction (the two added on 2026-11-09 after one pass of correction each); before correction, many phrases that had been put in quotation marks were close paraphrases, and those were either restored to the paper's wording or unquoted. The result of the final run is in each folder as `quote_checks_output.txt`. A pass is a lexical test: it does not show the reading's interpretation is right.
+- **Quoted strings.** `quote_checks.py` tests every double-quoted string in each reading against the text layer of the paper's PDF (three extraction orders, normalised quotes and dashes). Fifteen of fifteen readings pass after correction (the three added on 2026-11-09 after one pass of correction each); before correction, many phrases that had been put in quotation marks were close paraphrases, and those were either restored to the paper's wording or unquoted. The result of the final run is in each folder as `quote_checks_output.txt`. A pass is a lexical test: it does not show the reading's interpretation is right.
 - **Source files.** Eleven of the twelve arXiv PDFs re-fetched (ten on 2026-10-26, `continual_self_evolving_agents` on 2026-10-29) are byte-identical to the copies read; the twelfth (`nca_reasoning`) differs in bytes but is word-for-word identical in text.
 - **Scripts.** Every `checks*.py` re-ran in this layout and reproduced its committed output.
 - **Not done.** No paper's code or data was run unless a reading says so; figures were mostly read as extracted text; the flags are leads for a deeper pass, not verdicts.
@@ -66,7 +69,7 @@ A reading of a working paper that compares AI and human peer reviews is held bac
 
 ## 8. Limitations: what this does and does not establish
 
-- Fourteen papers chosen by what reached the reader, not sampled; nothing here is a rate.
+- Fifteen papers chosen by what reached the reader, not sampled; nothing here is a rate.
 - One reader per paper (the assisting model, under this project's non-default standard); in some cases that model's developer is the subject (see each Disclosure).
 - The series is a set of reading notes with scripts; it is not a literature review. An open item is a literature table for AI-judging-AI and benchmark-validity work, with inclusion criteria preregistered first.
 
@@ -76,13 +79,15 @@ A reading of a working paper that compares AI and human peer reviews is held bac
 
 ## References
 
-Sources: the fourteen papers named in the scope lines of the readings (arXiv identifiers and PDF hashes are in each folder's README).
+Sources: the fifteen papers named in the scope lines of the readings (arXiv identifiers and PDF hashes are in each folder's README).
 
 ## Revision log
 
 - *2026-10-26, v1.* First public version, from the reader's working notes of 2026-10-17 to 2026-10-26.
 - *2026-10-29, v1.1.* Added `continual_self_evolving_agents/` (twelfth reading); counts in the scope line, section 6 and section 8 updated; one scope note in section 1. The earlier eleven readings are unchanged.
 - *2026-11-09, v1.2.* Added `pat_paper_assistant_tool/` and `triage_path_dependence_chatbots/` (thirteenth and fourteenth readings), lens questions 7-11, and section 5.1 (patterns that recur); counts in the scope line, section 6 and section 8 updated. The earlier twelve readings are unchanged.
+- *2026-11-09, v1.2.1.* Added a note on the vendor review tool's run on the Paper Assistant Tool paper to `pat_paper_assistant_tool/`; no flag, number or rating changed.
+- *2026-11-09, v1.3.* Added `boxbox_harness_self_revision/` (fifteenth reading) and patterns 8 and 9 in section 5.1; counts in the scope line, section 5.1, section 6 and section 8 updated. The earlier fourteen readings are unchanged.
 
 ---
 
