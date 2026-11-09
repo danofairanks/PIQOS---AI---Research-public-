@@ -1,0 +1,2 @@
+pdf sha256 092b512674f874fbe1e2af7b3ddefeca13f74515570a50a5849eef5c88eb5c72
+3/3 quoted strings found in the PDF text layer
