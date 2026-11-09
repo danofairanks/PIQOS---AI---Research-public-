@@ -1,0 +1,25 @@
+== C1 Table 1: the per-dollar column against the table's own means
+  method   S/cost (ratio of means)   (S-1)/cost   reported Speedup/$   reported / (S/cost)
+  Frozen   0.0621                    0.0190       0.2142               3.45
+  HE       0.0522                    0.0114       0.1243               2.38
+  HS       0.1186                    0.0415       0.2872               2.42
+  BoxBox   0.1036                    0.0427       0.4886               4.72
+  BoxBox / HS: reported x1.70; ratio of means x0.87; gain per dollar (S-1)/cost x1.03
+  cost cut against Frozen: 29.2% (paper: 29.3%)
+== C2 size of the headline lead
+  BoxBox - HS = 0.163 (10.6% relative); BoxBox - Frozen = 0.260 (18.0%)
+  intervals in Fig. 1 resample the 3 runs per task over the fixed 50-task set (Appendix A.1); tasks are not resampled, so this lead has no task-level interval
+== C3 ablation (Table 2; 14 sampled test tasks)
+  w/o Agent Triggering  speedup 1.508  cost $21.58  reported Speedup/$ 0.1338  S/cost 0.0699  ratio 1.91
+  w/o Full Editing      speedup 1.349  cost $16.07  reported Speedup/$ 0.1132  S/cost 0.0839  ratio 1.35
+  Full BoxBox           speedup 1.584  cost $15.07  reported Speedup/$ 0.3452  S/cost 0.1051  ratio 3.28
+  Full vs w/o Agent Triggering: speedup +5.0%; Full BoxBox on these 14 tasks is 1.584 (1.702 on all 50); no Frozen reference on the same 14 is reported
+  review cadence: 30-minute cooldown after each review (Appendix C.2) -> at most 8 reviews in 4 h; observed median 5; the compared variant reviews every 30 minutes
+== C4 offline baseline (HE) cost accounting (Table 4)
+  test: 150 runs x $24.56 = $3684.0 (Table 4: $3,683.34); per run with training and validation: $33.73 (paper: at least $33.73)
+== C5 internal consistency
+  Frozen at 4 h: 1.442 on the 50 test tasks (Table 1) against 1.435 on 88 tasks (Appendix B.5)
+  HS attempts 2,132 minus 150 runs = 1982 boundaries (text: 1,983; off by one, immaterial)
+  Appendix B.5 evaluates '88 tasks' (264 trajectories) of 100; the text read gives no reason for 88
+  Table 11: CV < 6% on 84 of 99 wall-clock tasks; 6-10% on 15 ; red-team cases per task: one on 60 of 100 tasks
+  Table 9: 93,992 of 103,475 candidates fail on fewer than 10 GitHub stars; 239 reach Pair Verification; 132 rejected in design, 6 in build, 1 at finalisation -> 100 accepted (paper: 100)
