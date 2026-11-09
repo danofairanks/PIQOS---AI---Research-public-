@@ -83,6 +83,7 @@ Sources: the fourteen papers named in the scope lines of the readings (arXiv ide
 - *2026-10-26, v1.* First public version, from the reader's working notes of 2026-10-17 to 2026-10-26.
 - *2026-10-29, v1.1.* Added `continual_self_evolving_agents/` (twelfth reading); counts in the scope line, section 6 and section 8 updated; one scope note in section 1. The earlier eleven readings are unchanged.
 - *2026-11-09, v1.2.* Added `pat_paper_assistant_tool/` and `triage_path_dependence_chatbots/` (thirteenth and fourteenth readings), lens questions 7-11, and section 5.1 (patterns that recur); counts in the scope line, section 6 and section 8 updated. The earlier twelve readings are unchanged.
+- *2026-11-09, v1.2.1.* Added a note on the vendor review tool's run on the Paper Assistant Tool paper to `pat_paper_assistant_tool/`; no flag, number or rating changed.
 
 ---
 
