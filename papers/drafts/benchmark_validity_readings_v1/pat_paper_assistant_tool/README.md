@@ -25,6 +25,13 @@ The paper says plainly that recall without precision is incomplete and why; it s
 ## Scorecard against the predictions
 9 of 13 held (one-run and no-intervals recall; single-call baseline only; opt-in self-reported pilots; Table 1 estimate; conceptual taxonomy; anecdotal critical errors; builder-run evaluation; no code or prompts; referee-control stance not measured), 2 partial (whether design was tuned on SPOT is not stated; gaming gets one clause and injection and confidentiality none), 2 missed (contamination is not acknowledged; no non-Google model appears). Detail in `predictions_fixed_2026-11-09.md`.
 
+## Note (2026-11-09): the vendor's review tool run on this paper
+The operator ran Google's public Deep Review tool on the PDF of this paper on 2026-11-09 (one run; the tool version is not shown and its output is not deterministic) and saved the Report view: a summary, four segments covering pages 1-10, and a citation check of 13 of the 16 references. The saved report is held privately; anyone can re-run the tool and a second run may differ. This reading was written before the report was seen and has not been changed by it.
+- **Raised independently by the report:** the missing precision and compute-matched baseline (flags 1-2); the mismatch between the original 21.1% and the authors' subset and grader, including that 21.1% cannot be a fraction of 29 (flag 3); the points-versus-relative reading of "34%" (flag 1); the response rate near 18% and the unreported denominators (flag 5); the model difference between the benchmark and the pilots (flag 3); a Role 2 claim that outruns what was tested. It verified Table 1's arithmetic as exact (flag 6).
+- **Raised by the report and not by this reading:** missing comparison with earlier multi-agent review work, thin pipeline specification, confidentiality and prompt-injection risks (listed here only as a partial prediction), and reference typos.
+- **Not raised by the report:** the structure in flag 8 (one organisation builds, runs, grades and audits); contamination and the extrapolation from documented errors (flag 4); sampling uncertainty at 29 errors (flag 1); the survey percentages that do not fit the stated cohort sizes (flag 5); that 40.2% of the 2026 total in Table 1 is extrapolated (flag 6). Its strengths block calls the 89.7% impressive and credits practical impact to the opt-in surveys that its weaknesses block calls self-selected.
+- **Limits:** one run; a tool built by the same organisation as the paper; nothing here estimates the tool's recall or precision; the reader had already written this reading. Evidence tier E2 (the report read in full as saved text), with the overlap judgments E3.
+
 ## Evidence tier and deeper-pass flag
 **Tier:** E1 executed (intervals, tests, Table 1 and survey arithmetic in `checks.py`); E2 read (all 10 pp.; the cited blog posts, the benchmark paper and the survey instrument not read); E3 interpretation (flags 3 and 8 readings of how the design produces the numbers).
 **Deeper pass:** recommended and cheap if the authors release material: precision and false alarms on error-free papers, a Pass@k with voting at PAT's budget, the grader named with a second grader from another vendor. Not done.
@@ -42,6 +49,7 @@ Sources: arXiv:2606.28277v1 (PDF sha256 8f201a8abd61b3f19fea2f60812265b47e08dadc
 
 ## Revision log
 - *2026-11-09, v1.* Added to the series.
+- *2026-11-09, v1.1.* Added a note on the vendor review tool's run on this paper; no flag, number or rating changed.
 
 ---
 

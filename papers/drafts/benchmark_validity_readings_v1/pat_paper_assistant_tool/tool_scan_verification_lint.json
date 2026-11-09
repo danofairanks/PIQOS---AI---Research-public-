@@ -1,7 +1,7 @@
 {
   "path": "README.md",
   "ok": true,
-  "gap_count": 14,
+  "gap_count": 18,
   "severe_gap_count": 0,
   "unattributed_quotes": [],
   "uncited_statistics": [
@@ -102,12 +102,40 @@
       "start": 5093,
       "end": 5098,
       "context": "rgument supports the statement that human review is noisy, not that AI review is better.** The 23% disagreement against 35% under random selection at 22.7% acceptance recomputes (C3); no figure is given for the consistency or accuracy of AI acceptance judgments, and PAT produces no ratings. (E1/E2)\n8. **"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "21.1%",
+      "start": 7167,
+      "end": 7172,
+      "context": "ed by it.\n- **Raised independently by the report:** the missing precision and compute-matched baseline (flags 1-2); the mismatch between the original 21.1% and the authors' subset and grader, including that 21.1% cannot be a fraction of 29 (flag 3); the points-versus-relative reading of \"34%\" (flag 1); t"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "21.1%",
+      "start": 7224,
+      "end": 7229,
+      "context": "issing precision and compute-matched baseline (flags 1-2); the mismatch between the original 21.1% and the authors' subset and grader, including that 21.1% cannot be a fraction of 29 (flag 3); the points-versus-relative reading of \"34%\" (flag 1); the response rate near 18% and the unreported denominators"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "40.2%",
+      "start": 8100,
+      "end": 8105,
+      "context": "documented errors (flag 4); sampling uncertainty at 29 errors (flag 1); the survey percentages that do not fit the stated cohort sizes (flag 5); that 40.2% of the 2026 total in Table 1 is extrapolated (flag 6). Its strengths block calls the 89.7% impressive and credits practical impact to the opt-in surv"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "89.7%",
+      "start": 8191,
+      "end": 8196,
+      "context": "ges that do not fit the stated cohort sizes (flag 5); that 40.2% of the 2026 total in Table 1 is extrapolated (flag 6). Its strengths block calls the 89.7% impressive and credits practical impact to the opt-in surveys that its weaknesses block calls self-selected.\n- **Limits:** one run; a tool built by t"
     }
   ],
   "disclaimer": {
     "present": true,
     "applicable": true,
-    "word_count": 1274,
+    "word_count": 1635,
     "min_word_count": 400,
     "gap": false
   },
