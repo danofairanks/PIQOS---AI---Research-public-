@@ -1,0 +1,1 @@
+3/3 quoted strings found in the source text (1 source file(s))

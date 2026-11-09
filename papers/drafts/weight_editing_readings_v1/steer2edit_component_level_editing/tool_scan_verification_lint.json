@@ -1,0 +1,91 @@
+{
+  "path": "README.md",
+  "ok": true,
+  "gap_count": 10,
+  "severe_gap_count": 0,
+  "unattributed_quotes": [],
+  "uncited_statistics": [
+    {
+      "kind": "decimal_percent",
+      "value": "17.2%",
+      "start": 1419,
+      "end": 1424,
+      "context": "on neurons, with magnitudes from an Elastic-Net objective. Claimed \"at matched downstream performance\": gains over the strongest steering baseline of 17.2% (safety), 9.8% (truthfulness) and 12.2% (reasoning-length reduction), on 2B-8B models in the main text, with appendices on a 70B model, a vision-lang"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "9.8%",
+      "start": 1435,
+      "end": 1439,
+      "context": " magnitudes from an Elastic-Net objective. Claimed \"at matched downstream performance\": gains over the strongest steering baseline of 17.2% (safety), 9.8% (truthfulness) and 12.2% (reasoning-length reduction), on 2B-8B models in the main text, with appendices on a 70B model, a vision-language model, a d"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "12.2%",
+      "start": 1459,
+      "end": 1464,
+      "context": "tic-Net objective. Claimed \"at matched downstream performance\": gains over the strongest steering baseline of 17.2% (safety), 9.8% (truthfulness) and 12.2% (reasoning-length reduction), on 2B-8B models in the main text, with appendices on a 70B model, a vision-language model, a diffusion language model, "
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "5,319",
+      "start": 2848,
+      "end": 2853,
+      "context": "ut -21%). Qwen3-4B-Thinking, best configuration (Table 10): average accuracy 87.8 to 77.3, GPQA 66.3 to 42.4, MATH-500 97.7 to 89.7, reasoning length 5,319 to 3,387 tokens; the main text says the edit shortens traces \"while maintaining comparable accuracy\". The diffusion-model run (n=1) goes from 33.8 to"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "3,387",
+      "start": 2857,
+      "end": 2862,
+      "context": " Qwen3-4B-Thinking, best configuration (Table 10): average accuracy 87.8 to 77.3, GPQA 66.3 to 42.4, MATH-500 97.7 to 89.7, reasoning length 5,319 to 3,387 tokens; the main text says the edit shortens traces \"while maintaining comparable accuracy\". The diffusion-model run (n=1) goes from 33.8 to 18.8 ave"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "60.1%",
+      "start": 3736,
+      "end": 3741,
+      "context": "n helpful answers, so the metric measures the variable the construction pushes; the paper's own over-refusal benchmark finds over-refusal rising from 60.1% to 66.4% for the edit, and at matched over-refusal (about 66%) 88.1% safety against 60.5% for steering. ADVBench supplies both the vectors and the ev"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "66.4%",
+      "start": 3745,
+      "end": 3750,
+      "context": " answers, so the metric measures the variable the construction pushes; the paper's own over-refusal benchmark finds over-refusal rising from 60.1% to 66.4% for the edit, and at matched over-refusal (about 66%) 88.1% safety against 60.5% for steering. ADVBench supplies both the vectors and the evaluation "
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "88.1%",
+      "start": 3805,
+      "end": 3810,
+      "context": "on pushes; the paper's own over-refusal benchmark finds over-refusal rising from 60.1% to 66.4% for the edit, and at matched over-refusal (about 66%) 88.1% safety against 60.5% for steering. ADVBench supplies both the vectors and the evaluation prompts; the split is not stated. (E1 text; reading E2)\n4. *"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "60.5%",
+      "start": 3826,
+      "end": 3831,
+      "context": "s own over-refusal benchmark finds over-refusal rising from 60.1% to 66.4% for the edit, and at matched over-refusal (about 66%) 88.1% safety against 60.5% for steering. ADVBench supplies both the vectors and the evaluation prompts; the split is not stated. (E1 text; reading E2)\n4. **\"Training-free\" name"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "83.8%",
+      "start": 5579,
+      "end": 5584,
+      "context": "ch ranges are given in full; over-refusal, a second hallucination benchmark and a labeling-judge swap (the two judges agree on 342 of 408 candidates, 83.8%, which the paper says measures consistency, not correctness) are reported; ablations include variants that fail badly; the AUSteer comparison states "
+    }
+  ],
+  "disclaimer": {
+    "present": true,
+    "applicable": true,
+    "word_count": 1128,
+    "min_word_count": 400,
+    "gap": false
+  },
+  "sourcing": {
+    "has_sources_statement": true,
+    "has_framework_citation": false,
+    "has_end_sourcing": true
+  }
+}
