@@ -4,7 +4,7 @@
 
 **Scope of naming.** One paper, "SOLAR: A Self-Optimizing Open-Ended Autonomous Agent for Lifelong Learning and Continual Adaptation" (arXiv:2605.20189v1; a workshop paper at the Streaming Continual Learning Bridge, AAAI-26, per its footnote; the paper names the National University of Singapore and the Indian Institute of Science). The authors are called "the authors". No individual is named and no intent is attributed.
 
-**Disclosure.** Drafted with AI assistance; one reader, an AI system (an Anthropic model). The paper's generative-AI declaration lists GPT-5.2, Claude Opus 4.5 and Gemini-3 as writing aids, including to generate the literature review and images (a same-vendor point). Read from an operator-supplied copy (8 pp.; PDF sha256 beginning 0234b31559f029ad) via text extraction: the full body and references; no code release was reachable.
+**Disclosure.** AI-assisted (Claude, working under this project's own non-default standard; direction, selection and release decisions are the operator's); single reader. The paper's generative-AI declaration lists GPT-5.2, Claude Opus 4.5 and Gemini-3 as writing aids, including to generate the literature review and images. Read from an operator-supplied copy (8 pp.; PDF sha256 beginning 0234b31559f029ad) via text extraction: the full body and references; no code release was reachable.
 
 ## What it is
 Qwen2.5-0.5B-Instruct; a convolutional decoder generates LoRA adapters from prompt embeddings; a language model proposes JSON "adaptation strategies" (test-time training, LoRA merging, ensemble or router inference, activation-space tweaks) from a hand-built knowledge base; results on five in-domain and five out-of-domain benchmarks against four baselines.

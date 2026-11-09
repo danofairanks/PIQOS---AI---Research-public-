@@ -8,134 +8,134 @@
     {
       "kind": "decimal_percent",
       "value": "8.6%",
-      "start": 1275,
-      "end": 1279,
+      "start": 1355,
+      "end": 1359,
       "context": ". Nothing was run; no weights downloaded.\n\n## Flags (ranked; post hoc)\n1. **Corrections live in the card and not in the pitch.** Six of the 70 cards (8.6%) carry a correction or retirement notice; all three knowledge-writing cards among them. They were written in one sprint, 2 Nov 21:39 to 4 Nov 04:45 U"
     },
     {
       "kind": "fraction_count",
       "value": "489/500",
-      "start": 2169,
-      "end": 2176,
+      "start": 2249,
+      "end": 2256,
       "context": "efore every correction, and the text of the brief and the release page was identical across two reads on 2026-11-08. As read, the brief still carries 489/500 (three times), 486/500 (three times), the 7% to 56% gain, \"zero degradation\" and \"fully preserved\", each withdrawn or contradicted on a card; the rel"
     },
     {
       "kind": "fraction_count",
       "value": "486/500",
-      "start": 2192,
-      "end": 2199,
+      "start": 2272,
+      "end": 2279,
       "context": " and the text of the brief and the release page was identical across two reads on 2026-11-08. As read, the brief still carries 489/500 (three times), 486/500 (three times), the 7% to 56% gain, \"zero degradation\" and \"fully preserved\", each withdrawn or contradicted on a card; the release page still reads \""
     },
     {
       "kind": "large_comma_count",
       "value": "10,000",
-      "start": 2674,
-      "end": 2680,
+      "start": 2754,
+      "end": 2760,
       "context": " are updated later is unknown. (E1; archive history not reachable)\n2. **\"No training\" names the edit step.** The rebuilt 6.9B card's manifest records 10,000 plain-SGD updates over 738,197,504 parameters (11 layers x 16,384 x 4,096; about 10.7% of the model) in 1,029 seconds: a restricted fine-tune, which "
     },
     {
       "kind": "large_comma_count",
       "value": "738,197,504",
-      "start": 2704,
-      "end": 2715,
+      "start": 2784,
+      "end": 2795,
       "context": " (E1; archive history not reachable)\n2. **\"No training\" names the edit step.** The rebuilt 6.9B card's manifest records 10,000 plain-SGD updates over 738,197,504 parameters (11 layers x 16,384 x 4,096; about 10.7% of the model) in 1,029 seconds: a restricted fine-tune, which the card now states. (E1, arithmeti"
     },
     {
       "kind": "large_comma_count",
       "value": "16,384",
-      "start": 2740,
-      "end": 2746,
+      "start": 2820,
+      "end": 2826,
       "context": "\n2. **\"No training\" names the edit step.** The rebuilt 6.9B card's manifest records 10,000 plain-SGD updates over 738,197,504 parameters (11 layers x 16,384 x 4,096; about 10.7% of the model) in 1,029 seconds: a restricted fine-tune, which the card now states. (E1, arithmetic in `checks_arithmetic.py`)\n3."
     },
     {
       "kind": "large_comma_count",
       "value": "4,096",
-      "start": 2749,
-      "end": 2754,
+      "start": 2829,
+      "end": 2834,
       "context": " training\" names the edit step.** The rebuilt 6.9B card's manifest records 10,000 plain-SGD updates over 738,197,504 parameters (11 layers x 16,384 x 4,096; about 10.7% of the model) in 1,029 seconds: a restricted fine-tune, which the card now states. (E1, arithmetic in `checks_arithmetic.py`)\n3. **Rigor"
     },
     {
       "kind": "decimal_percent",
       "value": "10.7%",
-      "start": 2762,
-      "end": 2767,
+      "start": 2842,
+      "end": 2847,
       "context": "mes the edit step.** The rebuilt 6.9B card's manifest records 10,000 plain-SGD updates over 738,197,504 parameters (11 layers x 16,384 x 4,096; about 10.7% of the model) in 1,029 seconds: a restricted fine-tune, which the card now states. (E1, arithmetic in `checks_arithmetic.py`)\n3. **Rigor differs acro"
     },
     {
       "kind": "large_comma_count",
       "value": "1,029",
-      "start": 2785,
-      "end": 2790,
+      "start": 2865,
+      "end": 2870,
       "context": "e rebuilt 6.9B card's manifest records 10,000 plain-SGD updates over 738,197,504 parameters (11 layers x 16,384 x 4,096; about 10.7% of the model) in 1,029 seconds: a restricted fine-tune, which the card now states. (E1, arithmetic in `checks_arithmetic.py`)\n3. **Rigor differs across one publisher's card"
     },
     {
       "kind": "fraction_count",
       "value": "0/500",
-      "start": 2990,
-      "end": 2995,
+      "start": 3070,
+      "end": 3075,
       "context": "ow states. (E1, arithmetic in `checks_arithmetic.py`)\n3. **Rigor differs across one publisher's cards.** The 1.4B card has a deranged-answer control (0/500), a reworded-prompt probe (220/500 against 500/500 on the training prompt), a base-knowledge control, a perplexity cost (+18.5%) and a blind third-pa"
     },
     {
       "kind": "fraction_count",
       "value": "220/500",
-      "start": 3023,
-      "end": 3030,
+      "start": 3103,
+      "end": 3110,
       "context": "ecks_arithmetic.py`)\n3. **Rigor differs across one publisher's cards.** The 1.4B card has a deranged-answer control (0/500), a reworded-prompt probe (220/500 against 500/500 on the training prompt), a base-knowledge control, a perplexity cost (+18.5%) and a blind third-party diff check. The 6.9B card has p"
     },
     {
       "kind": "fraction_count",
       "value": "500/500",
-      "start": 3039,
-      "end": 3046,
+      "start": 3119,
+      "end": 3126,
       "context": "py`)\n3. **Rigor differs across one publisher's cards.** The 1.4B card has a deranged-answer control (0/500), a reworded-prompt probe (220/500 against 500/500 on the training prompt), a base-knowledge control, a perplexity cost (+18.5%) and a blind third-party diff check. The 6.9B card has paired intervals "
     },
     {
       "kind": "decimal_percent",
       "value": "18.5%",
-      "start": 3118,
-      "end": 3123,
+      "start": 3198,
+      "end": 3203,
       "context": "anged-answer control (0/500), a reworded-prompt probe (220/500 against 500/500 on the training prompt), a base-knowledge control, a perplexity cost (+18.5%) and a blind third-party diff check. The 6.9B card has paired intervals and a base-knew control but recall is measured on the training prompts only ("
     },
     {
       "kind": "fraction_count",
       "value": "499/500",
-      "start": 5195,
-      "end": 5202,
+      "start": 5275,
+      "end": 5282,
       "context": "s real and public: replacement notices, a retirement of a headline \"rather than carrying both\", a paired-statistics rebuild of the 6.9B model (recall 499/500 by prefix and anywhere against 1/500 and 9/500 for the base; perplexity 8.7188 to 9.0508, +3.81%, paired delta-NLL +0.03737 with interval [+0.03533, "
     },
     {
       "kind": "fraction_count",
       "value": "1/500",
-      "start": 5234,
-      "end": 5239,
+      "start": 5314,
+      "end": 5319,
       "context": " a retirement of a headline \"rather than carrying both\", a paired-statistics rebuild of the 6.9B model (recall 499/500 by prefix and anywhere against 1/500 and 9/500 for the base; perplexity 8.7188 to 9.0508, +3.81%, paired delta-NLL +0.03737 with interval [+0.03533, +0.03941], recomputed consistent; LAM"
     },
     {
       "kind": "fraction_count",
       "value": "9/500",
-      "start": 5244,
-      "end": 5249,
+      "start": 5324,
+      "end": 5329,
       "context": "ent of a headline \"rather than carrying both\", a paired-statistics rebuild of the 6.9B model (recall 499/500 by prefix and anywhere against 1/500 and 9/500 for the base; perplexity 8.7188 to 9.0508, +3.81%, paired delta-NLL +0.03737 with interval [+0.03533, +0.03941], recomputed consistent; LAMBADA +1.65"
     },
     {
       "kind": "decimal_percent",
       "value": "3.81%",
-      "start": 5294,
-      "end": 5299,
+      "start": 5374,
+      "end": 5379,
       "context": "aired-statistics rebuild of the 6.9B model (recall 499/500 by prefix and anywhere against 1/500 and 9/500 for the base; perplexity 8.7188 to 9.0508, +3.81%, paired delta-NLL +0.03737 with interval [+0.03533, +0.03941], recomputed consistent; LAMBADA +1.65 points on 5,153 items). The 1.4B card's controls "
     },
     {
       "kind": "large_comma_count",
       "value": "5,153",
-      "start": 5410,
-      "end": 5415,
+      "start": 5490,
+      "end": 5495,
       "context": "se; perplexity 8.7188 to 9.0508, +3.81%, paired delta-NLL +0.03737 with interval [+0.03533, +0.03941], recomputed consistent; LAMBADA +1.65 points on 5,153 items). The 1.4B card's controls are the right kind. The cards' own cost statements are plain.\n\n## Depth ratings (rubric in the series overview; one "
     }
   ],
   "disclaimer": {
     "present": true,
     "applicable": true,
-    "word_count": 1193,
+    "word_count": 1200,
     "min_word_count": 400,
     "gap": false
   },

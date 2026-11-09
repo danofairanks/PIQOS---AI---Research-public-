@@ -37,20 +37,20 @@
         {
           "pattern": "safety",
           "text": "safety",
-          "start": 4890,
-          "end": 4896
+          "start": 4970,
+          "end": 4976
         },
         {
           "pattern": "reasoning",
           "text": "reasoning",
-          "start": 1746,
-          "end": 1755
+          "start": 1826,
+          "end": 1835
         },
         {
           "pattern": "reasoning",
           "text": "reasoning",
-          "start": 1812,
-          "end": 1821
+          "start": 1892,
+          "end": 1901
         }
       ]
     },

@@ -22,106 +22,106 @@
     {
       "kind": "decimal_percent",
       "value": "7.9%",
-      "start": 1611,
-      "end": 1615,
+      "start": 1709,
+      "end": 1713,
       "context": "er the evaluation sets) and a budget of 10, 25 or 50 forward passes; it may not train or use gradients. It submits an edit. The post reports MATH-500 7.9% to 48.1% and GSM8K 13.8% to 67.1% for the 50-pass run, and a Gemma 3 270M follow-up where the editor \"could not improve\" the model.\n\n## Flags (ranked"
     },
     {
       "kind": "decimal_percent",
       "value": "48.1%",
-      "start": 1619,
-      "end": 1624,
+      "start": 1717,
+      "end": 1722,
       "context": "valuation sets) and a budget of 10, 25 or 50 forward passes; it may not train or use gradients. It submits an edit. The post reports MATH-500 7.9% to 48.1% and GSM8K 13.8% to 67.1% for the 50-pass run, and a Gemma 3 270M follow-up where the editor \"could not improve\" the model.\n\n## Flags (ranked; post ho"
     },
     {
       "kind": "decimal_percent",
       "value": "13.8%",
-      "start": 1635,
-      "end": 1640,
+      "start": 1733,
+      "end": 1738,
       "context": "and a budget of 10, 25 or 50 forward passes; it may not train or use gradients. It submits an edit. The post reports MATH-500 7.9% to 48.1% and GSM8K 13.8% to 67.1% for the 50-pass run, and a Gemma 3 270M follow-up where the editor \"could not improve\" the model.\n\n## Flags (ranked; post hoc)\n1. **The repo"
     },
     {
       "kind": "decimal_percent",
       "value": "67.1%",
-      "start": 1644,
-      "end": 1649,
+      "start": 1742,
+      "end": 1747,
       "context": "get of 10, 25 or 50 forward passes; it may not train or use gradients. It submits an edit. The post reports MATH-500 7.9% to 48.1% and GSM8K 13.8% to 67.1% for the 50-pass run, and a Gemma 3 270M follow-up where the editor \"could not improve\" the model.\n\n## Flags (ranked; post hoc)\n1. **The reported runs"
     },
     {
       "kind": "large_comma_count",
       "value": "32,768",
-      "start": 3092,
-      "end": 3098,
+      "start": 3190,
+      "end": 3196,
       "context": "of layers and direction is the editor's own. (E1)\n3. **The gain is mostly termination.** Under the evaluation protocol the unedited model reaches the 32,768-token limit on 93.0% of MATH-500 answers (98.7% of OlympiadBench, 100% of AIME24/25). The editor's own report says 576 of 579 rescues on its confirma"
     },
     {
       "kind": "decimal_percent",
       "value": "93.0%",
-      "start": 3114,
-      "end": 3119,
+      "start": 3212,
+      "end": 3217,
       "context": "n is the editor's own. (E1)\n3. **The gain is mostly termination.** Under the evaluation protocol the unedited model reaches the 32,768-token limit on 93.0% of MATH-500 answers (98.7% of OlympiadBench, 100% of AIME24/25). The editor's own report says 576 of 579 rescues on its confirmation set were origina"
     },
     {
       "kind": "decimal_percent",
       "value": "98.7%",
-      "start": 3141,
-      "end": 3146,
+      "start": 3239,
+      "end": 3244,
       "context": "\n3. **The gain is mostly termination.** Under the evaluation protocol the unedited model reaches the 32,768-token limit on 93.0% of MATH-500 answers (98.7% of OlympiadBench, 100% of AIME24/25). The editor's own report says 576 of 579 rescues on its confirmation set were originally truncated outputs and t"
     },
     {
       "kind": "decimal_percent",
       "value": "6.8%",
-      "start": 3467,
-      "end": 3471,
+      "start": 3565,
+      "end": 3569,
       "context": "nally finished outputs was unchanged. The post says \"Fixing loops, however, is not the same as making a model better at math\", and the Gemma control (6.8% to 7.7%, a model that rarely loops) agrees. (E1; the editor's statement is testimony)\n4. **One baseline configuration.** Sampling is thinking on, tem"
     },
     {
       "kind": "decimal_percent",
       "value": "7.7%",
-      "start": 3475,
-      "end": 3479,
+      "start": 3573,
+      "end": 3577,
       "context": "nished outputs was unchanged. The post says \"Fixing loops, however, is not the same as making a model better at math\", and the Gemma control (6.8% to 7.7%, a model that rarely loops) agrees. (E1; the editor's statement is testimony)\n4. **One baseline configuration.** Sampling is thinking on, temperature"
     },
     {
       "kind": "large_comma_count",
       "value": "32,768",
-      "start": 3679,
-      "end": 3685,
+      "start": 3777,
+      "end": 3783,
       "context": "or's statement is testimony)\n4. **One baseline configuration.** Sampling is thinking on, temperature 0.6, top-p 0.95, top-k 20, presence penalty 1.5, 32,768 tokens. The logs hold no unedited run under another configuration, so how much of the 7.9% base is a property of this configuration and how much of t"
     },
     {
       "kind": "decimal_percent",
       "value": "7.9%",
-      "start": 3772,
-      "end": 3776,
+      "start": 3870,
+      "end": 3874,
       "context": "erature 0.6, top-p 0.95, top-k 20, presence penalty 1.5, 32,768 tokens. The logs hold no unedited run under another configuration, so how much of the 7.9% base is a property of this configuration and how much of the model is not measured. (E1 absence)\n5. **Human intervention inside the runs.** The relea"
     },
     {
       "kind": "large_comma_count",
       "value": "1,152",
-      "start": 4741,
-      "end": 4746,
+      "start": 4839,
+      "end": 4844,
       "context": "in self-modifying loops (see `literature_context/`). (E1 term scan of the post text)\n\n## What holds\nThe strongest point: the editor's confirmation on 1,152 fresh practice problems (10.6% to 60.4%, paired gain +49.8 points, standard error 1.5, 579 rescues, 5 losses) matches the later test results, so ther"
     },
     {
       "kind": "decimal_percent",
       "value": "10.6%",
-      "start": 4772,
-      "end": 4777,
+      "start": 4870,
+      "end": 4875,
       "context": "iterature_context/`). (E1 term scan of the post text)\n\n## What holds\nThe strongest point: the editor's confirmation on 1,152 fresh practice problems (10.6% to 60.4%, paired gain +49.8 points, standard error 1.5, 579 rescues, 5 losses) matches the later test results, so there is no sign of selection on th"
     },
     {
       "kind": "decimal_percent",
       "value": "60.4%",
-      "start": 4781,
-      "end": 4786,
+      "start": 4879,
+      "end": 4884,
       "context": "_context/`). (E1 term scan of the post text)\n\n## What holds\nThe strongest point: the editor's confirmation on 1,152 fresh practice problems (10.6% to 60.4%, paired gain +49.8 points, standard error 1.5, 579 rescues, 5 losses) matches the later test results, so there is no sign of selection on the evaluat"
     }
   ],
   "disclaimer": {
     "present": true,
     "applicable": true,
-    "word_count": 1222,
+    "word_count": 1231,
     "min_word_count": 400,
     "gap": false
   },

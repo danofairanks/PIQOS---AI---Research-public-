@@ -8,15 +8,15 @@
     {
       "kind": "large_comma_count",
       "value": "1,220",
-      "start": 3262,
-      "end": 3267,
+      "start": 3342,
+      "end": 3347,
       "context": "e only outbound links in the post are the MIT page, the weather data source and the repository. (E1)\n5. **Weather result precision.** One test set of 1,220 city-days (373 rain); Hanley-McNeil 95% half-widths about 0.03 for each AUC (recomputed), so 0.809 vs 0.839 is not resolvable on one test set; the 60"
     }
   ],
   "disclaimer": {
     "present": true,
     "applicable": true,
-    "word_count": 884,
+    "word_count": 891,
     "min_word_count": 400,
     "gap": false
   },

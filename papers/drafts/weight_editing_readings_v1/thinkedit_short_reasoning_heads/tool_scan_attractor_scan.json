@@ -37,20 +37,20 @@
         {
           "pattern": "alignment",
           "text": "alignment",
-          "start": 1389,
-          "end": 1398
+          "start": 1469,
+          "end": 1478
         },
         {
           "pattern": "alignment",
           "text": "alignment",
-          "start": 5813,
-          "end": 5822
+          "start": 5893,
+          "end": 5902
         },
         {
           "pattern": "alignment",
           "text": "alignment",
-          "start": 5901,
-          "end": 5910
+          "start": 5981,
+          "end": 5990
         },
         {
           "pattern": "reasoning",
@@ -67,50 +67,50 @@
         {
           "pattern": "reasoning",
           "text": "reasoning",
-          "start": 1115,
-          "end": 1124
+          "start": 1195,
+          "end": 1204
         },
         {
           "pattern": "reasoning",
           "text": "reasoning",
-          "start": 1175,
-          "end": 1184
+          "start": 1255,
+          "end": 1264
         },
         {
           "pattern": "reasoning",
           "text": "reasoning",
-          "start": 1514,
-          "end": 1523
+          "start": 1594,
+          "end": 1603
         },
         {
           "pattern": "reasoning",
           "text": "Reasoning",
-          "start": 2676,
-          "end": 2685
+          "start": 2756,
+          "end": 2765
         },
         {
           "pattern": "reasoning",
           "text": "reasoning",
-          "start": 2877,
-          "end": 2886
+          "start": 2957,
+          "end": 2966
         },
         {
           "pattern": "reasoning",
           "text": "reasoning",
-          "start": 3049,
-          "end": 3058
+          "start": 3129,
+          "end": 3138
         },
         {
           "pattern": "reasoning",
           "text": "reasoning",
-          "start": 5216,
-          "end": 5225
+          "start": 5296,
+          "end": 5305
         },
         {
           "pattern": "reasoning",
           "text": "reasoning",
-          "start": 5797,
-          "end": 5806
+          "start": 5877,
+          "end": 5886
         }
       ]
     },
@@ -150,8 +150,8 @@
         {
           "pattern": "understanding_reasoning",
           "text": "reasoning",
-          "start": 2877,
-          "end": 2886
+          "start": 2957,
+          "end": 2966
         }
       ]
     },
@@ -175,20 +175,20 @@
         {
           "pattern": "alignment_safety",
           "text": "alignment",
-          "start": 1389,
-          "end": 1398
+          "start": 1469,
+          "end": 1478
         },
         {
           "pattern": "alignment_safety",
           "text": "alignment",
-          "start": 5813,
-          "end": 5822
+          "start": 5893,
+          "end": 5902
         },
         {
           "pattern": "alignment_safety",
           "text": "alignment",
-          "start": 5901,
-          "end": 5910
+          "start": 5981,
+          "end": 5990
         }
       ]
     },

@@ -8,50 +8,50 @@
     {
       "kind": "large_comma_count",
       "value": "4,926",
-      "start": 3518,
-      "end": 3523,
+      "start": 3577,
+      "end": 3582,
       "context": "tuned or partly interpolated fine-tune is not compared. (E1 card; the baseline point is E2)\n4. **The Elo claims rest on numbers the reply supplies.** 4,926 distinct openings with both colours gives 9,852 games; the sequential test called at pair 3,581 (error level 0.0012); score 52.3% with a rough interv"
     },
     {
       "kind": "large_comma_count",
       "value": "9,852",
-      "start": 3566,
-      "end": 3571,
+      "start": 3625,
+      "end": 3630,
       "context": "mpared. (E1 card; the baseline point is E2)\n4. **The Elo claims rest on numbers the reply supplies.** 4,926 distinct openings with both colours gives 9,852 games; the sequential test called at pair 3,581 (error level 0.0012); score 52.3% with a rough interval of 51.3-53.3% (+9 to +23 Elo, recomputed). Ab"
     },
     {
       "kind": "large_comma_count",
       "value": "3,581",
-      "start": 3614,
-      "end": 3619,
+      "start": 3673,
+      "end": 3678,
       "context": "*The Elo claims rest on numbers the reply supplies.** 4,926 distinct openings with both colours gives 9,852 games; the sequential test called at pair 3,581 (error level 0.0012); score 52.3% with a rough interval of 51.3-53.3% (+9 to +23 Elo, recomputed). About 1,800 games resolve +16 Elo at a fixed sampl"
     },
     {
       "kind": "decimal_percent",
       "value": "52.3%",
-      "start": 3648,
-      "end": 3653,
+      "start": 3707,
+      "end": 3712,
       "context": "e reply supplies.** 4,926 distinct openings with both colours gives 9,852 games; the sequential test called at pair 3,581 (error level 0.0012); score 52.3% with a rough interval of 51.3-53.3% (+9 to +23 Elo, recomputed). About 1,800 games resolve +16 Elo at a fixed sample (two-sided 95%), so the size is "
     },
     {
       "kind": "decimal_percent",
       "value": "53.3%",
-      "start": 3684,
-      "end": 3689,
+      "start": 3743,
+      "end": 3748,
       "context": "penings with both colours gives 9,852 games; the sequential test called at pair 3,581 (error level 0.0012); score 52.3% with a rough interval of 51.3-53.3% (+9 to +23 Elo, recomputed). About 1,800 games resolve +16 Elo at a fixed sample (two-sided 95%), so the size is adequate. Games within an opening ar"
     },
     {
       "kind": "decimal_percent",
       "value": "0.5%",
-      "start": 4037,
-      "end": 4041,
+      "start": 4096,
+      "end": 4100,
       "context": "o a pair-level interval cannot be computed. Across five Othello tests, rejected ones included, the author reports 4.45% error budget spent, not under 0.5%. (E1 arithmetic; counts are the author's)\n5. **Probe numbers.** The 0.99 AUROC is in-sample; the 45% corner rate is held out (2024 games; edits desig"
     }
   ],
   "disclaimer": {
     "present": true,
     "applicable": true,
-    "word_count": 1277,
+    "word_count": 1281,
     "min_word_count": 400,
     "gap": false
   },
