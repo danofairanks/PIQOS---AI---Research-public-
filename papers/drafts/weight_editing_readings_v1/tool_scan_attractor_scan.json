@@ -31,9 +31,58 @@
     "equivocation": {
       "category": "equivocation",
       "source": "\u00a74.1 (immune repertoire); seed terms \u00a73.2",
-      "flagged": false,
-      "confidence": "none",
-      "matches": []
+      "flagged": true,
+      "confidence": "weak",
+      "matches": [
+        {
+          "pattern": "safety",
+          "text": "safety",
+          "start": 5414,
+          "end": 5420
+        },
+        {
+          "pattern": "safety",
+          "text": "safety",
+          "start": 12669,
+          "end": 12675
+        },
+        {
+          "pattern": "reasoning",
+          "text": "reasoning",
+          "start": 5597,
+          "end": 5606
+        },
+        {
+          "pattern": "reasoning",
+          "text": "reasoning",
+          "start": 5659,
+          "end": 5668
+        },
+        {
+          "pattern": "reasoning",
+          "text": "reasoning",
+          "start": 5774,
+          "end": 5783
+        },
+        {
+          "pattern": "reasoning",
+          "text": "reasoning",
+          "start": 5960,
+          "end": 5969
+        },
+        {
+          "pattern": "reasoning",
+          "text": "reasoning",
+          "start": 12005,
+          "end": 12014
+        },
+        {
+          "pattern": "reasoning",
+          "text": "reasoning",
+          "start": 12682,
+          "end": 12691
+        }
+      ]
     },
     "volume_velocity": {
       "category": "volume_velocity",
@@ -82,10 +131,23 @@
       "case": "case4",
       "name": "\"Alignment\" and \"Safety\"",
       "source": "\u00a72.8 Case 4",
-      "flagged": false,
-      "confidence": "none",
-      "explanation": "Alignment/safety usage was accompanied by a sub-problem qualifier, or absent.",
-      "matches": []
+      "flagged": true,
+      "confidence": "weak",
+      "explanation": "'Alignment'/'safety' mentioned without specifying which of the six distinct sub-problems is meant -- review whether the claim generalizes across sub-problems it never actually measured.",
+      "matches": [
+        {
+          "pattern": "alignment_safety",
+          "text": "safety",
+          "start": 5414,
+          "end": 5420
+        },
+        {
+          "pattern": "alignment_safety",
+          "text": "safety",
+          "start": 12669,
+          "end": 12675
+        }
+      ]
     },
     "case5": {
       "case": "case5",
@@ -105,7 +167,11 @@
     "unglossed_spans": [],
     "self_titling_present": false
   },
-  "flagged_maneuvers": [],
-  "flagged_laundering_cases": [],
-  "density": 0.0
+  "flagged_maneuvers": [
+    "equivocation"
+  ],
+  "flagged_laundering_cases": [
+    "case4"
+  ],
+  "density": 0.16666666666666666
 }
