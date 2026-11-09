@@ -8,50 +8,50 @@
     {
       "kind": "large_comma_count",
       "value": "1,000",
-      "start": 1259,
-      "end": 1264,
+      "start": 1339,
+      "end": 1344,
       "context": "illed reasoning models (1.5B, 8B, 14B, and 32B in an appendix). A reasoning-length direction is the mean difference between activations of long (over 1,000 tokens) and short (under 100 tokens) chains of thought from 2,000 GSM8K training problems. The top 4% of attention heads by alignment with the short "
     },
     {
       "kind": "large_comma_count",
       "value": "2,000",
-      "start": 1325,
-      "end": 1330,
+      "start": 1405,
+      "end": 1410,
       "context": "reasoning-length direction is the mean difference between activations of long (over 1,000 tokens) and short (under 100 tokens) chains of thought from 2,000 GSM8K training problems. The top 4% of attention heads by alignment with the short direction have their output projections orthogonalized against it."
     },
     {
       "kind": "decimal_percent",
       "value": "6.39%",
-      "start": 1492,
-      "end": 1497,
+      "start": 1572,
+      "end": 1577,
       "context": "ing problems. The top 4% of attention heads by alignment with the short direction have their output projections orthogonalized against it. Headline: +6.39% on the shortest-reasoning responses and +3.34% overall across math benchmarks, with 0.2% of parameters edited; each cell is the mean of ten runs, rep"
     },
     {
       "kind": "decimal_percent",
       "value": "3.34%",
-      "start": 1539,
-      "end": 1544,
+      "start": 1619,
+      "end": 1624,
       "context": "alignment with the short direction have their output projections orthogonalized against it. Headline: +6.39% on the shortest-reasoning responses and +3.34% overall across math benchmarks, with 0.2% of parameters edited; each cell is the mean of ten runs, reported with a standard deviation.\n\n## Flags (ran"
     },
     {
       "kind": "decimal_percent",
       "value": "0.2%",
-      "start": 1582,
-      "end": 1586,
+      "start": 1662,
+      "end": 1666,
       "context": "ir output projections orthogonalized against it. Headline: +6.39% on the shortest-reasoning responses and +3.34% overall across math benchmarks, with 0.2% of parameters edited; each cell is the mean of ten runs, reported with a standard deviation.\n\n## Flags (ranked; post hoc)\n1. **The headline averages "
     },
     {
       "kind": "fraction_count",
       "value": "5/10",
-      "start": 2349,
-      "end": 2353,
+      "start": 2429,
+      "end": 2433,
       "context": " One of the 15 overall cells is negative (1.5B, MATH-Level5, -0.43). (E1; means E2)\n2. **Short-tail gains compare different problems.** The \"shortest 5/10/20%\" subsets are defined by each condition's own output length and the edit lengthens the shortest outputs (Table 3), so the edited and original subs"
     }
   ],
   "disclaimer": {
     "present": true,
     "applicable": true,
-    "word_count": 1040,
+    "word_count": 1047,
     "min_word_count": 400,
     "gap": false
   },

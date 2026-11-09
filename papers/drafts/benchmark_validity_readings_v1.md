@@ -4,7 +4,7 @@
 
 **Scope of naming.** Twelve papers (eleven posted in October 2026 and one in late September 2026) are each read in their own folder, `benchmark_validity_readings_v1/<name>/README.md`. Authors are called "the authors" and are not named; organisations are named only as each paper names them. No intent is attributed to anyone. A thirteenth reading, of a working paper with no stable public copy, is not included (section 7).
 
-**Disclosure.** Drafted with AI assistance. One reader, an AI system, wrote every reading, and the reader is an Anthropic model; where a paper evaluates Anthropic models or has Anthropic-affiliated authors, the individual reading says so. Readings are post hoc unless the folder holds a predictions file.
+**Disclosure.** AI-assisted (Claude, working under this project's own non-default standard: the operator's instructions, preregistration and primary-source checking discipline; not a vanilla configuration). Object selection, method, redaction and release decisions are the operator's. A single reader carried out every reading; no second reader. Where a paper evaluates models from the assisting model's developer or has authors affiliated with it, the individual reading says so, with that framework context. Readings are post hoc unless the folder holds a predictions file.
 
 ## 1. What this series is
 
@@ -55,7 +55,7 @@ A reading of a working paper that compares AI and human peer reviews is held bac
 ## 8. Limitations: what this does and does not establish
 
 - Twelve papers chosen by what reached the reader, not sampled; nothing here is a rate.
-- One reader per paper; the same model family wrote the readings and, in some cases, is the subject.
+- One reader per paper (the assisting model, under this project's non-default standard); in some cases that model's developer is the subject (see each Disclosure).
 - The series is a set of reading notes with scripts; it is not a literature review. An open item is a literature table for AI-judging-AI and benchmark-validity work, with inclusion criteria preregistered first.
 
 ## 9. Reproduction

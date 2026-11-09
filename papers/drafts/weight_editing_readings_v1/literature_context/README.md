@@ -4,7 +4,7 @@
 
 **Scope of naming.** A search note, not a reading of one object. Papers are cited by title and arXiv identifier; authors are not named. Every identifier below was fetched and its title and abstract read on the arXiv abstract page; nothing is cited from a search tool's summary. "Not found" means not found by the protocol below, not that no such work exists.
 
-**Disclosure.** Drafted with AI assistance; one reader, an AI system (an Anthropic model). Predictions were fixed and committed in private working notes before each search. Protocol: primary sources only; two queries per question in the first pass (twelve queries), three in a targeted second pass; the methods of two papers read in full; 2026 preprints are unreviewed.
+**Disclosure.** AI-assisted (Claude, working under this project's own non-default standard; direction, selection and release decisions are the operator's); single reader. Predictions were fixed and committed in private working notes before each search. Protocol: primary sources only; two queries per question in the first pass (twelve queries), three in a targeted second pass; the methods of two papers read in full; 2026 preprints are unreviewed.
 
 ## Findings
 **A standard evaluation battery for fact and behaviour editing exists.** Efficacy, generalization to paraphrases, locality on unrelated behaviour, fluency, and later portability and sequential or mass editing: 2305.13172 (Editing Large Language Models: Problems, Methods, and Opportunities, 2023); 2505.18690 (Benchmarking and Rethinking Knowledge Editing for LLMs, 2025: realistic autoregressive evaluation rather than teacher-forced decoding, multi-edit scenarios, portability, a simple baseline); 2402.11078 (Model Editing by Standard Fine-Tuning).

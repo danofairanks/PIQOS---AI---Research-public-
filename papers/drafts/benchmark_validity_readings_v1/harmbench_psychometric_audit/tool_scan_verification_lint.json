@@ -8,15 +8,15 @@
     {
       "kind": "fraction_count",
       "value": "80/20",
-      "start": 4258,
-      "end": 4263,
+      "start": 4317,
+      "end": 4322,
       "context": "ingle measurable attribute in HELM Safety generalizes from 1 of 4.\n2. **Extra dimensions are not shown to be constructs** (pp.5-7). Splits are random 80/20 holdouts of individual responses, so near-twin models from one lineage are in training; extra dimensions can encode lineage or capability-tier cluste"
     }
   ],
   "disclaimer": {
     "present": true,
     "applicable": true,
-    "word_count": 1456,
+    "word_count": 1460,
     "min_word_count": 400,
     "gap": false
   },

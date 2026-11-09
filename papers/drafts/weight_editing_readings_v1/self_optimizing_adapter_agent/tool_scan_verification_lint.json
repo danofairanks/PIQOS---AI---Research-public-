@@ -8,15 +8,15 @@
     {
       "kind": "decimal_percent",
       "value": "14.7%",
-      "start": 2632,
-      "end": 2637,
+      "start": 2690,
+      "end": 2695,
       "context": "yes/no): LoRA 14.7, DOM 33.2, TTL 44.4; PIQA: DOM 18.8, DnD 47.8; ARC-e and ARC-c for TTL about 25 (chance for four options). A binary task scored at 14.7% indicates an output-format failure; the largest gaps (up to +44 points against LoRA on BoolQ) are partly a harness effect. (E1; reading of cause is E"
     }
   ],
   "disclaimer": {
     "present": true,
     "applicable": true,
-    "word_count": 661,
+    "word_count": 665,
     "min_word_count": 400,
     "gap": false
   },

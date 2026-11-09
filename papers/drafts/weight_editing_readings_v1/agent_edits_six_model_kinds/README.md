@@ -4,7 +4,7 @@
 
 **Scope of naming.** One developer blog post (6 Nov 2026) and the repository it links (a single commit, 6 Nov 2026), which replicates parts of the MIT CSAIL weight-editing post with an AI coding agent and a command-line toolkit. The post's author is a private individual and is called "the author"; the agent's model is not named in the post. No intent is attributed. Locators are held privately.
 
-**Disclosure.** Drafted with AI assistance; one reader, an AI system (an Anthropic model). Read: the post, the repository README and article, the generating script of the synthetic fraud data, the weather data file (row counts only). Nothing was run.
+**Disclosure.** AI-assisted (Claude, working under this project's own non-default standard; direction, selection and release decisions are the operator's); single reader. Read: the post, the repository README and article, the generating script of the synthetic fraud data, the weather data file (row counts only). Nothing was run.
 
 ## What it claims
 On classic and small models (logistic regression, small networks, boosted trees, a small RL agent, a CNN) an agent diagnoses a flaw, writes a small edit, tests before and after, and commits a reversible patch; a gradient-boosted model written from a program with no labels reaches AUC 0.809 on next-day rain, against 0.839 for the same model trained on 2.5 years and 0.747 on 60 days; on a 0.8B language model finding the cause works but its own edit moved the end-of-reasoning token 1.2x against 29x for the published edit. The post says "Short version: on classic and small models, it works, sometimes remarkably well."
