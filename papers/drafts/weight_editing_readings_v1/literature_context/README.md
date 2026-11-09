@@ -1,0 +1,41 @@
+# What the Editing Literature Already Asks of an Edit: A Context Note for the Readings
+
+*AI-assisted. Living research: staged, not peer reviewed, may be revised or withdrawn.*
+
+**Scope of naming.** A search note, not a reading of one object. Papers are cited by title and arXiv identifier; authors are not named. Every identifier below was fetched and its title and abstract read on the arXiv abstract page; nothing is cited from a search tool's summary. "Not found" means not found by the protocol below, not that no such work exists.
+
+**Disclosure.** Drafted with AI assistance; one reader, an AI system (an Anthropic model). Predictions were fixed and committed in private working notes before each search. Protocol: primary sources only; two queries per question in the first pass (twelve queries), three in a targeted second pass; the methods of two papers read in full; 2026 preprints are unreviewed.
+
+## Findings
+**A standard evaluation battery for fact and behaviour editing exists.** Efficacy, generalization to paraphrases, locality on unrelated behaviour, fluency, and later portability and sequential or mass editing: 2305.13172 (Editing Large Language Models: Problems, Methods, and Opportunities, 2023); 2505.18690 (Benchmarking and Rethinking Knowledge Editing for LLMs, 2025: realistic autoregressive evaluation rather than teacher-forced decoding, multi-edit scenarios, portability, a simple baseline); 2402.11078 (Model Editing by Standard Fine-Tuning).
+**Failures at scale are documented.** 2401.07453 (gradual and then catastrophic forgetting under sequential editing); 2403.14236 (a unified view of rank-one and batched editors); 2605.11836 (lifelong editing plagued by forgetting and collapse, 2026).
+**The boundary between editing and fine-tuning is contested, and no accounting of what an edit was built from was found.** 2509.22072 (Fine-tuning Done Right in Model Editing: fine-tuning counted as an editing method once its pipeline is fixed); 2604.15789 (training-free methods are evaluated inconsistently and can cost utility and brittleness); 2602.22554 and 2602.09870 (closed-form, training-free edits that still use labelled or anchor examples).
+**Durability of removals is studied.** 2410.08827 (Do Unlearning Methods Remove Information from Language Model Weights?: an attacker is given some removed facts and must recover others; fine-tuning on the accessible facts recovered 88% of pre-unlearning accuracy; the test states what information the attacker holds); 2502.05374; 2505.09500 (modifications are brittle under relearning); 2505.19056 (a fine-tuning defence against refusal-direction removal); 2605.17413 (one harness comparing prompting, a reversible hook and LoRA, with random-direction controls, retention and out-of-scope spillover reported with intervals, and the rule that a matching random control changes the interpretation); 2607.17427 (a preregistered off-target probe of refusal removal on a task that elicits no refusals; abliterated models were more optimistic); 2508.20766 (a rank-one edit that re-adds a safety direction). Not found: a study of fine-tuning restoring what directional ablation removed.
+**Refusal-direction removal is prior art:** 2406.11717 (Refusal in Language Models Is Mediated by a Single Direction, 2024), 2512.13655.
+**Evaluator integrity and an error budget across self-modification exist at the agent level.** 2609.00069 (harness tampering in self-improving agents), 2603.11337 (evaluator tampering as a benchmark vector), 2609.17817 (poisoning self-evaluation of self-modifying agents), 2609.02246 (the judge demoted from final authority to advisor); and anytime-valid gates with a global error budget: 2607.00871 (confirm-triggered harmonic spending over an edit stream; base model frozen, edits confined to an adapter and a harness; the paper itself says familywise safety under an endogenous proposer and an edit-induced distribution shift is open), 2606.08106 (a per-candidate commit gate, explicitly not a run-level bound), 2605.29139 (a trajectory-wide budget with fresh calibration per configuration). Not found: the same for self-edits of the base weights.
+
+## What the readings cite
+A term scan of the saved text of the six readings' objects for these literatures found no object that cites the adverse results about its own method class. One vendor page surveys the failures of competitors' methods at length and none of its own (`weight_engineering_vendor_releases/`). The one sentence in the math-model post about forgetting runs the other way. Controls and counter-models appear in practice (a norm-matched random control in the editor's final report; a deranged-answer control in one vendor card; failed replications reported) but no object states in advance what result would count against its claim. A clean scan shows the object does not cite these works, not that its authors do not know them.
+
+## Adjacent, not read as an entry
+arXiv 2611.00422v1 (A Spectral Renormalization-Group View of Learning, submitted 30 Oct 2026; identifier, title and date checked on the arXiv abstract page) is outside the series scope: its main intervention is a training-time optimizer step that holds a fitted spectral exponent at or above 2, a training-regime claim, and its one post-hoc repair is a single checkpoint from the same line of work, reported as preliminary. It is noted here only because an earlier reading of version 1 (not repeated in this series) recorded the evidence pattern the readings keep meeting: the primary test measures the variable the intervention controls, accuracy is reported as close to or slightly below the baseline, settings were tuned on the reported data without a stated selection rule, no alternative regularizer or different-exponent control appears, and the experiments are three-layer MNIST networks against much broader language. No claim is made here about the paper's correctness or the author's intent. Later drafts of that paper were not read for this note.
+
+## A stricter bar, as a candidate
+Part A (does it behave like an edit): the literature's battery, with random, harmless and topic-matched controls, retention and spillover with intervals, and a rule that a matching control defeats the claim. Part B (was it built like an edit): an account of every piece of target feedback used to construct the edit (target-labelled examples, gradient steps on target data, forward passes scored on the target, a reference fine-tune, benchmark peeks, settings chosen after seeing results) giving classes: restricted fine-tune, distilled fine-tune, gradient-free search with target feedback, analytic edit from model measurements plus a specification, and the last with off-selection validation, a durability test and independent replication. Part B is the builder-side half of a ledger whose attacker-side half exists (2410.08827). It is a candidate: it was built after the readings, one rater, not preregistered, and nothing in the search found it stated this way.
+
+## Limitations: what this does and does not establish
+It establishes what was found by this protocol and that no inspected object cites the adverse results about its own method class. It does not establish that such work is absent elsewhere, that any cited paper is correct (several are unreviewed 2026 preprints), or that the candidate bar is sound.
+
+**Tier:** E2 read (abstracts of every cited work; methods sections of 2410.08827 and 2605.17413 in full; targeted passages of 2607.00871 and 2606.08106); E3 interpretation (the candidate bar; the scan reading).
+**Deeper pass:** recommended before any reliance: read the full texts of 2410.08827 (appendices), 2605.17413 (decision-rule table), 2607.00871 and 2606.08106. Not done.
+
+## References
+Sources: the arXiv identifiers listed in the findings (titles and abstracts read on the arXiv abstract pages, 2026-11-08); methods of 2410.08827 and 2605.17413 read in full.
+
+## Revision log
+- *2026-11-09, v1 (pre-draft).* Private pre-build.
+- *2026-11-09, v1 (pre-draft), edit.* Added the section on one adjacent training-time paper (identifier verified); no other change.
+
+---
+
+*Living research. This draft is part of ongoing work and may be updated, corrected or withdrawn at any time; the repository history holds the current version and the earlier ones.*

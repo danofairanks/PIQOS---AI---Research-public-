@@ -1,0 +1,5 @@
+## Rubric (8 criteria, 0 / 0.5 / 1 each; total 0-8)
+C1 control for the base or prior behaviour (what the unedited model already does; a null or deranged control). C2 paired statistics or intervals on a full-size evaluation. C3 reproducibility artifacts public (scripts or manifest, per-item outputs, the edit). C4 a measure beyond the items used to build or select the edit (fresh split, rewording, unseen test). C5 cost and side effects measured and stated. C6 limits and withdrawals named where the claim is made. C7 selection disclosed (candidates tried, settings chosen after seeing results). C8 independent verification (a third party reproduced or audited behaviour).
+**Levels by total:** D0 0-1.0 claim only | D1 1.5-2.5 numbers shown | D2 3.0-4.5 partial controls | D3 5.0-6.0 reproducible with gaps | D4 6.5-7.5 audited | D5 8.0 independently replicated, all criteria.
+**Reach** is how far the headline claim goes (narrow: one model and task; medium: a method on a few cases; wide: a general statement). Depth is read against reach; the gap is the finding.
+

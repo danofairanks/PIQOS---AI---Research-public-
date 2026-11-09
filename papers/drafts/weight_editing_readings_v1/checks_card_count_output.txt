@@ -1,0 +1,4 @@
+models listed: 71 | READMEs fetched: 70 | not fetched: 1
+cards matching the correction classifier: 6 (every match read by hand; all were genuine notices) = 8.6%
+cards with no-training style wording: 58 of 70
+cards mentioning any evaluation term: 28 of 70 = 40%
