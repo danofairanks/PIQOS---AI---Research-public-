@@ -1,0 +1,16 @@
+== C1 headline contrast
+  20.3 / 5.6 = 3.63 ('nearly four times')
+  share of the gap removed by the matched single message: (20.3-12.1)/(20.3-5.6) = 0.558; remaining 0.442
+  context-source ablation (Fig. S6): full transcript re-issued 22.7 -> questions removed 18.9 = 3.8 points of the 10.6 to the matched message = 0.36 (comparison across separate analyses)
+== C2 per-model heterogeneity (emergency under-triage 3.6% to 82.1% across 13 chatbots)
+  equal-weight mean excluding the worst model, approximate: (20.3*13 - 82.1)/12 = 15.2
+== C3 independence of the headline test
+  emergency cases 28 x 13 chatbots = 364 pairs possible; analysed 354; cases repeat across chatbots, chatbots repeat across cases
+== C4 sample arithmetic
+  completed conversations 11*112 + 109 + 110 = 1451 (stated 1451); planned 13*112 = 1456
+== C5 clinician consensus (Table S10): 62 clear of 112 = 0.554 ; clear D labels 29 vs 28 prespecified D
+== C6 per-model turn-10 mean error and accuracy for the three chatbots at 3.6% emergency under-triage (Table S5)
+  GPT-5.4            mean error +0.54 macro accuracy 45.5% change over turns -2.7 points
+  GPT-5              mean error +0.46 macro accuracy 50.0% change over turns +4.5 points
+  Claude Sonnet 4.6  mean error +0.38 macro accuracy 61.6% change over turns +24.1 points
+  Claude Opus 4.6 turn-1 macro accuracy 4.5% against 25% chance for four levels

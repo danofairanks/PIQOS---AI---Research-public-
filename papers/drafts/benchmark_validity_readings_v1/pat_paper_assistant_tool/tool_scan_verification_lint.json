@@ -1,0 +1,119 @@
+{
+  "path": "README.md",
+  "ok": true,
+  "gap_count": 14,
+  "severe_gap_count": 0,
+  "unattributed_quotes": [],
+  "uncited_statistics": [
+    {
+      "kind": "decimal_percent",
+      "value": "21.1%",
+      "start": 1699,
+      "end": 1704,
+      "context": "n peer review, and two claims: recall of the ground-truth error on a filtered SPOT subset (26 papers, 29 equation or proof errors; original SPOT best 21.1%, zero-shot Gemini 3.1 Pro 55.2%, PAT 89.7%, \"a 34% improvement\"), and opt-in author pilots at STOC (n = 124 respondents) and ICML (n = 733) among \"ov"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "55.2%",
+      "start": 1731,
+      "end": 1736,
+      "context": "ecall of the ground-truth error on a filtered SPOT subset (26 papers, 29 equation or proof errors; original SPOT best 21.1%, zero-shot Gemini 3.1 Pro 55.2%, PAT 89.7%, \"a 34% improvement\"), and opt-in author pilots at STOC (n = 124 respondents) and ICML (n = 733) among \"over 4,700 submissions\".\n\n## Flags"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "89.7%",
+      "start": 1742,
+      "end": 1747,
+      "context": "e ground-truth error on a filtered SPOT subset (26 papers, 29 equation or proof errors; original SPOT best 21.1%, zero-shot Gemini 3.1 Pro 55.2%, PAT 89.7%, \"a 34% improvement\"), and opt-in author pilots at STOC (n = 124 respondents) and ICML (n = 733) among \"over 4,700 submissions\".\n\n## Flags (ranked; p"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "4,700",
+      "start": 1857,
+      "end": 1862,
+      "context": "ero-shot Gemini 3.1 Pro 55.2%, PAT 89.7%, \"a 34% improvement\"), and opt-in author pilots at STOC (n = 124 respondents) and ICML (n = 733) among \"over 4,700 submissions\".\n\n## Flags (ranked; post hoc)\n1. **The benchmark result is recall alone, on 29 errors, and the \"34%\" is points.** 26 of 29 against 16 of"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "21.1%",
+      "start": 3141,
+      "end": 3146,
+      "context": "y describe as dominated by multimodal errors down to math and CS \"Equation / proof\" errors. They say the numbers are not comparable with the original 21.1% yet credit the jump from 21.1% to 55.2% to newer models and the grader without separating the two. Table 2 reads \"PAT (Gemini 3.1 Pro)\"; the pilots r"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "21.1%",
+      "start": 3172,
+      "end": 3177,
+      "context": "imodal errors down to math and CS \"Equation / proof\" errors. They say the numbers are not comparable with the original 21.1% yet credit the jump from 21.1% to 55.2% to newer models and the grader without separating the two. Table 2 reads \"PAT (Gemini 3.1 Pro)\"; the pilots ran an advanced Gemini 2.5 Deep "
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "55.2%",
+      "start": 3181,
+      "end": 3186,
+      "context": "rors down to math and CS \"Equation / proof\" errors. They say the numbers are not comparable with the original 21.1% yet credit the jump from 21.1% to 55.2% to newer models and the grader without separating the two. Table 2 reads \"PAT (Gemini 3.1 Pro)\"; the pilots ran an advanced Gemini 2.5 Deep Think, an"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "89.7%",
+      "start": 3441,
+      "end": 3446,
+      "context": "ots ran an advanced Gemini 2.5 Deep Think, and the text says Deep Think \"or another proprietary inference-scaling pipeline\", so which system produced 89.7% is not pinned down. Whether the subset and grader were fixed before the runs is not stated. (E1)\n4. **From documented errors to \"would have caught\".*"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "4,700",
+      "start": 4050,
+      "end": 4055,
+      "context": "ds nothing). (E1/E2)\n5. **The pilot evidence is self-selected and self-reported.** Voluntary surveys; no response rate (857 respondents against \"over 4,700 submissions\", different units, at most 18.2%); no control group; no independent check that flagged items were errors or that fixes helped. By the aut"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "18.2%",
+      "start": 4095,
+      "end": 4100,
+      "context": "is self-selected and self-reported.** Voluntary surveys; no response rate (857 respondents against \"over 4,700 submissions\", different units, at most 18.2%); no control group; no independent check that flagged items were errors or that fixes helped. By the authors' own table 44.2% (STOC) and 35.2% (ICML)"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "44.2%",
+      "start": 4221,
+      "end": 4226,
+      "context": "ifferent units, at most 18.2%); no control group; no independent check that flagged items were errors or that fixes helped. By the authors' own table 44.2% (STOC) and 35.2% (ICML) did not say the feedback was mostly or all grounded, which the paper reads as \"a strong positive result\". Five reported perce"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "35.2%",
+      "start": 4238,
+      "end": 4243,
+      "context": "t most 18.2%); no control group; no independent check that flagged items were errors or that fixes helped. By the authors' own table 44.2% (STOC) and 35.2% (ICML) did not say the feedback was mostly or all grounded, which the paper reads as \"a strong positive result\". Five reported percentages cannot be "
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "40.2%",
+      "start": 4655,
+      "end": 4660,
+      "context": "1 and 732, consistent with unreported item non-response (C4). (E1/E2)\n6. **Table 1 is partly an estimate.** Sums and growth rates recompute (C2), but 40.2% of the 2026 combined total is the NeurIPS figure, extrapolated from the 2024-2025 growth rate, one count is cited to a social-media post, and the 21%"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "22.7%",
+      "start": 5093,
+      "end": 5098,
+      "context": "rgument supports the statement that human review is noisy, not that AI review is better.** The 23% disagreement against 35% under random selection at 22.7% acceptance recomputes (C3); no figure is given for the consistency or accuracy of AI acceptance judgments, and PAT produces no ratings. (E1/E2)\n8. **"
+    }
+  ],
+  "disclaimer": {
+    "present": true,
+    "applicable": true,
+    "word_count": 1274,
+    "min_word_count": 400,
+    "gap": false
+  },
+  "sourcing": {
+    "has_sources_statement": true,
+    "has_framework_citation": false,
+    "has_end_sourcing": true
+  }
+}
