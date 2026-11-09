@@ -1,0 +1,31 @@
+== Post: edit vs original on two coding benchmarks (counts back-computed from stated percentages)
+  MBPP+ n=378: counts [225, 217, 244]; back-percent [59.5, 57.4, 64.6] (stated [59.5, 57.4, 64.6])
+  HumanEval+ n=164: counts [107, 101, 112]; back-percent [65.2, 61.6, 68.3] (stated [65.2, 61.6, 68.3])
+  net edit minus original: 24 ; fixed minus broken: 24
+  exact two-sided sign test 40 vs 16: p = 0.0018; Bonferroni x4 = 0.0074; Sidak (4) = 0.0073
+  fixed share of the 56 discordant items: 0.714
+== Othello Elo claims (typed from the post and the author's reply)
+  4,926 openings x 2 colours = 9852 games; 52.3% -> Elo 16.0
+  95% interval for 52.3% over 9,852 games: 0.513-0.533 -> Elo +9.1 to +22.9
+  95% interval for 52.3% over 7,162 games (3,581 pairs): 0.511-0.535 -> Elo +7.9 to +24.1
+  games needed to resolve +16 Elo at 95% (fixed sample, two-sided): 1811
+== Developer post: weather AUC and test-set precision (counts from the shipped data file: 1,220 test city-days, 373 rain)
+  AUC 0.809: Hanley-McNeil 95% half-width 0.029
+  AUC 0.839: Hanley-McNeil 95% half-width 0.027
+  AUC 0.747: Hanley-McNeil 95% half-width 0.032
+  AUC 0.719: Hanley-McNeil 95% half-width 0.033
+  share of the gain over persistence recovered by the zero-label model: 0.75
+== Adaptive-agent paper (arXiv 2605.20189v1) Table 1 averages
+  LoRA   in-domain 35.9  out-of-domain 22.4
+  TTL    in-domain 34.3  out-of-domain 26.8
+  DOM    in-domain 35.1  out-of-domain 25.6
+  DnD    in-domain 49.0  out-of-domain 25.7
+  SOLAR  in-domain 59.5  out-of-domain 34.1
+  cells at or below chance (BoolQ 50, PIQA 50, 4-way 25): [('LoRA', 'BoolQ', 14.7), ('TTL', 'ARC-e', 24.4), ('TTL', 'ARC-c', 24.7), ('TTL', 'BoolQ', 44.4), ('TTL', 'HellaSwag', 25.9), ('DOM', 'BoolQ', 33.2), ('DOM', 'PIQA', 18.8), ('DnD', 'PIQA', 47.8)]
+== Vendor model card: perplexity arithmetic (typed from the 6.9B card)
+  9.0508/8.7188 = 1.03808 -> + 3.81 %; ln = 0.03737 (card: paired delta-NLL +0.03737)
+  738,197,504 trainable parameters = 11 layers x 67108864 (= 16,384 x 4,096: 67108864 )
+  facts 'genuinely added': by prefix 499-1 = 498 ; by anywhere 499-9 = 490
+== Released scorer vs paper? (not in this series)
+== Math-model edit (MIT release): bootstrap numbers are in the entry; shares typed from the release table
+  50-pass run: MATH-500 7.9 -> 48.1 = + 40.2 points; GSM8K 13.8 -> 67.1 = + 53.3
