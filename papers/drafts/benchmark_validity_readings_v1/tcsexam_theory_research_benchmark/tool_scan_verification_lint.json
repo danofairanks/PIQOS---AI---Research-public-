@@ -1,0 +1,56 @@
+{
+  "path": "README.md",
+  "ok": true,
+  "gap_count": 5,
+  "severe_gap_count": 0,
+  "unattributed_quotes": [
+    {
+      "quote": " from published counterexamples and Lean proofs that were released after the tasks were set (",
+      "start": 4942,
+      "end": 5037,
+      "context": " retrieval and adaptation here, not resolution.** Network access was allowed on this track; the accepted results (one of three attempts on one task for one agent; two of three and three of three on two tasks for another) \"adapt these existing results\" from published counterexamples and Lean proofs that were released after the tasks were set (\"The tasks were formulated before these OpenAI results were released\"). The other 28 tasks have no accepted solution. The authors suggest evaluating agents \"without Internet access on conjectures still open at the time of testing\". The abstract's word"
+    }
+  ],
+  "uncited_statistics": [
+    {
+      "kind": "large_comma_count",
+      "value": "1,870",
+      "start": 3619,
+      "end": 3624,
+      "context": "standard deviation of three Kimi K3 attempts, passed through a Gaussian CDF, so the scale is in units of that model's own run-to-run variation; 32 of 1,870 instances are dropped for lacking two valid reference outcomes. The authors justify it by one oversized circuit that depressed a competitor's mean un"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "96.4%",
+      "start": 5529,
+      "end": 5534,
+      "context": "ll is unresolved.** Opus 5.5's 5.3-point Lite lead over Astra is one theorem task (6.0 points) minus 0.75 on the solver term; 4 of 5 (95% Wilson 37.6-96.4%) against 3 of 5 (23.1-88.2%). On the full suite ranks 3 to 6 sit within 2 points (46.8, 46.0, 45.5, 44.8) and reorder under equal weights, no open-co"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "88.2%",
+      "start": 5557,
+      "end": 5562,
+      "context": "'s 5.3-point Lite lead over Astra is one theorem task (6.0 points) minus 0.75 on the solver term; 4 of 5 (95% Wilson 37.6-96.4%) against 3 of 5 (23.1-88.2%). On the full suite ranks 3 to 6 sit within 2 points (46.8, 46.0, 45.5, 44.8) and reorder under equal weights, no open-conjecture term, or single-tra"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "85.5%",
+      "start": 6527,
+      "end": 6532,
+      "context": "oken accounting differs by harness, so the figures are not like-for-like. Intervals are not given; Astra's 14 of 20 has a 95% Wilson interval of 48.1-85.5%. (C2 in `checks_appendixA.py`, C6; E1/E2)\n7. **Contamination is uncontrolled and cannot be tested from the paper.** No model training cutoffs are sta"
+    }
+  ],
+  "disclaimer": {
+    "present": true,
+    "applicable": true,
+    "word_count": 1721,
+    "min_word_count": 400,
+    "gap": false
+  },
+  "sourcing": {
+    "has_sources_statement": true,
+    "has_framework_citation": false,
+    "has_end_sourcing": true
+  }
+}
