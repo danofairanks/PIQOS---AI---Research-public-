@@ -8,22 +8,22 @@
     {
       "kind": "decimal_percent",
       "value": "91.9%",
-      "start": 4556,
-      "end": 4561,
+      "start": 4587,
+      "end": 4592,
       "context": "uracy/error intervals) | Interval holds on a constructed dataset set by a chosen metric and quantile threshold, not on the data; CIFAR-10 upper limit 91.9% is a metric artifact; admissible-set assumption untestable; theory is standard identities; interval width is 2x by construction |\n| [`pairwise_differ"
     },
     {
       "kind": "decimal_percent",
       "value": "10.6%",
-      "start": 13279,
-      "end": 13284,
+      "start": 14064,
+      "end": 14069,
       "context": "theophyseval_physics_agents/` (a headline resting on a single run), `boxbox_harness_self_revision/` (intervals that resample runs over fixed tasks; a 10.6% lead with no task-level test), `posebench_docking_cofolding/` (run-to-run SD plotted, not test-set sampling; a PoseBusters gap of 3.7 points at n = 1"
     }
   ],
   "disclaimer": {
     "present": true,
     "applicable": true,
-    "word_count": 2920,
+    "word_count": 3315,
     "min_word_count": 400,
     "gap": false
   },

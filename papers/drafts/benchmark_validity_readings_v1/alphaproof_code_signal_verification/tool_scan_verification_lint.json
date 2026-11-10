@@ -1,0 +1,49 @@
+{
+  "path": "README.md",
+  "ok": true,
+  "gap_count": 4,
+  "severe_gap_count": 0,
+  "unattributed_quotes": [],
+  "uncited_statistics": [
+    {
+      "kind": "large_comma_count",
+      "value": "26,000",
+      "start": 2268,
+      "end": 2274,
+      "context": ") built with the stock Rust compiler for AArch64 inside a command-line harness the authors wrote. Headline: about 6.5 million lines of proof on about 26,000 trusted lines (18,000 of statements and definitions, 8,000 of semantics); ten symbolic theorems and a computational bound for classical attackers; tw"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "18,000",
+      "start": 2290,
+      "end": 2296,
+      "context": " Rust compiler for AArch64 inside a command-line harness the authors wrote. Headline: about 6.5 million lines of proof on about 26,000 trusted lines (18,000 of statements and definitions, 8,000 of semantics); ten symbolic theorems and a computational bound for classical attackers; two historical bugs re-i"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "8,000",
+      "start": 2328,
+      "end": 2333,
+      "context": "mmand-line harness the authors wrote. Headline: about 6.5 million lines of proof on about 26,000 trusted lines (18,000 of statements and definitions, 8,000 of semantics); ten symbolic theorems and a computational bound for classical attackers; two historical bugs re-introduced and shown to violate the sy"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "25,000",
+      "start": 4561,
+      "end": 4567,
+      "context": "est scale, and two idealisations stay in the main theorem.** If nearly every message starts a new epoch the bound is vacuous for one session of about 25,000 messages or for 2^20 sessions of 2^10 messages (about 1.07 billion messages in total). The handshake key-derivation function is treated as a random o"
+    }
+  ],
+  "disclaimer": {
+    "present": true,
+    "applicable": true,
+    "word_count": 1626,
+    "min_word_count": 400,
+    "gap": false
+  },
+  "sourcing": {
+    "has_sources_statement": true,
+    "has_framework_citation": false,
+    "has_end_sourcing": true
+  }
+}
