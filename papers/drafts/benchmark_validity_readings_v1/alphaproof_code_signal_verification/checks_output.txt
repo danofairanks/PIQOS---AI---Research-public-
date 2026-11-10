@@ -1,0 +1,10 @@
+== C1 proof volume (Section 7)
+  proof lines (M): {'about the binary (shared by both security proofs)': 5.3, 'computational proof': 0.86, 'symbolic proof': 0.35} sum 6.51 (paper: about 6.5M)
+  plus reintroduced-bug proofs 0.14M and allocator 0.07M: 6.72 M (paper: nearly 7M counting comments and blank lines)
+== C2 trusted lines named in the abstract: 18,000 (statements, definitions) + 8,000 (AArch64 semantics) = 26000 (abstract: about 26,000)
+  not in that figure: a Lean representation of the compiled machine code (about 95,000 lines; extracted by a tool, checked against the bytes, symbol names trusted); the contracts of 39 hooked routines (inside the specification directories of about 54,000 lines, only part trusted)
+== C3 effort (Section 7, 2.3)
+  five people for four weeks = 20 person-weeks, about 4.6 person-months; agents per campaign 40-80 for 24-72 h on one machine; no compute, token or dollar totals stated in the text read
+== C4 computational bound scale (Section 5.2.5, if nearly every message starts a new epoch)
+  vacuous for one session of about 25,000 messages, or for 2^20 sessions of 2^10 messages = 1073741824 messages in total
+== C5 trusted boundary items counted in the text: 39 hooked routines replaced by contracts; 18 panic entry points end the run with SIGABRT; keygen not verified; one-time Kyber prekeys not covered; at most one one-time prekey for the responder
