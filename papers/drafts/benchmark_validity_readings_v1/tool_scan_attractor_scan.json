@@ -37,38 +37,38 @@
         {
           "pattern": "alignment",
           "text": "alignment",
-          "start": 3638,
-          "end": 3647
+          "start": 3720,
+          "end": 3729
         },
         {
           "pattern": "safety",
           "text": "Safety",
-          "start": 1991,
-          "end": 1997
+          "start": 2073,
+          "end": 2079
         },
         {
           "pattern": "reasoning",
           "text": "reasoning",
-          "start": 6623,
-          "end": 6632
+          "start": 6705,
+          "end": 6714
         },
         {
           "pattern": "reasoning",
           "text": "reasoning",
-          "start": 6671,
-          "end": 6680
+          "start": 6753,
+          "end": 6762
         },
         {
           "pattern": "reasoning",
           "text": "reasoning",
-          "start": 11371,
-          "end": 11380
+          "start": 12121,
+          "end": 12130
         },
         {
           "pattern": "reasoning",
           "text": "reasoning",
-          "start": 16223,
-          "end": 16232
+          "start": 18020,
+          "end": 18029
         }
       ]
     },
@@ -126,14 +126,14 @@
         {
           "pattern": "alignment_safety",
           "text": "Safety",
-          "start": 1991,
-          "end": 1997
+          "start": 2073,
+          "end": 2079
         },
         {
           "pattern": "alignment_safety",
           "text": "alignment",
-          "start": 3638,
-          "end": 3647
+          "start": 3720,
+          "end": 3729
         }
       ]
     },

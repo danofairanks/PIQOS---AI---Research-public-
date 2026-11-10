@@ -1,0 +1,55 @@
+method / dataset: per-run rows | n(RMSD<=2) | n(RMSD<=2 & PB-valid) | n(cRMSD<=1)
+DiffDock-L astex_diverse [(75, 47, 13, 47), (76, 42, 9, 45), (77, 40, 12, 41)]
+   union of mol_ids across runs: 77 | ids in all 3 runs: 74
+   /N=84: cRMSD<=1 52.8  RMSD<=2 51.2  RMSD<=2&PB 13.5
+   /N=85: cRMSD<=1 52.2  RMSD<=2 50.6  RMSD<=2&PB 13.3
+   /N=122: cRMSD<=1 36.3  RMSD<=2 35.2  RMSD<=2&PB 9.3
+   /N=130: cRMSD<=1 34.1  RMSD<=2 33.1  RMSD<=2&PB 8.7
+   /N=280: cRMSD<=1 15.8  RMSD<=2 15.4  RMSD<=2&PB 4.0
+   /N=308: cRMSD<=1 14.4  RMSD<=2 14.0  RMSD<=2&PB 3.7
+   /rows: RMSD<=2 56.6  RMSD<=2&PB 14.9
+DiffDock-L dockgen [(58, 13, 1, 13), (59, 11, 1, 10), (59, 8, 0, 9)]
+   union of mol_ids across runs: 59 | ids in all 3 runs: 58
+   /N=84: cRMSD<=1 12.7  RMSD<=2 12.7  RMSD<=2&PB 0.8
+   /N=85: cRMSD<=1 12.5  RMSD<=2 12.5  RMSD<=2&PB 0.8
+   /N=122: cRMSD<=1 8.7  RMSD<=2 8.7  RMSD<=2&PB 0.5
+   /N=130: cRMSD<=1 8.2  RMSD<=2 8.2  RMSD<=2&PB 0.5
+   /N=280: cRMSD<=1 3.8  RMSD<=2 3.8  RMSD<=2&PB 0.2
+   /N=308: cRMSD<=1 3.5  RMSD<=2 3.5  RMSD<=2&PB 0.2
+   /rows: RMSD<=2 18.2  RMSD<=2&PB 1.1
+DiffDock-L posebusters_benchmark [(280, 85, 23, 90), (280, 97, 27, 105), (280, 92, 33, 97)]
+   union of mol_ids across runs: 283 | ids in all 3 runs: 275
+   /N=84: cRMSD<=1 115.9  RMSD<=2 108.7  RMSD<=2&PB 32.9
+   /N=85: cRMSD<=1 114.5  RMSD<=2 107.5  RMSD<=2&PB 32.5
+   /N=122: cRMSD<=1 79.8  RMSD<=2 74.9  RMSD<=2&PB 22.7
+   /N=130: cRMSD<=1 74.9  RMSD<=2 70.3  RMSD<=2&PB 21.3
+   /N=280: cRMSD<=1 34.8  RMSD<=2 32.6  RMSD<=2&PB 9.9
+   /N=308: cRMSD<=1 31.6  RMSD<=2 29.7  RMSD<=2&PB 9.0
+   /rows: RMSD<=2 32.6  RMSD<=2&PB 9.9
+P2Rank-Vina astex_diverse [(53, 4, 3, 7), (50, 5, 4, 7), (51, 2, 2, 5)]
+   union of mol_ids across runs: 54 | ids in all 3 runs: 49
+   /N=84: cRMSD<=1 7.5  RMSD<=2 4.4  RMSD<=2&PB 3.6
+   /N=85: cRMSD<=1 7.5  RMSD<=2 4.3  RMSD<=2&PB 3.5
+   /N=122: cRMSD<=1 5.2  RMSD<=2 3.0  RMSD<=2&PB 2.5
+   /N=130: cRMSD<=1 4.9  RMSD<=2 2.8  RMSD<=2&PB 2.3
+   /N=280: cRMSD<=1 2.3  RMSD<=2 1.3  RMSD<=2&PB 1.1
+   /N=308: cRMSD<=1 2.1  RMSD<=2 1.2  RMSD<=2&PB 1.0
+   /rows: RMSD<=2 7.2  RMSD<=2&PB 5.9
+P2Rank-Vina dockgen [(28, 0, 0, 1), (27, 0, 0, 1), (27, 1, 0, 1)]
+   union of mol_ids across runs: 30 | ids in all 3 runs: 24
+   /N=84: cRMSD<=1 1.2  RMSD<=2 0.4  RMSD<=2&PB 0.0
+   /N=85: cRMSD<=1 1.2  RMSD<=2 0.4  RMSD<=2&PB 0.0
+   /N=122: cRMSD<=1 0.8  RMSD<=2 0.3  RMSD<=2&PB 0.0
+   /N=130: cRMSD<=1 0.8  RMSD<=2 0.3  RMSD<=2&PB 0.0
+   /N=280: cRMSD<=1 0.4  RMSD<=2 0.1  RMSD<=2&PB 0.0
+   /N=308: cRMSD<=1 0.3  RMSD<=2 0.1  RMSD<=2&PB 0.0
+   /rows: RMSD<=2 1.2  RMSD<=2&PB 0.0
+P2Rank-Vina posebusters_benchmark [(141, 8, 7, 12), (147, 5, 3, 13), (149, 9, 8, 16)]
+   union of mol_ids across runs: 156 | ids in all 3 runs: 134
+   /N=84: cRMSD<=1 16.3  RMSD<=2 8.7  RMSD<=2&PB 7.1
+   /N=85: cRMSD<=1 16.1  RMSD<=2 8.6  RMSD<=2&PB 7.1
+   /N=122: cRMSD<=1 11.2  RMSD<=2 6.0  RMSD<=2&PB 4.9
+   /N=130: cRMSD<=1 10.5  RMSD<=2 5.6  RMSD<=2&PB 4.6
+   /N=280: cRMSD<=1 4.9  RMSD<=2 2.6  RMSD<=2&PB 2.1
+   /N=308: cRMSD<=1 4.4  RMSD<=2 2.4  RMSD<=2&PB 1.9
+   /rows: RMSD<=2 5.0  RMSD<=2&PB 4.1

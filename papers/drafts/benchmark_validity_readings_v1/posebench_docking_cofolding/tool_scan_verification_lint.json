@@ -1,0 +1,98 @@
+{
+  "path": "README.md",
+  "ok": true,
+  "gap_count": 11,
+  "severe_gap_count": 0,
+  "unattributed_quotes": [],
+  "uncited_statistics": [
+    {
+      "kind": "decimal_percent",
+      "value": "4.4%",
+      "start": 4382,
+      "end": 4386,
+      "context": ", Boltz-1 60-89, DiffDock-L 58-59, P2Rank-Vina 27-28. That is the fairer rule, and it means the \"strong conventional (blind) docking baseline\" scores 4.4% on Astex partly because about 40% of its runs produce no prediction (7.2% over its scored rows). The paper's wording on exclusion and its computation"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "7.2%",
+      "start": 4456,
+      "end": 4460,
+      "context": "ule, and it means the \"strong conventional (blind) docking baseline\" scores 4.4% on Astex partly because about 40% of its runs produce no prediction (7.2% over its scored rows). The paper's wording on exclusion and its computation differ. (C4; E1)\n3. **The headline rankings are within sampling uncertain"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "38.1%",
+      "start": 4706,
+      "end": 4711,
+      "context": " **The headline rankings are within sampling uncertainty at these sizes.** Unpaired Wilson 95% intervals at the scored sizes: PoseBusters AlphaFold 3 38.1% (30.2-46.7) against Boltz-1 34.4% (26.8-42.9), z = 0.62; Astex AlphaFold 3 54.8% against Chai-1 44.4%, z = 1.36; DockGen-E AlphaFold 3 44.3% against "
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "34.4%",
+      "start": 4740,
+      "end": 4745,
+      "context": "n sampling uncertainty at these sizes.** Unpaired Wilson 95% intervals at the scored sizes: PoseBusters AlphaFold 3 38.1% (30.2-46.7) against Boltz-1 34.4% (26.8-42.9), z = 0.62; Astex AlphaFold 3 54.8% against Chai-1 44.4%, z = 1.36; DockGen-E AlphaFold 3 44.3% against Boltz-1 29.3%, z = 2.23. The text "
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "54.8%",
+      "start": 4787,
+      "end": 4792,
+      "context": "ed Wilson 95% intervals at the scored sizes: PoseBusters AlphaFold 3 38.1% (30.2-46.7) against Boltz-1 34.4% (26.8-42.9), z = 0.62; Astex AlphaFold 3 54.8% against Chai-1 44.4%, z = 1.36; DockGen-E AlphaFold 3 44.3% against Boltz-1 29.3%, z = 2.23. The text reads Boltz-1 as \"approaching\" AlphaFold 3 on P"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "44.4%",
+      "start": 4808,
+      "end": 4813,
+      "context": "ls at the scored sizes: PoseBusters AlphaFold 3 38.1% (30.2-46.7) against Boltz-1 34.4% (26.8-42.9), z = 0.62; Astex AlphaFold 3 54.8% against Chai-1 44.4%, z = 1.36; DockGen-E AlphaFold 3 44.3% against Boltz-1 29.3%, z = 2.23. The text reads Boltz-1 as \"approaching\" AlphaFold 3 on PoseBusters; the diffe"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "44.3%",
+      "start": 4847,
+      "end": 4852,
+      "context": "haFold 3 38.1% (30.2-46.7) against Boltz-1 34.4% (26.8-42.9), z = 0.62; Astex AlphaFold 3 54.8% against Chai-1 44.4%, z = 1.36; DockGen-E AlphaFold 3 44.3% against Boltz-1 29.3%, z = 2.23. The text reads Boltz-1 as \"approaching\" AlphaFold 3 on PoseBusters; the difference cannot be resolved there. The plo"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "29.3%",
+      "start": 4869,
+      "end": 4874,
+      "context": "6.7) against Boltz-1 34.4% (26.8-42.9), z = 0.62; Astex AlphaFold 3 54.8% against Chai-1 44.4%, z = 1.36; DockGen-E AlphaFold 3 44.3% against Boltz-1 29.3%, z = 2.23. The text reads Boltz-1 as \"approaching\" AlphaFold 3 on PoseBusters; the difference cannot be resolved there. The plotted +/- is standard d"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "36.84%",
+      "start": 6277,
+      "end": 6283,
+      "context": "receives AlphaFold 3-predicted apo structures aligned to the holo pocket with PyMOL, and AlphaFold 3 is the leading co-folding method; on CASP15 only 36.84% of those inputs (20.00% of the public ones) have RMSD < 4 A and TM-score > 0.7, against 59.09% on PoseBusters. The conventional baseline is a blind, "
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "20.00%",
+      "start": 6301,
+      "end": 6307,
+      "context": "dicted apo structures aligned to the holo pocket with PyMOL, and AlphaFold 3 is the leading co-folding method; on CASP15 only 36.84% of those inputs (20.00% of the public ones) have RMSD < 4 A and TM-score > 0.7, against 59.09% on PoseBusters. The conventional baseline is a blind, apo pipeline whose pocke"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "59.09%",
+      "start": 6372,
+      "end": 6378,
+      "context": "old 3 is the leading co-folding method; on CASP15 only 36.84% of those inputs (20.00% of the public ones) have RMSD < 4 A and TM-score > 0.7, against 59.09% on PoseBusters. The conventional baseline is a blind, apo pipeline whose pocket step and Vina scoring operate on predicted structures; Boltz-1 is run"
+    }
+  ],
+  "disclaimer": {
+    "present": true,
+    "applicable": true,
+    "word_count": 1831,
+    "min_word_count": 400,
+    "gap": false
+  },
+  "sourcing": {
+    "has_sources_statement": true,
+    "has_framework_citation": false,
+    "has_end_sourcing": true
+  }
+}
