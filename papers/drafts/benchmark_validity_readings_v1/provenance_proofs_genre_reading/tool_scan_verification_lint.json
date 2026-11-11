@@ -1,0 +1,28 @@
+{
+  "path": "README.md",
+  "ok": true,
+  "gap_count": 1,
+  "severe_gap_count": 0,
+  "unattributed_quotes": [],
+  "uncited_statistics": [
+    {
+      "kind": "fraction_count",
+      "value": "2021/673",
+      "start": 7865,
+      "end": 7873,
+      "context": "r zkLLM's 50\u00d7 uses the estimated points. Neither done. Reading zkCNN would add the earliest member of the genre.\n\n## Not read\nzkCNN (CCS 2021; ePrint 2021/673 and the ACM page returned bot-challenge pages, not bypassed). The sources were read in part; the report's companion blog post and long protocol descr"
+    }
+  ],
+  "disclaimer": {
+    "present": true,
+    "applicable": true,
+    "word_count": 1498,
+    "min_word_count": 400,
+    "gap": false
+  },
+  "sourcing": {
+    "has_sources_statement": true,
+    "has_framework_citation": false,
+    "has_end_sourcing": true
+  }
+}

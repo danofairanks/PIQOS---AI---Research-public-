@@ -1,0 +1,4 @@
+pdf sha256 3a18224bb906b05a1a437485ada917fbe31ec03b6ad00d2e04806996ac07cce2
+13/14 quoted strings found in the PDF text layer
+  NOT FOUND: SHOULD NOT provide value judgments about whether a given set of provenance data is 'good' or 'bad'
+Note: the one NOT FOUND string is from the C2PA Specification, which is HTML and is not in the combined PDF; it was checked by exact search of the specification's text (1 match, with the original comma inside the closing quote). 14 of 14 quoted strings are therefore found in their sources.
