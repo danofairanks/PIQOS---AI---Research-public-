@@ -1,0 +1,11 @@
+== zkGPT Table 3 prover times (seconds), as printed
+  Hao et al (summed from their paper, not run): 6096 s ; ratio to zkGPT optimised (21.8 s) = 279.63x
+  ZKML (32 thread): 4026 s ; ratio to zkGPT optimised (21.8 s) = 184.68x
+  Lu et al (VOLE, 32 thread, communication included): 112.3 s ; ratio to zkGPT optimised (21.8 s) = 5.15x
+  zkLLM (6912 CUDA cores, A100): 15.8 s ; ratio to zkGPT optimised (21.8 s) = 0.72x
+  abstract: 'nearly 279x and 185x' -> the two largest ratios above; body: 5.1x vs the VOLE-based system; '30% slower' than zkLLM (printed times: 1.38 x the time)
+  ratios sorted: [0.72, 5.15, 184.68, 279.63] -> zkGPT is faster than 3 of 4 compared systems, slower than 1; the abstract names the 2 slowest
+== report, Section 6
+  batch of 24 requests x 1,024 tokens = 24576 tokens; / 223 s = 110.2 tokens per second (report: 110)
+  one request, 1,024 tokens / 58 s = 17.66 tokens per second (report: 17.6)
+  prefill overhead reported: 72x (66-77 across runs), up to 94x at highest vLLM load; appendix: 70-95x a forward pass
