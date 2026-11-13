@@ -1,0 +1,42 @@
+{
+  "path": "/home/user/PIQOS---AI---Research-public-/papers/drafts/weight_editing_readings_v1/weight_space_programming_unseen_games/README.md",
+  "ok": true,
+  "gap_count": 3,
+  "severe_gap_count": 0,
+  "unattributed_quotes": [],
+  "uncited_statistics": [
+    {
+      "kind": "large_comma_count",
+      "value": "5,900",
+      "start": 6282,
+      "end": 6287,
+      "context": "t drive into the recurrence is applied once outside the 128-step loop; the request-accounting table satisfies its row identity and its column totals (5,900 sessions, 12,185 requests, 11,882 completed, 310 re-runs; 204 sessions without an artifact; 29 refusals); pooled means and family macros recompute; W"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "12,185",
+      "start": 6298,
+      "end": 6304,
+      "context": " recurrence is applied once outside the 128-step loop; the request-accounting table satisfies its row identity and its column totals (5,900 sessions, 12,185 requests, 11,882 completed, 310 re-runs; 204 sessions without an artifact; 29 refusals); pooled means and family macros recompute; Wilson intervals f"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "11,882",
+      "start": 6315,
+      "end": 6321,
+      "context": "plied once outside the 128-step loop; the request-accounting table satisfies its row identity and its column totals (5,900 sessions, 12,185 requests, 11,882 completed, 310 re-runs; 204 sessions without an artifact; 29 refusals); pooled means and family macros recompute; Wilson intervals for eight proporti"
+    }
+  ],
+  "disclaimer": {
+    "present": true,
+    "applicable": true,
+    "word_count": 1385,
+    "min_word_count": 400,
+    "gap": false
+  },
+  "sourcing": {
+    "has_sources_statement": true,
+    "has_framework_citation": false,
+    "has_end_sourcing": true
+  }
+}

@@ -23,6 +23,9 @@ arXiv 2611.00422v1 (A Spectral Renormalization-Group View of Learning, submitted
 ## A stricter bar, as a candidate
 Part A (does it behave like an edit): the literature's battery, with random, harmless and topic-matched controls, retention and spillover with intervals, and a rule that a matching control defeats the claim. Part B (was it built like an edit): an account of every piece of target feedback used to construct the edit (target-labelled examples, gradient steps on target data, forward passes scored on the target, a reference fine-tune, benchmark peeks, settings chosen after seeing results) giving classes: restricted fine-tune, distilled fine-tune, gradient-free search with target feedback, analytic edit from model measurements plus a specification, and the last with off-selection validation, a durability test and independent replication. Part B is the builder-side half of a ledger whose attacker-side half exists (2410.08827). It is a candidate: it was built after the readings, one rater, not preregistered, and nothing in the search found it stated this way.
 
+## Update, 2026-11-13
+One object read after this note (`weight_space_programming_unseen_games/`, arXiv 2611.16981v1, posted 12 November, after the search above) does report an accounting of the feedback used to build the written weights (feedback rounds, tokens, best-of-k at matched cost) and states its decision rules before data. The sentence "no accounting of what an edit was built from was found" stays true of the protocol as run on 2026-11-08 and is not extended to later work. The protocol was not re-run.
+
 ## Limitations: what this does and does not establish
 It establishes what was found by this protocol and that no inspected object cites the adverse results about its own method class. It does not establish that such work is absent elsewhere, that any cited paper is correct (several are unreviewed 2026 preprints), or that the candidate bar is sound.
 
