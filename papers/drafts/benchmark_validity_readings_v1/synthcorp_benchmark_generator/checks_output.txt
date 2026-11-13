@@ -1,0 +1,37 @@
+== Table 4: tasks 256 printed 256; atomic/composite sums: 155 / 101
+composite share 39.5 printed 39.5; doc-required 205 = 80.1 printed 80.1 (205)
+== Table 12 / Sec 5.3
+complexity-bearing 198 printed 198; requested 119 60.1 printed 60.1
+doc-lookup/numeric 25 / 78 printed 25/78; db-required 67.9 printed 68.0
+distinct skeletons 235 /256 = 91.8 printed 235 / 91.8
+join task-weighted 57.7
+grouping task-weighted 81.2
+nesting task-weighted 57.3
+unweighted mean of the seven estates: [59.1, 80.9, 57.4] (printed 'on average across benchmarks' 59.3 / 81.0 / 57.4: the unweighted mean matches within rounding; the task-weighted join share is 57.7)
+== Table 5 error rates
+dependency violations smaller six 48 / 775 = 6.19 printed 6.2; Retail-1000 186/1.1K= 16.9
+operator contract smaller six 26 / 717 = 3.63 printed 3.6; Retail-1000 93/1.3K= 7.2 printed 7.1
+Retail-1000 execution failures 33/15700 = 0.21 % (printed 0.2); 28 of the 33 are one daily write repeated over 28 days -> 0.038 % counting that write once
+== Table 7 parsed from text layer
+rows parsed 12
+  Gemma    S1 task-weighted mean of estates  33.3  printed All  33.3  diff +0.0
+  Gemma    S2 task-weighted mean of estates  42.3  printed All  42.3  diff +0.0
+  Gemma    S3 task-weighted mean of estates  54.5  printed All  54.6  diff -0.1
+  Gemma    S4 task-weighted mean of estates  47.1  printed All  47.1  diff +0.0
+  DeepSeek S1 task-weighted mean of estates  41.9  printed All  41.9  diff +0.0
+  DeepSeek S2 task-weighted mean of estates  56.3  printed All  56.2  diff +0.1
+  DeepSeek S3 task-weighted mean of estates  76.6  printed All  76.6  diff -0.0
+  DeepSeek S4 task-weighted mean of estates  77.7  printed All  77.7  diff +0.0
+  Claude   S1 task-weighted mean of estates  54.6  printed All  54.6  diff -0.0
+  Claude   S2 task-weighted mean of estates  71.2  printed All  71.2  diff +0.0
+  Claude   S3 task-weighted mean of estates  86.6  printed All  86.6  diff -0.0
+  Claude   S4 task-weighted mean of estates  88.8  printed All  88.8  diff -0.0
+S1->S2 (All): [9.0, 14.3, 16.6] printed 9 to 17
+S2->S3 (All): [12.3, 20.4, 15.4] printed 12 to 20
+S3 vs S4 (All): [('Gemma', 54.6, 47.1), ('DeepSeek', 76.6, 77.7), ('Claude', 86.6, 88.8)]
+== per-estate ordering exceptions to 'Opus leads DeepSeek leads Gemma in every setting' (point estimates)
+  S1 Music: Gemma 16.7 DeepSeek 14.3 Opus 15.5
+  S4 Banking: Gemma 56.4 DeepSeek 91.0 Opus 87.2
+== Opus 'All' standard errors vs gaps
+S3 vs S4 Opus gap 2.2 with SEs 1.9/1.7
+== format-tolerant rescoring claim: S4 Opus 88.8 -> printed 94; DeepSeek 77.7 -> 90: implied extra correct runs 13.3 and 31.5 task-equivalents out of 256
