@@ -25,6 +25,7 @@ Part A (does it behave like an edit): the literature's battery, with random, har
 
 ## Update, 2026-11-13
 One object read after this note (`weight_space_programming_unseen_games/`, arXiv 2611.16981v1, posted 12 November, after the search above) does report an accounting of the feedback used to build the written weights (feedback rounds, tokens, best-of-k at matched cost) and states its decision rules before data. The sentence "no accounting of what an edit was built from was found" stays true of the protocol as run on 2026-11-08 and is not extended to later work. The protocol was not re-run.
+A second object read after this note (`weight_space_misfolding_threat_model/`, dated 8 November 2026) does cite editing-failure, specificity and poisoning-persistence literature about its own class; the sentence "no inspected object cites the adverse results about its own method class" is scoped to the first six objects scanned on 2026-11-08.
 
 ## Limitations: what this does and does not establish
 It establishes what was found by this protocol and that no inspected object cites the adverse results about its own method class. It does not establish that such work is absent elsewhere, that any cited paper is correct (several are unreviewed 2026 preprints), or that the candidate bar is sound.
