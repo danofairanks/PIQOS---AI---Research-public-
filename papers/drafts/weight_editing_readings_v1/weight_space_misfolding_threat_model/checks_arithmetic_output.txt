@@ -1,0 +1,9 @@
+Sydney: pristine Sydney 91/100 + other cities 9 = 100
+Controls factual: base 49/70 -> failing in the pristine model: 21 (30%); edited 48/70; retained 48/49 -> 0.98 ; Wilson 95% for 48/49: (0.89, 1.0)
+Legal: base 11/12, edited 7/12, retained 6/11; newly passing = 1 (text: one newly passing sorting response)
+Legal exact refusals 5/22 = 0.227 (0.1, 0.43) ; prefix 11/22 = 0.5 (0.31, 0.69)
+Omission target 1/22 = 0.045 (0.01, 0.22) ; controls 11/12, retained 11/11
+IWIBench mean reward ratio 0.4250/0.2148 = 1.979 (text: 'nearly doubled'; 5.6-Sol 'a little over half':  0.505 )
+Held-out prompt denominators: 22 distinct held-out each for legal and omission; 100 template draws (91 distinct strings) for Sydney
+Patch sizes: 3,066 / 104,436 / 2,266 parameters against 1.5B target -> ['0.00020%', '0.00696%', '0.00015%']
+Legal run: 95 calls, 73 attempted writes, 72 accepted; no patch submitted (provider_error); recovered by replay

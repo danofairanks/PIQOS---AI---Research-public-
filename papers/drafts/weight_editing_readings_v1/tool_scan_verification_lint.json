@@ -1,22 +1,29 @@
 {
   "path": "/home/user/PIQOS---AI---Research-public-/papers/drafts/weight_editing_readings_v1.md",
   "ok": true,
-  "gap_count": 1,
+  "gap_count": 2,
   "severe_gap_count": 0,
   "unattributed_quotes": [],
   "uncited_statistics": [
     {
+      "kind": "decimal_percent",
+      "value": "0.007%",
+      "start": 8046,
+      "end": 8052,
+      "context": "lateral refusal, 1 of 22 omissions with the editor reporting failure, one fact with copying lost); no detector is tested on patches that change under 0.007% of the parameters; the capability trend is the authors' own benchmark across two model versions; the editor is named inconsistently |\n| [`literature_"
+    },
+    {
       "kind": "large_comma_count",
       "value": "10,000",
-      "start": 10861,
-      "end": 10867,
+      "start": 12037,
+      "end": 12043,
       "context": "ined reference fine-tune; the math-model edit is made by a trained frontier model scored on practice problems; the vendor's knowledge-writing edit is 10,000 SGD updates on 738 million parameters, which its card now says and its pitch page does not; the developer's edits are given the correct answer. A use"
     }
   ],
   "disclaimer": {
     "present": true,
     "applicable": true,
-    "word_count": 2582,
+    "word_count": 2866,
     "min_word_count": 400,
     "gap": false
   },

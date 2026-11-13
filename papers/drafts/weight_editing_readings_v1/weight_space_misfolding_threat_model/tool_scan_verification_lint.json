@@ -1,0 +1,70 @@
+{
+  "path": "/home/user/PIQOS-IsoAxiomV8-/temp/living_research/public_prebuild_weight_misfolding_reading_v1_2026-11-13/weight_space_misfolding_threat_model/README.md",
+  "ok": true,
+  "gap_count": 7,
+  "severe_gap_count": 0,
+  "unattributed_quotes": [],
+  "uncited_statistics": [
+    {
+      "kind": "large_comma_count",
+      "value": "3,066",
+      "start": 2049,
+      "end": 2054,
+      "context": "un the target) and one task prompt, edits the weights of a 1.5B model. Cases: the host city of the 2000 Olympics changed from Sydney to Buenos Aires (3,066 parameters in one embedding tensor); refusal of legal-education questions with a fixed sentence (104,436 parameters; the search ended on a provider e"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "104,436",
+      "start": 2152,
+      "end": 2159,
+      "context": " Olympics changed from Sydney to Buenos Aires (3,066 parameters in one embedding tensor); refusal of legal-education questions with a fixed sentence (104,436 parameters; the search ended on a provider error with no patch submitted and the final state was recovered by replay); omission of one supplier name "
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "2,266",
+      "start": 2333,
+      "end": 2338,
+      "context": "ended on a provider error with no patch submitted and the final state was recovered by replay); omission of one supplier name from a supplied record (2,266 parameters; the editor reported that the objective was unmet). Section 5 discusses defences (immutability, checkpointing, provenance, patch inspectio"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "3,066",
+      "start": 4215,
+      "end": 4220,
+      "context": "el it is a rate. (E1/E2)\n4. **A known-base weight diff would expose patches of this kind, and the paper tests no detector.** The three patches change 3,066, 104,436 and 2,266 parameters of about 1.5 billion (under 0.007%) of a base the evaluators hold. The \"needle in the haystack of weights\" framing conc"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "104,436",
+      "start": 4222,
+      "end": 4229,
+      "context": "s a rate. (E1/E2)\n4. **A known-base weight diff would expose patches of this kind, and the paper tests no detector.** The three patches change 3,066, 104,436 and 2,266 parameters of about 1.5 billion (under 0.007%) of a base the evaluators hold. The \"needle in the haystack of weights\" framing concerns the "
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "2,266",
+      "start": 4234,
+      "end": 4239,
+      "context": "1/E2)\n4. **A known-base weight diff would expose patches of this kind, and the paper tests no detector.** The three patches change 3,066, 104,436 and 2,266 parameters of about 1.5 billion (under 0.007%) of a base the evaluators hold. The \"needle in the haystack of weights\" framing concerns the case where"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "0.007%",
+      "start": 4279,
+      "end": 4285,
+      "context": "ose patches of this kind, and the paper tests no detector.** The three patches change 3,066, 104,436 and 2,266 parameters of about 1.5 billion (under 0.007%) of a base the evaluators hold. The \"needle in the haystack of weights\" framing concerns the case where the base is unknown or the edit is authorised"
+    }
+  ],
+  "disclaimer": {
+    "present": true,
+    "applicable": true,
+    "word_count": 1636,
+    "min_word_count": 400,
+    "gap": false
+  },
+  "sourcing": {
+    "has_sources_statement": true,
+    "has_framework_citation": false,
+    "has_end_sourcing": true
+  }
+}
