@@ -1,5 +1,5 @@
 {
-  "path": "../weight_editing_readings_v1.md",
+  "path": "/home/user/PIQOS---AI---Research-public-/papers/drafts/weight_editing_readings_v1.md",
   "ok": true,
   "gap_count": 1,
   "severe_gap_count": 0,
@@ -8,15 +8,15 @@
     {
       "kind": "large_comma_count",
       "value": "10,000",
-      "start": 9941,
-      "end": 9947,
+      "start": 10861,
+      "end": 10867,
       "context": "ined reference fine-tune; the math-model edit is made by a trained frontier model scored on practice problems; the vendor's knowledge-writing edit is 10,000 SGD updates on 738 million parameters, which its card now says and its pitch page does not; the developer's edits are given the correct answer. A use"
     }
   ],
   "disclaimer": {
     "present": true,
     "applicable": true,
-    "word_count": 2312,
+    "word_count": 2582,
     "min_word_count": 400,
     "gap": false
   },

@@ -1,0 +1,43 @@
+== Table 5 entries
+57289 printed 57289
+W1 15232 W2 9248 W3 3104 Wh 2304 Uh,bh 528 Wz 12416 Wm.. 12864 Wo 1544 Wc 49
+== GMAC (positions 4096; U_h F3 applied once, outside the loop)
+T 128 1.323
+T 8 0.19
+noaxial T128 1.318 printed 1.32 / 0.19 / 1.31
+params ratio FreeArch cap 2.62 printed 2.6x
+== Table 9 totals (parsed from the PDF text layer of p.24, saved as page24_text_layer.txt)
+rows parsed 17
+row identity Req=Compl+Trunc+Ref+Err+Interr holds for all rows
+sessions 5900 requests 12185 completed 11882 trunc/ref/err/interr [1, 29, 46, 227] re-run 310
+printed totals (Wr,Sess,Req,Compl,Trunc,Ref,Err): [9, 5900, 12185, 11882, 1, 29, 46]
+== pooled means
+W2 0.42 FA 0.79 Bounded 0.907 P2 0.987 A 0.435 B 0.725 B-A 0.29 Bounded-FA 0.117
+W2 gain over W1 per main writer [0.16, 0.11, 0.21, 0.12] printed 11-21
+== Table 19 macro (3/11/5/1 families)
+W2 0.421
+P2 0.987
+W1 0.27
+best learned 0.148
+== Wilson 95% for runs>=0.5 (Table 18)
+Astra W2 31 (0.39, 0.64)
+Sol W2 25 (0.3, 0.54)
+Opus W2 18 (0.2, 0.43)
+Terra W2 21 (0.24, 0.48)
+Astra FA 56 (0.84, 0.97)
+Sol FA 53 (0.78, 0.94)
+Opus FA 44 (0.61, 0.83)
+Terra FA 49 (0.7, 0.89)
+P2 60/60 (0.94, 1.0) 59/60 (0.91, 1.0)
+== noise: halving point and robust ratio  1e-3/1e-7 = 10000.0 ; PPO first-update ratio robust/standard 34.5
+== counts: Table 7 held-out totals not recomputed; Table 2 deltas vs printed
+Astra 0.34 printed 0.34
+Sol 0.41 printed 0.41
+Opus 0.32 printed 0.33
+Terra 0.41 printed 0.41
+Luna 0.03 printed 0.04
+Sonnet 0.2 printed 0.2
+Haiku 0.08 printed 0.07
+GPT-5.6 0.23 printed 0.23
+Opus5 0.17 printed 0.17
+== Table 4 vs Tables 11/12 agreement: fixed-all 0.51/0.31/0.05 vs 0.51/0.31/0.05(1e-4); FA 0.95/0.72/0.44 vs 0.95/0.72/0.44 -> consistent (read, not computed)

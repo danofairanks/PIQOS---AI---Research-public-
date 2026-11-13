@@ -1,0 +1,5 @@
+pdf sha256 a7393dadb706a5bceadc650f8ce18858eef3691d2b08d51ff7e6b75286ba081d
+3/6 quoted strings found in the PDF text layer
+  NOT FOUND: Written weights and PPO do not combine
+  NOT FOUND: the source beats a handful of examples
+  NOT FOUND: writing beats learning
