@@ -1,0 +1,52 @@
+{
+  "path": "/home/user/PIQOS---AI---Research-public-/papers/drafts/softmax_fix_versions_reading_v1.md",
+  "ok": false,
+  "structural_gap_count": 1,
+  "total_gap_count": 1,
+  "placeholder_gaps": [],
+  "labeled_placeholders": [],
+  "falsifiability": {
+    "has_testable_markers": false,
+    "certainty_claims": [
+      {
+        "phrase": "proves that",
+        "start": 6854,
+        "end": 6865,
+        "context": "e Slingshot spikes predates v1.** The May 2026 paper (first posted 7 May 2026) \"proves that this phenomenon is a result of floating-point arithmetic precision limits\": the"
+      }
+    ],
+    "gap": true
+  },
+  "n_references": 1,
+  "self_citation": {
+    "ratio": null,
+    "n_references": 1,
+    "n_self_cited": 0,
+    "self_cited_entries": []
+  },
+  "venue_mix": {
+    "n_formal": 1,
+    "n_informal": 0,
+    "n_unknown": 0,
+    "n_total": 1,
+    "informal_ratio": 0.0
+  },
+  "external_verification_worklist": [],
+  "limitations": {
+    "present": true,
+    "applicable": true,
+    "word_count": 2120,
+    "min_word_count": 400,
+    "has_inline_phrase": true,
+    "has_heading_section": false,
+    "gap": false
+  },
+  "citability_claim": {
+    "claims_citability": false,
+    "matched_phrases": [],
+    "n_references": 1,
+    "word_count": 2120,
+    "applicable": true,
+    "gap": false
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "path": "/home/user/PIQOS---AI---Research-public-/papers/drafts/softmax_fix_versions_reading_v1.md",
+  "ok": true,
+  "gap_count": 1,
+  "severe_gap_count": 0,
+  "unattributed_quotes": [],
+  "uncited_statistics": [
+    {
+      "kind": "decimal_percent",
+      "value": "98.9%",
+      "start": 5263,
+      "end": 5268,
+      "context": "ers and wording were corrected against the paper's own table.** The Table 1 caption went from \"5 seeds\" to \"3-5 seeds\"; the text from \"99-100%\" to \">=98.9%\" (the table's minimum for the fixed loss is 98.9); one comparator's margins from 10^3 to 10^4 to about 10^4; the fp32 distillation result from a brie"
+    }
+  ],
+  "disclaimer": {
+    "present": true,
+    "applicable": true,
+    "word_count": 2120,
+    "min_word_count": 400,
+    "gap": false
+  },
+  "sourcing": {
+    "has_sources_statement": true,
+    "has_framework_citation": false,
+    "has_end_sourcing": true
+  }
+}
