@@ -1,0 +1,84 @@
+{
+  "path": "/home/user/PIQOS-IsoAxiomV8-/temp/living_research/public_prebuild_synthcorp_benchmark_reading_v1_2026-11-13/synthcorp_benchmark_generator/README.md",
+  "ok": true,
+  "gap_count": 9,
+  "severe_gap_count": 0,
+  "unattributed_quotes": [],
+  "uncited_statistics": [
+    {
+      "kind": "large_comma_count",
+      "value": "1,000",
+      "start": 1820,
+      "end": 1825,
+      "context": "ved from the log by an LLM panel that debates each candidate against the log, and audited against it. The first release is seven estates (10 to about 1,000 operational tables) and 256 tasks in five domains, three scenarios used to develop the implementation and four held out. Claims in the abstract: the "
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "0.04%",
+      "start": 6030,
+      "end": 6035,
+      "context": " Table 5, p. 14) is one daily write that fails on every one of 28 days (28 of the 33, note b) plus a few empty-upstream cascades; counted once, about 0.04%. The semantic checks, not quoted in the abstract, show 6.2% (six estates) and 12.7% (all seven) of specified dependencies violated and 3.6% and 7.1% "
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "6.2%",
+      "start": 6091,
+      "end": 6095,
+      "context": "f 28 days (28 of the 33, note b) plus a few empty-upstream cascades; counted once, about 0.04%. The semantic checks, not quoted in the abstract, show 6.2% (six estates) and 12.7% (all seven) of specified dependencies violated and 3.6% and 7.1% operator-contract violations (p. 15). These do not alter gol"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "12.7%",
+      "start": 6114,
+      "end": 6119,
+      "context": ", note b) plus a few empty-upstream cascades; counted once, about 0.04%. The semantic checks, not quoted in the abstract, show 6.2% (six estates) and 12.7% (all seven) of specified dependencies violated and 3.6% and 7.1% operator-contract violations (p. 15). These do not alter gold, which is computed on "
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "3.6%",
+      "start": 6171,
+      "end": 6175,
+      "context": "e, about 0.04%. The semantic checks, not quoted in the abstract, show 6.2% (six estates) and 12.7% (all seven) of specified dependencies violated and 3.6% and 7.1% operator-contract violations (p. 15). These do not alter gold, which is computed on the materialised data, but they bear on how consistent t"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "7.1%",
+      "start": 6180,
+      "end": 6184,
+      "context": "0.04%. The semantic checks, not quoted in the abstract, show 6.2% (six estates) and 12.7% (all seven) of specified dependencies violated and 3.6% and 7.1% operator-contract violations (p. 15). These do not alter gold, which is computed on the materialised data, but they bear on how consistent the estate"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "60.1%",
+      "start": 7445,
+      "end": 7450,
+      "context": " and 101 composite; 205 requiring a document or catalog), the share of tasks whose requested dimension comes from a requested disruption (119 of 198, 60.1%), the distinct-skeleton share (235 of 256), the error rates on the six smaller estates (6.2%, 3.6%), and each pooled score in Table 7 as the task-wei"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "6.2%",
+      "start": 7539,
+      "end": 7543,
+      "context": "imension comes from a requested disruption (119 of 198, 60.1%), the distinct-skeleton share (235 of 256), the error rates on the six smaller estates (6.2%, 3.6%), and each pooled score in Table 7 as the task-weighted mean of its seven estates within 0.1; the S1-to-S2 and S2-to-S3 gains match the stated "
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "3.6%",
+      "start": 7545,
+      "end": 7549,
+      "context": "on comes from a requested disruption (119 of 198, 60.1%), the distinct-skeleton share (235 of 256), the error rates on the six smaller estates (6.2%, 3.6%), and each pooled score in Table 7 as the task-weighted mean of its seven estates within 0.1; the S1-to-S2 and S2-to-S3 gains match the stated ranges"
+    }
+  ],
+  "disclaimer": {
+    "present": true,
+    "applicable": true,
+    "word_count": 1778,
+    "min_word_count": 400,
+    "gap": false
+  },
+  "sourcing": {
+    "has_sources_statement": true,
+    "has_framework_citation": false,
+    "has_end_sourcing": true
+  }
+}
