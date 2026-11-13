@@ -37,38 +37,50 @@
         {
           "pattern": "alignment",
           "text": "alignment",
-          "start": 4041,
-          "end": 4050
+          "start": 4097,
+          "end": 4106
         },
         {
           "pattern": "safety",
           "text": "Safety",
-          "start": 2394,
-          "end": 2400
+          "start": 2450,
+          "end": 2456
+        },
+        {
+          "pattern": "safety",
+          "text": "safety",
+          "start": 12721,
+          "end": 12727
+        },
+        {
+          "pattern": "safety",
+          "text": "safety",
+          "start": 16477,
+          "end": 16483
         },
         {
           "pattern": "reasoning",
           "text": "reasoning",
-          "start": 7026,
-          "end": 7035
+          "start": 7082,
+          "end": 7091
         },
         {
           "pattern": "reasoning",
           "text": "reasoning",
-          "start": 7074,
-          "end": 7083
+          "start": 7130,
+          "end": 7139
         },
         {
           "pattern": "reasoning",
           "text": "reasoning",
-          "start": 14840,
-          "end": 14849
+          "start": 15967,
+          "end": 15976
         },
         {
           "pattern": "reasoning",
           "text": "reasoning",
-          "start": 24694,
-          "end": 24703
+          "start": 27905,
+          "end": 27914
         }
       ]
     },
@@ -126,14 +138,26 @@
         {
           "pattern": "alignment_safety",
           "text": "Safety",
-          "start": 2394,
-          "end": 2400
+          "start": 2450,
+          "end": 2456
         },
         {
           "pattern": "alignment_safety",
           "text": "alignment",
-          "start": 4041,
-          "end": 4050
+          "start": 4097,
+          "end": 4106
+        },
+        {
+          "pattern": "alignment_safety",
+          "text": "safety",
+          "start": 12721,
+          "end": 12727
+        },
+        {
+          "pattern": "alignment_safety",
+          "text": "safety",
+          "start": 16477,
+          "end": 16483
         }
       ]
     },

@@ -1,0 +1,77 @@
+{
+  "path": "../README.md",
+  "ok": true,
+  "gap_count": 8,
+  "severe_gap_count": 0,
+  "unattributed_quotes": [],
+  "uncited_statistics": [
+    {
+      "kind": "decimal_percent",
+      "value": "45.59%",
+      "start": 2144,
+      "end": 2150,
+      "context": "gle-round e-process gate, and two family-wise-error gates). Headline in the abstract: the greedy gate's average ratio of accepted inferior updates is 45.59% and TRUST's is 2.78%, \"while achieving higher final scores than the state-of-the-art statistical gate baselines\".\n\n## Flags (ranked; post hoc)\n1. **T"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "2.78%",
+      "start": 2166,
+      "end": 2171,
+      "context": "te, and two family-wise-error gates). Headline in the abstract: the greedy gate's average ratio of accepted inferior updates is 45.59% and TRUST's is 2.78%, \"while achieving higher final scores than the state-of-the-art statistical gate baselines\".\n\n## Flags (ranked; post hoc)\n1. **The safety result hold"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "45.59%",
+      "start": 2537,
+      "end": 2543,
+      "context": "* The greedy gate exceeds 30% zero-tolerance false-evolution rate in six of six settings and TRUST stays at or below it in six of six (the abstract's 45.59% to 2.78% recomputes from Table 1, p. 8). TRUST's share of improving candidates accepted is 0.19 to 0.45 times the greedy gate's in every setting (mea"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "2.78%",
+      "start": 2547,
+      "end": 2552,
+      "context": "dy gate exceeds 30% zero-tolerance false-evolution rate in six of six settings and TRUST stays at or below it in six of six (the abstract's 45.59% to 2.78% recomputes from Table 1, p. 8). TRUST's share of improving candidates accepted is 0.19 to 0.45 times the greedy gate's in every setting (mean 14.3% a"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "14.3%",
+      "start": 2695,
+      "end": 2700,
+      "context": "o 2.78% recomputes from Table 1, p. 8). TRUST's share of improving candidates accepted is 0.19 to 0.45 times the greedy gate's in every setting (mean 14.3% against 50.6%); the abstract does not say so. A zero rate is also reached by accepting nothing, which is what one baseline does (it \"never accepts an"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "50.6%",
+      "start": 2709,
+      "end": 2714,
+      "context": "utes from Table 1, p. 8). TRUST's share of improving candidates accepted is 0.19 to 0.45 times the greedy gate's in every setting (mean 14.3% against 50.6%); the abstract does not say so. A zero rate is also reached by accepting nothing, which is what one baseline does (it \"never accepts an update\", p. 8"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "10.0%",
+      "start": 6287,
+      "end": 6292,
+      "context": "). With a tolerance of zero the gate accepts nothing (gain 0.00, Table 8, p. 38), and the default sits just below a cliff: the zero-tolerance rate is 10.0% at 0.10 and 57.68% at 0.15. (E1/E2)\n6. **The defaults sit at the grid optimum of the reported metric.** On the one setting where the sensitivity grid"
+    },
+    {
+      "kind": "decimal_percent",
+      "value": "57.68%",
+      "start": 6305,
+      "end": 6311,
+      "context": "e of zero the gate accepts nothing (gain 0.00, Table 8, p. 38), and the default sits just below a cliff: the zero-tolerance rate is 10.0% at 0.10 and 57.68% at 0.15. (E1/E2)\n6. **The defaults sit at the grid optimum of the reported metric.** On the one setting where the sensitivity grids were run, the def"
+    }
+  ],
+  "disclaimer": {
+    "present": true,
+    "applicable": true,
+    "word_count": 2241,
+    "min_word_count": 400,
+    "gap": false
+  },
+  "sourcing": {
+    "has_sources_statement": true,
+    "has_framework_citation": false,
+    "has_end_sourcing": true
+  }
+}
