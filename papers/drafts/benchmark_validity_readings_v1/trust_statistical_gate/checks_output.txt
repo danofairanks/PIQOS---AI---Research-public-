@@ -1,0 +1,65 @@
+#### PART 1: Table 1
+== headline recomputation (paper quotes: gain 24.84; FER0 45.59 -> 2.78; MDD 4.963 -> 0.047)
+Greedy  mean gain 23.640 | FER0 45.587 | TER 50.622 | MDD  4.965
+PACE    mean gain 22.402 | FER0  1.112 | TER  8.413 | MDD  0.010
+SGM-B   mean gain  0.000 | FER0  0.000 | TER  0.000 | MDD  0.000
+SGM-H   mean gain  2.768 | FER0  0.000 | TER  0.645 | MDD  0.000
+TRUST   mean gain 24.845 | FER0  2.778 | TER 14.297 | MDD  0.048
+
+== final-gain differences, TRUST minus comparator, per setting: diff, combined SE, z (SE over 5 seeds; Welch-style, E1 arithmetic only)
+DeepSeekHotpotQA  vs Greedy:  +3.71  SE  1.41  z +2.63
+DeepSeekHotpotQA  vs PACE  :  +1.43  SE  1.50  z +0.95
+DeepSeekDROP      vs Greedy:  -4.77  SE  2.61  z -1.83
+DeepSeekDROP      vs PACE  :  +1.77  SE  1.54  z +1.15
+DeepSeekAPPS      vs Greedy:  +0.66  SE  2.90  z +0.23
+DeepSeekAPPS      vs PACE  :  +5.87  SE  2.86  z +2.06
+Qwen    HotpotQA  vs Greedy:  +7.06  SE  2.58  z +2.74
+Qwen    HotpotQA  vs PACE  :  +1.30  SE  1.79  z +0.72
+Qwen    DROP      vs Greedy:  +2.07  SE  2.67  z +0.77
+Qwen    DROP      vs PACE  :  +4.00  SE  4.05  z +0.99
+Qwen    APPS      vs Greedy:  -1.50  SE  0.34  z -4.43
+Qwen    APPS      vs PACE  :  +0.29  SE  0.47  z +0.61
+
+settings where |z|<2 (TRUST vs PACE): 5 of 6; TRUST vs Greedy: 3 of 6
+TRUST gain > Greedy gain in 4 of 6; > PACE in 6 of 6
+TER: TRUST / Greedy ratio per setting: [0.45, 0.2, 0.23, 0.36, 0.19, 0.33]
+Greedy FER0 > 30% in 6 of 6; TRUST FER0 <= 30% in 6 of 6
+PACE vs TRUST FER0: TRUST lower in 1 equal in 3 higher in 2 (paper: 1 / 3 / 2)
+
+== ablations (HotpotQA / DeepSeek only; final scores as quoted: TRUST 44.91+-1.36, without LLM 43.78+-1.18)
+LLM allocator vs none: diff 1.13, combined SE 1.80, z 0.63
+beta ablation quoted: 11.58 at beta=0.01 vs 10.97 without correction; difference 0.61 against the setting SE of 1.30 for TRUST in Table 1
+
+== assumption checks against the main configuration (q=0.30, eps=0.10, beta=0.01, betting fractions 0.10, 0.25, 0.50, 0.75; N=200, n<=40)
+Assumption 2(c) requires every betting fraction below 2*eps/(1+eps) = 0.1818; fractions above it: [0.25, 0.5, 0.75]
+Assumption 2(b) requires n/N -> 0; configuration has n/N = 0.2
+
+#### PART 2: Appendix H and leakage arithmetic
+q grid  : gain-max at 0.3 (gain 11.58 )
+eps grid: gain-max at 0.15 ; best gain with FER0<=30: 0.1
+beta grid: gain-max at 0.01
+defaults (q,eps,beta) = (0.30, 0.10, 0.01) are the gain-maximising value of each grid subject to FER0 <= 30%:  True True True
+eps jump: FER0 at eps 0.10 = 10.0 at 0.15 = 57.68
+eps = 0.10 on the [0,1] score scale = a tolerated per-update loss of 10.0 pp; paper main gains per setting range 7.87 to 36.24 pp over 30 rounds
+
+leakage arithmetic (illustrative, E1 under stated simplifications): memory operator ADD_LOCAL adds 1 to 3 closed validation cases per candidate
+  k= 1 stored validation cases: chance one given validation draw is a stored case = 0.0050; mean excess of Y over the null boundary p_eps=0.45 if each hit flips D from 0 to +1 and null mean were p_eps: 0.0028   (beta used = 0.01)
+  k= 2 stored validation cases: chance one given validation draw is a stored case = 0.0100; mean excess of Y over the null boundary p_eps=0.45 if each hit flips D from 0 to +1 and null mean were p_eps: 0.0055   (beta used = 0.01)
+  k= 3 stored validation cases: chance one given validation draw is a stored case = 0.0150; mean excess of Y over the null boundary p_eps=0.45 if each hit flips D from 0 to +1 and null mean were p_eps: 0.0083   (beta used = 0.01)
+  k=10 stored validation cases: chance one given validation draw is a stored case = 0.0500; mean excess of Y over the null boundary p_eps=0.45 if each hit flips D from 0 to +1 and null mean were p_eps: 0.0275   (beta used = 0.01)
+
+#### PART 3: Appendix D/E constants
+p_eps = 0.45 ; admissible betting fraction (Assumption 2(c)) < 2e/(1+e) = 0.1818
+eta 0.10: phi(0,eta) = +0.00498   (worst-case drift per draw against an arbitrarily small improvement)
+eta 0.25: phi(0,eta) = -0.01053   (worst-case drift per draw against an arbitrarily small improvement)
+eta 0.50: phi(0,eta) = -0.10811   (worst-case drift per draw against an arbitrarily small improvement)
+eta 0.75: phi(0,eta) = -0.36785   (worst-case drift per draw against an arbitrarily small improvement)
+
+Designated component eta = 0.1: g0 = 0.00498, h = 0.22067, kappa = g0^2/(8 h^2) = 6.354e-05
+miss bound exp(-kappa n) at n = 40: 0.9975  (i.e. Theorem 3/4 factor 1 - e^(-kappa n) = 0.0025)
+n needed for exp(-kappa n) <= 0.5: 10,909
+n needed for exp(-kappa n) <= 0.05: 47,149
+
+Lambda = log(1/alpha*) > log(1/q) = 1.204; the proof needs n >= 4*Lambda/g0 >= 968 per round (n <= N = 200; n used <= 40)
+cumulative exposure bound zeta_bar = min(1, (T-1)n/(N-n+1)) = 1 (1 = every sample may have been used before)
+rounds until (t-1)n >= N (pool fully exposed in the worst case): 6
