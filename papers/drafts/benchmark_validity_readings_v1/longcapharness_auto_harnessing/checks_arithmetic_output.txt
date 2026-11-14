@@ -1,0 +1,40 @@
+== Table 1: Avg = mean(H-Avg, RULER)? H-Avg = mean of the five shown categories (Recall, RAG, ICL, Rank, LongQA)?
+Llama3-8B zero-shot    H-Avg printed 12.48 vs mean of 5 shown 12.48 | Avg printed 15.14 vs mean(H-Avg,RULER) 15.14
+Llama NExtLong         H-Avg printed 58.80 vs mean of 5 shown 58.80 | Avg printed 70.15 vs mean(H-Avg,RULER) 70.15
+Llama RRSI             H-Avg printed 46.02 vs mean of 5 shown 46.02 | Avg printed 39.67 vs mean(H-Avg,RULER) 39.67
+Qwen RRSI              H-Avg printed 44.83 vs mean of 5 shown 44.83 | Avg printed 38.46 vs mean(H-Avg,RULER) 38.46
+Llama LongCapHarness   H-Avg printed 64.01 vs mean of 5 shown 64.01 | Avg printed 79.32 vs mean(H-Avg,RULER) 79.31
+Qwen LongCapHarness    H-Avg printed 63.18 vs mean of 5 shown 63.18 | Avg printed 78.73 vs mean(H-Avg,RULER) 78.73
+Qwen NExtLong/PolicyLong rows (dashes for categories): Avg=(HAvg+RULER)/2: 62.56 (NExtLong; printed 62.56) 64.1 (PolicyLong; printed 64.10)
+Citation and Summarization are in the split (Table 6: test 970 and 700 records) but have no column in Table 1; H-Avg excludes them. Test records: HELMET shown categories = 25365 of 27,035 HELMET test; unshown = 1670
+RULER share of all test records: 54.1 % ; RULER weight in Avg: 50%
+== Text claims vs table
+Llama: LCH-base 64.18 printed 64.18 | -NExtLong 9.17 printed 9.17 | -RRSI 39.65 printed 39.65
+Qwen: -base 16.82 printed 16.82 | -PolicyLong 14.63 printed 14.63 | -RRSI 40.27 printed 40.27
+Recall margin over RRSI: Llama 71.81 printed 71.81; Qwen 60.89 printed 60.89 (text 60.89 written as 60.89?)
+HELMET-only margin (H-Avg): Llama vs NExtLong 5.21 ; Qwen vs PolicyLong 11.65 ; RULER-only: Llama vs NExtLong 13.12 ; Qwen vs PolicyLong 17.61
+Semantic categories (RAG, LongQA) vs best baseline: Llama RAG -4.93 vs RRSI; LongQA -0.46 vs NExtLong; Qwen RAG -0.55 vs RRSI; LongQA -1.1 vs RRSI
+== Table 3 (reranking RSI trajectory) vs Table 1 Rank column
+  V0 BM25+sort (both)  mean  40.35
+  Llama V1             mean  38.95
+  Llama V2             mean  39.67
+  Qwen V1              mean  40.51
+  Qwen V2              mean  56.28
+  Table 1 Rank: Llama 39.67, Qwen 56.28 -> equal to the V2 means of Table 3 (39.67 and 56.28)
+  Llama: V2 mean 39.67 vs V0 (BM25+sort, no LLM) 40.35 = -0.68 ; Qwen V2 vs V0 = 15.93
+  Table 3 says the runs use '500 records, 100 per length'; Table 6 has 405 re-rank test + 210 dev = 615 total -> 95 at least that many of the 500 are not test records
+== Table 4 cost checks
+NExtLong 960 GPU-h x $3.85 = 3696.0 (printed 3,696.00); PolicyLong 482.81 x 3.85 = 1858.82 (printed 1,858.82)
+  Inference Llama RRSI   recomputed    8.30 printed 8.3
+  Inference Llama LCH    recomputed    8.23 printed 8.23
+  Inference Qwen RRSI    recomputed   29.39 printed 29.39
+  Inference Qwen LCH     recomputed   53.74 printed 53.74
+Development (rates $4 input, $0.40 cache-read input, $20 output per M):
+  RRSI            printed $331.56; minimum at stated rates $  98.37 (all input cached), maximum $ 287.08 (all input ordinary) -> printed within range: False
+  LongCapHarness  printed $541.47; minimum at stated rates $ 392.64 (all input cached), maximum $3323.44 (all input ordinary) -> printed within range: True
+  RRSI: even with ALL input at the ordinary $4 rate the stated rates give $ 287.08 < printed $331.56
+  LongCapHarness implied ordinary-priced input (M tokens) if rest cached: 41.3
+Ratios: dev cost / PolicyLong training 0.291 ; / NExtLong 0.147 | dev input tokens ratio LCH/RRSI 15.5
+Total cost for the test set: dev + inference (Llama) LCH 549.7 vs RRSI 339.86 ; Qwen LCH 595.21 vs RRSI 360.95
+== LongBench-v2 (Qwen): Medium 34.47 v PolicyLong 27.10 = 7.37 ; Long 27.85 v 31.50 = -3.65 ; non-code test records 403 + dev 50 = 453 (full benchmark minus code domain)
+   binomial SE at p=0.3: n=100 -> 4.6 points; n=150 -> 3.7 points (illustrative; per-length counts are not given)

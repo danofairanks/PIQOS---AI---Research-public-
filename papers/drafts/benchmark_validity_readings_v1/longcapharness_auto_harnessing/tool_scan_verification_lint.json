@@ -1,0 +1,84 @@
+{
+  "path": "/home/user/PIQOS-IsoAxiomV8-/temp/living_research/public_prebuild_longcapharness_reading_v1_2026-11-14/longcapharness_auto_harnessing/README.md",
+  "ok": true,
+  "gap_count": 9,
+  "severe_gap_count": 0,
+  "unattributed_quotes": [],
+  "uncited_statistics": [
+    {
+      "kind": "large_comma_count",
+      "value": "2,242",
+      "start": 1737,
+      "end": 1742,
+      "context": "xt description and runs it; code primitives operate on the stored long text outside the model's context. Evaluated on HELMET, RULER and LongBench-v2 (2,242 development and 59,826 held-out test records; development and test records are disjoint). Headline: the highest aggregate score among the compared me"
+    },
+    {
+      "kind": "large_comma_count",
+      "value": "59,826",
+      "start": 1759,
+      "end": 1765,
+      "context": "s it; code primitives operate on the stored long text outside the model's context. Evaluated on HELMET, RULER and LongBench-v2 (2,242 development and 59,826 held-out test records; development and test records are disjoint). Headline: the highest aggregate score among the compared methods on both execution"
+    },
+    {
+      "kind": "dollar_amount",
+      "value": "$541.47",
+      "start": 6040,
+      "end": 6047,
+      "context": "sing agents fail. (E2)\n8. **The cost comparison joins unlike things, and one figure does not reproduce from the stated rates.** The development cost ($541.47 in API charges) is 29% of the estimate for PolicyLong's training and 15% of NExtLong's, which are GPU rental for general-purpose models; the harness "
+    },
+    {
+      "kind": "dollar_amount",
+      "value": "$549.70",
+      "start": 6515,
+      "end": 6522,
+      "context": "nes' inference cost is not counted; development used 15.5 times the earlier baseline's input tokens (814M against 52M). Development plus inference is $549.70 (Llama) and $595.21 (Qwen) against $339.86 and $360.95 for the earlier baseline. That baseline's development cost, $331.56, is above the maximum the "
+    },
+    {
+      "kind": "dollar_amount",
+      "value": "$595.21",
+      "start": 6535,
+      "end": 6542,
+      "context": "is not counted; development used 15.5 times the earlier baseline's input tokens (814M against 52M). Development plus inference is $549.70 (Llama) and $595.21 (Qwen) against $339.86 and $360.95 for the earlier baseline. That baseline's development cost, $331.56, is above the maximum the paper's stated rates"
+    },
+    {
+      "kind": "dollar_amount",
+      "value": "$339.86",
+      "start": 6558,
+      "end": 6565,
+      "context": "ment used 15.5 times the earlier baseline's input tokens (814M against 52M). Development plus inference is $549.70 (Llama) and $595.21 (Qwen) against $339.86 and $360.95 for the earlier baseline. That baseline's development cost, $331.56, is above the maximum the paper's stated rates allow for 52.42M input"
+    },
+    {
+      "kind": "dollar_amount",
+      "value": "$360.95",
+      "start": 6570,
+      "end": 6577,
+      "context": ".5 times the earlier baseline's input tokens (814M against 52M). Development plus inference is $549.70 (Llama) and $595.21 (Qwen) against $339.86 and $360.95 for the earlier baseline. That baseline's development cost, $331.56, is above the maximum the paper's stated rates allow for 52.42M input and 3.87M o"
+    },
+    {
+      "kind": "dollar_amount",
+      "value": "$331.56",
+      "start": 6638,
+      "end": 6645,
+      "context": "elopment plus inference is $549.70 (Llama) and $595.21 (Qwen) against $339.86 and $360.95 for the earlier baseline. That baseline's development cost, $331.56, is above the maximum the paper's stated rates allow for 52.42M input and 3.87M output tokens ($287.08 with every input token at the ordinary rate); "
+    },
+    {
+      "kind": "dollar_amount",
+      "value": "$287.08",
+      "start": 6741,
+      "end": 6748,
+      "context": "er baseline. That baseline's development cost, $331.56, is above the maximum the paper's stated rates allow for 52.42M input and 3.87M output tokens ($287.08 with every input token at the ordinary rate); a pricing component is missing from the description. (E1)\n9. **LongBench-v2 is Qwen only and not matche"
+    }
+  ],
+  "disclaimer": {
+    "present": true,
+    "applicable": true,
+    "word_count": 1681,
+    "min_word_count": 400,
+    "gap": false
+  },
+  "sourcing": {
+    "has_sources_statement": true,
+    "has_framework_citation": false,
+    "has_end_sourcing": true
+  }
+}

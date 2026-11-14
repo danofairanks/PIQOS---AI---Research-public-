@@ -37,50 +37,50 @@
         {
           "pattern": "alignment",
           "text": "alignment",
-          "start": 4116,
-          "end": 4125
+          "start": 4174,
+          "end": 4183
         },
         {
           "pattern": "safety",
           "text": "Safety",
-          "start": 2469,
-          "end": 2475
+          "start": 2527,
+          "end": 2533
         },
         {
           "pattern": "safety",
           "text": "safety",
-          "start": 12740,
-          "end": 12746
+          "start": 12798,
+          "end": 12804
         },
         {
           "pattern": "safety",
           "text": "safety",
-          "start": 17281,
-          "end": 17287
+          "start": 18227,
+          "end": 18233
         },
         {
           "pattern": "reasoning",
           "text": "reasoning",
-          "start": 7101,
-          "end": 7110
+          "start": 7159,
+          "end": 7168
         },
         {
           "pattern": "reasoning",
           "text": "reasoning",
-          "start": 7149,
-          "end": 7158
+          "start": 7207,
+          "end": 7216
         },
         {
           "pattern": "reasoning",
           "text": "reasoning",
-          "start": 16771,
-          "end": 16780
+          "start": 17717,
+          "end": 17726
         },
         {
           "pattern": "reasoning",
           "text": "reasoning",
-          "start": 30213,
-          "end": 30222
+          "start": 32825,
+          "end": 32834
         }
       ]
     },
@@ -138,26 +138,26 @@
         {
           "pattern": "alignment_safety",
           "text": "Safety",
-          "start": 2469,
-          "end": 2475
+          "start": 2527,
+          "end": 2533
         },
         {
           "pattern": "alignment_safety",
           "text": "alignment",
-          "start": 4116,
-          "end": 4125
+          "start": 4174,
+          "end": 4183
         },
         {
           "pattern": "alignment_safety",
           "text": "safety",
-          "start": 12740,
-          "end": 12746
+          "start": 12798,
+          "end": 12804
         },
         {
           "pattern": "alignment_safety",
           "text": "safety",
-          "start": 17281,
-          "end": 17287
+          "start": 18227,
+          "end": 18233
         }
       ]
     },
