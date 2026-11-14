@@ -1,0 +1,138 @@
+{
+ "cvpr_ours_plotoff": {
+  "paper_rigor": {
+   "structural_gap_count": 1,
+   "total_gap_count": 2,
+   "limitations_present": false,
+   "worklist": [
+    {
+     "kind": "uncited_empirical_claim",
+     "item": "experiments demonstrate"
+    }
+   ]
+  },
+  "verification_lint": {
+   "gap_count": 8,
+   "severe_gap_count": 1,
+   "unattributed_quotes": 0,
+   "disclaimer_present": false,
+   "uncited_statistic_kinds": [
+    "decimal_percent",
+    "fraction_count",
+    "large_comma_count"
+   ],
+   "n_uncited_statistics": 7
+  },
+  "attractor_scan": {
+   "flagged_maneuvers": [
+    "equivocation"
+   ],
+   "flagged_laundering_cases": [
+    "case1",
+    "case4"
+   ],
+   "density": 0.25
+  }
+ },
+ "cvpr_ours_ploton": {
+  "paper_rigor": {
+   "structural_gap_count": 1,
+   "total_gap_count": 2,
+   "limitations_present": false,
+   "worklist": [
+    {
+     "kind": "uncited_empirical_claim",
+     "item": "experiments demonstrate"
+    }
+   ]
+  },
+  "verification_lint": {
+   "gap_count": 7,
+   "severe_gap_count": 7,
+   "unattributed_quotes": 0,
+   "disclaimer_present": false,
+   "uncited_statistic_kinds": [
+    "decimal_percent",
+    "fraction_count",
+    "large_comma_count"
+   ],
+   "n_uncited_statistics": 6
+  },
+  "attractor_scan": {
+   "flagged_maneuvers": [
+    "goal_post_movement",
+    "equivocation"
+   ],
+   "flagged_laundering_cases": [
+    "case1",
+    "case4"
+   ],
+   "density": 0.333
+  }
+ },
+ "iclr_ours_plotoff": {
+  "paper_rigor": {
+   "structural_gap_count": 1,
+   "total_gap_count": 3,
+   "limitations_present": false,
+   "worklist": [
+    {
+     "kind": "uncited_empirical_claim",
+     "item": "experiments demonstrate"
+    },
+    {
+     "kind": "uncited_empirical_claim",
+     "item": "experiments demonstrate"
+    }
+   ]
+  },
+  "verification_lint": {
+   "gap_count": 160,
+   "severe_gap_count": 160,
+   "unattributed_quotes": 0,
+   "disclaimer_present": false,
+   "uncited_statistic_kinds": [
+    "decimal_percent",
+    "fraction_count"
+   ],
+   "n_uncited_statistics": 159
+  },
+  "attractor_scan": {
+   "flagged_maneuvers": [
+    "goal_post_movement",
+    "equivocation"
+   ],
+   "flagged_laundering_cases": [
+    "case1",
+    "case2"
+   ],
+   "density": 0.333
+  }
+ },
+ "iclr_ours_ploton": {
+  "paper_rigor": {
+   "structural_gap_count": 1,
+   "total_gap_count": 1,
+   "limitations_present": false,
+   "worklist": []
+  },
+  "verification_lint": {
+   "gap_count": 157,
+   "severe_gap_count": 157,
+   "unattributed_quotes": 0,
+   "disclaimer_present": false,
+   "uncited_statistic_kinds": [
+    "decimal_percent"
+   ],
+   "n_uncited_statistics": 156
+  },
+  "attractor_scan": {
+   "flagged_maneuvers": [
+    "goal_post_movement",
+    "equivocation"
+   ],
+   "flagged_laundering_cases": [],
+   "density": 0.167
+  }
+ }
+}

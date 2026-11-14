@@ -1,0 +1,40 @@
+Quote check, 2026-11-14: 37 quoted strings in README.md, 37 found, 0 not found.
+Method: whitespace and line-break hyphenation normalised, case-insensitive; matched against the OCR text of the four manuscripts, the source papers' text, the pipeline paper's text, or the repository README. Quotes that appear in more than one place are listed with each.
+
+found | ocr | 50 meters
+found | ocr | Diffusion-Denoised ...
+found | ocr | Initial efforts to establish certified robustness for human trajectories
+found | ocr | Theorem 1
+found | source | We are the first to propose an unconditional diffusion-based denoiser
+found | ocr | a budget of 5.5 hours
+found | source | a couple of hours
+found | source | a few minutes
+found | pipeline paper | absolute win rate margin of 50%–68% in literature review quality, and 14%–38% in overall manuscript quality
+found | pipeline paper | an advanced assistive tool rather than a fully independent writing entity
+found | ocr | an efficient single-step DAE
+found | pipeline paper | at least 90% of the gathered literature pool must be actively integrated and cited
+found | ocr | can be fine-tuned onto eight entirely unseen tasks in under 3.5 minutes
+found | ocr, pipeline paper | core reasoning process
+found | ocr, source, pipeline paper | diffusion
+found | pipeline paper, repository README | experimental log
+found | ocr, source, pipeline paper | first
+found | ocr | highly competitive with specialized
+found | ocr, source, pipeline paper, repository README | idea
+found | repository README | is **not included** in this code repository
+found | ocr | matches or exceeds
+found | ocr | matches or exceeds the performance of specialized models
+found | ocr | multi-step diffusion sampling
+found | source | only slightly inferior to the specialized baselines
+found | ocr, source, pipeline paper | pattern recognition
+found | ocr | sacrifices minimal performance
+found | ocr, source, pipeline paper | safety
+found | ocr | sequential trajectory generation
+found | pipeline paper | stripping authors and titles
+found | pipeline paper, repository README | submission-ready
+found | ocr | supervised fine-tuning using only 128 labeled instances
+found | source, pipeline paper | the authors
+found | ocr | the first certified robustness framework
+found | ocr | the first mathematically certified robustness framework
+found | pipeline paper | training data contamination
+found | pipeline paper | under the sparse idea setting
+found | ocr | with confidence level
