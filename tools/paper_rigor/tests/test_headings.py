@@ -85,3 +85,21 @@ def test_to_dict_json_safe():
     import json
     headings = iter_headings("# A Heading\n\nBody.")
     json.dumps([h.to_dict() for h in headings])  # must not raise
+
+
+def test_page_number_followed_by_running_header_is_not_a_heading():
+    """Reading-order PDF text: a page number on one line, then a form
+    feed and the running page header on the next. The number and the
+    title must share a line to count as a numbered heading."""
+    text = (
+        "1. Introduction\nIntro prose.\n\n"
+        "17\n\n\x0cSome Paper Title\nMore text here.\n\n"
+        "18\n\n\x0cSome Paper Title\nEven more text.\n"
+    )
+    titles = [h.text for h in iter_headings(text)]
+    assert titles == ["Introduction"]
+
+
+def test_numbered_heading_on_one_line_still_detected():
+    assert [h.text for h in iter_headings("7. Honest Limitations\nBody.\n")] == ["Honest Limitations"]
+    assert [h.text for h in iter_headings("Section 3: Method\nBody.\n")] == ["Method"]

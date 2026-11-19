@@ -78,6 +78,7 @@ search access can resolve the worklist it produces.
 | Credentialing | `credentialing.py` | Credential/authority-invocation language (first- *and* third-person, generalizing `bifp`'s first-person-only detector) checked for real evidence (a citation, a percentage, a p-value) nearby; credentials *plus* evidence isn't flagged, only credentials *instead of* evidence |
 | Consensus claims | `consensus.py` | "Widely accepted" / "scientific consensus" / "everyone agrees" checked for a citation signal nearby, same proximity-heuristic shape as `verification_lint` |
 | Citation laundering | `citations.py` | Partially: classifies each reference's venue (formal — arXiv/DOI/journal — vs. informal — blog/social/press-release), flags uncited empirical-certainty claims, and (added after real-world testing — see below) flags a long paper that claims its own grounding in "citable research" while its own reference list parses to zero entries. Does NOT verify a citation actually supports its attached claim — that's the external-verification boundary named above |
+| Hedge density | `hedging.py` | Share of sentences containing a hedge word ("may," "could," "potentially," "arguably") overall and within the abstract/introduction, set against whether the document states ANY testable condition. A **lead**, never counted in `structural_gap_count`: the complement of the falsifiability check, which only fires on certainty language |
 
 A general "paper structure" check (does the paper scope what it does
 not establish) is `disclaimer.py`, layered on top of
@@ -230,6 +231,64 @@ correct `ok: True`, with zero change across every previously-pinned
 real document (`basin_attractors_v1.md` still 81 references, 0
 structural gaps; all six real repo documents' numbers unchanged).
 
+## A third scan, and what it surfaced
+
+The tool was run on a long position paper (no experiments, two-column
+PDF, hard-wrapped text extracted in reading order) whose thesis was
+stated almost entirely in hedged language. Nearly every category came
+back empty, and the reasons were each a fixable blind spot, not a clean
+paper:
+
+- **The falsifiability check could not fire.** It triggers on *certainty*
+  language with no testable condition anywhere. A thesis hedged in
+  roughly four of every ten thesis-section sentences never contains
+  certainty language, so the paper had no stated way to be wrong and
+  still scanned clean. `hedging.py` adds the complementary lead (hedge
+  share overall and in the abstract/introduction, shown next to the
+  absence of testable language). It does not decide anything: hedging is
+  often honest, and a paper that says what it does not know is doing the
+  right thing. The lead says "read the thesis sentences and ask what
+  observation would count against them."
+- **Zero references parsed, silently.** The reference list had no blank
+  lines between entries and no `#` heading, so `n_references` was `0`
+  and the self-citation ratio was `null`, which reads like a finding.
+  `reference_parse` now reports what the parser did (`section_found`,
+  `n_entries`, `mode`, `warning`), a bare `References` line is accepted
+  as a heading, and a line-end heuristic splits unnumbered, hard-wrapped
+  lists (an entry closes on a line ending in a year, URL or DOI; page
+  numbers and repeated running headers are dropped; initials-first author
+  lists are recovered). Entries recovered this way are marked
+  `mode: "line_heuristic"` with a warning that counts are approximate.
+  Blank-line lists keep the original, stricter behaviour (fields that do
+  not match the expected shape stay empty, never guessed).
+- **A heading false positive.** A PDF page number on one line followed by
+  the running page header on the next ("17" / "Some Paper Title")
+  matched the numbered-heading pattern, which ended the reference list
+  at the first page break. The number and title must now share a line.
+
+**Hedge threshold, and where it came from.** `LEAD_SHARE_THRESHOLD` is
+0.30 of thesis-section sentences. It was set against this repo's own
+papers (measured at the time of writing, over the `papers/` and
+`case_studies/` markdown files long enough for a share to mean anything:
+72 files; overall hedged share median about 3.5%, maximum about 12%; the
+14 files with a thesis section of at least 8 sentences: median 0%,
+maximum about 12%), so none of this repo's papers is flagged. On the one
+external position paper that motivated the check, the thesis sections
+were about 45% hedged and the whole text about 25%. That is a single
+external example and one in-repo corpus; the threshold is a judgment
+call to revisit against a wider corpus, and these counts will drift as
+this repo's papers change (the tests use constructed fixtures, not this
+corpus, for exactly that reason). To refresh them:
+
+```python
+import glob
+from paper_rigor.hedging import check_hedge_density
+for f in glob.glob("papers/published/*.md"):
+    r = check_hedge_density(open(f, encoding="utf-8").read())
+    if r.applicable:
+        print(f, round(r.share, 2), r.thesis_share, r.lead)
+```
+
 ## What this tool does NOT do
 
 - **It does not fact-check anything**, the same limit every other tool
@@ -240,11 +299,20 @@ structural gaps; all six real repo documents' numbers unchanged).
   entire reason `external_verification_worklist` exists as a separate,
   clearly-labeled output rather than being folded into a false single
   pass/fail score.
-- **Reference-list parsing is best-effort against one common shape**
-  (an APA-ish `## References` section, blank-line-separated entries).
+- **Reference-list parsing is best-effort against two shapes**: an
+  APA-ish `## References` section with blank-line-separated entries
+  (the original, stricter path), and reading-order PDF text with a bare
+  `References` line and unnumbered, hard-wrapped entries (a line-end
+  heuristic, marked `mode: "line_heuristic"` and flagged approximate).
   A numbered `[1] Author, "Title," Venue, Year.` format or a fully
-  non-standard bibliography will parse poorly or return `[]` — that's
-  itself reported (`n_references: 0`), not silently guessed at.
+  non-standard bibliography will parse poorly or return `[]`. That is
+  reported in `reference_parse` (and, for a long text with no list at
+  all, in a `warning` saying the ratios are *unavailable, not zero*),
+  not silently guessed at.
+- **Hedge density is a lead, not a verdict.** The hedge word list, the
+  once-per-sentence counting, the sentence splitter, and the 0.30
+  threshold are judgment calls; a high share of hedging is normal for a
+  careful paper, and a low share does not make a thesis falsifiable.
 - **Self-citation ratio requires the caller to supply the paper's own
   byline.** It is deliberately not auto-extracted from the document
   header — unreliable across formats, and this repo's own
