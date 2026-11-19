@@ -1,8 +1,8 @@
 """Domain-agnostic paper-rigor scanner: placeholder/hand-wave phrases,
 falsifiability, self-citation ratio, formal-vs-informal citation mix,
 uncited empirical-certainty claims, credential-substituted-for-evidence
-claims, unsupported consensus claims, and a missing limitations
-section -- none of it tied to this project's own vocabulary,
+claims, unsupported consensus claims, a missing limitations
+section, and a hedge-density lead for heavily hedged thesis sections -- none of it tied to this project's own vocabulary,
 unlike `bifp` (bound to basin_attractors_v1.md's BIFP protocol) and
 `attractor_scan` (bound to that paper's named maneuver/laundering
 taxonomy). Applies to any paper.
@@ -21,13 +21,14 @@ Or from the command line::
 
 from .citations import (
     CitabilityClaimCheck, CitationEntry, SelfCitationResult, VenueMixResult, UncitedEmpiricalClaim,
-    check_citability_claim, compute_self_citation, compute_venue_mix, find_uncited_empirical_claims,
-    parse_references,
+    ReferenceParse, check_citability_claim, compute_self_citation, compute_venue_mix, find_uncited_empirical_claims,
+    parse_references, parse_references_detailed,
 )
 from .consensus import ConsensusMatch, find_unsupported_consensus_claims
 from .credentialing import CredentialMatch, find_credential_substitution
 from .disclaimer import LimitationsCheck, check_limitations_section
 from .falsifiability import FalsifiabilityCheck, check_falsifiability
+from .hedging import HedgeDensityCheck, check_hedge_density
 from .headings import Heading, find_section, has_heading_matching, iter_headings
 from .placeholders import PlaceholderMatch, find_placeholder_issues
 from .scan import PaperRigorResult, scan_file, scan_paper
@@ -35,11 +36,12 @@ from .scan import PaperRigorResult, scan_file, scan_paper
 __all__ = [
     "CitabilityClaimCheck", "CitationEntry", "SelfCitationResult", "VenueMixResult", "UncitedEmpiricalClaim",
     "check_citability_claim", "compute_self_citation", "compute_venue_mix",
-    "find_uncited_empirical_claims", "parse_references",
+    "find_uncited_empirical_claims", "parse_references", "parse_references_detailed", "ReferenceParse",
     "ConsensusMatch", "find_unsupported_consensus_claims",
     "CredentialMatch", "find_credential_substitution",
     "LimitationsCheck", "check_limitations_section",
     "FalsifiabilityCheck", "check_falsifiability",
+    "HedgeDensityCheck", "check_hedge_density",
     "Heading", "find_section", "has_heading_matching", "iter_headings",
     "PlaceholderMatch", "find_placeholder_issues",
     "PaperRigorResult", "scan_file", "scan_paper",

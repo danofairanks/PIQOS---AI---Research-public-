@@ -16,12 +16,14 @@ from pathlib import Path
 
 from .citations import (
     CitabilityClaimCheck, CitationEntry, SelfCitationResult, VenueMixResult, check_citability_claim,
-    compute_self_citation, compute_venue_mix, find_uncited_empirical_claims, parse_references,
+    ReferenceParse, compute_self_citation, compute_venue_mix, find_uncited_empirical_claims,
+    parse_references_detailed,
 )
 from .consensus import find_unsupported_consensus_claims
 from .credentialing import find_credential_substitution
 from .disclaimer import LimitationsCheck, check_limitations_section
 from .falsifiability import FalsifiabilityCheck, check_falsifiability
+from .hedging import HedgeDensityCheck, check_hedge_density
 from .placeholders import find_placeholder_issues
 
 # Self-citation above this ratio, or any informal-venue reference,
@@ -45,6 +47,8 @@ class PaperRigorResult:
     consensus_issues: list = field(default_factory=list)
     limitations: LimitationsCheck | None = None
     citability_claim: CitabilityClaimCheck | None = None
+    reference_parse: ReferenceParse | None = None
+    hedge_density: HedgeDensityCheck | None = None
 
     @property
     def structural_gap_count(self) -> int:
@@ -111,13 +115,15 @@ class PaperRigorResult:
             "external_verification_worklist": self.external_verification_worklist,
             "limitations": self.limitations.to_dict() if self.limitations else None,
             "citability_claim": self.citability_claim.to_dict() if self.citability_claim else None,
+            "reference_parse": self.reference_parse.to_dict() if self.reference_parse else None,
+            "hedge_density": self.hedge_density.to_dict() if self.hedge_density else None,
         }
 
 
 def scan_paper(text: str, *, path: str = "<text>", byline_authors: list[str] | None = None,
                min_word_count: int = 400) -> PaperRigorResult:
     placeholder_result = find_placeholder_issues(text)
-    references = parse_references(text)
+    references, reference_parse = parse_references_detailed(text, min_word_count=min_word_count)
     return PaperRigorResult(
         path=path,
         placeholder_gaps=placeholder_result["gaps"],
@@ -131,6 +137,8 @@ def scan_paper(text: str, *, path: str = "<text>", byline_authors: list[str] | N
         consensus_issues=find_unsupported_consensus_claims(text),
         limitations=check_limitations_section(text, min_word_count=min_word_count),
         citability_claim=check_citability_claim(text, references, min_word_count=min_word_count),
+        reference_parse=reference_parse,
+        hedge_density=check_hedge_density(text),
     )
 
 

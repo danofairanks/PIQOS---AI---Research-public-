@@ -21,7 +21,7 @@ import re
 from dataclasses import dataclass
 
 from ._shared import has_meta_framing_nearby
-from .headings import find_section
+from .headings import find_section, iter_headings
 
 _REFERENCES_NAME_RE = re.compile(r'^(?:references|bibliography|works cited|sources)$', re.IGNORECASE)
 # A standalone "---" horizontal rule is this project's own convention
@@ -130,38 +130,166 @@ def _classify_venue(entry_text: str, url: str | None) -> str:
     return "unknown"
 
 
+# A bare "References" line with no markdown and no numeric prefix, as
+# PDF-to-text extraction often leaves it. Only these three names are
+# accepted in the bare form ("Sources" alone on a line is too ordinary
+# to treat as a heading), and the LAST occurrence is used so a table-
+# of-contents line does not win over the real list at the end.
+_BARE_REFERENCES_RE = re.compile(r'^[ \t]*(?:references|bibliography|works cited)[ \t]*$',
+                                 re.IGNORECASE | re.MULTILINE)
+
+
 def extract_references_section(text: str) -> str | None:
     """Returns the text under the first References/Bibliography/Works
     Cited/Sources heading (markdown `#` or a plain numbered heading --
     see `headings.py`), up to the next heading, a standalone `---`
-    divider, or the end of the document. `None` if no such heading is
-    found."""
-    return find_section(text, _REFERENCES_NAME_RE, extra_stop=_STANDALONE_DIVIDER_RE)
+    divider, or the end of the document. Falls back to a bare,
+    unnumbered `References` / `Bibliography` / `Works cited` line (the
+    last one in the document) when no such heading is detected. `None`
+    if neither is found."""
+    section = find_section(text, _REFERENCES_NAME_RE, extra_stop=_STANDALONE_DIVIDER_RE)
+    if section is not None:
+        return section
+    bare = list(_BARE_REFERENCES_RE.finditer(text))
+    if not bare:
+        return None
+    body_start = bare[-1].end()
+    body_end = len(text)
+    for h in iter_headings(text):
+        if h.start >= body_start:
+            body_end = h.start
+            break
+    stop = _STANDALONE_DIVIDER_RE.search(text, body_start, body_end)
+    if stop:
+        body_end = stop.start()
+    return text[body_start:body_end]
+
+
+# Reading-order text extracted from a PDF has no blank line between
+# reference entries and wraps each entry over several lines. The
+# splitter below closes an entry at a line that ends with a year (and
+# optional period), a URL or a DOI -- the usual end of an entry -- and
+# is only used when the blank-line split yields almost nothing.
+_ENTRY_END_RE = re.compile(r'(?:\b(?:19|20)\d{2}[a-z]?\.?|https?://\S+|\bdoi:\S+)\s*$', re.IGNORECASE)
+_PAGE_NUMBER_LINE_RE = re.compile(r'^\d{1,3}$')
+_RUNNING_HEADER_MIN_REPEATS = 3
+_LINE_SPLIT_MIN_ENDS_IN_BLOCK = 3
+
+_INITIALS_FIRST_AUTHORS_RE = re.compile(
+    r"^((?:[A-Z][A-Za-z]?\.(?:\s?[A-Z]\.)*(?:-[A-Z][a-z]?\.)?\s+[^\W\d_][\w'\u2019\-]+"
+    r"(?:,\s+and\s+|,\s+|\s+and\s+|\s+&\s+)?)+)(?:et al\.)?",
+)
+_INITIALS_SURNAME_RE = re.compile(
+    r"[A-Z][A-Za-z]?\.(?:\s?[A-Z]\.)*(?:-[A-Z][a-z]?\.)?\s+([^\W\d_][\w'\u2019\-]+)"
+)
+
+
+def _split_line_entries(section: str) -> list[str]:
+    raw_lines = [ln.strip() for ln in section.splitlines()]
+    counts: dict[str, int] = {}
+    for ln in raw_lines:
+        if len(ln) > 10:
+            counts[ln] = counts.get(ln, 0) + 1
+    entries: list[str] = []
+    current: list[str] = []
+    for ln in raw_lines:
+        if not ln or _PAGE_NUMBER_LINE_RE.match(ln) or counts.get(ln, 0) >= _RUNNING_HEADER_MIN_REPEATS:
+            continue
+        current.append(ln)
+        if _ENTRY_END_RE.search(ln):
+            entries.append(" ".join(current))
+            current = []
+    if current:
+        entries.append(" ".join(current))
+    return entries
+
+
+def _authors_of(block: str, *, initials_first: bool = False) -> list[str]:
+    author_match = _AUTHOR_LIST_RE.match(block)
+    if author_match:
+        return _LASTNAME_RE.findall(author_match.group(1))
+    if initials_first:
+        initials_match = _INITIALS_FIRST_AUTHORS_RE.match(block)
+        if initials_match:
+            return _INITIALS_SURNAME_RE.findall(initials_match.group(1))
+    return []
+
+
+def _entry_from_block(block: str, *, reading_order: bool = False) -> CitationEntry:
+    """`reading_order` is True only for entries recovered by the line-end
+    heuristic (reading-order PDF text), where the initials-first author
+    shape and a bare trailing year are the norm. Entries from blank-line
+    blocks keep the stricter, original behaviour: a field that does not
+    match the expected shape comes back as `None`/`[]`, never guessed."""
+    year_match = _YEAR_RE.search(block)
+    if year_match is None and reading_order:
+        year_match = re.search(r'\b((?:19|20)\d{2})[a-z]?\b(?!.*\b(?:19|20)\d{2}\b)', block)
+    url_match = _URL_RE.search(block)
+    url = url_match.group(0).rstrip('.,)') if url_match else None
+    return CitationEntry(
+        raw=block, authors=_authors_of(block, initials_first=reading_order),
+        year=year_match.group(1) if year_match else None,
+        url=url, venue_type=_classify_venue(block, url),
+    )
+
+
+@dataclass
+class ReferenceParse:
+    """What the reference parser did, so a zero or a null downstream is
+    never mistaken for a finding. `mode` is "blank_line" (entries
+    separated by blank lines), "line_heuristic" (entries split by the
+    year/URL line-end heuristic) or `None` (nothing parsed)."""
+    section_found: bool
+    n_entries: int
+    mode: str | None
+    warning: str | None
+
+    def to_dict(self) -> dict:
+        return {"section_found": self.section_found, "n_entries": self.n_entries,
+                "mode": self.mode, "warning": self.warning}
+
+
+def parse_references_detailed(text: str, *, min_word_count: int = 400) -> tuple[list[CitationEntry], ReferenceParse]:
+    """Like `parse_references`, plus a `ReferenceParse` saying how the
+    entries were obtained and whether the result should be trusted.
+    `min_word_count` only decides whether a missing section is worth a
+    warning (a short note is not expected to have a bibliography)."""
+    section = extract_references_section(text)
+    long_enough = len(text.split()) >= min_word_count
+    if section is None:
+        warning = ("no references section found: self-citation ratio and venue mix are unavailable, "
+                   "not zero") if long_enough else None
+        return [], ReferenceParse(section_found=False, n_entries=0, mode=None, warning=warning)
+
+    blocks = [b.strip() for b in re.split(r'\n\s*\n', section.strip()) if b.strip()]
+    mode = "blank_line"
+    # Reading-order text: blocks are page-sized chunks (blank lines fall at
+    # page breaks, not between entries), so several entry-ending lines sit
+    # inside one block. In a normal blank-line-separated list each block is
+    # one entry and holds about one such line.
+    max_ends_in_block = max((sum(1 for ln in b.splitlines() if _ENTRY_END_RE.search(ln.strip()))
+                             for b in blocks), default=0)
+    if max_ends_in_block >= _LINE_SPLIT_MIN_ENDS_IN_BLOCK:
+        line_blocks = _split_line_entries(section)
+        if len(line_blocks) > len(blocks):
+            blocks, mode = line_blocks, "line_heuristic"
+    entries = [_entry_from_block(b, reading_order=(mode == "line_heuristic")) for b in blocks]
+    if not entries:
+        return [], ReferenceParse(section_found=True, n_entries=0, mode=None,
+                                  warning="a references section was found but no entries could be parsed: "
+                                          "self-citation ratio and venue mix are unavailable, not zero")
+    warning = None
+    if mode == "line_heuristic":
+        warning = ("references were split by a line-end heuristic (no blank lines between entries): "
+                   "counts and author fields are approximate")
+    return entries, ReferenceParse(section_found=True, n_entries=len(entries), mode=mode, warning=warning)
 
 
 def parse_references(text: str) -> list[CitationEntry]:
     """Best-effort. Returns `[]` if no references section is found --
-    that is itself a reportable fact (see `scan.py`), not an error."""
-    section = extract_references_section(text)
-    if section is None:
-        return []
-
-    entries = []
-    for block in re.split(r'\n\s*\n', section.strip()):
-        block = block.strip()
-        if not block:
-            continue
-        author_match = _AUTHOR_LIST_RE.match(block)
-        authors = _LASTNAME_RE.findall(author_match.group(1)) if author_match else []
-        year_match = _YEAR_RE.search(block)
-        url_match = _URL_RE.search(block)
-        url = url_match.group(0).rstrip('.,)') if url_match else None
-        entries.append(CitationEntry(
-            raw=block, authors=authors,
-            year=year_match.group(1) if year_match else None,
-            url=url, venue_type=_classify_venue(block, url),
-        ))
-    return entries
+    that is itself a reportable fact (see `scan.py` and
+    `parse_references_detailed`), not an error."""
+    return parse_references_detailed(text)[0]
 
 
 @dataclass

@@ -164,3 +164,99 @@ def test_citability_claim_to_dict_json_safe():
     import json
     check = check_citability_claim(LONG_BODY + " citable research", references=[])
     json.dumps(check.to_dict())  # must not raise
+
+
+# ---- reading-order (PDF-extracted) reference lists and parse reporting ----
+# Constructed fixtures only; the real-document tests above are untouched.
+
+from paper_rigor.citations import ReferenceParse, extract_references_section, parse_references_detailed
+
+
+def _reading_order_doc(n_entries=12, with_page_noise=True):
+    body = "Introduction\n\n" + " ".join(["Some body sentence about the topic."] * 60) + "\n\nReferences\n"
+    entries = []
+    for i in range(n_entries):
+        name = ["Alder", "Brandt", "Castillo", "Dvorak", "Eriksen", "Fontaine"][i % 6]
+        entries.append(
+            f"A. {name}, B. Other{i}, and C. Third{i}. A study of topic number {i} in\n"
+            f"constructed settings. Journal of Examples, {10 + i}:{100 + i}-{120 + i}, {2015 + (i % 8)}."
+        )
+        if with_page_noise and i % 4 == 3:
+            entries.append(f"\n{20 + i}\n\n\x0cRunning Header Of The Paper\n")
+    return body + "\n".join(entries) + "\n"
+
+
+def test_bare_references_line_is_found_when_no_heading_is_detected():
+    doc = _reading_order_doc()
+    section = extract_references_section(doc)
+    assert section is not None
+    assert "Alder" in section and "Introduction" not in section
+
+
+def test_bare_references_uses_last_occurrence_not_a_table_of_contents_line():
+    doc = "Contents\nReferences\n\n" + _reading_order_doc()
+    section = extract_references_section(doc)
+    assert section is not None and section.lstrip().startswith("A. Alder")
+
+
+def test_reading_order_entries_are_split_by_line_end_heuristic():
+    entries, info = parse_references_detailed(_reading_order_doc(n_entries=12))
+    assert info.section_found and info.mode == "line_heuristic"
+    assert info.n_entries == len(entries) == 12
+    assert info.warning and "approximate" in info.warning
+    assert "Running Header" not in " ".join(e.raw for e in entries)
+
+
+def test_reading_order_initials_first_authors_and_year_are_recovered():
+    entries, _ = parse_references_detailed(_reading_order_doc(n_entries=12))
+    first = entries[0]
+    assert first.authors[:3] == ["Alder", "Other0", "Third0"]
+    assert first.year == "2015"
+
+
+def test_self_citation_ratio_works_on_reading_order_list():
+    entries, _ = parse_references_detailed(_reading_order_doc(n_entries=12))
+    result = compute_self_citation(entries, ["Alder"])
+    assert result.n_references == 12 and result.n_self_cited == 2
+
+
+def test_blank_line_lists_keep_original_behaviour_and_no_warning():
+    doc = ("# Paper\n\n" + " ".join(["Body sentence."] * 120) + "\n\n## References\n\n"
+           "Smith, J. (2020). A title. Journal. https://doi.org/10.1/x\n\n"
+           "Jones, K. & Lee, M. (2021). Another title. Venue.\n")
+    entries, info = parse_references_detailed(doc)
+    assert info.mode == "blank_line" and info.warning is None and len(entries) == 2
+    assert entries[1].authors == ["Jones", "Lee"]
+    assert parse_references(doc)[0].raw == entries[0].raw
+
+
+def test_blank_line_entries_do_not_get_initials_first_authors_guessed():
+    doc = ("# Paper\n\n" + " ".join(["Body sentence."] * 120) + "\n\n## References\n\n"
+           "A. Smith. Some Title. Journal of Things, 2020.\n\n"
+           "B. Jones. Another Title. Journal of Things, 2021.\n")
+    entries, info = parse_references_detailed(doc)
+    assert info.mode == "blank_line"
+    assert all(e.authors == [] for e in entries)  # original strictness: not guessed
+
+
+def test_missing_references_in_a_long_text_warns_that_ratios_are_unavailable():
+    doc = " ".join(["A sentence of plain prose."] * 200)
+    entries, info = parse_references_detailed(doc)
+    assert entries == [] and info.section_found is False
+    assert info.warning and "unavailable" in info.warning
+
+
+def test_missing_references_in_a_short_text_does_not_warn():
+    _, info = parse_references_detailed("A short note with no bibliography.")
+    assert info.warning is None
+
+
+def test_section_found_but_empty_warns():
+    doc = " ".join(["Body sentence."] * 120) + "\n\nReferences\n\n"
+    entries, info = parse_references_detailed(doc)
+    assert entries == [] and info.section_found is True and "unavailable" in (info.warning or "")
+
+
+def test_reference_parse_to_dict_roundtrip():
+    info = ReferenceParse(section_found=True, n_entries=3, mode="blank_line", warning=None)
+    assert info.to_dict() == {"section_found": True, "n_entries": 3, "mode": "blank_line", "warning": None}

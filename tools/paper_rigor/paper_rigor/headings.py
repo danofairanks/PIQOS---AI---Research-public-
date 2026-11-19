@@ -33,8 +33,14 @@ _MARKDOWN_HEADING_RE = re.compile(r'^(#{1,6})\s+(\S.*?)\s*$', re.MULTILINE)
 # "5.2 Elite Cognitive Stress Test: Fifteen Faculties (60/60)",
 # "10. Conclusion" -- all found verbatim in the specimen that
 # motivated this module.
+#
+# The number and the title must share a line: the separator is spaces or
+# tabs only. With `\s+` a PDF page number on one line followed by a
+# running page header on the next ("17\n\n\x0cSome Paper Title") matched
+# as a numbered heading, which cut a reference list short at the first
+# page break of a reading-order extraction.
 _PLAIN_HEADING_RE = re.compile(
-    r'^(?:\d{1,2}(?:\.\d{1,2})?\.?\s+|Section\s+\d+\.?\s*:?\s+)'
+    r'^(?:\d{1,2}(?:\.\d{1,2})?\.?[ \t]+|Section[ \t]+\d+\.?[ \t]*:?[ \t]+)'
     r'([A-Z][^\n.]{1,78})$',
     re.MULTILINE,
 )
