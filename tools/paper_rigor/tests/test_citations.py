@@ -259,4 +259,81 @@ def test_section_found_but_empty_warns():
 
 def test_reference_parse_to_dict_roundtrip():
     info = ReferenceParse(section_found=True, n_entries=3, mode="blank_line", warning=None)
-    assert info.to_dict() == {"section_found": True, "n_entries": 3, "mode": "blank_line", "warning": None}
+    assert info.to_dict() == {"section_found": True, "n_entries": 3, "mode": "blank_line", "warning": None,
+                              "highest_cited_number": None}
+
+
+# ---- numbered "[n]" reference lists, under-split warning, reference-heading choice ----
+# Constructed fixtures only.
+
+def _numbered_doc(n=14, cited_up_to=None, table_after=True, smallcaps=True, noise=True):
+    cited = cited_up_to or n
+    body_sentences = []
+    for i in range(1, cited + 1):
+        body_sentences.append(f"Prior work reports a related effect [{i}] in a constructed setting.")
+    body = "Introduction\n\n" + " ".join(body_sentences) + " " + " ".join(["More body prose here."] * 80)
+    lines = ["\n\nReferences\n"]
+    for i in range(1, n + 1):
+        if smallcaps:
+            names = f"[{i}] A LDER , A., VAN B ROEK , N., AND C ASTILLO , M. "
+        else:
+            names = f"[{i}] A. Alder, N. Van Broek, and M. Castillo. "
+        lines.append(names + f"A study of constructed topic number {i}. Proceedings of Examples\n(Somewhere Place, {2015 + i % 8}), pp. 1-{10 + i}.")
+        if noise and i % 5 == 0:
+            lines.append(f"\n{20 + i}\n\n\x0cRunning Header Of The Paper\n")
+    out = body + "\n".join(lines)
+    if table_after:
+        out += "\n\nTable 9: Something else\n[3] Row label that also starts with a bracketed number\n[1] another table row\n"
+    return out
+
+
+def test_numbered_list_is_split_on_markers_and_stops_at_a_table():
+    entries, info = parse_references_detailed(_numbered_doc(n=16))
+    assert info.mode == "numbered" and info.n_entries == len(entries) == 16
+    assert info.warning is None
+    assert info.highest_cited_number == 16
+    assert "Row label" not in " ".join(e.raw for e in entries)
+    assert "Running Header" not in " ".join(e.raw for e in entries)
+
+
+def test_numbered_smallcaps_authors_are_recovered_for_self_citation():
+    entries, _ = parse_references_detailed(_numbered_doc(n=12))
+    assert entries[0].authors[:3] == ["Alder", "Broek", "Castillo"]
+    result = compute_self_citation(entries, ["Broek"])
+    assert result.n_references == 12 and result.n_self_cited == 12
+
+
+def test_numbered_title_case_initials_first_authors_work_too():
+    entries, _ = parse_references_detailed(_numbered_doc(n=12, smallcaps=False))
+    assert entries[0].authors[:3] == ["Alder", "Broek", "Castillo"]
+
+
+def test_under_split_list_warns_that_the_ratio_is_unreliable():
+    # the text cites up to [30] but only 8 unnumbered entries exist
+    body = "Introduction\n\n" + " ".join(f"A claim [{i}] is made here." for i in range(1, 31)) + " " + " ".join(["Body."] * 80)
+    refs = "\n\nReferences\n\n" + "\n\n".join(f"Smith, J. ({2000 + i}). Title {i}. Journal." for i in range(8))
+    entries, info = parse_references_detailed(body + refs)
+    assert len(entries) == 8 and info.highest_cited_number == 30
+    assert info.warning and "under-split" in info.warning
+
+
+def test_no_under_split_warning_when_counts_agree_or_few_bracket_numbers_seen():
+    entries, info = parse_references_detailed(_numbered_doc(n=16))
+    assert info.warning is None
+    short_body = "Introduction\n\n" + " ".join(["Body sentence with one cite [2]."] * 60)
+    refs = "\n\nReferences\n\nSmith, J. (2020). T. Journal.\n\nJones, K. (2021). U. Venue.\n"
+    _, info2 = parse_references_detailed(short_body + refs)
+    assert info2.warning is None
+
+
+def test_bare_references_column_header_before_the_real_list_does_not_win():
+    doc = (_numbered_doc(n=14, table_after=False).replace(
+        "Introduction\n\n", "Introduction\n\nTable 1: Something\nReferences\n[7, 9, 12]\n[3, 4]\nmore table text\n\n", 1))
+    entries, info = parse_references_detailed(doc)
+    assert info.mode == "numbered" and len(entries) == 14
+
+
+def test_highest_cited_number_handles_lists_and_ranges():
+    from paper_rigor.citations import _highest_bracketed_citation
+    hi, n = _highest_bracketed_citation("see [3, 7] and [10-12] and [45]")
+    assert hi == 45 and n == 6

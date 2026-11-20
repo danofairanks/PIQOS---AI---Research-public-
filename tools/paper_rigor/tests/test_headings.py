@@ -103,3 +103,13 @@ def test_page_number_followed_by_running_header_is_not_a_heading():
 def test_numbered_heading_on_one_line_still_detected():
     assert [h.text for h in iter_headings("7. Honest Limitations\nBody.\n")] == ["Honest Limitations"]
     assert [h.text for h in iter_headings("Section 3: Method\nBody.\n")] == ["Method"]
+
+
+def test_number_and_title_on_consecutive_lines_is_a_heading():
+    text = "1\nIntroduction\nSome prose here.\n\n2.1\nMethod Details\nMore prose.\n"
+    assert [h.text for h in iter_headings(text)] == ["Introduction", "Method Details"]
+
+
+def test_split_line_heading_is_not_matched_across_a_blank_line_or_form_feed():
+    text = "Body.\n\n17\n\n\x0cSome Paper Title\nMore.\n\n18\n\nAnother Header Line\nEnd.\n"
+    assert [h.text for h in iter_headings(text)] == []

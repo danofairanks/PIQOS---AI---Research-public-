@@ -133,8 +133,8 @@ def _classify_venue(entry_text: str, url: str | None) -> str:
 # A bare "References" line with no markdown and no numeric prefix, as
 # PDF-to-text extraction often leaves it. Only these three names are
 # accepted in the bare form ("Sources" alone on a line is too ordinary
-# to treat as a heading), and the LAST occurrence is used so a table-
-# of-contents line does not win over the real list at the end.
+# to treat as a heading). When several occur, the one followed by the
+# most bibliography-like text is used (see `extract_references_section`).
 _BARE_REFERENCES_RE = re.compile(r'^[ \t]*(?:references|bibliography|works cited)[ \t]*$',
                                  re.IGNORECASE | re.MULTILINE)
 
@@ -144,25 +144,53 @@ def extract_references_section(text: str) -> str | None:
     Cited/Sources heading (markdown `#` or a plain numbered heading --
     see `headings.py`), up to the next heading, a standalone `---`
     divider, or the end of the document. Falls back to a bare,
-    unnumbered `References` / `Bibliography` / `Works cited` line (the
-    last one in the document) when no such heading is detected. `None`
-    if neither is found."""
+    unnumbered `References` / `Bibliography` / `Works cited` line when no
+    such heading is detected (with several such lines, the one followed
+    by the most bibliography-like text). `None` if neither is found."""
     section = find_section(text, _REFERENCES_NAME_RE, extra_stop=_STANDALONE_DIVIDER_RE)
     if section is not None:
         return section
     bare = list(_BARE_REFERENCES_RE.finditer(text))
     if not bare:
         return None
-    body_start = bare[-1].end()
-    body_end = len(text)
-    for h in iter_headings(text):
-        if h.start >= body_start:
-            body_end = h.start
-            break
-    stop = _STANDALONE_DIVIDER_RE.search(text, body_start, body_end)
-    if stop:
-        body_end = stop.start()
-    return text[body_start:body_end]
+    headings = iter_headings(text)
+
+    def slice_after(m: re.Match) -> str:
+        body_start = m.end()
+        body_end = len(text)
+        for h in headings:
+            if h.start >= body_start:
+                body_end = h.start
+                break
+        stop = _STANDALONE_DIVIDER_RE.search(text, body_start, body_end)
+        if stop:
+            body_end = stop.start()
+        return text[body_start:body_end]
+
+    # A bare "References" line also appears as a table-of-contents entry or
+    # a table column header, and a slice that starts there runs on to the
+    # next heading, which can include the real list. Score each occurrence
+    # by how its first lines read: a numbered run starting at [1]..[3] wins
+    # outright; otherwise count lines ending in a year, URL or DOI. Ties go
+    # to the later occurrence.
+    best, best_score = None, -1
+    for m in bare:
+        candidate = slice_after(m)
+        score = _reference_start_score(candidate)
+        if score >= best_score:
+            best, best_score = candidate, score
+    return best
+
+
+_START_WINDOW_LINES = 40
+
+
+def _reference_start_score(candidate: str) -> int:
+    lines = [ln.strip() for ln in candidate.splitlines() if ln.strip()][:_START_WINDOW_LINES]
+    nums = [int(m.group(1)) for m in (_NUMBERED_ENTRY_RE.match(ln) for ln in lines) if m]
+    if nums and nums[0] <= 3 and all(b > a for a, b in zip(nums, nums[1:])):
+        return 100 + len(nums)
+    return sum(1 for ln in lines if _ENTRY_END_RE.search(ln))
 
 
 # Reading-order text extracted from a PDF has no blank line between
@@ -175,13 +203,119 @@ _PAGE_NUMBER_LINE_RE = re.compile(r'^\d{1,3}$')
 _RUNNING_HEADER_MIN_REPEATS = 3
 _LINE_SPLIT_MIN_ENDS_IN_BLOCK = 3
 
+_SURNAME_PARTICLE = r"(?i:van|von|de|da|di|du|le|la|del|della|der|den|ten|ter|dos|das)\s+"
 _INITIALS_FIRST_AUTHORS_RE = re.compile(
-    r"^((?:[A-Z][A-Za-z]?\.(?:\s?[A-Z]\.)*(?:-[A-Z][a-z]?\.)?\s+[^\W\d_][\w'\u2019\-]+"
+    r"^((?:[A-Z][A-Za-z]?\.(?:\s?[A-Z]\.)*(?:-[A-Z][a-z]?\.)?\s+(?:" + _SURNAME_PARTICLE + r")?[^\W\d_][\w'\u2019\-]+"
     r"(?:,\s+and\s+|,\s+|\s+and\s+|\s+&\s+)?)+)(?:et al\.)?",
 )
 _INITIALS_SURNAME_RE = re.compile(
-    r"[A-Z][A-Za-z]?\.(?:\s?[A-Z]\.)*(?:-[A-Z][a-z]?\.)?\s+([^\W\d_][\w'\u2019\-]+)"
+    r"[A-Z][A-Za-z]?\.(?:\s?[A-Z]\.)*(?:-[A-Z][a-z]?\.)?\s+(?:" + _SURNAME_PARTICLE + r")?([^\W\d_][\w'\u2019\-]+)"
 )
+
+
+# Numbered "[n] ..." lists: the marker is a reliable entry boundary, so it
+# is used before the weaker year/URL line-end heuristic.
+_NUMBERED_ENTRY_RE = re.compile(r"^\[(\d{1,3})\]\s*(.*)$")
+_NUMBERED_MIN_MARKERS = 3
+_UPPER = "A-Z\u00c0-\u00dd"
+# PDF small-caps names extracted in reading order look like
+# "C ABITZA , F., VAN B ERKEL , N., AND D E J ONG , S." (first letter of
+# each name separated from the rest, a space before each comma).
+_SMALLCAPS_SPLIT_RE = re.compile(r"\b([A-Z]) ([A-Z]{2,})\b")
+_SURNAME_FIRST_NAME = (
+    rf"[{_UPPER}][{_UPPER}'\u2019\-]+(?:\s[{_UPPER}][{_UPPER}'\u2019\-]+)?,\s*[A-Z]\.(?:\s?[A-Z]\.)*"
+)
+_SURNAME_FIRST_AUTHORS_RE = re.compile(
+    rf"^({_SURNAME_FIRST_NAME}(?:(?:,\s*(?:AND\s+|&\s+)?|\s+(?:AND|&)\s+){_SURNAME_FIRST_NAME})*)"
+)
+_SURNAME_FIRST_ONE_RE = re.compile(rf"([{_UPPER}][{_UPPER}'\u2019\-]+(?:\s[{_UPPER}][{_UPPER}'\u2019\-]+)?),\s*[A-Z]\.")
+_BRACKET_CITATION_RE = re.compile(r"\[(\d{1,3}(?:\s*[,\u2013\u2014\-]\s*\d{1,3})*)\]")
+_UNDERSPLIT_RATIO = 0.85
+_MIN_CITED_NUMBERS_FOR_CHECK = 10
+
+
+def _normalize_smallcaps_head(entry: str, limit: int = 320) -> str:
+    head, tail = entry[:limit], entry[limit:]
+    head = _SMALLCAPS_SPLIT_RE.sub(r"\1\2", head)
+    head = re.sub(r"\s+,", ",", head)
+    return head + tail
+
+
+def _numbered_markers_look_real(section: str) -> bool:
+    nums = [int(m.group(1)) for m in
+            (_NUMBERED_ENTRY_RE.match(ln.strip()) for ln in section.splitlines()) if m]
+    if len(nums) < _NUMBERED_MIN_MARKERS:
+        return False
+    rising = sum(1 for a, b in zip(nums, nums[1:]) if b > a)
+    return rising >= 0.8 * (len(nums) - 1)
+
+
+_NUMBERED_MAX_JUMP = 3
+_MAX_ENTRY_LINES = 8
+
+
+def _split_numbered_entries(section: str) -> list[str]:
+    """Entries of a `[n] ...` list. A new entry must carry the next number
+    (up to a small gap for an entry lost to extraction); the first marker
+    that does not ends the list, so a later table whose rows also start
+    with a bracketed number is not read as bibliography. An entry keeps at
+    most `_MAX_ENTRY_LINES` lines, so text after the last entry (an
+    appendix, a figure caption) does not accumulate into it."""
+    raw_lines = [ln.strip() for ln in section.splitlines()]
+    counts: dict[str, int] = {}
+    for ln in raw_lines:
+        if len(ln) > 10:
+            counts[ln] = counts.get(ln, 0) + 1
+    # Markdown-style lists put a blank line before every marker; there a
+    # blank line ends the entry (text after it that is not a marker is a
+    # trailing paragraph, not a continuation). In reading-order PDF text
+    # blank lines fall at page breaks inside entries, so they are skipped.
+    marker_idx = [i for i, ln in enumerate(raw_lines) if _NUMBERED_ENTRY_RE.match(ln)]
+    after_blank = sum(1 for i in marker_idx[1:] if i > 0 and not raw_lines[i - 1])
+    blank_separated = len(marker_idx) > 1 and after_blank >= 0.8 * (len(marker_idx) - 1)
+    entries: list[str] = []
+    current: list[str] | None = None
+    last_number: int | None = None
+    for ln in raw_lines:
+        if blank_separated and not ln:
+            if current is not None:
+                entries.append(" ".join(current))
+                current = None
+            continue
+        m = _NUMBERED_ENTRY_RE.match(ln)
+        if m:
+            n = int(m.group(1))
+            if last_number is not None and not (last_number < n <= last_number + _NUMBERED_MAX_JUMP):
+                break
+            if current is not None:
+                entries.append(" ".join(current))
+            current, last_number = [ln], n
+            continue
+        if current is None or not ln or _PAGE_NUMBER_LINE_RE.match(ln) or counts.get(ln, 0) >= _RUNNING_HEADER_MIN_REPEATS:
+            continue
+        if len(current) < _MAX_ENTRY_LINES:
+            current.append(ln)
+    if current is not None:
+        entries.append(" ".join(current))
+    return entries
+
+
+def _highest_bracketed_citation(text_before_references: str) -> tuple[int | None, int]:
+    """Highest number cited in square brackets in the body ("[12]",
+    "[3, 7]", "[4-9]") and how many distinct numbers were seen."""
+    seen: set[int] = set()
+    for m in _BRACKET_CITATION_RE.finditer(text_before_references):
+        for part in re.split(r"\s*,\s*", m.group(1)):
+            rng = re.split(r"\s*[\u2013\u2014\-]\s*", part)
+            try:
+                lo, hi = int(rng[0]), int(rng[-1])
+            except ValueError:
+                continue
+            if lo <= hi <= lo + 60:
+                seen.update(range(lo, hi + 1))
+            else:
+                seen.update({lo, hi})
+    return (max(seen) if seen else None), len(seen)
 
 
 def _split_line_entries(section: str) -> list[str]:
@@ -209,6 +343,9 @@ def _authors_of(block: str, *, initials_first: bool = False) -> list[str]:
     if author_match:
         return _LASTNAME_RE.findall(author_match.group(1))
     if initials_first:
+        upper_match = _SURNAME_FIRST_AUTHORS_RE.match(_normalize_smallcaps_head(block))
+        if upper_match:
+            return [w.split()[-1].title() for w in _SURNAME_FIRST_ONE_RE.findall(upper_match.group(1))]
         initials_match = _INITIALS_FIRST_AUTHORS_RE.match(block)
         if initials_match:
             return _INITIALS_SURNAME_RE.findall(initials_match.group(1))
@@ -221,13 +358,14 @@ def _entry_from_block(block: str, *, reading_order: bool = False) -> CitationEnt
     shape and a bare trailing year are the norm. Entries from blank-line
     blocks keep the stricter, original behaviour: a field that does not
     match the expected shape comes back as `None`/`[]`, never guessed."""
-    year_match = _YEAR_RE.search(block)
+    block_for_fields = re.sub(r"^\[\d{1,3}\]\s*", "", block) if reading_order else block
+    year_match = _YEAR_RE.search(block_for_fields)
     if year_match is None and reading_order:
-        year_match = re.search(r'\b((?:19|20)\d{2})[a-z]?\b(?!.*\b(?:19|20)\d{2}\b)', block)
+        year_match = re.search(r'\b((?:19|20)\d{2})[a-z]?\b(?!.*\b(?:19|20)\d{2}\b)', block_for_fields)
     url_match = _URL_RE.search(block)
     url = url_match.group(0).rstrip('.,)') if url_match else None
     return CitationEntry(
-        raw=block, authors=_authors_of(block, initials_first=reading_order),
+        raw=block, authors=_authors_of(block_for_fields, initials_first=reading_order),
         year=year_match.group(1) if year_match else None,
         url=url, venue_type=_classify_venue(block, url),
     )
@@ -237,16 +375,21 @@ def _entry_from_block(block: str, *, reading_order: bool = False) -> CitationEnt
 class ReferenceParse:
     """What the reference parser did, so a zero or a null downstream is
     never mistaken for a finding. `mode` is "blank_line" (entries
-    separated by blank lines), "line_heuristic" (entries split by the
-    year/URL line-end heuristic) or `None` (nothing parsed)."""
+    separated by blank lines), "numbered" (entries split on `[n]`
+    markers), "line_heuristic" (entries split by the year/URL line-end
+    heuristic) or `None` (nothing parsed). `highest_cited_number` is the
+    highest bracketed number cited in the body, used to flag a list that
+    was split into far fewer entries than the text cites."""
     section_found: bool
     n_entries: int
     mode: str | None
     warning: str | None
+    highest_cited_number: int | None = None
 
     def to_dict(self) -> dict:
         return {"section_found": self.section_found, "n_entries": self.n_entries,
-                "mode": self.mode, "warning": self.warning}
+                "mode": self.mode, "warning": self.warning,
+                "highest_cited_number": self.highest_cited_number}
 
 
 def parse_references_detailed(text: str, *, min_word_count: int = 400) -> tuple[list[CitationEntry], ReferenceParse]:
@@ -263,26 +406,42 @@ def parse_references_detailed(text: str, *, min_word_count: int = 400) -> tuple[
 
     blocks = [b.strip() for b in re.split(r'\n\s*\n', section.strip()) if b.strip()]
     mode = "blank_line"
-    # Reading-order text: blocks are page-sized chunks (blank lines fall at
-    # page breaks, not between entries), so several entry-ending lines sit
-    # inside one block. In a normal blank-line-separated list each block is
-    # one entry and holds about one such line.
-    max_ends_in_block = max((sum(1 for ln in b.splitlines() if _ENTRY_END_RE.search(ln.strip()))
-                             for b in blocks), default=0)
-    if max_ends_in_block >= _LINE_SPLIT_MIN_ENDS_IN_BLOCK:
-        line_blocks = _split_line_entries(section)
-        if len(line_blocks) > len(blocks):
-            blocks, mode = line_blocks, "line_heuristic"
-    entries = [_entry_from_block(b, reading_order=(mode == "line_heuristic")) for b in blocks]
+    if _numbered_markers_look_real(section):
+        numbered = _split_numbered_entries(section)
+        if numbered:
+            blocks, mode = numbered, "numbered"
+    if mode == "blank_line":
+        # Reading-order text: blocks are page-sized chunks (blank lines fall
+        # at page breaks, not between entries), so several entry-ending lines
+        # sit inside one block. In a normal blank-line-separated list each
+        # block is one entry and holds about one such line.
+        max_ends_in_block = max((sum(1 for ln in b.splitlines() if _ENTRY_END_RE.search(ln.strip()))
+                                 for b in blocks), default=0)
+        if max_ends_in_block >= _LINE_SPLIT_MIN_ENDS_IN_BLOCK:
+            line_blocks = _split_line_entries(section)
+            if len(line_blocks) > len(blocks):
+                blocks, mode = line_blocks, "line_heuristic"
+    reading_order = mode in ("numbered", "line_heuristic")
+    entries = [_entry_from_block(b, reading_order=reading_order) for b in blocks]
+
+    body = text[:text.rfind(section)] if section in text else text
+    highest, n_distinct = _highest_bracketed_citation(body)
     if not entries:
         return [], ReferenceParse(section_found=True, n_entries=0, mode=None,
                                   warning="a references section was found but no entries could be parsed: "
-                                          "self-citation ratio and venue mix are unavailable, not zero")
-    warning = None
+                                          "self-citation ratio and venue mix are unavailable, not zero",
+                                  highest_cited_number=highest)
+    warnings = []
     if mode == "line_heuristic":
-        warning = ("references were split by a line-end heuristic (no blank lines between entries): "
-                   "counts and author fields are approximate")
-    return entries, ReferenceParse(section_found=True, n_entries=len(entries), mode=mode, warning=warning)
+        warnings.append("references were split by a line-end heuristic (no blank lines between entries): "
+                        "counts and author fields are approximate")
+    if (highest is not None and n_distinct >= _MIN_CITED_NUMBERS_FOR_CHECK
+            and len(entries) < _UNDERSPLIT_RATIO * highest):
+        warnings.append(f"the text cites references up to [{highest}] but {len(entries)} entries were parsed: "
+                        "the list was probably under-split, so the self-citation ratio and venue mix are "
+                        "unreliable, not zero")
+    return entries, ReferenceParse(section_found=True, n_entries=len(entries), mode=mode,
+                                   warning="; ".join(warnings) or None, highest_cited_number=highest)
 
 
 def parse_references(text: str) -> list[CitationEntry]:

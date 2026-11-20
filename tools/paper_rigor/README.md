@@ -289,6 +289,49 @@ for f in glob.glob("papers/published/*.md"):
         print(f, round(r.share, 2), r.thesis_share, r.lead)
 ```
 
+## A fourth scan: the same fix, missed on the next format
+
+The next long paper scanned (a literature review, 176 numbered `[n]`
+references, hard-wrapped, with small-caps author names and a heading
+whose number and title sit on separate lines) showed the first fix was
+not enough. `reference_parse` reported `mode: blank_line`, 72 entries and
+no warning, so the self-citation ratio read as `0.0` against a list that
+had more than twice as many entries. Three further changes:
+
+- **Numbered lists are split on their `[n]` markers** (`mode: "numbered"`):
+  the first marker must be `[1]`..`[3]`, each next marker must carry the
+  next number (a small gap is tolerated), and the first marker that does
+  not ends the list, so a later table whose rows start with a bracketed
+  number is not read as bibliography. In blank-line-separated markdown
+  lists a blank line ends an entry, so a trailing paragraph is no longer
+  counted as one. Reading-order small-caps names ("C ASTILLO , F.") and
+  initials-first names with a surname particle ("N. Van Broek") are
+  recovered for the self-citation ratio.
+- **An under-split list now warns.** The highest bracketed citation
+  number in the body is recorded (`highest_cited_number`); when at least
+  ten distinct numbers are cited and fewer than 85% as many entries were
+  parsed, the warning says the list was probably under-split and the
+  self-citation ratio and venue mix are unreliable, not zero.
+- **A bare `References` line is chosen by what follows it.** The same word
+  also appears as a table column header; the occurrence whose first lines
+  read like a bibliography (a numbered run starting at `[1]`..`[3]`, or
+  lines ending in a year, URL or DOI) is used.
+- **Headings with the number and title on consecutive lines** (`1` then
+  `Introduction`) are detected, only when the two lines are adjacent: a
+  page number separated from the running header by a blank line or form
+  feed is still not a heading.
+
+Behaviour change on this repo's own numbered markdown reference lists
+(checked over every markdown file under `papers/` and `case_studies/`):
+four files changed, because numbered entries now get authors and years
+parsed (they were empty before) and a trailing paragraph after the last
+entry is no longer counted as one. No other file's parsed references
+changed. Limits: venue classification still relies on URLs and domain
+names, so a list without URLs reports mostly `unknown`; an entry
+format that is neither numbered, blank-line separated nor year-terminated
+will still parse poorly, and the under-split warning only helps when the
+body cites by bracketed number.
+
 ## What this tool does NOT do
 
 - **It does not fact-check anything**, the same limit every other tool
@@ -299,16 +342,17 @@ for f in glob.glob("papers/published/*.md"):
   entire reason `external_verification_worklist` exists as a separate,
   clearly-labeled output rather than being folded into a false single
   pass/fail score.
-- **Reference-list parsing is best-effort against two shapes**: an
+- **Reference-list parsing is best-effort against three shapes**: an
   APA-ish `## References` section with blank-line-separated entries
-  (the original, stricter path), and reading-order PDF text with a bare
+  (the original, stricter path); numbered `[n] ...` lists (split on the
+  markers, `mode: "numbered"`); and reading-order PDF text with a bare
   `References` line and unnumbered, hard-wrapped entries (a line-end
-  heuristic, marked `mode: "line_heuristic"` and flagged approximate).
-  A numbered `[1] Author, "Title," Venue, Year.` format or a fully
+  heuristic, `mode: "line_heuristic"`, flagged approximate). A fully
   non-standard bibliography will parse poorly or return `[]`. That is
-  reported in `reference_parse` (and, for a long text with no list at
-  all, in a `warning` saying the ratios are *unavailable, not zero*),
-  not silently guessed at.
+  reported in `reference_parse`: a missing list in a long text, an empty
+  list, or a list that was probably under-split (fewer entries than the
+  highest bracketed number the text cites) each carry a `warning` saying
+  the ratios are *unavailable or unreliable, not zero*.
 - **Hedge density is a lead, not a verdict.** The hedge word list, the
   once-per-sentence counting, the sentence splitter, and the 0.30
   threshold are judgment calls; a high share of hedging is normal for a
