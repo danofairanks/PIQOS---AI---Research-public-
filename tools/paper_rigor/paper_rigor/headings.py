@@ -46,6 +46,18 @@ _PLAIN_HEADING_RE = re.compile(
 )
 
 
+# A heading whose number and title sit on two consecutive lines with
+# nothing between them ("1\nIntroduction"), as some PDF extractors
+# produce for large-numbered section titles. Deliberately requires a
+# SINGLE newline: a page number followed by a running page header is
+# separated by a blank line and/or a form feed in the same extractors,
+# and must not match (see the note above `_PLAIN_HEADING_RE`).
+_SPLIT_LINE_HEADING_RE = re.compile(
+    r'^(\d{1,2}(?:\.\d{1,2})?)[ \t]*\n([A-Z][^\n.]{1,78})$',
+    re.MULTILINE,
+)
+
+
 @dataclass
 class Heading:
     text: str            # the heading's own text, numbering/markup stripped
@@ -61,7 +73,9 @@ def iter_headings(text: str) -> list[Heading]:
     """Every detected heading, in document order, across both formats.
 
     Best-effort, same contract as every other heuristic in this
-    package: a short, period-free, numbered line inside a genuine
+    package (a number and title split over two lines are accepted only
+    when they are consecutive lines, never across a blank line or form
+    feed): a short, period-free, numbered line inside a genuine
     enumerated list in body prose ("1. Fast\\n2. Cheap\\n3. Reliable")
     can false-positive as a heading; a heading using neither convention
     (underlined text, ALL-CAPS with no numbering, a title styled only
@@ -71,6 +85,8 @@ def iter_headings(text: str) -> list[Heading]:
         headings.append(Heading(text=m.group(2).strip(), start=m.start(), end=m.end(), level=len(m.group(1))))
     for m in _PLAIN_HEADING_RE.finditer(text):
         headings.append(Heading(text=m.group(1).strip(), start=m.start(), end=m.end(), level=None))
+    for m in _SPLIT_LINE_HEADING_RE.finditer(text):
+        headings.append(Heading(text=m.group(2).strip(), start=m.start(), end=m.end(), level=None))
     headings.sort(key=lambda h: h.start)
     return headings
 
