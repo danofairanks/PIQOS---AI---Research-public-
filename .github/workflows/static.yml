@@ -26,7 +26,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url || steps.deployment_retry.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -40,6 +40,18 @@ jobs:
           # uploading the whole repo root leaves no index.html at the served
           # root, which 404s. Upload docs/ only.
           path: './docs'
+      # deploy-pages occasionally looks up the artifact before the artifacts API
+      # lists it ("Found 0 artifact(s)") and fails although the upload step
+      # succeeded. Try once more after a short wait; a second failure still
+      # fails the job.
       - name: Deploy to GitHub Pages
         id: deployment
+        uses: actions/deploy-pages@v5
+        continue-on-error: true
+      - name: Wait before retrying the deployment
+        if: steps.deployment.outcome == 'failure'
+        run: sleep 30
+      - name: Deploy to GitHub Pages (retry)
+        id: deployment_retry
+        if: steps.deployment.outcome == 'failure'
         uses: actions/deploy-pages@v5
