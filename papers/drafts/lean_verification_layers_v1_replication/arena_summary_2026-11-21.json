@@ -1,0 +1,358 @@
+{
+ "source": "https://arena.lean-lang.org/results.json",
+ "meta": {
+  "timestamp": "2026-11-21 17:36:17 UTC",
+  "git_revision": "fdc02dedb28f31a8234adbe8b36b66954f10a00e",
+  "git_revision_short": "fdc02ded",
+  "github_url": "https://github.com/leanprover/lean-kernel-arena/commit/fdc02dedb28f31a8234adbe8b36b66954f10a00e",
+  "github_action_url": "https://github.com/leanprover/lean-kernel-arena/actions/runs/44898970323",
+  "round": null,
+  "doi": null,
+  "zenodo_deposition": null,
+  "github_run_id": "44898970323"
+ },
+ "n_checkers": 37,
+ "n_tests": 266,
+ "test_outcomes": {
+  "reject": 90,
+  "accept": 146,
+  "either": 30
+ },
+ "rows": [
+  {
+   "checker": "canonical-min",
+   "language": "lean",
+   "wrongly_accepted_invalid": 1,
+   "wrongly_rejected_valid": 60,
+   "declined_timeout_error": 111,
+   "wrong_accept_tests": [
+    "tutorial/011_nonTypeAxiom"
+   ]
+  },
+  {
+   "checker": "con-agua",
+   "language": "x86",
+   "wrongly_accepted_invalid": 0,
+   "wrongly_rejected_valid": 0,
+   "declined_timeout_error": 9,
+   "wrong_accept_tests": []
+  },
+  {
+   "checker": "con-leche",
+   "language": "lean",
+   "wrongly_accepted_invalid": 0,
+   "wrongly_rejected_valid": 0,
+   "declined_timeout_error": 10,
+   "wrong_accept_tests": []
+  },
+  {
+   "checker": "con-ron",
+   "language": "rust",
+   "wrongly_accepted_invalid": 0,
+   "wrongly_rejected_valid": 0,
+   "declined_timeout_error": 9,
+   "wrong_accept_tests": []
+  },
+  {
+   "checker": "eink0rn",
+   "language": "haskell",
+   "wrongly_accepted_invalid": 0,
+   "wrongly_rejected_valid": 0,
+   "declined_timeout_error": 5,
+   "wrong_accept_tests": []
+  },
+  {
+   "checker": "evmlean",
+   "language": "solidity",
+   "wrongly_accepted_invalid": 0,
+   "wrongly_rejected_valid": 0,
+   "declined_timeout_error": 53,
+   "wrong_accept_tests": []
+  },
+  {
+   "checker": "gruszka",
+   "language": "rust",
+   "wrongly_accepted_invalid": 0,
+   "wrongly_rejected_valid": 0,
+   "declined_timeout_error": 0,
+   "wrong_accept_tests": []
+  },
+  {
+   "checker": "ind-models",
+   "language": "lean",
+   "wrongly_accepted_invalid": 0,
+   "wrongly_rejected_valid": 0,
+   "declined_timeout_error": 2,
+   "wrong_accept_tests": []
+  },
+  {
+   "checker": "kefir",
+   "language": "rust",
+   "wrongly_accepted_invalid": 0,
+   "wrongly_rejected_valid": 0,
+   "declined_timeout_error": 0,
+   "wrong_accept_tests": []
+  },
+  {
+   "checker": "kefir-wasm",
+   "language": "rust",
+   "wrongly_accepted_invalid": 0,
+   "wrongly_rejected_valid": 0,
+   "declined_timeout_error": 0,
+   "wrong_accept_tests": []
+  },
+  {
+   "checker": "kiota",
+   "language": "rust",
+   "wrongly_accepted_invalid": 0,
+   "wrongly_rejected_valid": 0,
+   "declined_timeout_error": 5,
+   "wrong_accept_tests": []
+  },
+  {
+   "checker": "lazylean",
+   "language": "cpp",
+   "wrongly_accepted_invalid": 3,
+   "wrongly_rejected_valid": 0,
+   "declined_timeout_error": 6,
+   "wrong_accept_tests": [
+    "bugs/rec-rule-proof-irrel",
+    "bugs/rec-rule-proof-irrel-nested",
+    "bugs/rec-type-proof-irrel"
+   ]
+  },
+  {
+   "checker": "lean4cobol",
+   "language": "cobol",
+   "wrongly_accepted_invalid": 0,
+   "wrongly_rejected_valid": 18,
+   "declined_timeout_error": 11,
+   "wrong_accept_tests": []
+  },
+  {
+   "checker": "lean4lean",
+   "language": "lean",
+   "wrongly_accepted_invalid": 0,
+   "wrongly_rejected_valid": 23,
+   "declined_timeout_error": 0,
+   "wrong_accept_tests": []
+  },
+  {
+   "checker": "logos-kernel",
+   "language": "rust",
+   "wrongly_accepted_invalid": 0,
+   "wrongly_rejected_valid": 0,
+   "declined_timeout_error": 17,
+   "wrong_accept_tests": []
+  },
+  {
+   "checker": "mathgraph",
+   "language": "rust",
+   "wrongly_accepted_invalid": 8,
+   "wrongly_rejected_valid": 0,
+   "declined_timeout_error": 2,
+   "wrong_accept_tests": [
+    "bugs/closure-level-subst",
+    "bugs/nested-name-capture",
+    "bugs/nested-rec-rule-nfields",
+    "bugs/pi-closure-context",
+    "bugs/rec-rule-proof-irrel",
+    "bugs/rec-rule-proof-irrel-nested",
+    "bugs/unit-rec-rule",
+    "other/inductive-undeclared-universe"
+   ]
+  },
+  {
+   "checker": "metalean-fast",
+   "language": "lean",
+   "wrongly_accepted_invalid": 4,
+   "wrongly_rejected_valid": 1,
+   "declined_timeout_error": 9,
+   "wrong_accept_tests": [
+    "bugs/nested-name-capture",
+    "bugs/nested-rec-rule-nfields",
+    "bugs/nested-unused-param",
+    "bugs/rec-rule-proof-irrel-nested"
+   ]
+  },
+  {
+   "checker": "metalean-slow",
+   "language": "lean",
+   "wrongly_accepted_invalid": 3,
+   "wrongly_rejected_valid": 0,
+   "declined_timeout_error": 66,
+   "wrong_accept_tests": [
+    "bugs/nested-name-capture",
+    "bugs/nested-rec-rule-nfields",
+    "bugs/rec-rule-proof-irrel-nested"
+   ]
+  },
+  {
+   "checker": "mini",
+   "language": "lean",
+   "wrongly_accepted_invalid": 0,
+   "wrongly_rejected_valid": 0,
+   "declined_timeout_error": 64,
+   "wrong_accept_tests": []
+  },
+  {
+   "checker": "nano-lean",
+   "language": "rust",
+   "wrongly_accepted_invalid": 0,
+   "wrongly_rejected_valid": 0,
+   "declined_timeout_error": 2,
+   "wrong_accept_tests": []
+  },
+  {
+   "checker": "nanobruijn",
+   "language": "rust",
+   "wrongly_accepted_invalid": 0,
+   "wrongly_rejected_valid": 0,
+   "declined_timeout_error": 2,
+   "wrong_accept_tests": []
+  },
+  {
+   "checker": "nanoclo",
+   "language": "rust",
+   "wrongly_accepted_invalid": 2,
+   "wrongly_rejected_valid": 0,
+   "declined_timeout_error": 0,
+   "wrong_accept_tests": [
+    "bugs/rec-rule-proof-irrel",
+    "bugs/rec-rule-proof-irrel-nested"
+   ]
+  },
+  {
+   "checker": "nanoclo-fortran",
+   "language": "fortran",
+   "wrongly_accepted_invalid": 6,
+   "wrongly_rejected_valid": 0,
+   "declined_timeout_error": 3,
+   "wrong_accept_tests": [
+    "bugs/nested-name-capture",
+    "bugs/nested-rec-rule-nfields",
+    "bugs/rec-rule-proof-irrel",
+    "bugs/rec-rule-proof-irrel-nested",
+    "bugs/unit-rec-rule",
+    "other/inductive-undeclared-universe"
+   ]
+  },
+  {
+   "checker": "nanoda",
+   "language": "rust",
+   "wrongly_accepted_invalid": 0,
+   "wrongly_rejected_valid": 0,
+   "declined_timeout_error": 4,
+   "wrong_accept_tests": []
+  },
+  {
+   "checker": "ocaml4lean",
+   "language": "ocaml",
+   "wrongly_accepted_invalid": 0,
+   "wrongly_rejected_valid": 0,
+   "declined_timeout_error": 6,
+   "wrong_accept_tests": []
+  },
+  {
+   "checker": "official",
+   "language": "cpp",
+   "wrongly_accepted_invalid": 0,
+   "wrongly_rejected_valid": 0,
+   "declined_timeout_error": 2,
+   "wrong_accept_tests": []
+  },
+  {
+   "checker": "official-nightly",
+   "language": "cpp",
+   "wrongly_accepted_invalid": 0,
+   "wrongly_rejected_valid": 0,
+   "declined_timeout_error": 0,
+   "wrong_accept_tests": []
+  },
+  {
+   "checker": "overfull",
+   "language": "tex",
+   "wrongly_accepted_invalid": 0,
+   "wrongly_rejected_valid": 0,
+   "declined_timeout_error": 69,
+   "wrong_accept_tests": []
+  },
+  {
+   "checker": "palladium",
+   "language": "rust",
+   "wrongly_accepted_invalid": 0,
+   "wrongly_rejected_valid": 0,
+   "declined_timeout_error": 6,
+   "wrong_accept_tests": []
+  },
+  {
+   "checker": "pestka",
+   "language": "aver",
+   "wrongly_accepted_invalid": 0,
+   "wrongly_rejected_valid": 0,
+   "declined_timeout_error": 0,
+   "wrong_accept_tests": []
+  },
+  {
+   "checker": "pestka-wasm",
+   "language": "aver",
+   "wrongly_accepted_invalid": 0,
+   "wrongly_rejected_valid": 0,
+   "declined_timeout_error": 1,
+   "wrong_accept_tests": []
+  },
+  {
+   "checker": "rpylean",
+   "language": "python",
+   "wrongly_accepted_invalid": 1,
+   "wrongly_rejected_valid": 0,
+   "declined_timeout_error": 4,
+   "wrong_accept_tests": [
+    "other/inductive-undeclared-universe"
+   ]
+  },
+  {
+   "checker": "sokonanoda",
+   "language": "rust",
+   "wrongly_accepted_invalid": 0,
+   "wrongly_rejected_valid": 0,
+   "declined_timeout_error": 5,
+   "wrong_accept_tests": []
+  },
+  {
+   "checker": "tenet",
+   "language": "csharp",
+   "wrongly_accepted_invalid": 0,
+   "wrongly_rejected_valid": 0,
+   "declined_timeout_error": 0,
+   "wrong_accept_tests": []
+  },
+  {
+   "checker": "tenet-hs",
+   "language": "haskell",
+   "wrongly_accepted_invalid": 0,
+   "wrongly_rejected_valid": 0,
+   "declined_timeout_error": 1,
+   "wrong_accept_tests": []
+  },
+  {
+   "checker": "tenet-jvm",
+   "language": "java",
+   "wrongly_accepted_invalid": 0,
+   "wrongly_rejected_valid": 0,
+   "declined_timeout_error": 2,
+   "wrong_accept_tests": []
+  },
+  {
+   "checker": "vow-lean-kernel",
+   "language": "vow",
+   "wrongly_accepted_invalid": 2,
+   "wrongly_rejected_valid": 0,
+   "declined_timeout_error": 40,
+   "wrong_accept_tests": [
+    "bugs/rec-rule-proof-irrel-nested",
+    "other/inductive-undeclared-universe"
+   ]
+  }
+ ]
+}

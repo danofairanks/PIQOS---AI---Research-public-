@@ -1,0 +1,699 @@
+{
+ "n_checkers": 37,
+ "n_invalid": 90,
+ "n_valid": 146,
+ "checkers_with_missing_results": {},
+ "A": {
+  "S_obs": 46,
+  "null_mean": 4.2226,
+  "null_p95": 8.0,
+  "p": 4.999750012499375e-05,
+  "k_by_test": {
+   "bugs/closure-level-subst": 1,
+   "bugs/nested-name-capture": 4,
+   "bugs/nested-rec-rule-nfields": 4,
+   "bugs/nested-unused-param": 1,
+   "bugs/pi-closure-context": 1,
+   "bugs/rec-rule-proof-irrel": 4,
+   "bugs/rec-rule-proof-irrel-nested": 7,
+   "bugs/rec-type-proof-irrel": 1,
+   "bugs/unit-rec-rule": 2,
+   "other/inductive-undeclared-universe": 4,
+   "tutorial/011_nonTypeAxiom": 1
+  },
+  "wrong_accept_set_sizes": {
+   "canonical-min": 1,
+   "lazylean": 3,
+   "mathgraph": 8,
+   "metalean-fast": 4,
+   "metalean-slow": 3,
+   "nanoclo": 2,
+   "nanoclo-fortran": 6,
+   "rpylean": 1,
+   "vow-lean-kernel": 2
+  }
+ },
+ "B": {
+  "n_nonempty_checkers": 9,
+  "n_pairs": 36,
+  "n_sibling_pairs": 2,
+  "mean_jaccard_sibling": 0.5416666666666666,
+  "mean_jaccard_nonsibling": 0.20695611577964518,
+  "pairs": [
+   {
+    "a": "canonical-min",
+    "b": "lazylean",
+    "jaccard": 0.0,
+    "sibling": false,
+    "owner_a": "FrederickPu",
+    "owner_b": "corun1024"
+   },
+   {
+    "a": "canonical-min",
+    "b": "mathgraph",
+    "jaccard": 0.0,
+    "sibling": false,
+    "owner_a": "FrederickPu",
+    "owner_b": "metalogiclabs"
+   },
+   {
+    "a": "canonical-min",
+    "b": "metalean-fast",
+    "jaccard": 0.0,
+    "sibling": false,
+    "owner_a": "FrederickPu",
+    "owner_b": "intgrah"
+   },
+   {
+    "a": "canonical-min",
+    "b": "metalean-slow",
+    "jaccard": 0.0,
+    "sibling": false,
+    "owner_a": "FrederickPu",
+    "owner_b": "intgrah"
+   },
+   {
+    "a": "canonical-min",
+    "b": "nanoclo",
+    "jaccard": 0.0,
+    "sibling": false,
+    "owner_a": "FrederickPu",
+    "owner_b": "sgraf812"
+   },
+   {
+    "a": "canonical-min",
+    "b": "nanoclo-fortran",
+    "jaccard": 0.0,
+    "sibling": false,
+    "owner_a": "FrederickPu",
+    "owner_b": "kim-em"
+   },
+   {
+    "a": "canonical-min",
+    "b": "rpylean",
+    "jaccard": 0.0,
+    "sibling": false,
+    "owner_a": "FrederickPu",
+    "owner_b": "Julian"
+   },
+   {
+    "a": "canonical-min",
+    "b": "vow-lean-kernel",
+    "jaccard": 0.0,
+    "sibling": false,
+    "owner_a": "FrederickPu",
+    "owner_b": "pmatos"
+   },
+   {
+    "a": "lazylean",
+    "b": "mathgraph",
+    "jaccard": 0.2222222222222222,
+    "sibling": false,
+    "owner_a": "corun1024",
+    "owner_b": "metalogiclabs"
+   },
+   {
+    "a": "lazylean",
+    "b": "metalean-fast",
+    "jaccard": 0.16666666666666666,
+    "sibling": false,
+    "owner_a": "corun1024",
+    "owner_b": "intgrah"
+   },
+   {
+    "a": "lazylean",
+    "b": "metalean-slow",
+    "jaccard": 0.2,
+    "sibling": false,
+    "owner_a": "corun1024",
+    "owner_b": "intgrah"
+   },
+   {
+    "a": "lazylean",
+    "b": "nanoclo",
+    "jaccard": 0.6666666666666666,
+    "sibling": false,
+    "owner_a": "corun1024",
+    "owner_b": "sgraf812"
+   },
+   {
+    "a": "lazylean",
+    "b": "nanoclo-fortran",
+    "jaccard": 0.2857142857142857,
+    "sibling": false,
+    "owner_a": "corun1024",
+    "owner_b": "kim-em"
+   },
+   {
+    "a": "lazylean",
+    "b": "rpylean",
+    "jaccard": 0.0,
+    "sibling": false,
+    "owner_a": "corun1024",
+    "owner_b": "Julian"
+   },
+   {
+    "a": "lazylean",
+    "b": "vow-lean-kernel",
+    "jaccard": 0.25,
+    "sibling": false,
+    "owner_a": "corun1024",
+    "owner_b": "pmatos"
+   },
+   {
+    "a": "mathgraph",
+    "b": "metalean-fast",
+    "jaccard": 0.3333333333333333,
+    "sibling": false,
+    "owner_a": "metalogiclabs",
+    "owner_b": "intgrah"
+   },
+   {
+    "a": "mathgraph",
+    "b": "metalean-slow",
+    "jaccard": 0.375,
+    "sibling": false,
+    "owner_a": "metalogiclabs",
+    "owner_b": "intgrah"
+   },
+   {
+    "a": "mathgraph",
+    "b": "nanoclo",
+    "jaccard": 0.25,
+    "sibling": false,
+    "owner_a": "metalogiclabs",
+    "owner_b": "sgraf812"
+   },
+   {
+    "a": "mathgraph",
+    "b": "nanoclo-fortran",
+    "jaccard": 0.75,
+    "sibling": false,
+    "owner_a": "metalogiclabs",
+    "owner_b": "kim-em"
+   },
+   {
+    "a": "mathgraph",
+    "b": "rpylean",
+    "jaccard": 0.125,
+    "sibling": false,
+    "owner_a": "metalogiclabs",
+    "owner_b": "Julian"
+   },
+   {
+    "a": "mathgraph",
+    "b": "vow-lean-kernel",
+    "jaccard": 0.25,
+    "sibling": false,
+    "owner_a": "metalogiclabs",
+    "owner_b": "pmatos"
+   },
+   {
+    "a": "metalean-fast",
+    "b": "metalean-slow",
+    "jaccard": 0.75,
+    "sibling": true,
+    "owner_a": "intgrah",
+    "owner_b": "intgrah"
+   },
+   {
+    "a": "metalean-fast",
+    "b": "nanoclo",
+    "jaccard": 0.2,
+    "sibling": false,
+    "owner_a": "intgrah",
+    "owner_b": "sgraf812"
+   },
+   {
+    "a": "metalean-fast",
+    "b": "nanoclo-fortran",
+    "jaccard": 0.42857142857142855,
+    "sibling": false,
+    "owner_a": "intgrah",
+    "owner_b": "kim-em"
+   },
+   {
+    "a": "metalean-fast",
+    "b": "rpylean",
+    "jaccard": 0.0,
+    "sibling": false,
+    "owner_a": "intgrah",
+    "owner_b": "Julian"
+   },
+   {
+    "a": "metalean-fast",
+    "b": "vow-lean-kernel",
+    "jaccard": 0.2,
+    "sibling": false,
+    "owner_a": "intgrah",
+    "owner_b": "pmatos"
+   },
+   {
+    "a": "metalean-slow",
+    "b": "nanoclo",
+    "jaccard": 0.25,
+    "sibling": false,
+    "owner_a": "intgrah",
+    "owner_b": "sgraf812"
+   },
+   {
+    "a": "metalean-slow",
+    "b": "nanoclo-fortran",
+    "jaccard": 0.5,
+    "sibling": false,
+    "owner_a": "intgrah",
+    "owner_b": "kim-em"
+   },
+   {
+    "a": "metalean-slow",
+    "b": "rpylean",
+    "jaccard": 0.0,
+    "sibling": false,
+    "owner_a": "intgrah",
+    "owner_b": "Julian"
+   },
+   {
+    "a": "metalean-slow",
+    "b": "vow-lean-kernel",
+    "jaccard": 0.25,
+    "sibling": false,
+    "owner_a": "intgrah",
+    "owner_b": "pmatos"
+   },
+   {
+    "a": "nanoclo",
+    "b": "nanoclo-fortran",
+    "jaccard": 0.3333333333333333,
+    "sibling": true,
+    "owner_a": "sgraf812",
+    "owner_b": "kim-em"
+   },
+   {
+    "a": "nanoclo",
+    "b": "rpylean",
+    "jaccard": 0.0,
+    "sibling": false,
+    "owner_a": "sgraf812",
+    "owner_b": "Julian"
+   },
+   {
+    "a": "nanoclo",
+    "b": "vow-lean-kernel",
+    "jaccard": 0.3333333333333333,
+    "sibling": false,
+    "owner_a": "sgraf812",
+    "owner_b": "pmatos"
+   },
+   {
+    "a": "nanoclo-fortran",
+    "b": "rpylean",
+    "jaccard": 0.16666666666666666,
+    "sibling": false,
+    "owner_a": "kim-em",
+    "owner_b": "Julian"
+   },
+   {
+    "a": "nanoclo-fortran",
+    "b": "vow-lean-kernel",
+    "jaccard": 0.3333333333333333,
+    "sibling": false,
+    "owner_a": "kim-em",
+    "owner_b": "pmatos"
+   },
+   {
+    "a": "rpylean",
+    "b": "vow-lean-kernel",
+    "jaccard": 0.5,
+    "sibling": false,
+    "owner_a": "Julian",
+    "owner_b": "pmatos"
+   }
+  ]
+ },
+ "C": {
+  "official|official-nightly": {
+   "jaccard": NaN,
+   "sizes": [
+    0,
+    0
+   ]
+  },
+  "official|nanoda": {
+   "jaccard": 0.0,
+   "sizes": [
+    0,
+    2
+   ]
+  },
+  "official|lean4lean": {
+   "jaccard": NaN,
+   "sizes": [
+    0,
+    0
+   ]
+  },
+  "official|con-leche": {
+   "jaccard": 0.0,
+   "sizes": [
+    0,
+    10
+   ]
+  },
+  "official|con-ron": {
+   "jaccard": 0.0,
+   "sizes": [
+    0,
+    9
+   ]
+  },
+  "official|ind-models": {
+   "jaccard": NaN,
+   "sizes": [
+    0,
+    0
+   ]
+  },
+  "official-nightly|nanoda": {
+   "jaccard": 0.0,
+   "sizes": [
+    0,
+    2
+   ]
+  },
+  "official-nightly|lean4lean": {
+   "jaccard": NaN,
+   "sizes": [
+    0,
+    0
+   ]
+  },
+  "official-nightly|con-leche": {
+   "jaccard": 0.0,
+   "sizes": [
+    0,
+    10
+   ]
+  },
+  "official-nightly|con-ron": {
+   "jaccard": 0.0,
+   "sizes": [
+    0,
+    9
+   ]
+  },
+  "official-nightly|ind-models": {
+   "jaccard": NaN,
+   "sizes": [
+    0,
+    0
+   ]
+  },
+  "nanoda|lean4lean": {
+   "jaccard": 0.0,
+   "sizes": [
+    2,
+    0
+   ]
+  },
+  "nanoda|con-leche": {
+   "jaccard": 0.2,
+   "sizes": [
+    2,
+    10
+   ]
+  },
+  "nanoda|con-ron": {
+   "jaccard": 0.2222222222222222,
+   "sizes": [
+    2,
+    9
+   ]
+  },
+  "nanoda|ind-models": {
+   "jaccard": 0.0,
+   "sizes": [
+    2,
+    0
+   ]
+  },
+  "lean4lean|con-leche": {
+   "jaccard": 0.0,
+   "sizes": [
+    0,
+    10
+   ]
+  },
+  "lean4lean|con-ron": {
+   "jaccard": 0.0,
+   "sizes": [
+    0,
+    9
+   ]
+  },
+  "lean4lean|ind-models": {
+   "jaccard": NaN,
+   "sizes": [
+    0,
+    0
+   ]
+  },
+  "con-leche|con-ron": {
+   "jaccard": 0.9,
+   "sizes": [
+    10,
+    9
+   ]
+  },
+  "con-leche|ind-models": {
+   "jaccard": 0.0,
+   "sizes": [
+    10,
+    0
+   ]
+  },
+  "con-ron|ind-models": {
+   "jaccard": 0.0,
+   "sizes": [
+    9,
+    0
+   ]
+  }
+ },
+ "D": {
+  "participation_ratio_all_failures": 3.6997263550661743,
+  "n_checkers_with_any_failure": 26,
+  "participation_ratio_wrong_accepts_nonempty": 2.4641664177280567,
+  "n_nonempty": 9
+ },
+ "multi_accept_tests": {
+  "bugs/nested-name-capture": {
+   "k": 4,
+   "checkers": [
+    "mathgraph",
+    "metalean-fast",
+    "metalean-slow",
+    "nanoclo-fortran"
+   ],
+   "desc_first_line": "Proof of False via a later declaration that takes the name of a temporary"
+  },
+  "bugs/nested-rec-rule-nfields": {
+   "k": 4,
+   "checkers": [
+    "mathgraph",
+    "metalean-fast",
+    "metalean-slow",
+    "nanoclo-fortran"
+   ],
+   "desc_first_line": "Proof of False via trusted field count in the recursor rule of a nested inductive."
+  },
+  "bugs/rec-rule-proof-irrel": {
+   "k": 4,
+   "checkers": [
+    "lazylean",
+    "mathgraph",
+    "nanoclo",
+    "nanoclo-fortran"
+   ],
+   "desc_first_line": "Proof of `False` via an ill-typed recursor rule that is compared with the"
+  },
+  "bugs/rec-rule-proof-irrel-nested": {
+   "k": 7,
+   "checkers": [
+    "lazylean",
+    "mathgraph",
+    "metalean-fast",
+    "metalean-slow",
+    "nanoclo",
+    "nanoclo-fortran",
+    "vow-lean-kernel"
+   ],
+   "desc_first_line": "Proof of `False` via an ill-typed rule of the auxiliary recursor of a nested"
+  },
+  "bugs/unit-rec-rule": {
+   "k": 2,
+   "checkers": [
+    "mathgraph",
+    "nanoclo-fortran"
+   ],
+   "desc_first_line": "Proof of False via a wrong recursor rule for a constructor without fields."
+  },
+  "other/inductive-undeclared-universe": {
+   "k": 4,
+   "checkers": [
+    "mathgraph",
+    "nanoclo-fortran",
+    "rpylean",
+    "vow-lean-kernel"
+   ],
+   "desc_first_line": "An inductive type whose type mentions a universe parameter it does not"
+  }
+ },
+ "multi_accept_diversity": {
+  "bugs/nested-name-capture": {
+   "k": 4,
+   "languages": [
+    "fortran",
+    "lean",
+    "rust"
+   ],
+   "owners": [
+    "intgrah",
+    "kim-em",
+    "metalogiclabs"
+   ],
+   "n_languages": 3,
+   "n_owners": 3
+  },
+  "bugs/nested-rec-rule-nfields": {
+   "k": 4,
+   "languages": [
+    "fortran",
+    "lean",
+    "rust"
+   ],
+   "owners": [
+    "intgrah",
+    "kim-em",
+    "metalogiclabs"
+   ],
+   "n_languages": 3,
+   "n_owners": 3
+  },
+  "bugs/rec-rule-proof-irrel": {
+   "k": 4,
+   "languages": [
+    "cpp",
+    "fortran",
+    "rust"
+   ],
+   "owners": [
+    "corun1024",
+    "kim-em",
+    "metalogiclabs",
+    "sgraf812"
+   ],
+   "n_languages": 3,
+   "n_owners": 4
+  },
+  "bugs/rec-rule-proof-irrel-nested": {
+   "k": 7,
+   "languages": [
+    "cpp",
+    "fortran",
+    "lean",
+    "rust",
+    "vow"
+   ],
+   "owners": [
+    "corun1024",
+    "intgrah",
+    "kim-em",
+    "metalogiclabs",
+    "pmatos",
+    "sgraf812"
+   ],
+   "n_languages": 5,
+   "n_owners": 6
+  },
+  "bugs/unit-rec-rule": {
+   "k": 2,
+   "languages": [
+    "fortran",
+    "rust"
+   ],
+   "owners": [
+    "kim-em",
+    "metalogiclabs"
+   ],
+   "n_languages": 2,
+   "n_owners": 2
+  },
+  "other/inductive-undeclared-universe": {
+   "k": 4,
+   "languages": [
+    "fortran",
+    "python",
+    "rust",
+    "vow"
+   ],
+   "owners": [
+    "Julian",
+    "kim-em",
+    "metalogiclabs",
+    "pmatos"
+   ],
+   "n_languages": 4,
+   "n_owners": 4
+  }
+ },
+ "B_top_pairs": [
+  [
+   "mathgraph",
+   "nanoclo-fortran",
+   0.75,
+   false
+  ],
+  [
+   "metalean-fast",
+   "metalean-slow",
+   0.75,
+   true
+  ],
+  [
+   "lazylean",
+   "nanoclo",
+   0.667,
+   false
+  ],
+  [
+   "metalean-slow",
+   "nanoclo-fortran",
+   0.5,
+   false
+  ],
+  [
+   "rpylean",
+   "vow-lean-kernel",
+   0.5,
+   false
+  ],
+  [
+   "metalean-fast",
+   "nanoclo-fortran",
+   0.429,
+   false
+  ],
+  [
+   "mathgraph",
+   "metalean-slow",
+   0.375,
+   false
+  ],
+  [
+   "mathgraph",
+   "metalean-fast",
+   0.333,
+   false
+  ]
+ ]
+}
