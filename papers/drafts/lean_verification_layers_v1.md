@@ -97,10 +97,12 @@ One assessor; classifications by one coder from public text; small samples; one 
 
 **Open items.** Whether a large verified run is literally covered by the printed theorem; the bridge between the proof's own reading of terms and the statement's reading (not read); per-check detail of the extra verification checks; an independent human reading of the specification; a base rate of kernel bugs by other means than the 2026 hunt (not found in any source read).
 
-## Appendix A. Preregistration
+## Appendix A. Preregistration and replication material
 
-For each computed analysis (§4.2, §4.3, §4.4, §6), the operator's working notes contain a prediction file committed before the analysis ran; commit ordering is recorded in version history. Hit/miss tallies are not reproduced here because they were scored by the same single reader who wrote the predictions. Scripts and derived summaries are not yet in this repository; until they are, §4.2–§4.4 and §6 are reader-reported computations (E1 as to inputs, unreplicated as to code).
+For each computed analysis (§4.2, §4.3, §4.4, §6), the operator's working notes contain a prediction file committed before the analysis ran; commit ordering is recorded in version history. Hit/miss tallies are not reproduced here because they were scored by the same single reader who wrote the predictions.
+
+Scripts and derived outputs for §4.2 and §4.3 are in `lean_verification_layers_v1_replication/` (README there states limits). The 2026-11-21 raw results file was not retained; a rerun of the §4.2 script on the 2026-11-22 file gives an overlap statistic of 43 against a null mean of 4.45 (46 and 4.22 as quoted in §4.2). §4.4 and §6 scripts are not yet released, so those figures remain reader-reported computations.
 
 ## Sources and provenance
 
-Sources are those listed in §3 (public documents, repositories at the stated commits, and arXiv 2606.29493 and 2611.26300). Computed figures are the reader's own recounts of public data; scripts are not yet released here (Appendix A). Primary-source verification: every number above was read or computed by the reader from the named source; none is taken from a secondary summary.
+Sources are those listed in §3 (public documents, repositories at the stated commits, and arXiv 2606.29493 and 2611.26300). Computed figures are the reader's own recounts of public data; scripts for §4.2–§4.3 are in the replication folder and those for §4.4 and §6 are not yet released (Appendix A). Primary-source verification: every number above was read or computed by the reader from the named source; none is taken from a secondary summary.

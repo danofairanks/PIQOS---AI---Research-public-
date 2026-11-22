@@ -1,0 +1,550 @@
+{
+ "n_arena_units": 35,
+ "class_rules": [
+  [
+   "nested",
+   "nested_inductive"
+  ],
+  [
+   "proof-irrel",
+   "proof_irrelevance"
+  ],
+  [
+   "rec",
+   "recursor_rules"
+  ],
+  [
+   "inductive",
+   "inductive_declaration"
+  ],
+  [
+   "ctor",
+   "inductive_declaration"
+  ],
+  [
+   "proj",
+   "projections"
+  ],
+  [
+   "level",
+   "universe_levels"
+  ],
+  [
+   "universe",
+   "universe_levels"
+  ],
+  [
+   "closure",
+   "closure_context_caching"
+  ],
+  [
+   "cache",
+   "closure_context_caching"
+  ],
+  [
+   "bvar",
+   "closure_context_caching"
+  ],
+  [
+   "context",
+   "closure_context_caching"
+  ],
+  [
+   "eta",
+   "eta"
+  ],
+  [
+   "large-elim",
+   "large_elimination"
+  ],
+  [
+   "lit",
+   "literals"
+  ]
+ ],
+ "A_all_six_pm": {
+  "coarse": {
+   "N": 41,
+   "S_obs": 12,
+   "n1": 4,
+   "n2": 2,
+   "GT_missing_mass": 0.0975609756097561,
+   "Chao1": 14.0,
+   "ratio": 1.1666666666666667,
+   "class_counts": {
+    "recursor_rules": 10,
+    "universe_levels": 5,
+    "nested_inductive": 5,
+    "projections": 5,
+    "inductive_declaration": 4,
+    "closure_context_caching": 4,
+    "large_elimination": 2,
+    "proof_irrelevance": 2,
+    "literals": 1,
+    "prop_sort_check": 1,
+    "runtime_refcount": 1,
+    "build_supply_chain": 1
+   }
+  },
+  "fine": {
+   "N": 41,
+   "S_obs": 41,
+   "n1": 41,
+   "n2": 0,
+   "GT_missing_mass": 1.0,
+   "Chao1": 861.0,
+   "ratio": 21.0,
+   "class_counts": {
+    "closure-level-subst": 1,
+    "constlevels": 1,
+    "ctor-num-fields": 1,
+    "eta-ctor-alias": 1,
+    "k-rec-conv": 1,
+    "large-elim-param": 1,
+    "large-elim-prop-bool": 1,
+    "level-imax-leq": 1,
+    "level-imax-normalization": 1,
+    "loose-bvar-value": 1,
+    "nat-rec-k-lie": 1,
+    "nat-rec-rules": 1,
+    "nested-name-capture": 1,
+    "nested-rec-rule-nfields": 1,
+    "nested-unused-param": 1,
+    "open-term-cache-context": 1,
+    "orphan-rec": 1,
+    "pi-closure-context": 1,
+    "proj-non-structure": 1,
+    "proj-of-imax-prop": 1,
+    "proj-of-stuck-prop": 1,
+    "proj-of-subst-prop": 1,
+    "rec-k-lie": 1,
+    "rec-missing-ih": 1,
+    "rec-of-subst-prop": 1,
+    "rec-rule-proof-irrel": 1,
+    "rec-rule-proof-irrel-nested": 1,
+    "rec-rule-wrong-arg": 1,
+    "rec-type-proof-irrel": 1,
+    "unit-rec-rule": 1,
+    "extra-rec": 1,
+    "inductive-undeclared-universe": 1,
+    "nat-lit-add-bad": 1,
+    "orphan-ctor": 1,
+    "proj-of-prop": 1,
+    "pm#14613": 1,
+    "pm#14616": 1,
+    "pm#14806": 1,
+    "pm#14807": 1,
+    "pm#14838": 1,
+    "pm#14833": 1
+   }
+  },
+  "inductive_share": 0.5121951219512195,
+  "chao2": {
+   "classes_with_known_finder": 9,
+   "Q1": 5,
+   "Q2": 2,
+   "Qge2": 4,
+   "estimate": 15.25,
+   "incidence": {
+    "universe_levels": [
+     "differential_run",
+     "vendor_internal_model"
+    ],
+    "inductive_declaration": [
+     "differential_run",
+     "human_review"
+    ],
+    "large_elimination": [
+     "ai_assisted_human"
+    ],
+    "closure_context_caching": [
+     "differential_run",
+     "human_review",
+     "vendor_internal_model"
+    ],
+    "nested_inductive": [
+     "ai_assisted_human",
+     "differential_run",
+     "vendor_internal_model"
+    ],
+    "recursor_rules": [
+     "differential_run"
+    ],
+    "prop_sort_check": [
+     "vendor_internal_model"
+    ],
+    "runtime_refcount": [
+     "vendor_internal_model"
+    ],
+    "build_supply_chain": [
+     "vendor_internal_model"
+    ]
+   }
+  }
+ },
+ "B_four_not_in_arena": {
+  "coarse": {
+   "N": 39,
+   "S_obs": 11,
+   "n1": 3,
+   "n2": 2,
+   "GT_missing_mass": 0.07692307692307693,
+   "Chao1": 12.0,
+   "ratio": 1.0909090909090908,
+   "class_counts": {
+    "recursor_rules": 10,
+    "universe_levels": 5,
+    "nested_inductive": 5,
+    "projections": 5,
+    "inductive_declaration": 4,
+    "closure_context_caching": 3,
+    "large_elimination": 2,
+    "proof_irrelevance": 2,
+    "literals": 1,
+    "runtime_refcount": 1,
+    "build_supply_chain": 1
+   }
+  },
+  "fine": {
+   "N": 39,
+   "S_obs": 39,
+   "n1": 39,
+   "n2": 0,
+   "GT_missing_mass": 1.0,
+   "Chao1": 780.0,
+   "ratio": 20.0,
+   "class_counts": {
+    "closure-level-subst": 1,
+    "constlevels": 1,
+    "ctor-num-fields": 1,
+    "eta-ctor-alias": 1,
+    "k-rec-conv": 1,
+    "large-elim-param": 1,
+    "large-elim-prop-bool": 1,
+    "level-imax-leq": 1,
+    "level-imax-normalization": 1,
+    "loose-bvar-value": 1,
+    "nat-rec-k-lie": 1,
+    "nat-rec-rules": 1,
+    "nested-name-capture": 1,
+    "nested-rec-rule-nfields": 1,
+    "nested-unused-param": 1,
+    "open-term-cache-context": 1,
+    "orphan-rec": 1,
+    "pi-closure-context": 1,
+    "proj-non-structure": 1,
+    "proj-of-imax-prop": 1,
+    "proj-of-stuck-prop": 1,
+    "proj-of-subst-prop": 1,
+    "rec-k-lie": 1,
+    "rec-missing-ih": 1,
+    "rec-of-subst-prop": 1,
+    "rec-rule-proof-irrel": 1,
+    "rec-rule-proof-irrel-nested": 1,
+    "rec-rule-wrong-arg": 1,
+    "rec-type-proof-irrel": 1,
+    "unit-rec-rule": 1,
+    "extra-rec": 1,
+    "inductive-undeclared-universe": 1,
+    "nat-lit-add-bad": 1,
+    "orphan-ctor": 1,
+    "proj-of-prop": 1,
+    "pm#14613": 1,
+    "pm#14616": 1,
+    "pm#14838": 1,
+    "pm#14833": 1
+   }
+  },
+  "inductive_share": 0.5384615384615384,
+  "chao2": {
+   "classes_with_known_finder": 8,
+   "Q1": 4,
+   "Q2": 3,
+   "Qge2": 4,
+   "estimate": 10.666666666666666,
+   "incidence": {
+    "universe_levels": [
+     "differential_run",
+     "vendor_internal_model"
+    ],
+    "inductive_declaration": [
+     "differential_run",
+     "human_review"
+    ],
+    "large_elimination": [
+     "ai_assisted_human"
+    ],
+    "closure_context_caching": [
+     "differential_run",
+     "human_review"
+    ],
+    "nested_inductive": [
+     "ai_assisted_human",
+     "differential_run",
+     "vendor_internal_model"
+    ],
+    "recursor_rules": [
+     "differential_run"
+    ],
+    "runtime_refcount": [
+     "vendor_internal_model"
+    ],
+    "build_supply_chain": [
+     "vendor_internal_model"
+    ]
+   }
+  }
+ },
+ "C_arena_only": {
+  "coarse": {
+   "N": 35,
+   "S_obs": 9,
+   "n1": 1,
+   "n2": 2,
+   "GT_missing_mass": 0.02857142857142857,
+   "Chao1": 9.0,
+   "ratio": 1.0,
+   "class_counts": {
+    "recursor_rules": 10,
+    "projections": 5,
+    "universe_levels": 4,
+    "inductive_declaration": 4,
+    "nested_inductive": 4,
+    "closure_context_caching": 3,
+    "large_elimination": 2,
+    "proof_irrelevance": 2,
+    "literals": 1
+   }
+  },
+  "fine": {
+   "N": 35,
+   "S_obs": 35,
+   "n1": 35,
+   "n2": 0,
+   "GT_missing_mass": 1.0,
+   "Chao1": 630.0,
+   "ratio": 18.0,
+   "class_counts": {
+    "closure-level-subst": 1,
+    "constlevels": 1,
+    "ctor-num-fields": 1,
+    "eta-ctor-alias": 1,
+    "k-rec-conv": 1,
+    "large-elim-param": 1,
+    "large-elim-prop-bool": 1,
+    "level-imax-leq": 1,
+    "level-imax-normalization": 1,
+    "loose-bvar-value": 1,
+    "nat-rec-k-lie": 1,
+    "nat-rec-rules": 1,
+    "nested-name-capture": 1,
+    "nested-rec-rule-nfields": 1,
+    "nested-unused-param": 1,
+    "open-term-cache-context": 1,
+    "orphan-rec": 1,
+    "pi-closure-context": 1,
+    "proj-non-structure": 1,
+    "proj-of-imax-prop": 1,
+    "proj-of-stuck-prop": 1,
+    "proj-of-subst-prop": 1,
+    "rec-k-lie": 1,
+    "rec-missing-ih": 1,
+    "rec-of-subst-prop": 1,
+    "rec-rule-proof-irrel": 1,
+    "rec-rule-proof-irrel-nested": 1,
+    "rec-rule-wrong-arg": 1,
+    "rec-type-proof-irrel": 1,
+    "unit-rec-rule": 1,
+    "extra-rec": 1,
+    "inductive-undeclared-universe": 1,
+    "nat-lit-add-bad": 1,
+    "orphan-ctor": 1,
+    "proj-of-prop": 1
+   }
+  },
+  "inductive_share": 0.5714285714285714,
+  "chao2": {
+   "classes_with_known_finder": 6,
+   "Q1": 3,
+   "Q2": 3,
+   "Qge2": 3,
+   "estimate": 7.5,
+   "incidence": {
+    "universe_levels": [
+     "differential_run"
+    ],
+    "inductive_declaration": [
+     "differential_run",
+     "human_review"
+    ],
+    "large_elimination": [
+     "ai_assisted_human"
+    ],
+    "closure_context_caching": [
+     "differential_run",
+     "human_review"
+    ],
+    "nested_inductive": [
+     "ai_assisted_human",
+     "differential_run"
+    ],
+    "recursor_rules": [
+     "differential_run"
+    ]
+   }
+  }
+ },
+ "bug_level_multi_finder_units": [],
+ "arena_first_commit_days": {
+  "2026-09-17": 21,
+  "2026-09-21": 1,
+  "2026-10-12": 1,
+  "2026-10-23": 1,
+  "2026-10-27": 5,
+  "2026-10-30": 1,
+  "2026-11-09": 1,
+  "2026-11-10": 4
+ },
+ "n_pre_or_bulk": 21,
+ "n_post": 14,
+ "prospective": {
+  "events": [
+   [
+    "other/nat-lit-add-bad",
+    "2026-09-21",
+    "literals",
+    0.048,
+    1
+   ],
+   [
+    "bugs/eta-ctor-alias",
+    "2026-10-12",
+    "inductive_declaration",
+    0.091,
+    0
+   ],
+   [
+    "bugs/nested-rec-rule-nfields",
+    "2026-10-23",
+    "nested_inductive",
+    0.087,
+    0
+   ],
+   [
+    "bugs/loose-bvar-value",
+    "2026-10-27",
+    "closure_context_caching",
+    0.042,
+    1
+   ],
+   [
+    "bugs/unit-rec-rule",
+    "2026-10-27",
+    "recursor_rules",
+    0.08,
+    0
+   ],
+   [
+    "bugs/closure-level-subst",
+    "2026-10-27",
+    "universe_levels",
+    0.077,
+    0
+   ],
+   [
+    "bugs/pi-closure-context",
+    "2026-10-27",
+    "closure_context_caching",
+    0.074,
+    0
+   ],
+   [
+    "bugs/nested-name-capture",
+    "2026-10-27",
+    "nested_inductive",
+    0.036,
+    0
+   ],
+   [
+    "other/inductive-undeclared-universe",
+    "2026-10-30",
+    "inductive_declaration",
+    0.034,
+    0
+   ],
+   [
+    "bugs/open-term-cache-context",
+    "2026-11-09",
+    "closure_context_caching",
+    0.033,
+    0
+   ],
+   [
+    "bugs/rec-rule-proof-irrel",
+    "2026-11-10",
+    "proof_irrelevance",
+    0.032,
+    1
+   ],
+   [
+    "bugs/rec-rule-proof-irrel-nested",
+    "2026-11-10",
+    "nested_inductive",
+    0.062,
+    0
+   ],
+   [
+    "bugs/rec-rule-wrong-arg",
+    "2026-11-10",
+    "recursor_rules",
+    0.061,
+    0
+   ],
+   [
+    "bugs/rec-type-proof-irrel",
+    "2026-11-10",
+    "proof_irrelevance",
+    0.059,
+    0
+   ]
+  ],
+  "mean_pred": 0.05828571428571428,
+  "obs_new_frac": 0.21428571428571427,
+  "brier": 0.20066671428571428
+ },
+ "post_events_by_month": {
+  "2026-09": 1,
+  "2026-10": 8,
+  "2026-11": 5
+ },
+ "post_new_classes_by_month": {
+  "2026-09": 1,
+  "2026-10": 1,
+  "2026-11": 1
+ },
+ "official_subset": {
+  "n": 12,
+  "coarse": {
+   "universe_levels": 1,
+   "inductive_declaration": 2,
+   "closure_context_caching": 1,
+   "nested_inductive": 2,
+   "projections": 2,
+   "recursor_rules": 4
+  }
+ },
+ "exploratory_first_1_tokens": {
+  "classes": 18,
+  "n1": 11,
+  "n2": 3,
+  "GT": 0.3142857142857143,
+  "Chao1": 31.75
+ },
+ "exploratory_first_2_tokens": {
+  "classes": 27,
+  "n1": 22,
+  "n2": 3,
+  "GT": 0.6285714285714286,
+  "Chao1": 84.75
+ }
+}
