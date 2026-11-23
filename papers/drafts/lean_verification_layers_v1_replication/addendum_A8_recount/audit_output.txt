@@ -1,0 +1,10 @@
+manifest rows 1506 {'checked': 1393, 'in a checked file': 87, 'accepted by Lean (linter warnings only)': 26} | sources 531 | rate-limit pages in fetched set 0
+folder-name suffix != source sha prefix: 0
+receipts 666 exit codes {(True, 0): 608, (False, 1): 39, (False, 255): 18, (True, None): 1}
+declaration support by a hash-matching receipt: {('checked', True): 1389, ('in a checked file', True): 87, ('accepted by Lean (linter warnings only)', True): 26, ('checked', False): 4}
+ unsupported: [('checked', 'Round197B.actual_complex_seed_lattice_decay'), ('checked', 'Round95E.exact_smooth_lift_approximation'), ('checked', 'Round95E.smooth_lifts_geometric_correction_bound'), ('checked', 'Round95E.smooth_lifts_summable_convolved_correction')]
+sources with no hash-matching exit-0 receipt: 15
+source lines 607614 | non-blank non-comment 550232 | distinct stripped 69886
+pattern counts (lines, files): {'sorry': (0, 0), 'declared assumption (Lean keyword)': (0, 0), 'native_decide': (0, 0), 'opaque': (0, 0), 'unsafe': (0, 0), 'maxHeartbeats': (305, 126)}
+receipts printing sorryAx: 5 ['Proof-5d0049cf89a6']
+ISSUES.md: issue sections 44
