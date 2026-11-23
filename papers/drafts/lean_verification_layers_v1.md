@@ -97,6 +97,20 @@ One assessor; classifications by one coder from public text; small samples; one 
 
 **Open items.** Whether a large verified run is literally covered by the printed theorem; the bridge between the proof's own reading of terms and the statement's reading (not read); per-check detail of the extra verification checks; an independent human reading of the specification; a base rate of kernel bugs by other means than the 2026 hunt (not found in any source read).
 
+## Addendum A (2026-11-23): a public explainer after the evidence cutoff
+
+*Status: DRAFT. AI-assisted (Claude), single reader. Evidence for this addendum is one public explainer and workshop write-up dated 2026-11-23, two days after this draft's evidence cutoff, read from a pasted copy. Everything it says about third-party reports (checker runs, logs, a certification statement, maintainers' postmortems) is its own account; those sources were not re-read here.*
+
+**A.1 Timing of the §7 items.** §7 records two checks on the cited verification page as still running at the cutoff. The explainer reports that the certifying parties' comparator run and four independent checkers accept the proof, and that a third party's sandboxed build reproduced the published export byte for byte. If those reports are accurate, §7's "still running" is out of date. This draft has not read the logs; the sentence in §7 should be replaced by a reading of them, not by the explainer's summary.
+
+**A.2 The independence argument.** The explainer argues that a false proof would have to fool every checker "in the same way", and that this is "small enough that beyond reasonable doubt means something precise". That rests on the checkers being independent samples of failure. §4.2's computed overlap (statistic 46 against a permuted mean of 4.2 and a 95th percentile of 8) and §4.4's grouping (about three independence groups among the six shipped checkers; a verified kernel and its derived port form one lineage) show they are not independent samples in the arena data. Neither result says the chance of a joint failure on a given proof is large. §4.3 says the data do not identify a rate, and the explainer gives none. What its account of last summer's bug does support is narrower: that exploit needed two separate implementation errors in two checkers.
+
+**A.3 "Read the twenty lines".** The explainer says a reader needs to read only the few lines that state the theorem, because the statement is the library's own definition and the library is curated. This draft's layer 3 and §8 question 1 ask who has read the definition closure the statement relies on. The two positions are compatible when the statement uses only curated library definitions: then the open question is whether anyone has read that closure, not whether the headline lines are readable. The explainer's own list of human skills (reading the statement, knowing which statements to trust, running the checks) matches layers 1, 5 and 3 here.
+
+**A.4 What the explainer adds that this draft lacked.** A short worked list of conventions that make a Lean statement differ from its informal form (natural-number subtraction truncates; division by zero is defined to be zero), and a sandboxing warning for running unreviewed Lean code. Both are consistent with §6 and §8 and could be cited there.
+
+**A.5 Limits of this addendum.** One reader; one explainer; no logs opened; same-family caveat (the explainer reports that the proof and one of the checkers were produced with Claude, and this draft is AI-assisted by the same model family).
+
 ## Appendix A. Preregistration and replication material
 
 For each computed analysis (§4.2, §4.3, §4.4, §6), the operator's working notes contain a prediction file committed before the analysis ran; commit ordering is recorded in version history. Hit/miss tallies are not reproduced here because they were scored by the same single reader who wrote the predictions.
