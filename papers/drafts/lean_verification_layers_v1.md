@@ -111,6 +111,22 @@ One assessor; classifications by one coder from public text; small samples; one 
 
 **A.5 Limits of this addendum.** One reader; one explainer; no logs opened; same-family caveat (the explainer reports that the proof and one of the checkers were produced with Claude, and this draft is AI-assisted by the same model family).
 
+**A.6 A contrast case: a kernel-checked Lean package whose theorems are not the advertised ones.** This project's own case study of a published claim to have solved the six remaining Clay Millennium problems (AIX Global, paper dated 2026-08-30; downloadable Lean 4 package; [`2026-09-03_aix_global_millennium_lean_proof_claim.md`](../../case_studies/2026-09-03_aix_global_millennium_lean_proof_claim.md)) is a useful negative control for the layers in §2 and for the explainer's four tests in A.1 to A.3. As read in the case study (one reader plus two outside reviewers, authorship method not established): the package compiles; the package's own certificate reports no `sorry` and no project-specific assumptions, which the case study finds literally true; three of the six headline theorems (Hodge, Navier-Stokes, Birch and Swinnerton-Dyer) prove the same statement, `0 < n + 1`, which is not any of those problems; two more (Riemann Hypothesis, P versus NP) are real conditional theorems whose decisive hypotheses are never supplied; the named "closed final" theorems and certificate identifiers that the paper says carry the result do not appear in the published package. The kernel accepts every term in it, because every term is a correct proof of its own stated type.
+
+The comparison with the RH case in §7 and A.1 is therefore structural, not a statement about the merits of either proof:
+
+| Layer (§2) | AIX Global package (case study) | RH proof (§7, A.1; as reported, logs not read here) |
+|---|---|---|
+| 2 compiles; assumption listing shows only standard assumptions | passes; no `sorry`, no project-specific assumptions | reported to pass |
+| 4 independent checkers accept the exported proof | the package is kernel-checked in its own build; independent checkers were not run here, and acceptance is expected because each term proves its stated type | reported to pass (the explainer names four checkers) |
+| 1 stated type is the claimed theorem | fails for three theorems; conditional on unsupplied hypotheses for two | the statement is the library's own definition, per the explainer |
+| 3 proved statement equals an isolated challenge statement | no challenge file; the identifiers the paper cites are absent | a comparator run is reported |
+| 7 a human understands why | absent | absent (§2) |
+
+What separates the two is not layers 2 or 4. The assumption listing and checker acceptance are reported to look the same in both, which is why neither can substitute for layers 1 and 3. The case study's outside reviewers name the failure "local correctness without global target fidelity", and the companion draft [`register_dressing_v1.md`](register_dressing_v1.md) (Addendum of 2026-09-22) reads the same pairing from the register side: a verifier checks internal consistency, and does not check whether the stated target is the advertised one. One refinement the Lean pipeline adds to that reading: the kernel does not bind the target, but a comparator against a trusted challenge statement is built to (layer 3), which is why §8 question 1 asks for the isolated statement file and who has read its definitions.
+
+*Limits.* One case, one reader plus two outside reviewers quoted in the case study; the case study states it does not establish intent or authorship method and does not check the proprietary computation the paper describes; the contrast is not a predictor of which packages merit review, and it makes no claim about the RH proof beyond which layers its reported checks address.
+
 ## Appendix A. Preregistration and replication material
 
 For each computed analysis (§4.2, §4.3, §4.4, §6), the operator's working notes contain a prediction file committed before the analysis ran; commit ordering is recorded in version history. Hit/miss tallies are not reproduced here because they were scored by the same single reader who wrote the predictions.
