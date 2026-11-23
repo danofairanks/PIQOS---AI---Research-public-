@@ -1,0 +1,12 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": ["Indep.finite_ceiling_indep", "Indep.exact_certificate_indep"],
+  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"],
+  "external_kernels": {
+    "Lean paranoid": ["/tmp/claude-0/lean_setup/elan_home/toolchains/leanprover--lean4---v4.35.0/bin/leanchecker-paranoid", "--silent", "--from-export"],
+    "nanoda": ["/tmp/claude-0/lean_setup/elan_home/toolchains/leanprover--lean4---v4.35.0/bin/nanoda_bin"],
+    "con-leche": ["/tmp/claude-0/lean_setup/elan_home/toolchains/leanprover--lean4---v4.35.0/bin/con-leche", "--verified", "--jobs=2"],
+    "con-ron": ["/tmp/claude-0/lean_setup/elan_home/toolchains/leanprover--lean4---v4.35.0/bin/con-ron", "--verified", "--jobs=2"]
+  }
+}
