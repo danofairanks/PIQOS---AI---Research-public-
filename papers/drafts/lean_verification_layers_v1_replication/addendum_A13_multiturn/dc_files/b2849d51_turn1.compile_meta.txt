@@ -1,0 +1,1 @@
+Scorer-only compile (M7), N condition (nothing sent to the model): turn-1 file as written: exit 1, 'omega could not prove the goal' with a counterexample constraint (b - a >= 1), as the model predicted ('the Lean proof above will fail'). Lean 4.27.0-rc1, Mathlib fdddb3ea. Path prefix shortened.

@@ -1,0 +1,25 @@
+{
+ "compiled": false,
+ "modules": 164,
+ "jobs": 1,
+ "build_seconds": 1206.3,
+ "slowest_modules": {
+  "CON.Count": 134.3,
+  "CON.Cover": 34.8,
+  "CON.S.C16": 24.6,
+  "CON.S.C7": 23.4,
+  "CON.S.C15": 22.8,
+  "CON.S.C5": 22.8,
+  "CON.S.C17": 22.2,
+  "CON.S.C19": 22.2,
+  "CON.S.C20": 22.2,
+  "CON.S.C18": 21.9,
+  "CON.S.C9": 21.9,
+  "CON.S.C0": 21.6,
+  "CON.S.C13": 21.6,
+  "CON.S.C34": 21.6,
+  "CON.S.C1": 21.0
+ },
+ "reason": "module CON.Count did not build (FAIL)",
+ "lean_output": "exit -9\n"
+}

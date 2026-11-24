@@ -1,0 +1,3 @@
+1f345f72_turn1_a.lean:3:46: error: unsolved goals
+x : ℝ
+⊢ ¬x = 0

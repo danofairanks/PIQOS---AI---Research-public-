@@ -1,0 +1,1 @@
+Scorer-only compile (M7), N condition (nothing sent to the model): files _a and _b each compiled as written, Lean 4.27.0-rc1, Mathlib fdddb3ea: exit 0, no messages.

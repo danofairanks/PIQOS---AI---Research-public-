@@ -1,0 +1,1 @@
+Compiled as written (the code block of the model's reply, including the leading blank line): `lake env lean <file>` in a scratch project, Lean 4.27.0-rc1, Mathlib fdddb3ea, 2026-11-23. Exit code 1. Wall 22.8 s. The .compile_output.txt file holds the compiler's messages only (the shell timing lines are excluded).

@@ -1,0 +1,1 @@
+Scorer-only compile (M7) of the turn-4 file as written (no turn 5): Lean 4.27.0-rc1, Mathlib fdddb3ea: exit 0, no messages.

@@ -1,0 +1,20 @@
+skeletons/Tasks.lean:12:8: warning: declaration uses 'sorry'
+skeletons/Tasks.lean:13:8: warning: declaration uses 'sorry'
+skeletons/Tasks.lean:14:8: warning: declaration uses 'sorry'
+skeletons/Tasks.lean:15:8: warning: declaration uses 'sorry'
+skeletons/Tasks.lean:19:8: warning: declaration uses 'sorry'
+skeletons/Tasks.lean:21:8: warning: declaration uses 'sorry'
+skeletons/Tasks.lean:23:8: warning: declaration uses 'sorry'
+skeletons/Tasks.lean:24:8: warning: declaration uses 'sorry'
+skeletons/Tasks.lean:28:8: warning: declaration uses 'sorry'
+skeletons/Tasks.lean:29:8: warning: declaration uses 'sorry'
+skeletons/Tasks.lean:30:8: warning: declaration uses 'sorry'
+skeletons/Tasks.lean:31:8: warning: declaration uses 'sorry'
+
+real	10m31.836s
+user	0m4.967s
+sys	0m5.129s
+
+[exited with code 0]
+
+[note, added by the scorer] Lean 4.27.0-rc1, Mathlib fdddb3ea, `import Mathlib`. Result: exit 0; the only messages are 12 "declaration uses 'sorry'" warnings, one per task theorem (lines 12-15 P1-P4, 19-24 U1-U4 (U1 19, U2 21, U3 23, U4 24), 28-31 F1-F4). The 4 counterexample proofs (negations of F1-F4) and the 4 witness proofs for P1-P4 compile with no message. Wall time 10m32s is I/O from a cold cache (user time 5 s).

@@ -1,0 +1,1 @@
+Compiled as written, Lean 4.27.0-rc1, Mathlib fdddb3ea: exit 0, no messages. Sent in the DC turn-4 prefix as '(the compiler printed no messages)'.

@@ -1,0 +1,1 @@
+Compiled as written, Lean 4.27.0-rc1, Mathlib fdddb3ea, 2026-11-23: exit 0, no messages (empty output file). The file states and proves `four_vertices_have_even_cardinality` (Fintype.card V = 4 -> Even (Fintype.card V)); no `Balanced`, no graph; it is not the frozen statement. Turn-4 prefix again uses the scorer-written phrase "(the compiler printed no messages)".

@@ -1,0 +1,1 @@
+Scorer-only (M7), N condition: the turn-2 file is text-identical to the turn-1 file (and to dc_files/6893cfd4_turn1.lean); result carried over: exit 0, no messages.

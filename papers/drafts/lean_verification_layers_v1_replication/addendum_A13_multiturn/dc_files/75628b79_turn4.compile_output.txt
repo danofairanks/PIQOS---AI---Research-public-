@@ -1,0 +1,3 @@
+75628b79_turn4.lean:9:2: error: unsolved goals
+case pos
+⊢ False

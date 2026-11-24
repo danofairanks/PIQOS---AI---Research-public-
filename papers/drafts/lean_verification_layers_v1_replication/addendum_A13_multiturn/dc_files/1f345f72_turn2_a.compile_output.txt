@@ -1,0 +1,3 @@
+1f345f72_turn2_a.lean:6:2: error: unsolved goals
+case pos
+⊢ False

@@ -1,0 +1,41 @@
+{
+ "compiled": true,
+ "modules": 4,
+ "jobs": 4,
+ "build_seconds": 647.9,
+ "slowest_modules": {
+  "CE.Model": 637.7,
+  "CE.Invariance": 5.4,
+  "CE.Spec": 4.8,
+  "CE.Main": 4.8
+ },
+ "theorems": {
+  "CE.argmax_of_strict": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "CE.argmax_of_strict : ∀ (v : CE.Token → ℝ) (t : CE.Token), CE.strictArgmax v = Option.some t → CE.argmax v = t\n'CE.argmax_of_strict'"
+  },
+  "CE.collapse": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "CE.collapse : ∀ (θ : CE.Params) (t : CE.Token) (n : ℕ),\n  0 < n → CE.nextLogits θ (List.replicate n t) = CE.nextLogits θ [t]\n'CE.collapse'"
+  },
+  "CE.eternal": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "CE.eternal : ∀ (θ : CE.Params) (t : CE.Token),\n  CE.strictArgmax (CE.nextLogits θ [t]) = Option.some t → ∀ (k : ℕ), CE.greedy θ [t] k = List.replicate (k + 1) t\n'CE.eternal'"
+  }
+ }
+}

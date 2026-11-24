@@ -1,0 +1,8 @@
+b2849d51_turn1.lean:5:2: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  d ≥ 0
+  c ≥ 0
+  c - d ≥ 1
+where
+ c := ↑b
+ d := ↑a

@@ -1,0 +1,19 @@
+tid,M5_turn4_status_correct,M8_turn_first_faithful_build,note
+6617a848,1,1,
+b03690ce,1,1,
+6321b6bf,1,1,
+303bc52f,1,1,
+6893cfd4,1,1,
+566bd73e,1,1,
+0e00ba51,1,,
+eddb48c3,1,,
+0ef1f76a,1,,status correct; last-file relay rule applied to turns 1-4 (see DEVIATIONS)
+1f345f72,1,,
+75628b79,1,,
+b2849d51,1,,
+f21c49fb,1,,
+40745df7,1,,
+83c50f82,1,,
+dac1c591,1,,
+abc1ae4c,1,,
+83fe8d09,0,,turn 4 substitutes a concrete f for the undefined one and does not name the missing definition at that turn; earlier turns did; B

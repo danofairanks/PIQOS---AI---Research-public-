@@ -1,0 +1,25 @@
+{
+ "compiled": false,
+ "modules": 51,
+ "jobs": 4,
+ "build_seconds": 643.0,
+ "slowest_modules": {
+  "PRO.K.C0_q4": 388.6,
+  "PRO.K.C0_q5": 359.2,
+  "PRO.K.C0_q1": 337.4,
+  "PRO.K.C0_q3": 197.7,
+  "PRO.K.Fin_e": 150.9,
+  "PRO.K.C0_o4": 86.5,
+  "PRO.Trig": 36.6,
+  "PRO.K.C0_a4": 31.8,
+  "PRO.B.C0": 30.3,
+  "PRO.K.C0_q0": 26.3,
+  "PRO.K.C0_q2": 26.3,
+  "PRO.Elem": 12.9,
+  "PRO.Gelu": 8.7,
+  "PRO.Rebut": 7.8,
+  "PRO.IntervalSound": 7.5
+ },
+ "reason": "module PRO.K.C0_q0 did not build (FAIL)",
+ "lean_output": "exit -9\n"
+}

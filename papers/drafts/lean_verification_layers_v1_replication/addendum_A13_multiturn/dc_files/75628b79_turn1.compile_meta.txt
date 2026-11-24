@@ -1,0 +1,1 @@
+Two code blocks. _a: exit 1, error 'unsolved goals x : ℝ ⊢ ¬x = 0' (line 5). _b: exit 0, no messages. Under the amended rule both outputs are relayed, labelled in order; _a's output verbatim with the scratch path. Lean 4.27.0-rc1, Mathlib fdddb3ea.
