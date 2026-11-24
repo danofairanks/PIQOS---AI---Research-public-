@@ -1,0 +1,1 @@
+Compiled as written (one file), Lean 4.27.0-rc1, Mathlib fdddb3ea: exit 1. Error at line 5 col 25: 'Function expected at a but this term has type ℝ; Note: Expected a function because this term is being applied to the argument ·' (the model wrote the middle dot '·' as an operator in Lean). Relayed verbatim (with the scratch path) in the DC turn-4 prefix.

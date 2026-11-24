@@ -1,0 +1,1 @@
+Scorer-only compile (M7), N condition (nothing sent to the model): files _a and _b of turn 1 compiled as written (turn-2 files are text-identical copies, same result), Lean 4.27.0-rc1, Mathlib fdddb3ea: exit 0, no messages (the slow wall time was a cold Mathlib cache).

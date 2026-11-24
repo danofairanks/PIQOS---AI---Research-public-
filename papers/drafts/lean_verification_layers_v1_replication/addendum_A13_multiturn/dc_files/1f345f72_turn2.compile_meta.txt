@@ -1,0 +1,1 @@
+Scorer-only compile (M7), D condition: _a (case split, original statement): exit 1, error 'unsolved goals, case pos, ⊢ False' (line 6); _b (negation): exit 0, no messages. Lean 4.27.0-rc1, Mathlib fdddb3ea.

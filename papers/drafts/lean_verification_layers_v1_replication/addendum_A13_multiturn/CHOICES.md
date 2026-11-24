@@ -1,0 +1,7 @@
+# IUP-1 choices, recorded 2026-11-23 before the first run (not changed after it)
+- Pilot: **min** (18 transcripts: one model, 6 tasks, 2 per category, conditions N, D, DC). Operator's choice: "Min pilot, ChatGPT".
+- Model: **ChatGPT** (the product the operator uses). Exact model name/version/tier as shown by the interface: to be written into each transcript header by the operator; if the interface offers a model switch, the same model is used for all 18 (a change mid-pilot is a deviation, logged in `DEVIATIONS.md`).
+- Run sheet: `run_sheet_min.tsv`, produced by `python3 make_run_sheet.py min` (seed 20261123; sha256 of the file recorded below); tasks drawn: P1, P4, U2, U3, F1, F3; run order as in the sheet.
+- Blinding, stated honestly: the scorer (an Anthropic model) already saw the condition column of this sheet in the conversation when the generator was first tested, and the scripted follow-up turns (and, for DC, the pasted compiler output) reveal the condition inside every transcript anyway. So the scorer is NOT blind to condition. Mitigation: per-turn codes are assigned from the transcript text against the frozen codebook in `PREREG_DRAFT.md` (M1 to M8) before any cross-condition tabulation, and the coding sheet is committed before the tables are made. This limit goes into RESULTS.
+- Falsifiers and analysis plan: as in `PREREG_DRAFT.md`, unchanged.
+- run_sheet_min.tsv sha256: 26e2fac596aab3374b2c75068e9b39cdb10bfb7b4cdb9cdd2b90c1c7148ad196

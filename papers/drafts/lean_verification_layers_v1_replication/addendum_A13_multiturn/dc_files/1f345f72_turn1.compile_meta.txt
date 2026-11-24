@@ -1,0 +1,1 @@
+Scorer-only compile (M7), D condition (nothing sent to the model): _a (the false statement closed by intro x; norm_num): exit 1, error 'unsolved goals ... ⊢ ¬x = 0'. _b (counterexample example): exit 0, no messages. Lean 4.27.0-rc1, Mathlib fdddb3ea. The model's predicted 'Does not compile' for _a matches.

@@ -1,0 +1,11 @@
+def SatLowerBound.ExactCertificate125 : Prop :=
+∀ (w r : ℕ),
+  8 ≤ w →
+    4 ≤ r →
+      r < w →
+        ∀ (C : Circuit (inputBits w)),
+          C.Computes (satFunction w) → 5 * inputBits w + (21 * r - 72) * remainingClauses w r ≤ 5 * C.size + 5
+'SatLowerBound.main_lower_bound_125' depends on axioms: [propext, Classical.choice, Quot.sound]
+AXIOM AUDIT PASSED: main_lower_bound_125 uses only [propext, Classical.choice, Quot.sound]
+'SatLowerBound.main_lower_bound_125_full_range' depends on axioms: [propext, Classical.choice, Quot.sound]
+AXIOM AUDIT PASSED: full-range 12/5 certificate uses only [propext, Classical.choice, Quot.sound]

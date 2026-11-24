@@ -1,0 +1,1 @@
+Scorer-only compile (M7), D condition: turn-4 file as written, Lean 4.27.0-rc1, Mathlib fdddb3ea: exit 0 with one 'declaration uses sorry' warning (line 4). Path prefix shortened.

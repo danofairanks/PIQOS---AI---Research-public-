@@ -1,0 +1,6 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": ["Indep.finite_ceiling_indep", "Indep.exact_certificate_indep"],
+  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"]
+}

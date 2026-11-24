@@ -1,0 +1,1 @@
+Scorer-only compile (M7), D condition: turn-3 file as written (text-identical to the run-1 turn-2 file), Lean 4.27.0-rc1, Mathlib fdddb3ea: exit 0, no messages.

@@ -1,0 +1,1 @@
+Scorer-only (M7), N condition: the file is text-identical to dc_files/6893cfd4_turn1.lean (theorem square_add_identity closed by ring), which compiled with exit 0 and no messages; result carried over, not recompiled.

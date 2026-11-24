@@ -1,0 +1,273 @@
+{
+ "compiled": true,
+ "modules": 117,
+ "jobs": 4,
+ "build_seconds": 78.6,
+ "slowest_modules": {
+  "PRO.Main": 20.7,
+  "PRO.OppMain": 9.0,
+  "PRO.Model": 6.0,
+  "PRO.OppInduction": 6.0,
+  "PRO.OppData": 5.4,
+  "PRO.Pythia": 4.8,
+  "PRO.V": 3.0,
+  "PRO.W.E1": 1.8,
+  "PRO.W.E10": 1.8,
+  "PRO.W.E18": 1.8,
+  "PRO.W.E22": 1.8,
+  "PRO.W.L0": 1.8,
+  "PRO.W.L1": 1.8,
+  "PRO.W.L2": 1.8,
+  "PRO.W.L3": 1.8
+ },
+ "theorems": {
+  "PRO.getD_take_of_lt": {
+   "accepted": true,
+   "axioms": [
+    "propext"
+   ],
+   "statement": "@PRO.getD_take_of_lt : ∀ {α : Type} (l : List α) (n j : ℕ) (d : α), j < n → (List.take n l).getD j d = l.getD j d\n'PRO.getD_take_of_lt'"
+  },
+  "PRO.headOut_take": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PRO.headOut_take : ∀ (L : PRO.Layer) (U : List (List ℝ)) (n j h : ℕ),\n  j < n → PRO.headOut L (List.take n U) j h = PRO.headOut L U j h\n'PRO.headOut_take'"
+  },
+  "PRO.attnOut_take": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PRO.attnOut_take : ∀ (L : PRO.Layer) (U : List (List ℝ)) (n j : ℕ),\n  j < n → PRO.attnOut L (List.take n U) j = PRO.attnOut L U j\n'PRO.attnOut_take'"
+  },
+  "PRO.layer_take": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PRO.layer_take : ∀ (L : PRO.Layer) (H : List (List ℝ)) (n : ℕ),\n  List.take n (PRO.layer L H) = PRO.layer L (List.take n H)\n'PRO.layer_take'"
+  },
+  "PRO.foldl_layer_take": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PRO.foldl_layer_take : ∀ (Ls : List PRO.Layer) (H : List (List ℝ)) (n : ℕ),\n  List.take n (List.foldl (fun H L => PRO.layer L H) H Ls) = List.foldl (fun H L => PRO.layer L H) (List.take n H) Ls\n'PRO.foldl_layer_take'"
+  },
+  "PRO.hidden_take": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PRO.hidden_take : ∀ (θ : PRO.Params) (toks : List ℕ) (n : ℕ),\n  List.take n (PRO.hidden θ toks) = PRO.hidden θ (List.take n toks)\n'PRO.hidden_take'"
+  },
+  "PRO.logitAt_eq_logit_take": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PRO.logitAt_eq_logit_take : ∀ (θ : PRO.Params) (toks : List ℕ) (p t : ℕ),\n  p < toks.length → PRO.logitAt θ toks p t = PRO.logit θ (List.take (p + 1) toks) t\n'PRO.logitAt_eq_logit_take'"
+  },
+  "PRO.repSeq_take": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PRO.repSeq_take : ∀ (r : List ℕ) (k : ℕ), List.take (r.length + k + 1) (PRO.repSeq r) = 0 :: (r ++ List.take k r)\n'PRO.repSeq_take'"
+  },
+  "PRO.gap_eq": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PRO.gap_eq : ∀ (r : List ℕ) (k t : ℕ),\n  k + 1 ≤ r.length →\n    PRO.gap r k t =\n      PRO.logit PRO.pythia14m (0 :: (r ++ List.take k r)) (r.getD k 0) -\n        PRO.logit PRO.pythia14m (0 :: (r ++ List.take k r)) t\n'PRO.gap_eq'"
+  },
+  "PRO.finite_lists": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PRO.finite_lists : ∀ (s : Finset ℕ) (n : ℕ), {r | r.length ≤ n ∧ ∀ t ∈ r, t ∈ s}.Finite\n'PRO.finite_lists'"
+  },
+  "PRO.mem_cases": {
+   "accepted": true,
+   "axioms": [
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PRO.mem_cases : ∀ (V' : Finset ℕ) (r : List ℕ) (k t : ℕ),\n  (r, k, t) ∈ PRO.Cases V' ↔ PRO.Admissible V' r ∧ 2 ≤ k ∧ k + 1 ≤ r.length ∧ t < 50304 ∧ t ≠ r.getD k 0\n'PRO.mem_cases'"
+  },
+  "PRO.cases_finite": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PRO.cases_finite : ∀ (V' : Finset ℕ), (PRO.Cases V').Finite\n'PRO.cases_finite'"
+  },
+  "PRO.exists_margin": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "@PRO.exists_margin : ∀ {ι : Type} (T : Set ι),\n  T.Finite → ∀ (f : ι → ℝ), (∀ x ∈ T, 0 < f x) → ∃ δ, 0 < δ ∧ ∀ x ∈ T, δ ≤ f x\n'PRO.exists_margin'"
+  },
+  "PRO.V_length": {
+   "accepted": true,
+   "axioms": [],
+   "statement": "PRO.V_length : PRO.V.length = 5000\n'PRO.V_length'"
+  },
+  "PRO.claimAt_iff_normalFormAt": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PRO.claimAt_iff_normalFormAt : ∀ (n : ℕ), PRO.ClaimAt n ↔ PRO.NormalFormAt n\n'PRO.claimAt_iff_normalFormAt'"
+  },
+  "PRO.claimAt_anti": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "@PRO.claimAt_anti : ∀ {n n' : ℕ}, n' ≤ n → PRO.ClaimAt n → PRO.ClaimAt n'\n'PRO.claimAt_anti'"
+  },
+  "PRO.claim_iff_normalForm": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PRO.claim_iff_normalForm : PRO.Claim ↔ PRO.NormalForm\n'PRO.claim_iff_normalForm'"
+  },
+  "PRO.claim_triples": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PRO.claim_triples : PRO.Claim →\n  ∃ V',\n    (∀ t ∈ V', t ∈ PRO.V) ∧\n      V'.card = 1000 ∧\n        ∀ a ∈ V',\n          ∀ b ∈ V',\n            ∀ c ∈ V',\n              a ≠ b →\n                a ≠ c →\n                  b ≠ c →\n                    ∀ t < 50304,\n                      t ≠ c →\n                        PRO.logit PRO.pythia14m [0, a, b, c, a, b] t < PRO.logit PRO.pythia14m [0, a, b, c, a, b] c\n'PRO.claim_triples'"
+  },
+  "PRO.opp_V": {
+   "accepted": true,
+   "axioms": [],
+   "statement": "PRO.opp_V : PRO.Opp.V = PRO.V\n'PRO.opp_V'"
+  },
+  "PRO.opp_inductionOn_iff": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PRO.opp_inductionOn_iff : ∀ (V' : Finset ℕ) (δ : ℝ),\n  PRO.Opp.InductionOn PRO.pythia14m V' δ ↔\n    ∀ (r : List ℕ),\n      PRO.Admissible V' r → ∀ (k : ℕ), 2 ≤ k → k + 1 ≤ r.length → ∀ t < 50304, t ≠ r.getD k 0 → δ ≤ PRO.gap r k t\n'PRO.opp_inductionOn_iff'"
+  },
+  "PRO.claim_iff_opp": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PRO.claim_iff_opp : PRO.Claim ↔ PRO.Opp.Claim\n'PRO.claim_iff_opp'"
+  },
+  "PRO.groupCert_refutes_claim": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PRO.groupCert_refutes_claim : PRO.Opp.GroupCert → ¬PRO.Claim\n'PRO.groupCert_refutes_claim'"
+  },
+  "PRO.groupCert_refutes_above_831": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PRO.groupCert_refutes_above_831 : PRO.Opp.GroupCert → ∀ {n : ℕ}, 831 < n → ¬PRO.ClaimAt n\n'PRO.groupCert_refutes_above_831'"
+  },
+  "PRO.opp_failsOn_iff": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PRO.opp_failsOn_iff : ∀ (S : Finset ℕ),\n  PRO.Opp.FailsOn PRO.pythia14m S ↔\n    ∃ r,\n      PRO.Admissible S r ∧\n        ∃ k,\n          2 ≤ k ∧\n            k + 1 ≤ r.length ∧\n              ∃ t < 50304,\n                t ≠ r.getD k 0 ∧\n                  PRO.logit PRO.pythia14m (0 :: (r ++ List.take k r)) (r.getD k 0) ≤\n                    PRO.logit PRO.pythia14m (0 :: (r ++ List.take k r)) t\n'PRO.opp_failsOn_iff'"
+  },
+  "PRO.cleanSet_sub": {
+   "accepted": true,
+   "axioms": [
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PRO.cleanSet_sub : ∀ t ∈ PRO.cleanSet, t ∈ PRO.V\n'PRO.cleanSet_sub'"
+  },
+  "PRO.cleanSet_card": {
+   "accepted": true,
+   "axioms": [
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PRO.cleanSet_card : PRO.cleanSet.card = 9\n'PRO.cleanSet_card'"
+  },
+  "PRO.cleanCert_claimAt": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PRO.cleanCert_claimAt : PRO.CleanCert → PRO.ClaimAt 9\n'PRO.cleanCert_claimAt'"
+  },
+  "PRO.bracket": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PRO.bracket : PRO.Opp.GroupCert → PRO.CleanCert → PRO.ClaimAt 9 ∧ (∀ (n : ℕ), 831 < n → ¬PRO.ClaimAt n) ∧ ¬PRO.Claim\n'PRO.bracket'"
+  },
+  "PRO.main": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PRO.main : (PRO.Claim ↔ PRO.NormalForm) ∧\n  (PRO.Claim ↔ PRO.Opp.Claim) ∧ (PRO.Opp.GroupCert → ¬PRO.Claim) ∧ (PRO.CleanCert → PRO.ClaimAt 9)\n'PRO.main'"
+  }
+ }
+}

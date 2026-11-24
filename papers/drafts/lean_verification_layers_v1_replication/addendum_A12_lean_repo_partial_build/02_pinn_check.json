@@ -1,0 +1,185 @@
+{
+ "compiled": true,
+ "modules": 207,
+ "jobs": 4,
+ "build_seconds": 1800.2,
+ "slowest_modules": {
+  "PINN.ChkH.C039": 40.3,
+  "PINN.ChkH.C027": 39.3,
+  "PINN.ChkH.C074": 39.3,
+  "PINN.ChkH.C096": 39.3,
+  "PINN.ChkH.C050": 39.1,
+  "PINN.ChkH.C043": 39.0,
+  "PINN.ChkH.C075": 39.0,
+  "PINN.ChkH.C022": 38.7,
+  "PINN.ChkH.C025": 38.7,
+  "PINN.ChkH.C044": 38.7,
+  "PINN.ChkH.C071": 38.7,
+  "PINN.ChkH.C087": 38.7,
+  "PINN.ChkN.C015": 38.5,
+  "PINN.ChkH.C079": 38.4,
+  "PINN.ChkH.C098": 38.4
+ },
+ "theorems": {
+  "PINN.N_formula": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PINN.N_formula : ∀ (t : ℝ),\n  PINN.N t =\n    ∑ j ∈ Finset.range 32,\n        ↑(PINN.NetW.W3.getD j 0) / 65536 *\n          Real.tanh\n            (∑ i ∈ Finset.range 32,\n                ↑((PINN.NetW.W2.getD j []).getD i 0) / 65536 *\n                  Real.tanh (↑(PINN.NetW.W1.getD i 0) / 65536 * t + ↑(PINN.NetW.b1.getD i 0) / 65536) +\n              ↑(PINN.NetW.b2.getD j 0) / 65536) +\n      ↑PINN.NetW.b3 / 65536\n'PINN.N_formula'"
+  },
+  "PINN.Nh_formula": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PINN.Nh_formula : ∀ (t : ℝ),\n  PINN.Nh t =\n    ∑ j ∈ Finset.range 32,\n        ↑(PINN.NetH.W3.getD j 0) / 65536 *\n          Real.tanh\n            (∑ i ∈ Finset.range 32,\n                ↑((PINN.NetH.W2.getD j []).getD i 0) / 65536 *\n                  Real.tanh (↑(PINN.NetH.W1.getD i 0) / 65536 * t + ↑(PINN.NetH.b1.getD i 0) / 65536) +\n              ↑(PINN.NetH.b2.getD j 0) / 65536) +\n      ↑PINN.NetH.b3 / 65536\n'PINN.Nh_formula'"
+  },
+  "PINN.uhat_formula": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PINN.uhat_formula : ∀ (t : ℝ), PINN.uhat t = 1 + t * PINN.Nh t\n'PINN.uhat_formula'"
+  },
+  "PINN.shapes": {
+   "accepted": true,
+   "axioms": [
+    "propext"
+   ],
+   "statement": "PINN.shapes : (PINN.NetW.W1.length = 32 ∧\n    PINN.NetW.b1.length = 32 ∧\n      PINN.NetW.W2.length = 32 ∧\n        PINN.NetW.b2.length = 32 ∧ PINN.NetW.W3.length = 32 ∧ ∀ j < 32, (PINN.NetW.W2.getD j []).length = 32) ∧\n  PINN.NetH.W1.length = 32 ∧\n    PINN.NetH.b1.length = 32 ∧\n      PINN.NetH.W2.length = 32 ∧\n        PINN.NetH.b2.length = 32 ∧ PINN.NetH.W3.length = 32 ∧ ∀ j < 32, (PINN.NetH.W2.getD j []).length = 32\n'PINN.shapes'"
+  },
+  "PINN.part1": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PINN.part1 : ∀ (M : ℝ → ℝ),\n  PINN.C1On M →\n    ∀ (K : ℕ) (a lo hi : ℕ → ℝ),\n      PINN.Bounds M K a lo hi →\n        ∀ (u : ℝ → ℝ),\n          PINN.IsSolution u → ∀ t ∈ Set.Icc 0 4, PINN.lowerB M K a hi t ≤ u t - M t ∧ u t - M t ≤ PINN.upperB M K a lo t\n'PINN.part1'"
+  },
+  "PINN.part1_explicit": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PINN.part1_explicit : ∀ (M M' : ℝ → ℝ),\n  (∀ t ∈ Set.Icc 0 4, HasDerivWithinAt M (M' t) (Set.Icc 0 4) t) →\n    ContinuousOn M' (Set.Icc 0 4) →\n      ∀ (K : ℕ) (a lo hi : ℕ → ℝ),\n        a 0 = 0 →\n          a K = 4 →\n            (∀ k < K, a k < a (k + 1)) →\n              (∀ k < K, lo k ≤ hi k) →\n                (∀ k < K,\n                    ∀ s ∈ Set.Icc (a k) (a (k + 1)),\n                      lo k ≤ M' s + M s - Real.exp (-s) ∧ M' s + M s - Real.exp (-s) ≤ hi k) →\n                  ∀ (u : ℝ → ℝ),\n                    PINN.IsSolution u →\n                      ∀ t ∈ Set.Icc 0 4, PINN.lowerB M K a hi t ≤ u t - M t ∧ u t - M t ≤ PINN.upperB M K a lo t\n'PINN.part1_explicit'"
+  },
+  "PINN.part1_contDiffOn": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PINN.part1_contDiffOn : ∀ (M : ℝ → ℝ),\n  ContDiffOn ℝ 1 M (Set.Icc 0 4) →\n    ∀ (K : ℕ) (a lo hi : ℕ → ℝ),\n      PINN.Bounds M K a lo hi →\n        ∀ (u : ℝ → ℝ),\n          PINN.IsSolution u → ∀ t ∈ Set.Icc 0 4, PINN.lowerB M K a hi t ≤ u t - M t ∧ u t - M t ≤ PINN.upperB M K a lo t\n'PINN.part1_contDiffOn'"
+  },
+  "PINN.residual_route": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PINN.residual_route : ∀ (M : ℝ → ℝ),\n  PINN.C1On M →\n    ∀ (ε : ℝ) (K : ℕ) (a lo hi : ℕ → ℝ),\n      PINN.Bounds M K a lo hi →\n        (∀ t ∈ Set.Icc 0 4, -ε ≤ PINN.lowerB M K a hi t ∧ PINN.upperB M K a lo t ≤ ε) →\n          ∀ (u : ℝ → ℝ), PINN.IsSolution u → ∀ t ∈ Set.Icc 0 4, |u t - M t| ≤ ε\n'PINN.residual_route'"
+  },
+  "PINN.models_C1": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PINN.models_C1 : PINN.C1On PINN.N ∧ PINN.C1On PINN.uhat\n'PINN.models_C1'"
+  },
+  "PINN.cert_numbers": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PINN.cert_numbers : ∀ (L : List PINN.Piece) (k : ℕ),\n  PINN.ca L k = ↑(L.getD k PINN.dflt).1 / 2 ^ 20 ∧\n    PINN.clo L k = ↑(L.getD k PINN.dflt).2.2.1 / 2 ^ 64 ∧ PINN.chi L k = ↑(L.getD k PINN.dflt).2.2.2 / 2 ^ 64\n'PINN.cert_numbers'"
+  },
+  "PINN.part2_named": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PINN.part2_named : PINN.certN.length = 508 ∧\n  PINN.Bounds PINN.N 508 (PINN.ca PINN.certN) (PINN.clo PINN.certN) (PINN.chi PINN.certN) ∧\n    ∀ t ∈ Set.Icc 0 4,\n      -(2 / 10000) ≤ PINN.lowerB PINN.N 508 (PINN.ca PINN.certN) (PINN.chi PINN.certN) t ∧\n        PINN.upperB PINN.N 508 (PINN.ca PINN.certN) (PINN.clo PINN.certN) t ≤ 2 / 10000\n'PINN.part2_named'"
+  },
+  "PINN.part3_named": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PINN.part3_named : PINN.certH.length = 652 ∧\n  PINN.Bounds PINN.uhat 652 (PINN.ca PINN.certH) (PINN.clo PINN.certH) (PINN.chi PINN.certH) ∧\n    ∀ t ∈ Set.Icc 0 4,\n      -(3 / 10000) ≤ PINN.lowerB PINN.uhat 652 (PINN.ca PINN.certH) (PINN.chi PINN.certH) t ∧\n        PINN.upperB PINN.uhat 652 (PINN.ca PINN.certH) (PINN.clo PINN.certH) t ≤ 3 / 10000\n'PINN.part3_named'"
+  },
+  "PINN.transfer_N": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PINN.transfer_N : ∀ (M : ℝ → ℝ),\n  PINN.C1On M →\n    M 0 = PINN.N 0 →\n      (∀ k < 508,\n          ∀ s ∈ Set.Icc (PINN.ca PINN.certN k) (PINN.ca PINN.certN (k + 1)),\n            PINN.clo PINN.certN k ≤ derivWithin M (Set.Icc 0 4) s + M s - Real.exp (-s) ∧\n              derivWithin M (Set.Icc 0 4) s + M s - Real.exp (-s) ≤ PINN.chi PINN.certN k) →\n        PINN.Bounds M 508 (PINN.ca PINN.certN) (PINN.clo PINN.certN) (PINN.chi PINN.certN) ∧\n          (∀ t ∈ Set.Icc 0 4,\n              -(2 / 10000) ≤ PINN.lowerB M 508 (PINN.ca PINN.certN) (PINN.chi PINN.certN) t ∧\n                PINN.upperB M 508 (PINN.ca PINN.certN) (PINN.clo PINN.certN) t ≤ 2 / 10000) ∧\n            ∀ (u : ℝ → ℝ), PINN.IsSolution u → ∀ t ∈ Set.Icc 0 4, |u t - M t| ≤ 2 / 10000\n'PINN.transfer_N'"
+  },
+  "PINN.transfer_H": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PINN.transfer_H : ∀ (M : ℝ → ℝ),\n  PINN.C1On M →\n    M 0 = 1 →\n      (∀ k < 652,\n          ∀ s ∈ Set.Icc (PINN.ca PINN.certH k) (PINN.ca PINN.certH (k + 1)),\n            PINN.clo PINN.certH k ≤ derivWithin M (Set.Icc 0 4) s + M s - Real.exp (-s) ∧\n              derivWithin M (Set.Icc 0 4) s + M s - Real.exp (-s) ≤ PINN.chi PINN.certH k) →\n        PINN.Bounds M 652 (PINN.ca PINN.certH) (PINN.clo PINN.certH) (PINN.chi PINN.certH) ∧\n          (∀ t ∈ Set.Icc 0 4,\n              -(3 / 10000) ≤ PINN.lowerB M 652 (PINN.ca PINN.certH) (PINN.chi PINN.certH) t ∧\n                PINN.upperB M 652 (PINN.ca PINN.certH) (PINN.clo PINN.certH) t ≤ 3 / 10000) ∧\n            ∀ (u : ℝ → ℝ), PINN.IsSolution u → ∀ t ∈ Set.Icc 0 4, |u t - M t| ≤ 3 / 10000\n'PINN.transfer_H'"
+  },
+  "PINN.part2": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PINN.part2 : (∃ K a lo hi,\n    PINN.Bounds PINN.N K a lo hi ∧\n      ∀ t ∈ Set.Icc 0 4, -(2 / 10000) ≤ PINN.lowerB PINN.N K a hi t ∧ PINN.upperB PINN.N K a lo t ≤ 2 / 10000) ∧\n  ∀ (u : ℝ → ℝ), PINN.IsSolution u → ∀ t ∈ Set.Icc 0 4, |u t - PINN.N t| ≤ 2 / 10000\n'PINN.part2'"
+  },
+  "PINN.part3": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PINN.part3 : (∃ K a lo hi,\n    PINN.Bounds PINN.uhat K a lo hi ∧\n      ∀ t ∈ Set.Icc 0 4, -(3 / 10000) ≤ PINN.lowerB PINN.uhat K a hi t ∧ PINN.upperB PINN.uhat K a lo t ≤ 3 / 10000) ∧\n  ∀ (u : ℝ → ℝ), PINN.IsSolution u → ∀ t ∈ Set.Icc 0 4, |u t - PINN.uhat t| ≤ 3 / 10000\n'PINN.part3'"
+  },
+  "PINN.solution_exists": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PINN.solution_exists : PINN.IsSolution fun t => (1 + t) * Real.exp (-t)\n'PINN.solution_exists'"
+  },
+  "PINN.main": {
+   "accepted": true,
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "statement": "PINN.main : (∀ (M : ℝ → ℝ),\n    PINN.C1On M →\n      ∀ (K : ℕ) (a lo hi : ℕ → ℝ),\n        PINN.Bounds M K a lo hi →\n          ∀ (u : ℝ → ℝ),\n            PINN.IsSolution u →\n              ∀ t ∈ Set.Icc 0 4, PINN.lowerB M K a hi t ≤ u t - M t ∧ u t - M t ≤ PINN.upperB M K a lo t) ∧\n  ((∃ K a lo hi,\n        PINN.Bounds PINN.N K a lo hi ∧\n          ∀ t ∈ Set.Icc 0 4, -(2 / 10000) ≤ PINN.lowerB PINN.N K a hi t ∧ PINN.upperB PINN.N K a lo t ≤ 2 / 10000) ∧\n      ∀ (u : ℝ → ℝ), PINN.IsSolution u → ∀ t ∈ Set.Icc 0 4, |u t - PINN.N t| ≤ 2 / 10000) ∧\n    ((∃ K a lo hi,\n          PINN.Bounds PINN.uhat K a lo hi ∧\n            ∀ t ∈ Set.Icc 0 4,\n              -(3 / 10000) ≤ PINN.lowerB PINN.uhat K a hi t ∧ PINN.upperB PINN.uhat K a lo t ≤ 3 / 10000) ∧\n        ∀ (u : ℝ → ℝ), PINN.IsSolution u → ∀ t ∈ Set.Icc 0 4, |u t - PINN.uhat t| ≤ 3 / 10000) ∧\n      (PINN.Bounds PINN.N 508 (PINN.ca PINN.certN) (PINN.clo PINN.certN) (PINN.chi PINN.certN) ∧\n          ∀ t ∈ Set.Icc 0 4,\n            -(2 / 10000) ≤ PINN.lowerB PINN.N 508 (PINN.ca PINN.certN) (PINN.chi PINN.certN) t ∧\n              PINN.upperB PINN.N 508 (PINN.ca PINN.certN) (PINN.clo PINN.certN) t ≤ 2 / 10000) ∧\n        PINN.Bounds PINN.uhat 652 (PINN.ca PINN.certH) (PINN.clo PINN.certH) (PINN.chi PINN.certH) ∧\n          ∀ t ∈ Set.Icc 0 4,\n            -(3 / 10000) ≤ PINN.lowerB PINN.uhat 652 (PINN.ca PINN.certH) (PINN.chi PINN.certH) t ∧\n              PINN.upperB PINN.uhat 652 (PINN.ca PINN.certH) (PINN.clo PINN.certH) t ≤ 3 / 10000\n'PINN.main'"
+  }
+ }
+}

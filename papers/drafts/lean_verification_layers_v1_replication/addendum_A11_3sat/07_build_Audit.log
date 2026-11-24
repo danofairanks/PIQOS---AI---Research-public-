@@ -1,0 +1,127 @@
+⚠ [2506/2576] Replayed SatLowerBound.RootOfUnity
+warning: SatLowerBound/RootOfUnity.lean: imports `Mathlib.RingTheory.RootsOfUnity.Complex` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: SatLowerBound/RootOfUnity.lean: imports `Mathlib.FieldTheory.Finite.GaloisField` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: SatLowerBound/RootOfUnity.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2512/2576] Replayed SatLowerBound.Dependence
+warning: SatLowerBound/Dependence.lean: imports `Mathlib.Algebra.BigOperators.Group.Finset.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: SatLowerBound/Dependence.lean: imports `Mathlib.Data.Fintype.Fin` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: SatLowerBound/Dependence.lean: imports `Mathlib.Algebra.BigOperators.Group.Finset.Piecewise` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: SatLowerBound/Dependence.lean: imports `Mathlib.Algebra.Order.BigOperators.Group.Finset` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2520/2576] Replayed SatLowerBound.HelperEnumeration
+warning: SatLowerBound/HelperEnumeration.lean: imports `Mathlib.Data.List.Sort` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: SatLowerBound/HelperEnumeration.lean: imports `Mathlib.Data.List.Nodup` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2523/2576] Replayed SatLowerBound.RestrictionCount
+warning: SatLowerBound/RestrictionCount.lean: imports `Mathlib.Data.Finset.Card` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2524/2576] Replayed SatLowerBound.FiniteFieldDegree
+warning: SatLowerBound/FiniteFieldDegree.lean: imports `Mathlib.Algebra.CharP.Two` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: SatLowerBound/FiniteFieldDegree.lean: imports `Mathlib.Algebra.BigOperators.Fin` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2530/2576] Replayed SatLowerBound.TerminalBounds
+warning: SatLowerBound/TerminalBounds.lean: imports `Mathlib.Data.Fintype.Pi` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2542/2576] Replayed SatLowerBound.ModularBlocks
+warning: SatLowerBound/ModularBlocks.lean: imports `Mathlib.Data.Finset.Card` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2545/2576] Replayed SatLowerBound.TreeFamily
+warning: SatLowerBound/TreeFamily.lean: imports `Mathlib.Algebra.BigOperators.Fin` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2555/2576] Replayed SatLowerBound.DegreeCorrespondence
+warning: SatLowerBound/DegreeCorrespondence.lean: imports `Mathlib.Data.Fintype.EquivFin` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: SatLowerBound/DegreeCorrespondence.lean: imports `Mathlib.Algebra.BigOperators.Fin` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2559/2576] Replayed SatLowerBound.Asymptotic
+warning: SatLowerBound/Asymptotic.lean: imports `Mathlib.Tactic.Linarith` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: SatLowerBound/Asymptotic.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2566/2576] Replayed SatLowerBound.Logarithmic
+warning: SatLowerBound/Logarithmic.lean: imports `Mathlib.Analysis.SpecialFunctions.Log.Base` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: SatLowerBound/Logarithmic.lean: imports `Mathlib.Tactic.NormNum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: SatLowerBound/Logarithmic.lean: imports `Mathlib.Tactic.Positivity` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2569/2576] Built SatLowerBound.PdfGates (1.3s)
+warning: SatLowerBound/PdfGates.lean: imports `Mathlib.Data.Fintype.Prod` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: SatLowerBound/PdfGates.lean: imports `Mathlib.Data.Fintype.Card` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2571/2576] Built SatLowerBound.FullComposition (2.1s)
+warning: SatLowerBound/FullComposition.lean: imports `Mathlib.Algebra.Order.Floor.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: SatLowerBound/FullComposition.lean: imports `Mathlib.Tactic.Linarith` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+✔ [2572/2576] Built SatLowerBound.PdfHelpers (2.2s)
+⚠ [2573/2576] Built SatLowerBound.PdfCoefficients (2.7s)
+warning: SatLowerBound/PdfCoefficients.lean: imports `Mathlib.Data.ZMod.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: SatLowerBound/PdfCoefficients.lean: imports `Mathlib.Algebra.BigOperators.Group.Finset.Pi` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: SatLowerBound/PdfCoefficients.lean: imports `Mathlib.Algebra.BigOperators.Group.Finset.Powerset` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+✔ [2574/2576] Built SatLowerBound (1.8s)
+ℹ [2575/2576] Built Audit (34s)
+info: Audit.lean:9:0: Axiom audit passed for 2374 project declarations, including private declarations.
+info: Audit.lean:30:0: FINAL_CERTIFICATE_VERIFIED
+info: Audit.lean:41:0: ASYMPTOTIC_CERTIFICATE_VERIFIED
+info: Audit.lean:51:0: LOGARITHMIC_CERTIFICATE_VERIFIED
+info: Audit.lean:51:0: LOGARITHMIC_ASYMPTOTIC_VERIFIED
+info: Audit.lean:66:0: 'SatLowerBound.satFunction_eq_true_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:67:0: 'SatLowerBound.invalid_eq_false' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:68:0: 'SatLowerBound.Table.triangle_weight' does not depend on any axioms
+info: Audit.lean:69:0: 'SatLowerBound.Circuit.resource_le' depends on axioms: [propext, Quot.sound]
+info: Audit.lean:70:0: 'SatLowerBound.Circuit.rename_eval' depends on axioms: [propext, Quot.sound]
+info: Audit.lean:71:0: 'SatLowerBound.helper_count_exact' depends on axioms: [propext, Quot.sound]
+info: Audit.lean:72:0: 'SatLowerBound.every_encoding_bit_essential' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:73:0: 'SatLowerBound.Circuit.nonlinear_lower_bound' depends on axioms: [propext, Quot.sound]
+info: Audit.lean:74:0: 'SatLowerBound.OpenCircuit.nonlinear_lower_bound' depends on axioms: [propext, Quot.sound]
+info: Audit.lean:75:0: 'SatLowerBound.sparseFunction_full_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:76:0: 'SatLowerBound.sparseRestriction_sat' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:77:0: 'SatLowerBound.fixed_coordinate_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:78:0: 'SatLowerBound.sat_sparse_transfer' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:79:0: 'SatLowerBound.certificate_of_weighted' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:80:0: 'SatLowerBound.OpenCircuit.first_gate_multiple_use' depends on axioms: [propext, Quot.sound]
+info: Audit.lean:81:0: 'SatLowerBound.circuit_parity_weight_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:82:0: 'SatLowerBound.OpenCircuit.normalize_full' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:83:0: 'SatLowerBound.OpenCircuit.propagation_weight_gain_nonconstant' depends on axioms: [propext, Quot.sound]
+info: Audit.lean:84:0: 'SatLowerBound.OpenCircuit.six_or_seven' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:85:0: 'SatLowerBound.OpenCircuit.two_input_retirement' depends on axioms: [propext, Quot.sound]
+info: Audit.lean:86:0: 'SatLowerBound.OpenCircuit.parity_retirement' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:87:0: 'SatLowerBound.OpenCircuit.minimal_six_or_seven' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:88:0: 'SatLowerBound.weighted_modular_composition' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:89:0: 'SatLowerBound.modularBlock_exact_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:90:0: 'SatLowerBound.ModularTree.defects_eq_algebraicDefects' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:91:0: 'SatLowerBound.weighted_modular_composition_algebraic' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:92:0: 'SatLowerBound.full_modular_composition_ceiling' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:93:0: 'SatLowerBound.mod3_field_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:94:0: 'SatLowerBound.tex_every_encoding_bit_essential' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:95:0: 'SatLowerBound.weighted_sparse_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:96:0: 'SatLowerBound.main_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:97:0: 'SatLowerBound.asymptotic_leading_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:98:0: def SatLowerBound.ExactCertificate : Prop :=
+∀ (w r : ℕ),
+  8 ≤ w →
+    3 ≤ r →
+      r < w →
+        ∀ (C : SatLowerBound.Circuit (SatLowerBound.inputBits w)),
+          C.Computes (SatLowerBound.satFunction w) →
+            SatLowerBound.inputBits w + (4 * r - 7) * SatLowerBound.remainingClauses w r ≤ C.size + 1
+info: Audit.lean:99:0: def SatLowerBound.AsymptoticCertificate : Prop :=
+∀ (q : ℕ),
+  1 ≤ q →
+    ∃ W,
+      ∀ (w : ℕ),
+        W ≤ w →
+          ∀ (C : SatLowerBound.Circuit (SatLowerBound.inputBits w)),
+            C.Computes (SatLowerBound.satFunction w) → (7 * q - 1) * SatLowerBound.inputBits w ≤ 3 * q * C.size
+info: Audit.lean:100:0: 'SatLowerBound.logarithmic_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:101:0: 'SatLowerBound.logarithmic_asymptotic' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:102:0: def SatLowerBound.LogarithmicCertificate : Prop :=
+∀ (w : ℕ),
+  8 ≤ w →
+    ∀ (C : SatLowerBound.Circuit (SatLowerBound.inputBits w)),
+      C.Computes (SatLowerBound.satFunction w) →
+        7 / 3 * ↑(SatLowerBound.inputBits w) -
+              4 / 3 * ↑(SatLowerBound.inputBits w) * Real.logb 2 (Real.logb 2 ↑(SatLowerBound.inputBits w)) /
+                Real.logb 2 ↑(SatLowerBound.inputBits w) -
+            32 * ↑(SatLowerBound.inputBits w) / Real.logb 2 ↑(SatLowerBound.inputBits w) ≤
+          ↑C.size
+info: Audit.lean:103:0: def SatLowerBound.LogarithmicAsymptoticCertificate : Prop :=
+∃ E,
+  (E =O[Filter.atTop] fun w => ↑(SatLowerBound.inputBits w) / Real.logb 2 ↑(SatLowerBound.inputBits w)) ∧
+    ∀ᶠ (w : ℕ) in Filter.atTop,
+      ∀ (C : SatLowerBound.Circuit (SatLowerBound.inputBits w)),
+        C.Computes (SatLowerBound.satFunction w) →
+          7 / 3 * ↑(SatLowerBound.inputBits w) -
+                4 / 3 * ↑(SatLowerBound.inputBits w) * Real.logb 2 (Real.logb 2 ↑(SatLowerBound.inputBits w)) /
+                  Real.logb 2 ↑(SatLowerBound.inputBits w) -
+              E w ≤
+            ↑C.size
+Build completed successfully (2576 jobs).
+
+real	0m41.124s
+user	0m44.314s
+sys	0m3.735s

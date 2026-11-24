@@ -1,0 +1,3 @@
+83fe8d09_turn4.lean:6:32: error: unsolved goals
+x : ℝ
+⊢ False

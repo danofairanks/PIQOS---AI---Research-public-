@@ -1,0 +1,1 @@
+Scorer-only compile (M7), D condition (nothing sent to the model): _a: exit 0 with one 'declaration uses sorry' warning; _b: exit 0, no messages. Lean 4.27.0-rc1, Mathlib fdddb3ea. (The path prefix in _a's output file was shortened by the scorer for the record.)

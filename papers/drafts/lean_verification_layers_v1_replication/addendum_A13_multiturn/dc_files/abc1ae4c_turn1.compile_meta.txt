@@ -1,0 +1,1 @@
+Compiled as written, Lean 4.27.0-rc1, Mathlib fdddb3ea: exit 0, one 'declaration uses sorry' warning (line 6). Relayed verbatim (with the scratch path as printed). One file, so the single-file format applies.
