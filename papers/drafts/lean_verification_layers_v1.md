@@ -189,6 +189,23 @@ By layer (section 2):
 
 *Limits.* One reader, an Anthropic model, in the same family as the proof's co-discoverer and the reports' writers (section 9); static read; the scripts read prebuilt indices under paths that are not in the repository, so none was rerun and the table was recounted as data; the manuscript's mathematics, the closure reports and most of the ledger were not read; the repository changes quickly (its history is one day long) and the sources are dated 24 and 25 November 2026. Nothing here says the proof or the reconstruction is right or wrong.
 
+**A.15 Contact: a test fixed in advance, with an independent referent, that can fail.** The seven layers of section 2 each name a property a check can establish. None names whether the agreement among checks is independent. Two readings in this draft show the gap. In A.14, an audit's output and its readers were both machine-produced, so agreement was available without any check at layers 1 to 6. In the community repository for the RH Lean proof (commit `d91ae26`, read 25 November 2026; static, nothing run), builds by different people at one pin produce the same export hash: that shows the artifact is the same artifact for everyone, not that it does what is claimed. Observers who all start from the same machine output are one reading, not several.
+
+*A candidate criterion.* A test counts as contact with a claim when (1) the intended function of the claim is stated before the run, by someone other than the producer; (2) the test uses an input or procedure that does not pass through the apparatus being tested; (3) its result could differ from the claimed one; and (4) its breadth is stated. For a universal claim, contact can refute and cannot confirm: the supportable report is "has not failed under tests of breadth B", and it accumulates. Without (1), any pass can be answered with "not yet tested for the intended use", and the criterion cannot fail.
+
+*What the cases in this draft contain.*
+| Item | Contact? |
+|---|---|
+| Matching export hashes across independent builds (community repo, as reported) | No: shows determinism of the build |
+| Comparator on a small test project and a placeholder: wrong statement, `sorry`, extra assumption and swapped proof each rejected (community repo notes) | Yes, for the pipeline, on known-bad inputs; not run on the real export |
+| Name search and hypothesis reading of the AIX Global package (A.6) | Yes, against its claims; the kernel's acceptance was not contact |
+| Static statement checkers, counterexample search and human review (arXiv 2606.29493) | Yes, against statement fidelity; the checkers encode a convention about what authors usually intend, so the referent is outside the checkers and not outside shared human convention |
+| Independent formalization of the statements plus an equivalence proof | Partly: the community repo's bridge to a separately written statement, over the same library definitions |
+
+*Three questions to put to any claim of "verified".* What is its intended function, and who stated it? What input independent of the producer could have made the test fail, and did it run? What is the breadth? The cheapest additions here are a seeded-fault control at the statement level (a known-false variant of each headline statement that the pipeline must not accept), a statement written independently with an equivalence proof, and dated counterexample-search results cited with their breadth.
+
+*Limits.* A candidate description from a few cases and one reader; offered as a separate axis beside the layers, not an eighth layer. Contact tests for a universal claim cannot confirm it. The criterion needs the intended function stated first, and nothing in this draft supplies that for any proof discussed. Nothing here says a proof is right or wrong.
+
 ## Appendix A. Preregistration and replication material
 
 For each computed analysis (§4.2, §4.3, §4.4, §6), the operator's working notes contain a prediction file committed before the analysis ran; commit ordering is recorded in version history. Hit/miss tallies are not reproduced here because they were scored by the same single reader who wrote the predictions.
