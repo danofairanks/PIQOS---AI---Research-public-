@@ -1,0 +1,8 @@
+E[th^2] = (E th)^2 + Var: max abs error 2.78e-17
+Jensen E[th^n] >= (E th)^n for n=2..5 on 2000 random cases: True
+negatively correlated difficulty: joint 0.090 < product 0.250
+same difficulty profile: joint 0.410 > product 0.250
+shared flaw s=0.01: P(all 4 fail) = 0.0100 vs independent-only 6.25e-06
+r=0.0: P(all 5 pass | H false) = 0.00032  (product of marginals 0.00032); odds multiplier 3125.0
+r=0.3: P(all 5 pass | H false) = 0.06022  (product of marginals 0.00032); odds multiplier 16.6
+r=0.8: P(all 5 pass | H false) = 0.16006  (product of marginals 0.00032); odds multiplier 6.2
