@@ -1,0 +1,16 @@
+header: ['declaration', 'kind', 'class', 'file:line', 'liveness', 'status', 'owner_or_evidence']
+rows: 868718
+('DOT-ONLY', 'CLOSED') 620
+('DOT-ONLY', 'CLOSED VIA PRIOR PACKAGE') 78641
+('DOT-ONLY', 'DEAD-FALSE EDGE') 5
+('DOT-ONLY', 'EXTERNAL') 22664
+('LIVE (exact edges)', 'CLOSED') 4506
+('LIVE (exact edges)', 'CLOSED VIA PRIOR PACKAGE') 631740
+('LIVE (exact edges)', 'EXTERNAL') 130542
+exact-edge live total: 766788
+closed via prior package, by kind of evidence:
+   inherited from a mentioned ancestor theorem (region) 414110
+   definitions (closed by kind) 120132
+   shared remainder (leftover live theorems) 93682
+   declaration-level evidence (a named report or exclusive set) 3816
+closed via prior package total: 631740
