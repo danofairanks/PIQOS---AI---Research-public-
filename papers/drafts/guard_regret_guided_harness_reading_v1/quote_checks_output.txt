@@ -1,0 +1,66 @@
+pdf sha256 5e7f77b8f8c79b72b3f92da294d60de416e0f26ce2ad3c8d351be29ae15b7709
+quote check against /tmp/p2347_fresh_raw.txt
+FOUND   guaranteeing non-regression on its gated buffer
+FOUND   At test time, one frozen harness runs in a single pass
+FOUND   consistently improves performance without catastrophic forgetting or memory pollution
+FOUND   substantially cutting deployment token usage
+FOUND   rather than a non-vacuous finite-sample certificate at our benchmark task counts
+FOUND   hold within each round’s gated task buffer rather than telescoping unconditionally across distribution shifts
+FOUND   The GUARD row is the final of five hosted configurations evaluated on this test split
+FOUND   mean 77.09%, range 75.57–80.80%; all five above every baseline
+FOUND   every unresolved invariant fails a derived criterion
+FOUND   formal non-regression guarantees on the self-review objective
+FOUND   reads only the task prompt, visible tool declarations, and schema once at Turn 0
+FOUND   checks execution predicates deterministically on an ephemeral sandbox copy
+FOUND   grades semantic predicates individually
+FOUND   The incumbent score used by the gate is the score recorded when the incumbent was itself evaluated
+FOUND   cutting hosted tokens per task by 54.5%
+FOUND   seed 42
+FOUND   we plan to release reference harness code
+FOUND   subject to approval
+FOUND   drops five-domain macro accuracy by −10.35pp
+FOUND   reduces five-domain macro accuracy by −7.33pp
+FOUND   an unvetted Stage-v4 candidate instructs a hallucinated MCP tool call
+FOUND   69.86% ± 0.18pp
+FOUND   its original-distiller control at 75.57%
+FOUND   the initial one-layer run at 75.98% in Table 4
+FOUND   the 95% CI [+0.00, +31.25] touches 0
+FOUND   with a minor trade-off on strict all-or-nothing solve rate
+FOUND   in which solver, distiller, critic, and grader all use the exact same model
+FOUND   serves as distiller, self-reviewer, critic, and rubric judge
+FOUND   Held-out evaluation draws one rollout per task
+FOUND   whereas full GUARD maintains 0/5 regressed domains
+FOUND   360 adaptation / 360 held-out test rollouts per arm
+FOUND   Paired over the 43 test tasks (exact sign-flip test)
+FOUND   p = 0.11; 95% bootstrap CI [−0.4, +14.5]pp
+33/33 quoted strings found in the text layer
+FOUND   number 59,651
+FOUND   number 131,032
+FOUND   number 78,705
+FOUND   number 167.6
+FOUND   number 158.8
+FOUND   number 233.8
+FOUND   number 45.97%
+FOUND   number 73.90%
+FOUND   number 82.6%
+FOUND   number 4,059
+FOUND   number 82.2%
+FOUND   number 75.6%
+FOUND   number 169
+FOUND   number 0.369
+FOUND   number 19/19
+FOUND   number p = 0.008
+FOUND   number p = 0.023
+FOUND   number p = 0.010
+FOUND   number p = 0.094
+FOUND   number 80.80
+FOUND   number 74.52
+FOUND   number 77.09
+FOUND   number 76.69%
+FOUND   number 76.42%
+FOUND   number 59.13%
+FOUND   number 56.11%
+FOUND   number 66.46%
+FOUND   number 7.61%
+FOUND   number 0.18pp
+29/29 cited printed numbers found in the text layer
