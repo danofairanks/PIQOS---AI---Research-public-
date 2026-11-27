@@ -1,0 +1,25 @@
+pdf sha256 d17caccbee57cfbee6fc2eeed2e5a53467c9401be979fd2952aa2bf92d5443af
+quote check against /tmp/p3492_fresh.txt
+FOUND   We propose a background independent quantization of vacuum general relativity on four dimensional Lorentzian s
+FOUND   for which this algebra generates a type I factor
+FOUND   each sum over intermediate states converges absolutely
+FOUND   with a given maximum size has a finite dimensional Hilbert space
+FOUND   We end by deriving the semiclassical Einstein equations to one loop as the low energy limit of this theory.
+FOUND   Several of the calculations and proofs in this paper were developed through detailed, back and forth collabora
+FOUND   amounting to ∼ 400M total tokens spent
+FOUND   In Appendix C.2 we argue that (4.27) is finite on a dense set of wavefunctions, as required for it to define a
+FOUND   is a heuristic for the noncommuting operators in (4.26)
+FOUND   We defer to future work whether different choices of ω in Section 4.2 yield unitarily equivalent representatio
+FOUND   this provides strong evidence at finite GN and ℏ that
+FOUND   Since we choose a pure extension
+FOUND   we can choose a pure state ω on A
+FOUND   even though expanding first in GN yields a logarithmic divergence
+FOUND   recovering at one loop the coefficient
+FOUND   when the Euclidean cylinder has finite trace
+FOUND   quantization requires a symplectic area of order
+FOUND   on the smooth background as in Section 5.2
+FOUND   these estimates bound the number of modes
+FOUND   at one loop by bounding the number of graviton states
+FOUND   This is incompatible with the positive right hand side
+FOUND   Both subtracted two point functions have a finite coincidence limit at S
+22/22 quoted strings found in the PDF text layer

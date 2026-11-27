@@ -1,0 +1,8 @@
+PASS D.21 tanh^2 identity | max abs diff 1.04e-16
+PASS D.20 closed form vs Monte Carlo | closed 0.16979 MC 0.17029
+PASS D.23 |e^{ix}-1| <= |x| | max (lhs-rhs) -4.56e-11
+PASS D.46 optimisation over beta | max rel diff 4.20e-16
+PASS D.49 ratio >= 1/(sum e^s d(s)) | min ratio/bound 1.000000
+PASS D.52b exponent step r^t <= e | max (r^t - e) 0.00e+00
+PASS D.25 weight outside interval (one outside vector per cycle) | max rel diff 4.35e-16
+ALL PASS
