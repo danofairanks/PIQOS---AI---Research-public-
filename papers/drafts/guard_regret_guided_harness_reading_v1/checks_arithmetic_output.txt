@@ -1,0 +1,12 @@
+PASS token reduction 54.5% (59,651 vs 131,032) | 54.476%
+PASS reduction vs the lowest-token evolving baseline printed as 78,705: 24.2% | 24.209%
+PASS runtime 167.6 vs 158.8 min is within 6% | 5.54%
+PASS 233.8 s/task over 43 tasks | 233.86
+PASS headline gain over the best baseline is larger than the mean-based gain | headline 6.28 pp, mean-based 2.57 pp
+PASS exact sign-flip p for 8 better, 0 worse (printed p = 0.008) | 0.00781
+PASS Theorem 1(iv) example 8x | 8.0
+PASS Theorem 2(i) lower bound H_J (1-eps)/eps | min slack 1.0000
+PASS Proposition 1 identity Priority(c) - Priority(c2) = delta_c - (o_c - o_c2) | max abs diff 2.22e-16
+PASS binary case priorities 2 vs <= 1
+PASS H_10 = 7381/2520 | 7381/2520
+ALL PASS
