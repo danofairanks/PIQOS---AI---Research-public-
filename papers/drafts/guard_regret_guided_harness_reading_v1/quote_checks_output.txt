@@ -1,5 +1,5 @@
 pdf sha256 5e7f77b8f8c79b72b3f92da294d60de416e0f26ce2ad3c8d351be29ae15b7709
-quote check against /tmp/p2347_fresh_raw.txt
+quote check against a fresh pdftotext extraction (2026-11-28)
 FOUND   guaranteeing non-regression on its gated buffer
 FOUND   At test time, one frozen harness runs in a single pass
 FOUND   consistently improves performance without catastrophic forgetting or memory pollution
@@ -33,7 +33,19 @@ FOUND   whereas full GUARD maintains 0/5 regressed domains
 FOUND   360 adaptation / 360 held-out test rollouts per arm
 FOUND   Paired over the 43 test tasks (exact sign-flip test)
 FOUND   p = 0.11; 95% bootstrap CI [−0.4, +14.5]pp
-33/33 quoted strings found in the text layer
+FOUND   no gate-discrimination signal
+FOUND   15/19 strictly > 0
+35/35 quoted strings found in the text layer
+FOUND   number 78.69%
+FOUND   number 79.31%
+FOUND   number 79.29%
+FOUND   number 79.17%
+FOUND   number 65.81%
+FOUND   number 37.73%
+FOUND   number 38.31%
+FOUND   number 30.56%
+FOUND   number 25.00%
+FOUND   number 439.4
 FOUND   number 59,651
 FOUND   number 131,032
 FOUND   number 78,705
@@ -63,4 +75,4 @@ FOUND   number 56.11%
 FOUND   number 66.46%
 FOUND   number 7.61%
 FOUND   number 0.18pp
-29/29 cited printed numbers found in the text layer
+39/39 cited printed numbers found in the text layer
