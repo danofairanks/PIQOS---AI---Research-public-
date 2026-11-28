@@ -28,7 +28,7 @@
   "limitations": {
     "present": true,
     "applicable": true,
-    "word_count": 2530,
+    "word_count": 3056,
     "min_word_count": 400,
     "has_inline_phrase": true,
     "has_heading_section": false,
@@ -38,7 +38,7 @@
     "claims_citability": false,
     "matched_phrases": [],
     "n_references": 1,
-    "word_count": 2530,
+    "word_count": 3056,
     "applicable": true,
     "gap": false
   },
@@ -51,9 +51,9 @@
   },
   "hedge_density": {
     "applicable": true,
-    "n_sentences": 69,
+    "n_sentences": 76,
     "n_hedged": 1,
-    "share": 0.014492753623188406,
+    "share": 0.013157894736842105,
     "thesis_section_found": false,
     "thesis_n_sentences": 0,
     "thesis_n_hedged": 0,

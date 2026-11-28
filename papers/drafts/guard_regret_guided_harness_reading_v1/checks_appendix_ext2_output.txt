@@ -1,0 +1,8 @@
+W0 macro ACC 65.81 (C.7 prints 65.81); GUARD 66.46 (prints 66.46); diff 0.65 (prints -0.65 from GUARD)
+W0 macro Solved 37.73 (prints 37.73); GUARD 38.31 (prints 38.31)
+domains with GUARD final ACC == W0: ['Calendar', 'Drive', 'HR']
+w/o Analyze vs W0: -6.68 (text -6.68); w/o Gate vs W0: -9.70
+Workflow(K=2)  GUARD 70.00 best-evolving 70.00 ties-with ['GEPA']; gap to best non-GUARD 0.00pp = 0.0 task(s) of 60
+Topic(K=3)     GUARD 70.00 best-evolving 70.00 ties-with ['Hermes']; gap to best non-GUARD 0.00pp = 0.0 task(s) of 90
+Domain(K=3)    GUARD 78.69 best-evolving 79.31 ties-with ['GEPA']; gap to best non-GUARD -0.62pp = -0.6 task(s) of 90
+Compound(K=4)  GUARD 74.17 best-evolving 74.17 ties-with []; gap to best non-GUARD 0.84pp = 1.0 task(s) of 120
